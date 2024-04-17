@@ -13,7 +13,7 @@ class AppInputTheme {
       enabledBorder: border,
       border: border,
       focusedBorder: border.copyWith(
-        borderSide: const BorderSide(color: AppColors.tealBlue),
+        borderSide: const BorderSide(color: AppColors.primary),
       ),
       errorBorder: border.copyWith(
         borderSide: const BorderSide(color: AppColors.error),
@@ -24,7 +24,7 @@ class AppInputTheme {
       hintStyle: appTextTheme.medium16.copyWith(color: AppColors.grey600),
       errorStyle: appTextTheme.medium12.copyWith(color: AppColors.error),
       contentPadding: const EdgeInsets.all(12).copyWith(bottom: 3),
-      suffixIconColor: AppColors.tealBlue,
+      suffixIconColor: AppColors.primary,
     );
   }
 }

@@ -3,31 +3,31 @@ import 'package:keepup/src/design/colors/app_colors.dart';
 
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: AppColors.tealBlue,
+  primary: AppColors.primary,
   onPrimary: AppColors.white,
-  secondary: AppColors.darkBlue,
+  secondary: AppColors.primaryDark,
   onSecondary: AppColors.white,
   tertiary: AppColors.cyan,
   error: AppColors.error,
   onError: AppColors.white,
   background: AppColors.white,
-  onBackground: AppColors.darkBlue,
+  onBackground: AppColors.primaryDark,
   surface: AppColors.white,
-  onSurface: AppColors.darkBlue,
+  onSurface: AppColors.primaryDark,
 );
 
 const darkColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: AppColors.tealBlue,
+  primary: AppColors.primary,
   onPrimary: AppColors.primaryText,
-  secondary: AppColors.darkBlue,
+  secondary: AppColors.primaryDark,
   onSecondary: AppColors.grey600,
   error: AppColors.error,
   onError: AppColors.white,
   background: AppColors.white,
-  onBackground: AppColors.darkBlue,
+  onBackground: AppColors.primaryDark,
   surface: AppColors.white,
-  onSurface: AppColors.darkBlue,
+  onSurface: AppColors.primaryDark,
 );
 
 extension AppColorScheme on ColorScheme {

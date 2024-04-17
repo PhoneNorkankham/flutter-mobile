@@ -24,7 +24,7 @@ class AppButtonTheme {
         shape: _shape,
         minimumSize: const Size.fromHeight(_minHeight),
         side: const BorderSide(color: AppColors.grey350),
-        foregroundColor: AppColors.darkBlue,
+        foregroundColor: AppColors.primaryDark,
         backgroundColor: AppColors.white,
         textStyle: appTextTheme.bold18.copyWith(height: 1),
         disabledBackgroundColor: AppColors.grey100,

@@ -59,7 +59,7 @@ class AppDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       title: Container(
         decoration: const BoxDecoration(
-          color: AppColors.tealBlue,
+          color: AppColors.primary,
           borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
         ),
         alignment: Alignment.centerLeft,
@@ -71,7 +71,7 @@ class AppDialog extends StatelessWidget {
         child: content ??
             Text(
               message,
-              style: context.appTextTheme.medium16.copyWith(color: AppColors.darkBlue),
+              style: context.appTextTheme.medium16.copyWith(color: AppColors.primaryDark),
               textAlign: centerMessage ? TextAlign.center : TextAlign.left,
             ),
       ),

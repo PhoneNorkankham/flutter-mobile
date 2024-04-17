@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class AppColors {
   /// Primary Colors
   /// Our color palette is built with our core principles and guidelines as its foundation.
-  static const tealBlue = Color(0xFF4555B3);
-  static const darkBlue = Color(0xFF091835);
+  static const primary = Color(0xFF346DF6);
+  static const primaryDark = Color(0xFF091835);
   static const cyan = Color(0xFF5EB9AF);
   static const columbiaBlue = Color(0xFFA0AEFF);
   static const error = Color(0xFFFF0000);
@@ -18,12 +18,12 @@ class AppColors {
   static final black25 = const Color(0xFF000000).withOpacity(.25);
   static const white = Color(0xFFFFFFFF);
   static const lightCream = Color(0xFFFAFBFE);
-  static final darkBlue15 = darkBlue.withOpacity(.15);
-  static final darkBlue20 = darkBlue.withOpacity(.20);
-  static final darkBlue25 = darkBlue.withOpacity(.25);
-  static final darkBlue50 = darkBlue.withOpacity(.5);
-  static final darkBlue60 = darkBlue.withOpacity(.6);
-  static final darkBlue80 = darkBlue.withOpacity(.8);
+  static final darkBlue15 = primaryDark.withOpacity(.15);
+  static final darkBlue20 = primaryDark.withOpacity(.20);
+  static final darkBlue25 = primaryDark.withOpacity(.25);
+  static final darkBlue50 = primaryDark.withOpacity(.5);
+  static final darkBlue60 = primaryDark.withOpacity(.6);
+  static final darkBlue80 = primaryDark.withOpacity(.8);
 
   static const transparent = Color(0x00000000);
 
@@ -42,39 +42,7 @@ class AppColors {
   static const grey100 = Color(0xFFF2F2F2);
   static const grey50 = Color(0xFFEFEFEF);
   static const grey20 = Color(0xFFFFF9F9);
-  static const kakaoYellow = Color(0xFFFEE500);
-  static const lightYellow = Color(0xFFFFECBF);
-  static const brightCyan = Color(0xFF3ABD98);
-  static const lightCyan = Color(0xFFE3FFF8);
   static const lightTeal = Color(0xFFE4E8FF);
-  static const lightRed = Color(0xFFFFDBDB);
-  static const blandLavender = Color(0xFFEEF0FE);
-  static const mediumLavender = Color(0xFFCCD3FA);
-  static const redOrange = Color(0xFFFF2929);
   static const peach = Color(0xFFFF7979);
 
-  static final darkBlurGradient = LinearGradient(
-    colors: [AppColors.darkBlue, black.withOpacity(0)],
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-  );
-
-  static const yellowBlueGradient = LinearGradient(
-    colors: [AppColors.tealBlue, AppColors.darkBlue],
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-  );
-
-  /// Box shadows
-  static final shadowBlack25 = BoxShadow(
-    color: black.withOpacity(.25),
-    offset: const Offset(0, 4),
-    blurRadius: 4,
-  );
-
-  static final shadowYellow36 = BoxShadow(
-    color: yellow.withOpacity(.36),
-    offset: const Offset(0, 4),
-    blurRadius: 4,
-  );
 }

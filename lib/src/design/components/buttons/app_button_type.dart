@@ -18,7 +18,6 @@ enum AppButtonType {
   cyanPrimary,
   lightTealPrimary,
   lightTealRoundPrimary,
-  kakao,
   outlined,
   yellowPrimary,
   redPrimary,
@@ -57,7 +56,7 @@ enum AppButtonType {
     final style =
         isOutlined ? OutlinedButtonTheme.of(context).style : ElevatedButtonTheme.of(context).style;
     final textTheme = context.appTextTheme;
-    Color backgroundColor = AppColors.tealBlue;
+    Color backgroundColor = AppColors.primary;
     Color? foregroundColor;
     Size? minimumSize = const Size.fromHeight(56);
     double borderRadius = 10;
@@ -87,18 +86,15 @@ enum AppButtonType {
         break;
       case lightTealPrimary:
         backgroundColor = AppColors.lightTeal;
-        foregroundColor = AppColors.tealBlue;
+        foregroundColor = AppColors.primary;
         break;
       case lightTealRoundPrimary:
         backgroundColor = AppColors.lightTeal;
-        foregroundColor = AppColors.tealBlue;
+        foregroundColor = AppColors.primary;
         borderRadius = 30;
         break;
       case darkBluePrimary:
-        backgroundColor = AppColors.darkBlue;
-        break;
-      case kakao:
-        backgroundColor = AppColors.kakaoYellow;
+        backgroundColor = AppColors.primaryDark;
         break;
       case outlined:
         backgroundColor = AppColors.white;
@@ -117,7 +113,7 @@ enum AppButtonType {
         borderRadius = 10;
         minimumSize = const Size.fromHeight(_secondaryHeight);
         padding = const EdgeInsets.symmetric(horizontal: 6);
-        backgroundColor = AppColors.tealBlue;
+        backgroundColor = AppColors.primary;
         foregroundColor = AppColors.white;
         textStyle = textTheme.regular16;
         break;
@@ -137,12 +133,12 @@ enum AppButtonType {
       case lightTealTertiary:
         minimumSize = const Size.fromHeight(_tertiaryHeight);
         backgroundColor = AppColors.lightTeal;
-        foregroundColor = AppColors.tealBlue;
+        foregroundColor = AppColors.primary;
         textStyle = textTheme.medium14;
         break;
       case darkBlueTertiary:
         minimumSize = const Size.fromHeight(_tertiaryHeight);
-        backgroundColor = AppColors.darkBlue;
+        backgroundColor = AppColors.primaryDark;
         foregroundColor = AppColors.white;
         textStyle = textTheme.medium16;
         break;
@@ -162,7 +158,7 @@ enum AppButtonType {
       case quaternary:
         minimumSize = const Size(60, _quaternaryHeight);
         textStyle = textTheme.regular14;
-        backgroundColor = AppColors.tealBlue;
+        backgroundColor = AppColors.primary;
         foregroundColor = AppColors.white;
         borderRadius = 30;
         padding = const EdgeInsets.symmetric(horizontal: 12, vertical: 7);

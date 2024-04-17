@@ -6,8 +6,8 @@ class AppTabBarTheme {
   static TabBarTheme tabBarThemeData(AppTextTheme appTextTheme) {
     return TabBarTheme(
       indicatorSize: TabBarIndicatorSize.tab,
-      indicatorColor: AppColors.tealBlue,
-      labelColor: AppColors.tealBlue,
+      indicatorColor: AppColors.primary,
+      labelColor: AppColors.primary,
       labelStyle: appTextTheme.medium16,
       unselectedLabelColor: AppColors.grey600,
       unselectedLabelStyle: appTextTheme.medium16,

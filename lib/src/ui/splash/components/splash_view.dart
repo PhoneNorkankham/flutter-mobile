@@ -15,7 +15,7 @@ class SplashView extends StatelessWidget {
     return BlocBuilder<SplashBloc, SplashState>(
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: AppColors.tealBlue,
+          backgroundColor: AppColors.primary,
           body: Center(
             child: Column(
               children: [
