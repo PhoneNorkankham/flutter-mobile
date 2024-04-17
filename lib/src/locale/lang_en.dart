@@ -20,4 +20,5 @@ Map<String, String> enUs = {
   LocaleKey.alertSendTimeout: 'A problem has occurred. Please try again in a few minutes.',
   LocaleKey.alertReceiveTimeout: 'A problem has occurred. Please try again in a few minutes.',
   LocaleKey.alertErrorServer: 'An unexpected error occurred. please try again.',
+  LocaleKey.getStarted: 'Get Started',
 };

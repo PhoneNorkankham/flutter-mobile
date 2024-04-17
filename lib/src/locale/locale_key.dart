@@ -23,4 +23,6 @@ class LocaleKey {
   static const String error = "error";
   static const String somethingWentWrong = "somethingWentWrong";
 
+  // Splash
+  static const String getStarted = "getStarted";
 }

@@ -37,7 +37,7 @@ class AppDialog extends StatelessWidget {
     this.content,
     this.contentPadding,
     this.confirmButtonType = AppButtonType.primary,
-    this.cancelButtonType = AppButtonType.greyPrimary,
+    this.cancelButtonType = AppButtonType.outlined,
     this.actionsPaddingHorizontal,
     this.actionRadius,
     this.actionsBottomPadding,
@@ -143,7 +143,7 @@ class _Actions extends StatelessWidget {
     this.onCancelled,
     this.onConfirmed,
     this.confirmButtonType = AppButtonType.primary,
-    this.cancelButtonType = AppButtonType.greyPrimary,
+    this.cancelButtonType = AppButtonType.whitePrimary,
     this.actionMaxWith = 234,
   });
 
