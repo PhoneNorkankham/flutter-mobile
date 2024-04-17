@@ -198,162 +198,66 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
 
 String get getFontFamily => AppFonts.fontDMSans;
 
-TextStyle get _bold36 => TextStyle(
+TextStyle get _bold => TextStyle(
       fontFamily: getFontFamily,
       fontWeight: FontWeight.bold,
-      fontSize: 36,
       height: 1.3,
     );
 
-TextStyle get _bold30 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 30,
-      height: 1.3,
-    );
+TextStyle get _bold36 => _bold.copyWith(fontSize: 36);
 
-TextStyle get _bold18 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 18,
-      height: 1.3,
-    );
+TextStyle get _bold30 => _bold.copyWith(fontSize: 30);
 
-TextStyle get _bold16 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 16,
-      height: 1.3,
-    );
+TextStyle get _bold18 => _bold.copyWith(fontSize: 18);
 
-TextStyle get _bold14 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 14,
-      height: 1.3,
-    );
+TextStyle get _bold16 => _bold.copyWith(fontSize: 16);
 
-TextStyle get _bold13 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 13,
-      height: 1.3,
-    );
+TextStyle get _bold14 => _bold.copyWith(fontSize: 14);
 
-TextStyle get _bold12 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 12,
-      height: 1.3,
-    );
+TextStyle get _bold13 => _bold.copyWith(fontSize: 13);
 
-TextStyle get _bold10 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 10,
-      height: 1.3,
-    );
+TextStyle get _bold12 => _bold.copyWith(fontSize: 12);
 
-TextStyle get _medium24 => TextStyle(
+TextStyle get _bold10 => _bold.copyWith(fontSize: 10);
+
+TextStyle get _medium => TextStyle(
       fontFamily: getFontFamily,
       fontWeight: FontWeight.w500,
-      fontSize: 24,
       height: 1.3,
     );
 
-TextStyle get _medium21 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 21,
-      height: 1.3,
-    );
+TextStyle get _medium24 => _medium.copyWith(fontSize: 24);
 
-TextStyle get _medium20 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 20,
-      height: 1.3,
-    );
+TextStyle get _medium21 => _medium.copyWith(fontSize: 21);
 
-TextStyle get _medium18 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 18,
-      height: 1.3,
-    );
+TextStyle get _medium20 => _medium.copyWith(fontSize: 20);
 
-TextStyle get _medium16 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 16,
-      height: 1.3,
-    );
+TextStyle get _medium18 => _medium.copyWith(fontSize: 18);
 
-TextStyle get _medium14 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 14,
-      height: 1.3,
-    );
+TextStyle get _medium16 => _medium.copyWith(fontSize: 16);
 
-TextStyle get _medium13 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 13,
-      height: 1.3,
-    );
+TextStyle get _medium14 => _medium.copyWith(fontSize: 14);
 
-TextStyle get _medium12 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 12,
-      height: 1.3,
-    );
-TextStyle get _medium11 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 11,
-      height: 1,
-    );
+TextStyle get _medium13 => _medium.copyWith(fontSize: 13);
 
-TextStyle get _medium10 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w500,
-      fontSize: 10,
-      height: 1.3,
-    );
+TextStyle get _medium12 => _medium.copyWith(fontSize: 12);
 
-TextStyle get _medium36 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.normal,
-      fontSize: 36,
-      height: 1.3,
-    );
+TextStyle get _medium11 => _medium.copyWith(fontSize: 11);
 
-TextStyle get _regular20 => TextStyle(
+TextStyle get _medium10 => _medium.copyWith(fontSize: 10);
+
+TextStyle get _medium36 => _medium.copyWith(fontSize: 36);
+
+TextStyle get _regular => TextStyle(
       fontFamily: getFontFamily,
       fontWeight: FontWeight.w400,
-      fontSize: 20,
       height: 1.3,
     );
 
-TextStyle get _regular16 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.w400,
-      fontSize: 16,
-      height: 1.3,
-    );
+TextStyle get _regular20 => _regular.copyWith(fontSize: 20);
 
-TextStyle get _regular14 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.normal,
-      fontSize: 14,
-      height: 1.3,
-    );
+TextStyle get _regular16 => _regular.copyWith(fontSize: 16);
 
-TextStyle get _regular12 => TextStyle(
-      fontFamily: getFontFamily,
-      fontWeight: FontWeight.normal,
-      fontSize: 12,
-      height: 1.3,
-    );
+TextStyle get _regular14 => _regular.copyWith(fontSize: 14);
+
+TextStyle get _regular12 => _regular.copyWith(fontSize: 12);

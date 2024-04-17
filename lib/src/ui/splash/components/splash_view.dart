@@ -25,9 +25,7 @@ class SplashView extends StatelessWidget {
                 right: 35,
                 bottom: 45,
                 child: AppButton(
-                  onPressed: () {
-                    // TODO: Go to Login Page
-                  },
+                  onPressed: () => context.read<SplashBloc>().add(const SplashEvent.onGetStarted()),
                   buttonType: AppButtonType.getStarted,
                   title: LocaleKey.getStarted.tr,
                 ),

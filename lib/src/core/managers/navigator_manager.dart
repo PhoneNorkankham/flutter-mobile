@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
 import 'package:keepup/src/utils/app_pages.dart';
+import 'package:rxdart/rxdart.dart';
 
 class NavigatorManager {
   String previousPage = AppPages.splash;
@@ -56,6 +56,7 @@ class NavigatorManager {
       Get.offNamed(page, arguments: args);
     } catch (ex) {
       // FirebaseCrashlytics.instance.recordError(ex, StackTrace.empty);
+      _logEvent('offToPage $ex');
     }
   }
 

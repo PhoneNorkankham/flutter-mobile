@@ -25,4 +25,14 @@ class LocaleKey {
 
   // Splash
   static const String getStarted = "getStarted";
+
+  // Onboarding
+  static const String onboarding = "onboarding";
+  static const String addContactsToGroupToKeepupEasily = "addContactsToGroupToKeepupEasily";
+  static const String groups = "groups";
+  static const String family = "family";
+  static const String friends = "friends";
+  static const String businessAssociates = "businessAssociates";
+  static const String loginForAdditionalFeatures = "loginForAdditionalFeatures";
+  static const String loginWith = "loginWith";
 }

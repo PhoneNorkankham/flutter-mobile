@@ -21,4 +21,12 @@ Map<String, String> enUs = {
   LocaleKey.alertReceiveTimeout: 'A problem has occurred. Please try again in a few minutes.',
   LocaleKey.alertErrorServer: 'An unexpected error occurred. please try again.',
   LocaleKey.getStarted: 'Get Started',
+  LocaleKey.onboarding: 'Onboarding',
+  LocaleKey.addContactsToGroupToKeepupEasily: 'Add contacts to Group to keepup easily!',
+  LocaleKey.groups: 'Groups',
+  LocaleKey.family: 'Family',
+  LocaleKey.friends: 'Friends',
+  LocaleKey.businessAssociates: 'Business Associates',
+  LocaleKey.loginForAdditionalFeatures: 'Login for additional features',
+  LocaleKey.loginWith: 'Login with',
 };

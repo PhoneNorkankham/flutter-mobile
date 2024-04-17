@@ -14,6 +14,7 @@ class AppBody extends StatelessWidget {
   final Widget? failure;
   final bool isLoading;
   final bool unFocusWhenTouchOutsideInput;
+  final Color? backgroundColor;
 
   const AppBody({
     super.key,
@@ -24,12 +25,13 @@ class AppBody extends StatelessWidget {
     this.failure,
     this.isLoading = false,
     this.unFocusWhenTouchOutsideInput = false,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Theme.of(context).scaffoldBackgroundColor,
+      color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
       child: switch (pageState) {
         PageState.initial => initial ?? const SizedBox.shrink(),
         PageState.loading => loading ?? const Center(child: CircularProgressIndicator.adaptive()),
