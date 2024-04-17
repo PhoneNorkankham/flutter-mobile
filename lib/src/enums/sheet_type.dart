@@ -1,0 +1,3 @@
+enum SheetType {
+  deleteAccount;
+}
