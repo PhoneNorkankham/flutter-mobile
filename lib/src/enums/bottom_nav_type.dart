@@ -25,13 +25,13 @@ enum BottomNavType {
   String get icon {
     switch (this) {
       case BottomNavType.today:
-        return AppAssets.ic_filter_svg;
+        return AppAssets.ic_today_svg;
       case BottomNavType.keepUpSoon:
-        return AppAssets.ic_filter_svg;
+        return AppAssets.ic_soon_svg;
       case BottomNavType.contacts:
-        return AppAssets.ic_filter_svg;
+        return AppAssets.ic_contacts_svg;
       case BottomNavType.groups:
-        return AppAssets.ic_filter_svg;
+        return AppAssets.ic_groups_svg;
     }
   }
 
