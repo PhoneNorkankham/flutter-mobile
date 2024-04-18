@@ -1,8 +1,7 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/home/binding/home_binding.dart';
-import 'package:keepup/src/ui/keep_up_soon/binding/keep_up_soon_binding.dart';
 import 'package:keepup/src/utils/app_assets.dart';
+import 'package:keepup/src/utils/app_pages.dart';
 
 enum BottomNavType {
   today,
@@ -36,16 +35,16 @@ enum BottomNavType {
     }
   }
 
-  Bindings get bindings {
+  String get page {
     switch (this) {
       case BottomNavType.today:
-        return HomeBinding();
+        return AppPages.keepUpToday;
       case BottomNavType.keepUpSoon:
-        return KeepUpSoonBinding();
+        return AppPages.keepUpSoon;
       case BottomNavType.contacts:
-        return KeepUpSoonBinding();
+        return '';
       case BottomNavType.groups:
-        return KeepUpSoonBinding();
+        return '';
     }
   }
 }

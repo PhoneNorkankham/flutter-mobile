@@ -23,7 +23,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
 
   FutureOr<void> _onGotoMain(_GotoMain event, Emitter<OnboardingState> emit) {
     emit(state.copyWith(
-      pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(AppPages.main, (route) => false),
+      pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(AppPages.home, (route) => false),
     ));
   }
 }

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:back_system/back_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -11,18 +14,28 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => Get.find<HomeBloc>()..add(const HomeEvent.initial()),
-      child: BlocListener<HomeBloc, HomeState>(
-        listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
-        listener: (context, state) {
-          final PageCommand? pageCommand = state.pageCommand;
-          if (pageCommand != null) {
-            pageCommandListeners(pageCommand);
-            Get.find<HomeBloc>().add(const HomeEvent.clearPageCommand());
-          }
-        },
-        child: const HomeView(),
+    return WillPopScope(
+      onWillPop: () {
+        if (Platform.isAndroid) {
+          BackSystem.moveTaskToBack();
+          return Future.value(false);
+        } else {
+          return Future.value(true);
+        }
+      },
+      child: BlocProvider(
+        create: (_) => Get.find<HomeBloc>()..add(const HomeEvent.initial()),
+        child: BlocListener<HomeBloc, HomeState>(
+          listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
+          listener: (context, state) {
+            final PageCommand? pageCommand = state.pageCommand;
+            if (pageCommand != null) {
+              pageCommandListeners(pageCommand);
+              Get.find<HomeBloc>().add(const HomeEvent.clearPageCommand());
+            }
+          },
+          child: const HomeView(),
+        ),
       ),
     );
   }
