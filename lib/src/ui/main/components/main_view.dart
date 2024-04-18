@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
+import 'package:keepup/src/ui/home/home_page.dart';
 import 'package:keepup/src/ui/main/components/bottom_navigation/app_bottom_navigation_bar.dart';
 import 'package:keepup/src/ui/main/interactor/main_bloc.dart';
 
@@ -33,14 +34,14 @@ class _MainViewState extends State<MainView> {
   }
 
   _createPage(BottomNavType currentPage, BuildContext context) {
-    // currentPage.bindings.dependencies();
+    currentPage.bindings.dependencies();
     switch (currentPage) {
       case BottomNavType.today:
         return pages.putIfAbsent(
           currentPage,
-          () => const SizedBox(),
+          () => const HomePage(),
         );
-      case BottomNavType.keepupSoon:
+      case BottomNavType.keepUpSoon:
         return pages.putIfAbsent(
           currentPage,
           () => const SizedBox(),

@@ -37,7 +37,13 @@ class LocaleKey {
 
   // Main
   static const String today = "today";
-  static const String keepupSoon = "keepupSoon";
+  static const String keepUpSoon = "keepUpSoon";
   static const String contacts = "contacts";
   static const String groups = "groups";
+
+  // Home Screen
+  static const String homeScreen = "homeScreen";
+  static const String hiNameKeepUpToday = "hiNameKeepUpToday";
+  static const String history = "history";
+  static const String notifications = "notifications";
 }

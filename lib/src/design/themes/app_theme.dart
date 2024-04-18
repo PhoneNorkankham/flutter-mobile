@@ -42,7 +42,7 @@ class AppTheme {
       highlightColor: AppColors.primary,
       indicatorColor: AppColors.primary,
       dividerColor: AppColors.darkBlue25,
-      scaffoldBackgroundColor: AppColors.grey250,
+      scaffoldBackgroundColor: AppColors.primary,
       cardTheme: AppCardTheme.darkThemeData(),
     );
   }
@@ -73,7 +73,7 @@ class AppTheme {
       highlightColor: AppColors.primary,
       indicatorColor: AppColors.primary,
       dividerColor: AppColors.darkBlue25,
-      scaffoldBackgroundColor: AppColors.grey250,
+      scaffoldBackgroundColor: AppColors.primary,
       cardTheme: AppCardTheme.lightThemeData(),
     );
   }

@@ -29,7 +29,11 @@ Map<String, String> enUs = {
   LocaleKey.loginForAdditionalFeatures: 'Login for additional features',
   LocaleKey.loginWith: 'Login with',
   LocaleKey.today: 'Today',
-  LocaleKey.keepupSoon: 'Keepup Soon',
+  LocaleKey.keepUpSoon: 'KeepUp Soon',
   LocaleKey.contacts: 'Contacts',
   LocaleKey.groups: 'Groups',
+  LocaleKey.homeScreen: 'Home Screen',
+  LocaleKey.hiNameKeepUpToday: 'Hi, @name KeepUp Today',
+  LocaleKey.history: 'History',
+  LocaleKey.notifications: 'Notifications',
 };

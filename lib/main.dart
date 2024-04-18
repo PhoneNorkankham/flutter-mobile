@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         enableLog: true,
-        initialRoute: AppPages.splash,
+        initialRoute: AppPages.main,
         getPages: AppPages.pages,
         locale: translationManager.locale,
         fallbackLocale: TranslationManager.fallbackLocaleUS,

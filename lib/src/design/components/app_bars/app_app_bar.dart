@@ -33,7 +33,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title?.let((self) => Text(
             self,
             style: titleTextStyle ??
-                context.appTextTheme.bold16.copyWith(
+                context.appTextTheme.bold18.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                 ),
           )),

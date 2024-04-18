@@ -1,10 +1,11 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/home/binding/home_binding.dart';
 import 'package:keepup/src/utils/app_assets.dart';
 
 enum BottomNavType {
   today,
-  keepupSoon,
+  keepUpSoon,
   contacts,
   groups;
 
@@ -12,8 +13,8 @@ enum BottomNavType {
     switch (this) {
       case BottomNavType.today:
         return LocaleKey.today.tr;
-      case BottomNavType.keepupSoon:
-        return LocaleKey.keepupSoon.tr;
+      case BottomNavType.keepUpSoon:
+        return LocaleKey.keepUpSoon.tr;
       case BottomNavType.contacts:
         return LocaleKey.contacts.tr;
       case BottomNavType.groups:
@@ -25,7 +26,7 @@ enum BottomNavType {
     switch (this) {
       case BottomNavType.today:
         return AppAssets.ic_filter_svg;
-      case BottomNavType.keepupSoon:
+      case BottomNavType.keepUpSoon:
         return AppAssets.ic_filter_svg;
       case BottomNavType.contacts:
         return AppAssets.ic_filter_svg;
@@ -34,16 +35,16 @@ enum BottomNavType {
     }
   }
 
-  // Bindings get bindings {
-  //   switch (this) {
-  //     case BottomNavType.today:
-  //       return HomeBinding();
-  //     case BottomNavType.keepupSoon:
-  //       return HomeBinding();
-  //     case BottomNavType.contacts:
-  //       return HomeBinding();
-  //     case BottomNavType.groups:
-  //       return HomeBinding();
-  //   }
-  // }
+  Bindings get bindings {
+    switch (this) {
+      case BottomNavType.today:
+        return HomeBinding();
+      case BottomNavType.keepUpSoon:
+        return HomeBinding();
+      case BottomNavType.contacts:
+        return HomeBinding();
+      case BottomNavType.groups:
+        return HomeBinding();
+    }
+  }
 }
