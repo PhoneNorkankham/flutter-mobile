@@ -8,11 +8,11 @@ class AppBottomNavigationTheme {
     AppTextTheme appTextTheme,
   ) {
     return BottomNavigationBarThemeData(
-      backgroundColor: colorScheme.secondary,
+      backgroundColor: colorScheme.onPrimary,
       showSelectedLabels: true,
       showUnselectedLabels: true,
-      selectedItemColor: AppColors.white,
-      unselectedItemColor: AppColors.white,
+      selectedItemColor: AppColors.selectedItemColor,
+      unselectedItemColor: AppColors.unselectedItemColor,
       type: BottomNavigationBarType.fixed,
       selectedLabelStyle: appTextTheme.medium10,
       unselectedLabelStyle: appTextTheme.medium10,

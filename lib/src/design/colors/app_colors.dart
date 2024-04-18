@@ -44,4 +44,7 @@ class AppColors {
   static const grey20 = Color(0xFFFFF9F9);
   static const lightTeal = Color(0xFFE4E8FF);
   static const peach = Color(0xFFFF7979);
+
+  static const selectedItemColor = Color(0xFF346DF6);
+  static const unselectedItemColor = Color(0xFF8E8E93);
 }

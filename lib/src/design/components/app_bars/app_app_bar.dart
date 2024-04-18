@@ -15,7 +15,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.title,
     this.actions,
-    this.implyLeading = true,
+    this.implyLeading = false,
     this.titleSpacing = 27,
     this.titleTextStyle,
     this.onBackPressed,

@@ -20,18 +20,21 @@ mixin _$OnboardingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() gotoMain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? gotoMain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? gotoMain,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$OnboardingEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_GotoMain value) gotoMain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_GotoMain value)? gotoMain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_GotoMain value)? gotoMain,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() gotoMain,
   }) {
     return initial();
   }
@@ -122,6 +129,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? gotoMain,
   }) {
     return initial?.call();
   }
@@ -131,6 +139,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? gotoMain,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -144,6 +153,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_GotoMain value) gotoMain,
   }) {
     return initial(this);
   }
@@ -153,6 +163,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_GotoMain value)? gotoMain,
   }) {
     return initial?.call(this);
   }
@@ -162,6 +173,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_GotoMain value)? gotoMain,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -215,6 +227,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() gotoMain,
   }) {
     return clearPageCommand();
   }
@@ -224,6 +237,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? gotoMain,
   }) {
     return clearPageCommand?.call();
   }
@@ -233,6 +247,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? gotoMain,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -246,6 +261,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_GotoMain value) gotoMain,
   }) {
     return clearPageCommand(this);
   }
@@ -255,6 +271,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_GotoMain value)? gotoMain,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -264,6 +281,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_GotoMain value)? gotoMain,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -275,6 +293,114 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements OnboardingEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
+}
+
+/// @nodoc
+abstract class _$$_GotoMainCopyWith<$Res> {
+  factory _$$_GotoMainCopyWith(
+          _$_GotoMain value, $Res Function(_$_GotoMain) then) =
+      __$$_GotoMainCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GotoMainCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$_GotoMain>
+    implements _$$_GotoMainCopyWith<$Res> {
+  __$$_GotoMainCopyWithImpl(
+      _$_GotoMain _value, $Res Function(_$_GotoMain) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_GotoMain implements _GotoMain {
+  const _$_GotoMain();
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.gotoMain()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GotoMain);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() gotoMain,
+  }) {
+    return gotoMain();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? gotoMain,
+  }) {
+    return gotoMain?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? gotoMain,
+    required TResult orElse(),
+  }) {
+    if (gotoMain != null) {
+      return gotoMain();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_GotoMain value) gotoMain,
+  }) {
+    return gotoMain(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_GotoMain value)? gotoMain,
+  }) {
+    return gotoMain?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_GotoMain value)? gotoMain,
+    required TResult orElse(),
+  }) {
+    if (gotoMain != null) {
+      return gotoMain(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GotoMain implements OnboardingEvent {
+  const factory _GotoMain() = _$_GotoMain;
 }
 
 /// @nodoc

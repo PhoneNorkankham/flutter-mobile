@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
+import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
@@ -32,23 +32,8 @@ class OnboardingView extends StatelessWidget {
       success: Scaffold(
         backgroundColor: AppColors.primary,
         appBar: AppAppBar(
-          implyLeading: false,
           title: LocaleKey.onboarding.tr,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(
-                AppAssets.ic_filter_svg,
-                colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.primary,
-                  BlendMode.srcIn,
-                ),
-                width: 20,
-                height: 20,
-                fit: BoxFit.scaleDown,
-              ),
-            )
-          ],
+          actions: const [MenuButton()],
         ),
         body: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 20),
