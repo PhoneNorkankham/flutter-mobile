@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/ui/home/home_page.dart';
+import 'package:keepup/src/ui/keep_up_soon/keep_up_soon_page.dart';
 import 'package:keepup/src/ui/main/components/bottom_navigation/app_bottom_navigation_bar.dart';
 import 'package:keepup/src/ui/main/interactor/main_bloc.dart';
 
@@ -44,7 +45,7 @@ class _MainViewState extends State<MainView> {
       case BottomNavType.keepUpSoon:
         return pages.putIfAbsent(
           currentPage,
-          () => const SizedBox(),
+          () => const KeepUpSoonPage(),
         );
       case BottomNavType.contacts:
         return pages.putIfAbsent(

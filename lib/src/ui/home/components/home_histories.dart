@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/onboarding/components/group_item.dart';
 
 class HomeHistories extends StatelessWidget {
   const HomeHistories({super.key});
@@ -38,7 +38,15 @@ class HomeHistories extends StatelessWidget {
         const SizedBox(height: 15),
         ...histories.map((e) => Padding(
               padding: const EdgeInsets.symmetric(vertical: 3.0),
-              child: GroupItem(title: e),
+              child: KeepUpItem(
+                name: e,
+                action: Text(
+                  '3 day ago',
+                  style: context.appTextTheme.bold16.copyWith(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
+                ),
+              ),
             )),
       ],
     );

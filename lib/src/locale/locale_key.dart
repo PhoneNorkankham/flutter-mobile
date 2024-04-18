@@ -23,6 +23,9 @@ class LocaleKey {
   static const String error = "error";
   static const String somethingWentWrong = "somethingWentWrong";
 
+  // AppBar
+  static const String back = "back";
+
   // Splash
   static const String getStarted = "getStarted";
 
@@ -46,4 +49,15 @@ class LocaleKey {
   static const String hiNameKeepUpToday = "hiNameKeepUpToday";
   static const String history = "history";
   static const String notifications = "notifications";
+
+  // KeepUp Today
+  static const String keepUpToday = "keepUpToday";
+  static const String keepUpTodayDescription = "keepUpTodayDescription";
+  static const String allSet = "allSet";
+  static const String keepUp = "keepUp";
+
+  // KeepUp Soon
+  static const String individual = "individual";
+  static const String inAWeek = "inAWeek";
+  static const String inAMonth = "inAMonth";
 }

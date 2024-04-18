@@ -28,7 +28,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       centerTitle: true,
       actions: actions,
-      leadingWidth: implyLeading ? 60 : 0,
+      leadingWidth: implyLeading ? 100 : 0,
       titleSpacing: implyLeading ? 0 : titleSpacing,
       title: title?.let((self) => Text(
             self,

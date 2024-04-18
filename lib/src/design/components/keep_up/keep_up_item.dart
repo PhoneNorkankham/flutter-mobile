@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 
-class GroupItem extends StatelessWidget {
-  final String title;
+class KeepUpItem extends StatelessWidget {
+  final String name;
+  final String avatar;
+  final Widget? action;
 
-  const GroupItem({super.key, required this.title});
+  const KeepUpItem({
+    super.key,
+    required this.name,
+    this.avatar = '',
+    this.action,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +29,14 @@ class GroupItem extends StatelessWidget {
           const SizedBox(width: 16),
           Expanded(
             child: Text(
-              title,
+              name,
               style: context.appTextTheme.bold16.copyWith(
                 color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
           ),
           const SizedBox(width: 16),
-          Icon(Icons.add_circle, size: 24, color: Theme.of(context).colorScheme.onPrimary),
+          if (action != null) action!,
         ],
       ),
     );

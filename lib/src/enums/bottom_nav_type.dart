@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/home/binding/home_binding.dart';
+import 'package:keepup/src/ui/keep_up_soon/binding/keep_up_soon_binding.dart';
 import 'package:keepup/src/utils/app_assets.dart';
 
 enum BottomNavType {
@@ -40,11 +41,11 @@ enum BottomNavType {
       case BottomNavType.today:
         return HomeBinding();
       case BottomNavType.keepUpSoon:
-        return HomeBinding();
+        return KeepUpSoonBinding();
       case BottomNavType.contacts:
-        return HomeBinding();
+        return KeepUpSoonBinding();
       case BottomNavType.groups:
-        return HomeBinding();
+        return KeepUpSoonBinding();
     }
   }
 }

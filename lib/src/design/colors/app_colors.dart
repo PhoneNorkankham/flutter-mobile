@@ -47,4 +47,6 @@ class AppColors {
 
   static const selectedItemColor = Color(0xFF346DF6);
   static const unselectedItemColor = Color(0xFF8E8E93);
+
+  static const green = Color(0xFF86C144);
 }
