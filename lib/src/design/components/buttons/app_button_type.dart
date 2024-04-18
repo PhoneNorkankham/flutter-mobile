@@ -9,7 +9,8 @@ enum AppButtonType {
   primary,
   whitePrimary,
   outlined,
-  keepUp,
+  greenKeepUp,
+  whiteKeepUp,
 
   // Height 70
   getStarted;
@@ -38,10 +39,18 @@ enum AppButtonType {
       case outlined:
         backgroundColor = AppColors.white;
         break;
-      case keepUp:
+      case greenKeepUp:
         padding = EdgeInsets.zero;
         backgroundColor = AppColors.green;
         foregroundColor = AppColors.white;
+        borderRadius = 10;
+        padding = const EdgeInsets.symmetric(horizontal: 8);
+        textStyle = textTheme.medium16.copyWith(color: foregroundColor);
+        break;
+      case whiteKeepUp:
+        padding = EdgeInsets.zero;
+        backgroundColor = AppColors.white;
+        foregroundColor = AppColors.green;
         borderRadius = 10;
         padding = const EdgeInsets.symmetric(horizontal: 8);
         textStyle = textTheme.medium16.copyWith(color: foregroundColor);

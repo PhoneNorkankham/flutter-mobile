@@ -49,4 +49,10 @@ class LocaleKey {
   static const String keepUpTodayDescription = "keepUpTodayDescription";
   static const String allSet = "allSet";
   static const String keepUp = "keepUp";
+
+  // KeepUp Soon
+  static const String keepUpSoon = "keepUpSoon";
+  static const String individual = "individual";
+  static const String inAWeek = "inAWeek";
+  static const String inAMonth = "inAMonth";
 }

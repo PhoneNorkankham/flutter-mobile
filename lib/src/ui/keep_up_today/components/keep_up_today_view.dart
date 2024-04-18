@@ -53,7 +53,7 @@ class KeepUpTodayView extends StatelessWidget {
                 child: SizedBox(
                   width: 110,
                   child: AppButton(
-                    buttonType: AppButtonType.keepUp,
+                    buttonType: AppButtonType.greenKeepUp,
                     title: LocaleKey.keepUp.tr,
                   ),
                 ),
@@ -69,7 +69,7 @@ class KeepUpTodayView extends StatelessWidget {
                 child: SizedBox(
                   width: 110,
                   child: AppButton(
-                    buttonType: AppButtonType.keepUp,
+                    buttonType: AppButtonType.greenKeepUp,
                     title: LocaleKey.keepUp.tr,
                   ),
                 ),

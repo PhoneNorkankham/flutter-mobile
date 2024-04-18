@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/keep_up_soon/binding/keep_up_soon_binding.dart';
 import 'package:keepup/src/utils/app_assets.dart';
 
 enum BottomNavType {
@@ -34,16 +35,16 @@ enum BottomNavType {
     }
   }
 
-  // Bindings get bindings {
-  //   switch (this) {
-  //     case BottomNavType.today:
-  //       return HomeBinding();
-  //     case BottomNavType.keepupSoon:
-  //       return HomeBinding();
-  //     case BottomNavType.contacts:
-  //       return HomeBinding();
-  //     case BottomNavType.groups:
-  //       return HomeBinding();
-  //   }
-  // }
+  Bindings get bindings {
+    switch (this) {
+      case BottomNavType.today:
+        return KeepUpSoonBinding();
+      case BottomNavType.keepupSoon:
+        return KeepUpSoonBinding();
+      case BottomNavType.contacts:
+        return KeepUpSoonBinding();
+      case BottomNavType.groups:
+        return KeepUpSoonBinding();
+    }
+  }
 }

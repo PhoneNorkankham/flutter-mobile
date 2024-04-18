@@ -37,4 +37,8 @@ Map<String, String> enUs = {
   LocaleKey.keepUpTodayDescription: 'Please keep up the contacts which is expiring today!',
   LocaleKey.allSet: 'All Set',
   LocaleKey.keepUp: 'KeepUp',
+  LocaleKey.keepUpSoon: 'KeepUp Soon',
+  LocaleKey.individual: 'Individual',
+  LocaleKey.inAWeek: 'In a week',
+  LocaleKey.inAMonth: 'In a month',
 };
