@@ -4,10 +4,10 @@ import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
+import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
-import 'package:keepup/src/ui/onboarding/components/group_item.dart';
 import 'package:keepup/src/ui/onboarding/components/social_item.dart';
 import 'package:keepup/src/utils/app_assets.dart';
 
@@ -61,7 +61,14 @@ class OnboardingView extends StatelessWidget {
               ListView.separated(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) => GroupItem(title: groups.elementAt(index)),
+                itemBuilder: (context, index) => KeepUpItem(
+                  name: groups.elementAt(index),
+                  action: Icon(
+                    Icons.add_circle,
+                    size: 24,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
+                ),
                 separatorBuilder: (context, index) => const SizedBox(height: 18),
                 itemCount: groups.length,
               ),

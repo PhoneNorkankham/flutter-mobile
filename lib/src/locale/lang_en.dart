@@ -20,6 +20,7 @@ Map<String, String> enUs = {
   LocaleKey.alertSendTimeout: 'A problem has occurred. Please try again in a few minutes.',
   LocaleKey.alertReceiveTimeout: 'A problem has occurred. Please try again in a few minutes.',
   LocaleKey.alertErrorServer: 'An unexpected error occurred. please try again.',
+  LocaleKey.back: 'Back',
   LocaleKey.getStarted: 'Get Started',
   LocaleKey.onboarding: 'Onboarding',
   LocaleKey.addContactsToGroupToKeepupEasily: 'Add contacts to Group to keepup easily!',
@@ -32,4 +33,8 @@ Map<String, String> enUs = {
   LocaleKey.keepupSoon: 'Keepup Soon',
   LocaleKey.contacts: 'Contacts',
   LocaleKey.groups: 'Groups',
+  LocaleKey.keepUpToday: 'KeepUp Today',
+  LocaleKey.keepUpTodayDescription: 'Please keep up the contacts which is expiring today!',
+  LocaleKey.allSet: 'All Set',
+  LocaleKey.keepUp: 'KeepUp',
 };
