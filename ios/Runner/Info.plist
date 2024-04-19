@@ -52,7 +52,6 @@
     </dict>
     <key>io.flutter.embedded_views_preview</key>
     <true/>
-	<false/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>This app needs access to location.</string>
     <key>NSLocationAlwaysUsageDescription</key>
