@@ -21,7 +21,9 @@ class AppBottomNavigationBarItem extends StatelessWidget {
     return Expanded(
       child: Material(
         child: InkWell(
-          onTap: () => Get.find<NavigatorManager>().navigateToPage(type.page),
+          onTap: isSelected || type.page.isEmpty
+              ? null
+              : () => Get.find<NavigatorManager>().navigateToPage(type.page),
           highlightColor: Colors.transparent,
           child: Column(
             mainAxisSize: MainAxisSize.min,

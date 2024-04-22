@@ -26,6 +26,15 @@ class LocaleKey {
   // AppBar
   static const String back = "back";
 
+  // Components
+  static const String search = "search";
+  static const String details = "details";
+  static const String delete = "delete";
+  static const String setInterval = "setInterval";
+  static const String every = "every";
+  static const String save = "save";
+  static const String cancel = "cancel";
+
   // Splash
   static const String getStarted = "getStarted";
 
@@ -60,4 +69,12 @@ class LocaleKey {
   static const String individual = "individual";
   static const String inAWeek = "inAWeek";
   static const String inAMonth = "inAMonth";
+
+  // Contact Detail
+  static const String newContact = "newContact";
+  static const String contactDetail = "contactDetail";
+  static const String name = "name";
+  static const String email = "email";
+  static const String phoneNo = "phoneNo";
+  static const String dateOfBirth = "dateOfBirth";
 }

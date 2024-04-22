@@ -12,6 +12,9 @@ enum AppButtonType {
   greenKeepUp,
   whiteKeepUp,
 
+  // Height 50
+  whiteCircle,
+
   // Height 70
   getStarted;
 
@@ -22,10 +25,10 @@ enum AppButtonType {
         isOutlined ? OutlinedButtonTheme.of(context).style : ElevatedButtonTheme.of(context).style;
     final textTheme = context.appTextTheme;
     Color backgroundColor = AppColors.primary;
-    Color? foregroundColor;
-    Size? minimumSize = const Size.fromHeight(40);
+    Color foregroundColor = AppColors.white;
+    Size minimumSize = const Size.fromHeight(40);
     double borderRadius = 10;
-    TextStyle? textStyle;
+    TextStyle textStyle = textTheme.medium16.copyWith(color: foregroundColor);
     EdgeInsets? padding;
 
     switch (this) {
@@ -34,26 +37,31 @@ enum AppButtonType {
         break;
       case whitePrimary:
         padding = EdgeInsets.zero;
-        backgroundColor = AppColors.white;
         break;
       case outlined:
         backgroundColor = AppColors.white;
+        foregroundColor = AppColors.primary;
         break;
       case greenKeepUp:
         padding = EdgeInsets.zero;
-        backgroundColor = AppColors.green;
-        foregroundColor = AppColors.white;
+        backgroundColor = AppColors.lightGreen;
         borderRadius = 10;
         padding = const EdgeInsets.symmetric(horizontal: 8);
-        textStyle = textTheme.medium16.copyWith(color: foregroundColor);
         break;
       case whiteKeepUp:
         padding = EdgeInsets.zero;
         backgroundColor = AppColors.white;
-        foregroundColor = AppColors.green;
+        foregroundColor = AppColors.lightGreen;
         borderRadius = 10;
         padding = const EdgeInsets.symmetric(horizontal: 8);
-        textStyle = textTheme.medium16.copyWith(color: foregroundColor);
+        break;
+      case whiteCircle:
+        padding = EdgeInsets.zero;
+        backgroundColor = AppColors.white;
+        foregroundColor = AppColors.primary;
+        borderRadius = 50;
+        minimumSize = const Size.fromRadius(25);
+        padding = const EdgeInsets.symmetric(horizontal: 8);
         break;
       case getStarted:
         backgroundColor = AppColors.white;
@@ -65,13 +73,14 @@ enum AppButtonType {
         break;
     }
     return style?.copyWith(
-      textStyle: MaterialStatePropertyAll(textStyle?.copyWith(height: 1)),
+      textStyle: MaterialStatePropertyAll(textStyle.copyWith(height: 1)),
       foregroundColor: MaterialStatePropertyAll(foregroundColor),
       backgroundColor: backgroundColor.let((self) => MaterialStatePropertyAll(self)),
       minimumSize: MaterialStatePropertyAll(minimumSize),
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius ?? borderRadius)),
       ),
+      side: MaterialStatePropertyAll(BorderSide(color: foregroundColor)),
       padding: MaterialStatePropertyAll(padding),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       // To bypass Flutter's complex logic that reduces [padding]'s vertical value
