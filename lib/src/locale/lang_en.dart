@@ -21,6 +21,8 @@ Map<String, String> enUs = {
   LocaleKey.alertReceiveTimeout: 'A problem has occurred. Please try again in a few minutes.',
   LocaleKey.alertErrorServer: 'An unexpected error occurred. please try again.',
   LocaleKey.back: 'Back',
+  LocaleKey.search: 'Search',
+  LocaleKey.details: 'Details',
   LocaleKey.getStarted: 'Get Started',
   LocaleKey.onboarding: 'Onboarding',
   LocaleKey.addContactsToGroupToKeepupEasily: 'Add contacts to Group to keepup easily!',
@@ -44,4 +46,5 @@ Map<String, String> enUs = {
   LocaleKey.individual: 'Individual',
   LocaleKey.inAWeek: 'In a week',
   LocaleKey.inAMonth: 'In a month',
+  LocaleKey.addContact: 'Add contact',
 };

@@ -12,6 +12,9 @@ enum AppButtonType {
   greenKeepUp,
   whiteKeepUp,
 
+  // Height 50
+  whiteCircle,
+
   // Height 70
   getStarted;
 
@@ -52,6 +55,15 @@ enum AppButtonType {
         backgroundColor = AppColors.white;
         foregroundColor = AppColors.green;
         borderRadius = 10;
+        padding = const EdgeInsets.symmetric(horizontal: 8);
+        textStyle = textTheme.medium16.copyWith(color: foregroundColor);
+        break;
+      case whiteCircle:
+        padding = EdgeInsets.zero;
+        backgroundColor = AppColors.white;
+        foregroundColor = AppColors.primary;
+        borderRadius = 50;
+        minimumSize = const Size.fromRadius(25);
         padding = const EdgeInsets.symmetric(horizontal: 8);
         textStyle = textTheme.medium16.copyWith(color: foregroundColor);
         break;
