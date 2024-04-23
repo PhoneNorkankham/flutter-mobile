@@ -8,7 +8,7 @@ class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () => Scaffold.of(context).openEndDrawer(),
       icon: SvgPicture.asset(
         AppAssets.ic_filter_svg,
         colorFilter: ColorFilter.mode(

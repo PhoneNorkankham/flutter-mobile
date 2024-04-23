@@ -44,6 +44,12 @@ class AppTheme {
       dividerColor: AppColors.darkBlue25,
       scaffoldBackgroundColor: AppColors.primary,
       cardTheme: AppCardTheme.darkThemeData(),
+      drawerTheme: const DrawerThemeData(
+        backgroundColor: Color(0xFF2A2929),
+        endShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.zero,
+        ),
+      ),
     );
   }
 
@@ -75,6 +81,12 @@ class AppTheme {
       dividerColor: AppColors.darkBlue25,
       scaffoldBackgroundColor: AppColors.primary,
       cardTheme: AppCardTheme.lightThemeData(),
+      drawerTheme: const DrawerThemeData(
+        backgroundColor: Color(0xFF0A84FF),
+        endShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.zero,
+        ),
+      ),
     );
   }
 }

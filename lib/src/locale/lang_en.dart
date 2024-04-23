@@ -44,4 +44,11 @@ Map<String, String> enUs = {
   LocaleKey.individual: 'Individual',
   LocaleKey.inAWeek: 'In a week',
   LocaleKey.inAMonth: 'In a month',
+  LocaleKey.socialLogin: "Social Login",
+  LocaleKey.todayStatistics: "Today Statistics",
+  LocaleKey.manageMessages: "Manage Messages",
+  LocaleKey.payments: "Payments",
+  LocaleKey.termsAndPolicy: "Terms and Policy",
+  LocaleKey.about: "About",
+  LocaleKey.logout: "Logout",
 };
