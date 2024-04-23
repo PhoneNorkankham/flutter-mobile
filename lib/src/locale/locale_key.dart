@@ -26,6 +26,10 @@ class LocaleKey {
   // AppBar
   static const String back = "back";
 
+  // Components
+  static const String search = "search";
+  static const String details = "details";
+
   // Splash
   static const String getStarted = "getStarted";
 
@@ -60,4 +64,7 @@ class LocaleKey {
   static const String individual = "individual";
   static const String inAWeek = "inAWeek";
   static const String inAMonth = "inAMonth";
+
+  // Groups
+  static const String addGroup = "addGroup";
 }

@@ -44,7 +44,7 @@ enum BottomNavType {
       case BottomNavType.contacts:
         return '';
       case BottomNavType.groups:
-        return '';
+        return AppPages.groups;
     }
   }
 }
