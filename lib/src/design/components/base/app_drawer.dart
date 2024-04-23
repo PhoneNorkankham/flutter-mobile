@@ -8,11 +8,13 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double topPadding = MediaQuery.viewPaddingOf(context).top;
+    final double bottomPadding = MediaQuery.viewPaddingOf(context).bottom;
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
         children: [
-          const SafeArea(child: SizedBox(height: 46)),
+          const SizedBox(height: 60),
           const AppCircleAvatar(url: '', radius: 35),
           const SizedBox(height: 10),
           Text(
@@ -22,7 +24,7 @@ class AppDrawer extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          const SafeArea(child: SizedBox(height: 12)),
+          const SizedBox(height: 40),
           ...AppDrawerType.values.map((e) => ListTile(
                 onTap: () {},
                 leading: Icon(e.icon, color: Theme.of(context).colorScheme.onPrimary),
