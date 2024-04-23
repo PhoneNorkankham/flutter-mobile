@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:keepup/src/ui/group_detail/binding/group_detail_binding.dart';
+import 'package:keepup/src/ui/group_detail/group_detail_page.dart';
 import 'package:keepup/src/ui/home/binding/home_binding.dart';
 import 'package:keepup/src/ui/home/home_page.dart';
 import 'package:keepup/src/ui/keep_up_soon/binding/keep_up_soon_binding.dart';
@@ -17,6 +19,7 @@ class AppPages {
   static const String home = _Paths.home;
   static const String keepUpToday = _Paths.keepUpToday;
   static const String keepUpSoon = _Paths.keepUpSoon;
+  static const String groupDetail = _Paths.groupDetail;
 
   static final pages = [
     GetPage(
@@ -46,6 +49,12 @@ class AppPages {
       binding: KeepUpSoonBinding(),
       transition: Transition.noTransition,
     ),
+    GetPage(
+      name: _Paths.groupDetail,
+      page: () => const GroupDetailPage(),
+      binding: GroupDetailBinding(),
+      transition: Transition.noTransition,
+    ),
   ];
 }
 
@@ -55,4 +64,5 @@ abstract class _Paths {
   static const String home = "/home";
   static const String keepUpToday = "/keepUpToday";
   static const String keepUpSoon = "/keepUpSoon";
+  static const String groupDetail = "/groupDetail";
 }
