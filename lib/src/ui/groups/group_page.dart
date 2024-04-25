@@ -18,8 +18,8 @@ class GroupPage extends StatelessWidget {
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            pageCommandListeners(pageCommand);
             Get.find<GroupBloc>().add(const GroupEvent.clearPageCommand());
+            pageCommandListeners(pageCommand);
           }
         },
         child: const GroupView(),
