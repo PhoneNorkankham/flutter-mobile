@@ -18,8 +18,8 @@ class KeepUpSoonPage extends StatelessWidget {
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            pageCommandListeners(pageCommand);
             Get.find<KeepUpSoonBloc>().add(const KeepUpSoonEvent.clearPageCommand());
+            pageCommandListeners(pageCommand);
           }
         },
         child: const KeepUpSoonView(),

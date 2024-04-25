@@ -18,8 +18,8 @@ class KeepUpTodayPage extends StatelessWidget {
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            pageCommandListeners(pageCommand);
             Get.find<KeepUpTodayBloc>().add(const KeepUpTodayEvent.clearPageCommand());
+            pageCommandListeners(pageCommand);
           }
         },
         child: const KeepUpTodayView(),

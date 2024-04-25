@@ -18,8 +18,8 @@ class ContactDetailPage extends StatelessWidget {
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            pageCommandListeners(pageCommand);
             Get.find<ContactDetailBloc>().add(const ContactDetailEvent.clearPageCommand());
+            pageCommandListeners(pageCommand);
           }
         },
         child: const ContactDetailView(),
