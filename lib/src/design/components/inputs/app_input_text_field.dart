@@ -18,7 +18,7 @@ class AppInputTextField extends StatelessWidget {
   final bool? readOnly;
   final TextInputType? textInputType;
   final List<TextInputFormatter>? inputFormatters;
-  final int? maxLines;
+  final int maxLines;
   final int? maxLength;
   final bool autoFocus;
   final FocusNode? focusNode;
@@ -53,7 +53,7 @@ class AppInputTextField extends StatelessWidget {
     this.readOnly,
     this.textInputType,
     this.inputFormatters,
-    this.maxLines,
+    this.maxLines = 1,
     this.maxLength,
     this.autoFocus = false,
     this.focusNode,
@@ -96,7 +96,7 @@ class AppInputTextField extends StatelessWidget {
       focusNode: focusNode,
       readOnly: readOnly ?? false,
       decoration: decoration ?? _inputDecoration(context),
-      style: textStyle ?? context.appTextTheme.bold16.copyWith(overflow: TextOverflow.ellipsis),
+      style: textStyle ?? context.appTextTheme.medium14,
       maxLines: maxLines,
       maxLength: maxLength,
       textInputAction: textInputAction,
@@ -112,6 +112,7 @@ class AppInputTextField extends StatelessWidget {
       inputFormatters: inputFormatters,
       textAlign: textAlign,
       validator: validator,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
     );
   }
 }
