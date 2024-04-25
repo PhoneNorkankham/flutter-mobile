@@ -51,6 +51,7 @@ Map<String, String> enUs = {
   LocaleKey.individual: 'Individual',
   LocaleKey.inAWeek: 'In a week',
   LocaleKey.inAMonth: 'In a month',
+  LocaleKey.addContact: 'Add contact',
   LocaleKey.newContact: 'New Contact',
   LocaleKey.contactDetail: 'Contact Detail',
   LocaleKey.name: 'Name',

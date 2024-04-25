@@ -42,7 +42,7 @@ enum BottomNavType {
       case BottomNavType.keepUpSoon:
         return AppPages.keepUpSoon;
       case BottomNavType.contacts:
-        return '';
+        return AppPages.contacts;
       case BottomNavType.groups:
         return '';
     }

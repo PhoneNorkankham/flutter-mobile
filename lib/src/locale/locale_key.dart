@@ -70,6 +70,9 @@ class LocaleKey {
   static const String inAWeek = "inAWeek";
   static const String inAMonth = "inAMonth";
 
+  // Contacts
+  static const String addContact = "addContact";
+
   // Contact Detail
   static const String newContact = "newContact";
   static const String contactDetail = "contactDetail";
