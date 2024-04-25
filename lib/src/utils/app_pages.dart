@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:keepup/src/ui/contact_detail/binding/contact_detail_binding.dart';
+import 'package:keepup/src/ui/contact_detail/contact_detail_page.dart';
 import 'package:keepup/src/ui/contacts/binding/contact_binding.dart';
 import 'package:keepup/src/ui/contacts/contact_page.dart';
 import 'package:keepup/src/ui/home/binding/home_binding.dart';
@@ -20,6 +22,7 @@ class AppPages {
   static const String keepUpToday = _Paths.keepUpToday;
   static const String keepUpSoon = _Paths.keepUpSoon;
   static const String contacts = _Paths.contacts;
+  static const String contactDetail = _Paths.contactDetail;
 
   static final pages = [
     GetPage(
@@ -55,6 +58,12 @@ class AppPages {
       binding: ContactBinding(),
       transition: Transition.noTransition,
     ),
+    GetPage(
+      name: _Paths.contactDetail,
+      page: () => const ContactDetailPage(),
+      binding: ContactDetailBinding(),
+      transition: Transition.noTransition,
+    ),
   ];
 }
 
@@ -65,4 +74,5 @@ abstract class _Paths {
   static const String keepUpToday = "/keepUpToday";
   static const String keepUpSoon = "/keepUpSoon";
   static const String contacts = "/contacts";
+  static const String contactDetail = "/contactDetail";
 }

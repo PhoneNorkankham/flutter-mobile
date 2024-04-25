@@ -21,9 +21,9 @@ class AppInputTheme {
       focusedErrorBorder: border.copyWith(
         borderSide: const BorderSide(color: AppColors.error),
       ),
-      hintStyle: appTextTheme.medium16.copyWith(color: AppColors.grey600),
+      hintStyle: appTextTheme.medium14.copyWith(color: AppColors.grey600),
       errorStyle: appTextTheme.medium12.copyWith(color: AppColors.error),
-      contentPadding: const EdgeInsets.all(12).copyWith(bottom: 3),
+      contentPadding: const EdgeInsets.all(12),
       suffixIconColor: AppColors.primary,
     );
   }
