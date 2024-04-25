@@ -70,6 +70,29 @@ class LocaleKey {
   static const String inAWeek = "inAWeek";
   static const String inAMonth = "inAMonth";
 
+  // App Drawer
+  static const String socialLogin = "socialLogin";
+  static const String todayStatistics = "todayStatistics";
+  static const String manageMessages = "manageMessages";
+  static const String payments = "payments";
+  static const String termsAndPolicy = "termsAndPolicy";
+  static const String about = "about";
+  static const String logout = "logout";
+
+  // Contacts
+  static const String addContact = "addContact";
+
+  // Contact Detail
+  static const String newContact = "newContact";
+  static const String contactDetail = "contactDetail";
+  static const String name = "name";
+  static const String email = "email";
+  static const String phoneNo = "phoneNo";
+  static const String dateOfBirth = "dateOfBirth";
+
+  // Groups
+  static const String addGroup = "addGroup";
+
   // Group Detail
   static const String newGroup = "newGroup";
   static const String groupDetail = "groupDetail";
