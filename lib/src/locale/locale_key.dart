@@ -26,6 +26,10 @@ class LocaleKey {
   // AppBar
   static const String back = "back";
 
+  // Components
+  static const String search = "search";
+  static const String details = "details";
+
   // Splash
   static const String getStarted = "getStarted";
 
@@ -69,4 +73,7 @@ class LocaleKey {
   static const String termsAndPolicy = "termsAndPolicy";
   static const String about = "about";
   static const String logout = "logout";
+
+  // Contacts
+  static const String addContact = "addContact";
 }
