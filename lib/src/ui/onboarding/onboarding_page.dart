@@ -19,8 +19,8 @@ class OnboardingPage extends StatelessWidget {
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            pageCommandListeners(pageCommand);
             Get.find<OnboardingBloc>().add(const OnboardingEvent.clearPageCommand());
+            pageCommandListeners(pageCommand);
           }
         },
         child: const OnboardingView(),

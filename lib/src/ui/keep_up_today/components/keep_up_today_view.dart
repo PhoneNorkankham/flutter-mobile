@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
+import 'package:keepup/src/design/components/base/app_drawer.dart';
 import 'package:keepup/src/design/components/bottom_navigation/app_bottom_navigation_bar.dart';
 import 'package:keepup/src/design/components/buttons/app_button.dart';
 import 'package:keepup/src/design/components/buttons/app_button_type.dart';
@@ -81,6 +82,7 @@ class KeepUpTodayView extends StatelessWidget {
           ),
         ),
       ),
+      endDrawer: const AppDrawer(),
       bottomNavigationBar: const AppBottomNavigationBar(selectedType: BottomNavType.today),
     );
   }

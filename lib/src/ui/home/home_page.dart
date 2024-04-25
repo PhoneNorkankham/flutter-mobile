@@ -30,8 +30,8 @@ class HomePage extends StatelessWidget {
           listener: (context, state) {
             final PageCommand? pageCommand = state.pageCommand;
             if (pageCommand != null) {
-              pageCommandListeners(pageCommand);
               Get.find<HomeBloc>().add(const HomeEvent.clearPageCommand());
+              pageCommandListeners(pageCommand);
             }
           },
           child: const HomeView(),
