@@ -92,4 +92,10 @@ class LocaleKey {
 
   // Groups
   static const String addGroup = "addGroup";
+
+  // Group Detail
+  static const String newGroup = "newGroup";
+  static const String groupDetail = "groupDetail";
+  static const String members = "members";
+  static const String addMember = "addMember";
 }

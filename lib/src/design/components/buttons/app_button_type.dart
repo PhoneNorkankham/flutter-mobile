@@ -62,23 +62,6 @@ enum AppButtonType {
         borderRadius = 50;
         minimumSize = const Size.fromRadius(25);
         padding = const EdgeInsets.symmetric(horizontal: 8);
-        break;
-      case whiteCircle:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.white;
-        foregroundColor = AppColors.primary;
-        borderRadius = 50;
-        minimumSize = const Size.fromRadius(25);
-        padding = const EdgeInsets.symmetric(horizontal: 8);
-        textStyle = textTheme.medium16.copyWith(color: foregroundColor);
-        break;
-      case whiteCircle:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.white;
-        foregroundColor = AppColors.primary;
-        borderRadius = 50;
-        minimumSize = const Size.fromRadius(25);
-        padding = const EdgeInsets.symmetric(horizontal: 8);
         textStyle = textTheme.medium16.copyWith(color: foregroundColor);
         break;
       case getStarted:
@@ -98,7 +81,9 @@ enum AppButtonType {
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius ?? borderRadius)),
       ),
-      side: MaterialStatePropertyAll(BorderSide(color: foregroundColor)),
+      side: MaterialStatePropertyAll(BorderSide(
+        color: isOutlined ? foregroundColor : Colors.transparent,
+      )),
       padding: MaterialStatePropertyAll(padding),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       // To bypass Flutter's complex logic that reduces [padding]'s vertical value

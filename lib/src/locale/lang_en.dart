@@ -66,4 +66,8 @@ Map<String, String> enUs = {
   LocaleKey.phoneNo: 'Phone No',
   LocaleKey.dateOfBirth: 'Date Of Birth',
   LocaleKey.addGroup: 'Add Group',
+  LocaleKey.newGroup: 'New Group',
+  LocaleKey.groupDetail: 'Group Detail',
+  LocaleKey.members: 'Members',
+  LocaleKey.addMember: 'Add member',
 };

@@ -3,6 +3,8 @@ import 'package:keepup/src/ui/contact_detail/binding/contact_detail_binding.dart
 import 'package:keepup/src/ui/contact_detail/contact_detail_page.dart';
 import 'package:keepup/src/ui/contacts/binding/contact_binding.dart';
 import 'package:keepup/src/ui/contacts/contact_page.dart';
+import 'package:keepup/src/ui/group_detail/binding/group_detail_binding.dart';
+import 'package:keepup/src/ui/group_detail/group_detail_page.dart';
 import 'package:keepup/src/ui/groups/binding/group_binding.dart';
 import 'package:keepup/src/ui/groups/group_page.dart';
 import 'package:keepup/src/ui/home/binding/home_binding.dart';
@@ -26,6 +28,7 @@ class AppPages {
   static const String contacts = _Paths.contacts;
   static const String contactDetail = _Paths.contactDetail;
   static const String groups = _Paths.groups;
+  static const String groupDetail = _Paths.groupDetail;
 
   static final pages = [
     GetPage(
@@ -73,6 +76,12 @@ class AppPages {
       binding: GroupBinding(),
       transition: Transition.noTransition,
     ),
+    GetPage(
+      name: _Paths.groupDetail,
+      page: () => const GroupDetailPage(),
+      binding: GroupDetailBinding(),
+      transition: Transition.noTransition,
+    ),
   ];
 }
 
@@ -85,4 +94,5 @@ abstract class _Paths {
   static const String contacts = "/contacts";
   static const String contactDetail = "/contactDetail";
   static const String groups = "/groups";
+  static const String groupDetail = "/groupDetail";
 }
