@@ -89,4 +89,7 @@ class LocaleKey {
   static const String email = "email";
   static const String phoneNo = "phoneNo";
   static const String dateOfBirth = "dateOfBirth";
+
+  // Groups
+  static const String addGroup = "addGroup";
 }
