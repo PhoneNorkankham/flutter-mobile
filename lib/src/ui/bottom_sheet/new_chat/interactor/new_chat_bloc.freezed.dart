@@ -20,18 +20,21 @@ mixin _$NewChatEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(NewChatCategoryType type) onCategoryPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(NewChatCategoryType type)? onCategoryPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$NewChatEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(NewChatCategoryType type) onCategoryPressed,
   }) {
     return initial();
   }
@@ -122,6 +129,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
   }) {
     return initial?.call();
   }
@@ -131,6 +139,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(NewChatCategoryType type)? onCategoryPressed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -144,6 +153,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
   }) {
     return initial(this);
   }
@@ -153,6 +163,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
   }) {
     return initial?.call(this);
   }
@@ -162,6 +173,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -215,6 +227,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(NewChatCategoryType type) onCategoryPressed,
   }) {
     return clearPageCommand();
   }
@@ -224,6 +237,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
   }) {
     return clearPageCommand?.call();
   }
@@ -233,6 +247,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(NewChatCategoryType type)? onCategoryPressed,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -246,6 +261,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
   }) {
     return clearPageCommand(this);
   }
@@ -255,6 +271,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -264,6 +281,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -275,6 +293,147 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements NewChatEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
+}
+
+/// @nodoc
+abstract class _$$_OnCategoryPressedCopyWith<$Res> {
+  factory _$$_OnCategoryPressedCopyWith(_$_OnCategoryPressed value,
+          $Res Function(_$_OnCategoryPressed) then) =
+      __$$_OnCategoryPressedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({NewChatCategoryType type});
+}
+
+/// @nodoc
+class __$$_OnCategoryPressedCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnCategoryPressed>
+    implements _$$_OnCategoryPressedCopyWith<$Res> {
+  __$$_OnCategoryPressedCopyWithImpl(
+      _$_OnCategoryPressed _value, $Res Function(_$_OnCategoryPressed) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$_OnCategoryPressed(
+      null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as NewChatCategoryType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnCategoryPressed implements _OnCategoryPressed {
+  const _$_OnCategoryPressed(this.type);
+
+  @override
+  final NewChatCategoryType type;
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onCategoryPressed(type: $type)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnCategoryPressed &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnCategoryPressedCopyWith<_$_OnCategoryPressed> get copyWith =>
+      __$$_OnCategoryPressedCopyWithImpl<_$_OnCategoryPressed>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatCategoryType type) onCategoryPressed,
+  }) {
+    return onCategoryPressed(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
+  }) {
+    return onCategoryPressed?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatCategoryType type)? onCategoryPressed,
+    required TResult orElse(),
+  }) {
+    if (onCategoryPressed != null) {
+      return onCategoryPressed(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
+  }) {
+    return onCategoryPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
+  }) {
+    return onCategoryPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
+    required TResult orElse(),
+  }) {
+    if (onCategoryPressed != null) {
+      return onCategoryPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnCategoryPressed implements NewChatEvent {
+  const factory _OnCategoryPressed(final NewChatCategoryType type) =
+      _$_OnCategoryPressed;
+
+  NewChatCategoryType get type;
+  @JsonKey(ignore: true)
+  _$$_OnCategoryPressedCopyWith<_$_OnCategoryPressed> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

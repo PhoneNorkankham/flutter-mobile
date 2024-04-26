@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:keepup/src/enums/new_chat_category_type.dart';
 import 'package:keepup/src/enums/new_chat_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/contacts/components/contact_item.dart';
@@ -14,6 +15,7 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   NewChatBloc() : super(const NewChatState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
+    on<_OnCategoryPressed>(_onCategoryPressed);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) {
@@ -29,5 +31,9 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
       Contact(name: 'Andrew Lyons'),
     ];
     emit(state.copyWith(contacts: contacts));
+  }
+
+  FutureOr<void> _onCategoryPressed(_OnCategoryPressed event, Emitter<NewChatState> emit) {
+    emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(event.type.page)));
   }
 }
