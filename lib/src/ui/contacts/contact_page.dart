@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_command_listeners.dart';
 import 'package:keepup/src/ui/contacts/components/contact_view.dart';
@@ -12,13 +11,13 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => Get.find<ContactBloc>()..add(const ContactEvent.initial()),
+      create: (_) => ContactBloc()..add(const ContactEvent.initial()),
       child: BlocListener<ContactBloc, ContactState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            Get.find<ContactBloc>().add(const ContactEvent.clearPageCommand());
+            context.read<ContactBloc>().add(const ContactEvent.clearPageCommand());
             pageCommandListeners(pageCommand);
           }
         },

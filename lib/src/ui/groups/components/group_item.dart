@@ -13,12 +13,18 @@ class Group {
 
 class GroupItem extends StatelessWidget {
   final Group group;
+  final ValueChanged<Group>? onPressed;
 
-  const GroupItem({super.key, required this.group});
+  const GroupItem({
+    super.key,
+    required this.group,
+    this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return KeepUpItem(
+      onPressed: () => onPressed?.call(group),
       name: group.name,
       action: Text(
         LocaleKey.details.tr,

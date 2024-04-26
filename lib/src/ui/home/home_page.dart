@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = Get.find<HomeBloc>();
+
     return WillPopScope(
       onWillPop: () {
         if (Platform.isAndroid) {

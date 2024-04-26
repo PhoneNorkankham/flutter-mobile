@@ -11,7 +11,7 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final OnboardingBloc bloc = Get.find<OnboardingBloc>();
+    final bloc = Get.find<OnboardingBloc>();
     return BlocProvider(
       create: (context) => bloc..add(const OnboardingEvent.initial()),
       child: BlocListener<OnboardingBloc, OnboardingState>(
@@ -19,7 +19,7 @@ class OnboardingPage extends StatelessWidget {
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            Get.find<OnboardingBloc>().add(const OnboardingEvent.clearPageCommand());
+            bloc.add(const OnboardingEvent.clearPageCommand());
             pageCommandListeners(pageCommand);
           }
         },

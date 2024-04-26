@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/buttons/app_button.dart';
 import 'package:keepup/src/design/components/buttons/app_button_type.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/contacts/interactor/contact_bloc.dart';
 
 class AddContactButton extends StatelessWidget {
-  final VoidCallback? onPressed;
-
-  const AddContactButton({super.key, this.onPressed});
+  const AddContactButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<ContactBloc>();
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         AppButton(
-          onPressed: onPressed,
+          onPressed: () => bloc.add(const ContactEvent.onGotoNewContact()),
           buttonType: AppButtonType.whiteCircle,
           child: const Icon(Icons.add, size: 34),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
@@ -11,6 +12,7 @@ import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/contacts/components/add_contact_button.dart';
 import 'package:keepup/src/ui/contacts/components/contact_item.dart';
+import 'package:keepup/src/ui/contacts/interactor/contact_bloc.dart';
 
 class ContactView extends StatelessWidget {
   const ContactView({super.key});
@@ -28,6 +30,8 @@ class ContactView extends StatelessWidget {
       Contact(name: 'Van Calhoun'),
       Contact(name: 'Andrew Lyons'),
     ];
+
+    final bloc = context.read<ContactBloc>();
 
     return Scaffold(
       appBar: AppAppBar(
@@ -48,7 +52,10 @@ class ContactView extends StatelessWidget {
               child: ListView.separated(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 itemCount: contacts.length,
-                itemBuilder: (context, index) => ContactItem(contact: contacts.elementAt(index)),
+                itemBuilder: (context, index) => ContactItem(
+                  onPressed: (contact) => bloc.add(ContactEvent.onGotoContactDetails(contact)),
+                  contact: contacts.elementAt(index),
+                ),
                 separatorBuilder: (context, index) => const SizedBox(height: 4),
               ),
             ),
