@@ -70,4 +70,6 @@ Map<String, String> enUs = {
   LocaleKey.groupDetail: 'Group Detail',
   LocaleKey.members: 'Members',
   LocaleKey.addMember: 'Add member',
+  LocaleKey.newChat: 'New Chat',
+  LocaleKey.searchNameOrNumber: 'Search name or number',
 };

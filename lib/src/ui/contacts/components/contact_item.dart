@@ -13,12 +13,18 @@ class Contact {
 
 class ContactItem extends StatelessWidget {
   final Contact contact;
+  final ValueChanged<Contact>? onPressed;
 
-  const ContactItem({super.key, required this.contact});
+  const ContactItem({
+    super.key,
+    required this.contact,
+    this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return KeepUpItem(
+      onPressed: () => onPressed?.call(contact),
       name: contact.name,
       action: Text(
         LocaleKey.details.tr,

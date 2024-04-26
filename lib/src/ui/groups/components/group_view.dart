@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
@@ -11,6 +12,7 @@ import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/groups/components/add_group_button.dart';
 import 'package:keepup/src/ui/groups/components/group_item.dart';
+import 'package:keepup/src/ui/groups/interactor/group_bloc.dart';
 
 class GroupView extends StatelessWidget {
   const GroupView({super.key});
@@ -28,6 +30,8 @@ class GroupView extends StatelessWidget {
       Group(name: 'Supermajority'),
       Group(name: 'Makeup'),
     ];
+
+    final bloc = context.read<GroupBloc>();
 
     return Scaffold(
       appBar: AppAppBar(
@@ -47,7 +51,10 @@ class GroupView extends StatelessWidget {
             Expanded(
               child: ListView.separated(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                itemBuilder: (context, index) => GroupItem(group: groups.elementAt(index)),
+                itemBuilder: (context, index) => GroupItem(
+                  onPressed: (group) => bloc.add(GroupEvent.onGotoGroupDetails(group)),
+                  group: groups.elementAt(index),
+                ),
                 separatorBuilder: (context, index) => const SizedBox(height: 4),
                 itemCount: groups.length,
               ),

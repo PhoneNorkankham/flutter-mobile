@@ -98,4 +98,8 @@ class LocaleKey {
   static const String groupDetail = "groupDetail";
   static const String members = "members";
   static const String addMember = "addMember";
+
+  // New Chat
+  static const String newChat = "newChat";
+  static const String searchNameOrNumber = "searchNameOrNumber";
 }

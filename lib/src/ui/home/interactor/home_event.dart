@@ -5,4 +5,6 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.initial() = _Initial;
 
   const factory HomeEvent.clearPageCommand() = _ClearPageCommand;
+
+  const factory HomeEvent.onOpenNewChatBottomSheet() = _OnOpenNewChatBottomSheet;
 }
