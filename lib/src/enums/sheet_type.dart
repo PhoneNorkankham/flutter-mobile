@@ -1,3 +1,4 @@
 enum SheetType {
+  newChat,
   deleteAccount;
 }

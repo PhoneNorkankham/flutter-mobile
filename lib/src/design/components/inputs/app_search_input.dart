@@ -5,13 +5,20 @@ import 'package:keepup/src/locale/locale_key.dart';
 
 class AppSearchInput extends StatelessWidget {
   final ValueChanged<String>? onChanged;
+  final EdgeInsets? margin;
+  final String? hintText;
 
-  const AppSearchInput({super.key, this.onChanged});
+  const AppSearchInput({
+    super.key,
+    this.onChanged,
+    this.margin,
+    this.hintText,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: margin ?? const EdgeInsets.symmetric(horizontal: 20.0),
       child: AppInputTextField(
         prefix: Icon(
           Icons.search,
@@ -19,7 +26,7 @@ class AppSearchInput extends StatelessWidget {
           size: 20,
         ),
         maxLines: 1,
-        hintText: LocaleKey.search.tr,
+        hintText: hintText ?? LocaleKey.search.tr,
         textInputAction: TextInputAction.search,
       ),
     );
