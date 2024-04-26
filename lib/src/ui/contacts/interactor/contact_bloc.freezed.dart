@@ -20,18 +20,24 @@ mixin _$ContactEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onGotoNewContact,
+    required TResult Function(Contact contact) onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onGotoNewContact,
+    TResult? Function(Contact contact)? onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onGotoNewContact,
+    TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$ContactEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
+    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +125,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onGotoNewContact,
+    required TResult Function(Contact contact) onGotoContactDetails,
   }) {
     return initial();
   }
@@ -122,6 +136,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onGotoNewContact,
+    TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
     return initial?.call();
   }
@@ -131,6 +147,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onGotoNewContact,
+    TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -144,6 +162,8 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
+    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
     return initial(this);
   }
@@ -153,6 +173,8 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
     return initial?.call(this);
   }
@@ -162,6 +184,8 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -215,6 +239,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onGotoNewContact,
+    required TResult Function(Contact contact) onGotoContactDetails,
   }) {
     return clearPageCommand();
   }
@@ -224,6 +250,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onGotoNewContact,
+    TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
     return clearPageCommand?.call();
   }
@@ -233,6 +261,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onGotoNewContact,
+    TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -246,6 +276,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
+    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
     return clearPageCommand(this);
   }
@@ -255,6 +287,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -264,6 +298,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -275,6 +311,267 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements ContactEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
+}
+
+/// @nodoc
+abstract class _$$_OnGotoNewContactCopyWith<$Res> {
+  factory _$$_OnGotoNewContactCopyWith(
+          _$_OnGotoNewContact value, $Res Function(_$_OnGotoNewContact) then) =
+      __$$_OnGotoNewContactCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnGotoNewContactCopyWithImpl<$Res>
+    extends _$ContactEventCopyWithImpl<$Res, _$_OnGotoNewContact>
+    implements _$$_OnGotoNewContactCopyWith<$Res> {
+  __$$_OnGotoNewContactCopyWithImpl(
+      _$_OnGotoNewContact _value, $Res Function(_$_OnGotoNewContact) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnGotoNewContact implements _OnGotoNewContact {
+  const _$_OnGotoNewContact();
+
+  @override
+  String toString() {
+    return 'ContactEvent.onGotoNewContact()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnGotoNewContact);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onGotoNewContact,
+    required TResult Function(Contact contact) onGotoContactDetails,
+  }) {
+    return onGotoNewContact();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onGotoNewContact,
+    TResult? Function(Contact contact)? onGotoContactDetails,
+  }) {
+    return onGotoNewContact?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onGotoNewContact,
+    TResult Function(Contact contact)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onGotoNewContact != null) {
+      return onGotoNewContact();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
+    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
+  }) {
+    return onGotoNewContact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
+  }) {
+    return onGotoNewContact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onGotoNewContact != null) {
+      return onGotoNewContact(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnGotoNewContact implements ContactEvent {
+  const factory _OnGotoNewContact() = _$_OnGotoNewContact;
+}
+
+/// @nodoc
+abstract class _$$_OnGotoContactDetailsCopyWith<$Res> {
+  factory _$$_OnGotoContactDetailsCopyWith(_$_OnGotoContactDetails value,
+          $Res Function(_$_OnGotoContactDetails) then) =
+      __$$_OnGotoContactDetailsCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Contact contact});
+}
+
+/// @nodoc
+class __$$_OnGotoContactDetailsCopyWithImpl<$Res>
+    extends _$ContactEventCopyWithImpl<$Res, _$_OnGotoContactDetails>
+    implements _$$_OnGotoContactDetailsCopyWith<$Res> {
+  __$$_OnGotoContactDetailsCopyWithImpl(_$_OnGotoContactDetails _value,
+      $Res Function(_$_OnGotoContactDetails) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contact = null,
+  }) {
+    return _then(_$_OnGotoContactDetails(
+      null == contact
+          ? _value.contact
+          : contact // ignore: cast_nullable_to_non_nullable
+              as Contact,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnGotoContactDetails implements _OnGotoContactDetails {
+  const _$_OnGotoContactDetails(this.contact);
+
+  @override
+  final Contact contact;
+
+  @override
+  String toString() {
+    return 'ContactEvent.onGotoContactDetails(contact: $contact)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnGotoContactDetails &&
+            (identical(other.contact, contact) || other.contact == contact));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, contact);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnGotoContactDetailsCopyWith<_$_OnGotoContactDetails> get copyWith =>
+      __$$_OnGotoContactDetailsCopyWithImpl<_$_OnGotoContactDetails>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onGotoNewContact,
+    required TResult Function(Contact contact) onGotoContactDetails,
+  }) {
+    return onGotoContactDetails(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onGotoNewContact,
+    TResult? Function(Contact contact)? onGotoContactDetails,
+  }) {
+    return onGotoContactDetails?.call(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onGotoNewContact,
+    TResult Function(Contact contact)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onGotoContactDetails != null) {
+      return onGotoContactDetails(contact);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
+    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
+  }) {
+    return onGotoContactDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
+  }) {
+    return onGotoContactDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onGotoContactDetails != null) {
+      return onGotoContactDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnGotoContactDetails implements ContactEvent {
+  const factory _OnGotoContactDetails(final Contact contact) =
+      _$_OnGotoContactDetails;
+
+  Contact get contact;
+  @JsonKey(ignore: true)
+  _$$_OnGotoContactDetailsCopyWith<_$_OnGotoContactDetails> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

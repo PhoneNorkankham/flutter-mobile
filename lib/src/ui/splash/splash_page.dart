@@ -14,7 +14,7 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SplashBloc bloc = Get.find<SplashBloc>();
+    final bloc = Get.find<SplashBloc>();
     return BlocProvider(
       create: (context) => bloc..add(const SplashEvent.initial()),
       child: BlocListener<SplashBloc, SplashState>(
@@ -22,7 +22,7 @@ class SplashPage extends StatelessWidget {
         listener: (context, state) {
           final PageCommand? pageCommand = state.pageCommand;
           if (pageCommand != null) {
-            Get.find<SplashBloc>().add(const SplashEvent.clearPageCommand());
+            bloc.add(const SplashEvent.clearPageCommand());
             if (pageCommand is SplashPageCommand) {
               pageCommand.when(showDialog: (message) => _showDialog(bloc, message));
             }

@@ -14,6 +14,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = Get.find<HomeBloc>();
+
     return WillPopScope(
       onWillPop: () {
         if (Platform.isAndroid) {
@@ -24,13 +26,13 @@ class HomePage extends StatelessWidget {
         }
       },
       child: BlocProvider(
-        create: (_) => Get.find<HomeBloc>()..add(const HomeEvent.initial()),
+        create: (_) => bloc..add(const HomeEvent.initial()),
         child: BlocListener<HomeBloc, HomeState>(
           listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
           listener: (context, state) {
             final PageCommand? pageCommand = state.pageCommand;
             if (pageCommand != null) {
-              Get.find<HomeBloc>().add(const HomeEvent.clearPageCommand());
+              bloc.add(const HomeEvent.clearPageCommand());
               pageCommandListeners(pageCommand);
             }
           },
