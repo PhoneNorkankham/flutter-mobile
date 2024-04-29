@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('===== APP_NAME: ${const String.fromEnvironment('APP_NAME')}');
+
     final TranslationManager translationManager = Get.find();
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
