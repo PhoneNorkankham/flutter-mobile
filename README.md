@@ -94,8 +94,16 @@ Solo
 
 The application needs to be completely filled in to build. This means that the full build command is:
 
+For Android:
+
 ```shell
-flutter run --flavor [flavor] --dart-define=FLAVOR=[flavor]
+flutter run --flavor [flavor] --dart-define-from-file=.env/[flavor].json
+```
+
+For iOS:
+
+```shell
+flutter run --flavor [flavor]
 ```
 
 with `[flavor]` is `dev` or `prod`
