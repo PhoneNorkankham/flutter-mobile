@@ -14,7 +14,7 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   NewChatBloc() : super(const NewChatState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnChangedTabType>(_onChangedTabType);
+    on<_OnChangedTabType>((event, emit) => emit(state.copyWith(tabType: event.type)));
     on<_OnChangedKeyword>(_onChangedKeyword);
     on<_OnSelectedContact>(_onSelectedContact);
     on<_OnRemovedContact>(_onRemovedContact);
@@ -40,13 +40,6 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
       selectedContacts: [],
       keyword: '',
     ));
-  }
-
-  FutureOr<void> _onChangedTabType(_OnChangedTabType event, Emitter<NewChatState> emit) {
-    if (event.type == NewChatTabType.newContact) {
-      return Future.value();
-    }
-    emit(state.copyWith(tabType: event.type));
   }
 
   FutureOr<void> _onChangedKeyword(_OnChangedKeyword event, Emitter<NewChatState> emit) {

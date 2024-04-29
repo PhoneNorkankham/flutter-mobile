@@ -6,15 +6,15 @@ import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
 
-class NewGroupAppBar extends StatelessWidget {
-  const NewGroupAppBar({super.key});
+class NewContactAppBar extends StatelessWidget {
+  const NewContactAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<NewChatBloc>();
     return BlocBuilder<NewChatBloc, NewChatState>(
       buildWhen: (previous, current) =>
-          previous.enabledCreateNewGroupButton != current.enabledCreateNewGroupButton,
+          previous.enabledCreateNewContactButton != current.enabledCreateNewContactButton,
       builder: (context, state) {
         return Stack(
           alignment: Alignment.center,
@@ -22,7 +22,7 @@ class NewGroupAppBar extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                LocaleKey.newGroup.tr,
+                LocaleKey.newContact.tr,
                 style: context.appTextTheme.bold16.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
@@ -34,9 +34,9 @@ class NewGroupAppBar extends StatelessWidget {
                 const SizedBox(width: 8),
                 TextButton(
                   onPressed: () =>
-                      bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.addMembers)),
+                      bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newChat)),
                   child: Text(
-                    LocaleKey.back.tr,
+                    LocaleKey.cancel.tr,
                     style: context.appTextTheme.bold16.copyWith(
                       color: Theme.of(context).colorScheme.onPrimary,
                     ),
@@ -44,7 +44,7 @@ class NewGroupAppBar extends StatelessWidget {
                 ),
                 const Spacer(),
                 TextButton(
-                  onPressed: state.enabledCreateNewGroupButton
+                  onPressed: state.enabledCreateNewContactButton
                       ? () => bloc.add(const NewChatEvent.onCreateNewGroup())
                       : null,
                   child: Text(
@@ -53,7 +53,7 @@ class NewGroupAppBar extends StatelessWidget {
                       color: Theme.of(context)
                           .colorScheme
                           .onPrimary
-                          .withOpacity(state.enabledCreateNewGroupButton ? 1 : 0.5),
+                          .withOpacity(state.enabledCreateNewContactButton ? 1 : 0.5),
                     ),
                   ),
                 ),

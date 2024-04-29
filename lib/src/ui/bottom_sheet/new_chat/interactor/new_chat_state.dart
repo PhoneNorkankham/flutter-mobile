@@ -14,5 +14,7 @@ class NewChatState with _$NewChatState {
     @Default([]) List<Contact> filterContacts,
   }) = _NewChatState;
 
-  bool get enabledCreateButton => selectedContacts.isNotEmpty && groupName.isNotEmpty;
+  bool get enabledCreateNewGroupButton => selectedContacts.isNotEmpty && groupName.isNotEmpty;
+
+  bool get enabledCreateNewContactButton => true;
 }
