@@ -6,7 +6,10 @@ class NewChatState with _$NewChatState {
 
   const factory NewChatState({
     PageCommand? pageCommand,
-    @Default(NewChatType.newChat) NewChatType type,
+    @Default(NewChatTabType.newChat) NewChatTabType tabType,
+    @Default('') String keyword,
     @Default([]) List<Contact> contacts,
+    @Default([]) List<Contact> selectedContacts,
+    @Default([]) List<Contact> filterContacts,
   }) = _NewChatState;
 }

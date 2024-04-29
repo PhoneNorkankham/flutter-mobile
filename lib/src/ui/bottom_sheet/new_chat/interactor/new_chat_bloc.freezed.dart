@@ -20,21 +20,30 @@ mixin _$NewChatEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatCategoryType type) onCategoryPressed,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +51,30 @@ mixin _$NewChatEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,7 +137,10 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatCategoryType type) onCategoryPressed,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
   }) {
     return initial();
   }
@@ -129,7 +150,10 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
   }) {
     return initial?.call();
   }
@@ -139,7 +163,10 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -153,7 +180,10 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
   }) {
     return initial(this);
   }
@@ -163,7 +193,10 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
   }) {
     return initial?.call(this);
   }
@@ -173,7 +206,10 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -227,7 +263,10 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatCategoryType type) onCategoryPressed,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
   }) {
     return clearPageCommand();
   }
@@ -237,7 +276,10 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
   }) {
     return clearPageCommand?.call();
   }
@@ -247,7 +289,10 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -261,7 +306,10 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
   }) {
     return clearPageCommand(this);
   }
@@ -271,7 +319,10 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -281,7 +332,10 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -296,20 +350,20 @@ abstract class _ClearPageCommand implements NewChatEvent {
 }
 
 /// @nodoc
-abstract class _$$_OnCategoryPressedCopyWith<$Res> {
-  factory _$$_OnCategoryPressedCopyWith(_$_OnCategoryPressed value,
-          $Res Function(_$_OnCategoryPressed) then) =
-      __$$_OnCategoryPressedCopyWithImpl<$Res>;
+abstract class _$$_OnChangedTabTypeCopyWith<$Res> {
+  factory _$$_OnChangedTabTypeCopyWith(
+          _$_OnChangedTabType value, $Res Function(_$_OnChangedTabType) then) =
+      __$$_OnChangedTabTypeCopyWithImpl<$Res>;
   @useResult
-  $Res call({NewChatCategoryType type});
+  $Res call({NewChatTabType type});
 }
 
 /// @nodoc
-class __$$_OnCategoryPressedCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnCategoryPressed>
-    implements _$$_OnCategoryPressedCopyWith<$Res> {
-  __$$_OnCategoryPressedCopyWithImpl(
-      _$_OnCategoryPressed _value, $Res Function(_$_OnCategoryPressed) _then)
+class __$$_OnChangedTabTypeCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnChangedTabType>
+    implements _$$_OnChangedTabTypeCopyWith<$Res> {
+  __$$_OnChangedTabTypeCopyWithImpl(
+      _$_OnChangedTabType _value, $Res Function(_$_OnChangedTabType) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -317,33 +371,33 @@ class __$$_OnCategoryPressedCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$_OnCategoryPressed(
+    return _then(_$_OnChangedTabType(
       null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as NewChatCategoryType,
+              as NewChatTabType,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_OnCategoryPressed implements _OnCategoryPressed {
-  const _$_OnCategoryPressed(this.type);
+class _$_OnChangedTabType implements _OnChangedTabType {
+  const _$_OnChangedTabType(this.type);
 
   @override
-  final NewChatCategoryType type;
+  final NewChatTabType type;
 
   @override
   String toString() {
-    return 'NewChatEvent.onCategoryPressed(type: $type)';
+    return 'NewChatEvent.onChangedTabType(type: $type)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnCategoryPressed &&
+            other is _$_OnChangedTabType &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -353,18 +407,20 @@ class _$_OnCategoryPressed implements _OnCategoryPressed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnCategoryPressedCopyWith<_$_OnCategoryPressed> get copyWith =>
-      __$$_OnCategoryPressedCopyWithImpl<_$_OnCategoryPressed>(
-          this, _$identity);
+  _$$_OnChangedTabTypeCopyWith<_$_OnChangedTabType> get copyWith =>
+      __$$_OnChangedTabTypeCopyWithImpl<_$_OnChangedTabType>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatCategoryType type) onCategoryPressed,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
   }) {
-    return onCategoryPressed(type);
+    return onChangedTabType(type);
   }
 
   @override
@@ -372,9 +428,12 @@ class _$_OnCategoryPressed implements _OnCategoryPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
   }) {
-    return onCategoryPressed?.call(type);
+    return onChangedTabType?.call(type);
   }
 
   @override
@@ -382,11 +441,14 @@ class _$_OnCategoryPressed implements _OnCategoryPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatCategoryType type)? onCategoryPressed,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
     required TResult orElse(),
   }) {
-    if (onCategoryPressed != null) {
-      return onCategoryPressed(type);
+    if (onChangedTabType != null) {
+      return onChangedTabType(type);
     }
     return orElse();
   }
@@ -396,9 +458,12 @@ class _$_OnCategoryPressed implements _OnCategoryPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnCategoryPressed value) onCategoryPressed,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
   }) {
-    return onCategoryPressed(this);
+    return onChangedTabType(this);
   }
 
   @override
@@ -406,9 +471,12 @@ class _$_OnCategoryPressed implements _OnCategoryPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
   }) {
-    return onCategoryPressed?.call(this);
+    return onChangedTabType?.call(this);
   }
 
   @override
@@ -416,31 +484,510 @@ class _$_OnCategoryPressed implements _OnCategoryPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnCategoryPressed value)? onCategoryPressed,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
     required TResult orElse(),
   }) {
-    if (onCategoryPressed != null) {
-      return onCategoryPressed(this);
+    if (onChangedTabType != null) {
+      return onChangedTabType(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnCategoryPressed implements NewChatEvent {
-  const factory _OnCategoryPressed(final NewChatCategoryType type) =
-      _$_OnCategoryPressed;
+abstract class _OnChangedTabType implements NewChatEvent {
+  const factory _OnChangedTabType(final NewChatTabType type) =
+      _$_OnChangedTabType;
 
-  NewChatCategoryType get type;
+  NewChatTabType get type;
   @JsonKey(ignore: true)
-  _$$_OnCategoryPressedCopyWith<_$_OnCategoryPressed> get copyWith =>
+  _$$_OnChangedTabTypeCopyWith<_$_OnChangedTabType> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnChangedKeywordCopyWith<$Res> {
+  factory _$$_OnChangedKeywordCopyWith(
+          _$_OnChangedKeyword value, $Res Function(_$_OnChangedKeyword) then) =
+      __$$_OnChangedKeywordCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String keyword});
+}
+
+/// @nodoc
+class __$$_OnChangedKeywordCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnChangedKeyword>
+    implements _$$_OnChangedKeywordCopyWith<$Res> {
+  __$$_OnChangedKeywordCopyWithImpl(
+      _$_OnChangedKeyword _value, $Res Function(_$_OnChangedKeyword) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keyword = null,
+  }) {
+    return _then(_$_OnChangedKeyword(
+      null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnChangedKeyword implements _OnChangedKeyword {
+  const _$_OnChangedKeyword(this.keyword);
+
+  @override
+  final String keyword;
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onChangedKeyword(keyword: $keyword)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnChangedKeyword &&
+            (identical(other.keyword, keyword) || other.keyword == keyword));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, keyword);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnChangedKeywordCopyWith<_$_OnChangedKeyword> get copyWith =>
+      __$$_OnChangedKeywordCopyWithImpl<_$_OnChangedKeyword>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
+  }) {
+    return onChangedKeyword(keyword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
+  }) {
+    return onChangedKeyword?.call(keyword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
+    required TResult orElse(),
+  }) {
+    if (onChangedKeyword != null) {
+      return onChangedKeyword(keyword);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+  }) {
+    return onChangedKeyword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+  }) {
+    return onChangedKeyword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    required TResult orElse(),
+  }) {
+    if (onChangedKeyword != null) {
+      return onChangedKeyword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedKeyword implements NewChatEvent {
+  const factory _OnChangedKeyword(final String keyword) = _$_OnChangedKeyword;
+
+  String get keyword;
+  @JsonKey(ignore: true)
+  _$$_OnChangedKeywordCopyWith<_$_OnChangedKeyword> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnSelectedContactCopyWith<$Res> {
+  factory _$$_OnSelectedContactCopyWith(_$_OnSelectedContact value,
+          $Res Function(_$_OnSelectedContact) then) =
+      __$$_OnSelectedContactCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Contact contact});
+}
+
+/// @nodoc
+class __$$_OnSelectedContactCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnSelectedContact>
+    implements _$$_OnSelectedContactCopyWith<$Res> {
+  __$$_OnSelectedContactCopyWithImpl(
+      _$_OnSelectedContact _value, $Res Function(_$_OnSelectedContact) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contact = null,
+  }) {
+    return _then(_$_OnSelectedContact(
+      null == contact
+          ? _value.contact
+          : contact // ignore: cast_nullable_to_non_nullable
+              as Contact,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnSelectedContact implements _OnSelectedContact {
+  const _$_OnSelectedContact(this.contact);
+
+  @override
+  final Contact contact;
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onSelectedContact(contact: $contact)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnSelectedContact &&
+            (identical(other.contact, contact) || other.contact == contact));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, contact);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnSelectedContactCopyWith<_$_OnSelectedContact> get copyWith =>
+      __$$_OnSelectedContactCopyWithImpl<_$_OnSelectedContact>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
+  }) {
+    return onSelectedContact(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
+  }) {
+    return onSelectedContact?.call(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
+    required TResult orElse(),
+  }) {
+    if (onSelectedContact != null) {
+      return onSelectedContact(contact);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+  }) {
+    return onSelectedContact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+  }) {
+    return onSelectedContact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    required TResult orElse(),
+  }) {
+    if (onSelectedContact != null) {
+      return onSelectedContact(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnSelectedContact implements NewChatEvent {
+  const factory _OnSelectedContact(final Contact contact) =
+      _$_OnSelectedContact;
+
+  Contact get contact;
+  @JsonKey(ignore: true)
+  _$$_OnSelectedContactCopyWith<_$_OnSelectedContact> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnRemovedContactCopyWith<$Res> {
+  factory _$$_OnRemovedContactCopyWith(
+          _$_OnRemovedContact value, $Res Function(_$_OnRemovedContact) then) =
+      __$$_OnRemovedContactCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Contact contact});
+}
+
+/// @nodoc
+class __$$_OnRemovedContactCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnRemovedContact>
+    implements _$$_OnRemovedContactCopyWith<$Res> {
+  __$$_OnRemovedContactCopyWithImpl(
+      _$_OnRemovedContact _value, $Res Function(_$_OnRemovedContact) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contact = null,
+  }) {
+    return _then(_$_OnRemovedContact(
+      null == contact
+          ? _value.contact
+          : contact // ignore: cast_nullable_to_non_nullable
+              as Contact,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnRemovedContact implements _OnRemovedContact {
+  const _$_OnRemovedContact(this.contact);
+
+  @override
+  final Contact contact;
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onRemovedContact(contact: $contact)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnRemovedContact &&
+            (identical(other.contact, contact) || other.contact == contact));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, contact);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnRemovedContactCopyWith<_$_OnRemovedContact> get copyWith =>
+      __$$_OnRemovedContactCopyWithImpl<_$_OnRemovedContact>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
+  }) {
+    return onRemovedContact(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
+  }) {
+    return onRemovedContact?.call(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
+    required TResult orElse(),
+  }) {
+    if (onRemovedContact != null) {
+      return onRemovedContact(contact);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+  }) {
+    return onRemovedContact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+  }) {
+    return onRemovedContact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    required TResult orElse(),
+  }) {
+    if (onRemovedContact != null) {
+      return onRemovedContact(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnRemovedContact implements NewChatEvent {
+  const factory _OnRemovedContact(final Contact contact) = _$_OnRemovedContact;
+
+  Contact get contact;
+  @JsonKey(ignore: true)
+  _$$_OnRemovedContactCopyWith<_$_OnRemovedContact> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$NewChatState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
-  NewChatType get type => throw _privateConstructorUsedError;
+  NewChatTabType get tabType => throw _privateConstructorUsedError;
+  String get keyword => throw _privateConstructorUsedError;
   List<Contact> get contacts => throw _privateConstructorUsedError;
+  List<Contact> get selectedContacts => throw _privateConstructorUsedError;
+  List<Contact> get filterContacts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewChatStateCopyWith<NewChatState> get copyWith =>
@@ -454,7 +1001,12 @@ abstract class $NewChatStateCopyWith<$Res> {
       _$NewChatStateCopyWithImpl<$Res, NewChatState>;
   @useResult
   $Res call(
-      {PageCommand? pageCommand, NewChatType type, List<Contact> contacts});
+      {PageCommand? pageCommand,
+      NewChatTabType tabType,
+      String keyword,
+      List<Contact> contacts,
+      List<Contact> selectedContacts,
+      List<Contact> filterContacts});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -473,21 +1025,36 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
   @override
   $Res call({
     Object? pageCommand = freezed,
-    Object? type = null,
+    Object? tabType = null,
+    Object? keyword = null,
     Object? contacts = null,
+    Object? selectedContacts = null,
+    Object? filterContacts = null,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as NewChatType,
+      tabType: null == tabType
+          ? _value.tabType
+          : tabType // ignore: cast_nullable_to_non_nullable
+              as NewChatTabType,
+      keyword: null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      selectedContacts: null == selectedContacts
+          ? _value.selectedContacts
+          : selectedContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      filterContacts: null == filterContacts
+          ? _value.filterContacts
+          : filterContacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
     ) as $Val);
   }
@@ -514,7 +1081,12 @@ abstract class _$$_NewChatStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {PageCommand? pageCommand, NewChatType type, List<Contact> contacts});
+      {PageCommand? pageCommand,
+      NewChatTabType tabType,
+      String keyword,
+      List<Contact> contacts,
+      List<Contact> selectedContacts,
+      List<Contact> filterContacts});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -532,21 +1104,36 @@ class __$$_NewChatStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pageCommand = freezed,
-    Object? type = null,
+    Object? tabType = null,
+    Object? keyword = null,
     Object? contacts = null,
+    Object? selectedContacts = null,
+    Object? filterContacts = null,
   }) {
     return _then(_$_NewChatState(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as NewChatType,
+      tabType: null == tabType
+          ? _value.tabType
+          : tabType // ignore: cast_nullable_to_non_nullable
+              as NewChatTabType,
+      keyword: null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      selectedContacts: null == selectedContacts
+          ? _value._selectedContacts
+          : selectedContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      filterContacts: null == filterContacts
+          ? _value._filterContacts
+          : filterContacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
     ));
   }
@@ -557,16 +1144,24 @@ class __$$_NewChatStateCopyWithImpl<$Res>
 class _$_NewChatState extends _NewChatState {
   const _$_NewChatState(
       {this.pageCommand,
-      this.type = NewChatType.newChat,
-      final List<Contact> contacts = const []})
+      this.tabType = NewChatTabType.newChat,
+      this.keyword = '',
+      final List<Contact> contacts = const [],
+      final List<Contact> selectedContacts = const [],
+      final List<Contact> filterContacts = const []})
       : _contacts = contacts,
+        _selectedContacts = selectedContacts,
+        _filterContacts = filterContacts,
         super._();
 
   @override
   final PageCommand? pageCommand;
   @override
   @JsonKey()
-  final NewChatType type;
+  final NewChatTabType tabType;
+  @override
+  @JsonKey()
+  final String keyword;
   final List<Contact> _contacts;
   @override
   @JsonKey()
@@ -576,9 +1171,28 @@ class _$_NewChatState extends _NewChatState {
     return EqualUnmodifiableListView(_contacts);
   }
 
+  final List<Contact> _selectedContacts;
+  @override
+  @JsonKey()
+  List<Contact> get selectedContacts {
+    if (_selectedContacts is EqualUnmodifiableListView)
+      return _selectedContacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_selectedContacts);
+  }
+
+  final List<Contact> _filterContacts;
+  @override
+  @JsonKey()
+  List<Contact> get filterContacts {
+    if (_filterContacts is EqualUnmodifiableListView) return _filterContacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filterContacts);
+  }
+
   @override
   String toString() {
-    return 'NewChatState(pageCommand: $pageCommand, type: $type, contacts: $contacts)';
+    return 'NewChatState(pageCommand: $pageCommand, tabType: $tabType, keyword: $keyword, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts)';
   }
 
   @override
@@ -588,13 +1202,24 @@ class _$_NewChatState extends _NewChatState {
             other is _$_NewChatState &&
             (identical(other.pageCommand, pageCommand) ||
                 other.pageCommand == pageCommand) &&
-            (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other._contacts, _contacts));
+            (identical(other.tabType, tabType) || other.tabType == tabType) &&
+            (identical(other.keyword, keyword) || other.keyword == keyword) &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
+            const DeepCollectionEquality()
+                .equals(other._selectedContacts, _selectedContacts) &&
+            const DeepCollectionEquality()
+                .equals(other._filterContacts, _filterContacts));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageCommand, type,
-      const DeepCollectionEquality().hash(_contacts));
+  int get hashCode => Object.hash(
+      runtimeType,
+      pageCommand,
+      tabType,
+      keyword,
+      const DeepCollectionEquality().hash(_contacts),
+      const DeepCollectionEquality().hash(_selectedContacts),
+      const DeepCollectionEquality().hash(_filterContacts));
 
   @JsonKey(ignore: true)
   @override
@@ -606,16 +1231,25 @@ class _$_NewChatState extends _NewChatState {
 abstract class _NewChatState extends NewChatState {
   const factory _NewChatState(
       {final PageCommand? pageCommand,
-      final NewChatType type,
-      final List<Contact> contacts}) = _$_NewChatState;
+      final NewChatTabType tabType,
+      final String keyword,
+      final List<Contact> contacts,
+      final List<Contact> selectedContacts,
+      final List<Contact> filterContacts}) = _$_NewChatState;
   const _NewChatState._() : super._();
 
   @override
   PageCommand? get pageCommand;
   @override
-  NewChatType get type;
+  NewChatTabType get tabType;
+  @override
+  String get keyword;
   @override
   List<Contact> get contacts;
+  @override
+  List<Contact> get selectedContacts;
+  @override
+  List<Contact> get filterContacts;
   @override
   @JsonKey(ignore: true)
   _$$_NewChatStateCopyWith<_$_NewChatState> get copyWith =>

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/utils/app_pages.dart';
 
 enum NewChatCategoryType {
   newGroup,
@@ -21,10 +21,10 @@ enum NewChatCategoryType {
     };
   }
 
-  String get page {
+  NewChatTabType get tabType {
     return switch (this) {
-      newGroup => AppPages.groupDetail,
-      newContact => AppPages.contactDetail,
+      newGroup => NewChatTabType.addMembers,
+      newContact => NewChatTabType.newContact,
     };
   }
 }

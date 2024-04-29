@@ -9,6 +9,7 @@ Map<String, String> enUs = {
   LocaleKey.login: 'Login',
   LocaleKey.check: 'Okay',
   LocaleKey.close: 'Close',
+  LocaleKey.next: 'Next',
   LocaleKey.success: 'Success',
   LocaleKey.error: 'Error',
   LocaleKey.somethingWentWrong: 'An unexpected error occurred. please try again.',
@@ -72,4 +73,5 @@ Map<String, String> enUs = {
   LocaleKey.addMember: 'Add member',
   LocaleKey.newChat: 'New Chat',
   LocaleKey.searchNameOrNumber: 'Search name or number',
+  LocaleKey.addMembers: 'Add members',
 };

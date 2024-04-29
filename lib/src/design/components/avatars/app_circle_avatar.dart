@@ -8,6 +8,7 @@ class AppCircleAvatar extends StatelessWidget {
   final String? url;
   final double radius;
   final Color backgroundColor;
+  final Color foregroundColor;
   final bool placeholderDisabled;
 
   const AppCircleAvatar({
@@ -15,6 +16,7 @@ class AppCircleAvatar extends StatelessWidget {
     required this.url,
     required this.radius,
     this.backgroundColor = AppColors.white,
+    this.foregroundColor = AppColors.primary,
     this.placeholderDisabled = false,
   });
 
@@ -28,6 +30,7 @@ class AppCircleAvatar extends StatelessWidget {
 
     return CircleAvatar(
       backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
       radius: radius,
       child: Stack(
         alignment: Alignment.center,
@@ -36,9 +39,14 @@ class AppCircleAvatar extends StatelessWidget {
             Icon(
               Icons.person,
               size: radius * 1.5,
-              color: Theme.of(context).colorScheme.primary,
+              color: foregroundColor,
             ),
-          if (imageProvider != null) CircleAvatar(radius: radius, foregroundImage: imageProvider),
+          if (imageProvider != null)
+            CircleAvatar(
+              radius: radius,
+              foregroundImage: imageProvider,
+              foregroundColor: foregroundColor,
+            ),
         ],
       ),
     );

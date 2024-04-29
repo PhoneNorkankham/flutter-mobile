@@ -28,6 +28,7 @@ class AppSearchInput extends StatelessWidget {
         maxLines: 1,
         hintText: hintText ?? LocaleKey.search.tr,
         textInputAction: TextInputAction.search,
+        onChanged: onChanged,
       ),
     );
   }
