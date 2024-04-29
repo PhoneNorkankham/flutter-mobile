@@ -22,6 +22,7 @@ Map<String, String> enUs = {
   LocaleKey.alertReceiveTimeout: 'A problem has occurred. Please try again in a few minutes.',
   LocaleKey.alertErrorServer: 'An unexpected error occurred. please try again.',
   LocaleKey.back: 'Back',
+  LocaleKey.create: 'Create',
   LocaleKey.search: 'Search',
   LocaleKey.details: 'Details',
   LocaleKey.delete: 'Delete',
@@ -74,4 +75,5 @@ Map<String, String> enUs = {
   LocaleKey.newChat: 'New Chat',
   LocaleKey.searchNameOrNumber: 'Search name or number',
   LocaleKey.addMembers: 'Add members',
+  LocaleKey.groupName: 'Group Name',
 };

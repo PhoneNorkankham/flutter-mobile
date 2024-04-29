@@ -18,6 +18,8 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     on<_OnChangedKeyword>(_onChangedKeyword);
     on<_OnSelectedContact>(_onSelectedContact);
     on<_OnRemovedContact>(_onRemovedContact);
+    on<_OnChangedGroupName>((event, emit) => emit(state.copyWith(groupName: event.groupName)));
+    on<_OnCreateNewGroup>(_onCreateNewGroup);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) {
@@ -41,7 +43,7 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   }
 
   FutureOr<void> _onChangedTabType(_OnChangedTabType event, Emitter<NewChatState> emit) {
-    if (event.type == NewChatTabType.newGroup || event.type == NewChatTabType.newContact) {
+    if (event.type == NewChatTabType.newContact) {
       return Future.value();
     }
     emit(state.copyWith(tabType: event.type));
@@ -69,4 +71,6 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   FutureOr<void> _onRemovedContact(_OnRemovedContact event, Emitter<NewChatState> emit) {
     emit(state.copyWith(selectedContacts: [...state.selectedContacts]..remove(event.contact)));
   }
+
+  FutureOr<void> _onCreateNewGroup(_OnCreateNewGroup event, Emitter<NewChatState> emit) {}
 }

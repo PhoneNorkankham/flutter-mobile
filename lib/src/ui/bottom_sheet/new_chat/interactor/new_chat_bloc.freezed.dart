@@ -24,6 +24,8 @@ mixin _$NewChatEvent {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +36,8 @@ mixin _$NewChatEvent {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +48,8 @@ mixin _$NewChatEvent {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +61,8 @@ mixin _$NewChatEvent {
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnSelectedContact value) onSelectedContact,
     required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +73,8 @@ mixin _$NewChatEvent {
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnSelectedContact value)? onSelectedContact,
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +85,8 @@ mixin _$NewChatEvent {
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnSelectedContact value)? onSelectedContact,
     TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +153,8 @@ class _$_Initial implements _Initial {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
   }) {
     return initial();
   }
@@ -154,6 +168,8 @@ class _$_Initial implements _Initial {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
   }) {
     return initial?.call();
   }
@@ -167,6 +183,8 @@ class _$_Initial implements _Initial {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -184,6 +202,8 @@ class _$_Initial implements _Initial {
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnSelectedContact value) onSelectedContact,
     required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
   }) {
     return initial(this);
   }
@@ -197,6 +217,8 @@ class _$_Initial implements _Initial {
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnSelectedContact value)? onSelectedContact,
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
   }) {
     return initial?.call(this);
   }
@@ -210,6 +232,8 @@ class _$_Initial implements _Initial {
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnSelectedContact value)? onSelectedContact,
     TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -267,6 +291,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
   }) {
     return clearPageCommand();
   }
@@ -280,6 +306,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
   }) {
     return clearPageCommand?.call();
   }
@@ -293,6 +321,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -310,6 +340,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnSelectedContact value) onSelectedContact,
     required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
   }) {
     return clearPageCommand(this);
   }
@@ -323,6 +355,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnSelectedContact value)? onSelectedContact,
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -336,6 +370,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnSelectedContact value)? onSelectedContact,
     TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -419,6 +455,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
   }) {
     return onChangedTabType(type);
   }
@@ -432,6 +470,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
   }) {
     return onChangedTabType?.call(type);
   }
@@ -445,6 +485,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onChangedTabType != null) {
@@ -462,6 +504,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnSelectedContact value) onSelectedContact,
     required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
   }) {
     return onChangedTabType(this);
   }
@@ -475,6 +519,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnSelectedContact value)? onSelectedContact,
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
   }) {
     return onChangedTabType?.call(this);
   }
@@ -488,6 +534,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnSelectedContact value)? onSelectedContact,
     TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onChangedTabType != null) {
@@ -577,6 +625,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
   }) {
     return onChangedKeyword(keyword);
   }
@@ -590,6 +640,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
   }) {
     return onChangedKeyword?.call(keyword);
   }
@@ -603,6 +655,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -620,6 +674,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnSelectedContact value) onSelectedContact,
     required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
   }) {
     return onChangedKeyword(this);
   }
@@ -633,6 +689,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnSelectedContact value)? onSelectedContact,
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
   }) {
     return onChangedKeyword?.call(this);
   }
@@ -646,6 +704,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnSelectedContact value)? onSelectedContact,
     TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -735,6 +795,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
   }) {
     return onSelectedContact(contact);
   }
@@ -748,6 +810,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
   }) {
     return onSelectedContact?.call(contact);
   }
@@ -761,6 +825,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onSelectedContact != null) {
@@ -778,6 +844,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnSelectedContact value) onSelectedContact,
     required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
   }) {
     return onSelectedContact(this);
   }
@@ -791,6 +859,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnSelectedContact value)? onSelectedContact,
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
   }) {
     return onSelectedContact?.call(this);
   }
@@ -804,6 +874,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnSelectedContact value)? onSelectedContact,
     TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onSelectedContact != null) {
@@ -893,6 +965,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
   }) {
     return onRemovedContact(contact);
   }
@@ -906,6 +980,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
   }) {
     return onRemovedContact?.call(contact);
   }
@@ -919,6 +995,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onRemovedContact != null) {
@@ -936,6 +1014,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnSelectedContact value) onSelectedContact,
     required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
   }) {
     return onRemovedContact(this);
   }
@@ -949,6 +1029,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnSelectedContact value)? onSelectedContact,
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
   }) {
     return onRemovedContact?.call(this);
   }
@@ -962,6 +1044,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnSelectedContact value)? onSelectedContact,
     TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
     required TResult orElse(),
   }) {
     if (onRemovedContact != null) {
@@ -981,10 +1065,321 @@ abstract class _OnRemovedContact implements NewChatEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnChangedGroupNameCopyWith<$Res> {
+  factory _$$_OnChangedGroupNameCopyWith(_$_OnChangedGroupName value,
+          $Res Function(_$_OnChangedGroupName) then) =
+      __$$_OnChangedGroupNameCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String groupName});
+}
+
+/// @nodoc
+class __$$_OnChangedGroupNameCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnChangedGroupName>
+    implements _$$_OnChangedGroupNameCopyWith<$Res> {
+  __$$_OnChangedGroupNameCopyWithImpl(
+      _$_OnChangedGroupName _value, $Res Function(_$_OnChangedGroupName) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? groupName = null,
+  }) {
+    return _then(_$_OnChangedGroupName(
+      null == groupName
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnChangedGroupName implements _OnChangedGroupName {
+  const _$_OnChangedGroupName(this.groupName);
+
+  @override
+  final String groupName;
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onChangedGroupName(groupName: $groupName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnChangedGroupName &&
+            (identical(other.groupName, groupName) ||
+                other.groupName == groupName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, groupName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnChangedGroupNameCopyWith<_$_OnChangedGroupName> get copyWith =>
+      __$$_OnChangedGroupNameCopyWithImpl<_$_OnChangedGroupName>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
+  }) {
+    return onChangedGroupName(groupName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
+  }) {
+    return onChangedGroupName?.call(groupName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
+    required TResult orElse(),
+  }) {
+    if (onChangedGroupName != null) {
+      return onChangedGroupName(groupName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+  }) {
+    return onChangedGroupName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+  }) {
+    return onChangedGroupName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    required TResult orElse(),
+  }) {
+    if (onChangedGroupName != null) {
+      return onChangedGroupName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedGroupName implements NewChatEvent {
+  const factory _OnChangedGroupName(final String groupName) =
+      _$_OnChangedGroupName;
+
+  String get groupName;
+  @JsonKey(ignore: true)
+  _$$_OnChangedGroupNameCopyWith<_$_OnChangedGroupName> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnCreateNewGroupCopyWith<$Res> {
+  factory _$$_OnCreateNewGroupCopyWith(
+          _$_OnCreateNewGroup value, $Res Function(_$_OnCreateNewGroup) then) =
+      __$$_OnCreateNewGroupCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnCreateNewGroupCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnCreateNewGroup>
+    implements _$$_OnCreateNewGroupCopyWith<$Res> {
+  __$$_OnCreateNewGroupCopyWithImpl(
+      _$_OnCreateNewGroup _value, $Res Function(_$_OnCreateNewGroup) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnCreateNewGroup implements _OnCreateNewGroup {
+  const _$_OnCreateNewGroup();
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onCreateNewGroup()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnCreateNewGroup);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
+  }) {
+    return onCreateNewGroup();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
+  }) {
+    return onCreateNewGroup?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
+    required TResult orElse(),
+  }) {
+    if (onCreateNewGroup != null) {
+      return onCreateNewGroup();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+  }) {
+    return onCreateNewGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+  }) {
+    return onCreateNewGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    required TResult orElse(),
+  }) {
+    if (onCreateNewGroup != null) {
+      return onCreateNewGroup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnCreateNewGroup implements NewChatEvent {
+  const factory _OnCreateNewGroup() = _$_OnCreateNewGroup;
+}
+
+/// @nodoc
 mixin _$NewChatState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   NewChatTabType get tabType => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
+  String get groupName => throw _privateConstructorUsedError;
   List<Contact> get contacts => throw _privateConstructorUsedError;
   List<Contact> get selectedContacts => throw _privateConstructorUsedError;
   List<Contact> get filterContacts => throw _privateConstructorUsedError;
@@ -1004,6 +1399,7 @@ abstract class $NewChatStateCopyWith<$Res> {
       {PageCommand? pageCommand,
       NewChatTabType tabType,
       String keyword,
+      String groupName,
       List<Contact> contacts,
       List<Contact> selectedContacts,
       List<Contact> filterContacts});
@@ -1027,6 +1423,7 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
     Object? pageCommand = freezed,
     Object? tabType = null,
     Object? keyword = null,
+    Object? groupName = null,
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? filterContacts = null,
@@ -1043,6 +1440,10 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      groupName: null == groupName
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
               as String,
       contacts: null == contacts
           ? _value.contacts
@@ -1084,6 +1485,7 @@ abstract class _$$_NewChatStateCopyWith<$Res>
       {PageCommand? pageCommand,
       NewChatTabType tabType,
       String keyword,
+      String groupName,
       List<Contact> contacts,
       List<Contact> selectedContacts,
       List<Contact> filterContacts});
@@ -1106,6 +1508,7 @@ class __$$_NewChatStateCopyWithImpl<$Res>
     Object? pageCommand = freezed,
     Object? tabType = null,
     Object? keyword = null,
+    Object? groupName = null,
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? filterContacts = null,
@@ -1122,6 +1525,10 @@ class __$$_NewChatStateCopyWithImpl<$Res>
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      groupName: null == groupName
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
               as String,
       contacts: null == contacts
           ? _value._contacts
@@ -1146,6 +1553,7 @@ class _$_NewChatState extends _NewChatState {
       {this.pageCommand,
       this.tabType = NewChatTabType.newChat,
       this.keyword = '',
+      this.groupName = '',
       final List<Contact> contacts = const [],
       final List<Contact> selectedContacts = const [],
       final List<Contact> filterContacts = const []})
@@ -1162,6 +1570,9 @@ class _$_NewChatState extends _NewChatState {
   @override
   @JsonKey()
   final String keyword;
+  @override
+  @JsonKey()
+  final String groupName;
   final List<Contact> _contacts;
   @override
   @JsonKey()
@@ -1192,7 +1603,7 @@ class _$_NewChatState extends _NewChatState {
 
   @override
   String toString() {
-    return 'NewChatState(pageCommand: $pageCommand, tabType: $tabType, keyword: $keyword, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts)';
+    return 'NewChatState(pageCommand: $pageCommand, tabType: $tabType, keyword: $keyword, groupName: $groupName, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts)';
   }
 
   @override
@@ -1204,6 +1615,8 @@ class _$_NewChatState extends _NewChatState {
                 other.pageCommand == pageCommand) &&
             (identical(other.tabType, tabType) || other.tabType == tabType) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
+            (identical(other.groupName, groupName) ||
+                other.groupName == groupName) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
             const DeepCollectionEquality()
                 .equals(other._selectedContacts, _selectedContacts) &&
@@ -1217,6 +1630,7 @@ class _$_NewChatState extends _NewChatState {
       pageCommand,
       tabType,
       keyword,
+      groupName,
       const DeepCollectionEquality().hash(_contacts),
       const DeepCollectionEquality().hash(_selectedContacts),
       const DeepCollectionEquality().hash(_filterContacts));
@@ -1233,6 +1647,7 @@ abstract class _NewChatState extends NewChatState {
       {final PageCommand? pageCommand,
       final NewChatTabType tabType,
       final String keyword,
+      final String groupName,
       final List<Contact> contacts,
       final List<Contact> selectedContacts,
       final List<Contact> filterContacts}) = _$_NewChatState;
@@ -1244,6 +1659,8 @@ abstract class _NewChatState extends NewChatState {
   NewChatTabType get tabType;
   @override
   String get keyword;
+  @override
+  String get groupName;
   @override
   List<Contact> get contacts;
   @override

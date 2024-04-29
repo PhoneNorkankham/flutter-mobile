@@ -26,6 +26,7 @@ class LocaleKey {
 
   // AppBar
   static const String back = "back";
+  static const String create = "create";
 
   // Components
   static const String search = "search";
@@ -104,4 +105,5 @@ class LocaleKey {
   static const String newChat = "newChat";
   static const String searchNameOrNumber = "searchNameOrNumber";
   static const String addMembers = "addMembers";
+  static const String groupName = "groupName";
 }

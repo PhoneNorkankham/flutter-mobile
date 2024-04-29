@@ -6,50 +6,36 @@ import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
 
-class AddMemberHeader extends StatelessWidget {
-  const AddMemberHeader({super.key});
+class NewGroupAppBar extends StatelessWidget {
+  const NewGroupAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<NewChatBloc>();
     return BlocBuilder<NewChatBloc, NewChatState>(
-      buildWhen: (previous, current) =>
-          previous.contacts != current.contacts ||
-          previous.selectedContacts != current.selectedContacts,
+      buildWhen: (previous, current) => previous.enabledCreateButton != current.enabledCreateButton,
       builder: (context, state) {
         return Stack(
           alignment: Alignment.center,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(height: 8),
-                Text(
-                  LocaleKey.addMember.tr,
-                  style: context.appTextTheme.bold16.copyWith(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-                  textAlign: TextAlign.center,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                LocaleKey.newGroup.tr,
+                style: context.appTextTheme.bold16.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
                 ),
-                Text(
-                  '${state.selectedContacts.length}/${state.contacts.length}',
-                  style: context.appTextTheme.medium10.copyWith(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 8),
-              ],
+                textAlign: TextAlign.center,
+              ),
             ),
             Row(
               children: [
                 const SizedBox(width: 8),
                 TextButton(
                   onPressed: () =>
-                      bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newChat)),
+                      bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.addMembers)),
                   child: Text(
-                    LocaleKey.cancel.tr,
+                    LocaleKey.back.tr,
                     style: context.appTextTheme.bold16.copyWith(
                       color: Theme.of(context).colorScheme.onPrimary,
                     ),
@@ -57,16 +43,16 @@ class AddMemberHeader extends StatelessWidget {
                 ),
                 const Spacer(),
                 TextButton(
-                  onPressed: state.selectedContacts.isNotEmpty
-                      ? () => bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newGroup))
+                  onPressed: state.enabledCreateButton
+                      ? () => bloc.add(const NewChatEvent.onCreateNewGroup())
                       : null,
                   child: Text(
-                    LocaleKey.next.tr,
+                    LocaleKey.create.tr,
                     style: context.appTextTheme.bold16.copyWith(
                       color: Theme.of(context)
                           .colorScheme
                           .onPrimary
-                          .withOpacity(state.selectedContacts.isNotEmpty ? 1 : 0.5),
+                          .withOpacity(state.enabledCreateButton ? 1 : 0.5),
                     ),
                   ),
                 ),

@@ -8,8 +8,11 @@ class NewChatState with _$NewChatState {
     PageCommand? pageCommand,
     @Default(NewChatTabType.newChat) NewChatTabType tabType,
     @Default('') String keyword,
+    @Default('') String groupName,
     @Default([]) List<Contact> contacts,
     @Default([]) List<Contact> selectedContacts,
     @Default([]) List<Contact> filterContacts,
   }) = _NewChatState;
+
+  bool get enabledCreateButton => selectedContacts.isNotEmpty && groupName.isNotEmpty;
 }

@@ -35,6 +35,7 @@ class AppInputTextField extends StatelessWidget {
   final InputDecoration? decoration;
   final Color? fillColor;
   final String obscuringCharacter;
+  final Color? cursorColor;
 
   const AppInputTextField({
     super.key,
@@ -69,6 +70,7 @@ class AppInputTextField extends StatelessWidget {
     this.validator,
     this.decoration,
     this.fillColor,
+    this.cursorColor,
   });
 
   InputDecoration _inputDecoration(BuildContext context) => InputDecoration(
@@ -113,6 +115,7 @@ class AppInputTextField extends StatelessWidget {
       textAlign: textAlign,
       validator: validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
+      cursorColor: cursorColor,
     );
   }
 }
