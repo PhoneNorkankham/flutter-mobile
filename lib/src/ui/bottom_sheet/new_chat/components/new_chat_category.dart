@@ -22,7 +22,7 @@ class NewChatCategory extends StatelessWidget {
         itemBuilder: (context, index) {
           final NewChatCategoryType type = NewChatCategoryType.values.elementAt(index);
           return InkWell(
-            onTap: () => bloc.add(NewChatEvent.onCategoryPressed(type)),
+            onTap: () => bloc.add(NewChatEvent.onChangedTabType(type.tabType)),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: Row(
