@@ -4,4 +4,5 @@ void _registerManagersModule() {
   Get.put(ConnectivityManager());
   Get.put(NavigatorManager());
   Get.put(TranslationManager(Get.find()));
+  Get.put(SupabaseManager());
 }

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/core/managers/connectivity_manager.dart';
 import 'package:keepup/src/core/managers/navigator_manager.dart';
+import 'package:keepup/src/core/managers/supabase_manager.dart';
 import 'package:keepup/src/core/remote/dio_http_client.dart';
 import 'package:keepup/src/locale/translation_manager.dart';
 import 'package:keepup/src/utils/app_api_config.dart';

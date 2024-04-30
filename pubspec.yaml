@@ -112,6 +112,9 @@ dependencies:
   # Slidable widget
   flutter_slidable: ^3.0.1
 
+  # Supabase
+  supabase_flutter: ^2.5.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
