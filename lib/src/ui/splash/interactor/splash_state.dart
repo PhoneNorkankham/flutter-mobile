@@ -6,11 +6,13 @@ class SplashState extends Equatable with _$SplashState {
   const factory SplashState({
     @Default(PageState.initial) PageState pageStatus,
     PageCommand? pageCommand,
+    @Default(false) bool showButton,
   }) = _SplashState;
 
   @override
   List<Object?> get props => [
         pageStatus,
         pageCommand,
+        showButton,
       ];
 }

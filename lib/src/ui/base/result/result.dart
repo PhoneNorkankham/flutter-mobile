@@ -49,3 +49,9 @@ extension ResultExtension<T, E> on Result<T, E> {
 }
 
 typedef VoidResult = Result<void, PageError<NetworkError>>;
+
+typedef BoolResult = Result<bool, PageError<NetworkError>>;
+
+typedef DataResult<T> = Result<T, PageError<NetworkError>>;
+
+typedef ListResult<T> = Result<List<T>, PageError<NetworkError>>;

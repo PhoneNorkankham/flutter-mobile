@@ -14,22 +14,25 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SplashBloc, SplashState>(
+      buildWhen: (previous, current) => previous.showButton != current.showButton,
       builder: (context, state) {
+        final bloc = context.read<SplashBloc>();
         return Scaffold(
           backgroundColor: AppColors.primary,
           body: Stack(
             children: [
               Center(child: Image.asset(AppAssets.img_logo_png)),
-              Positioned(
-                left: 35,
-                right: 35,
-                bottom: 45,
-                child: AppButton(
-                  onPressed: () => context.read<SplashBloc>().add(const SplashEvent.onGetStarted()),
-                  buttonType: AppButtonType.getStarted,
-                  title: LocaleKey.getStarted.tr,
+              if (state.showButton)
+                Positioned(
+                  left: 35,
+                  right: 35,
+                  bottom: 45,
+                  child: AppButton(
+                    onPressed: () => bloc.add(const SplashEvent.onGetStarted()),
+                    buttonType: AppButtonType.getStarted,
+                    title: LocaleKey.getStarted.tr,
+                  ),
                 ),
-              ),
             ],
           ),
         );
