@@ -1,18 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'contact.freezed.dart';
-part 'contact.g.dart';
+part 'contact_request.freezed.dart';
+part 'contact_request.g.dart';
 
 @freezed
-class ContactData with _$ContactData {
+class ContactRequest with _$ContactRequest {
   @JsonSerializable(includeIfNull: false)
-  const factory ContactData({
-    String? id,
+  const factory ContactRequest({
     @Default('') @JsonKey(name: 'user_id') String userId,
     @Default('') @JsonKey(name: 'group_id') String groupId,
     DateTime? expiration,
     @JsonKey(name: 'date_created') DateTime? dateCreated,
-  }) = _ContactData;
+  }) = _ContactRequest;
 
-  factory ContactData.fromJson(Map<String, dynamic> json) => _$ContactDataFromJson(json);
+  factory ContactRequest.fromJson(Map<String, dynamic> json) => _$ContactRequestFromJson(json);
 }

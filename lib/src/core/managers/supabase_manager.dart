@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
-import 'package:keepup/src/core/model/contact.dart';
-import 'package:keepup/src/core/model/group.dart';
+import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
+import 'package:keepup/src/core/request/group_request.dart';
+import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -9,6 +11,7 @@ class SupabaseManager {
   static const _supabaseUrl = 'https://abtxbiiaitrtayvmltko.supabase.co';
   static const _supabaseKey = String.fromEnvironment('SUPABASE_KEY');
 
+  final _tbUsers = 'Users';
   final _tbGroups = 'Groups';
   final _tbContacts = 'Contacts';
 
@@ -29,11 +32,14 @@ class SupabaseManager {
 
   bool get isAnonymous => _supabaseAuth.currentUser?.isAnonymous ?? true;
 
-  Future<bool> _isLoggedIn() async {
+  Future<bool> _isLoggedIn() {
     if (uid.isNotEmpty && isExpired) {
-      await _supabaseAuth.refreshSession();
+      return _supabaseAuth
+          .refreshSession()
+          .then((value) => uid.isNotEmpty && !isExpired)
+          .catchError((e) => _supabaseAuth.signOut().then((value) => false));
     }
-    return uid.isNotEmpty && !isExpired;
+    return Future.value(uid.isNotEmpty && !isExpired);
   }
 
   Future<bool> _isJoinedGroup() {
@@ -59,33 +65,60 @@ class SupabaseManager {
     );
   }
 
-  Future<LoggedInData> createGuests() =>
-      _supabaseAuth.signInAnonymously().then((_) => getLoggedInData());
-
-  Future<dynamic> joinGroup(GroupData group) async {
-    if (uid.isEmpty) await createGuests();
-    final GroupData newGroup = group.copyWith(contacts: [uid]);
-    return _supabase.from(_tbGroups).insert(newGroup.toJson()).select().then((value) {
-      if (value.isNotEmpty) {
-        final GroupData group = GroupData.fromJson(value.first);
-        final String groupId = group.id ?? '';
-        if (groupId.isNotEmpty) {
-          final ContactData contact = ContactData(
-            userId: uid,
-            groupId: groupId,
-          );
-          return insertContact(contact);
-        }
+  Future<LoggedInData> createGuests() {
+    return _supabaseAuth.signInAnonymously().then((response) async {
+      final User? user = response.user;
+      if (user != null) {
+        final request = UserRequest(
+          id: user.id,
+          dateCreated: DateTime.tryParse(user.createdAt),
+          dateLoggedIn: DateTime.tryParse(user.lastSignInAt ?? ''),
+        );
+        await insertUser(request);
       }
-      return Future.error(LocaleKey.creatingGroupFailed.tr);
+      return getLoggedInData();
     });
   }
 
-  Future<List<GroupData>> getGroups() => _supabase
+  Future<Group> joinGroup(GroupRequest request) async {
+    if (uid.isEmpty) await createGuests();
+    return insertGroup(request.copyWith(contacts: [uid]));
+  }
+
+  Future<void> insertUser(UserRequest request) => _supabase.from(_tbUsers).insert(request.toJson());
+
+  Future<Group> insertGroup(GroupRequest request) => _supabase
+          .from(_tbGroups)
+          .insert(request.copyWith(userId: uid).toJson())
+          .select()
+          .then((value) {
+        if (value.isNotEmpty) {
+          return Group.fromJson(value.first);
+        }
+        return Future.error(LocaleKey.creatingGroupFailed.tr);
+      });
+
+  Future<Contact> insertContact(ContactRequest request) => _supabase
+          .from(_tbContacts)
+          .insert(request.copyWith(userId: uid).toJson())
+          .select()
+          .then((value) {
+        if (value.isNotEmpty) {
+          return Contact.fromJson(value.first);
+        } else {
+          return Future.error(LocaleKey.creatingContactFailed.tr);
+        }
+      });
+
+  Future<List<Group>> getGroups() => _supabase
       .from(_tbGroups)
       .select()
-      .then((value) => value.map((e) => GroupData.fromJson(e)).toList());
+      .eq(_fieldUserID, uid)
+      .then((value) => value.map((e) => Group.fromJson(e)).toList());
 
-  Future<dynamic> insertContact(ContactData contact) =>
-      _supabase.from(_tbContacts).insert(contact.toJson());
+  Future<List<Contact>> getContacts() => _supabase
+      .from(_tbContacts)
+      .select()
+      .eq(_fieldUserID, uid)
+      .then((value) => value.map((e) => Contact.fromJson(e)).toList());
 }

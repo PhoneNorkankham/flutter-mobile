@@ -8,5 +8,5 @@ class OnboardingEvent with _$OnboardingEvent {
 
   const factory OnboardingEvent.gotoMain() = _GotoMain;
 
-  const factory OnboardingEvent.onJoinGroup(GroupData group) = _OnJoinGroup;
+  const factory OnboardingEvent.onJoinGroup(GroupRequest group) = _OnJoinGroup;
 }

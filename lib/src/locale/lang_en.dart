@@ -40,6 +40,7 @@ Map<String, String> enUs = {
   LocaleKey.loginWith: 'Login with',
   LocaleKey.creatingAnonymousAccountFailed: 'Creating Anonymous account failed!',
   LocaleKey.creatingGroupFailed: 'Creating group failed!',
+  LocaleKey.creatingContactFailed: 'Creating contact failed!',
   LocaleKey.joiningGroupFailed: 'Joining group failed!',
   LocaleKey.today: 'Today',
   LocaleKey.keepUpSoon: 'KeepUp Soon',

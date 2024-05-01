@@ -7,7 +7,7 @@ class OnboardingState extends Equatable with _$OnboardingState {
     @Default(PageState.initial) PageState pageStatus,
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
-    @Default([]) List<GroupData> groups,
+    @Default([]) List<GroupRequest> groups,
     @Default(LoggedInData()) LoggedInData loggedInData,
   }) = _OnboardingState;
 

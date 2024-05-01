@@ -4,8 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/core/model/group.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
+import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
@@ -39,11 +39,11 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   Future<void> _initial(_Initial event, Emitter<OnboardingState> emit) async {
     final DataResult<LoggedInData> result = await _getLoggedInDataUseCase.run();
     if (result.isValue) {
-      final List<GroupData> groups = [
+      final List<GroupRequest> groups = [
         'Family',
         'Friends',
         'Business Associates',
-      ].map((e) => GroupData(name: e)).toList();
+      ].map((e) => GroupRequest(name: e)).toList();
       final LoggedInData? loggedInData = result.valueOrNull;
       emit(state.copyWith(groups: groups, loggedInData: loggedInData ?? state.loggedInData));
     } else {
