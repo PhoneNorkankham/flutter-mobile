@@ -612,6 +612,7 @@ abstract class _ShowDialog implements SplashPageCommand {
 mixin _$SplashState {
   PageState get pageStatus => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  bool get showButton => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SplashStateCopyWith<SplashState> get copyWith =>
@@ -624,7 +625,7 @@ abstract class $SplashStateCopyWith<$Res> {
           SplashState value, $Res Function(SplashState) then) =
       _$SplashStateCopyWithImpl<$Res, SplashState>;
   @useResult
-  $Res call({PageState pageStatus, PageCommand? pageCommand});
+  $Res call({PageState pageStatus, PageCommand? pageCommand, bool showButton});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -644,6 +645,7 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
   $Res call({
     Object? pageStatus = null,
     Object? pageCommand = freezed,
+    Object? showButton = null,
   }) {
     return _then(_value.copyWith(
       pageStatus: null == pageStatus
@@ -654,6 +656,10 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      showButton: null == showButton
+          ? _value.showButton
+          : showButton // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -678,7 +684,7 @@ abstract class _$$_SplashStateCopyWith<$Res>
       __$$_SplashStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageState pageStatus, PageCommand? pageCommand});
+  $Res call({PageState pageStatus, PageCommand? pageCommand, bool showButton});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -697,6 +703,7 @@ class __$$_SplashStateCopyWithImpl<$Res>
   $Res call({
     Object? pageStatus = null,
     Object? pageCommand = freezed,
+    Object? showButton = null,
   }) {
     return _then(_$_SplashState(
       pageStatus: null == pageStatus
@@ -707,6 +714,10 @@ class __$$_SplashStateCopyWithImpl<$Res>
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      showButton: null == showButton
+          ? _value.showButton
+          : showButton // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -714,7 +725,10 @@ class __$$_SplashStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SplashState extends _SplashState {
-  const _$_SplashState({this.pageStatus = PageState.initial, this.pageCommand})
+  const _$_SplashState(
+      {this.pageStatus = PageState.initial,
+      this.pageCommand,
+      this.showButton = false})
       : super._();
 
   @override
@@ -722,6 +736,9 @@ class _$_SplashState extends _SplashState {
   final PageState pageStatus;
   @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final bool showButton;
 
   @JsonKey(ignore: true)
   @override
@@ -733,13 +750,16 @@ class _$_SplashState extends _SplashState {
 abstract class _SplashState extends SplashState {
   const factory _SplashState(
       {final PageState pageStatus,
-      final PageCommand? pageCommand}) = _$_SplashState;
+      final PageCommand? pageCommand,
+      final bool showButton}) = _$_SplashState;
   const _SplashState._() : super._();
 
   @override
   PageState get pageStatus;
   @override
   PageCommand? get pageCommand;
+  @override
+  bool get showButton;
   @override
   @JsonKey(ignore: true)
   _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>

@@ -1,8 +1,11 @@
 import 'package:get/get.dart';
+import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/managers/connectivity_manager.dart';
 import 'package:keepup/src/core/managers/navigator_manager.dart';
-import 'package:keepup/src/core/remote/dio_http_client.dart';
+import 'package:keepup/src/core/managers/supabase_manager.dart';
+import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/translation_manager.dart';
+import 'package:keepup/src/use_cases/check_logged_in_use_case.dart';
 import 'package:keepup/src/utils/app_api_config.dart';
 import 'package:keepup/src/utils/app_shared.dart';
 
@@ -20,14 +23,14 @@ Future<void> setupDependenciesGraph() async {
   // Core Dependencies
   await _registerCoreModule();
 
+  // Managers Dependencies
+  _registerManagersModule();
+
   // API Services Dependencies
   _registerApiModule();
 
   // Repositories Dependencies
   await _registerRepositoriesModule();
-
-  // Managers Dependencies
-  _registerManagersModule();
 
   // UseCases Dependencies
   _registerUseCasesModule();

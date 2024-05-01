@@ -6,6 +6,7 @@ class SplashBinding extends Bindings {
   void dependencies() {
     Get.put<SplashBloc>(SplashBloc(
       Get.find(),
+      Get.find(),
     ));
   }
 }

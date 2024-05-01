@@ -48,6 +48,10 @@ class LocaleKey {
   static const String businessAssociates = "businessAssociates";
   static const String loginForAdditionalFeatures = "loginForAdditionalFeatures";
   static const String loginWith = "loginWith";
+  static const String creatingAnonymousAccountFailed = "creatingAnonymousAccountFailed";
+  static const String creatingGroupFailed = "creatingGroupFailed";
+  static const String creatingContactFailed = "creatingContactFailed";
+  static const String joiningGroupFailed = "joiningGroupFailed";
 
   // Main
   static const String today = "today";

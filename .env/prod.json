@@ -1,4 +1,5 @@
 {
     "FLAVOR": "prod",
-    "APP_NAME": "KeepUp"
+    "APP_NAME": "KeepUp",
+    "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFidHhiaWlhaXRydGF5dm1sdGtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ0MDU4OTksImV4cCI6MjAyOTk4MTg5OX0.bYCXUGg6DUiKvan6BSOe45-XLBqaBqx1wyljw64WUgA"
 }

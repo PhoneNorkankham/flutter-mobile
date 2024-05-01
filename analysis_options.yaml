@@ -4,6 +4,8 @@ analyzer:
   exclude:
     - lib/**.g.dart
     - lib/src/utils/app_assets.dart
+  errors:
+    invalid_annotation_target: false
 
 linter:
   rules:

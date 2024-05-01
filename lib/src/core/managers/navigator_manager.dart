@@ -48,7 +48,7 @@ class NavigatorManager {
 
   Future<void> offToPage(String page, {dynamic args}) async {
     try {
-      _pageStack.removeLast();
+      if (_pageStack.isNotEmpty) _pageStack.removeLast();
       _pageStack.add(page);
       _resetPoppedPage();
       _logEvent('offToPage');

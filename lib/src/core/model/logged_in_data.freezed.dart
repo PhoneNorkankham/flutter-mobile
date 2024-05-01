@@ -1,0 +1,237 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'logged_in_data.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+LoggedInData _$LoggedInDataFromJson(Map<String, dynamic> json) {
+  return _LoggedInData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LoggedInData {
+  @HiveField(0, defaultValue: false)
+  bool get isLoggedIn => throw _privateConstructorUsedError;
+  @HiveField(1, defaultValue: false)
+  bool get isExpired => throw _privateConstructorUsedError;
+  @HiveField(2, defaultValue: false)
+  bool get isAnonymous => throw _privateConstructorUsedError;
+  @HiveField(3, defaultValue: false)
+  bool get isJoinedGroup => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoggedInDataCopyWith<LoggedInData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoggedInDataCopyWith<$Res> {
+  factory $LoggedInDataCopyWith(
+          LoggedInData value, $Res Function(LoggedInData) then) =
+      _$LoggedInDataCopyWithImpl<$Res, LoggedInData>;
+  @useResult
+  $Res call(
+      {@HiveField(0, defaultValue: false) bool isLoggedIn,
+      @HiveField(1, defaultValue: false) bool isExpired,
+      @HiveField(2, defaultValue: false) bool isAnonymous,
+      @HiveField(3, defaultValue: false) bool isJoinedGroup});
+}
+
+/// @nodoc
+class _$LoggedInDataCopyWithImpl<$Res, $Val extends LoggedInData>
+    implements $LoggedInDataCopyWith<$Res> {
+  _$LoggedInDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoggedIn = null,
+    Object? isExpired = null,
+    Object? isAnonymous = null,
+    Object? isJoinedGroup = null,
+  }) {
+    return _then(_value.copyWith(
+      isLoggedIn: null == isLoggedIn
+          ? _value.isLoggedIn
+          : isLoggedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isExpired: null == isExpired
+          ? _value.isExpired
+          : isExpired // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAnonymous: null == isAnonymous
+          ? _value.isAnonymous
+          : isAnonymous // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isJoinedGroup: null == isJoinedGroup
+          ? _value.isJoinedGroup
+          : isJoinedGroup // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_LoggedInDataCopyWith<$Res>
+    implements $LoggedInDataCopyWith<$Res> {
+  factory _$$_LoggedInDataCopyWith(
+          _$_LoggedInData value, $Res Function(_$_LoggedInData) then) =
+      __$$_LoggedInDataCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@HiveField(0, defaultValue: false) bool isLoggedIn,
+      @HiveField(1, defaultValue: false) bool isExpired,
+      @HiveField(2, defaultValue: false) bool isAnonymous,
+      @HiveField(3, defaultValue: false) bool isJoinedGroup});
+}
+
+/// @nodoc
+class __$$_LoggedInDataCopyWithImpl<$Res>
+    extends _$LoggedInDataCopyWithImpl<$Res, _$_LoggedInData>
+    implements _$$_LoggedInDataCopyWith<$Res> {
+  __$$_LoggedInDataCopyWithImpl(
+      _$_LoggedInData _value, $Res Function(_$_LoggedInData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoggedIn = null,
+    Object? isExpired = null,
+    Object? isAnonymous = null,
+    Object? isJoinedGroup = null,
+  }) {
+    return _then(_$_LoggedInData(
+      isLoggedIn: null == isLoggedIn
+          ? _value.isLoggedIn
+          : isLoggedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isExpired: null == isExpired
+          ? _value.isExpired
+          : isExpired // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAnonymous: null == isAnonymous
+          ? _value.isAnonymous
+          : isAnonymous // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isJoinedGroup: null == isJoinedGroup
+          ? _value.isJoinedGroup
+          : isJoinedGroup // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_LoggedInData implements _LoggedInData {
+  const _$_LoggedInData(
+      {@HiveField(0, defaultValue: false) this.isLoggedIn = false,
+      @HiveField(1, defaultValue: false) this.isExpired = false,
+      @HiveField(2, defaultValue: false) this.isAnonymous = false,
+      @HiveField(3, defaultValue: false) this.isJoinedGroup = false});
+
+  factory _$_LoggedInData.fromJson(Map<String, dynamic> json) =>
+      _$$_LoggedInDataFromJson(json);
+
+  @override
+  @JsonKey()
+  @HiveField(0, defaultValue: false)
+  final bool isLoggedIn;
+  @override
+  @JsonKey()
+  @HiveField(1, defaultValue: false)
+  final bool isExpired;
+  @override
+  @JsonKey()
+  @HiveField(2, defaultValue: false)
+  final bool isAnonymous;
+  @override
+  @JsonKey()
+  @HiveField(3, defaultValue: false)
+  final bool isJoinedGroup;
+
+  @override
+  String toString() {
+    return 'LoggedInData(isLoggedIn: $isLoggedIn, isExpired: $isExpired, isAnonymous: $isAnonymous, isJoinedGroup: $isJoinedGroup)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LoggedInData &&
+            (identical(other.isLoggedIn, isLoggedIn) ||
+                other.isLoggedIn == isLoggedIn) &&
+            (identical(other.isExpired, isExpired) ||
+                other.isExpired == isExpired) &&
+            (identical(other.isAnonymous, isAnonymous) ||
+                other.isAnonymous == isAnonymous) &&
+            (identical(other.isJoinedGroup, isJoinedGroup) ||
+                other.isJoinedGroup == isJoinedGroup));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, isLoggedIn, isExpired, isAnonymous, isJoinedGroup);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LoggedInDataCopyWith<_$_LoggedInData> get copyWith =>
+      __$$_LoggedInDataCopyWithImpl<_$_LoggedInData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_LoggedInDataToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LoggedInData implements LoggedInData {
+  const factory _LoggedInData(
+          {@HiveField(0, defaultValue: false) final bool isLoggedIn,
+          @HiveField(1, defaultValue: false) final bool isExpired,
+          @HiveField(2, defaultValue: false) final bool isAnonymous,
+          @HiveField(3, defaultValue: false) final bool isJoinedGroup}) =
+      _$_LoggedInData;
+
+  factory _LoggedInData.fromJson(Map<String, dynamic> json) =
+      _$_LoggedInData.fromJson;
+
+  @override
+  @HiveField(0, defaultValue: false)
+  bool get isLoggedIn;
+  @override
+  @HiveField(1, defaultValue: false)
+  bool get isExpired;
+  @override
+  @HiveField(2, defaultValue: false)
+  bool get isAnonymous;
+  @override
+  @HiveField(3, defaultValue: false)
+  bool get isJoinedGroup;
+  @override
+  @JsonKey(ignore: true)
+  _$$_LoggedInDataCopyWith<_$_LoggedInData> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -1,15 +1,15 @@
-import 'package:floor/floor.dart';
+import 'package:drift/drift.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
 
 class DateTimeConverter extends TypeConverter<DateTime, String> {
   @override
-  DateTime decode(String databaseValue) {
-    if (databaseValue.isEmpty) {
+  DateTime fromSql(String fromDb) {
+    if (fromDb.isEmpty) {
       return DateTime.now();
     }
-    return DateTime.parse(databaseValue);
+    return DateTime.parse(fromDb);
   }
 
   @override
-  String encode(DateTime value) => value.generalDateText;
+  String toSql(DateTime value) => value.generalDateText;
 }
