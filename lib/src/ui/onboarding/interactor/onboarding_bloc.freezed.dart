@@ -21,6 +21,7 @@ mixin _$OnboardingEvent {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function() gotoMain,
+    required TResult Function(GroupData group) onJoinGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$OnboardingEvent {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function()? gotoMain,
+    TResult? Function(GroupData group)? onJoinGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$OnboardingEvent {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function()? gotoMain,
+    TResult Function(GroupData group)? onJoinGroup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$OnboardingEvent {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_GotoMain value) gotoMain,
+    required TResult Function(_OnJoinGroup value) onJoinGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$OnboardingEvent {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_GotoMain value)? gotoMain,
+    TResult? Function(_OnJoinGroup value)? onJoinGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$OnboardingEvent {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_GotoMain value)? gotoMain,
+    TResult Function(_OnJoinGroup value)? onJoinGroup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +126,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function() gotoMain,
+    required TResult Function(GroupData group) onJoinGroup,
   }) {
     return initial();
   }
@@ -130,6 +137,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function()? gotoMain,
+    TResult? Function(GroupData group)? onJoinGroup,
   }) {
     return initial?.call();
   }
@@ -140,6 +148,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function()? gotoMain,
+    TResult Function(GroupData group)? onJoinGroup,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -154,6 +163,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_GotoMain value) gotoMain,
+    required TResult Function(_OnJoinGroup value) onJoinGroup,
   }) {
     return initial(this);
   }
@@ -164,6 +174,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_GotoMain value)? gotoMain,
+    TResult? Function(_OnJoinGroup value)? onJoinGroup,
   }) {
     return initial?.call(this);
   }
@@ -174,6 +185,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_GotoMain value)? gotoMain,
+    TResult Function(_OnJoinGroup value)? onJoinGroup,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -228,6 +240,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function() gotoMain,
+    required TResult Function(GroupData group) onJoinGroup,
   }) {
     return clearPageCommand();
   }
@@ -238,6 +251,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function()? gotoMain,
+    TResult? Function(GroupData group)? onJoinGroup,
   }) {
     return clearPageCommand?.call();
   }
@@ -248,6 +262,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function()? gotoMain,
+    TResult Function(GroupData group)? onJoinGroup,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -262,6 +277,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_GotoMain value) gotoMain,
+    required TResult Function(_OnJoinGroup value) onJoinGroup,
   }) {
     return clearPageCommand(this);
   }
@@ -272,6 +288,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_GotoMain value)? gotoMain,
+    TResult? Function(_OnJoinGroup value)? onJoinGroup,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -282,6 +299,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_GotoMain value)? gotoMain,
+    TResult Function(_OnJoinGroup value)? onJoinGroup,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -336,6 +354,7 @@ class _$_GotoMain implements _GotoMain {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function() gotoMain,
+    required TResult Function(GroupData group) onJoinGroup,
   }) {
     return gotoMain();
   }
@@ -346,6 +365,7 @@ class _$_GotoMain implements _GotoMain {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function()? gotoMain,
+    TResult? Function(GroupData group)? onJoinGroup,
   }) {
     return gotoMain?.call();
   }
@@ -356,6 +376,7 @@ class _$_GotoMain implements _GotoMain {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function()? gotoMain,
+    TResult Function(GroupData group)? onJoinGroup,
     required TResult orElse(),
   }) {
     if (gotoMain != null) {
@@ -370,6 +391,7 @@ class _$_GotoMain implements _GotoMain {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_GotoMain value) gotoMain,
+    required TResult Function(_OnJoinGroup value) onJoinGroup,
   }) {
     return gotoMain(this);
   }
@@ -380,6 +402,7 @@ class _$_GotoMain implements _GotoMain {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_GotoMain value)? gotoMain,
+    TResult? Function(_OnJoinGroup value)? onJoinGroup,
   }) {
     return gotoMain?.call(this);
   }
@@ -390,6 +413,7 @@ class _$_GotoMain implements _GotoMain {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_GotoMain value)? gotoMain,
+    TResult Function(_OnJoinGroup value)? onJoinGroup,
     required TResult orElse(),
   }) {
     if (gotoMain != null) {
@@ -401,6 +425,161 @@ class _$_GotoMain implements _GotoMain {
 
 abstract class _GotoMain implements OnboardingEvent {
   const factory _GotoMain() = _$_GotoMain;
+}
+
+/// @nodoc
+abstract class _$$_OnJoinGroupCopyWith<$Res> {
+  factory _$$_OnJoinGroupCopyWith(
+          _$_OnJoinGroup value, $Res Function(_$_OnJoinGroup) then) =
+      __$$_OnJoinGroupCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GroupData group});
+
+  $GroupDataCopyWith<$Res> get group;
+}
+
+/// @nodoc
+class __$$_OnJoinGroupCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$_OnJoinGroup>
+    implements _$$_OnJoinGroupCopyWith<$Res> {
+  __$$_OnJoinGroupCopyWithImpl(
+      _$_OnJoinGroup _value, $Res Function(_$_OnJoinGroup) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? group = null,
+  }) {
+    return _then(_$_OnJoinGroup(
+      null == group
+          ? _value.group
+          : group // ignore: cast_nullable_to_non_nullable
+              as GroupData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GroupDataCopyWith<$Res> get group {
+    return $GroupDataCopyWith<$Res>(_value.group, (value) {
+      return _then(_value.copyWith(group: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_OnJoinGroup implements _OnJoinGroup {
+  const _$_OnJoinGroup(this.group);
+
+  @override
+  final GroupData group;
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.onJoinGroup(group: $group)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnJoinGroup &&
+            (identical(other.group, group) || other.group == group));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, group);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnJoinGroupCopyWith<_$_OnJoinGroup> get copyWith =>
+      __$$_OnJoinGroupCopyWithImpl<_$_OnJoinGroup>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() gotoMain,
+    required TResult Function(GroupData group) onJoinGroup,
+  }) {
+    return onJoinGroup(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? gotoMain,
+    TResult? Function(GroupData group)? onJoinGroup,
+  }) {
+    return onJoinGroup?.call(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? gotoMain,
+    TResult Function(GroupData group)? onJoinGroup,
+    required TResult orElse(),
+  }) {
+    if (onJoinGroup != null) {
+      return onJoinGroup(group);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_GotoMain value) gotoMain,
+    required TResult Function(_OnJoinGroup value) onJoinGroup,
+  }) {
+    return onJoinGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_GotoMain value)? gotoMain,
+    TResult? Function(_OnJoinGroup value)? onJoinGroup,
+  }) {
+    return onJoinGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_GotoMain value)? gotoMain,
+    TResult Function(_OnJoinGroup value)? onJoinGroup,
+    required TResult orElse(),
+  }) {
+    if (onJoinGroup != null) {
+      return onJoinGroup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnJoinGroup implements OnboardingEvent {
+  const factory _OnJoinGroup(final GroupData group) = _$_OnJoinGroup;
+
+  GroupData get group;
+  @JsonKey(ignore: true)
+  _$$_OnJoinGroupCopyWith<_$_OnJoinGroup> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -612,6 +791,9 @@ abstract class _ShowDialog implements SplashPageCommand {
 mixin _$OnboardingState {
   PageState get pageStatus => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  List<GroupData> get groups => throw _privateConstructorUsedError;
+  LoggedInData get loggedInData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OnboardingStateCopyWith<OnboardingState> get copyWith =>
@@ -624,9 +806,15 @@ abstract class $OnboardingStateCopyWith<$Res> {
           OnboardingState value, $Res Function(OnboardingState) then) =
       _$OnboardingStateCopyWithImpl<$Res, OnboardingState>;
   @useResult
-  $Res call({PageState pageStatus, PageCommand? pageCommand});
+  $Res call(
+      {PageState pageStatus,
+      PageCommand? pageCommand,
+      bool isLoading,
+      List<GroupData> groups,
+      LoggedInData loggedInData});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
+  $LoggedInDataCopyWith<$Res> get loggedInData;
 }
 
 /// @nodoc
@@ -644,6 +832,9 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
   $Res call({
     Object? pageStatus = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? groups = null,
+    Object? loggedInData = null,
   }) {
     return _then(_value.copyWith(
       pageStatus: null == pageStatus
@@ -654,6 +845,18 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      groups: null == groups
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<GroupData>,
+      loggedInData: null == loggedInData
+          ? _value.loggedInData
+          : loggedInData // ignore: cast_nullable_to_non_nullable
+              as LoggedInData,
     ) as $Val);
   }
 
@@ -668,28 +871,43 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
       return _then(_value.copyWith(pageCommand: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LoggedInDataCopyWith<$Res> get loggedInData {
+    return $LoggedInDataCopyWith<$Res>(_value.loggedInData, (value) {
+      return _then(_value.copyWith(loggedInData: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$_SplashStateCopyWith<$Res>
+abstract class _$$_OnboardingStateCopyWith<$Res>
     implements $OnboardingStateCopyWith<$Res> {
-  factory _$$_SplashStateCopyWith(
-          _$_SplashState value, $Res Function(_$_SplashState) then) =
-      __$$_SplashStateCopyWithImpl<$Res>;
+  factory _$$_OnboardingStateCopyWith(
+          _$_OnboardingState value, $Res Function(_$_OnboardingState) then) =
+      __$$_OnboardingStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageState pageStatus, PageCommand? pageCommand});
+  $Res call(
+      {PageState pageStatus,
+      PageCommand? pageCommand,
+      bool isLoading,
+      List<GroupData> groups,
+      LoggedInData loggedInData});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
+  @override
+  $LoggedInDataCopyWith<$Res> get loggedInData;
 }
 
 /// @nodoc
-class __$$_SplashStateCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_SplashState>
-    implements _$$_SplashStateCopyWith<$Res> {
-  __$$_SplashStateCopyWithImpl(
-      _$_SplashState _value, $Res Function(_$_SplashState) _then)
+class __$$_OnboardingStateCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingState>
+    implements _$$_OnboardingStateCopyWith<$Res> {
+  __$$_OnboardingStateCopyWithImpl(
+      _$_OnboardingState _value, $Res Function(_$_OnboardingState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -697,8 +915,11 @@ class __$$_SplashStateCopyWithImpl<$Res>
   $Res call({
     Object? pageStatus = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? groups = null,
+    Object? loggedInData = null,
   }) {
-    return _then(_$_SplashState(
+    return _then(_$_OnboardingState(
       pageStatus: null == pageStatus
           ? _value.pageStatus
           : pageStatus // ignore: cast_nullable_to_non_nullable
@@ -707,41 +928,83 @@ class __$$_SplashStateCopyWithImpl<$Res>
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      groups: null == groups
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<GroupData>,
+      loggedInData: null == loggedInData
+          ? _value.loggedInData
+          : loggedInData // ignore: cast_nullable_to_non_nullable
+              as LoggedInData,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_SplashState extends _SplashState {
-  const _$_SplashState({this.pageStatus = PageState.initial, this.pageCommand})
-      : super._();
+class _$_OnboardingState extends _OnboardingState {
+  const _$_OnboardingState(
+      {this.pageStatus = PageState.initial,
+      this.pageCommand,
+      this.isLoading = false,
+      final List<GroupData> groups = const [],
+      this.loggedInData = const LoggedInData()})
+      : _groups = groups,
+        super._();
 
   @override
   @JsonKey()
   final PageState pageStatus;
   @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final bool isLoading;
+  final List<GroupData> _groups;
+  @override
+  @JsonKey()
+  List<GroupData> get groups {
+    if (_groups is EqualUnmodifiableListView) return _groups;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groups);
+  }
+
+  @override
+  @JsonKey()
+  final LoggedInData loggedInData;
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>
-      __$$_SplashStateCopyWithImpl<_$_SplashState>(this, _$identity);
+  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
+      __$$_OnboardingStateCopyWithImpl<_$_OnboardingState>(this, _$identity);
 }
 
-abstract class _SplashState extends OnboardingState {
-  const factory _SplashState(
+abstract class _OnboardingState extends OnboardingState {
+  const factory _OnboardingState(
       {final PageState pageStatus,
-      final PageCommand? pageCommand}) = _$_SplashState;
-  const _SplashState._() : super._();
+      final PageCommand? pageCommand,
+      final bool isLoading,
+      final List<GroupData> groups,
+      final LoggedInData loggedInData}) = _$_OnboardingState;
+  const _OnboardingState._() : super._();
 
   @override
   PageState get pageStatus;
   @override
   PageCommand? get pageCommand;
   @override
+  bool get isLoading;
+  @override
+  List<GroupData> get groups;
+  @override
+  LoggedInData get loggedInData;
+  @override
   @JsonKey(ignore: true)
-  _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>
+  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
       throw _privateConstructorUsedError;
 }

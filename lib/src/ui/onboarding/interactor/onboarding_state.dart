@@ -6,11 +6,16 @@ class OnboardingState extends Equatable with _$OnboardingState {
   const factory OnboardingState({
     @Default(PageState.initial) PageState pageStatus,
     PageCommand? pageCommand,
-  }) = _SplashState;
+    @Default(false) bool isLoading,
+    @Default([]) List<GroupData> groups,
+    @Default(LoggedInData()) LoggedInData loggedInData,
+  }) = _OnboardingState;
 
   @override
   List<Object?> get props => [
         pageStatus,
         pageCommand,
+        groups,
+        isLoading,
       ];
 }

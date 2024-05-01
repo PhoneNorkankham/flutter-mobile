@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:keepup/src/core/resource.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class NetworkBoundResource<RequestType, ResultType> {
   final Completer<Resource<ResultType>> _result = Completer<Resource<ResultType>>();
@@ -20,28 +22,26 @@ class NetworkBoundResource<RequestType, ResultType> {
 
   final ResultType Function(RequestType json)? parsedData;
 
-  NetworkBoundResource(
-      {this.createSerializedCall,
-      this.parsedData,
-      this.saveCallResult,
-      this.loadFromDb,
-      this.shouldFetch = true}) {
+  NetworkBoundResource({
+    this.createSerializedCall,
+    this.parsedData,
+    this.saveCallResult,
+    this.loadFromDb,
+    this.shouldFetch = true,
+  }) {
     shouldFetch ? (_fetchFromServerWithSerialization()) : _fetchFromDB();
   }
 
   bool _areTypesSame<S, T>() => S == T;
 
-  FutureOr<void> _fetchFromServerWithSerialization() async {
-    try {
-      // call request from network
-      RequestType response = await createSerializedCall!();
-
+  FutureOr<void> _fetchFromServerWithSerialization() {
+    return createSerializedCall?.call().then((response) async {
       ResultType? result;
 
-      if (response is ResultType) {
+      if (parsedData != null) {
+        result = parsedData!.call(response);
+      } else if (response is ResultType) {
         result = response;
-      } else {
-        result = parsedData?.call(response);
       }
 
       if (result != null || _areTypesSame<ResultType, void>()) {
@@ -49,7 +49,7 @@ class NetworkBoundResource<RequestType, ResultType> {
       }
 
       if (loadFromDb != null) {
-        result = await loadFromDb!(); // call request from database
+        result = await loadFromDb?.call(); // call request from database
       }
 
       if (_areTypesSame<ResultType, void>()) {
@@ -59,10 +59,30 @@ class NetworkBoundResource<RequestType, ResultType> {
       } else {
         _result.complete(Resource.withNoData());
       }
-    } on DioException catch (e) {
+    }).catchError((e) async {
       ResultType? data = await loadFromDb?.call(); // call request from database
-      _result.complete(Resource.withError(e, data: data));
-    }
+      if (e is DioException) {
+        _result.complete(Resource.withError(e, data: data));
+      } else if (e is PostgrestException) {
+        _result.complete(Resource(
+          data: data,
+          message: e.message,
+          type: ResourceType.REQUEST_ERROR,
+        ));
+      } else if (e is SocketException) {
+        _result.complete(Resource(
+          data: data,
+          message: e.message,
+          type: ResourceType.REQUEST_ERROR,
+        ));
+      } else {
+        _result.complete(Resource(
+          data: data,
+          message: e.toString(),
+          type: ResourceType.REQUEST_ERROR,
+        ));
+      }
+    });
   }
 
   FutureOr<void> _fetchFromDB() async {

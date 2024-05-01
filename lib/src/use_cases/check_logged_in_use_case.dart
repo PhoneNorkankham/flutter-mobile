@@ -1,0 +1,22 @@
+import 'package:keepup/src/core/model/logged_in_data.dart';
+import 'package:keepup/src/core/repository/supabase_repository.dart';
+import 'package:keepup/src/ui/base/interactor/base_use_case.dart';
+import 'package:keepup/src/ui/base/result/result.dart';
+
+class GetLoggedInDataUseCase extends NoInputUseCase<DataResult<LoggedInData>> {
+  final SupabaseRepository _supabaseRepository;
+
+  GetLoggedInDataUseCase(this._supabaseRepository);
+
+  @override
+  Future<DataResult<LoggedInData>> run() {
+    return _supabaseRepository.getLoggedInData().then((resource) {
+      final data = resource.data;
+      if (data != null) {
+        return Result.value(data);
+      } else {
+        return Result.error(resource.toPageError());
+      }
+    });
+  }
+}

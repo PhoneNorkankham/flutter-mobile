@@ -39,6 +39,8 @@ class Resource<DataType> {
         'data': data,
       };
 
+  Resource({this.type, this.message, this.data});
+
   Resource.withError(DioException error, {this.data}) {
     String message = '';
     ResourceType type;
