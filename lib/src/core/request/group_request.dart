@@ -7,8 +7,9 @@ part 'group_request.g.dart';
 class GroupRequest with _$GroupRequest {
   @JsonSerializable(includeIfNull: false)
   const factory GroupRequest({
-    @Default('') @JsonKey(name: 'user_id') String userId,
+    @Default('') @JsonKey(name: 'owner_id') String ownerId,
     @Default('') String name,
+    @Default('') String description,
     @Default('') String avatar,
     @JsonKey(name: 'frequency_interval') DateTime? frequencyInterval,
     @Default([]) List<String> contacts,

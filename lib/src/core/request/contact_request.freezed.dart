@@ -20,10 +20,8 @@ ContactRequest _$ContactRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ContactRequest {
-  @JsonKey(name: 'user_id')
-  String get userId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'group_id')
-  String get groupId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'owner_id')
+  String get ownerId => throw _privateConstructorUsedError;
   DateTime? get expiration => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated => throw _privateConstructorUsedError;
@@ -41,8 +39,7 @@ abstract class $ContactRequestCopyWith<$Res> {
       _$ContactRequestCopyWithImpl<$Res, ContactRequest>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') String userId,
-      @JsonKey(name: 'group_id') String groupId,
+      {@JsonKey(name: 'owner_id') String ownerId,
       DateTime? expiration,
       @JsonKey(name: 'date_created') DateTime? dateCreated});
 }
@@ -60,19 +57,14 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
-    Object? groupId = null,
+    Object? ownerId = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      groupId: null == groupId
-          ? _value.groupId
-          : groupId // ignore: cast_nullable_to_non_nullable
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       expiration: freezed == expiration
           ? _value.expiration
@@ -95,8 +87,7 @@ abstract class _$$_ContactRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') String userId,
-      @JsonKey(name: 'group_id') String groupId,
+      {@JsonKey(name: 'owner_id') String ownerId,
       DateTime? expiration,
       @JsonKey(name: 'date_created') DateTime? dateCreated});
 }
@@ -112,19 +103,14 @@ class __$$_ContactRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
-    Object? groupId = null,
+    Object? ownerId = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
   }) {
     return _then(_$_ContactRequest(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      groupId: null == groupId
-          ? _value.groupId
-          : groupId // ignore: cast_nullable_to_non_nullable
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       expiration: freezed == expiration
           ? _value.expiration
@@ -143,8 +129,7 @@ class __$$_ContactRequestCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$_ContactRequest implements _ContactRequest {
   const _$_ContactRequest(
-      {@JsonKey(name: 'user_id') this.userId = '',
-      @JsonKey(name: 'group_id') this.groupId = '',
+      {@JsonKey(name: 'owner_id') this.ownerId = '',
       this.expiration,
       @JsonKey(name: 'date_created') this.dateCreated});
 
@@ -152,11 +137,8 @@ class _$_ContactRequest implements _ContactRequest {
       _$$_ContactRequestFromJson(json);
 
   @override
-  @JsonKey(name: 'user_id')
-  final String userId;
-  @override
-  @JsonKey(name: 'group_id')
-  final String groupId;
+  @JsonKey(name: 'owner_id')
+  final String ownerId;
   @override
   final DateTime? expiration;
   @override
@@ -165,7 +147,7 @@ class _$_ContactRequest implements _ContactRequest {
 
   @override
   String toString() {
-    return 'ContactRequest(userId: $userId, groupId: $groupId, expiration: $expiration, dateCreated: $dateCreated)';
+    return 'ContactRequest(ownerId: $ownerId, expiration: $expiration, dateCreated: $dateCreated)';
   }
 
   @override
@@ -173,8 +155,7 @@ class _$_ContactRequest implements _ContactRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ContactRequest &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.groupId, groupId) || other.groupId == groupId) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.expiration, expiration) ||
                 other.expiration == expiration) &&
             (identical(other.dateCreated, dateCreated) ||
@@ -184,7 +165,7 @@ class _$_ContactRequest implements _ContactRequest {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, userId, groupId, expiration, dateCreated);
+      Object.hash(runtimeType, ownerId, expiration, dateCreated);
 
   @JsonKey(ignore: true)
   @override
@@ -202,8 +183,7 @@ class _$_ContactRequest implements _ContactRequest {
 
 abstract class _ContactRequest implements ContactRequest {
   const factory _ContactRequest(
-          {@JsonKey(name: 'user_id') final String userId,
-          @JsonKey(name: 'group_id') final String groupId,
+          {@JsonKey(name: 'owner_id') final String ownerId,
           final DateTime? expiration,
           @JsonKey(name: 'date_created') final DateTime? dateCreated}) =
       _$_ContactRequest;
@@ -212,11 +192,8 @@ abstract class _ContactRequest implements ContactRequest {
       _$_ContactRequest.fromJson;
 
   @override
-  @JsonKey(name: 'user_id')
-  String get userId;
-  @override
-  @JsonKey(name: 'group_id')
-  String get groupId;
+  @JsonKey(name: 'owner_id')
+  String get ownerId;
   @override
   DateTime? get expiration;
   @override

@@ -15,7 +15,7 @@ class SupabaseManager {
   final _tbGroups = 'Groups';
   final _tbContacts = 'Contacts';
 
-  final _fieldUserID = 'user_id';
+  final _fieldOwnerId = 'owner_id';
 
   static Future<Supabase> initialize() => Supabase.initialize(
         url: _supabaseUrl,
@@ -47,7 +47,7 @@ class SupabaseManager {
       return _supabase
           .from(_tbGroups)
           .select()
-          .eq(_fieldUserID, uid)
+          .eq(_fieldOwnerId, uid)
           .then((value) => value.isNotEmpty);
     } else {
       return Future.value(false);
@@ -82,14 +82,14 @@ class SupabaseManager {
 
   Future<Group> joinGroup(GroupRequest request) async {
     if (uid.isEmpty) await createGuests();
-    return insertGroup(request.copyWith(contacts: [uid]));
+    return insertGroup(request);
   }
 
   Future<void> insertUser(UserRequest request) => _supabase.from(_tbUsers).insert(request.toJson());
 
   Future<Group> insertGroup(GroupRequest request) => _supabase
           .from(_tbGroups)
-          .insert(request.copyWith(userId: uid).toJson())
+          .insert(request.copyWith(ownerId: uid).toJson())
           .select()
           .then((value) {
         if (value.isNotEmpty) {
@@ -100,7 +100,7 @@ class SupabaseManager {
 
   Future<Contact> insertContact(ContactRequest request) => _supabase
           .from(_tbContacts)
-          .insert(request.copyWith(userId: uid).toJson())
+          .insert(request.copyWith(ownerId: uid).toJson())
           .select()
           .then((value) {
         if (value.isNotEmpty) {
@@ -113,12 +113,12 @@ class SupabaseManager {
   Future<List<Group>> getGroups() => _supabase
       .from(_tbGroups)
       .select()
-      .eq(_fieldUserID, uid)
+      .eq(_fieldOwnerId, uid)
       .then((value) => value.map((e) => Group.fromJson(e)).toList());
 
   Future<List<Contact>> getContacts() => _supabase
       .from(_tbContacts)
       .select()
-      .eq(_fieldUserID, uid)
+      .eq(_fieldOwnerId, uid)
       .then((value) => value.map((e) => Contact.fromJson(e)).toList());
 }

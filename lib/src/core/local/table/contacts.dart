@@ -3,7 +3,7 @@ import 'package:drift/drift.dart';
 class Contacts extends Table {
   TextColumn get id => text()();
 
-  TextColumn get groupId => text().named('group_id')();
+  TextColumn get ownerId => text().named('owner_id')();
 
   DateTimeColumn get expiration => dateTime().nullable()();
 
