@@ -45,7 +45,7 @@ class SupabaseManager {
   Future<bool> _isJoinedGroup() {
     if (uid.isNotEmpty) {
       return _supabase
-          .from(_tbContacts)
+          .from(_tbGroups)
           .select()
           .eq(_fieldUserID, uid)
           .then((value) => value.isNotEmpty);
