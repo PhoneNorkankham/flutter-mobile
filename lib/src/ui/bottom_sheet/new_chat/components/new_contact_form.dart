@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/inputs/app_input_text_field.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
+import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_input_type.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
@@ -81,6 +82,8 @@ class NewContactForm extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             AppInputTextField(
+              readOnly: true,
+              onTap: () => _showDatePicker(context),
               controller: bloc.dateOfBirthController,
               hintText: LocaleKey.dateOfBirth.tr,
               textInputType: TextInputType.datetime,
@@ -95,5 +98,24 @@ class NewContactForm extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _showDatePicker(BuildContext context) {
+    final NewChatBloc bloc = context.read();
+    showDatePicker(
+      context: context,
+      cancelText: LocaleKey.cancel.tr,
+      confirmText: LocaleKey.check.tr,
+      initialDate: bloc.state.request.dateOfBirth ?? DateTime.now(),
+      firstDate: DateTime.now().subtract(const Duration(days: 365 * 100)),
+      lastDate: DateTime.now(),
+    ).then((date) {
+      if (date == null) return;
+      bloc.dateOfBirthController.text = date.generalDateText;
+      bloc.add(NewChatEvent.onInputChanged(
+        NewChatInputType.dateOfBirth,
+        date.generalDateText,
+      ));
+    });
   }
 }
