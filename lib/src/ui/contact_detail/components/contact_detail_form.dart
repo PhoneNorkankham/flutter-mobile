@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/inputs/app_input_text_field.dart';
@@ -67,7 +68,8 @@ class ContactDetailForm extends StatelessWidget {
             AppInputTextField(
               controller: bloc.phoneNoController,
               hintText: LocaleKey.phoneNo.tr,
-              textInputType: TextInputType.phone,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              textInputType: TextInputType.number,
               onChanged: (value) => bloc.add(ContactDetailEvent.onInputChanged(
                 ContactDetailInputType.phoneNo,
                 value,
