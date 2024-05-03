@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
 import 'package:keepup/src/design/components/process_indicators/loading_full_screen.dart';
 import 'package:keepup/src/extensions/scope_extensions.dart';
 import 'package:keepup/src/ui/base/base_page.dart';
@@ -34,7 +35,7 @@ class AppBody extends StatelessWidget {
       color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
       child: switch (pageState) {
         PageState.initial => initial ?? const SizedBox.shrink(),
-        PageState.loading => loading ?? const Center(child: CircularProgressIndicator.adaptive()),
+        PageState.loading => loading ?? const Center(child: CustomCircularProgress()),
         PageState.failure => failure ?? const SizedBox.shrink(),
         PageState.success => BasePage(
             unFocusWhenTouchOutsideInput: unFocusWhenTouchOutsideInput,

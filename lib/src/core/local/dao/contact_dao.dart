@@ -17,5 +17,7 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
 
   Future<List<Contact>> getContacts() => select(contacts).get();
 
+  Stream<List<Contact>> watchContacts() => select(contacts).watch();
+
   Future<int> deleteAll() => delete(contacts).go();
 }

@@ -5,7 +5,9 @@ class NewChatState with _$NewChatState {
   const NewChatState._();
 
   const factory NewChatState({
+    @Default(PageState.loading) PageState pageState,
     PageCommand? pageCommand,
+    @Default(false) bool isLoading,
     @Default(NewChatTabType.newChat) NewChatTabType tabType,
     @Default('') String keyword,
     @Default('') String groupName,

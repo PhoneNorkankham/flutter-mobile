@@ -86,4 +86,6 @@ class SupabaseRepository {
       },
     ).getAsFuture();
   }
+
+  Stream<List<Contact>> watchContacts() => _contactDao.watchContacts();
 }

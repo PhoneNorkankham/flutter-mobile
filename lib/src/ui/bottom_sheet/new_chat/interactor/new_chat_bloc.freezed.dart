@@ -744,10 +744,10 @@ class __$$_OnSelectedContactCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = null,
+    Object? contact = freezed,
   }) {
     return _then(_$_OnSelectedContact(
-      null == contact
+      freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
               as Contact,
@@ -773,11 +773,12 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnSelectedContact &&
-            (identical(other.contact, contact) || other.contact == contact));
+            const DeepCollectionEquality().equals(other.contact, contact));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, contact);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
 
   @JsonKey(ignore: true)
   @override
@@ -915,10 +916,10 @@ class __$$_OnRemovedContactCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = null,
+    Object? contact = freezed,
   }) {
     return _then(_$_OnRemovedContact(
-      null == contact
+      freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
               as Contact,
@@ -944,11 +945,12 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnRemovedContact &&
-            (identical(other.contact, contact) || other.contact == contact));
+            const DeepCollectionEquality().equals(other.contact, contact));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, contact);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
 
   @JsonKey(ignore: true)
   @override
@@ -1376,7 +1378,9 @@ abstract class _OnCreateNewGroup implements NewChatEvent {
 
 /// @nodoc
 mixin _$NewChatState {
+  PageState get pageState => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
   NewChatTabType get tabType => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
   String get groupName => throw _privateConstructorUsedError;
@@ -1396,7 +1400,9 @@ abstract class $NewChatStateCopyWith<$Res> {
       _$NewChatStateCopyWithImpl<$Res, NewChatState>;
   @useResult
   $Res call(
-      {PageCommand? pageCommand,
+      {PageState pageState,
+      PageCommand? pageCommand,
+      bool isLoading,
       NewChatTabType tabType,
       String keyword,
       String groupName,
@@ -1420,7 +1426,9 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? pageState = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
     Object? tabType = null,
     Object? keyword = null,
     Object? groupName = null,
@@ -1429,10 +1437,18 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
     Object? filterContacts = null,
   }) {
     return _then(_value.copyWith(
+      pageState: null == pageState
+          ? _value.pageState
+          : pageState // ignore: cast_nullable_to_non_nullable
+              as PageState,
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       tabType: null == tabType
           ? _value.tabType
           : tabType // ignore: cast_nullable_to_non_nullable
@@ -1482,7 +1498,9 @@ abstract class _$$_NewChatStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {PageCommand? pageCommand,
+      {PageState pageState,
+      PageCommand? pageCommand,
+      bool isLoading,
       NewChatTabType tabType,
       String keyword,
       String groupName,
@@ -1505,7 +1523,9 @@ class __$$_NewChatStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? pageState = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
     Object? tabType = null,
     Object? keyword = null,
     Object? groupName = null,
@@ -1514,10 +1534,18 @@ class __$$_NewChatStateCopyWithImpl<$Res>
     Object? filterContacts = null,
   }) {
     return _then(_$_NewChatState(
+      pageState: null == pageState
+          ? _value.pageState
+          : pageState // ignore: cast_nullable_to_non_nullable
+              as PageState,
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       tabType: null == tabType
           ? _value.tabType
           : tabType // ignore: cast_nullable_to_non_nullable
@@ -1550,7 +1578,9 @@ class __$$_NewChatStateCopyWithImpl<$Res>
 
 class _$_NewChatState extends _NewChatState {
   const _$_NewChatState(
-      {this.pageCommand,
+      {this.pageState = PageState.loading,
+      this.pageCommand,
+      this.isLoading = false,
       this.tabType = NewChatTabType.newChat,
       this.keyword = '',
       this.groupName = '',
@@ -1563,7 +1593,13 @@ class _$_NewChatState extends _NewChatState {
         super._();
 
   @override
+  @JsonKey()
+  final PageState pageState;
+  @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final bool isLoading;
   @override
   @JsonKey()
   final NewChatTabType tabType;
@@ -1603,7 +1639,7 @@ class _$_NewChatState extends _NewChatState {
 
   @override
   String toString() {
-    return 'NewChatState(pageCommand: $pageCommand, tabType: $tabType, keyword: $keyword, groupName: $groupName, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts)';
+    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, tabType: $tabType, keyword: $keyword, groupName: $groupName, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts)';
   }
 
   @override
@@ -1611,8 +1647,12 @@ class _$_NewChatState extends _NewChatState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NewChatState &&
+            (identical(other.pageState, pageState) ||
+                other.pageState == pageState) &&
             (identical(other.pageCommand, pageCommand) ||
                 other.pageCommand == pageCommand) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
             (identical(other.tabType, tabType) || other.tabType == tabType) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
             (identical(other.groupName, groupName) ||
@@ -1627,7 +1667,9 @@ class _$_NewChatState extends _NewChatState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      pageState,
       pageCommand,
+      isLoading,
       tabType,
       keyword,
       groupName,
@@ -1644,7 +1686,9 @@ class _$_NewChatState extends _NewChatState {
 
 abstract class _NewChatState extends NewChatState {
   const factory _NewChatState(
-      {final PageCommand? pageCommand,
+      {final PageState pageState,
+      final PageCommand? pageCommand,
+      final bool isLoading,
       final NewChatTabType tabType,
       final String keyword,
       final String groupName,
@@ -1654,7 +1698,11 @@ abstract class _NewChatState extends NewChatState {
   const _NewChatState._() : super._();
 
   @override
+  PageState get pageState;
+  @override
   PageCommand? get pageCommand;
+  @override
+  bool get isLoading;
   @override
   NewChatTabType get tabType;
   @override
