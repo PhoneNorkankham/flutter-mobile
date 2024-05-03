@@ -12,6 +12,7 @@ class ContactRequest with _$ContactRequest {
   @JsonSerializable(includeIfNull: false, converters: [DateTimeJsonConverter()])
   const factory ContactRequest({
     @Default('') @JsonKey(name: 'owner_id') String ownerId,
+    @Default('') String avatar,
     @Default('') String name,
     @Default('') String email,
     @Default('') @JsonKey(name: 'phone_no') String phoneNo,

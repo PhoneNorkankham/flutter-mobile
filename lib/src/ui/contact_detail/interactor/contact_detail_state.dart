@@ -12,5 +12,6 @@ class ContactDetailState with _$ContactDetailState {
     @Default(ContactRequest()) ContactRequest request,
     @Default(0) double interval,
     @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
+    File? avatar,
   }) = _ContactDetailState;
 }

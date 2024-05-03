@@ -28,6 +28,7 @@ class CreateContactStateMapper implements BaseStateMapper<NewChatState, DataResu
         interval: 0,
         everyDays: AppConstants.defaultEveryDays,
         request: const ContactRequest(),
+        avatar: null,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactCreatedSuccessfully.tr),
       );
     }

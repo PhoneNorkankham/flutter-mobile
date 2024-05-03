@@ -27,6 +27,7 @@ mixin _$ContactDetailEvent {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +40,7 @@ mixin _$ContactDetailEvent {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +53,7 @@ mixin _$ContactDetailEvent {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +66,7 @@ mixin _$ContactDetailEvent {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +78,7 @@ mixin _$ContactDetailEvent {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +90,7 @@ mixin _$ContactDetailEvent {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -154,6 +160,7 @@ class _$_Initial implements _Initial {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return initial();
   }
@@ -169,6 +176,7 @@ class _$_Initial implements _Initial {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return initial?.call();
   }
@@ -184,6 +192,7 @@ class _$_Initial implements _Initial {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,6 +211,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return initial(this);
   }
@@ -216,6 +226,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return initial?.call(this);
   }
@@ -230,6 +241,7 @@ class _$_Initial implements _Initial {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -290,6 +302,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return clearPageCommand();
   }
@@ -305,6 +318,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return clearPageCommand?.call();
   }
@@ -320,6 +334,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -338,6 +353,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return clearPageCommand(this);
   }
@@ -352,6 +368,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -366,6 +383,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -454,6 +472,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return onIntervalChanged(interval);
   }
@@ -469,6 +488,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onIntervalChanged?.call(interval);
   }
@@ -484,6 +504,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onIntervalChanged != null) {
@@ -502,6 +523,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onIntervalChanged(this);
   }
@@ -516,6 +538,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onIntervalChanged?.call(this);
   }
@@ -530,6 +553,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onIntervalChanged != null) {
@@ -631,6 +655,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return onFrequencyChanged(frequency);
   }
@@ -646,6 +671,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onFrequencyChanged?.call(frequency);
   }
@@ -661,6 +687,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onFrequencyChanged != null) {
@@ -679,6 +706,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onFrequencyChanged(this);
   }
@@ -693,6 +721,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onFrequencyChanged?.call(this);
   }
@@ -707,6 +736,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onFrequencyChanged != null) {
@@ -808,6 +838,7 @@ class _$_OnInputChanged implements _OnInputChanged {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return onInputChanged(inputType, value);
   }
@@ -823,6 +854,7 @@ class _$_OnInputChanged implements _OnInputChanged {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onInputChanged?.call(inputType, value);
   }
@@ -838,6 +870,7 @@ class _$_OnInputChanged implements _OnInputChanged {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onInputChanged != null) {
@@ -856,6 +889,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onInputChanged(this);
   }
@@ -870,6 +904,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onInputChanged?.call(this);
   }
@@ -884,6 +919,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onInputChanged != null) {
@@ -952,6 +988,7 @@ class _$_OnSavePressed implements _OnSavePressed {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return onSavePressed();
   }
@@ -967,6 +1004,7 @@ class _$_OnSavePressed implements _OnSavePressed {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onSavePressed?.call();
   }
@@ -982,6 +1020,7 @@ class _$_OnSavePressed implements _OnSavePressed {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onSavePressed != null) {
@@ -1000,6 +1039,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onSavePressed(this);
   }
@@ -1014,6 +1054,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onSavePressed?.call(this);
   }
@@ -1028,6 +1069,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onSavePressed != null) {
@@ -1088,6 +1130,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
         onInputChanged,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return onCancelPressed();
   }
@@ -1103,6 +1146,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
         onInputChanged,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onCancelPressed?.call();
   }
@@ -1118,6 +1162,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
         onInputChanged,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onCancelPressed != null) {
@@ -1136,6 +1181,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onCancelPressed(this);
   }
@@ -1150,6 +1196,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onCancelPressed?.call(this);
   }
@@ -1164,6 +1211,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onCancelPressed != null) {
@@ -1178,6 +1226,179 @@ abstract class _OnCancelPressed implements ContactDetailEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnChangedAvatarCopyWith<$Res> {
+  factory _$$_OnChangedAvatarCopyWith(
+          _$_OnChangedAvatar value, $Res Function(_$_OnChangedAvatar) then) =
+      __$$_OnChangedAvatarCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File file});
+}
+
+/// @nodoc
+class __$$_OnChangedAvatarCopyWithImpl<$Res>
+    extends _$ContactDetailEventCopyWithImpl<$Res, _$_OnChangedAvatar>
+    implements _$$_OnChangedAvatarCopyWith<$Res> {
+  __$$_OnChangedAvatarCopyWithImpl(
+      _$_OnChangedAvatar _value, $Res Function(_$_OnChangedAvatar) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? file = null,
+  }) {
+    return _then(_$_OnChangedAvatar(
+      null == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnChangedAvatar implements _OnChangedAvatar {
+  const _$_OnChangedAvatar(this.file);
+
+  @override
+  final File file;
+
+  @override
+  String toString() {
+    return 'ContactDetailEvent.onChangedAvatar(file: $file)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnChangedAvatar &&
+            (identical(other.file, file) || other.file == file));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, file);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
+      __$$_OnChangedAvatarCopyWithImpl<_$_OnChangedAvatar>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(double interval) onIntervalChanged,
+    required TResult Function(List<ChoiceEveryDayData> frequency)
+        onFrequencyChanged,
+    required TResult Function(ContactDetailInputType inputType, String value)
+        onInputChanged,
+    required TResult Function() onSavePressed,
+    required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
+  }) {
+    return onChangedAvatar(file);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(double interval)? onIntervalChanged,
+    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult? Function()? onSavePressed,
+    TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
+  }) {
+    return onChangedAvatar?.call(file);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(double interval)? onIntervalChanged,
+    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult Function()? onSavePressed,
+    TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatar != null) {
+      return onChangedAvatar(file);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
+    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnSavePressed value) onSavePressed,
+    required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+  }) {
+    return onChangedAvatar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
+    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnSavePressed value)? onSavePressed,
+    TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+  }) {
+    return onChangedAvatar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
+    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnSavePressed value)? onSavePressed,
+    TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatar != null) {
+      return onChangedAvatar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedAvatar implements ContactDetailEvent {
+  const factory _OnChangedAvatar(final File file) = _$_OnChangedAvatar;
+
+  File get file;
+  @JsonKey(ignore: true)
+  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ContactDetailState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   ContactType get contactType => throw _privateConstructorUsedError;
@@ -1186,6 +1407,7 @@ mixin _$ContactDetailState {
   ContactRequest get request => throw _privateConstructorUsedError;
   double get interval => throw _privateConstructorUsedError;
   List<ChoiceEveryDayData> get everyDays => throw _privateConstructorUsedError;
+  File? get avatar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ContactDetailStateCopyWith<ContactDetailState> get copyWith =>
@@ -1205,7 +1427,8 @@ abstract class $ContactDetailStateCopyWith<$Res> {
       String contactId,
       ContactRequest request,
       double interval,
-      List<ChoiceEveryDayData> everyDays});
+      List<ChoiceEveryDayData> everyDays,
+      File? avatar});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
   $ContactRequestCopyWith<$Res> get request;
@@ -1231,6 +1454,7 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
     Object? request = null,
     Object? interval = null,
     Object? everyDays = null,
+    Object? avatar = freezed,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
@@ -1261,6 +1485,10 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
           ? _value.everyDays
           : everyDays // ignore: cast_nullable_to_non_nullable
               as List<ChoiceEveryDayData>,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as File?,
     ) as $Val);
   }
 
@@ -1300,7 +1528,8 @@ abstract class _$$_ContactDetailStateCopyWith<$Res>
       String contactId,
       ContactRequest request,
       double interval,
-      List<ChoiceEveryDayData> everyDays});
+      List<ChoiceEveryDayData> everyDays,
+      File? avatar});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -1326,6 +1555,7 @@ class __$$_ContactDetailStateCopyWithImpl<$Res>
     Object? request = null,
     Object? interval = null,
     Object? everyDays = null,
+    Object? avatar = freezed,
   }) {
     return _then(_$_ContactDetailState(
       pageCommand: freezed == pageCommand
@@ -1356,6 +1586,10 @@ class __$$_ContactDetailStateCopyWithImpl<$Res>
           ? _value._everyDays
           : everyDays // ignore: cast_nullable_to_non_nullable
               as List<ChoiceEveryDayData>,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as File?,
     ));
   }
 }
@@ -1370,7 +1604,8 @@ class _$_ContactDetailState extends _ContactDetailState {
       this.contactId = '',
       this.request = const ContactRequest(),
       this.interval = 0,
-      final List<ChoiceEveryDayData> everyDays = AppConstants.defaultEveryDays})
+      final List<ChoiceEveryDayData> everyDays = AppConstants.defaultEveryDays,
+      this.avatar})
       : _everyDays = everyDays,
         super._();
 
@@ -1401,8 +1636,11 @@ class _$_ContactDetailState extends _ContactDetailState {
   }
 
   @override
+  final File? avatar;
+
+  @override
   String toString() {
-    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, request: $request, interval: $interval, everyDays: $everyDays)';
+    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, request: $request, interval: $interval, everyDays: $everyDays, avatar: $avatar)';
   }
 
   @override
@@ -1422,7 +1660,8 @@ class _$_ContactDetailState extends _ContactDetailState {
             (identical(other.interval, interval) ||
                 other.interval == interval) &&
             const DeepCollectionEquality()
-                .equals(other._everyDays, _everyDays));
+                .equals(other._everyDays, _everyDays) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar));
   }
 
   @override
@@ -1434,7 +1673,8 @@ class _$_ContactDetailState extends _ContactDetailState {
       contactId,
       request,
       interval,
-      const DeepCollectionEquality().hash(_everyDays));
+      const DeepCollectionEquality().hash(_everyDays),
+      avatar);
 
   @JsonKey(ignore: true)
   @override
@@ -1452,7 +1692,8 @@ abstract class _ContactDetailState extends ContactDetailState {
       final String contactId,
       final ContactRequest request,
       final double interval,
-      final List<ChoiceEveryDayData> everyDays}) = _$_ContactDetailState;
+      final List<ChoiceEveryDayData> everyDays,
+      final File? avatar}) = _$_ContactDetailState;
   const _ContactDetailState._() : super._();
 
   @override
@@ -1469,6 +1710,8 @@ abstract class _ContactDetailState extends ContactDetailState {
   double get interval;
   @override
   List<ChoiceEveryDayData> get everyDays;
+  @override
+  File? get avatar;
   @override
   @JsonKey(ignore: true)
   _$$_ContactDetailStateCopyWith<_$_ContactDetailState> get copyWith =>

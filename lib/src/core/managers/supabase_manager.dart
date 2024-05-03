@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
@@ -5,6 +7,7 @@ import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:path/path.dart' as p;
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseManager {
@@ -25,6 +28,8 @@ class SupabaseManager {
   final SupabaseClient _supabase = Supabase.instance.client;
 
   GoTrueClient get _supabaseAuth => _supabase.auth;
+
+  SupabaseStorageClient get _supabaseStorage => _supabase.storage;
 
   String get uid => _supabaseAuth.currentUser?.id ?? '';
 
@@ -121,4 +126,19 @@ class SupabaseManager {
       .select()
       .eq(_fieldOwnerId, uid)
       .then((value) => value.map((e) => Contact.fromJson(e)).toList());
+
+  Future<String> uploadAvatar(File file) {
+    String fileExtension = p.extension(file.path, 2);
+    if (fileExtension.isEmpty) {
+      fileExtension = '.png';
+    }
+    return _supabaseStorage.from('avatars').upload(
+          'public/$uid/${DateTime.now().millisecondsSinceEpoch}$fileExtension',
+          file,
+          fileOptions: const FileOptions(
+            cacheControl: '3600',
+            upsert: true,
+          ),
+        );
+  }
 }

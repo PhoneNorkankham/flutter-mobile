@@ -9,6 +9,7 @@ part of 'contact_request.dart';
 _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
     _$_ContactRequest(
       ownerId: json['owner_id'] as String? ?? '',
+      avatar: json['avatar'] as String? ?? '',
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       phoneNo: json['phone_no'] as String? ?? '',
@@ -27,6 +28,7 @@ _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_ContactRequestToJson(_$_ContactRequest instance) {
   final val = <String, dynamic>{
     'owner_id': instance.ownerId,
+    'avatar': instance.avatar,
     'name': instance.name,
     'email': instance.email,
     'phone_no': instance.phoneNo,

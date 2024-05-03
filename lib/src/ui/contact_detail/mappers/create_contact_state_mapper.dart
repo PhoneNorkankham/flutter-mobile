@@ -23,6 +23,7 @@ class CreateContactStateMapper implements BaseStateMapper<ContactDetailState, Da
       final Contact contact = result.valueOrCrash;
       return state.copyWith(
         isLoading: false,
+        avatar: null,
         contactId: contact.id,
         contactType: ContactType.contactDetail,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactCreatedSuccessfully.tr),

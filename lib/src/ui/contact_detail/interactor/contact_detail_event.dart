@@ -19,4 +19,6 @@ class ContactDetailEvent with _$ContactDetailEvent {
   const factory ContactDetailEvent.onSavePressed() = _OnSavePressed;
 
   const factory ContactDetailEvent.onCancelPressed() = _OnCancelPressed;
+
+  const factory ContactDetailEvent.onChangedAvatar(File file) = _OnChangedAvatar;
 }

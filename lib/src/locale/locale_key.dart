@@ -9,6 +9,18 @@ class LocaleKey {
   static const String close = "close";
   static const String next = "next";
 
+  // Dialog Upload Photo
+  static const String uploadAvatar = "uploadAvatar";
+  static const String takeAPicture = "takeAPicture";
+  static const String selectAPhoto = "selectAPhoto";
+  static const String camera = "camera";
+  static const String photoLibrary = "photoLibrary";
+
+  // Permission
+  static const String permissionDenied = 'permissionDenied';
+  static const String goToSettings = 'goToSettings';
+  static const String settingContent = 'settingContent';
+
   // Network
   static const String alertConnect = "alertConnect";
   static const String alertDisconnect = "alertDisconnect";

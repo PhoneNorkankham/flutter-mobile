@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/local/dao/contact_dao.dart';
 import 'package:keepup/src/core/local/dao/group_dao.dart';
@@ -88,4 +90,10 @@ class SupabaseRepository {
   }
 
   Stream<List<Contact>> watchContacts() => _contactDao.watchContacts();
+
+  Future<Resource<String>> uploadAvatar(File file) {
+    return NetworkBoundResource<String, String>(
+      createSerializedCall: () => _supabaseManager.uploadAvatar(file),
+    ).getAsFuture();
+  }
 }

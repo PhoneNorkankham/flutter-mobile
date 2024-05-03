@@ -27,4 +27,6 @@ class NewChatEvent with _$NewChatEvent {
     NewChatInputType inputType,
     String value,
   ) = _OnInputChanged;
+
+  const factory NewChatEvent.onChangedAvatar(File file) = _OnChangedAvatar;
 }

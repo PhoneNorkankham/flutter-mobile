@@ -23,6 +23,7 @@ class NewChatBottomSheet extends StatelessWidget {
       create: (_) => NewChatBloc(
         Get.find(),
         Get.find(),
+        Get.find(),
       )..add(const NewChatEvent.initial()),
       child: BlocConsumer<NewChatBloc, NewChatState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,

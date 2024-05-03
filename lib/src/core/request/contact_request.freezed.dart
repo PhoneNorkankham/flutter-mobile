@@ -22,6 +22,7 @@ ContactRequest _$ContactRequestFromJson(Map<String, dynamic> json) {
 mixin _$ContactRequest {
   @JsonKey(name: 'owner_id')
   String get ownerId => throw _privateConstructorUsedError;
+  String get avatar => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   @JsonKey(name: 'phone_no')
@@ -47,6 +48,7 @@ abstract class $ContactRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'owner_id') String ownerId,
+      String avatar,
       String name,
       String email,
       @JsonKey(name: 'phone_no') String phoneNo,
@@ -70,6 +72,7 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
   @override
   $Res call({
     Object? ownerId = null,
+    Object? avatar = null,
     Object? name = null,
     Object? email = null,
     Object? phoneNo = null,
@@ -82,6 +85,10 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -125,6 +132,7 @@ abstract class _$$_ContactRequestCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'owner_id') String ownerId,
+      String avatar,
       String name,
       String email,
       @JsonKey(name: 'phone_no') String phoneNo,
@@ -146,6 +154,7 @@ class __$$_ContactRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? ownerId = null,
+    Object? avatar = null,
     Object? name = null,
     Object? email = null,
     Object? phoneNo = null,
@@ -158,6 +167,10 @@ class __$$_ContactRequestCopyWithImpl<$Res>
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -197,6 +210,7 @@ class __$$_ContactRequestCopyWithImpl<$Res>
 class _$_ContactRequest extends _ContactRequest {
   const _$_ContactRequest(
       {@JsonKey(name: 'owner_id') this.ownerId = '',
+      this.avatar = '',
       this.name = '',
       this.email = '',
       @JsonKey(name: 'phone_no') this.phoneNo = '',
@@ -213,6 +227,9 @@ class _$_ContactRequest extends _ContactRequest {
   @override
   @JsonKey(name: 'owner_id')
   final String ownerId;
+  @override
+  @JsonKey()
+  final String avatar;
   @override
   @JsonKey()
   final String name;
@@ -242,7 +259,7 @@ class _$_ContactRequest extends _ContactRequest {
 
   @override
   String toString() {
-    return 'ContactRequest(ownerId: $ownerId, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, frequency: $frequency, expiration: $expiration, dateCreated: $dateCreated)';
+    return 'ContactRequest(ownerId: $ownerId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, frequency: $frequency, expiration: $expiration, dateCreated: $dateCreated)';
   }
 
   @override
@@ -251,6 +268,7 @@ class _$_ContactRequest extends _ContactRequest {
         (other.runtimeType == runtimeType &&
             other is _$_ContactRequest &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phoneNo, phoneNo) || other.phoneNo == phoneNo) &&
@@ -269,6 +287,7 @@ class _$_ContactRequest extends _ContactRequest {
   int get hashCode => Object.hash(
       runtimeType,
       ownerId,
+      avatar,
       name,
       email,
       phoneNo,
@@ -294,6 +313,7 @@ class _$_ContactRequest extends _ContactRequest {
 abstract class _ContactRequest extends ContactRequest {
   const factory _ContactRequest(
           {@JsonKey(name: 'owner_id') final String ownerId,
+          final String avatar,
           final String name,
           final String email,
           @JsonKey(name: 'phone_no') final String phoneNo,
@@ -310,6 +330,8 @@ abstract class _ContactRequest extends ContactRequest {
   @override
   @JsonKey(name: 'owner_id')
   String get ownerId;
+  @override
+  String get avatar;
   @override
   String get name;
   @override

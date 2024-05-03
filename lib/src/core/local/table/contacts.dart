@@ -7,12 +7,14 @@ class Contacts extends Table {
   @JsonKey('owner_id')
   TextColumn get ownerId => text().named('owner_id')();
 
-  TextColumn get name => text()();
+  TextColumn get avatar => text().withDefault(const Constant(''))();
 
-  TextColumn get email => text()();
+  TextColumn get name => text().withDefault(const Constant(''))();
+
+  TextColumn get email => text().withDefault(const Constant(''))();
 
   @JsonKey('phone_no')
-  TextColumn get phoneNo => text().named('phone_no')();
+  TextColumn get phoneNo => text().named('phone_no').withDefault(const Constant(''))();
 
   @JsonKey('date_of_birth')
   TextColumn get dateOfBirth =>

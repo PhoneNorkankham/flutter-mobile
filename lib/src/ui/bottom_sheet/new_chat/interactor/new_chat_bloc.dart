@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,13 @@ import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
+import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
+import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_input_type.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/mappers/create_contact_state_mapper.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 
 part 'new_chat_bloc.freezed.dart';
@@ -31,10 +35,12 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
 
   final SupabaseRepository _supabaseRepository;
   final CreateContactUseCase _createContactUseCase;
+  final UploadAvatarUseCase _uploadAvatarUseCase;
 
   NewChatBloc(
     this._supabaseRepository,
     this._createContactUseCase,
+    this._uploadAvatarUseCase,
   ) : super(const NewChatState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -47,6 +53,7 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     on<_OnIntervalChanged>((event, emit) => emit(state.copyWith(interval: event.interval)));
     on<_OnFrequencyChanged>((event, emit) => emit(state.copyWith(everyDays: event.frequency)));
     on<_OnInputChanged>(_onInputChanged);
+    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) async {
@@ -128,7 +135,25 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
 
   FutureOr<void> _onCreateNewGroup(_OnCreateNewGroup event, Emitter<NewChatState> emit) async {
     emit(state.copyWith(isLoading: true));
+    final File? avatarFile = state.avatar;
+    String avatarUrl = '';
+    if (avatarFile != null) {
+      final DataResult<String> result = await _uploadAvatarUseCase.run(avatarFile);
+      if (result.isValue) {
+        avatarUrl = result.valueOrCrash;
+      } else {
+        final PageError pageError = result.asError!.error;
+        emit(state.copyWith(
+          isLoading: false,
+          pageCommand: pageError.pageErrorType == NetworkError.token
+              ? PageCommandDialog.showExpirationSession()
+              : PageCommandMessage.showError(pageError.message),
+        ));
+        return;
+      }
+    }
     final request = state.request.copyWith(
+      avatar: avatarUrl,
       expiration: DateTime.now().add(Duration(days: state.interval.toInt())),
       frequency: state.everyDays.map((e) => e.isActive).toList(),
     );

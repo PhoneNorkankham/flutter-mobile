@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -9,9 +10,12 @@ import 'package:keepup/src/core/model/choice_every_day_data.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
+import 'package:keepup/src/ui/base/interactor/page_error.dart';
+import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_input_type.dart';
 import 'package:keepup/src/ui/contact_detail/mappers/create_contact_state_mapper.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 
 part 'contact_detail_bloc.freezed.dart';
@@ -25,12 +29,13 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   final dateOfBirthController = TextEditingController();
 
   final CreateContactUseCase _createContactUseCase;
-
   final CreateContactStateMapper _createContactStateMapper;
+  final UploadAvatarUseCase _uploadAvatarUseCase;
 
   ContactDetailBloc(
     this._createContactUseCase,
     this._createContactStateMapper,
+    this._uploadAvatarUseCase,
   ) : super(const ContactDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -41,6 +46,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     on<_OnCancelPressed>((event, emit) => emit(state.copyWith(
           pageCommand: PageCommandNavigation.pop(),
         )));
+    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<ContactDetailState> emit) async {
@@ -78,7 +84,25 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
 
   FutureOr<void> _onSavePressed(_OnSavePressed event, Emitter<ContactDetailState> emit) async {
     emit(state.copyWith(isLoading: true));
+    final File? avatarFile = state.avatar;
+    String avatarUrl = '';
+    if (avatarFile != null) {
+      final DataResult<String> result = await _uploadAvatarUseCase.run(avatarFile);
+      if (result.isValue) {
+        avatarUrl = result.valueOrCrash;
+      } else {
+        final PageError pageError = result.asError!.error;
+        emit(state.copyWith(
+          isLoading: false,
+          pageCommand: pageError.pageErrorType == NetworkError.token
+              ? PageCommandDialog.showExpirationSession()
+              : PageCommandMessage.showError(pageError.message),
+        ));
+        return;
+      }
+    }
     final request = state.request.copyWith(
+      avatar: avatarUrl,
       expiration: DateTime.now().add(Duration(days: state.interval.toInt())),
       frequency: state.everyDays.map((e) => e.isActive).toList(),
     );

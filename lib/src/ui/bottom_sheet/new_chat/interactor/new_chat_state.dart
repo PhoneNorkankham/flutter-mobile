@@ -17,6 +17,7 @@ class NewChatState with _$NewChatState {
     @Default(0) double interval,
     @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
     @Default(ContactRequest()) ContactRequest request,
+    File? avatar,
   }) = _NewChatState;
 
   bool get enabledCreateNewGroupButton => selectedContacts.isNotEmpty && groupName.isNotEmpty;
