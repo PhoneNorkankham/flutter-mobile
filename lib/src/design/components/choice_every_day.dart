@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/core/model/choice_every_day_data.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-
-class ChoiceEveryDayData {
-  final String text;
-  final bool isActive;
-
-  const ChoiceEveryDayData(this.text, this.isActive);
-}
 
 class ChoiceEveryDay extends StatelessWidget {
   final List<ChoiceEveryDayData> everyDays;
@@ -49,7 +43,7 @@ class ChoiceEveryDay extends StatelessWidget {
                           newEveryDays.replaceRange(
                             index,
                             index + 1,
-                            [ChoiceEveryDayData(e.text, !e.isActive)],
+                            [e.copyWith(isActive: !e.isActive)],
                           );
                           onChanged.call(newEveryDays);
                         },
