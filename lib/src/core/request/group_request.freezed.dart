@@ -20,9 +20,10 @@ GroupRequest _$GroupRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GroupRequest {
-  @JsonKey(name: 'user_id')
-  String get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'owner_id')
+  String get ownerId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
   @JsonKey(name: 'frequency_interval')
   DateTime? get frequencyInterval => throw _privateConstructorUsedError;
@@ -41,8 +42,9 @@ abstract class $GroupRequestCopyWith<$Res> {
       _$GroupRequestCopyWithImpl<$Res, GroupRequest>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') String userId,
+      {@JsonKey(name: 'owner_id') String ownerId,
       String name,
+      String description,
       String avatar,
       @JsonKey(name: 'frequency_interval') DateTime? frequencyInterval,
       List<String> contacts});
@@ -61,20 +63,25 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? ownerId = null,
     Object? name = null,
+    Object? description = null,
     Object? avatar = null,
     Object? frequencyInterval = freezed,
     Object? contacts = null,
   }) {
     return _then(_value.copyWith(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       avatar: null == avatar
           ? _value.avatar
@@ -101,8 +108,9 @@ abstract class _$$_GroupRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') String userId,
+      {@JsonKey(name: 'owner_id') String ownerId,
       String name,
+      String description,
       String avatar,
       @JsonKey(name: 'frequency_interval') DateTime? frequencyInterval,
       List<String> contacts});
@@ -119,20 +127,25 @@ class __$$_GroupRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? ownerId = null,
     Object? name = null,
+    Object? description = null,
     Object? avatar = null,
     Object? frequencyInterval = freezed,
     Object? contacts = null,
   }) {
     return _then(_$_GroupRequest(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       avatar: null == avatar
           ? _value.avatar
@@ -155,8 +168,9 @@ class __$$_GroupRequestCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$_GroupRequest implements _GroupRequest {
   const _$_GroupRequest(
-      {@JsonKey(name: 'user_id') this.userId = '',
+      {@JsonKey(name: 'owner_id') this.ownerId = '',
       this.name = '',
+      this.description = '',
       this.avatar = '',
       @JsonKey(name: 'frequency_interval') this.frequencyInterval,
       final List<String> contacts = const []})
@@ -166,11 +180,14 @@ class _$_GroupRequest implements _GroupRequest {
       _$$_GroupRequestFromJson(json);
 
   @override
-  @JsonKey(name: 'user_id')
-  final String userId;
+  @JsonKey(name: 'owner_id')
+  final String ownerId;
   @override
   @JsonKey()
   final String name;
+  @override
+  @JsonKey()
+  final String description;
   @override
   @JsonKey()
   final String avatar;
@@ -188,7 +205,7 @@ class _$_GroupRequest implements _GroupRequest {
 
   @override
   String toString() {
-    return 'GroupRequest(userId: $userId, name: $name, avatar: $avatar, frequencyInterval: $frequencyInterval, contacts: $contacts)';
+    return 'GroupRequest(ownerId: $ownerId, name: $name, description: $description, avatar: $avatar, frequencyInterval: $frequencyInterval, contacts: $contacts)';
   }
 
   @override
@@ -196,8 +213,10 @@ class _$_GroupRequest implements _GroupRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroupRequest &&
-            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.frequencyInterval, frequencyInterval) ||
                 other.frequencyInterval == frequencyInterval) &&
@@ -206,8 +225,14 @@ class _$_GroupRequest implements _GroupRequest {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userId, name, avatar,
-      frequencyInterval, const DeepCollectionEquality().hash(_contacts));
+  int get hashCode => Object.hash(
+      runtimeType,
+      ownerId,
+      name,
+      description,
+      avatar,
+      frequencyInterval,
+      const DeepCollectionEquality().hash(_contacts));
 
   @JsonKey(ignore: true)
   @override
@@ -225,8 +250,9 @@ class _$_GroupRequest implements _GroupRequest {
 
 abstract class _GroupRequest implements GroupRequest {
   const factory _GroupRequest(
-      {@JsonKey(name: 'user_id') final String userId,
+      {@JsonKey(name: 'owner_id') final String ownerId,
       final String name,
+      final String description,
       final String avatar,
       @JsonKey(name: 'frequency_interval') final DateTime? frequencyInterval,
       final List<String> contacts}) = _$_GroupRequest;
@@ -235,10 +261,12 @@ abstract class _GroupRequest implements GroupRequest {
       _$_GroupRequest.fromJson;
 
   @override
-  @JsonKey(name: 'user_id')
-  String get userId;
+  @JsonKey(name: 'owner_id')
+  String get ownerId;
   @override
   String get name;
+  @override
+  String get description;
   @override
   String get avatar;
   @override

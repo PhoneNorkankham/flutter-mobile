@@ -13,6 +13,7 @@ import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/onboarding/usecases/create_anonymous_account_use_case.dart';
 import 'package:keepup/src/ui/onboarding/usecases/join_group_use_case.dart';
 import 'package:keepup/src/use_cases/check_logged_in_use_case.dart';
+import 'package:keepup/src/utils/app_constants.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
 part 'onboarding_bloc.freezed.dart';
@@ -39,13 +40,11 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   Future<void> _initial(_Initial event, Emitter<OnboardingState> emit) async {
     final DataResult<LoggedInData> result = await _getLoggedInDataUseCase.run();
     if (result.isValue) {
-      final List<GroupRequest> groups = [
-        'Family',
-        'Friends',
-        'Business Associates',
-      ].map((e) => GroupRequest(name: e)).toList();
       final LoggedInData? loggedInData = result.valueOrNull;
-      emit(state.copyWith(groups: groups, loggedInData: loggedInData ?? state.loggedInData));
+      emit(state.copyWith(
+        groups: AppConstants.onBoardingGroups,
+        loggedInData: loggedInData ?? state.loggedInData,
+      ));
     } else {
       final String message = result.asError?.error.message ?? '';
       emit(state.copyWith(pageCommand: PageCommandDialog.showError(message)));
@@ -59,16 +58,17 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   FutureOr<void> _onJoinGroup(_OnJoinGroup event, Emitter<OnboardingState> emit) async {
     emit(state.copyWith(isLoading: true));
     if (!state.loggedInData.isLoggedIn) {
-      final VoidResult createAccountResult = await _createAnonymousAccountUseCase.run();
-      if (createAccountResult.isError) {
+      final DataResult<LoggedInData> accountResult = await _createAnonymousAccountUseCase.run();
+      if (accountResult.isError) {
         emit(state.copyWith(
           isLoading: false,
           pageCommand: PageCommandDialog.showError(
-            createAccountResult.asError?.error.message ??
-                LocaleKey.creatingAnonymousAccountFailed.tr,
+            accountResult.asError?.error.message ?? LocaleKey.creatingAnonymousAccountFailed.tr,
           ),
         ));
         return;
+      } else {
+        emit(state.copyWith(loggedInData: accountResult.valueOrCrash));
       }
     }
     final VoidResult result = await _joinGroupUseCase.run(event.group);

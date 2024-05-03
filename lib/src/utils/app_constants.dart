@@ -1,3 +1,5 @@
+import 'package:keepup/src/core/request/group_request.dart';
+
 class AppConstants {
   // Base name
   static const String appName = "Keepup";
@@ -31,4 +33,10 @@ class AppConstants {
   // Paging
   static const int firstPage = 1;
   static const int limitPerPage = 10;
+
+  static final List<GroupRequest> onBoardingGroups = [
+    'Family',
+    'Friends',
+    'Business Associates',
+  ].map((e) => GroupRequest(name: e)).toList();
 }

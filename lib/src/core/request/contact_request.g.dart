@@ -8,8 +8,7 @@ part of 'contact_request.dart';
 
 _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
     _$_ContactRequest(
-      userId: json['user_id'] as String? ?? '',
-      groupId: json['group_id'] as String? ?? '',
+      ownerId: json['owner_id'] as String? ?? '',
       expiration: json['expiration'] == null
           ? null
           : DateTime.parse(json['expiration'] as String),
@@ -20,8 +19,7 @@ _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_ContactRequestToJson(_$_ContactRequest instance) {
   final val = <String, dynamic>{
-    'user_id': instance.userId,
-    'group_id': instance.groupId,
+    'owner_id': instance.ownerId,
   };
 
   void writeNotNull(String key, dynamic value) {

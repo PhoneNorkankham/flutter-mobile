@@ -7,8 +7,7 @@ part 'contact_request.g.dart';
 class ContactRequest with _$ContactRequest {
   @JsonSerializable(includeIfNull: false)
   const factory ContactRequest({
-    @Default('') @JsonKey(name: 'user_id') String userId,
-    @Default('') @JsonKey(name: 'group_id') String groupId,
+    @Default('') @JsonKey(name: 'owner_id') String ownerId,
     DateTime? expiration,
     @JsonKey(name: 'date_created') DateTime? dateCreated,
   }) = _ContactRequest;

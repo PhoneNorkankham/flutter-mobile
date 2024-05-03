@@ -8,8 +8,9 @@ part of 'group_request.dart';
 
 _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
     _$_GroupRequest(
-      userId: json['user_id'] as String? ?? '',
+      ownerId: json['owner_id'] as String? ?? '',
       name: json['name'] as String? ?? '',
+      description: json['description'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
       frequencyInterval: json['frequency_interval'] == null
           ? null
@@ -22,8 +23,9 @@ _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) {
   final val = <String, dynamic>{
-    'user_id': instance.userId,
+    'owner_id': instance.ownerId,
     'name': instance.name,
+    'description': instance.description,
     'avatar': instance.avatar,
   };
 

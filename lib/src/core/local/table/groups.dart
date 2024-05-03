@@ -6,6 +6,8 @@ class Groups extends Table {
 
   TextColumn get name => text().withDefault(const Constant(''))();
 
+  TextColumn get description => text().withDefault(const Constant(''))();
+
   TextColumn get avatar => text().withDefault(const Constant(''))();
 
   DateTimeColumn get frequencyInterval => dateTime().named('frequency_interval').nullable()();
