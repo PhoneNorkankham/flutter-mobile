@@ -1,4 +1,5 @@
 import 'package:keepup/src/core/request/group_request.dart';
+import 'package:keepup/src/design/components/choice_every_day.dart';
 
 class AppConstants {
   // Base name
@@ -39,4 +40,14 @@ class AppConstants {
     'Friends',
     'Business Associates',
   ].map((e) => GroupRequest(name: e)).toList();
+
+  static const List<ChoiceEveryDayData> defaultEveryDays = [
+    ChoiceEveryDayData('M', true),
+    ChoiceEveryDayData('T', true),
+    ChoiceEveryDayData('W', true),
+    ChoiceEveryDayData('T', true),
+    ChoiceEveryDayData('F', true),
+    ChoiceEveryDayData('S', true),
+    ChoiceEveryDayData('S', true),
+  ];
 }

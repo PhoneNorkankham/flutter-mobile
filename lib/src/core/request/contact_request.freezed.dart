@@ -22,6 +22,13 @@ ContactRequest _$ContactRequestFromJson(Map<String, dynamic> json) {
 mixin _$ContactRequest {
   @JsonKey(name: 'owner_id')
   String get ownerId => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  @JsonKey(name: 'phone_no')
+  String get phoneNo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_of_birth')
+  DateTime? get dateOfBirth => throw _privateConstructorUsedError;
+  List<bool> get frequency => throw _privateConstructorUsedError;
   DateTime? get expiration => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated => throw _privateConstructorUsedError;
@@ -40,6 +47,11 @@ abstract class $ContactRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'owner_id') String ownerId,
+      String name,
+      String email,
+      @JsonKey(name: 'phone_no') String phoneNo,
+      @JsonKey(name: 'date_of_birth') DateTime? dateOfBirth,
+      List<bool> frequency,
       DateTime? expiration,
       @JsonKey(name: 'date_created') DateTime? dateCreated});
 }
@@ -58,6 +70,11 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
   @override
   $Res call({
     Object? ownerId = null,
+    Object? name = null,
+    Object? email = null,
+    Object? phoneNo = null,
+    Object? dateOfBirth = freezed,
+    Object? frequency = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
   }) {
@@ -66,6 +83,26 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNo: null == phoneNo
+          ? _value.phoneNo
+          : phoneNo // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateOfBirth: freezed == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      frequency: null == frequency
+          ? _value.frequency
+          : frequency // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       expiration: freezed == expiration
           ? _value.expiration
           : expiration // ignore: cast_nullable_to_non_nullable
@@ -88,6 +125,11 @@ abstract class _$$_ContactRequestCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'owner_id') String ownerId,
+      String name,
+      String email,
+      @JsonKey(name: 'phone_no') String phoneNo,
+      @JsonKey(name: 'date_of_birth') DateTime? dateOfBirth,
+      List<bool> frequency,
       DateTime? expiration,
       @JsonKey(name: 'date_created') DateTime? dateCreated});
 }
@@ -104,6 +146,11 @@ class __$$_ContactRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? ownerId = null,
+    Object? name = null,
+    Object? email = null,
+    Object? phoneNo = null,
+    Object? dateOfBirth = freezed,
+    Object? frequency = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
   }) {
@@ -112,6 +159,26 @@ class __$$_ContactRequestCopyWithImpl<$Res>
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNo: null == phoneNo
+          ? _value.phoneNo
+          : phoneNo // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateOfBirth: freezed == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      frequency: null == frequency
+          ? _value._frequency
+          : frequency // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       expiration: freezed == expiration
           ? _value.expiration
           : expiration // ignore: cast_nullable_to_non_nullable
@@ -126,12 +193,19 @@ class __$$_ContactRequestCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(includeIfNull: false)
-class _$_ContactRequest implements _ContactRequest {
+@JsonSerializable(includeIfNull: false, converters: [DateTimeJsonConverter()])
+class _$_ContactRequest extends _ContactRequest {
   const _$_ContactRequest(
       {@JsonKey(name: 'owner_id') this.ownerId = '',
+      this.name = '',
+      this.email = '',
+      @JsonKey(name: 'phone_no') this.phoneNo = '',
+      @JsonKey(name: 'date_of_birth') this.dateOfBirth,
+      final List<bool> frequency = const [],
       this.expiration,
-      @JsonKey(name: 'date_created') this.dateCreated});
+      @JsonKey(name: 'date_created') this.dateCreated})
+      : _frequency = frequency,
+        super._();
 
   factory _$_ContactRequest.fromJson(Map<String, dynamic> json) =>
       _$$_ContactRequestFromJson(json);
@@ -140,6 +214,27 @@ class _$_ContactRequest implements _ContactRequest {
   @JsonKey(name: 'owner_id')
   final String ownerId;
   @override
+  @JsonKey()
+  final String name;
+  @override
+  @JsonKey()
+  final String email;
+  @override
+  @JsonKey(name: 'phone_no')
+  final String phoneNo;
+  @override
+  @JsonKey(name: 'date_of_birth')
+  final DateTime? dateOfBirth;
+  final List<bool> _frequency;
+  @override
+  @JsonKey()
+  List<bool> get frequency {
+    if (_frequency is EqualUnmodifiableListView) return _frequency;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_frequency);
+  }
+
+  @override
   final DateTime? expiration;
   @override
   @JsonKey(name: 'date_created')
@@ -147,7 +242,7 @@ class _$_ContactRequest implements _ContactRequest {
 
   @override
   String toString() {
-    return 'ContactRequest(ownerId: $ownerId, expiration: $expiration, dateCreated: $dateCreated)';
+    return 'ContactRequest(ownerId: $ownerId, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, frequency: $frequency, expiration: $expiration, dateCreated: $dateCreated)';
   }
 
   @override
@@ -156,6 +251,13 @@ class _$_ContactRequest implements _ContactRequest {
         (other.runtimeType == runtimeType &&
             other is _$_ContactRequest &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phoneNo, phoneNo) || other.phoneNo == phoneNo) &&
+            (identical(other.dateOfBirth, dateOfBirth) ||
+                other.dateOfBirth == dateOfBirth) &&
+            const DeepCollectionEquality()
+                .equals(other._frequency, _frequency) &&
             (identical(other.expiration, expiration) ||
                 other.expiration == expiration) &&
             (identical(other.dateCreated, dateCreated) ||
@@ -164,8 +266,16 @@ class _$_ContactRequest implements _ContactRequest {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, ownerId, expiration, dateCreated);
+  int get hashCode => Object.hash(
+      runtimeType,
+      ownerId,
+      name,
+      email,
+      phoneNo,
+      dateOfBirth,
+      const DeepCollectionEquality().hash(_frequency),
+      expiration,
+      dateCreated);
 
   @JsonKey(ignore: true)
   @override
@@ -181,12 +291,18 @@ class _$_ContactRequest implements _ContactRequest {
   }
 }
 
-abstract class _ContactRequest implements ContactRequest {
+abstract class _ContactRequest extends ContactRequest {
   const factory _ContactRequest(
           {@JsonKey(name: 'owner_id') final String ownerId,
+          final String name,
+          final String email,
+          @JsonKey(name: 'phone_no') final String phoneNo,
+          @JsonKey(name: 'date_of_birth') final DateTime? dateOfBirth,
+          final List<bool> frequency,
           final DateTime? expiration,
           @JsonKey(name: 'date_created') final DateTime? dateCreated}) =
       _$_ContactRequest;
+  const _ContactRequest._() : super._();
 
   factory _ContactRequest.fromJson(Map<String, dynamic> json) =
       _$_ContactRequest.fromJson;
@@ -194,6 +310,18 @@ abstract class _ContactRequest implements ContactRequest {
   @override
   @JsonKey(name: 'owner_id')
   String get ownerId;
+  @override
+  String get name;
+  @override
+  String get email;
+  @override
+  @JsonKey(name: 'phone_no')
+  String get phoneNo;
+  @override
+  @JsonKey(name: 'date_of_birth')
+  DateTime? get dateOfBirth;
+  @override
+  List<bool> get frequency;
   @override
   DateTime? get expiration;
   @override

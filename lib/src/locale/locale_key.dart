@@ -19,6 +19,10 @@ class LocaleKey {
   static const String alertReceiveTimeout = "alertReceiveTimeout";
   static const String alertErrorServer = "alertErrorServer";
 
+  // Validations
+  static const String thisFieldIsRequired = "thisFieldIsRequired";
+  static const String emailFormatIsIncorrect = 'emailFormatIsIncorrect';
+
   // Message
   static const String success = "success";
   static const String error = "error";
@@ -95,6 +99,7 @@ class LocaleKey {
   static const String email = "email";
   static const String phoneNo = "phoneNo";
   static const String dateOfBirth = "dateOfBirth";
+  static const String contactCreatedSuccessfully = "contactCreatedSuccessfully";
 
   // Groups
   static const String addGroup = "addGroup";

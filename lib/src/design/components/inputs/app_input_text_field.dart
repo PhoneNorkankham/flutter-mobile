@@ -101,7 +101,7 @@ class AppInputTextField extends StatelessWidget {
       style: textStyle ?? context.appTextTheme.medium14,
       maxLines: maxLines,
       maxLength: maxLength,
-      textInputAction: textInputAction,
+      textInputAction: textInputAction ?? TextInputAction.next,
       textCapitalization: textCapitalization ?? TextCapitalization.none,
       autofillHints: autofillHints,
       onChanged: onChanged,

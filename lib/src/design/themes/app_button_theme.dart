@@ -39,6 +39,8 @@ class AppButtonTheme {
       shape: _shape,
       minWidth: double.maxFinite,
       height: _minHeight,
+      buttonColor: AppColors.primary,
+      disabledColor: AppColors.grey100,
     );
   }
 
