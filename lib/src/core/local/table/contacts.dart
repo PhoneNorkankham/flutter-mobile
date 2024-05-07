@@ -1,5 +1,5 @@
 import 'package:drift/drift.dart';
-import 'package:keepup/src/core/converters/date_time_converter.dart';
+import 'package:keepup/src/core/converters/list_string_converter.dart';
 
 class Contacts extends Table {
   TextColumn get id => text()();
@@ -13,18 +13,19 @@ class Contacts extends Table {
 
   TextColumn get email => text().withDefault(const Constant(''))();
 
+  TextColumn get frequency =>
+      text().map(const ListStringConverter()).withDefault(const Constant('[]'))();
+
   @JsonKey('phone_no')
   TextColumn get phoneNo => text().named('phone_no').withDefault(const Constant(''))();
 
   @JsonKey('date_of_birth')
-  TextColumn get dateOfBirth =>
-      text().named('date_of_birth').map(const DateTimeConverter()).nullable()();
+  DateTimeColumn get dateOfBirth => dateTime().named('date_of_birth').nullable()();
 
-  TextColumn get expiration => text().map(const DateTimeConverter()).nullable()();
+  DateTimeColumn get expiration => dateTime().named('expiration').nullable()();
 
   @JsonKey('date_created')
-  TextColumn get dateCreated =>
-      text().named('date_created').map(const DateTimeConverter()).nullable()();
+  DateTimeColumn get dateCreated => dateTime().named('date_created').nullable()();
 
   @override
   Set<Column> get primaryKey => {id};

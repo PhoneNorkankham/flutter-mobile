@@ -81,7 +81,7 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
     emit(state.copyWith(
       pageCommand: PageCommandNavigation.toPage(
         AppPages.contactDetail,
-        argument: event.contact.name, // TODO(Q.Thang): replace to Contact ID
+        argument: event.contact,
       ),
     ));
   }

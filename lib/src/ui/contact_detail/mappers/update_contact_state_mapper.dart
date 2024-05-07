@@ -12,7 +12,7 @@ import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_bloc.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 
-class CreateContactStateMapper implements BaseStateMapper<ContactDetailState, DataResult<Contact>> {
+class UpdateContactStateMapper implements BaseStateMapper<ContactDetailState, DataResult<Contact>> {
   @override
   ContactDetailState mapResultToState(ContactDetailState state, DataResult<Contact> result) {
     if (result.isError) {
@@ -46,7 +46,7 @@ class CreateContactStateMapper implements BaseStateMapper<ContactDetailState, Da
         everyDays: everyDays,
         contactId: contact.id,
         contactType: ContactType.contactDetail,
-        pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactCreatedSuccessfully.tr),
+        pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactUpdatedSuccessfully.tr),
       );
     }
   }

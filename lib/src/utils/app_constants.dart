@@ -5,6 +5,8 @@ class AppConstants {
   // Base name
   static const String appName = "Keepup";
   static const String appDatabaseName = "KeepupDB_202311241718"; //no Space
+  static const String supabaseUrl = 'https://abtxbiiaitrtayvmltko.supabase.co';
+  static const String supabaseKey = String.fromEnvironment('SUPABASE_KEY');
 
   // Base url
   static const String API_PROD_URL = "http://keepup.com";

@@ -71,11 +71,16 @@ class ContactDetailHeader extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Text(
-                state.contactType == ContactType.newContact ? '' : 'Vanisa Legon',
-                style: context.appTextTheme.medium14.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
+              BlocBuilder<ContactDetailBloc, ContactDetailState>(
+                buildWhen: (previous, current) => previous.request.name != current.request.name,
+                builder: (context, state) {
+                  return Text(
+                    state.contactType == ContactType.newContact ? '' : state.request.name,
+                    style: context.appTextTheme.medium14.copyWith(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 26),
             ],

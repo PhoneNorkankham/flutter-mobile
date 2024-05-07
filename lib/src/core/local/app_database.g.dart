@@ -385,6 +385,15 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
       type: DriftSqlType.string,
       requiredDuringInsert: false,
       defaultValue: const Constant(''));
+  static const VerificationMeta _frequencyMeta =
+      const VerificationMeta('frequency');
+  @override
+  late final GeneratedColumnWithTypeConverter<List<dynamic>, String> frequency =
+      GeneratedColumn<String>('frequency', aliasedName, false,
+              type: DriftSqlType.string,
+              requiredDuringInsert: false,
+              defaultValue: const Constant('[]'))
+          .withConverter<List<dynamic>>($ContactsTable.$converterfrequency);
   static const VerificationMeta _phoneNoMeta =
       const VerificationMeta('phoneNo');
   @override
@@ -396,24 +405,21 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
   static const VerificationMeta _dateOfBirthMeta =
       const VerificationMeta('dateOfBirth');
   @override
-  late final GeneratedColumnWithTypeConverter<DateTime?, String> dateOfBirth =
-      GeneratedColumn<String>('date_of_birth', aliasedName, true,
-              type: DriftSqlType.string, requiredDuringInsert: false)
-          .withConverter<DateTime?>($ContactsTable.$converterdateOfBirth);
+  late final GeneratedColumn<DateTime> dateOfBirth = GeneratedColumn<DateTime>(
+      'date_of_birth', aliasedName, true,
+      type: DriftSqlType.dateTime, requiredDuringInsert: false);
   static const VerificationMeta _expirationMeta =
       const VerificationMeta('expiration');
   @override
-  late final GeneratedColumnWithTypeConverter<DateTime?, String> expiration =
-      GeneratedColumn<String>('expiration', aliasedName, true,
-              type: DriftSqlType.string, requiredDuringInsert: false)
-          .withConverter<DateTime?>($ContactsTable.$converterexpiration);
+  late final GeneratedColumn<DateTime> expiration = GeneratedColumn<DateTime>(
+      'expiration', aliasedName, true,
+      type: DriftSqlType.dateTime, requiredDuringInsert: false);
   static const VerificationMeta _dateCreatedMeta =
       const VerificationMeta('dateCreated');
   @override
-  late final GeneratedColumnWithTypeConverter<DateTime?, String> dateCreated =
-      GeneratedColumn<String>('date_created', aliasedName, true,
-              type: DriftSqlType.string, requiredDuringInsert: false)
-          .withConverter<DateTime?>($ContactsTable.$converterdateCreated);
+  late final GeneratedColumn<DateTime> dateCreated = GeneratedColumn<DateTime>(
+      'date_created', aliasedName, true,
+      type: DriftSqlType.dateTime, requiredDuringInsert: false);
   @override
   List<GeneratedColumn> get $columns => [
         id,
@@ -421,6 +427,7 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
         avatar,
         name,
         email,
+        frequency,
         phoneNo,
         dateOfBirth,
         expiration,
@@ -459,13 +466,29 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
       context.handle(
           _emailMeta, email.isAcceptableOrUnknown(data['email']!, _emailMeta));
     }
+    context.handle(_frequencyMeta, const VerificationResult.success());
     if (data.containsKey('phone_no')) {
       context.handle(_phoneNoMeta,
           phoneNo.isAcceptableOrUnknown(data['phone_no']!, _phoneNoMeta));
     }
-    context.handle(_dateOfBirthMeta, const VerificationResult.success());
-    context.handle(_expirationMeta, const VerificationResult.success());
-    context.handle(_dateCreatedMeta, const VerificationResult.success());
+    if (data.containsKey('date_of_birth')) {
+      context.handle(
+          _dateOfBirthMeta,
+          dateOfBirth.isAcceptableOrUnknown(
+              data['date_of_birth']!, _dateOfBirthMeta));
+    }
+    if (data.containsKey('expiration')) {
+      context.handle(
+          _expirationMeta,
+          expiration.isAcceptableOrUnknown(
+              data['expiration']!, _expirationMeta));
+    }
+    if (data.containsKey('date_created')) {
+      context.handle(
+          _dateCreatedMeta,
+          dateCreated.isAcceptableOrUnknown(
+              data['date_created']!, _dateCreatedMeta));
+    }
     return context;
   }
 
@@ -485,17 +508,17 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
           .read(DriftSqlType.string, data['${effectivePrefix}name'])!,
       email: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}email'])!,
+      frequency: $ContactsTable.$converterfrequency.fromSql(attachedDatabase
+          .typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}frequency'])!),
       phoneNo: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}phone_no'])!,
-      dateOfBirth: $ContactsTable.$converterdateOfBirth.fromSql(attachedDatabase
-          .typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}date_of_birth'])),
-      expiration: $ContactsTable.$converterexpiration.fromSql(attachedDatabase
-          .typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}expiration'])),
-      dateCreated: $ContactsTable.$converterdateCreated.fromSql(attachedDatabase
-          .typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}date_created'])),
+      dateOfBirth: attachedDatabase.typeMapping
+          .read(DriftSqlType.dateTime, data['${effectivePrefix}date_of_birth']),
+      expiration: attachedDatabase.typeMapping
+          .read(DriftSqlType.dateTime, data['${effectivePrefix}expiration']),
+      dateCreated: attachedDatabase.typeMapping
+          .read(DriftSqlType.dateTime, data['${effectivePrefix}date_created']),
     );
   }
 
@@ -504,12 +527,8 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
     return $ContactsTable(attachedDatabase, alias);
   }
 
-  static TypeConverter<DateTime?, String?> $converterdateOfBirth =
-      const DateTimeConverter();
-  static TypeConverter<DateTime?, String?> $converterexpiration =
-      const DateTimeConverter();
-  static TypeConverter<DateTime?, String?> $converterdateCreated =
-      const DateTimeConverter();
+  static TypeConverter<List<dynamic>, String> $converterfrequency =
+      const ListStringConverter();
 }
 
 class Contact extends DataClass implements Insertable<Contact> {
@@ -518,6 +537,7 @@ class Contact extends DataClass implements Insertable<Contact> {
   final String avatar;
   final String name;
   final String email;
+  final List<dynamic> frequency;
   final String phoneNo;
   final DateTime? dateOfBirth;
   final DateTime? expiration;
@@ -528,6 +548,7 @@ class Contact extends DataClass implements Insertable<Contact> {
       required this.avatar,
       required this.name,
       required this.email,
+      required this.frequency,
       required this.phoneNo,
       this.dateOfBirth,
       this.expiration,
@@ -540,18 +561,19 @@ class Contact extends DataClass implements Insertable<Contact> {
     map['avatar'] = Variable<String>(avatar);
     map['name'] = Variable<String>(name);
     map['email'] = Variable<String>(email);
+    {
+      map['frequency'] =
+          Variable<String>($ContactsTable.$converterfrequency.toSql(frequency));
+    }
     map['phone_no'] = Variable<String>(phoneNo);
     if (!nullToAbsent || dateOfBirth != null) {
-      map['date_of_birth'] = Variable<String>(
-          $ContactsTable.$converterdateOfBirth.toSql(dateOfBirth));
+      map['date_of_birth'] = Variable<DateTime>(dateOfBirth);
     }
     if (!nullToAbsent || expiration != null) {
-      map['expiration'] = Variable<String>(
-          $ContactsTable.$converterexpiration.toSql(expiration));
+      map['expiration'] = Variable<DateTime>(expiration);
     }
     if (!nullToAbsent || dateCreated != null) {
-      map['date_created'] = Variable<String>(
-          $ContactsTable.$converterdateCreated.toSql(dateCreated));
+      map['date_created'] = Variable<DateTime>(dateCreated);
     }
     return map;
   }
@@ -563,6 +585,7 @@ class Contact extends DataClass implements Insertable<Contact> {
       avatar: Value(avatar),
       name: Value(name),
       email: Value(email),
+      frequency: Value(frequency),
       phoneNo: Value(phoneNo),
       dateOfBirth: dateOfBirth == null && nullToAbsent
           ? const Value.absent()
@@ -585,6 +608,7 @@ class Contact extends DataClass implements Insertable<Contact> {
       avatar: serializer.fromJson<String>(json['avatar']),
       name: serializer.fromJson<String>(json['name']),
       email: serializer.fromJson<String>(json['email']),
+      frequency: serializer.fromJson<List<dynamic>>(json['frequency']),
       phoneNo: serializer.fromJson<String>(json['phone_no']),
       dateOfBirth: serializer.fromJson<DateTime?>(json['date_of_birth']),
       expiration: serializer.fromJson<DateTime?>(json['expiration']),
@@ -600,6 +624,7 @@ class Contact extends DataClass implements Insertable<Contact> {
       'avatar': serializer.toJson<String>(avatar),
       'name': serializer.toJson<String>(name),
       'email': serializer.toJson<String>(email),
+      'frequency': serializer.toJson<List<dynamic>>(frequency),
       'phone_no': serializer.toJson<String>(phoneNo),
       'date_of_birth': serializer.toJson<DateTime?>(dateOfBirth),
       'expiration': serializer.toJson<DateTime?>(expiration),
@@ -613,6 +638,7 @@ class Contact extends DataClass implements Insertable<Contact> {
           String? avatar,
           String? name,
           String? email,
+          List<dynamic>? frequency,
           String? phoneNo,
           Value<DateTime?> dateOfBirth = const Value.absent(),
           Value<DateTime?> expiration = const Value.absent(),
@@ -623,6 +649,7 @@ class Contact extends DataClass implements Insertable<Contact> {
         avatar: avatar ?? this.avatar,
         name: name ?? this.name,
         email: email ?? this.email,
+        frequency: frequency ?? this.frequency,
         phoneNo: phoneNo ?? this.phoneNo,
         dateOfBirth: dateOfBirth.present ? dateOfBirth.value : this.dateOfBirth,
         expiration: expiration.present ? expiration.value : this.expiration,
@@ -636,6 +663,7 @@ class Contact extends DataClass implements Insertable<Contact> {
           ..write('avatar: $avatar, ')
           ..write('name: $name, ')
           ..write('email: $email, ')
+          ..write('frequency: $frequency, ')
           ..write('phoneNo: $phoneNo, ')
           ..write('dateOfBirth: $dateOfBirth, ')
           ..write('expiration: $expiration, ')
@@ -645,8 +673,8 @@ class Contact extends DataClass implements Insertable<Contact> {
   }
 
   @override
-  int get hashCode => Object.hash(id, ownerId, avatar, name, email, phoneNo,
-      dateOfBirth, expiration, dateCreated);
+  int get hashCode => Object.hash(id, ownerId, avatar, name, email, frequency,
+      phoneNo, dateOfBirth, expiration, dateCreated);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -656,6 +684,7 @@ class Contact extends DataClass implements Insertable<Contact> {
           other.avatar == this.avatar &&
           other.name == this.name &&
           other.email == this.email &&
+          other.frequency == this.frequency &&
           other.phoneNo == this.phoneNo &&
           other.dateOfBirth == this.dateOfBirth &&
           other.expiration == this.expiration &&
@@ -668,6 +697,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
   final Value<String> avatar;
   final Value<String> name;
   final Value<String> email;
+  final Value<List<dynamic>> frequency;
   final Value<String> phoneNo;
   final Value<DateTime?> dateOfBirth;
   final Value<DateTime?> expiration;
@@ -679,6 +709,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     this.avatar = const Value.absent(),
     this.name = const Value.absent(),
     this.email = const Value.absent(),
+    this.frequency = const Value.absent(),
     this.phoneNo = const Value.absent(),
     this.dateOfBirth = const Value.absent(),
     this.expiration = const Value.absent(),
@@ -691,6 +722,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     this.avatar = const Value.absent(),
     this.name = const Value.absent(),
     this.email = const Value.absent(),
+    this.frequency = const Value.absent(),
     this.phoneNo = const Value.absent(),
     this.dateOfBirth = const Value.absent(),
     this.expiration = const Value.absent(),
@@ -704,10 +736,11 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     Expression<String>? avatar,
     Expression<String>? name,
     Expression<String>? email,
+    Expression<String>? frequency,
     Expression<String>? phoneNo,
-    Expression<String>? dateOfBirth,
-    Expression<String>? expiration,
-    Expression<String>? dateCreated,
+    Expression<DateTime>? dateOfBirth,
+    Expression<DateTime>? expiration,
+    Expression<DateTime>? dateCreated,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -716,6 +749,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
       if (avatar != null) 'avatar': avatar,
       if (name != null) 'name': name,
       if (email != null) 'email': email,
+      if (frequency != null) 'frequency': frequency,
       if (phoneNo != null) 'phone_no': phoneNo,
       if (dateOfBirth != null) 'date_of_birth': dateOfBirth,
       if (expiration != null) 'expiration': expiration,
@@ -730,6 +764,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
       Value<String>? avatar,
       Value<String>? name,
       Value<String>? email,
+      Value<List<dynamic>>? frequency,
       Value<String>? phoneNo,
       Value<DateTime?>? dateOfBirth,
       Value<DateTime?>? expiration,
@@ -741,6 +776,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
       avatar: avatar ?? this.avatar,
       name: name ?? this.name,
       email: email ?? this.email,
+      frequency: frequency ?? this.frequency,
       phoneNo: phoneNo ?? this.phoneNo,
       dateOfBirth: dateOfBirth ?? this.dateOfBirth,
       expiration: expiration ?? this.expiration,
@@ -767,20 +803,21 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     if (email.present) {
       map['email'] = Variable<String>(email.value);
     }
+    if (frequency.present) {
+      map['frequency'] = Variable<String>(
+          $ContactsTable.$converterfrequency.toSql(frequency.value));
+    }
     if (phoneNo.present) {
       map['phone_no'] = Variable<String>(phoneNo.value);
     }
     if (dateOfBirth.present) {
-      map['date_of_birth'] = Variable<String>(
-          $ContactsTable.$converterdateOfBirth.toSql(dateOfBirth.value));
+      map['date_of_birth'] = Variable<DateTime>(dateOfBirth.value);
     }
     if (expiration.present) {
-      map['expiration'] = Variable<String>(
-          $ContactsTable.$converterexpiration.toSql(expiration.value));
+      map['expiration'] = Variable<DateTime>(expiration.value);
     }
     if (dateCreated.present) {
-      map['date_created'] = Variable<String>(
-          $ContactsTable.$converterdateCreated.toSql(dateCreated.value));
+      map['date_created'] = Variable<DateTime>(dateCreated.value);
     }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
@@ -796,6 +833,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
           ..write('avatar: $avatar, ')
           ..write('name: $name, ')
           ..write('email: $email, ')
+          ..write('frequency: $frequency, ')
           ..write('phoneNo: $phoneNo, ')
           ..write('dateOfBirth: $dateOfBirth, ')
           ..write('expiration: $expiration, ')

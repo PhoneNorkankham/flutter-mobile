@@ -8,7 +8,7 @@ import 'package:keepup/src/extensions/string_extensions.dart';
 
 class AppCircleAvatar extends StatelessWidget {
   final File? file;
-  final String? url;
+  final String url;
   final double radius;
   final Color backgroundColor;
   final Color foregroundColor;
@@ -30,9 +30,9 @@ class AppCircleAvatar extends StatelessWidget {
     if (file != null) {
       /// Image is from file
       imageProvider = FileImage(file!);
-    } else if (!url.isNullOrEmpty && url?.isNetworkUri == true) {
+    } else if (url.isNotEmpty && url.isNetworkUri) {
       /// Image is from server
-      imageProvider = CachedNetworkImageProvider(url!, cacheManager: CustomImageCacheManager());
+      imageProvider = CachedNetworkImageProvider(url, cacheManager: CustomImageCacheManager());
     }
 
     return CircleAvatar(
@@ -53,6 +53,14 @@ class AppCircleAvatar extends StatelessWidget {
               radius: radius,
               foregroundImage: imageProvider,
               foregroundColor: foregroundColor,
+              onForegroundImageError: (exception, stackTrace) => Container(
+                color: backgroundColor,
+                child: Icon(
+                  Icons.person,
+                  size: radius * 1.5,
+                  color: foregroundColor,
+                ),
+              ),
             ),
         ],
       ),

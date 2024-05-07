@@ -20,7 +20,8 @@ class ContactDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ContactDetailBloc, ContactDetailState>(
-      buildWhen: (previous, current) => previous.contactType != current.contactType,
+      buildWhen: (previous, current) =>
+          previous.contactType != current.contactType || previous.isLoading != current.isLoading,
       builder: (context, state) {
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.onPrimary,
@@ -33,6 +34,7 @@ class ContactDetailView extends StatelessWidget {
             pageState: PageState.success,
             unFocusWhenTouchOutsideInput: true,
             backgroundColor: Theme.of(context).colorScheme.onPrimary,
+            isLoading: state.isLoading,
             success: const SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -8,6 +8,7 @@ import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/translation_manager.dart';
 import 'package:keepup/src/use_cases/check_logged_in_use_case.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
+import 'package:keepup/src/use_cases/update_contact_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_api_config.dart';
 import 'package:keepup/src/utils/app_shared.dart';

@@ -59,7 +59,14 @@ class SupabaseRepository {
   Future<Resource<Contact>> insertContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
       createSerializedCall: () => _supabaseManager.insertContact(request),
-      saveCallResult: (contact) => _contactDao.insert(contact),
+      saveCallResult: (contact) => _contactDao.insertContact(contact),
+    ).getAsFuture();
+  }
+
+  Future<Resource<Contact>> updateContact(ContactRequest request) {
+    return NetworkBoundResource<Contact, Contact>(
+      createSerializedCall: () => _supabaseManager.updateContact(request.contactId, request),
+      saveCallResult: (contact) => _contactDao.updateContact(contact),
     ).getAsFuture();
   }
 
@@ -83,7 +90,7 @@ class SupabaseRepository {
       saveCallResult: (contacts) async {
         await _contactDao.deleteAll();
         for (Contact contact in contacts) {
-          await _contactDao.insert(contact);
+          await _contactDao.insertContact(contact);
         }
       },
     ).getAsFuture();
@@ -94,6 +101,13 @@ class SupabaseRepository {
   Future<Resource<String>> uploadAvatar(File file) {
     return NetworkBoundResource<String, String>(
       createSerializedCall: () => _supabaseManager.uploadAvatar(file),
+    ).getAsFuture();
+  }
+
+  Future<Resource<Contact?>> getContact(String contactId) {
+    return NetworkBoundResource<Contact?, Contact?>(
+      createSerializedCall: () => _supabaseManager.getContact(contactId),
+      loadFromDb: () => _contactDao.getContact(contactId),
     ).getAsFuture();
   }
 }

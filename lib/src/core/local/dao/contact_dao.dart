@@ -10,14 +10,21 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
 
   ContactDao(this.db) : super(db);
 
-  Future<int> insert(Contact contact) => into(contacts).insert(
+  Future<int> insertContact(Contact contact) => into(contacts).insert(
         contact,
         mode: InsertMode.insertOrReplace,
       );
 
+  Future<bool> updateContact(Contact contact) => update(contacts).replace(contact);
+
   Future<List<Contact>> getContacts() => select(contacts).get();
 
   Stream<List<Contact>> watchContacts() => select(contacts).watch();
+
+  Future<Contact?> getContact(String contactId) =>
+      (select(contacts)..where((tbl) => tbl.id.equals(contactId)))
+          .get()
+          .then((value) => value.firstOrNull);
 
   Future<int> deleteAll() => delete(contacts).go();
 }

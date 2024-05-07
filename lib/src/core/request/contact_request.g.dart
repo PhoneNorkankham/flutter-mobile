@@ -8,21 +8,20 @@ part of 'contact_request.dart';
 
 _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
     _$_ContactRequest(
+      contactId: json['id'] as String? ?? '',
       ownerId: json['owner_id'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       phoneNo: json['phone_no'] as String? ?? '',
-      dateOfBirth: const DateTimeJsonConverter()
-          .fromJson(json['date_of_birth'] as String?),
+      dateOfBirth:
+          const DateTimeJsonConverter().fromJson(json['date_of_birth']),
       frequency: (json['frequency'] as List<dynamic>?)
               ?.map((e) => e as bool)
               .toList() ??
           const [],
-      expiration:
-          const DateTimeJsonConverter().fromJson(json['expiration'] as String?),
-      dateCreated: const DateTimeJsonConverter()
-          .fromJson(json['date_created'] as String?),
+      expiration: const DateTimeJsonConverter().fromJson(json['expiration']),
+      dateCreated: const DateTimeJsonConverter().fromJson(json['date_created']),
     );
 
 Map<String, dynamic> _$$_ContactRequestToJson(_$_ContactRequest instance) {

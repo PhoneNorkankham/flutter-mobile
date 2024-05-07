@@ -7,22 +7,21 @@ import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path/path.dart' as p;
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseManager {
-  static const _supabaseUrl = 'https://abtxbiiaitrtayvmltko.supabase.co';
-  static const _supabaseKey = String.fromEnvironment('SUPABASE_KEY');
-
   final _tbUsers = 'Users';
   final _tbGroups = 'Groups';
   final _tbContacts = 'Contacts';
 
+  final _fieldId = 'id';
   final _fieldOwnerId = 'owner_id';
 
   static Future<Supabase> initialize() => Supabase.initialize(
-        url: _supabaseUrl,
-        anonKey: _supabaseKey,
+        url: AppConstants.supabaseUrl,
+        anonKey: AppConstants.supabaseKey,
       );
 
   final SupabaseClient _supabase = Supabase.instance.client;
@@ -115,6 +114,19 @@ class SupabaseManager {
         }
       });
 
+  Future<Contact> updateContact(String contactId, ContactRequest request) => _supabase
+      .from(_tbContacts)
+      .update(request.toJson())
+      .match({'id': contactId})
+      .select()
+      .then((value) {
+        if (value.isNotEmpty) {
+          return Contact.fromJson(value.first);
+        } else {
+          return Future.error(LocaleKey.updatingContactFailed.tr);
+        }
+      });
+
   Future<List<Group>> getGroups() => _supabase
       .from(_tbGroups)
       .select()
@@ -127,18 +139,28 @@ class SupabaseManager {
       .eq(_fieldOwnerId, uid)
       .then((value) => value.map((e) => Contact.fromJson(e)).toList());
 
+  Future<Contact?> getContact(String contactId) => _supabase
+      .from(_tbContacts)
+      .select()
+      .eq(_fieldId, contactId)
+      .then((value) => value.map((e) => Contact.fromJson(e)).toList().firstOrNull);
+
   Future<String> uploadAvatar(File file) {
     String fileExtension = p.extension(file.path, 2);
     if (fileExtension.isEmpty) {
       fileExtension = '.png';
     }
-    return _supabaseStorage.from('avatars').upload(
-          'public/$uid/${DateTime.now().millisecondsSinceEpoch}$fileExtension',
+    String avatarPath = '$uid/avatar/${DateTime.now().millisecondsSinceEpoch}$fileExtension';
+    return _supabaseStorage
+        .from('images')
+        .upload(
+          avatarPath,
           file,
           fileOptions: const FileOptions(
             cacheControl: '3600',
             upsert: true,
           ),
-        );
+        )
+        .then((value) => _supabaseStorage.from('images').getPublicUrl(avatarPath));
   }
 }

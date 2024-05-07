@@ -9,12 +9,17 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/choice_every_day_data.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
+import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_input_type.dart';
 import 'package:keepup/src/ui/contact_detail/mappers/create_contact_state_mapper.dart';
+import 'package:keepup/src/ui/contact_detail/mappers/get_contact_state_mapper.dart';
+import 'package:keepup/src/ui/contact_detail/mappers/update_contact_state_mapper.dart';
+import 'package:keepup/src/ui/contact_detail/usecases/get_contact_use_case.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
+import 'package:keepup/src/use_cases/update_contact_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 
@@ -31,11 +36,19 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   final CreateContactUseCase _createContactUseCase;
   final CreateContactStateMapper _createContactStateMapper;
   final UploadAvatarUseCase _uploadAvatarUseCase;
+  final GetContactUseCase _getContactUseCase;
+  final GetContactStateMapper _getContactStateMapper;
+  final UpdateContactUseCase _updateContactUseCase;
+  final UpdateContactStateMapper _updateContactStateMapper;
 
   ContactDetailBloc(
     this._createContactUseCase,
     this._createContactStateMapper,
     this._uploadAvatarUseCase,
+    this._getContactUseCase,
+    this._getContactStateMapper,
+    this._updateContactUseCase,
+    this._updateContactStateMapper,
   ) : super(const ContactDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -59,7 +72,13 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     if (contactId.isEmpty) {
       emit(state.copyWith(contactType: ContactType.newContact));
     } else {
-      emit(state.copyWith(contactType: ContactType.contactDetail));
+      emit(state.copyWith(isLoading: true));
+      final result = await _getContactUseCase.run(contactId);
+      emit(_getContactStateMapper.mapResultToState(state, result));
+      nameController.text = state.request.name;
+      emailController.text = state.request.email;
+      phoneNoController.text = state.request.phoneNo;
+      dateOfBirthController.text = state.request.dateOfBirth?.generalDateText ?? '';
     }
   }
 
@@ -85,7 +104,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   FutureOr<void> _onSavePressed(_OnSavePressed event, Emitter<ContactDetailState> emit) async {
     emit(state.copyWith(isLoading: true));
     final File? avatarFile = state.avatar;
-    String avatarUrl = '';
+    String avatarUrl = state.request.avatar;
     if (avatarFile != null) {
       final DataResult<String> result = await _uploadAvatarUseCase.run(avatarFile);
       if (result.isValue) {
@@ -103,12 +122,15 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     }
     final request = state.request.copyWith(
       avatar: avatarUrl,
-      expiration: DateTime.now().add(Duration(days: state.interval.toInt())),
+      expiration: DateUtils.dateOnly(DateTime.now()).add(Duration(days: state.interval.toInt())),
       frequency: state.everyDays.map((e) => e.isActive).toList(),
     );
     if (state.contactType == ContactType.newContact) {
       final result = await _createContactUseCase.run(request);
       emit(_createContactStateMapper.mapResultToState(state, result));
+    } else {
+      final result = await _updateContactUseCase.run(request);
+      emit(_updateContactStateMapper.mapResultToState(state, result));
     }
   }
 }

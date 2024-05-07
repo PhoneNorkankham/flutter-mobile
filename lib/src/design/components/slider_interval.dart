@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
@@ -47,7 +49,7 @@ class SliderInterval extends StatelessWidget {
             thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15),
           ),
           child: Slider(
-            value: interval,
+            value: min(interval, 60),
             max: 60,
             divisions: 60,
             activeColor: AppColors.orange,

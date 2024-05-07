@@ -67,6 +67,7 @@ class LocaleKey {
   static const String creatingAnonymousAccountFailed = "creatingAnonymousAccountFailed";
   static const String creatingGroupFailed = "creatingGroupFailed";
   static const String creatingContactFailed = "creatingContactFailed";
+  static const String updatingContactFailed = "updatingContactFailed";
   static const String joiningGroupFailed = "joiningGroupFailed";
 
   // Main
@@ -112,6 +113,7 @@ class LocaleKey {
   static const String phoneNo = "phoneNo";
   static const String dateOfBirth = "dateOfBirth";
   static const String contactCreatedSuccessfully = "contactCreatedSuccessfully";
+  static const String contactUpdatedSuccessfully = "contactUpdatedSuccessfully";
 
   // Groups
   static const String addGroup = "addGroup";
