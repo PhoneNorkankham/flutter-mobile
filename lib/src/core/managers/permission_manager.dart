@@ -7,11 +7,14 @@ import 'package:keepup/src/locale/locale_key.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 enum PermissionType {
+  Contacts,
   Photos,
   Camera;
 
   String get title {
     switch (this) {
+      case PermissionType.Contacts:
+        return LocaleKey.contacts.tr;
       case PermissionType.Photos:
         return LocaleKey.photoLibrary.tr;
       case PermissionType.Camera:
@@ -23,6 +26,8 @@ enum PermissionType {
 
   Future<Permission> get permission async {
     switch (this) {
+      case PermissionType.Contacts:
+        return Permission.contacts;
       case PermissionType.Photos:
         if (Platform.isAndroid) {
           final AndroidDeviceInfo androidInfo = await DeviceInfoPlugin().androidInfo;

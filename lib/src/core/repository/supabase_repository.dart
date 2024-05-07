@@ -83,6 +83,8 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<List<Group>> getDBGroups() => _groupDao.getGroups();
+
   Future<Resource<List<Contact>>> getContacts() {
     return NetworkBoundResource<List<Contact>, List<Contact>>(
       createSerializedCall: () => _supabaseManager.getContacts(),

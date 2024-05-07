@@ -116,6 +116,9 @@ dependencies:
   # Supabase
   supabase_flutter: ^2.5.1
 
+  # Contacts
+  contacts_service: ^0.6.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

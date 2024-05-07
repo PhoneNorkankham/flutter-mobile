@@ -5,6 +5,7 @@ import 'package:keepup/src/design/components/buttons/app_button.dart';
 import 'package:keepup/src/design/components/buttons/app_button_type.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/contacts/commons/new_contact_options_bottom_sheet.dart';
 import 'package:keepup/src/ui/contacts/interactor/contact_bloc.dart';
 
 class AddContactButton extends StatelessWidget {
@@ -12,14 +13,22 @@ class AddContactButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<ContactBloc>();
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         AppButton(
-          onPressed: () => bloc.add(const ContactEvent.onGotoNewContact()),
+          onPressed: () => NewContactOptionsBottomSheet.show().then((value) {
+            if (value is NewContactOptions) {
+              final bloc = context.read<ContactBloc>();
+              if (value == NewContactOptions.phoneContacts) {
+                bloc.add(const ContactEvent.onCheckContactPermission());
+              } else {
+                bloc.add(const ContactEvent.onGotoNewContact());
+              }
+            }
+          }),
           buttonType: AppButtonType.whiteCircle,
           child: const Icon(Icons.add, size: 34),
         ),

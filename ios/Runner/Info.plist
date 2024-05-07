@@ -52,12 +52,12 @@
     </dict>
     <key>io.flutter.embedded_views_preview</key>
     <true/>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>This app needs access to location.</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>This app needs access to location.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app needs access to location.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Use the camera to take photos and upload to your profile or contacts</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Set regular reminders to reach out to any of your contacts</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use the photo library to get photos and upload them to your profile or contacts</string>
     <key>UIBackgroundModes</key>
     <array>
     	<string>fetch</string>

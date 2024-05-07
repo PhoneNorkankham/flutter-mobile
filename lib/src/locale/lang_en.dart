@@ -94,4 +94,8 @@ Map<String, String> enUs = {
   LocaleKey.searchNameOrNumber: 'Search name or number',
   LocaleKey.addMembers: 'Add members',
   LocaleKey.groupName: 'Group Name',
+  LocaleKey.usePhoneContacts: 'Use Phone Contacts',
+  LocaleKey.createManually: 'Create Manually',
+  LocaleKey.addContactsToKeepUp: 'Add Contacts To KeepUp',
+  LocaleKey.done: 'Done',
 };

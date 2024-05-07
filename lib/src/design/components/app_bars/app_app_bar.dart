@@ -7,6 +7,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final List<Widget>? actions;
   final bool implyLeading;
+  final bool onlyIconLeading;
   final double? titleSpacing;
   final TextStyle? titleTextStyle;
   final VoidCallback? onBackPressed;
@@ -14,6 +15,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppBar({
     super.key,
     this.title,
+    this.onlyIconLeading = false,
     this.actions,
     this.implyLeading = false,
     this.titleSpacing = 27,
@@ -24,11 +26,20 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: implyLeading ? AppBackButton(onPressed: onBackPressed) : null,
+      leading: implyLeading
+          ? AppBackButton(
+              onPressed: onBackPressed,
+              onlyIconLeading: onlyIconLeading,
+            )
+          : null,
       automaticallyImplyLeading: false,
       centerTitle: true,
       actions: actions,
-      leadingWidth: implyLeading ? 100 : 0,
+      leadingWidth: implyLeading
+          ? onlyIconLeading
+              ? 60
+              : 100
+          : 0,
       titleSpacing: implyLeading ? 0 : titleSpacing,
       title: title?.let((self) => Text(
             self,

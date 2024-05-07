@@ -129,4 +129,12 @@ class LocaleKey {
   static const String searchNameOrNumber = "searchNameOrNumber";
   static const String addMembers = "addMembers";
   static const String groupName = "groupName";
+
+  // New Chat Options
+  static const String usePhoneContacts = "usePhoneContacts";
+  static const String createManually = "createManually";
+
+  // Add Contacts To KeepUp
+  static const String addContactsToKeepUp = "addContactsToKeepUp";
+  static const String done = "done";
 }
