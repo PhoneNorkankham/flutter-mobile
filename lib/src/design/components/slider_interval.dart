@@ -34,7 +34,7 @@ class SliderInterval extends StatelessWidget {
               ),
             ),
             Text(
-              '${interval.toInt()} Days',
+              '${interval < 0 ? 0 : interval.toInt()} Days',
               style: context.appTextTheme.bold16.copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
@@ -49,7 +49,7 @@ class SliderInterval extends StatelessWidget {
             thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15),
           ),
           child: Slider(
-            value: min(interval, 60),
+            value: interval < 0 ? 0 : min(interval, 60),
             max: 60,
             divisions: 60,
             activeColor: AppColors.orange,

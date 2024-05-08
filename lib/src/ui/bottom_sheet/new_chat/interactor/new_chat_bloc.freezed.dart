@@ -26,6 +26,7 @@ mixin _$NewChatEvent {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -44,6 +45,7 @@ mixin _$NewChatEvent {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -60,6 +62,7 @@ mixin _$NewChatEvent {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -77,6 +80,7 @@ mixin _$NewChatEvent {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -93,6 +97,7 @@ mixin _$NewChatEvent {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -109,6 +114,7 @@ mixin _$NewChatEvent {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -181,6 +187,7 @@ class _$_Initial implements _Initial {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -202,6 +209,7 @@ class _$_Initial implements _Initial {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -221,6 +229,7 @@ class _$_Initial implements _Initial {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -244,6 +253,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -263,6 +273,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -282,6 +293,7 @@ class _$_Initial implements _Initial {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -345,6 +357,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -366,6 +379,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -385,6 +399,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -408,6 +423,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -427,6 +443,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -446,6 +463,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -535,6 +553,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -556,6 +575,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -575,6 +595,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -598,6 +619,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -617,6 +639,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -636,6 +659,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -731,6 +755,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -752,6 +777,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -771,6 +797,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -794,6 +821,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -813,6 +841,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -832,6 +861,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -928,6 +958,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -949,6 +980,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -968,6 +1000,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -991,6 +1024,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -1010,6 +1044,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -1029,6 +1064,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -1125,6 +1161,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -1146,6 +1183,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1165,6 +1203,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1188,6 +1227,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -1207,6 +1247,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -1226,6 +1267,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -1322,6 +1364,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -1343,6 +1386,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1362,6 +1406,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1385,6 +1430,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -1404,6 +1450,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -1423,6 +1470,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -1492,6 +1540,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -1513,6 +1562,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1532,6 +1582,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1555,6 +1606,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -1574,6 +1626,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -1593,6 +1646,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -1608,6 +1662,176 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
 
 abstract class _OnCreateNewGroup implements NewChatEvent {
   const factory _OnCreateNewGroup() = _$_OnCreateNewGroup;
+}
+
+/// @nodoc
+abstract class _$$_OnCreateNewContactCopyWith<$Res> {
+  factory _$$_OnCreateNewContactCopyWith(_$_OnCreateNewContact value,
+          $Res Function(_$_OnCreateNewContact) then) =
+      __$$_OnCreateNewContactCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnCreateNewContactCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnCreateNewContact>
+    implements _$$_OnCreateNewContactCopyWith<$Res> {
+  __$$_OnCreateNewContactCopyWithImpl(
+      _$_OnCreateNewContact _value, $Res Function(_$_OnCreateNewContact) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnCreateNewContact implements _OnCreateNewContact {
+  const _$_OnCreateNewContact();
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onCreateNewContact()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnCreateNewContact);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Contact contact) onSelectedContact,
+    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
+    required TResult Function(double interval) onIntervalChanged,
+    required TResult Function(List<ChoiceEveryDayData> frequency)
+        onFrequencyChanged,
+    required TResult Function(NewChatInputType inputType, String value)
+        onInputChanged,
+    required TResult Function(File file) onChangedAvatar,
+  }) {
+    return onCreateNewContact();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Contact contact)? onSelectedContact,
+    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
+    TResult? Function(double interval)? onIntervalChanged,
+    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
+    TResult? Function(File file)? onChangedAvatar,
+  }) {
+    return onCreateNewContact?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Contact contact)? onSelectedContact,
+    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
+    TResult Function(double interval)? onIntervalChanged,
+    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
+    TResult Function(File file)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onCreateNewContact != null) {
+      return onCreateNewContact();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
+    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
+    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+  }) {
+    return onCreateNewContact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
+    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
+    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+  }) {
+    return onCreateNewContact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
+    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
+    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onCreateNewContact != null) {
+      return onCreateNewContact(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnCreateNewContact implements NewChatEvent {
+  const factory _OnCreateNewContact() = _$_OnCreateNewContact;
 }
 
 /// @nodoc
@@ -1684,6 +1908,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -1705,6 +1930,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1724,6 +1950,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1747,6 +1974,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -1766,6 +1994,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -1785,6 +2014,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -1889,6 +2119,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -1910,6 +2141,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1929,6 +2161,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -1952,6 +2185,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -1971,6 +2205,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -1990,6 +2225,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -2094,6 +2330,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -2115,6 +2352,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -2134,6 +2372,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -2157,6 +2396,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -2176,6 +2416,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -2195,6 +2436,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,
@@ -2291,6 +2533,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(Contact contact) onRemovedContact,
     required TResult Function(String groupName) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
     required TResult Function(List<ChoiceEveryDayData> frequency)
         onFrequencyChanged,
@@ -2312,6 +2555,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(Contact contact)? onRemovedContact,
     TResult? Function(String groupName)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
     TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -2331,6 +2575,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(Contact contact)? onRemovedContact,
     TResult Function(String groupName)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
     TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
@@ -2354,6 +2599,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnIntervalChanged value) onIntervalChanged,
     required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
     required TResult Function(_OnInputChanged value) onInputChanged,
@@ -2373,6 +2619,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult? Function(_OnInputChanged value)? onInputChanged,
@@ -2392,6 +2639,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnIntervalChanged value)? onIntervalChanged,
     TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
     TResult Function(_OnInputChanged value)? onInputChanged,

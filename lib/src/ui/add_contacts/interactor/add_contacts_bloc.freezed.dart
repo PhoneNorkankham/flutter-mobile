@@ -21,7 +21,8 @@ mixin _$AddContactsEvent {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(AddContactRequest contact) onChangedContact,
+    required TResult Function(ContactRequest contact) onChangedContact,
+    required TResult Function() onDonePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +30,8 @@ mixin _$AddContactsEvent {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(AddContactRequest contact)? onChangedContact,
+    TResult? Function(ContactRequest contact)? onChangedContact,
+    TResult? Function()? onDonePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +39,8 @@ mixin _$AddContactsEvent {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(AddContactRequest contact)? onChangedContact,
+    TResult Function(ContactRequest contact)? onChangedContact,
+    TResult Function()? onDonePressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$AddContactsEvent {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnChangedContact value) onChangedContact,
+    required TResult Function(_OnDonePressed value) onDonePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$AddContactsEvent {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnChangedContact value)? onChangedContact,
+    TResult? Function(_OnDonePressed value)? onDonePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$AddContactsEvent {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnChangedContact value)? onChangedContact,
+    TResult Function(_OnDonePressed value)? onDonePressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,7 +132,8 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(AddContactRequest contact) onChangedContact,
+    required TResult Function(ContactRequest contact) onChangedContact,
+    required TResult Function() onDonePressed,
   }) {
     return initial();
   }
@@ -137,7 +144,8 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(AddContactRequest contact)? onChangedContact,
+    TResult? Function(ContactRequest contact)? onChangedContact,
+    TResult? Function()? onDonePressed,
   }) {
     return initial?.call();
   }
@@ -148,7 +156,8 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(AddContactRequest contact)? onChangedContact,
+    TResult Function(ContactRequest contact)? onChangedContact,
+    TResult Function()? onDonePressed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -164,6 +173,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnChangedContact value) onChangedContact,
+    required TResult Function(_OnDonePressed value) onDonePressed,
   }) {
     return initial(this);
   }
@@ -175,6 +185,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnChangedContact value)? onChangedContact,
+    TResult? Function(_OnDonePressed value)? onDonePressed,
   }) {
     return initial?.call(this);
   }
@@ -186,6 +197,7 @@ class _$_Initial implements _Initial {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnChangedContact value)? onChangedContact,
+    TResult Function(_OnDonePressed value)? onDonePressed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -240,7 +252,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(AddContactRequest contact) onChangedContact,
+    required TResult Function(ContactRequest contact) onChangedContact,
+    required TResult Function() onDonePressed,
   }) {
     return clearPageCommand();
   }
@@ -251,7 +264,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(AddContactRequest contact)? onChangedContact,
+    TResult? Function(ContactRequest contact)? onChangedContact,
+    TResult? Function()? onDonePressed,
   }) {
     return clearPageCommand?.call();
   }
@@ -262,7 +276,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(AddContactRequest contact)? onChangedContact,
+    TResult Function(ContactRequest contact)? onChangedContact,
+    TResult Function()? onDonePressed,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -278,6 +293,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnChangedContact value) onChangedContact,
+    required TResult Function(_OnDonePressed value) onDonePressed,
   }) {
     return clearPageCommand(this);
   }
@@ -289,6 +305,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnChangedContact value)? onChangedContact,
+    TResult? Function(_OnDonePressed value)? onDonePressed,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -300,6 +317,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnChangedContact value)? onChangedContact,
+    TResult Function(_OnDonePressed value)? onDonePressed,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -380,7 +398,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(AddContactRequest contact) onChangedContact,
+    required TResult Function(ContactRequest contact) onChangedContact,
+    required TResult Function() onDonePressed,
   }) {
     return onChangedKeyword(keyword);
   }
@@ -391,7 +410,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(AddContactRequest contact)? onChangedContact,
+    TResult? Function(ContactRequest contact)? onChangedContact,
+    TResult? Function()? onDonePressed,
   }) {
     return onChangedKeyword?.call(keyword);
   }
@@ -402,7 +422,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(AddContactRequest contact)? onChangedContact,
+    TResult Function(ContactRequest contact)? onChangedContact,
+    TResult Function()? onDonePressed,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -418,6 +439,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnChangedContact value) onChangedContact,
+    required TResult Function(_OnDonePressed value) onDonePressed,
   }) {
     return onChangedKeyword(this);
   }
@@ -429,6 +451,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnChangedContact value)? onChangedContact,
+    TResult? Function(_OnDonePressed value)? onDonePressed,
   }) {
     return onChangedKeyword?.call(this);
   }
@@ -440,6 +463,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnChangedContact value)? onChangedContact,
+    TResult Function(_OnDonePressed value)? onDonePressed,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -464,9 +488,9 @@ abstract class _$$_OnChangedContactCopyWith<$Res> {
           _$_OnChangedContact value, $Res Function(_$_OnChangedContact) then) =
       __$$_OnChangedContactCopyWithImpl<$Res>;
   @useResult
-  $Res call({AddContactRequest contact});
+  $Res call({ContactRequest contact});
 
-  $AddContactRequestCopyWith<$Res> get contact;
+  $ContactRequestCopyWith<$Res> get contact;
 }
 
 /// @nodoc
@@ -486,14 +510,14 @@ class __$$_OnChangedContactCopyWithImpl<$Res>
       null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as AddContactRequest,
+              as ContactRequest,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AddContactRequestCopyWith<$Res> get contact {
-    return $AddContactRequestCopyWith<$Res>(_value.contact, (value) {
+  $ContactRequestCopyWith<$Res> get contact {
+    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
       return _then(_value.copyWith(contact: value));
     });
   }
@@ -505,7 +529,7 @@ class _$_OnChangedContact implements _OnChangedContact {
   const _$_OnChangedContact(this.contact);
 
   @override
-  final AddContactRequest contact;
+  final ContactRequest contact;
 
   @override
   String toString() {
@@ -535,7 +559,8 @@ class _$_OnChangedContact implements _OnChangedContact {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(AddContactRequest contact) onChangedContact,
+    required TResult Function(ContactRequest contact) onChangedContact,
+    required TResult Function() onDonePressed,
   }) {
     return onChangedContact(contact);
   }
@@ -546,7 +571,8 @@ class _$_OnChangedContact implements _OnChangedContact {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(AddContactRequest contact)? onChangedContact,
+    TResult? Function(ContactRequest contact)? onChangedContact,
+    TResult? Function()? onDonePressed,
   }) {
     return onChangedContact?.call(contact);
   }
@@ -557,7 +583,8 @@ class _$_OnChangedContact implements _OnChangedContact {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(AddContactRequest contact)? onChangedContact,
+    TResult Function(ContactRequest contact)? onChangedContact,
+    TResult Function()? onDonePressed,
     required TResult orElse(),
   }) {
     if (onChangedContact != null) {
@@ -573,6 +600,7 @@ class _$_OnChangedContact implements _OnChangedContact {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnChangedContact value) onChangedContact,
+    required TResult Function(_OnDonePressed value) onDonePressed,
   }) {
     return onChangedContact(this);
   }
@@ -584,6 +612,7 @@ class _$_OnChangedContact implements _OnChangedContact {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnChangedContact value)? onChangedContact,
+    TResult? Function(_OnDonePressed value)? onDonePressed,
   }) {
     return onChangedContact?.call(this);
   }
@@ -595,6 +624,7 @@ class _$_OnChangedContact implements _OnChangedContact {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnChangedContact value)? onChangedContact,
+    TResult Function(_OnDonePressed value)? onDonePressed,
     required TResult orElse(),
   }) {
     if (onChangedContact != null) {
@@ -605,13 +635,133 @@ class _$_OnChangedContact implements _OnChangedContact {
 }
 
 abstract class _OnChangedContact implements AddContactsEvent {
-  const factory _OnChangedContact(final AddContactRequest contact) =
+  const factory _OnChangedContact(final ContactRequest contact) =
       _$_OnChangedContact;
 
-  AddContactRequest get contact;
+  ContactRequest get contact;
   @JsonKey(ignore: true)
   _$$_OnChangedContactCopyWith<_$_OnChangedContact> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnDonePressedCopyWith<$Res> {
+  factory _$$_OnDonePressedCopyWith(
+          _$_OnDonePressed value, $Res Function(_$_OnDonePressed) then) =
+      __$$_OnDonePressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnDonePressedCopyWithImpl<$Res>
+    extends _$AddContactsEventCopyWithImpl<$Res, _$_OnDonePressed>
+    implements _$$_OnDonePressedCopyWith<$Res> {
+  __$$_OnDonePressedCopyWithImpl(
+      _$_OnDonePressed _value, $Res Function(_$_OnDonePressed) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnDonePressed implements _OnDonePressed {
+  const _$_OnDonePressed();
+
+  @override
+  String toString() {
+    return 'AddContactsEvent.onDonePressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnDonePressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(ContactRequest contact) onChangedContact,
+    required TResult Function() onDonePressed,
+  }) {
+    return onDonePressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(ContactRequest contact)? onChangedContact,
+    TResult? Function()? onDonePressed,
+  }) {
+    return onDonePressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(ContactRequest contact)? onChangedContact,
+    TResult Function()? onDonePressed,
+    required TResult orElse(),
+  }) {
+    if (onDonePressed != null) {
+      return onDonePressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnChangedContact value) onChangedContact,
+    required TResult Function(_OnDonePressed value) onDonePressed,
+  }) {
+    return onDonePressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnChangedContact value)? onChangedContact,
+    TResult? Function(_OnDonePressed value)? onDonePressed,
+  }) {
+    return onDonePressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnChangedContact value)? onChangedContact,
+    TResult Function(_OnDonePressed value)? onDonePressed,
+    required TResult orElse(),
+  }) {
+    if (onDonePressed != null) {
+      return onDonePressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnDonePressed implements AddContactsEvent {
+  const factory _OnDonePressed() = _$_OnDonePressed;
 }
 
 /// @nodoc
@@ -620,9 +770,7 @@ mixin _$AddContactsState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
-  List<AddContactRequest> get contacts => throw _privateConstructorUsedError;
-  List<AddContactRequest> get filterContacts =>
-      throw _privateConstructorUsedError;
+  List<ContactRequest> get contacts => throw _privateConstructorUsedError;
   List<Group> get groups => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -641,8 +789,7 @@ abstract class $AddContactsStateCopyWith<$Res> {
       PageCommand? pageCommand,
       bool isLoading,
       String keyword,
-      List<AddContactRequest> contacts,
-      List<AddContactRequest> filterContacts,
+      List<ContactRequest> contacts,
       List<Group> groups});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -666,7 +813,6 @@ class _$AddContactsStateCopyWithImpl<$Res, $Val extends AddContactsState>
     Object? isLoading = null,
     Object? keyword = null,
     Object? contacts = null,
-    Object? filterContacts = null,
     Object? groups = null,
   }) {
     return _then(_value.copyWith(
@@ -689,11 +835,7 @@ class _$AddContactsStateCopyWithImpl<$Res, $Val extends AddContactsState>
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<AddContactRequest>,
-      filterContacts: null == filterContacts
-          ? _value.filterContacts
-          : filterContacts // ignore: cast_nullable_to_non_nullable
-              as List<AddContactRequest>,
+              as List<ContactRequest>,
       groups: null == groups
           ? _value.groups
           : groups // ignore: cast_nullable_to_non_nullable
@@ -727,8 +869,7 @@ abstract class _$$_AddContactsStateCopyWith<$Res>
       PageCommand? pageCommand,
       bool isLoading,
       String keyword,
-      List<AddContactRequest> contacts,
-      List<AddContactRequest> filterContacts,
+      List<ContactRequest> contacts,
       List<Group> groups});
 
   @override
@@ -751,7 +892,6 @@ class __$$_AddContactsStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? keyword = null,
     Object? contacts = null,
-    Object? filterContacts = null,
     Object? groups = null,
   }) {
     return _then(_$_AddContactsState(
@@ -774,11 +914,7 @@ class __$$_AddContactsStateCopyWithImpl<$Res>
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<AddContactRequest>,
-      filterContacts: null == filterContacts
-          ? _value._filterContacts
-          : filterContacts // ignore: cast_nullable_to_non_nullable
-              as List<AddContactRequest>,
+              as List<ContactRequest>,
       groups: null == groups
           ? _value._groups
           : groups // ignore: cast_nullable_to_non_nullable
@@ -795,11 +931,9 @@ class _$_AddContactsState extends _AddContactsState {
       this.pageCommand,
       this.isLoading = false,
       this.keyword = '',
-      final List<AddContactRequest> contacts = const [],
-      final List<AddContactRequest> filterContacts = const [],
+      final List<ContactRequest> contacts = const [],
       final List<Group> groups = const []})
       : _contacts = contacts,
-        _filterContacts = filterContacts,
         _groups = groups,
         super._();
 
@@ -814,22 +948,13 @@ class _$_AddContactsState extends _AddContactsState {
   @override
   @JsonKey()
   final String keyword;
-  final List<AddContactRequest> _contacts;
+  final List<ContactRequest> _contacts;
   @override
   @JsonKey()
-  List<AddContactRequest> get contacts {
+  List<ContactRequest> get contacts {
     if (_contacts is EqualUnmodifiableListView) return _contacts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contacts);
-  }
-
-  final List<AddContactRequest> _filterContacts;
-  @override
-  @JsonKey()
-  List<AddContactRequest> get filterContacts {
-    if (_filterContacts is EqualUnmodifiableListView) return _filterContacts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_filterContacts);
   }
 
   final List<Group> _groups;
@@ -843,7 +968,7 @@ class _$_AddContactsState extends _AddContactsState {
 
   @override
   String toString() {
-    return 'AddContactsState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts, filterContacts: $filterContacts, groups: $groups)';
+    return 'AddContactsState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts, groups: $groups)';
   }
 
   @override
@@ -859,8 +984,6 @@ class _$_AddContactsState extends _AddContactsState {
                 other.isLoading == isLoading) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
-            const DeepCollectionEquality()
-                .equals(other._filterContacts, _filterContacts) &&
             const DeepCollectionEquality().equals(other._groups, _groups));
   }
 
@@ -872,7 +995,6 @@ class _$_AddContactsState extends _AddContactsState {
       isLoading,
       keyword,
       const DeepCollectionEquality().hash(_contacts),
-      const DeepCollectionEquality().hash(_filterContacts),
       const DeepCollectionEquality().hash(_groups));
 
   @JsonKey(ignore: true)
@@ -888,8 +1010,7 @@ abstract class _AddContactsState extends AddContactsState {
       final PageCommand? pageCommand,
       final bool isLoading,
       final String keyword,
-      final List<AddContactRequest> contacts,
-      final List<AddContactRequest> filterContacts,
+      final List<ContactRequest> contacts,
       final List<Group> groups}) = _$_AddContactsState;
   const _AddContactsState._() : super._();
 
@@ -902,9 +1023,7 @@ abstract class _AddContactsState extends AddContactsState {
   @override
   String get keyword;
   @override
-  List<AddContactRequest> get contacts;
-  @override
-  List<AddContactRequest> get filterContacts;
+  List<ContactRequest> get contacts;
   @override
   List<Group> get groups;
   @override

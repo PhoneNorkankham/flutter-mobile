@@ -9,8 +9,26 @@ class AddContactsState with _$AddContactsState {
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
     @Default('') String keyword,
-    @Default([]) List<AddContactRequest> contacts,
-    @Default([]) List<AddContactRequest> filterContacts,
+    @Default([]) List<ContactRequest> contacts,
     @Default([]) List<Group> groups,
   }) = _AddContactsState;
+
+  List<ContactRequest> getFilterContacts() {
+    final List<ContactRequest> filterContacts;
+    if (keyword.isEmpty) {
+      filterContacts = [...contacts];
+    } else {
+      filterContacts = [
+        ...contacts
+            .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
+            .toList()
+      ];
+    }
+    return filterContacts;
+  }
+
+  bool get enabledDoneButton {
+    final bool enabled = contacts.where((e) => e.groupIds.isNotEmpty).isNotEmpty;
+    return enabled && !isLoading;
+  }
 }

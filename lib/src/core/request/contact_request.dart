@@ -22,6 +22,8 @@ class ContactRequest with _$ContactRequest {
     @ListStringJsonConverter() @Default([]) List<bool> frequency,
     @DateTimeJsonConverter() DateTime? expiration,
     @DateTimeJsonConverter() @JsonKey(name: 'date_created') DateTime? dateCreated,
+    @Default(false) @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
+    @Default([]) @JsonKey(includeFromJson: false, includeToJson: false) List<String> groupIds,
   }) = _ContactRequest;
 
   factory ContactRequest.fromJson(Map<String, dynamic> json) => _$ContactRequestFromJson(json);

@@ -66,6 +66,7 @@ class LocaleKey {
   static const String loginWith = "loginWith";
   static const String creatingAnonymousAccountFailed = "creatingAnonymousAccountFailed";
   static const String creatingGroupFailed = "creatingGroupFailed";
+  static const String updatingGroupFailed = "updatingGroupFailed";
   static const String creatingContactFailed = "creatingContactFailed";
   static const String updatingContactFailed = "updatingContactFailed";
   static const String joiningGroupFailed = "joiningGroupFailed";

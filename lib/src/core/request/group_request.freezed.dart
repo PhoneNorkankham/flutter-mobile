@@ -20,6 +20,8 @@ GroupRequest _$GroupRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GroupRequest {
+  @JsonKey(name: 'id', includeToJson: false)
+  String get groupId => throw _privateConstructorUsedError;
   @JsonKey(name: 'owner_id')
   String get ownerId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -42,7 +44,8 @@ abstract class $GroupRequestCopyWith<$Res> {
       _$GroupRequestCopyWithImpl<$Res, GroupRequest>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'owner_id') String ownerId,
+      {@JsonKey(name: 'id', includeToJson: false) String groupId,
+      @JsonKey(name: 'owner_id') String ownerId,
       String name,
       String description,
       String avatar,
@@ -63,6 +66,7 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? groupId = null,
     Object? ownerId = null,
     Object? name = null,
     Object? description = null,
@@ -71,6 +75,10 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
     Object? contacts = null,
   }) {
     return _then(_value.copyWith(
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String,
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
@@ -108,7 +116,8 @@ abstract class _$$_GroupRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'owner_id') String ownerId,
+      {@JsonKey(name: 'id', includeToJson: false) String groupId,
+      @JsonKey(name: 'owner_id') String ownerId,
       String name,
       String description,
       String avatar,
@@ -127,6 +136,7 @@ class __$$_GroupRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? groupId = null,
     Object? ownerId = null,
     Object? name = null,
     Object? description = null,
@@ -135,6 +145,10 @@ class __$$_GroupRequestCopyWithImpl<$Res>
     Object? contacts = null,
   }) {
     return _then(_$_GroupRequest(
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String,
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
@@ -168,7 +182,8 @@ class __$$_GroupRequestCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$_GroupRequest implements _GroupRequest {
   const _$_GroupRequest(
-      {@JsonKey(name: 'owner_id') this.ownerId = '',
+      {@JsonKey(name: 'id', includeToJson: false) this.groupId = '',
+      @JsonKey(name: 'owner_id') this.ownerId = '',
       this.name = '',
       this.description = '',
       this.avatar = '',
@@ -179,6 +194,9 @@ class _$_GroupRequest implements _GroupRequest {
   factory _$_GroupRequest.fromJson(Map<String, dynamic> json) =>
       _$$_GroupRequestFromJson(json);
 
+  @override
+  @JsonKey(name: 'id', includeToJson: false)
+  final String groupId;
   @override
   @JsonKey(name: 'owner_id')
   final String ownerId;
@@ -205,7 +223,7 @@ class _$_GroupRequest implements _GroupRequest {
 
   @override
   String toString() {
-    return 'GroupRequest(ownerId: $ownerId, name: $name, description: $description, avatar: $avatar, frequencyInterval: $frequencyInterval, contacts: $contacts)';
+    return 'GroupRequest(groupId: $groupId, ownerId: $ownerId, name: $name, description: $description, avatar: $avatar, frequencyInterval: $frequencyInterval, contacts: $contacts)';
   }
 
   @override
@@ -213,6 +231,7 @@ class _$_GroupRequest implements _GroupRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroupRequest &&
+            (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
@@ -227,6 +246,7 @@ class _$_GroupRequest implements _GroupRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      groupId,
       ownerId,
       name,
       description,
@@ -250,7 +270,8 @@ class _$_GroupRequest implements _GroupRequest {
 
 abstract class _GroupRequest implements GroupRequest {
   const factory _GroupRequest(
-      {@JsonKey(name: 'owner_id') final String ownerId,
+      {@JsonKey(name: 'id', includeToJson: false) final String groupId,
+      @JsonKey(name: 'owner_id') final String ownerId,
       final String name,
       final String description,
       final String avatar,
@@ -260,6 +281,9 @@ abstract class _GroupRequest implements GroupRequest {
   factory _GroupRequest.fromJson(Map<String, dynamic> json) =
       _$_GroupRequest.fromJson;
 
+  @override
+  @JsonKey(name: 'id', includeToJson: false)
+  String get groupId;
   @override
   @JsonKey(name: 'owner_id')
   String get ownerId;

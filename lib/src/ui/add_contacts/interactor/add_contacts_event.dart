@@ -8,5 +8,7 @@ class AddContactsEvent with _$AddContactsEvent {
 
   const factory AddContactsEvent.onChangedKeyword(String keyword) = _OnChangedKeyword;
 
-  const factory AddContactsEvent.onChangedContact(AddContactRequest contact) = _OnChangedContact;
+  const factory AddContactsEvent.onChangedContact(ContactRequest contact) = _OnChangedContact;
+
+  const factory AddContactsEvent.onDonePressed() = _OnDonePressed;
 }

@@ -70,6 +70,23 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<Resource<List<Group>>> updateContactInGroups({
+    required String contactId,
+    required List<String> groupIds,
+  }) {
+    return NetworkBoundResource<List<Group>, List<Group>>(
+      createSerializedCall: () => _supabaseManager.updateContactInGroups(
+        contactId: contactId,
+        groupIds: groupIds,
+      ),
+      saveCallResult: (groups) async {
+        for (Group group in groups) {
+          await _groupDao.insert(group);
+        }
+      },
+    ).getAsFuture();
+  }
+
   Future<Resource<List<Group>>> getGroups() {
     return NetworkBoundResource<List<Group>, List<Group>>(
       createSerializedCall: () => _supabaseManager.getGroups(),

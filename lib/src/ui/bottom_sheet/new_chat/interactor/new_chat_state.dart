@@ -20,7 +20,7 @@ class NewChatState with _$NewChatState {
     File? avatar,
   }) = _NewChatState;
 
-  bool get enabledCreateNewGroupButton => selectedContacts.isNotEmpty && groupName.isNotEmpty;
+  bool get enabledCreateNewGroupButton => false;
 
   bool get enabledCreateNewContactButton => true;
 }

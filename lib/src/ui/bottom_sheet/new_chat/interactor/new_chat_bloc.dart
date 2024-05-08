@@ -50,6 +50,7 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     on<_OnRemovedContact>(_onRemovedContact);
     on<_OnChangedGroupName>((event, emit) => emit(state.copyWith(groupName: event.groupName)));
     on<_OnCreateNewGroup>(_onCreateNewGroup);
+    on<_OnCreateNewContact>(_onCreateNewContact);
     on<_OnIntervalChanged>((event, emit) => emit(state.copyWith(interval: event.interval)));
     on<_OnFrequencyChanged>((event, emit) => emit(state.copyWith(everyDays: event.frequency)));
     on<_OnInputChanged>(_onInputChanged);
@@ -133,7 +134,9 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     emit(state.copyWith(selectedContacts: [...state.selectedContacts]..remove(event.contact)));
   }
 
-  FutureOr<void> _onCreateNewGroup(_OnCreateNewGroup event, Emitter<NewChatState> emit) async {
+  FutureOr<void> _onCreateNewGroup(_OnCreateNewGroup event, Emitter<NewChatState> emit) {}
+
+  FutureOr<void> _onCreateNewContact(_OnCreateNewContact event, Emitter<NewChatState> emit) async {
     emit(state.copyWith(isLoading: true));
     final File? avatarFile = state.avatar;
     String avatarUrl = '';

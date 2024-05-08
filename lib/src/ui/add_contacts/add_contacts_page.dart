@@ -15,6 +15,8 @@ class AddContactsPage extends StatelessWidget {
       create: (_) => AddContactsBloc(
         Get.find(),
         Get.find(),
+        Get.find(),
+        Get.find(),
       )..add(const AddContactsEvent.initial()),
       child: BlocListener<AddContactsBloc, AddContactsState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,

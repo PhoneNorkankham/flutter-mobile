@@ -35,6 +35,8 @@ class GetContactStateMapper implements BaseStateMapper<ContactDetailState, DataR
           final index = AppConstants.defaultEveryDays.indexOf(e);
           return e.copyWith(isActive: request.frequency.elementAt(index));
         }));
+      } else {
+        everyDays.addAll(AppConstants.defaultEveryDays);
       }
 
       return state.copyWith(
