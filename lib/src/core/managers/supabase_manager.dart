@@ -115,6 +115,9 @@ class SupabaseManager {
         }
       });
 
+  Future<void> deleteGroup(String groupId) =>
+      _supabase.from(_tbGroups).delete().match({'id': groupId});
+
   Future<Contact> insertContact(ContactRequest request) => _supabase
           .from(_tbContacts)
           .insert(request.copyWith(ownerId: uid).toJson())
@@ -127,10 +130,10 @@ class SupabaseManager {
         }
       });
 
-  Future<Contact> updateContact(String contactId, ContactRequest request) => _supabase
+  Future<Contact> updateContact(ContactRequest request) => _supabase
       .from(_tbContacts)
       .update(request.toJson())
-      .match({'id': contactId})
+      .match({'id': request.contactId})
       .select()
       .then((value) {
         if (value.isNotEmpty) {
@@ -187,6 +190,12 @@ class SupabaseManager {
       .select()
       .eq(_fieldOwnerId, uid)
       .then((value) => value.map((e) => Group.fromJson(e)).toList());
+
+  Future<Group?> getGroup(String groupId) => _supabase
+      .from(_tbGroups)
+      .select()
+      .eq(_fieldId, groupId)
+      .then((value) => value.map((e) => Group.fromJson(e)).toList().firstOrNull);
 
   Future<List<Contact>> getContacts() => _supabase
       .from(_tbContacts)

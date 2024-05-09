@@ -8,11 +8,13 @@ import 'package:keepup/src/locale/locale_key.dart';
 class ChoiceEveryDay extends StatelessWidget {
   final List<ChoiceEveryDayData> everyDays;
   final ValueChanged<List<ChoiceEveryDayData>> onChanged;
+  final Color? textColor;
 
   const ChoiceEveryDay({
     super.key,
     required this.everyDays,
     required this.onChanged,
+    this.textColor,
   });
 
   @override
@@ -25,7 +27,7 @@ class ChoiceEveryDay extends StatelessWidget {
         Text(
           LocaleKey.every.tr,
           style: context.appTextTheme.bold16.copyWith(
-            color: Theme.of(context).colorScheme.primary,
+            color: textColor ?? Theme.of(context).colorScheme.primary,
           ),
         ),
         const SizedBox(width: 6),
@@ -61,7 +63,7 @@ class ChoiceEveryDay extends StatelessWidget {
                               child: Text(
                                 e.text,
                                 style: context.appTextTheme.medium14.copyWith(
-                                  color: Theme.of(context).colorScheme.onPrimary,
+                                  color: textColor ?? Theme.of(context).colorScheme.onPrimary,
                                 ),
                               ),
                             ),

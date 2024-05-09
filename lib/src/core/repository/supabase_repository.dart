@@ -56,6 +56,20 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<Resource<Group>> updateGroup(GroupRequest request) {
+    return NetworkBoundResource<Group, Group>(
+      createSerializedCall: () => _supabaseManager.updateGroup(request),
+      saveCallResult: (contact) => _groupDao.updateGroup(contact),
+    ).getAsFuture();
+  }
+
+  Future<Resource<void>> deleteGroup(String groupId) {
+    return NetworkBoundResource<void, void>(
+      createSerializedCall: () => _supabaseManager.deleteGroup(groupId),
+      saveCallResult: (_) => _groupDao.deleteGroup(groupId),
+    ).getAsFuture();
+  }
+
   Future<Resource<Contact>> insertContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
       createSerializedCall: () => _supabaseManager.insertContact(request),
@@ -65,7 +79,7 @@ class SupabaseRepository {
 
   Future<Resource<Contact>> updateContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
-      createSerializedCall: () => _supabaseManager.updateContact(request.contactId, request),
+      createSerializedCall: () => _supabaseManager.updateContact(request),
       saveCallResult: (contact) => _contactDao.updateContact(contact),
     ).getAsFuture();
   }
@@ -104,6 +118,13 @@ class SupabaseRepository {
 
   Future<List<Group>> getDBGroups() => _groupDao.getGroups();
 
+  Future<Resource<Group?>> getGroup(String groupId) {
+    return NetworkBoundResource<Group?, Group?>(
+      createSerializedCall: () => _supabaseManager.getGroup(groupId),
+      loadFromDb: () => _groupDao.getGroup(groupId),
+    ).getAsFuture();
+  }
+
   Future<Resource<List<Contact>>> getContacts() {
     return NetworkBoundResource<List<Contact>, List<Contact>>(
       createSerializedCall: () => _supabaseManager.getContacts(),
@@ -118,6 +139,9 @@ class SupabaseRepository {
   }
 
   Stream<List<Contact>> watchContacts() => _contactDao.watchContacts();
+
+  Future<List<Contact>> getAllContactByIds(List<String> contactIds) =>
+      _contactDao.getAllContactByIds(contactIds);
 
   Future<Resource<String>> uploadAvatar(File file) {
     return NetworkBoundResource<String, String>(

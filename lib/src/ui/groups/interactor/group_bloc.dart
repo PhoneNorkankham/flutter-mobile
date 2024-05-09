@@ -26,17 +26,14 @@ class GroupBloc extends Bloc<GroupEvent, GroupState> {
     on<_OnGotoGroupDetails>(_onGotoGroupDetails);
   }
 
-  FutureOr<void> _initial(_Initial event, Emitter<GroupState> emit) async {
-    await _supabaseRepository.getGroups();
-    await emit.forEach<List<Group>>(
+  FutureOr<void> _initial(_Initial event, Emitter<GroupState> emit) {
+    return emit.forEach<List<Group>>(
       _supabaseRepository.watchGroups(),
-      onData: (groups) {
-        return state.copyWith(
-          groups: groups,
-          pageState: PageState.success,
-          isLoading: false,
-        );
-      },
+      onData: (groups) => state.copyWith(
+        groups: groups,
+        pageState: PageState.success,
+        isLoading: false,
+      ),
       onError: (error, stacktrace) => state.copyWith(
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,

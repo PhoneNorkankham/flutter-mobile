@@ -27,8 +27,11 @@ mixin _$GroupRequest {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
+  @DateTimeJsonConverter()
   @JsonKey(name: 'frequency_interval')
   DateTime? get frequencyInterval => throw _privateConstructorUsedError;
+  @ListStringJsonConverter()
+  List<bool> get frequency => throw _privateConstructorUsedError;
   List<String> get contacts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +52,10 @@ abstract class $GroupRequestCopyWith<$Res> {
       String name,
       String description,
       String avatar,
-      @JsonKey(name: 'frequency_interval') DateTime? frequencyInterval,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'frequency_interval')
+      DateTime? frequencyInterval,
+      @ListStringJsonConverter() List<bool> frequency,
       List<String> contacts});
 }
 
@@ -72,6 +78,7 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
     Object? description = null,
     Object? avatar = null,
     Object? frequencyInterval = freezed,
+    Object? frequency = null,
     Object? contacts = null,
   }) {
     return _then(_value.copyWith(
@@ -99,6 +106,10 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
           ? _value.frequencyInterval
           : frequencyInterval // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      frequency: null == frequency
+          ? _value.frequency
+          : frequency // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -121,7 +132,10 @@ abstract class _$$_GroupRequestCopyWith<$Res>
       String name,
       String description,
       String avatar,
-      @JsonKey(name: 'frequency_interval') DateTime? frequencyInterval,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'frequency_interval')
+      DateTime? frequencyInterval,
+      @ListStringJsonConverter() List<bool> frequency,
       List<String> contacts});
 }
 
@@ -142,6 +156,7 @@ class __$$_GroupRequestCopyWithImpl<$Res>
     Object? description = null,
     Object? avatar = null,
     Object? frequencyInterval = freezed,
+    Object? frequency = null,
     Object? contacts = null,
   }) {
     return _then(_$_GroupRequest(
@@ -169,6 +184,10 @@ class __$$_GroupRequestCopyWithImpl<$Res>
           ? _value.frequencyInterval
           : frequencyInterval // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      frequency: null == frequency
+          ? _value._frequency
+          : frequency // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -180,16 +199,21 @@ class __$$_GroupRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GroupRequest implements _GroupRequest {
+class _$_GroupRequest extends _GroupRequest {
   const _$_GroupRequest(
       {@JsonKey(name: 'id', includeToJson: false) this.groupId = '',
       @JsonKey(name: 'owner_id') this.ownerId = '',
       this.name = '',
       this.description = '',
       this.avatar = '',
-      @JsonKey(name: 'frequency_interval') this.frequencyInterval,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'frequency_interval')
+      this.frequencyInterval,
+      @ListStringJsonConverter() final List<bool> frequency = const [],
       final List<String> contacts = const []})
-      : _contacts = contacts;
+      : _frequency = frequency,
+        _contacts = contacts,
+        super._();
 
   factory _$_GroupRequest.fromJson(Map<String, dynamic> json) =>
       _$$_GroupRequestFromJson(json);
@@ -210,8 +234,19 @@ class _$_GroupRequest implements _GroupRequest {
   @JsonKey()
   final String avatar;
   @override
+  @DateTimeJsonConverter()
   @JsonKey(name: 'frequency_interval')
   final DateTime? frequencyInterval;
+  final List<bool> _frequency;
+  @override
+  @JsonKey()
+  @ListStringJsonConverter()
+  List<bool> get frequency {
+    if (_frequency is EqualUnmodifiableListView) return _frequency;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_frequency);
+  }
+
   final List<String> _contacts;
   @override
   @JsonKey()
@@ -223,7 +258,7 @@ class _$_GroupRequest implements _GroupRequest {
 
   @override
   String toString() {
-    return 'GroupRequest(groupId: $groupId, ownerId: $ownerId, name: $name, description: $description, avatar: $avatar, frequencyInterval: $frequencyInterval, contacts: $contacts)';
+    return 'GroupRequest(groupId: $groupId, ownerId: $ownerId, name: $name, description: $description, avatar: $avatar, frequencyInterval: $frequencyInterval, frequency: $frequency, contacts: $contacts)';
   }
 
   @override
@@ -239,6 +274,8 @@ class _$_GroupRequest implements _GroupRequest {
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.frequencyInterval, frequencyInterval) ||
                 other.frequencyInterval == frequencyInterval) &&
+            const DeepCollectionEquality()
+                .equals(other._frequency, _frequency) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts));
   }
 
@@ -252,6 +289,7 @@ class _$_GroupRequest implements _GroupRequest {
       description,
       avatar,
       frequencyInterval,
+      const DeepCollectionEquality().hash(_frequency),
       const DeepCollectionEquality().hash(_contacts));
 
   @JsonKey(ignore: true)
@@ -268,15 +306,19 @@ class _$_GroupRequest implements _GroupRequest {
   }
 }
 
-abstract class _GroupRequest implements GroupRequest {
+abstract class _GroupRequest extends GroupRequest {
   const factory _GroupRequest(
       {@JsonKey(name: 'id', includeToJson: false) final String groupId,
       @JsonKey(name: 'owner_id') final String ownerId,
       final String name,
       final String description,
       final String avatar,
-      @JsonKey(name: 'frequency_interval') final DateTime? frequencyInterval,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'frequency_interval')
+      final DateTime? frequencyInterval,
+      @ListStringJsonConverter() final List<bool> frequency,
       final List<String> contacts}) = _$_GroupRequest;
+  const _GroupRequest._() : super._();
 
   factory _GroupRequest.fromJson(Map<String, dynamic> json) =
       _$_GroupRequest.fromJson;
@@ -294,8 +336,12 @@ abstract class _GroupRequest implements GroupRequest {
   @override
   String get avatar;
   @override
+  @DateTimeJsonConverter()
   @JsonKey(name: 'frequency_interval')
   DateTime? get frequencyInterval;
+  @override
+  @ListStringJsonConverter()
+  List<bool> get frequency;
   @override
   List<String> get contacts;
   @override

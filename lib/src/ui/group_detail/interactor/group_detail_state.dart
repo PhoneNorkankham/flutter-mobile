@@ -6,6 +6,29 @@ class GroupDetailState with _$GroupDetailState {
 
   const factory GroupDetailState({
     PageCommand? pageCommand,
+    @Default(PageState.loading) PageState pageState,
     @Default(GroupType.newGroup) GroupType groupType,
+    @Default(false) bool isLoading,
+    @Default('') String groupId,
+    @Default(GroupRequest()) GroupRequest request,
+    @Default(0) double interval,
+    @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
+    @Default('') String keyword,
+    @Default([]) List<Contact> contacts,
+    File? avatar,
   }) = _GroupDetailState;
+
+  List<Contact> getFilterContacts() {
+    final List<Contact> filterContacts;
+    if (keyword.isEmpty) {
+      filterContacts = [...contacts];
+    } else {
+      filterContacts = [
+        ...contacts
+            .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
+            .toList()
+      ];
+    }
+    return filterContacts;
+  }
 }

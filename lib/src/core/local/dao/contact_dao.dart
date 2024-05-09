@@ -19,6 +19,9 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
 
   Future<List<Contact>> getContacts() => select(contacts).get();
 
+  Future<List<Contact>> getAllContactByIds(List<String> contactIds) =>
+      (select(contacts)..where((tbl) => tbl.id.isIn(contactIds))).get();
+
   Stream<List<Contact>> watchContacts() => select(contacts).watch();
 
   Future<Contact?> getContact(String contactId) =>

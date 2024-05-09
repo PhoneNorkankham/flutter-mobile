@@ -13,7 +13,11 @@ class Groups extends Table {
 
   TextColumn get avatar => text().withDefault(const Constant(''))();
 
+  @JsonKey('frequency_interval')
   DateTimeColumn get frequencyInterval => dateTime().named('frequency_interval').nullable()();
+
+  TextColumn get frequency =>
+      text().map(const ListStringConverter()).withDefault(const Constant('[]'))();
 
   TextColumn get contacts =>
       text().map(const ListStringConverter()).withDefault(const Constant('[]'))();

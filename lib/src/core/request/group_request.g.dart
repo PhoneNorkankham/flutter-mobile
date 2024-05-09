@@ -13,9 +13,12 @@ _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
-      frequencyInterval: json['frequency_interval'] == null
-          ? null
-          : DateTime.parse(json['frequency_interval'] as String),
+      frequencyInterval:
+          const DateTimeJsonConverter().fromJson(json['frequency_interval']),
+      frequency: (json['frequency'] as List<dynamic>?)
+              ?.map((e) => e as bool)
+              .toList() ??
+          const [],
       contacts: (json['contacts'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -36,8 +39,9 @@ Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) {
     }
   }
 
-  writeNotNull(
-      'frequency_interval', instance.frequencyInterval?.toIso8601String());
+  writeNotNull('frequency_interval',
+      const DateTimeJsonConverter().toJson(instance.frequencyInterval));
+  val['frequency'] = instance.frequency;
   val['contacts'] = instance.contacts;
   return val;
 }

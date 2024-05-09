@@ -58,7 +58,6 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) async {
-    await _supabaseRepository.getContacts();
     await emit.forEach<List<Contact>>(
       _supabaseRepository.watchContacts(),
       onData: (contacts) {

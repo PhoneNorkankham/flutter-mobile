@@ -35,7 +35,7 @@ class AppDialogs {
     this.content,
     this.contentPadding,
     this.confirmButtonType = AppButtonType.primary,
-    this.cancelButtonType = AppButtonType.whitePrimary,
+    this.cancelButtonType = AppButtonType.outlined,
     this.actionsPaddingHorizontal,
     this.actionsBottomPadding,
     this.actionRadius,

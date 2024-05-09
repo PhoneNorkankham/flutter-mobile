@@ -7,7 +7,6 @@ import 'package:keepup/src/design/components/bottom_navigation/app_bottom_naviga
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/enums/group_type.dart';
-import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_buttons.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_every.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_header.dart';
@@ -21,7 +20,10 @@ class GroupDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GroupDetailBloc, GroupDetailState>(
-      buildWhen: (previous, current) => previous.groupType != current.groupType,
+      buildWhen: (previous, current) =>
+          previous.groupType != current.groupType ||
+          previous.pageState != current.pageState ||
+          previous.isLoading != current.isLoading,
       builder: (context, state) {
         return Scaffold(
           appBar: AppAppBar(
@@ -30,7 +32,8 @@ class GroupDetailView extends StatelessWidget {
             actions: const [MenuButton()],
           ),
           body: AppBody(
-            pageState: PageState.success,
+            isLoading: state.isLoading,
+            pageState: state.pageState,
             unFocusWhenTouchOutsideInput: true,
             success: SingleChildScrollView(
               child: Column(

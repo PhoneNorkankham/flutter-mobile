@@ -124,6 +124,14 @@ class LocaleKey {
   static const String groupDetail = "groupDetail";
   static const String members = "members";
   static const String addMember = "addMember";
+  static const String tabToAddGroupName = "tabToAddGroupName";
+  static const String days = "days";
+  static const String daysLeft = "daysLeft";
+  static const String groupCreatedSuccessfully = "groupCreatedSuccessfully";
+  static const String groupUpdatedSuccessfully = "groupUpdatedSuccessfully";
+  static const String groupDeletedSuccessfully = "groupDeletedSuccessfully";
+  static const String deleteGroup = "deleteGroup";
+  static const String deleteGroupDescription = "deleteGroupDescription";
 
   // New Chat
   static const String newChat = "newChat";

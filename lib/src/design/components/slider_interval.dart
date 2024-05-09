@@ -9,11 +9,13 @@ import 'package:keepup/src/locale/locale_key.dart';
 class SliderInterval extends StatelessWidget {
   final double interval;
   final ValueChanged<double>? onChanged;
+  final Color? textColor;
 
   const SliderInterval({
     super.key,
     required this.interval,
     this.onChanged,
+    this.textColor,
   });
 
   @override
@@ -29,14 +31,14 @@ class SliderInterval extends StatelessWidget {
               child: Text(
                 LocaleKey.setInterval.tr,
                 style: context.appTextTheme.bold16.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: textColor ?? Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
             Text(
               '${interval < 0 ? 0 : interval.toInt()} Days',
               style: context.appTextTheme.bold16.copyWith(
-                color: Theme.of(context).colorScheme.primary,
+                color: textColor ?? Theme.of(context).colorScheme.primary,
               ),
             ),
             const SizedBox(width: 20),
