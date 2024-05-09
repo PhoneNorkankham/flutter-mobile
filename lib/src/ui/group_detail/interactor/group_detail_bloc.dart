@@ -68,6 +68,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
     on<_OnRemoveContact>(_onRemoveContact);
     on<_OnDeleteGroup>(_onDeleteGroup);
+    on<_OnAddedMembers>(_onAddedMembers);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<GroupDetailState> emit) async {
@@ -126,10 +127,11 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   }
 
   FutureOr<void> _onRemoveContact(_OnRemoveContact event, Emitter<GroupDetailState> emit) {
-    final List<String> contactIds = state.request.contacts..remove(event.contact.id);
+    final List<Contact> contacts = [...state.contacts]..remove(event.contact);
+    final List<String> contactIds = contacts.map((e) => e.id).toList();
     final GroupRequest request = state.request.copyWith(contacts: contactIds);
     emit(state.copyWith(
-      contacts: state.contacts..remove(event.contact),
+      contacts: contacts,
       request: request,
     ));
   }
@@ -137,5 +139,15 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   FutureOr<void> _onDeleteGroup(_OnDeleteGroup event, Emitter<GroupDetailState> emit) async {
     final VoidResult result = await _deleteGroupUseCase.run(state.groupId);
     emit(_deleteGroupStateMapper.mapResultToState(state, result));
+  }
+
+  FutureOr<void> _onAddedMembers(_OnAddedMembers event, Emitter<GroupDetailState> emit) {
+    final List<Contact> contacts = event.contacts;
+    final List<String> contactIds = contacts.map((e) => e.id).toList();
+    final GroupRequest request = state.request.copyWith(contacts: contactIds);
+    emit(state.copyWith(
+      contacts: contacts,
+      request: request,
+    ));
   }
 }

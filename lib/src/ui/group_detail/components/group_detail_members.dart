@@ -7,6 +7,7 @@ import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/bottom_sheet/add_member/add_member_bottom_sheet.dart';
 import 'package:keepup/src/ui/group_detail/interactor/group_detail_bloc.dart';
 
 class GroupDetailMembers extends StatelessWidget {
@@ -32,10 +33,19 @@ class GroupDetailMembers extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Text(
-                LocaleKey.addMember.tr,
-                style: context.appTextTheme.medium14.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimary,
+              GestureDetector(
+                onTap: () => AddMemberBottomSheet.show(
+                  selectedContacts: bloc.state.contacts,
+                ).then((value) {
+                  if (value is List<Contact>) {
+                    bloc.add(GroupDetailEvent.onAddedMembers(value));
+                  }
+                }),
+                child: Text(
+                  LocaleKey.addMember.tr,
+                  style: context.appTextTheme.medium14.copyWith(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
                 ),
               ),
             ],

@@ -30,6 +30,7 @@ mixin _$GroupDetailEvent {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +46,7 @@ mixin _$GroupDetailEvent {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +62,7 @@ mixin _$GroupDetailEvent {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -77,6 +80,7 @@ mixin _$GroupDetailEvent {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +97,7 @@ mixin _$GroupDetailEvent {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -109,6 +114,7 @@ mixin _$GroupDetailEvent {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -181,6 +187,7 @@ class _$_Initial implements _Initial {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return initial();
   }
@@ -199,6 +206,7 @@ class _$_Initial implements _Initial {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return initial?.call();
   }
@@ -217,6 +225,7 @@ class _$_Initial implements _Initial {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -240,6 +249,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return initial(this);
   }
@@ -259,6 +269,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return initial?.call(this);
   }
@@ -278,6 +289,7 @@ class _$_Initial implements _Initial {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -341,6 +353,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return clearPageCommand();
   }
@@ -359,6 +372,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return clearPageCommand?.call();
   }
@@ -377,6 +391,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -400,6 +415,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return clearPageCommand(this);
   }
@@ -419,6 +435,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -438,6 +455,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -527,6 +545,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onChangedKeyword(keyword);
   }
@@ -545,6 +564,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onChangedKeyword?.call(keyword);
   }
@@ -563,6 +583,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -586,6 +607,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onChangedKeyword(this);
   }
@@ -605,6 +627,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onChangedKeyword?.call(this);
   }
@@ -624,6 +647,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -722,6 +746,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onFrequencyIntervalChanged(interval);
   }
@@ -740,6 +765,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onFrequencyIntervalChanged?.call(interval);
   }
@@ -758,6 +784,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
@@ -781,6 +808,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onFrequencyIntervalChanged(this);
   }
@@ -800,6 +828,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onFrequencyIntervalChanged?.call(this);
   }
@@ -819,6 +848,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
@@ -923,6 +953,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onFrequencyChanged(frequency);
   }
@@ -941,6 +972,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onFrequencyChanged?.call(frequency);
   }
@@ -959,6 +991,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onFrequencyChanged != null) {
@@ -982,6 +1015,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onFrequencyChanged(this);
   }
@@ -1001,6 +1035,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onFrequencyChanged?.call(this);
   }
@@ -1020,6 +1055,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onFrequencyChanged != null) {
@@ -1115,6 +1151,7 @@ class _$_OnNameChanged implements _OnNameChanged {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onNameChanged(value);
   }
@@ -1133,6 +1170,7 @@ class _$_OnNameChanged implements _OnNameChanged {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onNameChanged?.call(value);
   }
@@ -1151,6 +1189,7 @@ class _$_OnNameChanged implements _OnNameChanged {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onNameChanged != null) {
@@ -1174,6 +1213,7 @@ class _$_OnNameChanged implements _OnNameChanged {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onNameChanged(this);
   }
@@ -1193,6 +1233,7 @@ class _$_OnNameChanged implements _OnNameChanged {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onNameChanged?.call(this);
   }
@@ -1212,6 +1253,7 @@ class _$_OnNameChanged implements _OnNameChanged {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onNameChanged != null) {
@@ -1280,6 +1322,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onSavePressed();
   }
@@ -1298,6 +1341,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onSavePressed?.call();
   }
@@ -1316,6 +1360,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onSavePressed != null) {
@@ -1339,6 +1384,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onSavePressed(this);
   }
@@ -1358,6 +1404,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onSavePressed?.call(this);
   }
@@ -1377,6 +1424,7 @@ class _$_OnSavePressed implements _OnSavePressed {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onSavePressed != null) {
@@ -1440,6 +1488,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onCancelPressed();
   }
@@ -1458,6 +1507,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onCancelPressed?.call();
   }
@@ -1476,6 +1526,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onCancelPressed != null) {
@@ -1499,6 +1550,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onCancelPressed(this);
   }
@@ -1518,6 +1570,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onCancelPressed?.call(this);
   }
@@ -1537,6 +1590,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onCancelPressed != null) {
@@ -1626,6 +1680,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onChangedAvatar(file);
   }
@@ -1644,6 +1699,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onChangedAvatar?.call(file);
   }
@@ -1662,6 +1718,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onChangedAvatar != null) {
@@ -1685,6 +1742,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onChangedAvatar(this);
   }
@@ -1704,6 +1762,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onChangedAvatar?.call(this);
   }
@@ -1723,6 +1782,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onChangedAvatar != null) {
@@ -1818,6 +1878,7 @@ class _$_OnRemoveContact implements _OnRemoveContact {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onRemoveContact(contact);
   }
@@ -1836,6 +1897,7 @@ class _$_OnRemoveContact implements _OnRemoveContact {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onRemoveContact?.call(contact);
   }
@@ -1854,6 +1916,7 @@ class _$_OnRemoveContact implements _OnRemoveContact {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onRemoveContact != null) {
@@ -1877,6 +1940,7 @@ class _$_OnRemoveContact implements _OnRemoveContact {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onRemoveContact(this);
   }
@@ -1896,6 +1960,7 @@ class _$_OnRemoveContact implements _OnRemoveContact {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onRemoveContact?.call(this);
   }
@@ -1915,6 +1980,7 @@ class _$_OnRemoveContact implements _OnRemoveContact {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onRemoveContact != null) {
@@ -1983,6 +2049,7 @@ class _$_OnDeleteGroup implements _OnDeleteGroup {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function(Contact contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
   }) {
     return onDeleteGroup();
   }
@@ -2001,6 +2068,7 @@ class _$_OnDeleteGroup implements _OnDeleteGroup {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function(Contact contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
   }) {
     return onDeleteGroup?.call();
   }
@@ -2019,6 +2087,7 @@ class _$_OnDeleteGroup implements _OnDeleteGroup {
     TResult Function(File file)? onChangedAvatar,
     TResult Function(Contact contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onDeleteGroup != null) {
@@ -2042,6 +2111,7 @@ class _$_OnDeleteGroup implements _OnDeleteGroup {
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnRemoveContact value) onRemoveContact,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
   }) {
     return onDeleteGroup(this);
   }
@@ -2061,6 +2131,7 @@ class _$_OnDeleteGroup implements _OnDeleteGroup {
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnRemoveContact value)? onRemoveContact,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
   }) {
     return onDeleteGroup?.call(this);
   }
@@ -2080,6 +2151,7 @@ class _$_OnDeleteGroup implements _OnDeleteGroup {
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult Function(_OnRemoveContact value)? onRemoveContact,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onDeleteGroup != null) {
@@ -2091,6 +2163,210 @@ class _$_OnDeleteGroup implements _OnDeleteGroup {
 
 abstract class _OnDeleteGroup implements GroupDetailEvent {
   const factory _OnDeleteGroup() = _$_OnDeleteGroup;
+}
+
+/// @nodoc
+abstract class _$$_OnAddedMembersCopyWith<$Res> {
+  factory _$$_OnAddedMembersCopyWith(
+          _$_OnAddedMembers value, $Res Function(_$_OnAddedMembers) then) =
+      __$$_OnAddedMembersCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Contact> contacts});
+}
+
+/// @nodoc
+class __$$_OnAddedMembersCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$_OnAddedMembers>
+    implements _$$_OnAddedMembersCopyWith<$Res> {
+  __$$_OnAddedMembersCopyWithImpl(
+      _$_OnAddedMembers _value, $Res Function(_$_OnAddedMembers) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contacts = null,
+  }) {
+    return _then(_$_OnAddedMembers(
+      null == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnAddedMembers implements _OnAddedMembers {
+  const _$_OnAddedMembers(final List<Contact> contacts) : _contacts = contacts;
+
+  final List<Contact> _contacts;
+  @override
+  List<Contact> get contacts {
+    if (_contacts is EqualUnmodifiableListView) return _contacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_contacts);
+  }
+
+  @override
+  String toString() {
+    return 'GroupDetailEvent.onAddedMembers(contacts: $contacts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnAddedMembers &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_contacts));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnAddedMembersCopyWith<_$_OnAddedMembers> get copyWith =>
+      __$$_OnAddedMembersCopyWithImpl<_$_OnAddedMembers>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(List<ChoiceEveryDayData> frequency)
+        onFrequencyChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function() onSavePressed,
+    required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function() onDeleteGroup,
+    required TResult Function(List<Contact> contacts) onAddedMembers,
+  }) {
+    return onAddedMembers(contacts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function()? onSavePressed,
+    TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function()? onDeleteGroup,
+    TResult? Function(List<Contact> contacts)? onAddedMembers,
+  }) {
+    return onAddedMembers?.call(contacts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function()? onSavePressed,
+    TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function()? onDeleteGroup,
+    TResult Function(List<Contact> contacts)? onAddedMembers,
+    required TResult orElse(),
+  }) {
+    if (onAddedMembers != null) {
+      return onAddedMembers(contacts);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnFrequencyIntervalChanged value)
+        onFrequencyIntervalChanged,
+    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnSavePressed value) onSavePressed,
+    required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnRemoveContact value) onRemoveContact,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+    required TResult Function(_OnAddedMembers value) onAddedMembers,
+  }) {
+    return onAddedMembers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnSavePressed value)? onSavePressed,
+    TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnRemoveContact value)? onRemoveContact,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult? Function(_OnAddedMembers value)? onAddedMembers,
+  }) {
+    return onAddedMembers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnSavePressed value)? onSavePressed,
+    TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnRemoveContact value)? onRemoveContact,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    TResult Function(_OnAddedMembers value)? onAddedMembers,
+    required TResult orElse(),
+  }) {
+    if (onAddedMembers != null) {
+      return onAddedMembers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnAddedMembers implements GroupDetailEvent {
+  const factory _OnAddedMembers(final List<Contact> contacts) =
+      _$_OnAddedMembers;
+
+  List<Contact> get contacts;
+  @JsonKey(ignore: true)
+  _$$_OnAddedMembersCopyWith<_$_OnAddedMembers> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
