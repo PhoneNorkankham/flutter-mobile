@@ -20,6 +20,7 @@ mixin _$GroupEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
     required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) =>
@@ -28,6 +29,7 @@ mixin _$GroupEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) =>
@@ -36,6 +38,7 @@ mixin _$GroupEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
     TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
@@ -45,6 +48,7 @@ mixin _$GroupEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) =>
@@ -53,6 +57,7 @@ mixin _$GroupEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) =>
@@ -61,6 +66,7 @@ mixin _$GroupEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
@@ -125,6 +131,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
     required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
@@ -136,6 +143,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
@@ -147,6 +155,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
     TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
@@ -162,6 +171,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
@@ -173,6 +183,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
@@ -184,6 +195,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
@@ -239,6 +251,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
     required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
@@ -250,6 +263,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
@@ -261,6 +275,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
     TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
@@ -276,6 +291,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
@@ -287,6 +303,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
@@ -298,6 +315,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
@@ -311,6 +329,157 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements GroupEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
+}
+
+/// @nodoc
+abstract class _$$_OnChangedKeywordCopyWith<$Res> {
+  factory _$$_OnChangedKeywordCopyWith(
+          _$_OnChangedKeyword value, $Res Function(_$_OnChangedKeyword) then) =
+      __$$_OnChangedKeywordCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String keyword});
+}
+
+/// @nodoc
+class __$$_OnChangedKeywordCopyWithImpl<$Res>
+    extends _$GroupEventCopyWithImpl<$Res, _$_OnChangedKeyword>
+    implements _$$_OnChangedKeywordCopyWith<$Res> {
+  __$$_OnChangedKeywordCopyWithImpl(
+      _$_OnChangedKeyword _value, $Res Function(_$_OnChangedKeyword) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keyword = null,
+  }) {
+    return _then(_$_OnChangedKeyword(
+      null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnChangedKeyword implements _OnChangedKeyword {
+  const _$_OnChangedKeyword(this.keyword);
+
+  @override
+  final String keyword;
+
+  @override
+  String toString() {
+    return 'GroupEvent.onChangedKeyword(keyword: $keyword)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnChangedKeyword &&
+            (identical(other.keyword, keyword) || other.keyword == keyword));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, keyword);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnChangedKeywordCopyWith<_$_OnChangedKeyword> get copyWith =>
+      __$$_OnChangedKeywordCopyWithImpl<_$_OnChangedKeyword>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onGotoNewGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
+  }) {
+    return onChangedKeyword(keyword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onGotoNewGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
+  }) {
+    return onChangedKeyword?.call(keyword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onGotoNewGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
+    required TResult orElse(),
+  }) {
+    if (onChangedKeyword != null) {
+      return onChangedKeyword(keyword);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
+  }) {
+    return onChangedKeyword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
+  }) {
+    return onChangedKeyword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
+    required TResult orElse(),
+  }) {
+    if (onChangedKeyword != null) {
+      return onChangedKeyword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedKeyword implements GroupEvent {
+  const factory _OnChangedKeyword(final String keyword) = _$_OnChangedKeyword;
+
+  String get keyword;
+  @JsonKey(ignore: true)
+  _$$_OnChangedKeywordCopyWith<_$_OnChangedKeyword> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -353,6 +522,7 @@ class _$_OnGotoNewGroup implements _OnGotoNewGroup {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
     required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
@@ -364,6 +534,7 @@ class _$_OnGotoNewGroup implements _OnGotoNewGroup {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
@@ -375,6 +546,7 @@ class _$_OnGotoNewGroup implements _OnGotoNewGroup {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
     TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
@@ -390,6 +562,7 @@ class _$_OnGotoNewGroup implements _OnGotoNewGroup {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
@@ -401,6 +574,7 @@ class _$_OnGotoNewGroup implements _OnGotoNewGroup {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
@@ -412,6 +586,7 @@ class _$_OnGotoNewGroup implements _OnGotoNewGroup {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
@@ -447,10 +622,10 @@ class __$$_OnGotoGroupDetailsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? group = null,
+    Object? group = freezed,
   }) {
     return _then(_$_OnGotoGroupDetails(
-      null == group
+      freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
               as Group,
@@ -476,11 +651,12 @@ class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnGotoGroupDetails &&
-            (identical(other.group, group) || other.group == group));
+            const DeepCollectionEquality().equals(other.group, group));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, group);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(group));
 
   @JsonKey(ignore: true)
   @override
@@ -494,6 +670,7 @@ class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
     required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
@@ -505,6 +682,7 @@ class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
@@ -516,6 +694,7 @@ class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
     TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
@@ -531,6 +710,7 @@ class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
     required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
@@ -542,6 +722,7 @@ class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
@@ -553,6 +734,7 @@ class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
     TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
@@ -576,6 +758,10 @@ abstract class _OnGotoGroupDetails implements GroupEvent {
 /// @nodoc
 mixin _$GroupState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  PageState get pageState => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  String get keyword => throw _privateConstructorUsedError;
+  List<Group> get groups => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GroupStateCopyWith<GroupState> get copyWith =>
@@ -588,7 +774,12 @@ abstract class $GroupStateCopyWith<$Res> {
           GroupState value, $Res Function(GroupState) then) =
       _$GroupStateCopyWithImpl<$Res, GroupState>;
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call(
+      {PageCommand? pageCommand,
+      PageState pageState,
+      bool isLoading,
+      String keyword,
+      List<Group> groups});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -607,12 +798,32 @@ class _$GroupStateCopyWithImpl<$Res, $Val extends GroupState>
   @override
   $Res call({
     Object? pageCommand = freezed,
+    Object? pageState = null,
+    Object? isLoading = null,
+    Object? keyword = null,
+    Object? groups = null,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      pageState: null == pageState
+          ? _value.pageState
+          : pageState // ignore: cast_nullable_to_non_nullable
+              as PageState,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      keyword: null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      groups: null == groups
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Group>,
     ) as $Val);
   }
 
@@ -637,7 +848,12 @@ abstract class _$$_GroupStateCopyWith<$Res>
       __$$_GroupStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call(
+      {PageCommand? pageCommand,
+      PageState pageState,
+      bool isLoading,
+      String keyword,
+      List<Group> groups});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -655,12 +871,32 @@ class __$$_GroupStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pageCommand = freezed,
+    Object? pageState = null,
+    Object? isLoading = null,
+    Object? keyword = null,
+    Object? groups = null,
   }) {
     return _then(_$_GroupState(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      pageState: null == pageState
+          ? _value.pageState
+          : pageState // ignore: cast_nullable_to_non_nullable
+              as PageState,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      keyword: null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      groups: null == groups
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Group>,
     ));
   }
 }
@@ -668,14 +904,38 @@ class __$$_GroupStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GroupState extends _GroupState {
-  const _$_GroupState({this.pageCommand}) : super._();
+  const _$_GroupState(
+      {this.pageCommand,
+      this.pageState = PageState.loading,
+      this.isLoading = false,
+      this.keyword = '',
+      final List<Group> groups = const []})
+      : _groups = groups,
+        super._();
 
   @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final PageState pageState;
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  @JsonKey()
+  final String keyword;
+  final List<Group> _groups;
+  @override
+  @JsonKey()
+  List<Group> get groups {
+    if (_groups is EqualUnmodifiableListView) return _groups;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groups);
+  }
 
   @override
   String toString() {
-    return 'GroupState(pageCommand: $pageCommand)';
+    return 'GroupState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, keyword: $keyword, groups: $groups)';
   }
 
   @override
@@ -684,11 +944,18 @@ class _$_GroupState extends _GroupState {
         (other.runtimeType == runtimeType &&
             other is _$_GroupState &&
             (identical(other.pageCommand, pageCommand) ||
-                other.pageCommand == pageCommand));
+                other.pageCommand == pageCommand) &&
+            (identical(other.pageState, pageState) ||
+                other.pageState == pageState) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.keyword, keyword) || other.keyword == keyword) &&
+            const DeepCollectionEquality().equals(other._groups, _groups));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageCommand);
+  int get hashCode => Object.hash(runtimeType, pageCommand, pageState,
+      isLoading, keyword, const DeepCollectionEquality().hash(_groups));
 
   @JsonKey(ignore: true)
   @override
@@ -698,11 +965,24 @@ class _$_GroupState extends _GroupState {
 }
 
 abstract class _GroupState extends GroupState {
-  const factory _GroupState({final PageCommand? pageCommand}) = _$_GroupState;
+  const factory _GroupState(
+      {final PageCommand? pageCommand,
+      final PageState pageState,
+      final bool isLoading,
+      final String keyword,
+      final List<Group> groups}) = _$_GroupState;
   const _GroupState._() : super._();
 
   @override
   PageCommand? get pageCommand;
+  @override
+  PageState get pageState;
+  @override
+  bool get isLoading;
+  @override
+  String get keyword;
+  @override
+  List<Group> get groups;
   @override
   @JsonKey(ignore: true)
   _$$_GroupStateCopyWith<_$_GroupState> get copyWith =>

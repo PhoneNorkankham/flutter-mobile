@@ -100,6 +100,8 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Stream<List<Group>> watchGroups() => _groupDao.watchGroups();
+
   Future<List<Group>> getDBGroups() => _groupDao.getGroups();
 
   Future<Resource<List<Contact>>> getContacts() {

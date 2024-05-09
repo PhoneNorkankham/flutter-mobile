@@ -9,9 +9,8 @@ import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/groups/components/add_group_button.dart';
-import 'package:keepup/src/ui/groups/components/group_item.dart';
+import 'package:keepup/src/ui/groups/components/group_list.dart';
 import 'package:keepup/src/ui/groups/interactor/group_bloc.dart';
 
 class GroupView extends StatelessWidget {
@@ -19,51 +18,35 @@ class GroupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final groups = [
-      Group(name: 'Family'),
-      Group(name: 'Meal Ides'),
-      Group(name: 'English Class'),
-      Group(name: 'Evergrreen'),
-      Group(name: 'Friends'),
-      Group(name: 'Instant Share'),
-      Group(name: 'Business Assist'),
-      Group(name: 'Supermajority'),
-      Group(name: 'Makeup'),
-    ];
-
-    final bloc = context.read<GroupBloc>();
-
     return Scaffold(
       appBar: AppAppBar(
         title: LocaleKey.groups.tr,
         implyLeading: true,
         actions: const [MenuButton()],
       ),
-      body: AppBody(
-        pageState: PageState.success,
-        unFocusWhenTouchOutsideInput: true,
-        success: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SizedBox(height: 26),
-            const AppSearchInput(),
-            const SizedBox(height: 10),
-            Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                itemBuilder: (context, index) => GroupItem(
-                  onPressed: (group) => bloc.add(GroupEvent.onGotoGroupDetails(group)),
-                  group: groups.elementAt(index),
-                ),
-                separatorBuilder: (context, index) => const SizedBox(height: 4),
-                itemCount: groups.length,
-              ),
+      body: BlocBuilder<GroupBloc, GroupState>(
+        buildWhen: (previous, current) =>
+            previous.pageState != current.pageState || previous.isLoading != current.isLoading,
+        builder: (context, state) {
+          final GroupBloc bloc = context.read();
+          return AppBody(
+            isLoading: state.isLoading,
+            pageState: state.pageState,
+            unFocusWhenTouchOutsideInput: true,
+            success: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 26),
+                AppSearchInput(onChanged: (value) => bloc.add(GroupEvent.onChangedKeyword(value))),
+                const SizedBox(height: 10),
+                const Expanded(child: GroupList()),
+                const SizedBox(height: 15),
+                const AddGroupButton(),
+                const SizedBox(height: 15),
+              ],
             ),
-            const SizedBox(height: 15),
-            const AddGroupButton(),
-            const SizedBox(height: 15),
-          ],
-        ),
+          );
+        },
       ),
       endDrawer: const AppDrawer(),
       bottomNavigationBar: const AppBottomNavigationBar(selectedType: BottomNavType.groups),
