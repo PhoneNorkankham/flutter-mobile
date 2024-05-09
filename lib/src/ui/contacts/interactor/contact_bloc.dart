@@ -32,7 +32,6 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<ContactState> emit) async {
-    await _supabaseRepository.getContacts();
     await emit.forEach<List<Contact>>(
       _supabaseRepository.watchContacts(),
       onData: (contacts) {

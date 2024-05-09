@@ -38,8 +38,6 @@ class AddContactsBloc extends Bloc<AddContactsEvent, AddContactsState> {
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<AddContactsState> emit) async {
-    await _supabaseRepository.getContacts();
-    await _supabaseRepository.getGroups();
     final List<Group> groups = await _supabaseRepository.getDBGroups();
     final List<ContactRequest> deviceContacts = await _getDeviceContacts();
     await emit.forEach<List<ContactRequest>>(

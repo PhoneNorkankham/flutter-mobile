@@ -72,7 +72,7 @@ class AppDialog extends StatelessWidget {
             Text(
               message,
               style: context.appTextTheme.medium16.copyWith(color: AppColors.primaryDark),
-              textAlign: centerMessage ? TextAlign.center : TextAlign.left,
+              textAlign: TextAlign.center,
             ),
       ),
       actions: confirmTitle?.let((self) => [
@@ -143,7 +143,7 @@ class _Actions extends StatelessWidget {
     this.onCancelled,
     this.onConfirmed,
     this.confirmButtonType = AppButtonType.primary,
-    this.cancelButtonType = AppButtonType.whitePrimary,
+    this.cancelButtonType = AppButtonType.outlined,
     this.actionMaxWith = 234,
   });
 

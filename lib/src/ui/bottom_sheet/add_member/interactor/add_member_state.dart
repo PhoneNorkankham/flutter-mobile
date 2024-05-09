@@ -1,22 +1,18 @@
-part of 'group_detail_bloc.dart';
+part of 'add_member_bloc.dart';
 
 @freezed
-class GroupDetailState with _$GroupDetailState {
-  const GroupDetailState._();
+class AddMemberState with _$AddMemberState {
+  const AddMemberState._();
 
-  const factory GroupDetailState({
+  const factory AddMemberState({
     PageCommand? pageCommand,
     @Default(PageState.loading) PageState pageState,
-    @Default(GroupType.newGroup) GroupType groupType,
     @Default(false) bool isLoading,
-    @Default('') String groupId,
-    @Default(GroupRequest()) GroupRequest request,
-    @Default(0) double interval,
-    @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
     @Default('') String keyword,
     @Default([]) List<Contact> contacts,
+    @Default([]) List<Contact> selectedContacts,
     File? avatar,
-  }) = _GroupDetailState;
+  }) = _AddMemberState;
 
   List<Contact> getFilterContacts() {
     final List<Contact> filterContacts;
@@ -29,6 +25,6 @@ class GroupDetailState with _$GroupDetailState {
             .toList()
       ];
     }
-    return filterContacts;
+    return filterContacts..removeWhere((element) => selectedContacts.contains(element));
   }
 }
