@@ -20,6 +20,8 @@ mixin _$ContactEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onCheckContactPermission,
     required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) =>
@@ -28,6 +30,8 @@ mixin _$ContactEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onCheckContactPermission,
     TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) =>
@@ -36,6 +40,8 @@ mixin _$ContactEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onCheckContactPermission,
     TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
@@ -45,6 +51,9 @@ mixin _$ContactEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnCheckContactPermission value)
+        onCheckContactPermission,
     required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) =>
@@ -53,6 +62,9 @@ mixin _$ContactEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnCheckContactPermission value)?
+        onCheckContactPermission,
     TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) =>
@@ -61,6 +73,8 @@ mixin _$ContactEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnCheckContactPermission value)? onCheckContactPermission,
     TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
@@ -125,6 +139,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onCheckContactPermission,
     required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
@@ -136,6 +152,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onCheckContactPermission,
     TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
@@ -147,6 +165,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onCheckContactPermission,
     TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
@@ -162,6 +182,9 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnCheckContactPermission value)
+        onCheckContactPermission,
     required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
@@ -173,6 +196,9 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnCheckContactPermission value)?
+        onCheckContactPermission,
     TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
@@ -184,6 +210,8 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnCheckContactPermission value)? onCheckContactPermission,
     TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
@@ -239,6 +267,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onCheckContactPermission,
     required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
@@ -250,6 +280,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onCheckContactPermission,
     TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
@@ -261,6 +293,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onCheckContactPermission,
     TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
@@ -276,6 +310,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnCheckContactPermission value)
+        onCheckContactPermission,
     required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
@@ -287,6 +324,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnCheckContactPermission value)?
+        onCheckContactPermission,
     TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
@@ -298,6 +338,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnCheckContactPermission value)? onCheckContactPermission,
     TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
@@ -311,6 +353,295 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements ContactEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
+}
+
+/// @nodoc
+abstract class _$$_OnChangedKeywordCopyWith<$Res> {
+  factory _$$_OnChangedKeywordCopyWith(
+          _$_OnChangedKeyword value, $Res Function(_$_OnChangedKeyword) then) =
+      __$$_OnChangedKeywordCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String keyword});
+}
+
+/// @nodoc
+class __$$_OnChangedKeywordCopyWithImpl<$Res>
+    extends _$ContactEventCopyWithImpl<$Res, _$_OnChangedKeyword>
+    implements _$$_OnChangedKeywordCopyWith<$Res> {
+  __$$_OnChangedKeywordCopyWithImpl(
+      _$_OnChangedKeyword _value, $Res Function(_$_OnChangedKeyword) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keyword = null,
+  }) {
+    return _then(_$_OnChangedKeyword(
+      null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnChangedKeyword implements _OnChangedKeyword {
+  const _$_OnChangedKeyword(this.keyword);
+
+  @override
+  final String keyword;
+
+  @override
+  String toString() {
+    return 'ContactEvent.onChangedKeyword(keyword: $keyword)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnChangedKeyword &&
+            (identical(other.keyword, keyword) || other.keyword == keyword));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, keyword);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnChangedKeywordCopyWith<_$_OnChangedKeyword> get copyWith =>
+      __$$_OnChangedKeywordCopyWithImpl<_$_OnChangedKeyword>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onCheckContactPermission,
+    required TResult Function() onGotoNewContact,
+    required TResult Function(Contact contact) onGotoContactDetails,
+  }) {
+    return onChangedKeyword(keyword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onCheckContactPermission,
+    TResult? Function()? onGotoNewContact,
+    TResult? Function(Contact contact)? onGotoContactDetails,
+  }) {
+    return onChangedKeyword?.call(keyword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onCheckContactPermission,
+    TResult Function()? onGotoNewContact,
+    TResult Function(Contact contact)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onChangedKeyword != null) {
+      return onChangedKeyword(keyword);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnCheckContactPermission value)
+        onCheckContactPermission,
+    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
+    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
+  }) {
+    return onChangedKeyword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnCheckContactPermission value)?
+        onCheckContactPermission,
+    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
+  }) {
+    return onChangedKeyword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnCheckContactPermission value)? onCheckContactPermission,
+    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onChangedKeyword != null) {
+      return onChangedKeyword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedKeyword implements ContactEvent {
+  const factory _OnChangedKeyword(final String keyword) = _$_OnChangedKeyword;
+
+  String get keyword;
+  @JsonKey(ignore: true)
+  _$$_OnChangedKeywordCopyWith<_$_OnChangedKeyword> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnCheckContactPermissionCopyWith<$Res> {
+  factory _$$_OnCheckContactPermissionCopyWith(
+          _$_OnCheckContactPermission value,
+          $Res Function(_$_OnCheckContactPermission) then) =
+      __$$_OnCheckContactPermissionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnCheckContactPermissionCopyWithImpl<$Res>
+    extends _$ContactEventCopyWithImpl<$Res, _$_OnCheckContactPermission>
+    implements _$$_OnCheckContactPermissionCopyWith<$Res> {
+  __$$_OnCheckContactPermissionCopyWithImpl(_$_OnCheckContactPermission _value,
+      $Res Function(_$_OnCheckContactPermission) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnCheckContactPermission implements _OnCheckContactPermission {
+  const _$_OnCheckContactPermission();
+
+  @override
+  String toString() {
+    return 'ContactEvent.onCheckContactPermission()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnCheckContactPermission);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onCheckContactPermission,
+    required TResult Function() onGotoNewContact,
+    required TResult Function(Contact contact) onGotoContactDetails,
+  }) {
+    return onCheckContactPermission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onCheckContactPermission,
+    TResult? Function()? onGotoNewContact,
+    TResult? Function(Contact contact)? onGotoContactDetails,
+  }) {
+    return onCheckContactPermission?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onCheckContactPermission,
+    TResult Function()? onGotoNewContact,
+    TResult Function(Contact contact)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onCheckContactPermission != null) {
+      return onCheckContactPermission();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnCheckContactPermission value)
+        onCheckContactPermission,
+    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
+    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
+  }) {
+    return onCheckContactPermission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnCheckContactPermission value)?
+        onCheckContactPermission,
+    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
+  }) {
+    return onCheckContactPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnCheckContactPermission value)? onCheckContactPermission,
+    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
+    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
+    required TResult orElse(),
+  }) {
+    if (onCheckContactPermission != null) {
+      return onCheckContactPermission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnCheckContactPermission implements ContactEvent {
+  const factory _OnCheckContactPermission() = _$_OnCheckContactPermission;
 }
 
 /// @nodoc
@@ -353,6 +684,8 @@ class _$_OnGotoNewContact implements _OnGotoNewContact {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onCheckContactPermission,
     required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
@@ -364,6 +697,8 @@ class _$_OnGotoNewContact implements _OnGotoNewContact {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onCheckContactPermission,
     TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
@@ -375,6 +710,8 @@ class _$_OnGotoNewContact implements _OnGotoNewContact {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onCheckContactPermission,
     TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
@@ -390,6 +727,9 @@ class _$_OnGotoNewContact implements _OnGotoNewContact {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnCheckContactPermission value)
+        onCheckContactPermission,
     required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
@@ -401,6 +741,9 @@ class _$_OnGotoNewContact implements _OnGotoNewContact {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnCheckContactPermission value)?
+        onCheckContactPermission,
     TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
@@ -412,6 +755,8 @@ class _$_OnGotoNewContact implements _OnGotoNewContact {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnCheckContactPermission value)? onCheckContactPermission,
     TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
@@ -447,10 +792,10 @@ class __$$_OnGotoContactDetailsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = null,
+    Object? contact = freezed,
   }) {
     return _then(_$_OnGotoContactDetails(
-      null == contact
+      freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
               as Contact,
@@ -476,11 +821,12 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnGotoContactDetails &&
-            (identical(other.contact, contact) || other.contact == contact));
+            const DeepCollectionEquality().equals(other.contact, contact));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, contact);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
 
   @JsonKey(ignore: true)
   @override
@@ -494,6 +840,8 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function() onCheckContactPermission,
     required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
@@ -505,6 +853,8 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function()? onCheckContactPermission,
     TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
@@ -516,6 +866,8 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function()? onCheckContactPermission,
     TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
@@ -531,6 +883,9 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnCheckContactPermission value)
+        onCheckContactPermission,
     required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
@@ -542,6 +897,9 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnCheckContactPermission value)?
+        onCheckContactPermission,
     TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
@@ -553,6 +911,8 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnCheckContactPermission value)? onCheckContactPermission,
     TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
@@ -576,7 +936,12 @@ abstract class _OnGotoContactDetails implements ContactEvent {
 
 /// @nodoc
 mixin _$ContactState {
+  PageState get pageState => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  String get keyword => throw _privateConstructorUsedError;
+  List<Contact> get contacts => throw _privateConstructorUsedError;
+  List<Contact> get filterContacts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ContactStateCopyWith<ContactState> get copyWith =>
@@ -589,7 +954,13 @@ abstract class $ContactStateCopyWith<$Res> {
           ContactState value, $Res Function(ContactState) then) =
       _$ContactStateCopyWithImpl<$Res, ContactState>;
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call(
+      {PageState pageState,
+      PageCommand? pageCommand,
+      bool isLoading,
+      String keyword,
+      List<Contact> contacts,
+      List<Contact> filterContacts});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -607,13 +978,38 @@ class _$ContactStateCopyWithImpl<$Res, $Val extends ContactState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? pageState = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? keyword = null,
+    Object? contacts = null,
+    Object? filterContacts = null,
   }) {
     return _then(_value.copyWith(
+      pageState: null == pageState
+          ? _value.pageState
+          : pageState // ignore: cast_nullable_to_non_nullable
+              as PageState,
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      keyword: null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      contacts: null == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      filterContacts: null == filterContacts
+          ? _value.filterContacts
+          : filterContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
     ) as $Val);
   }
 
@@ -638,7 +1034,13 @@ abstract class _$$_ContactStateCopyWith<$Res>
       __$$_ContactStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call(
+      {PageState pageState,
+      PageCommand? pageCommand,
+      bool isLoading,
+      String keyword,
+      List<Contact> contacts,
+      List<Contact> filterContacts});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -655,13 +1057,38 @@ class __$$_ContactStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? pageState = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? keyword = null,
+    Object? contacts = null,
+    Object? filterContacts = null,
   }) {
     return _then(_$_ContactState(
+      pageState: null == pageState
+          ? _value.pageState
+          : pageState // ignore: cast_nullable_to_non_nullable
+              as PageState,
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      keyword: null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      contacts: null == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      filterContacts: null == filterContacts
+          ? _value._filterContacts
+          : filterContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
     ));
   }
 }
@@ -669,14 +1096,49 @@ class __$$_ContactStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ContactState extends _ContactState {
-  const _$_ContactState({this.pageCommand}) : super._();
+  const _$_ContactState(
+      {this.pageState = PageState.loading,
+      this.pageCommand,
+      this.isLoading = false,
+      this.keyword = '',
+      final List<Contact> contacts = const [],
+      final List<Contact> filterContacts = const []})
+      : _contacts = contacts,
+        _filterContacts = filterContacts,
+        super._();
 
   @override
+  @JsonKey()
+  final PageState pageState;
+  @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  @JsonKey()
+  final String keyword;
+  final List<Contact> _contacts;
+  @override
+  @JsonKey()
+  List<Contact> get contacts {
+    if (_contacts is EqualUnmodifiableListView) return _contacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_contacts);
+  }
+
+  final List<Contact> _filterContacts;
+  @override
+  @JsonKey()
+  List<Contact> get filterContacts {
+    if (_filterContacts is EqualUnmodifiableListView) return _filterContacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filterContacts);
+  }
 
   @override
   String toString() {
-    return 'ContactState(pageCommand: $pageCommand)';
+    return 'ContactState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts, filterContacts: $filterContacts)';
   }
 
   @override
@@ -684,12 +1146,27 @@ class _$_ContactState extends _ContactState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ContactState &&
+            (identical(other.pageState, pageState) ||
+                other.pageState == pageState) &&
             (identical(other.pageCommand, pageCommand) ||
-                other.pageCommand == pageCommand));
+                other.pageCommand == pageCommand) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.keyword, keyword) || other.keyword == keyword) &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
+            const DeepCollectionEquality()
+                .equals(other._filterContacts, _filterContacts));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageCommand);
+  int get hashCode => Object.hash(
+      runtimeType,
+      pageState,
+      pageCommand,
+      isLoading,
+      keyword,
+      const DeepCollectionEquality().hash(_contacts),
+      const DeepCollectionEquality().hash(_filterContacts));
 
   @JsonKey(ignore: true)
   @override
@@ -699,12 +1176,27 @@ class _$_ContactState extends _ContactState {
 }
 
 abstract class _ContactState extends ContactState {
-  const factory _ContactState({final PageCommand? pageCommand}) =
-      _$_ContactState;
+  const factory _ContactState(
+      {final PageState pageState,
+      final PageCommand? pageCommand,
+      final bool isLoading,
+      final String keyword,
+      final List<Contact> contacts,
+      final List<Contact> filterContacts}) = _$_ContactState;
   const _ContactState._() : super._();
 
   @override
+  PageState get pageState;
+  @override
   PageCommand? get pageCommand;
+  @override
+  bool get isLoading;
+  @override
+  String get keyword;
+  @override
+  List<Contact> get contacts;
+  @override
+  List<Contact> get filterContacts;
   @override
   @JsonKey(ignore: true)
   _$$_ContactStateCopyWith<_$_ContactState> get copyWith =>

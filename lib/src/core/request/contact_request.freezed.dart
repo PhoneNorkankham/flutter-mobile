@@ -20,11 +20,29 @@ ContactRequest _$ContactRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ContactRequest {
+  @JsonKey(name: 'id', includeToJson: false)
+  String get contactId => throw _privateConstructorUsedError;
   @JsonKey(name: 'owner_id')
   String get ownerId => throw _privateConstructorUsedError;
+  String get avatar => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  @JsonKey(name: 'phone_no')
+  String get phoneNo => throw _privateConstructorUsedError;
+  @DateTimeJsonConverter()
+  @JsonKey(name: 'date_of_birth')
+  DateTime? get dateOfBirth => throw _privateConstructorUsedError;
+  @ListStringJsonConverter()
+  List<bool> get frequency => throw _privateConstructorUsedError;
+  @DateTimeJsonConverter()
   DateTime? get expiration => throw _privateConstructorUsedError;
+  @DateTimeJsonConverter()
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  bool get isExpanded => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  List<String> get groupIds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,9 +57,23 @@ abstract class $ContactRequestCopyWith<$Res> {
       _$ContactRequestCopyWithImpl<$Res, ContactRequest>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'owner_id') String ownerId,
-      DateTime? expiration,
-      @JsonKey(name: 'date_created') DateTime? dateCreated});
+      {@JsonKey(name: 'id', includeToJson: false) String contactId,
+      @JsonKey(name: 'owner_id') String ownerId,
+      String avatar,
+      String name,
+      String email,
+      @JsonKey(name: 'phone_no') String phoneNo,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'date_of_birth')
+      DateTime? dateOfBirth,
+      @ListStringJsonConverter() List<bool> frequency,
+      @DateTimeJsonConverter() DateTime? expiration,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'date_created')
+      DateTime? dateCreated,
+      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
+      @JsonKey(includeFromJson: false, includeToJson: false)
+      List<String> groupIds});
 }
 
 /// @nodoc
@@ -57,15 +89,52 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? contactId = null,
     Object? ownerId = null,
+    Object? avatar = null,
+    Object? name = null,
+    Object? email = null,
+    Object? phoneNo = null,
+    Object? dateOfBirth = freezed,
+    Object? frequency = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
+    Object? isExpanded = null,
+    Object? groupIds = null,
   }) {
     return _then(_value.copyWith(
+      contactId: null == contactId
+          ? _value.contactId
+          : contactId // ignore: cast_nullable_to_non_nullable
+              as String,
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNo: null == phoneNo
+          ? _value.phoneNo
+          : phoneNo // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateOfBirth: freezed == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      frequency: null == frequency
+          ? _value.frequency
+          : frequency // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       expiration: freezed == expiration
           ? _value.expiration
           : expiration // ignore: cast_nullable_to_non_nullable
@@ -74,6 +143,14 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      isExpanded: null == isExpanded
+          ? _value.isExpanded
+          : isExpanded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      groupIds: null == groupIds
+          ? _value.groupIds
+          : groupIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -87,9 +164,23 @@ abstract class _$$_ContactRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'owner_id') String ownerId,
-      DateTime? expiration,
-      @JsonKey(name: 'date_created') DateTime? dateCreated});
+      {@JsonKey(name: 'id', includeToJson: false) String contactId,
+      @JsonKey(name: 'owner_id') String ownerId,
+      String avatar,
+      String name,
+      String email,
+      @JsonKey(name: 'phone_no') String phoneNo,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'date_of_birth')
+      DateTime? dateOfBirth,
+      @ListStringJsonConverter() List<bool> frequency,
+      @DateTimeJsonConverter() DateTime? expiration,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'date_created')
+      DateTime? dateCreated,
+      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
+      @JsonKey(includeFromJson: false, includeToJson: false)
+      List<String> groupIds});
 }
 
 /// @nodoc
@@ -103,15 +194,52 @@ class __$$_ContactRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? contactId = null,
     Object? ownerId = null,
+    Object? avatar = null,
+    Object? name = null,
+    Object? email = null,
+    Object? phoneNo = null,
+    Object? dateOfBirth = freezed,
+    Object? frequency = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
+    Object? isExpanded = null,
+    Object? groupIds = null,
   }) {
     return _then(_$_ContactRequest(
+      contactId: null == contactId
+          ? _value.contactId
+          : contactId // ignore: cast_nullable_to_non_nullable
+              as String,
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNo: null == phoneNo
+          ? _value.phoneNo
+          : phoneNo // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateOfBirth: freezed == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      frequency: null == frequency
+          ? _value._frequency
+          : frequency // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       expiration: freezed == expiration
           ? _value.expiration
           : expiration // ignore: cast_nullable_to_non_nullable
@@ -120,6 +248,14 @@ class __$$_ContactRequestCopyWithImpl<$Res>
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      isExpanded: null == isExpanded
+          ? _value.isExpanded
+          : isExpanded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      groupIds: null == groupIds
+          ? _value._groupIds
+          : groupIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -127,27 +263,83 @@ class __$$_ContactRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_ContactRequest implements _ContactRequest {
+class _$_ContactRequest extends _ContactRequest {
   const _$_ContactRequest(
-      {@JsonKey(name: 'owner_id') this.ownerId = '',
-      this.expiration,
-      @JsonKey(name: 'date_created') this.dateCreated});
+      {@JsonKey(name: 'id', includeToJson: false) this.contactId = '',
+      @JsonKey(name: 'owner_id') this.ownerId = '',
+      this.avatar = '',
+      this.name = '',
+      this.email = '',
+      @JsonKey(name: 'phone_no') this.phoneNo = '',
+      @DateTimeJsonConverter() @JsonKey(name: 'date_of_birth') this.dateOfBirth,
+      @ListStringJsonConverter() final List<bool> frequency = const [],
+      @DateTimeJsonConverter() this.expiration,
+      @DateTimeJsonConverter() @JsonKey(name: 'date_created') this.dateCreated,
+      @JsonKey(includeFromJson: false, includeToJson: false)
+      this.isExpanded = false,
+      @JsonKey(includeFromJson: false, includeToJson: false)
+      final List<String> groupIds = const []})
+      : _frequency = frequency,
+        _groupIds = groupIds,
+        super._();
 
   factory _$_ContactRequest.fromJson(Map<String, dynamic> json) =>
       _$$_ContactRequestFromJson(json);
 
   @override
+  @JsonKey(name: 'id', includeToJson: false)
+  final String contactId;
+  @override
   @JsonKey(name: 'owner_id')
   final String ownerId;
   @override
+  @JsonKey()
+  final String avatar;
+  @override
+  @JsonKey()
+  final String name;
+  @override
+  @JsonKey()
+  final String email;
+  @override
+  @JsonKey(name: 'phone_no')
+  final String phoneNo;
+  @override
+  @DateTimeJsonConverter()
+  @JsonKey(name: 'date_of_birth')
+  final DateTime? dateOfBirth;
+  final List<bool> _frequency;
+  @override
+  @JsonKey()
+  @ListStringJsonConverter()
+  List<bool> get frequency {
+    if (_frequency is EqualUnmodifiableListView) return _frequency;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_frequency);
+  }
+
+  @override
+  @DateTimeJsonConverter()
   final DateTime? expiration;
   @override
+  @DateTimeJsonConverter()
   @JsonKey(name: 'date_created')
   final DateTime? dateCreated;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final bool isExpanded;
+  final List<String> _groupIds;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  List<String> get groupIds {
+    if (_groupIds is EqualUnmodifiableListView) return _groupIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groupIds);
+  }
 
   @override
   String toString() {
-    return 'ContactRequest(ownerId: $ownerId, expiration: $expiration, dateCreated: $dateCreated)';
+    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, frequency: $frequency, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded, groupIds: $groupIds)';
   }
 
   @override
@@ -155,17 +347,42 @@ class _$_ContactRequest implements _ContactRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ContactRequest &&
+            (identical(other.contactId, contactId) ||
+                other.contactId == contactId) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phoneNo, phoneNo) || other.phoneNo == phoneNo) &&
+            (identical(other.dateOfBirth, dateOfBirth) ||
+                other.dateOfBirth == dateOfBirth) &&
+            const DeepCollectionEquality()
+                .equals(other._frequency, _frequency) &&
             (identical(other.expiration, expiration) ||
                 other.expiration == expiration) &&
             (identical(other.dateCreated, dateCreated) ||
-                other.dateCreated == dateCreated));
+                other.dateCreated == dateCreated) &&
+            (identical(other.isExpanded, isExpanded) ||
+                other.isExpanded == isExpanded) &&
+            const DeepCollectionEquality().equals(other._groupIds, _groupIds));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, ownerId, expiration, dateCreated);
+  int get hashCode => Object.hash(
+      runtimeType,
+      contactId,
+      ownerId,
+      avatar,
+      name,
+      email,
+      phoneNo,
+      dateOfBirth,
+      const DeepCollectionEquality().hash(_frequency),
+      expiration,
+      dateCreated,
+      isExpanded,
+      const DeepCollectionEquality().hash(_groupIds));
 
   @JsonKey(ignore: true)
   @override
@@ -181,24 +398,66 @@ class _$_ContactRequest implements _ContactRequest {
   }
 }
 
-abstract class _ContactRequest implements ContactRequest {
+abstract class _ContactRequest extends ContactRequest {
   const factory _ContactRequest(
-          {@JsonKey(name: 'owner_id') final String ownerId,
-          final DateTime? expiration,
-          @JsonKey(name: 'date_created') final DateTime? dateCreated}) =
-      _$_ContactRequest;
+      {@JsonKey(name: 'id', includeToJson: false) final String contactId,
+      @JsonKey(name: 'owner_id') final String ownerId,
+      final String avatar,
+      final String name,
+      final String email,
+      @JsonKey(name: 'phone_no') final String phoneNo,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'date_of_birth')
+      final DateTime? dateOfBirth,
+      @ListStringJsonConverter() final List<bool> frequency,
+      @DateTimeJsonConverter() final DateTime? expiration,
+      @DateTimeJsonConverter()
+      @JsonKey(name: 'date_created')
+      final DateTime? dateCreated,
+      @JsonKey(includeFromJson: false, includeToJson: false)
+      final bool isExpanded,
+      @JsonKey(includeFromJson: false, includeToJson: false)
+      final List<String> groupIds}) = _$_ContactRequest;
+  const _ContactRequest._() : super._();
 
   factory _ContactRequest.fromJson(Map<String, dynamic> json) =
       _$_ContactRequest.fromJson;
 
   @override
+  @JsonKey(name: 'id', includeToJson: false)
+  String get contactId;
+  @override
   @JsonKey(name: 'owner_id')
   String get ownerId;
   @override
+  String get avatar;
+  @override
+  String get name;
+  @override
+  String get email;
+  @override
+  @JsonKey(name: 'phone_no')
+  String get phoneNo;
+  @override
+  @DateTimeJsonConverter()
+  @JsonKey(name: 'date_of_birth')
+  DateTime? get dateOfBirth;
+  @override
+  @ListStringJsonConverter()
+  List<bool> get frequency;
+  @override
+  @DateTimeJsonConverter()
   DateTime? get expiration;
   @override
+  @DateTimeJsonConverter()
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  bool get isExpanded;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  List<String> get groupIds;
   @override
   @JsonKey(ignore: true)
   _$$_ContactRequestCopyWith<_$_ContactRequest> get copyWith =>

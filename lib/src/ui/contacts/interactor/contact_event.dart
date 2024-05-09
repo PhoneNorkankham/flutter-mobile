@@ -6,6 +6,10 @@ class ContactEvent with _$ContactEvent {
 
   const factory ContactEvent.clearPageCommand() = _ClearPageCommand;
 
+  const factory ContactEvent.onChangedKeyword(String keyword) = _OnChangedKeyword;
+
+  const factory ContactEvent.onCheckContactPermission() = _OnCheckContactPermission;
+
   const factory ContactEvent.onGotoNewContact() = _OnGotoNewContact;
 
   const factory ContactEvent.onGotoContactDetails(Contact contact) = _OnGotoContactDetails;

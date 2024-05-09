@@ -1,9 +1,12 @@
+import 'package:keepup/src/core/model/choice_every_day_data.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 
 class AppConstants {
   // Base name
   static const String appName = "Keepup";
   static const String appDatabaseName = "KeepupDB_202311241718"; //no Space
+  static const String supabaseUrl = 'https://abtxbiiaitrtayvmltko.supabase.co';
+  static const String supabaseKey = String.fromEnvironment('SUPABASE_KEY');
 
   // Base url
   static const String API_PROD_URL = "http://keepup.com";
@@ -39,4 +42,14 @@ class AppConstants {
     'Friends',
     'Business Associates',
   ].map((e) => GroupRequest(name: e)).toList();
+
+  static const List<ChoiceEveryDayData> defaultEveryDays = [
+    ChoiceEveryDayData(text: 'M', description: 'Mo', isActive: true),
+    ChoiceEveryDayData(text: 'T', description: 'Tu', isActive: true),
+    ChoiceEveryDayData(text: 'W', description: 'We', isActive: true),
+    ChoiceEveryDayData(text: 'T', description: 'Th', isActive: true),
+    ChoiceEveryDayData(text: 'F', description: 'Fr', isActive: true),
+    ChoiceEveryDayData(text: 'S', description: 'Sa', isActive: true),
+    ChoiceEveryDayData(text: 'S', description: 'Su', isActive: true),
+  ];
 }

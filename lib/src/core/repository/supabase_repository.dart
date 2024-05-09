@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/local/dao/contact_dao.dart';
 import 'package:keepup/src/core/local/dao/group_dao.dart';
@@ -57,7 +59,31 @@ class SupabaseRepository {
   Future<Resource<Contact>> insertContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
       createSerializedCall: () => _supabaseManager.insertContact(request),
-      saveCallResult: (contact) => _contactDao.insert(contact),
+      saveCallResult: (contact) => _contactDao.insertContact(contact),
+    ).getAsFuture();
+  }
+
+  Future<Resource<Contact>> updateContact(ContactRequest request) {
+    return NetworkBoundResource<Contact, Contact>(
+      createSerializedCall: () => _supabaseManager.updateContact(request.contactId, request),
+      saveCallResult: (contact) => _contactDao.updateContact(contact),
+    ).getAsFuture();
+  }
+
+  Future<Resource<List<Group>>> updateContactInGroups({
+    required String contactId,
+    required List<String> groupIds,
+  }) {
+    return NetworkBoundResource<List<Group>, List<Group>>(
+      createSerializedCall: () => _supabaseManager.updateContactInGroups(
+        contactId: contactId,
+        groupIds: groupIds,
+      ),
+      saveCallResult: (groups) async {
+        for (Group group in groups) {
+          await _groupDao.insert(group);
+        }
+      },
     ).getAsFuture();
   }
 
@@ -74,6 +100,8 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<List<Group>> getDBGroups() => _groupDao.getGroups();
+
   Future<Resource<List<Contact>>> getContacts() {
     return NetworkBoundResource<List<Contact>, List<Contact>>(
       createSerializedCall: () => _supabaseManager.getContacts(),
@@ -81,9 +109,24 @@ class SupabaseRepository {
       saveCallResult: (contacts) async {
         await _contactDao.deleteAll();
         for (Contact contact in contacts) {
-          await _contactDao.insert(contact);
+          await _contactDao.insertContact(contact);
         }
       },
+    ).getAsFuture();
+  }
+
+  Stream<List<Contact>> watchContacts() => _contactDao.watchContacts();
+
+  Future<Resource<String>> uploadAvatar(File file) {
+    return NetworkBoundResource<String, String>(
+      createSerializedCall: () => _supabaseManager.uploadAvatar(file),
+    ).getAsFuture();
+  }
+
+  Future<Resource<Contact?>> getContact(String contactId) {
+    return NetworkBoundResource<Contact?, Contact?>(
+      createSerializedCall: () => _supabaseManager.getContact(contactId),
+      loadFromDb: () => _contactDao.getContact(contactId),
     ).getAsFuture();
   }
 }

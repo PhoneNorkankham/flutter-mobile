@@ -1,15 +1,21 @@
-import 'package:drift/drift.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-class DateTimeConverter extends TypeConverter<DateTime, String> {
+class DateTimeJsonConverter extends JsonConverter<DateTime?, dynamic> {
+  const DateTimeJsonConverter();
+
   @override
-  DateTime fromSql(String fromDb) {
-    if (fromDb.isEmpty) {
-      return DateTime.now();
+  DateTime? fromJson(dynamic json) {
+    if (json is String) {
+      return DateTime.tryParse(json);
+    } else if (json is int) {
+      return DateTime.fromMillisecondsSinceEpoch(json);
+    } else {
+      return null;
     }
-    return DateTime.parse(fromDb);
   }
 
   @override
-  String toSql(DateTime value) => value.generalDateText;
+  dynamic toJson(DateTime? object) {
+    return object?.toUtc().toIso8601String();
+  }
 }

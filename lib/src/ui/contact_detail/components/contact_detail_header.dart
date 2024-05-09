@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
+import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
+import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/contact_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -12,6 +14,7 @@ class ContactDetailHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ContactDetailBloc bloc = context.read();
     return BlocBuilder<ContactDetailBloc, ContactDetailState>(
       buildWhen: (previous, current) => previous.contactType != current.contactType,
       builder: (context, state) {
@@ -48,13 +51,36 @@ class ContactDetailHeader extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              const AppCircleAvatar(url: '', radius: 50),
-              const SizedBox(height: 10),
-              Text(
-                state.contactType == ContactType.newContact ? '' : 'Vanisa Legon',
-                style: context.appTextTheme.medium14.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimary,
+              GestureDetector(
+                onTap: () => AppDialogs(
+                  title: LocaleKey.uploadAvatar.tr,
+                  content: PickerPhotoDialog(
+                    onSelected: (file) => bloc.add(ContactDetailEvent.onChangedAvatar(file)),
+                  ),
+                  contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+                ).show(),
+                child: BlocBuilder<ContactDetailBloc, ContactDetailState>(
+                  buildWhen: (previous, current) =>
+                      previous.avatar != current.avatar ||
+                      previous.request.avatar != current.request.avatar,
+                  builder: (context, state) => AppCircleAvatar(
+                    file: state.avatar,
+                    url: state.request.avatar,
+                    radius: 50,
+                  ),
                 ),
+              ),
+              const SizedBox(height: 10),
+              BlocBuilder<ContactDetailBloc, ContactDetailState>(
+                buildWhen: (previous, current) => previous.request.name != current.request.name,
+                builder: (context, state) {
+                  return Text(
+                    state.contactType == ContactType.newContact ? '' : state.request.name,
+                    style: context.appTextTheme.medium14.copyWith(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 26),
             ],

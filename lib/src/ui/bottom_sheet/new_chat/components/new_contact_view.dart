@@ -23,24 +23,27 @@ class NewContactView extends StatelessWidget {
             ),
           ),
           margin: const EdgeInsets.only(top: 15),
-          child: const Column(
+          child: Column(
             children: [
-              NewContactAppBar(),
+              const NewContactAppBar(),
               Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      NewContactHeader(),
-                      SizedBox(height: 18),
-                      NewContactInterval(),
-                      SizedBox(height: 16),
-                      NewContactEvery(),
-                      SizedBox(height: 34),
-                      NewContactForm(),
-                      SizedBox(height: 36),
-                    ],
+                child: Container(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                  child: const SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        NewContactHeader(),
+                        SizedBox(height: 18),
+                        NewContactInterval(),
+                        SizedBox(height: 16),
+                        NewContactEvery(),
+                        SizedBox(height: 34),
+                        NewContactForm(),
+                        SizedBox(height: 36),
+                      ],
+                    ),
                   ),
                 ),
               ),

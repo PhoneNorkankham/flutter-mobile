@@ -9,6 +9,18 @@ class LocaleKey {
   static const String close = "close";
   static const String next = "next";
 
+  // Dialog Upload Photo
+  static const String uploadAvatar = "uploadAvatar";
+  static const String takeAPicture = "takeAPicture";
+  static const String selectAPhoto = "selectAPhoto";
+  static const String camera = "camera";
+  static const String photoLibrary = "photoLibrary";
+
+  // Permission
+  static const String permissionDenied = 'permissionDenied';
+  static const String goToSettings = 'goToSettings';
+  static const String settingContent = 'settingContent';
+
   // Network
   static const String alertConnect = "alertConnect";
   static const String alertDisconnect = "alertDisconnect";
@@ -18,6 +30,10 @@ class LocaleKey {
   static const String alertSendTimeout = "alertSendTimeout";
   static const String alertReceiveTimeout = "alertReceiveTimeout";
   static const String alertErrorServer = "alertErrorServer";
+
+  // Validations
+  static const String thisFieldIsRequired = "thisFieldIsRequired";
+  static const String emailFormatIsIncorrect = 'emailFormatIsIncorrect';
 
   // Message
   static const String success = "success";
@@ -50,7 +66,9 @@ class LocaleKey {
   static const String loginWith = "loginWith";
   static const String creatingAnonymousAccountFailed = "creatingAnonymousAccountFailed";
   static const String creatingGroupFailed = "creatingGroupFailed";
+  static const String updatingGroupFailed = "updatingGroupFailed";
   static const String creatingContactFailed = "creatingContactFailed";
+  static const String updatingContactFailed = "updatingContactFailed";
   static const String joiningGroupFailed = "joiningGroupFailed";
 
   // Main
@@ -95,6 +113,8 @@ class LocaleKey {
   static const String email = "email";
   static const String phoneNo = "phoneNo";
   static const String dateOfBirth = "dateOfBirth";
+  static const String contactCreatedSuccessfully = "contactCreatedSuccessfully";
+  static const String contactUpdatedSuccessfully = "contactUpdatedSuccessfully";
 
   // Groups
   static const String addGroup = "addGroup";
@@ -110,4 +130,12 @@ class LocaleKey {
   static const String searchNameOrNumber = "searchNameOrNumber";
   static const String addMembers = "addMembers";
   static const String groupName = "groupName";
+
+  // New Chat Options
+  static const String usePhoneContacts = "usePhoneContacts";
+  static const String createManually = "createManually";
+
+  // Add Contacts To KeepUp
+  static const String addContactsToKeepUp = "addContactsToKeepUp";
+  static const String done = "done";
 }

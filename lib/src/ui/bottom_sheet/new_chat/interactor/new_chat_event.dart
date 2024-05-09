@@ -17,4 +17,19 @@ class NewChatEvent with _$NewChatEvent {
   const factory NewChatEvent.onChangedGroupName(String groupName) = _OnChangedGroupName;
 
   const factory NewChatEvent.onCreateNewGroup() = _OnCreateNewGroup;
+
+  const factory NewChatEvent.onCreateNewContact() = _OnCreateNewContact;
+
+  const factory NewChatEvent.onIntervalChanged(double interval) = _OnIntervalChanged;
+
+  const factory NewChatEvent.onFrequencyChanged(
+    List<ChoiceEveryDayData> frequency,
+  ) = _OnFrequencyChanged;
+
+  const factory NewChatEvent.onInputChanged(
+    NewChatInputType inputType,
+    String value,
+  ) = _OnInputChanged;
+
+  const factory NewChatEvent.onChangedAvatar(File file) = _OnChangedAvatar;
 }

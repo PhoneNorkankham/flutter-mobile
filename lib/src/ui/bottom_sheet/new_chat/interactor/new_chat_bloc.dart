@@ -1,45 +1,114 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:get/get.dart';
+import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/choice_every_day_data.dart';
+import 'package:keepup/src/core/repository/supabase_repository.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
+import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
-import 'package:keepup/src/ui/contacts/components/contact_item.dart';
+import 'package:keepup/src/ui/base/interactor/page_error.dart';
+import 'package:keepup/src/ui/base/interactor/page_states.dart';
+import 'package:keepup/src/ui/base/result/result.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_input_type.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_chat/mappers/create_contact_state_mapper.dart';
+import 'package:keepup/src/use_cases/create_contact_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
+import 'package:keepup/src/utils/app_constants.dart';
 
 part 'new_chat_bloc.freezed.dart';
 part 'new_chat_event.dart';
 part 'new_chat_state.dart';
 
 class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
-  NewChatBloc() : super(const NewChatState()) {
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final phoneNoController = TextEditingController();
+  final dateOfBirthController = TextEditingController();
+
+  final _createContactStateMapper = CreateContactStateMapper();
+
+  final SupabaseRepository _supabaseRepository;
+  final CreateContactUseCase _createContactUseCase;
+  final UploadAvatarUseCase _uploadAvatarUseCase;
+
+  NewChatBloc(
+    this._supabaseRepository,
+    this._createContactUseCase,
+    this._uploadAvatarUseCase,
+  ) : super(const NewChatState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnChangedTabType>((event, emit) => emit(state.copyWith(tabType: event.type)));
+    on<_OnChangedTabType>(_onChangedTabType);
     on<_OnChangedKeyword>(_onChangedKeyword);
     on<_OnSelectedContact>(_onSelectedContact);
     on<_OnRemovedContact>(_onRemovedContact);
     on<_OnChangedGroupName>((event, emit) => emit(state.copyWith(groupName: event.groupName)));
     on<_OnCreateNewGroup>(_onCreateNewGroup);
+    on<_OnCreateNewContact>(_onCreateNewContact);
+    on<_OnIntervalChanged>((event, emit) => emit(state.copyWith(interval: event.interval)));
+    on<_OnFrequencyChanged>((event, emit) => emit(state.copyWith(everyDays: event.frequency)));
+    on<_OnInputChanged>(_onInputChanged);
+    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
   }
 
-  FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) {
-    final contacts = [
-      Contact(name: 'Vanisa Legon'),
-      Contact(name: 'Permir Jinkan'),
-      Contact(name: 'Peiris Gao'),
-      Contact(name: 'Valerie Tang'),
-      Contact(name: 'Jamison Shaffer'),
-      Contact(name: 'Kyro Peters'),
-      Contact(name: 'Leila Hurley'),
-      Contact(name: 'Van Calhoun'),
-      Contact(name: 'Andrew Lyons'),
-    ];
-    emit(state.copyWith(
-      contacts: contacts,
-      filterContacts: contacts,
-      selectedContacts: [],
-      keyword: '',
-    ));
+  FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) async {
+    await _supabaseRepository.getContacts();
+    await emit.forEach<List<Contact>>(
+      _supabaseRepository.watchContacts(),
+      onData: (contacts) {
+        NewChatState state = this.state.copyWith();
+        final String keyword = state.keyword;
+        final List<Contact> filterContacts;
+        if (keyword.isEmpty) {
+          filterContacts = [...contacts];
+        } else {
+          filterContacts = [
+            ...contacts
+                .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
+                .toList()
+          ];
+        }
+        return state.copyWith(
+          contacts: contacts,
+          filterContacts: filterContacts,
+          pageState: PageState.success,
+          isLoading: false,
+        );
+      },
+      onError: (error, stacktrace) => state.copyWith(
+        pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
+        pageState: PageState.success,
+        isLoading: false,
+      ),
+    );
+  }
+
+  FutureOr<void> _onChangedTabType(_OnChangedTabType event, Emitter<NewChatState> emit) {
+    NewChatState newState = state.copyWith(tabType: event.type);
+    switch (event.type) {
+      case NewChatTabType.newChat:
+      case NewChatTabType.addMembers:
+        nameController.text = '';
+        emailController.text = '';
+        phoneNoController.text = '';
+        dateOfBirthController.text = '';
+        newState = newState.copyWith(
+          interval: 0,
+          everyDays: AppConstants.defaultEveryDays,
+          request: const ContactRequest(),
+        );
+        break;
+      case NewChatTabType.newGroup:
+      case NewChatTabType.newContact:
+        break;
+    }
+    emit(newState);
   }
 
   FutureOr<void> _onChangedKeyword(_OnChangedKeyword event, Emitter<NewChatState> emit) {
@@ -66,4 +135,51 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   }
 
   FutureOr<void> _onCreateNewGroup(_OnCreateNewGroup event, Emitter<NewChatState> emit) {}
+
+  FutureOr<void> _onCreateNewContact(_OnCreateNewContact event, Emitter<NewChatState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final File? avatarFile = state.avatar;
+    String avatarUrl = '';
+    if (avatarFile != null) {
+      final DataResult<String> result = await _uploadAvatarUseCase.run(avatarFile);
+      if (result.isValue) {
+        avatarUrl = result.valueOrCrash;
+      } else {
+        final PageError pageError = result.asError!.error;
+        emit(state.copyWith(
+          isLoading: false,
+          pageCommand: pageError.pageErrorType == NetworkError.token
+              ? PageCommandDialog.showExpirationSession()
+              : PageCommandMessage.showError(pageError.message),
+        ));
+        return;
+      }
+    }
+    final request = state.request.copyWith(
+      avatar: avatarUrl,
+      expiration: DateTime.now().add(Duration(days: state.interval.toInt())),
+      frequency: state.everyDays.map((e) => e.isActive).toList(),
+    );
+    final result = await _createContactUseCase.run(request);
+    emit(_createContactStateMapper.mapResultToState(state, result));
+  }
+
+  FutureOr<void> _onInputChanged(_OnInputChanged event, Emitter<NewChatState> emit) {
+    NewChatState newState;
+    switch (event.inputType) {
+      case NewChatInputType.name:
+        newState = state.copyWith.request(name: event.value);
+        break;
+      case NewChatInputType.email:
+        newState = state.copyWith.request(email: event.value);
+        break;
+      case NewChatInputType.phoneNo:
+        newState = state.copyWith.request(phoneNo: event.value);
+        break;
+      case NewChatInputType.dateOfBirth:
+        newState = state.copyWith.request(dateOfBirth: DateTime.tryParse(event.value));
+        break;
+    }
+    emit(newState);
+  }
 }

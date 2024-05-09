@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:keepup/src/core/managers/custom_image_cache_manager.dart';
@@ -5,7 +7,8 @@ import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/extensions/string_extensions.dart';
 
 class AppCircleAvatar extends StatelessWidget {
-  final String? url;
+  final File? file;
+  final String url;
   final double radius;
   final Color backgroundColor;
   final Color foregroundColor;
@@ -13,6 +16,7 @@ class AppCircleAvatar extends StatelessWidget {
 
   const AppCircleAvatar({
     super.key,
+    this.file,
     required this.url,
     required this.radius,
     this.backgroundColor = AppColors.white,
@@ -23,9 +27,12 @@ class AppCircleAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ImageProvider? imageProvider;
-    if (!url.isNullOrEmpty && url?.isNetworkUri == true) {
+    if (file != null) {
+      /// Image is from file
+      imageProvider = FileImage(file!);
+    } else if (url.isNotEmpty && url.isNetworkUri) {
       /// Image is from server
-      imageProvider = CachedNetworkImageProvider(url!, cacheManager: CustomImageCacheManager());
+      imageProvider = CachedNetworkImageProvider(url, cacheManager: CustomImageCacheManager());
     }
 
     return CircleAvatar(
@@ -46,6 +53,14 @@ class AppCircleAvatar extends StatelessWidget {
               radius: radius,
               foregroundImage: imageProvider,
               foregroundColor: foregroundColor,
+              onForegroundImageError: (exception, stackTrace) => Container(
+                color: backgroundColor,
+                child: Icon(
+                  Icons.person,
+                  size: radius * 1.5,
+                  color: foregroundColor,
+                ),
+              ),
             ),
         ],
       ),

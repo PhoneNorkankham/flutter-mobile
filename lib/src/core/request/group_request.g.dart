@@ -8,6 +8,7 @@ part of 'group_request.dart';
 
 _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
     _$_GroupRequest(
+      groupId: json['id'] as String? ?? '',
       ownerId: json['owner_id'] as String? ?? '',
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
