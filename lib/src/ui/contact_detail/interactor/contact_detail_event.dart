@@ -21,4 +21,6 @@ class ContactDetailEvent with _$ContactDetailEvent {
   const factory ContactDetailEvent.onCancelPressed() = _OnCancelPressed;
 
   const factory ContactDetailEvent.onChangedAvatar(File file) = _OnChangedAvatar;
+
+  const factory ContactDetailEvent.onDeleteContact() = _OnDeleteContact;
 }

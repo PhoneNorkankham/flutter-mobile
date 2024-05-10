@@ -15,10 +15,12 @@ import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_input_type.dart';
 import 'package:keepup/src/ui/contact_detail/mappers/create_contact_state_mapper.dart';
+import 'package:keepup/src/ui/contact_detail/mappers/delete_contact_state_mapper.dart';
 import 'package:keepup/src/ui/contact_detail/mappers/get_contact_state_mapper.dart';
 import 'package:keepup/src/ui/contact_detail/mappers/update_contact_state_mapper.dart';
 import 'package:keepup/src/ui/contact_detail/usecases/get_contact_use_case.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
+import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/use_cases/update_contact_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_constants.dart';
@@ -40,6 +42,8 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   final GetContactStateMapper _getContactStateMapper;
   final UpdateContactUseCase _updateContactUseCase;
   final UpdateContactStateMapper _updateContactStateMapper;
+  final DeleteContactUseCase _deleteContactUseCase;
+  final DeleteContactStateMapper _deleteContactStateMapper;
 
   ContactDetailBloc(
     this._createContactUseCase,
@@ -49,6 +53,8 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     this._getContactStateMapper,
     this._updateContactUseCase,
     this._updateContactStateMapper,
+    this._deleteContactUseCase,
+    this._deleteContactStateMapper,
   ) : super(const ContactDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -60,6 +66,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
           pageCommand: PageCommandNavigation.pop(),
         )));
     on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
+    on<_OnDeleteContact>(_onDeleteContact);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<ContactDetailState> emit) async {
@@ -132,5 +139,11 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
       final result = await _updateContactUseCase.run(request);
       emit(_updateContactStateMapper.mapResultToState(state, result));
     }
+  }
+
+  FutureOr<void> _onDeleteContact(_OnDeleteContact event, Emitter<ContactDetailState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final VoidResult result = await _deleteContactUseCase.run(state.contactId);
+    emit(_deleteContactStateMapper.mapResultToState(state, result));
   }
 }
