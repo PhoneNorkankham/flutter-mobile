@@ -137,6 +137,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   }
 
   FutureOr<void> _onDeleteGroup(_OnDeleteGroup event, Emitter<GroupDetailState> emit) async {
+    emit(state.copyWith(isLoading: true));
     final VoidResult result = await _deleteGroupUseCase.run(state.groupId);
     emit(_deleteGroupStateMapper.mapResultToState(state, result));
   }

@@ -9,6 +9,7 @@ import 'package:keepup/src/locale/translation_manager.dart';
 import 'package:keepup/src/use_cases/check_logged_in_use_case.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
 import 'package:keepup/src/use_cases/create_group_use_case.dart';
+import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/use_cases/delete_group_use_case.dart';
 import 'package:keepup/src/use_cases/update_contact_use_case.dart';
 import 'package:keepup/src/use_cases/update_group_use_case.dart';

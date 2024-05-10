@@ -101,6 +101,16 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<Resource<void>> deleteContact(String contactId) {
+    return NetworkBoundResource<void, void>(
+      createSerializedCall: () => _supabaseManager.deleteContact(contactId),
+      saveCallResult: (_) async {
+        await _contactDao.deleteContact(contactId);
+        await _groupDao.deleteContactInJoinedGroups(contactId);
+      },
+    ).getAsFuture();
+  }
+
   Future<Resource<List<Group>>> getGroups() {
     return NetworkBoundResource<List<Group>, List<Group>>(
       createSerializedCall: () => _supabaseManager.getGroups(),

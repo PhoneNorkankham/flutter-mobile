@@ -143,16 +143,38 @@ class SupabaseManager {
         }
       });
 
+  Future<void> deleteContact(String contactId) => _supabase
+      .from(_tbContacts)
+      .delete()
+      .match({'id': contactId}).then((value) => deleteContactInJoinedGroups(contactId));
+
+  Future<void> deleteContactInJoinedGroups(String contactId) async {
+    // Get all groups
+    final List<Group> groups = await getGroups();
+
+    // Get all joined groups
+    final List<Group> joinedGroups =
+        groups.where((element) => element.contacts.contains(contactId)).toList();
+
+    // Get all leave groups
+    final List<Group> leaveGroups = joinedGroups.map((element) {
+      final List<String> contactIds = [...element.contacts]
+        ..removeWhere((element) => element == contactId);
+      return element.copyWith(contacts: contactIds);
+    }).toList();
+
+    // Update groups
+    for (Group group in leaveGroups) {
+      await updateGroup(GroupRequest.fromJson(group.toJson()));
+    }
+  }
+
   Future<List<Group>> updateContactInGroups({
     required String contactId,
     required List<String> groupIds,
   }) async {
     // Get all groups
-    final List<Group> groups = await _supabase
-        .from(_tbGroups)
-        .select()
-        .eq(_fieldOwnerId, uid)
-        .then((value) => value.map((e) => Group.fromJson(e)).toList());
+    final List<Group> groups = await getGroups();
 
     // Get all joined groups
     final List<Group> joinedGroups =

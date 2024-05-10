@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
+import 'package:keepup/src/design/components/dialogs/app_dialogs.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
@@ -25,31 +26,35 @@ class ContactDetailHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 26),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Icon(
-                    Icons.av_timer,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-                  Expanded(
-                    child: Text(
-                      '0 Days left',
-                      style: context.appTextTheme.medium14.copyWith(
-                        color: Theme.of(context).colorScheme.onPrimary,
+              if (state.contactType == ContactType.contactDetail) ...[
+                const SizedBox(height: 26),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Icon(
+                      Icons.av_timer,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                    Expanded(
+                      child: Text(
+                        '0 Days left',
+                        style: context.appTextTheme.medium14.copyWith(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                        ),
                       ),
                     ),
-                  ),
-                  if (state.contactType == ContactType.contactDetail)
-                    Text(
-                      LocaleKey.delete.tr,
-                      style: context.appTextTheme.medium14.copyWith(
-                        color: Theme.of(context).colorScheme.onPrimary,
+                    GestureDetector(
+                      onTap: () => _showDeleteConfirmDialog(context, bloc),
+                      child: Text(
+                        LocaleKey.delete.tr,
+                        style: context.appTextTheme.medium14.copyWith(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                        ),
                       ),
                     ),
-                ],
-              ),
+                  ],
+                ),
+              ],
               const SizedBox(height: 20),
               GestureDetector(
                 onTap: () => AppDialogs(
@@ -86,6 +91,19 @@ class ContactDetailHeader extends StatelessWidget {
             ],
           ),
         );
+      },
+    );
+  }
+
+  _showDeleteConfirmDialog(BuildContext context, ContactDetailBloc bloc) {
+    showConfirmDialog(
+      LocaleKey.deleteContactDescription.tr,
+      title: LocaleKey.deleteContact.tr,
+      cancelTitle: LocaleKey.cancel.tr,
+      confirmTitle: LocaleKey.delete.tr,
+      onConfirmed: () {
+        Get.back();
+        bloc.add(const ContactDetailEvent.onDeleteContact());
       },
     );
   }

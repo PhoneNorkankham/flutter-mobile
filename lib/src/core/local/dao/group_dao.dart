@@ -27,4 +27,25 @@ class GroupDao extends DatabaseAccessor<AppDatabase> with _$GroupDaoMixin {
       (delete(groups)..where((tbl) => tbl.id.equals(groupId))).go();
 
   Future<int> deleteAll() => delete(groups).go();
+
+  Future<void> deleteContactInJoinedGroups(String contactId) async {
+    // Get all groups
+    final List<Group> groups = await getGroups();
+
+    // Get all joined groups
+    final List<Group> joinedGroups =
+        groups.where((element) => element.contacts.contains(contactId)).toList();
+
+    // Get all leave groups
+    final List<Group> leaveGroups = joinedGroups.map((element) {
+      final List<String> contactIds = [...element.contacts]
+        ..removeWhere((element) => element == contactId);
+      return element.copyWith(contacts: contactIds);
+    }).toList();
+
+    // Update groups
+    for (Group group in leaveGroups) {
+      await updateGroup(group);
+    }
+  }
 }

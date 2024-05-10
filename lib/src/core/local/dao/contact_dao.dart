@@ -29,5 +29,8 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
           .get()
           .then((value) => value.firstOrNull);
 
+  Future<int> deleteContact(String contactId) =>
+      (delete(contacts)..where((tbl) => tbl.id.equals(contactId))).go();
+
   Future<int> deleteAll() => delete(contacts).go();
 }

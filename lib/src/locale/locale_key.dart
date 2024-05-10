@@ -115,6 +115,9 @@ class LocaleKey {
   static const String dateOfBirth = "dateOfBirth";
   static const String contactCreatedSuccessfully = "contactCreatedSuccessfully";
   static const String contactUpdatedSuccessfully = "contactUpdatedSuccessfully";
+  static const String contactDeletedSuccessfully = "contactDeletedSuccessfully";
+  static const String deleteContact = "deleteContact";
+  static const String deleteContactDescription = "deleteContactDescription";
 
   // Groups
   static const String addGroup = "addGroup";
