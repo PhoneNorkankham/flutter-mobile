@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/core/request/contact_request.dart';
+import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
@@ -10,9 +10,9 @@ import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 
-class CreateContactStateMapper implements BaseStateMapper<NewChatState, DataResult<Contact>> {
+class CreateGroupStateMapper implements BaseStateMapper<NewChatState, DataResult<Group>> {
   @override
-  NewChatState mapResultToState(NewChatState state, DataResult<Contact> result) {
+  NewChatState mapResultToState(NewChatState state, DataResult<Group> result) {
     if (result.isError) {
       final PageError pageError = result.asError!.error;
       return state.copyWith(
@@ -26,10 +26,11 @@ class CreateContactStateMapper implements BaseStateMapper<NewChatState, DataResu
         isLoading: false,
         tabType: NewChatTabType.newChat,
         interval: 0,
+        selectedContacts: [],
         everyDays: AppConstants.defaultEveryDays,
-        contactRequest: const ContactRequest(),
+        groupRequest: const GroupRequest(),
         avatar: null,
-        pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactCreatedSuccessfully.tr),
+        pageCommand: PageCommandMessage.showSuccess(LocaleKey.groupCreatedSuccessfully.tr),
       );
     }
   }

@@ -13,9 +13,7 @@ class NewGroupSelected extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NewChatBloc, NewChatState>(
-      buildWhen: (previous, current) =>
-          previous.contacts != current.contacts ||
-          previous.selectedContacts != current.selectedContacts,
+      buildWhen: (previous, current) => previous.selectedContacts != current.selectedContacts,
       builder: (context, state) {
         final List<Contact> contacts = state.selectedContacts;
         if (contacts.isEmpty) return const SizedBox();

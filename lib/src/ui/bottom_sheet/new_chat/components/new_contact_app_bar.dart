@@ -45,7 +45,7 @@ class NewContactAppBar extends StatelessWidget {
                 const Spacer(),
                 TextButton(
                   onPressed: state.enabledCreateNewContactButton
-                      ? () => bloc.add(const NewChatEvent.onCreateNewGroup())
+                      ? () => bloc.add(const NewChatEvent.onCreateNewContact())
                       : null,
                   child: Text(
                     LocaleKey.create.tr,

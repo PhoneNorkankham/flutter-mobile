@@ -33,6 +33,7 @@ class AddMemberView extends StatelessWidget {
               const AddMemberHeader(),
               const SizedBox(height: 18),
               AppSearchInput(
+                controller: bloc.keywordController,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 hintText: LocaleKey.searchNameOrNumber.tr,
                 onChanged: (value) => bloc.add(NewChatEvent.onChangedKeyword(value)),

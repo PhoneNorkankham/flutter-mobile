@@ -10,17 +10,17 @@ class NewChatState with _$NewChatState {
     @Default(false) bool isLoading,
     @Default(NewChatTabType.newChat) NewChatTabType tabType,
     @Default('') String keyword,
-    @Default('') String groupName,
     @Default([]) List<Contact> contacts,
     @Default([]) List<Contact> selectedContacts,
     @Default([]) List<Contact> filterContacts,
     @Default(0) double interval,
     @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
-    @Default(ContactRequest()) ContactRequest request,
+    @Default(ContactRequest()) ContactRequest contactRequest,
+    @Default(GroupRequest()) GroupRequest groupRequest,
     File? avatar,
   }) = _NewChatState;
 
-  bool get enabledCreateNewGroupButton => false;
+  bool get enabledCreateNewGroupButton => groupRequest.isValidate;
 
-  bool get enabledCreateNewContactButton => true;
+  bool get enabledCreateNewContactButton => contactRequest.isValidate;
 }

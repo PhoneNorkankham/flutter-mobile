@@ -10,6 +10,7 @@ class LocaleKey {
   static const String next = "next";
 
   // Dialog Upload Photo
+  static const String uploadPhoto = "uploadPhoto";
   static const String uploadAvatar = "uploadAvatar";
   static const String takeAPicture = "takeAPicture";
   static const String selectAPhoto = "selectAPhoto";

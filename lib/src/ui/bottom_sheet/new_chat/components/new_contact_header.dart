@@ -28,10 +28,10 @@ class NewContactHeader extends StatelessWidget {
           child: BlocBuilder<NewChatBloc, NewChatState>(
             buildWhen: (previous, current) =>
                 previous.avatar != current.avatar ||
-                previous.request.avatar != current.request.avatar,
+                previous.contactRequest.avatar != current.contactRequest.avatar,
             builder: (context, state) => AppCircleAvatar(
               file: state.avatar,
-              url: state.request.avatar,
+              url: state.contactRequest.avatar,
               radius: 50,
             ),
           ),

@@ -108,7 +108,7 @@ class NewContactForm extends StatelessWidget {
       context: context,
       cancelText: LocaleKey.cancel.tr,
       confirmText: LocaleKey.check.tr,
-      initialDate: bloc.state.request.dateOfBirth ?? DateTime.now(),
+      initialDate: bloc.state.contactRequest.dateOfBirth ?? DateTime.now(),
       firstDate: DateTime.now().subtract(const Duration(days: 365 * 100)),
       lastDate: DateTime.now(),
     ).then((date) {

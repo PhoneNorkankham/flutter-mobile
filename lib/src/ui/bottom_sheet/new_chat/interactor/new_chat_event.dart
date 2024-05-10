@@ -14,7 +14,7 @@ class NewChatEvent with _$NewChatEvent {
 
   const factory NewChatEvent.onRemovedContact(Contact contact) = _OnRemovedContact;
 
-  const factory NewChatEvent.onChangedGroupName(String groupName) = _OnChangedGroupName;
+  const factory NewChatEvent.onChangedGroupName(String name) = _OnChangedGroupName;
 
   const factory NewChatEvent.onCreateNewGroup() = _OnCreateNewGroup;
 

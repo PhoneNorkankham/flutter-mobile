@@ -120,9 +120,10 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
         return;
       }
     }
+    final DateTime now = DateUtils.dateOnly(DateTime.now());
     final request = state.request.copyWith(
       avatar: avatarUrl,
-      expiration: DateUtils.dateOnly(DateTime.now()).add(Duration(days: state.interval.toInt())),
+      expiration: now.add(Duration(days: state.interval.toInt())),
       frequency: state.everyDays.map((e) => e.isActive).toList(),
     );
     if (state.contactType == ContactType.newContact) {
