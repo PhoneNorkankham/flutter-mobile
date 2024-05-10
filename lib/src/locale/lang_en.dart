@@ -10,6 +10,7 @@ Map<String, String> enUs = {
   LocaleKey.check: 'Okay',
   LocaleKey.close: 'Close',
   LocaleKey.next: 'Next',
+  LocaleKey.uploadPhoto: 'Upload photo',
   LocaleKey.uploadAvatar: 'Upload avatar',
   LocaleKey.takeAPicture: 'Take a picture',
   LocaleKey.selectAPhoto: 'Select a photo',

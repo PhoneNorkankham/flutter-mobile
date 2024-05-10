@@ -24,7 +24,7 @@ mixin _$NewChatEvent {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -43,7 +43,7 @@ mixin _$NewChatEvent {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -60,7 +60,7 @@ mixin _$NewChatEvent {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -185,7 +185,7 @@ class _$_Initial implements _Initial {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -207,7 +207,7 @@ class _$_Initial implements _Initial {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -227,7 +227,7 @@ class _$_Initial implements _Initial {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -355,7 +355,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -377,7 +377,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -397,7 +397,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -551,7 +551,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -573,7 +573,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -593,7 +593,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -753,7 +753,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -775,7 +775,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -795,7 +795,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -956,7 +956,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -978,7 +978,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -998,7 +998,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -1159,7 +1159,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -1181,7 +1181,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -1201,7 +1201,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -1296,7 +1296,7 @@ abstract class _$$_OnChangedGroupNameCopyWith<$Res> {
           $Res Function(_$_OnChangedGroupName) then) =
       __$$_OnChangedGroupNameCopyWithImpl<$Res>;
   @useResult
-  $Res call({String groupName});
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -1310,12 +1310,12 @@ class __$$_OnChangedGroupNameCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? groupName = null,
+    Object? name = null,
   }) {
     return _then(_$_OnChangedGroupName(
-      null == groupName
-          ? _value.groupName
-          : groupName // ignore: cast_nullable_to_non_nullable
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1324,14 +1324,14 @@ class __$$_OnChangedGroupNameCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnChangedGroupName implements _OnChangedGroupName {
-  const _$_OnChangedGroupName(this.groupName);
+  const _$_OnChangedGroupName(this.name);
 
   @override
-  final String groupName;
+  final String name;
 
   @override
   String toString() {
-    return 'NewChatEvent.onChangedGroupName(groupName: $groupName)';
+    return 'NewChatEvent.onChangedGroupName(name: $name)';
   }
 
   @override
@@ -1339,12 +1339,11 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnChangedGroupName &&
-            (identical(other.groupName, groupName) ||
-                other.groupName == groupName));
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, groupName);
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
@@ -1362,7 +1361,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -1372,7 +1371,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
   }) {
-    return onChangedGroupName(groupName);
+    return onChangedGroupName(name);
   }
 
   @override
@@ -1384,7 +1383,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -1392,7 +1391,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
-    return onChangedGroupName?.call(groupName);
+    return onChangedGroupName?.call(name);
   }
 
   @override
@@ -1404,7 +1403,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -1414,7 +1413,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     required TResult orElse(),
   }) {
     if (onChangedGroupName != null) {
-      return onChangedGroupName(groupName);
+      return onChangedGroupName(name);
     }
     return orElse();
   }
@@ -1485,10 +1484,9 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
 }
 
 abstract class _OnChangedGroupName implements NewChatEvent {
-  const factory _OnChangedGroupName(final String groupName) =
-      _$_OnChangedGroupName;
+  const factory _OnChangedGroupName(final String name) = _$_OnChangedGroupName;
 
-  String get groupName;
+  String get name;
   @JsonKey(ignore: true)
   _$$_OnChangedGroupNameCopyWith<_$_OnChangedGroupName> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1538,7 +1536,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -1560,7 +1558,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -1580,7 +1578,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -1708,7 +1706,7 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -1730,7 +1728,7 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -1750,7 +1748,7 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -1906,7 +1904,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -1928,7 +1926,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -1948,7 +1946,7 @@ class _$_OnIntervalChanged implements _OnIntervalChanged {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -2117,7 +2115,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -2139,7 +2137,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -2159,7 +2157,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -2328,7 +2326,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -2350,7 +2348,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -2370,7 +2368,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -2531,7 +2529,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
-    required TResult Function(String groupName) onChangedGroupName,
+    required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(double interval) onIntervalChanged,
@@ -2553,7 +2551,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
-    TResult? Function(String groupName)? onChangedGroupName,
+    TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(double interval)? onIntervalChanged,
@@ -2573,7 +2571,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
     TResult Function(Contact contact)? onRemovedContact,
-    TResult Function(String groupName)? onChangedGroupName,
+    TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(double interval)? onIntervalChanged,
@@ -2669,13 +2667,13 @@ mixin _$NewChatState {
   bool get isLoading => throw _privateConstructorUsedError;
   NewChatTabType get tabType => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
-  String get groupName => throw _privateConstructorUsedError;
   List<Contact> get contacts => throw _privateConstructorUsedError;
   List<Contact> get selectedContacts => throw _privateConstructorUsedError;
   List<Contact> get filterContacts => throw _privateConstructorUsedError;
   double get interval => throw _privateConstructorUsedError;
   List<ChoiceEveryDayData> get everyDays => throw _privateConstructorUsedError;
-  ContactRequest get request => throw _privateConstructorUsedError;
+  ContactRequest get contactRequest => throw _privateConstructorUsedError;
+  GroupRequest get groupRequest => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -2695,17 +2693,18 @@ abstract class $NewChatStateCopyWith<$Res> {
       bool isLoading,
       NewChatTabType tabType,
       String keyword,
-      String groupName,
       List<Contact> contacts,
       List<Contact> selectedContacts,
       List<Contact> filterContacts,
       double interval,
       List<ChoiceEveryDayData> everyDays,
-      ContactRequest request,
+      ContactRequest contactRequest,
+      GroupRequest groupRequest,
       File? avatar});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
-  $ContactRequestCopyWith<$Res> get request;
+  $ContactRequestCopyWith<$Res> get contactRequest;
+  $GroupRequestCopyWith<$Res> get groupRequest;
 }
 
 /// @nodoc
@@ -2726,13 +2725,13 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
     Object? isLoading = null,
     Object? tabType = null,
     Object? keyword = null,
-    Object? groupName = null,
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? filterContacts = null,
     Object? interval = null,
     Object? everyDays = null,
-    Object? request = null,
+    Object? contactRequest = null,
+    Object? groupRequest = null,
     Object? avatar = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2756,10 +2755,6 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
               as String,
-      groupName: null == groupName
-          ? _value.groupName
-          : groupName // ignore: cast_nullable_to_non_nullable
-              as String,
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -2780,10 +2775,14 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
           ? _value.everyDays
           : everyDays // ignore: cast_nullable_to_non_nullable
               as List<ChoiceEveryDayData>,
-      request: null == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
+      contactRequest: null == contactRequest
+          ? _value.contactRequest
+          : contactRequest // ignore: cast_nullable_to_non_nullable
               as ContactRequest,
+      groupRequest: null == groupRequest
+          ? _value.groupRequest
+          : groupRequest // ignore: cast_nullable_to_non_nullable
+              as GroupRequest,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -2805,9 +2804,17 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
 
   @override
   @pragma('vm:prefer-inline')
-  $ContactRequestCopyWith<$Res> get request {
-    return $ContactRequestCopyWith<$Res>(_value.request, (value) {
-      return _then(_value.copyWith(request: value) as $Val);
+  $ContactRequestCopyWith<$Res> get contactRequest {
+    return $ContactRequestCopyWith<$Res>(_value.contactRequest, (value) {
+      return _then(_value.copyWith(contactRequest: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GroupRequestCopyWith<$Res> get groupRequest {
+    return $GroupRequestCopyWith<$Res>(_value.groupRequest, (value) {
+      return _then(_value.copyWith(groupRequest: value) as $Val);
     });
   }
 }
@@ -2826,19 +2833,21 @@ abstract class _$$_NewChatStateCopyWith<$Res>
       bool isLoading,
       NewChatTabType tabType,
       String keyword,
-      String groupName,
       List<Contact> contacts,
       List<Contact> selectedContacts,
       List<Contact> filterContacts,
       double interval,
       List<ChoiceEveryDayData> everyDays,
-      ContactRequest request,
+      ContactRequest contactRequest,
+      GroupRequest groupRequest,
       File? avatar});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
   @override
-  $ContactRequestCopyWith<$Res> get request;
+  $ContactRequestCopyWith<$Res> get contactRequest;
+  @override
+  $GroupRequestCopyWith<$Res> get groupRequest;
 }
 
 /// @nodoc
@@ -2857,13 +2866,13 @@ class __$$_NewChatStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? tabType = null,
     Object? keyword = null,
-    Object? groupName = null,
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? filterContacts = null,
     Object? interval = null,
     Object? everyDays = null,
-    Object? request = null,
+    Object? contactRequest = null,
+    Object? groupRequest = null,
     Object? avatar = freezed,
   }) {
     return _then(_$_NewChatState(
@@ -2887,10 +2896,6 @@ class __$$_NewChatStateCopyWithImpl<$Res>
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
               as String,
-      groupName: null == groupName
-          ? _value.groupName
-          : groupName // ignore: cast_nullable_to_non_nullable
-              as String,
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -2911,10 +2916,14 @@ class __$$_NewChatStateCopyWithImpl<$Res>
           ? _value._everyDays
           : everyDays // ignore: cast_nullable_to_non_nullable
               as List<ChoiceEveryDayData>,
-      request: null == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
+      contactRequest: null == contactRequest
+          ? _value.contactRequest
+          : contactRequest // ignore: cast_nullable_to_non_nullable
               as ContactRequest,
+      groupRequest: null == groupRequest
+          ? _value.groupRequest
+          : groupRequest // ignore: cast_nullable_to_non_nullable
+              as GroupRequest,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -2932,13 +2941,13 @@ class _$_NewChatState extends _NewChatState {
       this.isLoading = false,
       this.tabType = NewChatTabType.newChat,
       this.keyword = '',
-      this.groupName = '',
       final List<Contact> contacts = const [],
       final List<Contact> selectedContacts = const [],
       final List<Contact> filterContacts = const [],
       this.interval = 0,
       final List<ChoiceEveryDayData> everyDays = AppConstants.defaultEveryDays,
-      this.request = const ContactRequest(),
+      this.contactRequest = const ContactRequest(),
+      this.groupRequest = const GroupRequest(),
       this.avatar})
       : _contacts = contacts,
         _selectedContacts = selectedContacts,
@@ -2960,9 +2969,6 @@ class _$_NewChatState extends _NewChatState {
   @override
   @JsonKey()
   final String keyword;
-  @override
-  @JsonKey()
-  final String groupName;
   final List<Contact> _contacts;
   @override
   @JsonKey()
@@ -3005,13 +3011,16 @@ class _$_NewChatState extends _NewChatState {
 
   @override
   @JsonKey()
-  final ContactRequest request;
+  final ContactRequest contactRequest;
+  @override
+  @JsonKey()
+  final GroupRequest groupRequest;
   @override
   final File? avatar;
 
   @override
   String toString() {
-    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, tabType: $tabType, keyword: $keyword, groupName: $groupName, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts, interval: $interval, everyDays: $everyDays, request: $request, avatar: $avatar)';
+    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, tabType: $tabType, keyword: $keyword, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts, interval: $interval, everyDays: $everyDays, contactRequest: $contactRequest, groupRequest: $groupRequest, avatar: $avatar)';
   }
 
   @override
@@ -3027,8 +3036,6 @@ class _$_NewChatState extends _NewChatState {
                 other.isLoading == isLoading) &&
             (identical(other.tabType, tabType) || other.tabType == tabType) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
-            (identical(other.groupName, groupName) ||
-                other.groupName == groupName) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
             const DeepCollectionEquality()
                 .equals(other._selectedContacts, _selectedContacts) &&
@@ -3038,7 +3045,10 @@ class _$_NewChatState extends _NewChatState {
                 other.interval == interval) &&
             const DeepCollectionEquality()
                 .equals(other._everyDays, _everyDays) &&
-            (identical(other.request, request) || other.request == request) &&
+            (identical(other.contactRequest, contactRequest) ||
+                other.contactRequest == contactRequest) &&
+            (identical(other.groupRequest, groupRequest) ||
+                other.groupRequest == groupRequest) &&
             (identical(other.avatar, avatar) || other.avatar == avatar));
   }
 
@@ -3050,13 +3060,13 @@ class _$_NewChatState extends _NewChatState {
       isLoading,
       tabType,
       keyword,
-      groupName,
       const DeepCollectionEquality().hash(_contacts),
       const DeepCollectionEquality().hash(_selectedContacts),
       const DeepCollectionEquality().hash(_filterContacts),
       interval,
       const DeepCollectionEquality().hash(_everyDays),
-      request,
+      contactRequest,
+      groupRequest,
       avatar);
 
   @JsonKey(ignore: true)
@@ -3073,13 +3083,13 @@ abstract class _NewChatState extends NewChatState {
       final bool isLoading,
       final NewChatTabType tabType,
       final String keyword,
-      final String groupName,
       final List<Contact> contacts,
       final List<Contact> selectedContacts,
       final List<Contact> filterContacts,
       final double interval,
       final List<ChoiceEveryDayData> everyDays,
-      final ContactRequest request,
+      final ContactRequest contactRequest,
+      final GroupRequest groupRequest,
       final File? avatar}) = _$_NewChatState;
   const _NewChatState._() : super._();
 
@@ -3094,8 +3104,6 @@ abstract class _NewChatState extends NewChatState {
   @override
   String get keyword;
   @override
-  String get groupName;
-  @override
   List<Contact> get contacts;
   @override
   List<Contact> get selectedContacts;
@@ -3106,7 +3114,9 @@ abstract class _NewChatState extends NewChatState {
   @override
   List<ChoiceEveryDayData> get everyDays;
   @override
-  ContactRequest get request;
+  ContactRequest get contactRequest;
+  @override
+  GroupRequest get groupRequest;
   @override
   File? get avatar;
   @override

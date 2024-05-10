@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/design/components/process_indicators/loading_full_screen.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_command_listeners.dart';
@@ -24,6 +25,7 @@ class NewChatBottomSheet extends StatelessWidget {
         Get.find(),
         Get.find(),
         Get.find(),
+        Get.find(),
       )..add(const NewChatEvent.initial()),
       child: BlocConsumer<NewChatBloc, NewChatState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
@@ -35,10 +37,14 @@ class NewChatBottomSheet extends StatelessWidget {
             pageCommandListeners(pageCommand);
           }
         },
-        buildWhen: (previous, current) => previous.tabType != current.tabType,
-        builder: (context, state) => IndexedStack(
-          index: state.tabType.index,
-          children: NewChatTabType.values.map((e) => e.page).toList(),
+        buildWhen: (previous, current) =>
+            previous.tabType != current.tabType || previous.isLoading != current.isLoading,
+        builder: (context, state) => LoadingFullScreen(
+          loading: state.isLoading,
+          child: IndexedStack(
+            index: state.tabType.index,
+            children: NewChatTabType.values.map((e) => e.page).toList(),
+          ),
         ),
       ),
     );

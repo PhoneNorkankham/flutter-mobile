@@ -68,7 +68,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
     on<_OnRemoveContact>(_onRemoveContact);
     on<_OnDeleteGroup>(_onDeleteGroup);
-    on<_OnAddedMembers>(_onAddedMembers);
+    on<_OnAddedMembers>((event, emit) => emit(state.copyWith(contacts: event.contacts)));
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<GroupDetailState> emit) async {
@@ -110,10 +110,10 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
         return;
       }
     }
-
     final DateTime now = DateUtils.dateOnly(DateTime.now());
     final GroupRequest request = state.request.copyWith(
       avatar: avatarUrl,
+      contacts: state.contacts.map((e) => e.id).toList(),
       frequencyInterval: now.add(Duration(days: state.interval.toInt())),
       frequency: state.everyDays.map((e) => e.isActive).toList(),
     );
@@ -128,27 +128,12 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
 
   FutureOr<void> _onRemoveContact(_OnRemoveContact event, Emitter<GroupDetailState> emit) {
     final List<Contact> contacts = [...state.contacts]..remove(event.contact);
-    final List<String> contactIds = contacts.map((e) => e.id).toList();
-    final GroupRequest request = state.request.copyWith(contacts: contactIds);
-    emit(state.copyWith(
-      contacts: contacts,
-      request: request,
-    ));
+    emit(state.copyWith(contacts: contacts));
   }
 
   FutureOr<void> _onDeleteGroup(_OnDeleteGroup event, Emitter<GroupDetailState> emit) async {
     emit(state.copyWith(isLoading: true));
     final VoidResult result = await _deleteGroupUseCase.run(state.groupId);
     emit(_deleteGroupStateMapper.mapResultToState(state, result));
-  }
-
-  FutureOr<void> _onAddedMembers(_OnAddedMembers event, Emitter<GroupDetailState> emit) {
-    final List<Contact> contacts = event.contacts;
-    final List<String> contactIds = contacts.map((e) => e.id).toList();
-    final GroupRequest request = state.request.copyWith(contacts: contactIds);
-    emit(state.copyWith(
-      contacts: contacts,
-      request: request,
-    ));
   }
 }

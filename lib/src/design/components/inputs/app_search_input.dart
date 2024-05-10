@@ -7,12 +7,14 @@ class AppSearchInput extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final EdgeInsets? margin;
   final String? hintText;
+  final TextEditingController? controller;
 
   const AppSearchInput({
     super.key,
     this.onChanged,
     this.margin,
     this.hintText,
+    this.controller,
   });
 
   @override
@@ -20,6 +22,7 @@ class AppSearchInput extends StatelessWidget {
     return Padding(
       padding: margin ?? const EdgeInsets.symmetric(horizontal: 20.0),
       child: AppInputTextField(
+        controller: controller,
         prefix: Icon(
           Icons.search,
           color: Theme.of(context).inputDecorationTheme.hintStyle?.color,
