@@ -23,6 +23,20 @@ class ContactDetailForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
+              LocaleKey.group.tr,
+              style: context.appTextTheme.bold14.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+            ),
+            const SizedBox(height: 10),
+            AppInputTextField(
+              readOnly: true,
+              hintText: LocaleKey.group.tr,
+              textInputType: TextInputType.name,
+              validator: AppValidations.validateField,
+            ),
+            const SizedBox(height: 10),
+            Text(
               LocaleKey.name.tr,
               style: context.appTextTheme.bold14.copyWith(
                 color: Theme.of(context).colorScheme.primary,

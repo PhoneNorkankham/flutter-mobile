@@ -24,12 +24,14 @@ class ContactDetailButtons extends StatelessWidget {
               buildWhen: (previous, current) =>
                   previous.request.isValidate != current.request.isValidate,
               builder: (context, state) {
-                return AppButton(
-                  onPressed: state.request.isValidate
-                      ? () => bloc.add(const ContactDetailEvent.onSavePressed())
-                      : null,
-                  buttonType: AppButtonType.primary,
-                  title: LocaleKey.save.tr,
+                return Opacity(
+                  opacity: state.request.isValidate ? 1 : 0.5,
+                  child: AppButton(
+                    onPressed: state.request.isValidate
+                        ? () => bloc.add(const ContactDetailEvent.onSavePressed())
+                        : null,
+                    title: LocaleKey.save.tr,
+                  ),
                 );
               },
             ),

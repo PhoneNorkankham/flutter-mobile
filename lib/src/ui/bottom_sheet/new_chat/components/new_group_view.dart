@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:keepup/src/ui/base/base_page.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_group_app_bar.dart';
-import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_group_every.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_group_header.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_group_interval.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_group_selected.dart';
@@ -35,8 +34,6 @@ class NewGroupView extends StatelessWidget {
                       NewGroupHeader(),
                       SizedBox(height: 12),
                       NewGroupInterval(),
-                      SizedBox(height: 12),
-                      NewGroupEvery(),
                       SizedBox(height: 14),
                       NewGroupSelected(),
                       SizedBox(height: 16),

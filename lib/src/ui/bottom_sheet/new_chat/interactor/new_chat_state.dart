@@ -14,7 +14,7 @@ class NewChatState with _$NewChatState {
     @Default([]) List<Contact> selectedContacts,
     @Default([]) List<Contact> filterContacts,
     @Default(0) double interval,
-    @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
+    Group? group,
     @Default(ContactRequest()) ContactRequest contactRequest,
     @Default(GroupRequest()) GroupRequest groupRequest,
     File? avatar,

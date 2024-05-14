@@ -32,8 +32,6 @@ mixin _$ContactRequest {
   @DateTimeJsonConverter()
   @JsonKey(name: 'date_of_birth')
   DateTime? get dateOfBirth => throw _privateConstructorUsedError;
-  @ListStringJsonConverter()
-  List<bool> get frequency => throw _privateConstructorUsedError;
   @DateTimeJsonConverter()
   DateTime? get expiration => throw _privateConstructorUsedError;
   @DateTimeJsonConverter()
@@ -66,7 +64,6 @@ abstract class $ContactRequestCopyWith<$Res> {
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_of_birth')
       DateTime? dateOfBirth,
-      @ListStringJsonConverter() List<bool> frequency,
       @DateTimeJsonConverter() DateTime? expiration,
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
@@ -96,7 +93,6 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
     Object? email = null,
     Object? phoneNo = null,
     Object? dateOfBirth = freezed,
-    Object? frequency = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
     Object? isExpanded = null,
@@ -131,10 +127,6 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      frequency: null == frequency
-          ? _value.frequency
-          : frequency // ignore: cast_nullable_to_non_nullable
-              as List<bool>,
       expiration: freezed == expiration
           ? _value.expiration
           : expiration // ignore: cast_nullable_to_non_nullable
@@ -173,7 +165,6 @@ abstract class _$$_ContactRequestCopyWith<$Res>
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_of_birth')
       DateTime? dateOfBirth,
-      @ListStringJsonConverter() List<bool> frequency,
       @DateTimeJsonConverter() DateTime? expiration,
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
@@ -201,7 +192,6 @@ class __$$_ContactRequestCopyWithImpl<$Res>
     Object? email = null,
     Object? phoneNo = null,
     Object? dateOfBirth = freezed,
-    Object? frequency = null,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
     Object? isExpanded = null,
@@ -236,10 +226,6 @@ class __$$_ContactRequestCopyWithImpl<$Res>
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      frequency: null == frequency
-          ? _value._frequency
-          : frequency // ignore: cast_nullable_to_non_nullable
-              as List<bool>,
       expiration: freezed == expiration
           ? _value.expiration
           : expiration // ignore: cast_nullable_to_non_nullable
@@ -272,15 +258,13 @@ class _$_ContactRequest extends _ContactRequest {
       this.email = '',
       @JsonKey(name: 'phone_no') this.phoneNo = '',
       @DateTimeJsonConverter() @JsonKey(name: 'date_of_birth') this.dateOfBirth,
-      @ListStringJsonConverter() final List<bool> frequency = const [],
       @DateTimeJsonConverter() this.expiration,
       @DateTimeJsonConverter() @JsonKey(name: 'date_created') this.dateCreated,
       @JsonKey(includeFromJson: false, includeToJson: false)
       this.isExpanded = false,
       @JsonKey(includeFromJson: false, includeToJson: false)
       final List<String> groupIds = const []})
-      : _frequency = frequency,
-        _groupIds = groupIds,
+      : _groupIds = groupIds,
         super._();
 
   factory _$_ContactRequest.fromJson(Map<String, dynamic> json) =>
@@ -308,16 +292,6 @@ class _$_ContactRequest extends _ContactRequest {
   @DateTimeJsonConverter()
   @JsonKey(name: 'date_of_birth')
   final DateTime? dateOfBirth;
-  final List<bool> _frequency;
-  @override
-  @JsonKey()
-  @ListStringJsonConverter()
-  List<bool> get frequency {
-    if (_frequency is EqualUnmodifiableListView) return _frequency;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_frequency);
-  }
-
   @override
   @DateTimeJsonConverter()
   final DateTime? expiration;
@@ -339,7 +313,7 @@ class _$_ContactRequest extends _ContactRequest {
 
   @override
   String toString() {
-    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, frequency: $frequency, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded, groupIds: $groupIds)';
+    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded, groupIds: $groupIds)';
   }
 
   @override
@@ -356,8 +330,6 @@ class _$_ContactRequest extends _ContactRequest {
             (identical(other.phoneNo, phoneNo) || other.phoneNo == phoneNo) &&
             (identical(other.dateOfBirth, dateOfBirth) ||
                 other.dateOfBirth == dateOfBirth) &&
-            const DeepCollectionEquality()
-                .equals(other._frequency, _frequency) &&
             (identical(other.expiration, expiration) ||
                 other.expiration == expiration) &&
             (identical(other.dateCreated, dateCreated) ||
@@ -378,7 +350,6 @@ class _$_ContactRequest extends _ContactRequest {
       email,
       phoneNo,
       dateOfBirth,
-      const DeepCollectionEquality().hash(_frequency),
       expiration,
       dateCreated,
       isExpanded,
@@ -409,7 +380,6 @@ abstract class _ContactRequest extends ContactRequest {
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_of_birth')
       final DateTime? dateOfBirth,
-      @ListStringJsonConverter() final List<bool> frequency,
       @DateTimeJsonConverter() final DateTime? expiration,
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
@@ -442,9 +412,6 @@ abstract class _ContactRequest extends ContactRequest {
   @DateTimeJsonConverter()
   @JsonKey(name: 'date_of_birth')
   DateTime? get dateOfBirth;
-  @override
-  @ListStringJsonConverter()
-  List<bool> get frequency;
   @override
   @DateTimeJsonConverter()
   DateTime? get expiration;

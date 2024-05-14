@@ -12,7 +12,6 @@ class GroupDetailState with _$GroupDetailState {
     @Default('') String groupId,
     @Default(GroupRequest()) GroupRequest request,
     @Default(0) double interval,
-    @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
     @Default('') String keyword,
     @Default([]) List<Contact> contacts,
     File? avatar,

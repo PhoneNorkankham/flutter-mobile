@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:keepup/src/core/converters/date_time_converter.dart';
-import 'package:keepup/src/core/converters/list_string_converter.dart';
 import 'package:keepup/src/utils/app_validation.dart';
 
 part 'contact_request.freezed.dart';
@@ -19,7 +18,6 @@ class ContactRequest with _$ContactRequest {
     @Default('') String email,
     @Default('') @JsonKey(name: 'phone_no') String phoneNo,
     @DateTimeJsonConverter() @JsonKey(name: 'date_of_birth') DateTime? dateOfBirth,
-    @ListStringJsonConverter() @Default([]) List<bool> frequency,
     @DateTimeJsonConverter() DateTime? expiration,
     @DateTimeJsonConverter() @JsonKey(name: 'date_created') DateTime? dateCreated,
     @Default(false) @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
@@ -32,5 +30,6 @@ class ContactRequest with _$ContactRequest {
 
   String? get emailError => AppValidations.validateEmail(email);
 
-  bool get isValidate => name.isNotEmpty && nameError == null && emailError == null;
+  bool get isValidate =>
+      groupIds.isNotEmpty && name.isNotEmpty && nameError == null && emailError == null;
 }

@@ -44,18 +44,11 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
   static const VerificationMeta _frequencyIntervalMeta =
       const VerificationMeta('frequencyInterval');
   @override
-  late final GeneratedColumn<DateTime> frequencyInterval =
-      GeneratedColumn<DateTime>('frequency_interval', aliasedName, true,
-          type: DriftSqlType.dateTime, requiredDuringInsert: false);
-  static const VerificationMeta _frequencyMeta =
-      const VerificationMeta('frequency');
-  @override
-  late final GeneratedColumnWithTypeConverter<List<dynamic>, String> frequency =
-      GeneratedColumn<String>('frequency', aliasedName, false,
-              type: DriftSqlType.string,
-              requiredDuringInsert: false,
-              defaultValue: const Constant('[]'))
-          .withConverter<List<dynamic>>($GroupsTable.$converterfrequency);
+  late final GeneratedColumn<int> frequencyInterval = GeneratedColumn<int>(
+      'frequency_interval', aliasedName, false,
+      type: DriftSqlType.int,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(0));
   static const VerificationMeta _contactsMeta =
       const VerificationMeta('contacts');
   @override
@@ -66,16 +59,8 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
               defaultValue: const Constant('[]'))
           .withConverter<List<dynamic>>($GroupsTable.$convertercontacts);
   @override
-  List<GeneratedColumn> get $columns => [
-        id,
-        ownerId,
-        name,
-        description,
-        avatar,
-        frequencyInterval,
-        frequency,
-        contacts
-      ];
+  List<GeneratedColumn> get $columns =>
+      [id, ownerId, name, description, avatar, frequencyInterval, contacts];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -117,7 +102,6 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
           frequencyInterval.isAcceptableOrUnknown(
               data['frequency_interval']!, _frequencyIntervalMeta));
     }
-    context.handle(_frequencyMeta, const VerificationResult.success());
     context.handle(_contactsMeta, const VerificationResult.success());
     return context;
   }
@@ -139,10 +123,7 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
       avatar: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}avatar'])!,
       frequencyInterval: attachedDatabase.typeMapping.read(
-          DriftSqlType.dateTime, data['${effectivePrefix}frequency_interval']),
-      frequency: $GroupsTable.$converterfrequency.fromSql(attachedDatabase
-          .typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}frequency'])!),
+          DriftSqlType.int, data['${effectivePrefix}frequency_interval'])!,
       contacts: $GroupsTable.$convertercontacts.fromSql(attachedDatabase
           .typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}contacts'])!),
@@ -154,8 +135,6 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
     return $GroupsTable(attachedDatabase, alias);
   }
 
-  static TypeConverter<List<dynamic>, String> $converterfrequency =
-      const ListStringConverter();
   static TypeConverter<List<dynamic>, String> $convertercontacts =
       const ListStringConverter();
 }
@@ -166,8 +145,7 @@ class Group extends DataClass implements Insertable<Group> {
   final String name;
   final String description;
   final String avatar;
-  final DateTime? frequencyInterval;
-  final List<dynamic> frequency;
+  final int frequencyInterval;
   final List<dynamic> contacts;
   const Group(
       {required this.id,
@@ -175,8 +153,7 @@ class Group extends DataClass implements Insertable<Group> {
       required this.name,
       required this.description,
       required this.avatar,
-      this.frequencyInterval,
-      required this.frequency,
+      required this.frequencyInterval,
       required this.contacts});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -186,13 +163,7 @@ class Group extends DataClass implements Insertable<Group> {
     map['name'] = Variable<String>(name);
     map['description'] = Variable<String>(description);
     map['avatar'] = Variable<String>(avatar);
-    if (!nullToAbsent || frequencyInterval != null) {
-      map['frequency_interval'] = Variable<DateTime>(frequencyInterval);
-    }
-    {
-      map['frequency'] =
-          Variable<String>($GroupsTable.$converterfrequency.toSql(frequency));
-    }
+    map['frequency_interval'] = Variable<int>(frequencyInterval);
     {
       map['contacts'] =
           Variable<String>($GroupsTable.$convertercontacts.toSql(contacts));
@@ -207,10 +178,7 @@ class Group extends DataClass implements Insertable<Group> {
       name: Value(name),
       description: Value(description),
       avatar: Value(avatar),
-      frequencyInterval: frequencyInterval == null && nullToAbsent
-          ? const Value.absent()
-          : Value(frequencyInterval),
-      frequency: Value(frequency),
+      frequencyInterval: Value(frequencyInterval),
       contacts: Value(contacts),
     );
   }
@@ -224,9 +192,7 @@ class Group extends DataClass implements Insertable<Group> {
       name: serializer.fromJson<String>(json['name']),
       description: serializer.fromJson<String>(json['description']),
       avatar: serializer.fromJson<String>(json['avatar']),
-      frequencyInterval:
-          serializer.fromJson<DateTime?>(json['frequency_interval']),
-      frequency: serializer.fromJson<List<dynamic>>(json['frequency']),
+      frequencyInterval: serializer.fromJson<int>(json['frequency_interval']),
       contacts: serializer.fromJson<List<dynamic>>(json['contacts']),
     );
   }
@@ -239,8 +205,7 @@ class Group extends DataClass implements Insertable<Group> {
       'name': serializer.toJson<String>(name),
       'description': serializer.toJson<String>(description),
       'avatar': serializer.toJson<String>(avatar),
-      'frequency_interval': serializer.toJson<DateTime?>(frequencyInterval),
-      'frequency': serializer.toJson<List<dynamic>>(frequency),
+      'frequency_interval': serializer.toJson<int>(frequencyInterval),
       'contacts': serializer.toJson<List<dynamic>>(contacts),
     };
   }
@@ -251,8 +216,7 @@ class Group extends DataClass implements Insertable<Group> {
           String? name,
           String? description,
           String? avatar,
-          Value<DateTime?> frequencyInterval = const Value.absent(),
-          List<dynamic>? frequency,
+          int? frequencyInterval,
           List<dynamic>? contacts}) =>
       Group(
         id: id ?? this.id,
@@ -260,10 +224,7 @@ class Group extends DataClass implements Insertable<Group> {
         name: name ?? this.name,
         description: description ?? this.description,
         avatar: avatar ?? this.avatar,
-        frequencyInterval: frequencyInterval.present
-            ? frequencyInterval.value
-            : this.frequencyInterval,
-        frequency: frequency ?? this.frequency,
+        frequencyInterval: frequencyInterval ?? this.frequencyInterval,
         contacts: contacts ?? this.contacts,
       );
   @override
@@ -275,15 +236,14 @@ class Group extends DataClass implements Insertable<Group> {
           ..write('description: $description, ')
           ..write('avatar: $avatar, ')
           ..write('frequencyInterval: $frequencyInterval, ')
-          ..write('frequency: $frequency, ')
           ..write('contacts: $contacts')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, ownerId, name, description, avatar,
-      frequencyInterval, frequency, contacts);
+  int get hashCode => Object.hash(
+      id, ownerId, name, description, avatar, frequencyInterval, contacts);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -294,7 +254,6 @@ class Group extends DataClass implements Insertable<Group> {
           other.description == this.description &&
           other.avatar == this.avatar &&
           other.frequencyInterval == this.frequencyInterval &&
-          other.frequency == this.frequency &&
           other.contacts == this.contacts);
 }
 
@@ -304,8 +263,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
   final Value<String> name;
   final Value<String> description;
   final Value<String> avatar;
-  final Value<DateTime?> frequencyInterval;
-  final Value<List<dynamic>> frequency;
+  final Value<int> frequencyInterval;
   final Value<List<dynamic>> contacts;
   final Value<int> rowid;
   const GroupsCompanion({
@@ -315,7 +273,6 @@ class GroupsCompanion extends UpdateCompanion<Group> {
     this.description = const Value.absent(),
     this.avatar = const Value.absent(),
     this.frequencyInterval = const Value.absent(),
-    this.frequency = const Value.absent(),
     this.contacts = const Value.absent(),
     this.rowid = const Value.absent(),
   });
@@ -326,7 +283,6 @@ class GroupsCompanion extends UpdateCompanion<Group> {
     this.description = const Value.absent(),
     this.avatar = const Value.absent(),
     this.frequencyInterval = const Value.absent(),
-    this.frequency = const Value.absent(),
     this.contacts = const Value.absent(),
     this.rowid = const Value.absent(),
   })  : id = Value(id),
@@ -337,8 +293,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
     Expression<String>? name,
     Expression<String>? description,
     Expression<String>? avatar,
-    Expression<DateTime>? frequencyInterval,
-    Expression<String>? frequency,
+    Expression<int>? frequencyInterval,
     Expression<String>? contacts,
     Expression<int>? rowid,
   }) {
@@ -349,7 +304,6 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       if (description != null) 'description': description,
       if (avatar != null) 'avatar': avatar,
       if (frequencyInterval != null) 'frequency_interval': frequencyInterval,
-      if (frequency != null) 'frequency': frequency,
       if (contacts != null) 'contacts': contacts,
       if (rowid != null) 'rowid': rowid,
     });
@@ -361,8 +315,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       Value<String>? name,
       Value<String>? description,
       Value<String>? avatar,
-      Value<DateTime?>? frequencyInterval,
-      Value<List<dynamic>>? frequency,
+      Value<int>? frequencyInterval,
       Value<List<dynamic>>? contacts,
       Value<int>? rowid}) {
     return GroupsCompanion(
@@ -372,7 +325,6 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       description: description ?? this.description,
       avatar: avatar ?? this.avatar,
       frequencyInterval: frequencyInterval ?? this.frequencyInterval,
-      frequency: frequency ?? this.frequency,
       contacts: contacts ?? this.contacts,
       rowid: rowid ?? this.rowid,
     );
@@ -397,11 +349,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       map['avatar'] = Variable<String>(avatar.value);
     }
     if (frequencyInterval.present) {
-      map['frequency_interval'] = Variable<DateTime>(frequencyInterval.value);
-    }
-    if (frequency.present) {
-      map['frequency'] = Variable<String>(
-          $GroupsTable.$converterfrequency.toSql(frequency.value));
+      map['frequency_interval'] = Variable<int>(frequencyInterval.value);
     }
     if (contacts.present) {
       map['contacts'] = Variable<String>(
@@ -422,7 +370,6 @@ class GroupsCompanion extends UpdateCompanion<Group> {
           ..write('description: $description, ')
           ..write('avatar: $avatar, ')
           ..write('frequencyInterval: $frequencyInterval, ')
-          ..write('frequency: $frequency, ')
           ..write('contacts: $contacts, ')
           ..write('rowid: $rowid')
           ..write(')'))
@@ -467,15 +414,6 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
       type: DriftSqlType.string,
       requiredDuringInsert: false,
       defaultValue: const Constant(''));
-  static const VerificationMeta _frequencyMeta =
-      const VerificationMeta('frequency');
-  @override
-  late final GeneratedColumnWithTypeConverter<List<dynamic>, String> frequency =
-      GeneratedColumn<String>('frequency', aliasedName, false,
-              type: DriftSqlType.string,
-              requiredDuringInsert: false,
-              defaultValue: const Constant('[]'))
-          .withConverter<List<dynamic>>($ContactsTable.$converterfrequency);
   static const VerificationMeta _phoneNoMeta =
       const VerificationMeta('phoneNo');
   @override
@@ -509,7 +447,6 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
         avatar,
         name,
         email,
-        frequency,
         phoneNo,
         dateOfBirth,
         expiration,
@@ -548,7 +485,6 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
       context.handle(
           _emailMeta, email.isAcceptableOrUnknown(data['email']!, _emailMeta));
     }
-    context.handle(_frequencyMeta, const VerificationResult.success());
     if (data.containsKey('phone_no')) {
       context.handle(_phoneNoMeta,
           phoneNo.isAcceptableOrUnknown(data['phone_no']!, _phoneNoMeta));
@@ -590,9 +526,6 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
           .read(DriftSqlType.string, data['${effectivePrefix}name'])!,
       email: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}email'])!,
-      frequency: $ContactsTable.$converterfrequency.fromSql(attachedDatabase
-          .typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}frequency'])!),
       phoneNo: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}phone_no'])!,
       dateOfBirth: attachedDatabase.typeMapping
@@ -608,9 +541,6 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
   $ContactsTable createAlias(String alias) {
     return $ContactsTable(attachedDatabase, alias);
   }
-
-  static TypeConverter<List<dynamic>, String> $converterfrequency =
-      const ListStringConverter();
 }
 
 class Contact extends DataClass implements Insertable<Contact> {
@@ -619,7 +549,6 @@ class Contact extends DataClass implements Insertable<Contact> {
   final String avatar;
   final String name;
   final String email;
-  final List<dynamic> frequency;
   final String phoneNo;
   final DateTime? dateOfBirth;
   final DateTime? expiration;
@@ -630,7 +559,6 @@ class Contact extends DataClass implements Insertable<Contact> {
       required this.avatar,
       required this.name,
       required this.email,
-      required this.frequency,
       required this.phoneNo,
       this.dateOfBirth,
       this.expiration,
@@ -643,10 +571,6 @@ class Contact extends DataClass implements Insertable<Contact> {
     map['avatar'] = Variable<String>(avatar);
     map['name'] = Variable<String>(name);
     map['email'] = Variable<String>(email);
-    {
-      map['frequency'] =
-          Variable<String>($ContactsTable.$converterfrequency.toSql(frequency));
-    }
     map['phone_no'] = Variable<String>(phoneNo);
     if (!nullToAbsent || dateOfBirth != null) {
       map['date_of_birth'] = Variable<DateTime>(dateOfBirth);
@@ -667,7 +591,6 @@ class Contact extends DataClass implements Insertable<Contact> {
       avatar: Value(avatar),
       name: Value(name),
       email: Value(email),
-      frequency: Value(frequency),
       phoneNo: Value(phoneNo),
       dateOfBirth: dateOfBirth == null && nullToAbsent
           ? const Value.absent()
@@ -690,7 +613,6 @@ class Contact extends DataClass implements Insertable<Contact> {
       avatar: serializer.fromJson<String>(json['avatar']),
       name: serializer.fromJson<String>(json['name']),
       email: serializer.fromJson<String>(json['email']),
-      frequency: serializer.fromJson<List<dynamic>>(json['frequency']),
       phoneNo: serializer.fromJson<String>(json['phone_no']),
       dateOfBirth: serializer.fromJson<DateTime?>(json['date_of_birth']),
       expiration: serializer.fromJson<DateTime?>(json['expiration']),
@@ -706,7 +628,6 @@ class Contact extends DataClass implements Insertable<Contact> {
       'avatar': serializer.toJson<String>(avatar),
       'name': serializer.toJson<String>(name),
       'email': serializer.toJson<String>(email),
-      'frequency': serializer.toJson<List<dynamic>>(frequency),
       'phone_no': serializer.toJson<String>(phoneNo),
       'date_of_birth': serializer.toJson<DateTime?>(dateOfBirth),
       'expiration': serializer.toJson<DateTime?>(expiration),
@@ -720,7 +641,6 @@ class Contact extends DataClass implements Insertable<Contact> {
           String? avatar,
           String? name,
           String? email,
-          List<dynamic>? frequency,
           String? phoneNo,
           Value<DateTime?> dateOfBirth = const Value.absent(),
           Value<DateTime?> expiration = const Value.absent(),
@@ -731,7 +651,6 @@ class Contact extends DataClass implements Insertable<Contact> {
         avatar: avatar ?? this.avatar,
         name: name ?? this.name,
         email: email ?? this.email,
-        frequency: frequency ?? this.frequency,
         phoneNo: phoneNo ?? this.phoneNo,
         dateOfBirth: dateOfBirth.present ? dateOfBirth.value : this.dateOfBirth,
         expiration: expiration.present ? expiration.value : this.expiration,
@@ -745,7 +664,6 @@ class Contact extends DataClass implements Insertable<Contact> {
           ..write('avatar: $avatar, ')
           ..write('name: $name, ')
           ..write('email: $email, ')
-          ..write('frequency: $frequency, ')
           ..write('phoneNo: $phoneNo, ')
           ..write('dateOfBirth: $dateOfBirth, ')
           ..write('expiration: $expiration, ')
@@ -755,8 +673,8 @@ class Contact extends DataClass implements Insertable<Contact> {
   }
 
   @override
-  int get hashCode => Object.hash(id, ownerId, avatar, name, email, frequency,
-      phoneNo, dateOfBirth, expiration, dateCreated);
+  int get hashCode => Object.hash(id, ownerId, avatar, name, email, phoneNo,
+      dateOfBirth, expiration, dateCreated);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -766,7 +684,6 @@ class Contact extends DataClass implements Insertable<Contact> {
           other.avatar == this.avatar &&
           other.name == this.name &&
           other.email == this.email &&
-          other.frequency == this.frequency &&
           other.phoneNo == this.phoneNo &&
           other.dateOfBirth == this.dateOfBirth &&
           other.expiration == this.expiration &&
@@ -779,7 +696,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
   final Value<String> avatar;
   final Value<String> name;
   final Value<String> email;
-  final Value<List<dynamic>> frequency;
   final Value<String> phoneNo;
   final Value<DateTime?> dateOfBirth;
   final Value<DateTime?> expiration;
@@ -791,7 +707,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     this.avatar = const Value.absent(),
     this.name = const Value.absent(),
     this.email = const Value.absent(),
-    this.frequency = const Value.absent(),
     this.phoneNo = const Value.absent(),
     this.dateOfBirth = const Value.absent(),
     this.expiration = const Value.absent(),
@@ -804,7 +719,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     this.avatar = const Value.absent(),
     this.name = const Value.absent(),
     this.email = const Value.absent(),
-    this.frequency = const Value.absent(),
     this.phoneNo = const Value.absent(),
     this.dateOfBirth = const Value.absent(),
     this.expiration = const Value.absent(),
@@ -818,7 +732,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     Expression<String>? avatar,
     Expression<String>? name,
     Expression<String>? email,
-    Expression<String>? frequency,
     Expression<String>? phoneNo,
     Expression<DateTime>? dateOfBirth,
     Expression<DateTime>? expiration,
@@ -831,7 +744,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
       if (avatar != null) 'avatar': avatar,
       if (name != null) 'name': name,
       if (email != null) 'email': email,
-      if (frequency != null) 'frequency': frequency,
       if (phoneNo != null) 'phone_no': phoneNo,
       if (dateOfBirth != null) 'date_of_birth': dateOfBirth,
       if (expiration != null) 'expiration': expiration,
@@ -846,7 +758,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
       Value<String>? avatar,
       Value<String>? name,
       Value<String>? email,
-      Value<List<dynamic>>? frequency,
       Value<String>? phoneNo,
       Value<DateTime?>? dateOfBirth,
       Value<DateTime?>? expiration,
@@ -858,7 +769,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
       avatar: avatar ?? this.avatar,
       name: name ?? this.name,
       email: email ?? this.email,
-      frequency: frequency ?? this.frequency,
       phoneNo: phoneNo ?? this.phoneNo,
       dateOfBirth: dateOfBirth ?? this.dateOfBirth,
       expiration: expiration ?? this.expiration,
@@ -884,10 +794,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     }
     if (email.present) {
       map['email'] = Variable<String>(email.value);
-    }
-    if (frequency.present) {
-      map['frequency'] = Variable<String>(
-          $ContactsTable.$converterfrequency.toSql(frequency.value));
     }
     if (phoneNo.present) {
       map['phone_no'] = Variable<String>(phoneNo.value);
@@ -915,7 +821,6 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
           ..write('avatar: $avatar, ')
           ..write('name: $name, ')
           ..write('email: $email, ')
-          ..write('frequency: $frequency, ')
           ..write('phoneNo: $phoneNo, ')
           ..write('dateOfBirth: $dateOfBirth, ')
           ..write('expiration: $expiration, ')

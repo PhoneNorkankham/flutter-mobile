@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:keepup/src/ui/base/base_page.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_app_bar.dart';
-import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_every.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_form.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_header.dart';
-import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_interval.dart';
 
 class NewContactView extends StatelessWidget {
   const NewContactView({super.key});
@@ -35,10 +33,6 @@ class NewContactView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         NewContactHeader(),
-                        SizedBox(height: 18),
-                        NewContactInterval(),
-                        SizedBox(height: 16),
-                        NewContactEvery(),
                         SizedBox(height: 34),
                         NewContactForm(),
                         SizedBox(height: 36),

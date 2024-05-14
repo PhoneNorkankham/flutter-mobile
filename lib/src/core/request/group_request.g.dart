@@ -13,35 +13,19 @@ _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
-      frequencyInterval:
-          const DateTimeJsonConverter().fromJson(json['frequency_interval']),
-      frequency: (json['frequency'] as List<dynamic>?)
-              ?.map((e) => e as bool)
-              .toList() ??
-          const [],
+      frequencyInterval: json['frequency_interval'] as int? ?? 1,
       contacts: (json['contacts'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) {
-  final val = <String, dynamic>{
-    'owner_id': instance.ownerId,
-    'name': instance.name,
-    'description': instance.description,
-    'avatar': instance.avatar,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('frequency_interval',
-      const DateTimeJsonConverter().toJson(instance.frequencyInterval));
-  val['frequency'] = instance.frequency;
-  val['contacts'] = instance.contacts;
-  return val;
-}
+Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) =>
+    <String, dynamic>{
+      'owner_id': instance.ownerId,
+      'name': instance.name,
+      'description': instance.description,
+      'avatar': instance.avatar,
+      'frequency_interval': instance.frequencyInterval,
+      'contacts': instance.contacts,
+    };

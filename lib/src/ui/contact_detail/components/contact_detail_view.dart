@@ -8,10 +8,8 @@ import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/contact_detail/components/contact_detail_buttons.dart';
-import 'package:keepup/src/ui/contact_detail/components/contact_detail_every.dart';
 import 'package:keepup/src/ui/contact_detail/components/contact_detail_form.dart';
 import 'package:keepup/src/ui/contact_detail/components/contact_detail_header.dart';
-import 'package:keepup/src/ui/contact_detail/components/contact_detail_interval.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_bloc.dart';
 
 class ContactDetailView extends StatelessWidget {
@@ -40,10 +38,6 @@ class ContactDetailView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ContactDetailHeader(),
-                  SizedBox(height: 18),
-                  ContactDetailInterval(),
-                  SizedBox(height: 16),
-                  ContactDetailEvery(),
                   SizedBox(height: 34),
                   ContactDetailForm(),
                   SizedBox(height: 36),

@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/core/model/choice_every_day_data.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
+import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
@@ -23,7 +23,6 @@ import 'package:keepup/src/use_cases/create_contact_use_case.dart';
 import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/use_cases/update_contact_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
-import 'package:keepup/src/utils/app_constants.dart';
 
 part 'contact_detail_bloc.freezed.dart';
 part 'contact_detail_event.dart';
@@ -58,8 +57,10 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   ) : super(const ContactDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnIntervalChanged>((event, emit) => emit(state.copyWith(interval: event.interval)));
-    on<_OnFrequencyChanged>((event, emit) => emit(state.copyWith(everyDays: event.frequency)));
+    on<_OnSelectedGroup>((event, emit) => emit(state.copyWith(
+          group: event.group,
+          request: state.request.copyWith(groupIds: [event.group.id]),
+        )));
     on<_OnInputChanged>(_onInputChanged);
     on<_OnSavePressed>(_onSavePressed);
     on<_OnCancelPressed>((event, emit) => emit(state.copyWith(
@@ -109,6 +110,13 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   }
 
   FutureOr<void> _onSavePressed(_OnSavePressed event, Emitter<ContactDetailState> emit) async {
+    final Group? group = state.group;
+    if (group == null) {
+      emit(state.copyWith(
+        pageCommand: PageCommandMessage.showError(LocaleKey.pleaseChooseAGroup.tr),
+      ));
+      return;
+    }
     emit(state.copyWith(isLoading: true));
     final File? avatarFile = state.avatar;
     String avatarUrl = state.request.avatar;
@@ -130,8 +138,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     final DateTime now = DateUtils.dateOnly(DateTime.now());
     final request = state.request.copyWith(
       avatar: avatarUrl,
-      expiration: now.add(Duration(days: state.interval.toInt())),
-      frequency: state.everyDays.map((e) => e.isActive).toList(),
+      expiration: now.add(Duration(days: group.frequencyInterval)),
     );
     if (state.contactType == ContactType.newContact) {
       final result = await _createContactUseCase.run(request);

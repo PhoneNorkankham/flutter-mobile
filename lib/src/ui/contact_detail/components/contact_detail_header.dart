@@ -21,28 +21,28 @@ class ContactDetailHeader extends StatelessWidget {
       builder: (context, state) {
         return Container(
           color: Theme.of(context).scaffoldBackgroundColor,
-          constraints: const BoxConstraints(minHeight: 216),
+          constraints: const BoxConstraints(minHeight: 188),
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if (state.contactType == ContactType.contactDetail) ...[
-                const SizedBox(height: 26),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.av_timer,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                    Expanded(
-                      child: Text(
-                        '0 Days left',
-                        style: context.appTextTheme.medium14.copyWith(
-                          color: Theme.of(context).colorScheme.onPrimary,
-                        ),
+              const SizedBox(height: 26),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Icon(
+                    Icons.av_timer,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
+                  Expanded(
+                    child: Text(
+                      '0 Days left',
+                      style: context.appTextTheme.medium14.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
                       ),
                     ),
+                  ),
+                  if (state.contactType == ContactType.contactDetail)
                     GestureDetector(
                       onTap: () => _showDeleteConfirmDialog(context, bloc),
                       child: Text(
@@ -52,9 +52,8 @@ class ContactDetailHeader extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ],
+                ],
+              ),
               const SizedBox(height: 20),
               GestureDetector(
                 onTap: () => AppDialogs(

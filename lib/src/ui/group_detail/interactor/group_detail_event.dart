@@ -11,9 +11,6 @@ class GroupDetailEvent with _$GroupDetailEvent {
   const factory GroupDetailEvent.onFrequencyIntervalChanged(double interval) =
       _OnFrequencyIntervalChanged;
 
-  const factory GroupDetailEvent.onFrequencyChanged(List<ChoiceEveryDayData> frequency) =
-      _OnFrequencyChanged;
-
   const factory GroupDetailEvent.onNameChanged(String value) = _OnNameChanged;
 
   const factory GroupDetailEvent.onSavePressed() = _OnSavePressed;

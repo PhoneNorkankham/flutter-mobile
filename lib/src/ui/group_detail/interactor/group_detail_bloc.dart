@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/core/model/choice_every_day_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/enums/group_type.dart';
@@ -23,7 +22,6 @@ import 'package:keepup/src/use_cases/create_group_use_case.dart';
 import 'package:keepup/src/use_cases/delete_group_use_case.dart';
 import 'package:keepup/src/use_cases/update_group_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
-import 'package:keepup/src/utils/app_constants.dart';
 
 part 'group_detail_bloc.freezed.dart';
 part 'group_detail_event.dart';
@@ -59,7 +57,6 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnFrequencyIntervalChanged>(
         (event, emit) => emit(state.copyWith(interval: event.interval)));
-    on<_OnFrequencyChanged>((event, emit) => emit(state.copyWith(everyDays: event.frequency)));
     on<_OnNameChanged>((event, emit) => emit(state.copyWith.request(name: event.value)));
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
     on<_OnSavePressed>(_onSavePressed);
@@ -110,12 +107,10 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
         return;
       }
     }
-    final DateTime now = DateUtils.dateOnly(DateTime.now());
     final GroupRequest request = state.request.copyWith(
       avatar: avatarUrl,
       contacts: state.contacts.map((e) => e.id).toList(),
-      frequencyInterval: now.add(Duration(days: state.interval.toInt())),
-      frequency: state.everyDays.map((e) => e.isActive).toList(),
+      frequencyInterval: state.interval.toInt(),
     );
     if (state.groupType == GroupType.newGroup) {
       final result = await _createGroupUseCase.run(request);

@@ -16,10 +16,6 @@ _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
       phoneNo: json['phone_no'] as String? ?? '',
       dateOfBirth:
           const DateTimeJsonConverter().fromJson(json['date_of_birth']),
-      frequency: (json['frequency'] as List<dynamic>?)
-              ?.map((e) => e as bool)
-              .toList() ??
-          const [],
       expiration: const DateTimeJsonConverter().fromJson(json['expiration']),
       dateCreated: const DateTimeJsonConverter().fromJson(json['date_created']),
     );
@@ -41,7 +37,6 @@ Map<String, dynamic> _$$_ContactRequestToJson(_$_ContactRequest instance) {
 
   writeNotNull('date_of_birth',
       const DateTimeJsonConverter().toJson(instance.dateOfBirth));
-  val['frequency'] = instance.frequency;
   writeNotNull(
       'expiration', const DateTimeJsonConverter().toJson(instance.expiration));
   writeNotNull('date_created',

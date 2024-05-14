@@ -15,7 +15,7 @@ class NewGroupInterval extends StatelessWidget {
         return SliderInterval(
           interval: state.interval,
           textColor: Theme.of(context).colorScheme.onPrimary,
-          onChanged: (value) => bloc.add(NewChatEvent.onIntervalChanged(value)),
+          onChanged: (value) => bloc.add(NewChatEvent.onFrequencyIntervalChanged(value)),
         );
       },
     );

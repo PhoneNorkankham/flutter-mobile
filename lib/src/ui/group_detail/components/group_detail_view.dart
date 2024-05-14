@@ -8,7 +8,6 @@ import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_buttons.dart';
-import 'package:keepup/src/ui/group_detail/components/group_detail_every.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_header.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_interval.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_members.dart';
@@ -42,8 +41,6 @@ class GroupDetailView extends StatelessWidget {
                   const GroupDetailHeader(),
                   const SizedBox(height: 12),
                   const GroupDetailInterval(),
-                  const SizedBox(height: 12),
-                  const GroupDetailEvery(),
                   const SizedBox(height: 14),
                   const GroupDetailMembers(),
                   const SizedBox(height: 46),

@@ -6,10 +6,7 @@ class ContactDetailEvent with _$ContactDetailEvent {
 
   const factory ContactDetailEvent.clearPageCommand() = _ClearPageCommand;
 
-  const factory ContactDetailEvent.onIntervalChanged(double interval) = _OnIntervalChanged;
-
-  const factory ContactDetailEvent.onFrequencyChanged(List<ChoiceEveryDayData> frequency) =
-      _OnFrequencyChanged;
+  const factory ContactDetailEvent.onSelectedGroup(Group group) = _OnSelectedGroup;
 
   const factory ContactDetailEvent.onInputChanged(
     ContactDetailInputType inputType,

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/core/model/choice_every_day_data.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
@@ -9,7 +7,6 @@ import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/group_detail/interactor/group_detail_bloc.dart';
-import 'package:keepup/src/utils/app_constants.dart';
 
 class GetGroupStateMapper implements BaseStateMapper<GroupDetailState, DataResult<Group>> {
   @override
@@ -25,26 +22,10 @@ class GetGroupStateMapper implements BaseStateMapper<GroupDetailState, DataResul
     } else {
       final Group group = result.valueOrCrash;
       final GroupRequest request = GroupRequest.fromJson(group.toJson());
-
-      final DateTime now = DateUtils.dateOnly(DateTime.now());
-      final DateTime frequencyInterval = DateUtils.dateOnly(request.frequencyInterval ?? now);
-      final int days = frequencyInterval.difference(now).inDays;
-
-      final List<ChoiceEveryDayData> everyDays = [];
-      if (request.frequency.isNotEmpty) {
-        everyDays.addAll(AppConstants.defaultEveryDays.map((e) {
-          final index = AppConstants.defaultEveryDays.indexOf(e);
-          return e.copyWith(isActive: request.frequency.elementAt(index));
-        }));
-      } else {
-        everyDays.addAll(AppConstants.defaultEveryDays);
-      }
-
       return state.copyWith(
         pageState: PageState.success,
         request: request,
-        interval: days.toDouble(),
-        everyDays: everyDays,
+        interval: request.frequencyInterval.toDouble(),
         groupId: group.id,
         groupType: GroupType.groupDetail,
       );

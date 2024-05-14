@@ -110,6 +110,7 @@ class LocaleKey {
   // Contact Detail
   static const String newContact = "newContact";
   static const String contactDetail = "contactDetail";
+  static const String group = "group";
   static const String name = "name";
   static const String email = "email";
   static const String phoneNo = "phoneNo";
@@ -119,6 +120,7 @@ class LocaleKey {
   static const String contactDeletedSuccessfully = "contactDeletedSuccessfully";
   static const String deleteContact = "deleteContact";
   static const String deleteContactDescription = "deleteContactDescription";
+  static const String pleaseChooseAGroup = "pleaseChooseAGroup";
 
   // Groups
   static const String addGroup = "addGroup";

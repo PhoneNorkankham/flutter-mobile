@@ -1,6 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:keepup/src/core/converters/date_time_converter.dart';
-import 'package:keepup/src/core/converters/list_string_converter.dart';
 import 'package:keepup/src/utils/app_validation.dart';
 
 part 'group_request.freezed.dart';
@@ -17,8 +15,7 @@ class GroupRequest with _$GroupRequest {
     @Default('') String name,
     @Default('') String description,
     @Default('') String avatar,
-    @DateTimeJsonConverter() @JsonKey(name: 'frequency_interval') DateTime? frequencyInterval,
-    @ListStringJsonConverter() @Default([]) List<bool> frequency,
+    @Default(1) @JsonKey(name: 'frequency_interval') int frequencyInterval,
     @Default([]) List<String> contacts,
   }) = _GroupRequest;
 
