@@ -24,6 +24,8 @@ mixin _$ContactRequest {
   String get contactId => throw _privateConstructorUsedError;
   @JsonKey(name: 'owner_id')
   String get ownerId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'group_id')
+  String get groupId => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -39,8 +41,6 @@ mixin _$ContactRequest {
   DateTime? get dateCreated => throw _privateConstructorUsedError;
   @JsonKey(includeFromJson: false, includeToJson: false)
   bool get isExpanded => throw _privateConstructorUsedError;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  List<String> get groupIds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -57,6 +57,7 @@ abstract class $ContactRequestCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id', includeToJson: false) String contactId,
       @JsonKey(name: 'owner_id') String ownerId,
+      @JsonKey(name: 'group_id') String groupId,
       String avatar,
       String name,
       String email,
@@ -68,9 +69,7 @@ abstract class $ContactRequestCopyWith<$Res> {
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
       DateTime? dateCreated,
-      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
-      @JsonKey(includeFromJson: false, includeToJson: false)
-      List<String> groupIds});
+      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded});
 }
 
 /// @nodoc
@@ -88,6 +87,7 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
   $Res call({
     Object? contactId = null,
     Object? ownerId = null,
+    Object? groupId = null,
     Object? avatar = null,
     Object? name = null,
     Object? email = null,
@@ -96,7 +96,6 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
     Object? expiration = freezed,
     Object? dateCreated = freezed,
     Object? isExpanded = null,
-    Object? groupIds = null,
   }) {
     return _then(_value.copyWith(
       contactId: null == contactId
@@ -106,6 +105,10 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as String,
       avatar: null == avatar
           ? _value.avatar
@@ -139,10 +142,6 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
           ? _value.isExpanded
           : isExpanded // ignore: cast_nullable_to_non_nullable
               as bool,
-      groupIds: null == groupIds
-          ? _value.groupIds
-          : groupIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ) as $Val);
   }
 }
@@ -158,6 +157,7 @@ abstract class _$$_ContactRequestCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'id', includeToJson: false) String contactId,
       @JsonKey(name: 'owner_id') String ownerId,
+      @JsonKey(name: 'group_id') String groupId,
       String avatar,
       String name,
       String email,
@@ -169,9 +169,7 @@ abstract class _$$_ContactRequestCopyWith<$Res>
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
       DateTime? dateCreated,
-      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
-      @JsonKey(includeFromJson: false, includeToJson: false)
-      List<String> groupIds});
+      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded});
 }
 
 /// @nodoc
@@ -187,6 +185,7 @@ class __$$_ContactRequestCopyWithImpl<$Res>
   $Res call({
     Object? contactId = null,
     Object? ownerId = null,
+    Object? groupId = null,
     Object? avatar = null,
     Object? name = null,
     Object? email = null,
@@ -195,7 +194,6 @@ class __$$_ContactRequestCopyWithImpl<$Res>
     Object? expiration = freezed,
     Object? dateCreated = freezed,
     Object? isExpanded = null,
-    Object? groupIds = null,
   }) {
     return _then(_$_ContactRequest(
       contactId: null == contactId
@@ -205,6 +203,10 @@ class __$$_ContactRequestCopyWithImpl<$Res>
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as String,
       avatar: null == avatar
           ? _value.avatar
@@ -238,10 +240,6 @@ class __$$_ContactRequestCopyWithImpl<$Res>
           ? _value.isExpanded
           : isExpanded // ignore: cast_nullable_to_non_nullable
               as bool,
-      groupIds: null == groupIds
-          ? _value._groupIds
-          : groupIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ));
   }
 }
@@ -253,6 +251,7 @@ class _$_ContactRequest extends _ContactRequest {
   const _$_ContactRequest(
       {@JsonKey(name: 'id', includeToJson: false) this.contactId = '',
       @JsonKey(name: 'owner_id') this.ownerId = '',
+      @JsonKey(name: 'group_id') this.groupId = '',
       this.avatar = '',
       this.name = '',
       this.email = '',
@@ -261,11 +260,8 @@ class _$_ContactRequest extends _ContactRequest {
       @DateTimeJsonConverter() this.expiration,
       @DateTimeJsonConverter() @JsonKey(name: 'date_created') this.dateCreated,
       @JsonKey(includeFromJson: false, includeToJson: false)
-      this.isExpanded = false,
-      @JsonKey(includeFromJson: false, includeToJson: false)
-      final List<String> groupIds = const []})
-      : _groupIds = groupIds,
-        super._();
+      this.isExpanded = false})
+      : super._();
 
   factory _$_ContactRequest.fromJson(Map<String, dynamic> json) =>
       _$$_ContactRequestFromJson(json);
@@ -276,6 +272,9 @@ class _$_ContactRequest extends _ContactRequest {
   @override
   @JsonKey(name: 'owner_id')
   final String ownerId;
+  @override
+  @JsonKey(name: 'group_id')
+  final String groupId;
   @override
   @JsonKey()
   final String avatar;
@@ -302,18 +301,10 @@ class _$_ContactRequest extends _ContactRequest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   final bool isExpanded;
-  final List<String> _groupIds;
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  List<String> get groupIds {
-    if (_groupIds is EqualUnmodifiableListView) return _groupIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_groupIds);
-  }
 
   @override
   String toString() {
-    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded, groupIds: $groupIds)';
+    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, groupId: $groupId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded)';
   }
 
   @override
@@ -324,6 +315,7 @@ class _$_ContactRequest extends _ContactRequest {
             (identical(other.contactId, contactId) ||
                 other.contactId == contactId) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
@@ -335,8 +327,7 @@ class _$_ContactRequest extends _ContactRequest {
             (identical(other.dateCreated, dateCreated) ||
                 other.dateCreated == dateCreated) &&
             (identical(other.isExpanded, isExpanded) ||
-                other.isExpanded == isExpanded) &&
-            const DeepCollectionEquality().equals(other._groupIds, _groupIds));
+                other.isExpanded == isExpanded));
   }
 
   @JsonKey(ignore: true)
@@ -345,6 +336,7 @@ class _$_ContactRequest extends _ContactRequest {
       runtimeType,
       contactId,
       ownerId,
+      groupId,
       avatar,
       name,
       email,
@@ -352,8 +344,7 @@ class _$_ContactRequest extends _ContactRequest {
       dateOfBirth,
       expiration,
       dateCreated,
-      isExpanded,
-      const DeepCollectionEquality().hash(_groupIds));
+      isExpanded);
 
   @JsonKey(ignore: true)
   @override
@@ -373,6 +364,7 @@ abstract class _ContactRequest extends ContactRequest {
   const factory _ContactRequest(
       {@JsonKey(name: 'id', includeToJson: false) final String contactId,
       @JsonKey(name: 'owner_id') final String ownerId,
+      @JsonKey(name: 'group_id') final String groupId,
       final String avatar,
       final String name,
       final String email,
@@ -385,9 +377,7 @@ abstract class _ContactRequest extends ContactRequest {
       @JsonKey(name: 'date_created')
       final DateTime? dateCreated,
       @JsonKey(includeFromJson: false, includeToJson: false)
-      final bool isExpanded,
-      @JsonKey(includeFromJson: false, includeToJson: false)
-      final List<String> groupIds}) = _$_ContactRequest;
+      final bool isExpanded}) = _$_ContactRequest;
   const _ContactRequest._() : super._();
 
   factory _ContactRequest.fromJson(Map<String, dynamic> json) =
@@ -399,6 +389,9 @@ abstract class _ContactRequest extends ContactRequest {
   @override
   @JsonKey(name: 'owner_id')
   String get ownerId;
+  @override
+  @JsonKey(name: 'group_id')
+  String get groupId;
   @override
   String get avatar;
   @override
@@ -422,9 +415,6 @@ abstract class _ContactRequest extends ContactRequest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   bool get isExpanded;
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  List<String> get groupIds;
   @override
   @JsonKey(ignore: true)
   _$$_ContactRequestCopyWith<_$_ContactRequest> get copyWith =>

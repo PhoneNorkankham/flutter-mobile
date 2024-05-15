@@ -31,7 +31,10 @@ class ContactPage extends StatelessWidget {
                     .navigateToPage(value.page, args: value.argument)
                     .then((value) {
                   if (value.status &&
-                      value.resultFromPage == AppPages.contactDetail &&
+                      [
+                        AppPages.contactDetail,
+                        AppPages.addContacts,
+                      ].contains(value.resultFromPage) &&
                       value.data is String) {
                     showSuccessToast(value.data.toString());
                   }

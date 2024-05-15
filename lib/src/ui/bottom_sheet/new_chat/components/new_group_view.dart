@@ -32,7 +32,7 @@ class NewGroupView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       NewGroupHeader(),
-                      SizedBox(height: 12),
+                      SizedBox(height: 26),
                       NewGroupInterval(),
                       SizedBox(height: 14),
                       NewGroupSelected(),

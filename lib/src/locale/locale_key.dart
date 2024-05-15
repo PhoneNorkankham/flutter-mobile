@@ -152,4 +152,15 @@ class LocaleKey {
   // Add Contacts To KeepUp
   static const String addContactsToKeepUp = "addContactsToKeepUp";
   static const String done = "done";
+
+  // Frequency Interval
+  static const String frequency = "frequency";
+  static const String everyDay = "everyDay";
+  static const String everyWeek = "everyWeek";
+  static const String everyTwoWeeks = "everyTwoWeeks";
+  static const String everyMonth = "everyMonth";
+  static const String everyThreeMonths = "everyThreeMonths";
+  static const String everySixMonths = "everySixMonths";
+  static const String everyYear = "everyYear";
+  static const String none = "none";
 }

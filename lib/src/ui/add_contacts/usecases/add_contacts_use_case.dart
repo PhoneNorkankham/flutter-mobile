@@ -18,9 +18,9 @@ class AddContactsUseCase extends InputUseCase<VoidResult, List<ContactRequest>> 
     for (ContactRequest contactRequest in oldContactRequests) {
       resource = await _supabaseRepository.updateContact(contactRequest);
       if (resource.isSuccess) {
-        resource = await _supabaseRepository.updateContactInGroups(
+        resource = await _supabaseRepository.updateContactInGroup(
           contactId: contactRequest.contactId,
-          groupIds: contactRequest.groupIds,
+          groupId: contactRequest.groupId,
         );
         if (resource.isError) {
           return Result.error(resource.toPageError());
@@ -31,15 +31,15 @@ class AddContactsUseCase extends InputUseCase<VoidResult, List<ContactRequest>> 
     }
 
     final List<ContactRequest> newContactRequests =
-        input.where((element) => element.contactId.isEmpty && element.groupIds.isNotEmpty).toList();
+        input.where((element) => element.contactId.isEmpty && element.groupId.isNotEmpty).toList();
     for (ContactRequest contactRequest in newContactRequests) {
       resource = await _supabaseRepository.insertContact(contactRequest);
       if (resource.isSuccess) {
         final Contact? contact = resource.data;
         if (contact != null) {
-          resource = await _supabaseRepository.updateContactInGroups(
+          resource = await _supabaseRepository.updateContactInGroup(
             contactId: contact.id,
-            groupIds: contactRequest.groupIds,
+            groupId: contactRequest.groupId,
           );
           if (resource.isError) {
             return Result.error(resource.toPageError());

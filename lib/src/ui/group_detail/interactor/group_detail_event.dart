@@ -8,8 +8,9 @@ class GroupDetailEvent with _$GroupDetailEvent {
 
   const factory GroupDetailEvent.onChangedKeyword(String keyword) = _OnChangedKeyword;
 
-  const factory GroupDetailEvent.onFrequencyIntervalChanged(double interval) =
-      _OnFrequencyIntervalChanged;
+  const factory GroupDetailEvent.onFrequencyIntervalChanged(
+    FrequencyIntervalType frequencyIntervalType,
+  ) = _OnFrequencyIntervalChanged;
 
   const factory GroupDetailEvent.onNameChanged(String value) = _OnNameChanged;
 

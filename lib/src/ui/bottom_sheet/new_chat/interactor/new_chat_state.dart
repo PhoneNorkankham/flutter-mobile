@@ -13,7 +13,6 @@ class NewChatState with _$NewChatState {
     @Default([]) List<Contact> contacts,
     @Default([]) List<Contact> selectedContacts,
     @Default([]) List<Contact> filterContacts,
-    @Default(0) double interval,
     Group? group,
     @Default(ContactRequest()) ContactRequest contactRequest,
     @Default(GroupRequest()) GroupRequest groupRequest,

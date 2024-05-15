@@ -24,6 +24,7 @@ class GetContactStateMapper implements BaseStateMapper<ContactDetailState, DataR
       return state.copyWith(
         isLoading: false,
         request: request,
+        selectedGroup: state.groups.where((element) => element.id == request.groupId).firstOrNull,
         contactId: contact.id,
         contactType: ContactType.contactDetail,
       );

@@ -27,7 +27,8 @@ mixin _$NewChatEvent {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -44,7 +45,8 @@ mixin _$NewChatEvent {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) =>
@@ -60,7 +62,8 @@ mixin _$NewChatEvent {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -184,7 +187,8 @@ class _$_Initial implements _Initial {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -204,7 +208,8 @@ class _$_Initial implements _Initial {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -223,7 +228,8 @@ class _$_Initial implements _Initial {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -350,7 +356,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -370,7 +377,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -389,7 +397,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -542,7 +551,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -562,7 +572,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -581,7 +592,8 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -740,7 +752,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -760,7 +773,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -779,7 +793,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -939,7 +954,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -959,7 +975,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -978,7 +995,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -1138,7 +1156,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1158,7 +1177,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -1177,7 +1197,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -1336,7 +1357,8 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1356,7 +1378,8 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -1375,7 +1398,8 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -1507,7 +1531,8 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1527,7 +1552,8 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -1546,7 +1572,8 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -1673,7 +1700,8 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1693,7 +1721,8 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -1712,7 +1741,8 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -1799,7 +1829,7 @@ abstract class _$$_OnFrequencyIntervalChangedCopyWith<$Res> {
           $Res Function(_$_OnFrequencyIntervalChanged) then) =
       __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({double interval});
+  $Res call({FrequencyIntervalType frequencyIntervalType});
 }
 
 /// @nodoc
@@ -1814,13 +1844,13 @@ class __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? interval = null,
+    Object? frequencyIntervalType = null,
   }) {
     return _then(_$_OnFrequencyIntervalChanged(
-      null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as double,
+      null == frequencyIntervalType
+          ? _value.frequencyIntervalType
+          : frequencyIntervalType // ignore: cast_nullable_to_non_nullable
+              as FrequencyIntervalType,
     ));
   }
 }
@@ -1828,14 +1858,14 @@ class __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
-  const _$_OnFrequencyIntervalChanged(this.interval);
+  const _$_OnFrequencyIntervalChanged(this.frequencyIntervalType);
 
   @override
-  final double interval;
+  final FrequencyIntervalType frequencyIntervalType;
 
   @override
   String toString() {
-    return 'NewChatEvent.onFrequencyIntervalChanged(interval: $interval)';
+    return 'NewChatEvent.onFrequencyIntervalChanged(frequencyIntervalType: $frequencyIntervalType)';
   }
 
   @override
@@ -1843,12 +1873,12 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnFrequencyIntervalChanged &&
-            (identical(other.interval, interval) ||
-                other.interval == interval));
+            (identical(other.frequencyIntervalType, frequencyIntervalType) ||
+                other.frequencyIntervalType == frequencyIntervalType));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, interval);
+  int get hashCode => Object.hash(runtimeType, frequencyIntervalType);
 
   @JsonKey(ignore: true)
   @override
@@ -1869,12 +1899,13 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
   }) {
-    return onFrequencyIntervalChanged(interval);
+    return onFrequencyIntervalChanged(frequencyIntervalType);
   }
 
   @override
@@ -1889,11 +1920,12 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
-    return onFrequencyIntervalChanged?.call(interval);
+    return onFrequencyIntervalChanged?.call(frequencyIntervalType);
   }
 
   @override
@@ -1908,13 +1940,14 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
-      return onFrequencyIntervalChanged(interval);
+      return onFrequencyIntervalChanged(frequencyIntervalType);
     }
     return orElse();
   }
@@ -1985,10 +2018,11 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
 }
 
 abstract class _OnFrequencyIntervalChanged implements NewChatEvent {
-  const factory _OnFrequencyIntervalChanged(final double interval) =
+  const factory _OnFrequencyIntervalChanged(
+          final FrequencyIntervalType frequencyIntervalType) =
       _$_OnFrequencyIntervalChanged;
 
-  double get interval;
+  FrequencyIntervalType get frequencyIntervalType;
   @JsonKey(ignore: true)
   _$$_OnFrequencyIntervalChangedCopyWith<_$_OnFrequencyIntervalChanged>
       get copyWith => throw _privateConstructorUsedError;
@@ -2076,7 +2110,8 @@ class _$_OnInputChanged implements _OnInputChanged {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -2096,7 +2131,8 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -2115,7 +2151,8 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -2275,7 +2312,8 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
     required TResult Function() onCreateNewContact,
-    required TResult Function(double interval) onFrequencyIntervalChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
     required TResult Function(NewChatInputType inputType, String value)
         onInputChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -2295,7 +2333,8 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
     TResult? Function()? onCreateNewContact,
-    TResult? Function(double interval)? onFrequencyIntervalChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult? Function(File file)? onChangedAvatar,
   }) {
@@ -2314,7 +2353,8 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
     TResult Function()? onCreateNewContact,
-    TResult Function(double interval)? onFrequencyIntervalChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
     TResult Function(NewChatInputType inputType, String value)? onInputChanged,
     TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
@@ -2409,7 +2449,6 @@ mixin _$NewChatState {
   List<Contact> get contacts => throw _privateConstructorUsedError;
   List<Contact> get selectedContacts => throw _privateConstructorUsedError;
   List<Contact> get filterContacts => throw _privateConstructorUsedError;
-  double get interval => throw _privateConstructorUsedError;
   Group? get group => throw _privateConstructorUsedError;
   ContactRequest get contactRequest => throw _privateConstructorUsedError;
   GroupRequest get groupRequest => throw _privateConstructorUsedError;
@@ -2435,7 +2474,6 @@ abstract class $NewChatStateCopyWith<$Res> {
       List<Contact> contacts,
       List<Contact> selectedContacts,
       List<Contact> filterContacts,
-      double interval,
       Group? group,
       ContactRequest contactRequest,
       GroupRequest groupRequest,
@@ -2467,7 +2505,6 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? filterContacts = null,
-    Object? interval = null,
     Object? group = freezed,
     Object? contactRequest = null,
     Object? groupRequest = null,
@@ -2506,10 +2543,6 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
           ? _value.filterContacts
           : filterContacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
-      interval: null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as double,
       group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
@@ -2575,7 +2608,6 @@ abstract class _$$_NewChatStateCopyWith<$Res>
       List<Contact> contacts,
       List<Contact> selectedContacts,
       List<Contact> filterContacts,
-      double interval,
       Group? group,
       ContactRequest contactRequest,
       GroupRequest groupRequest,
@@ -2608,7 +2640,6 @@ class __$$_NewChatStateCopyWithImpl<$Res>
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? filterContacts = null,
-    Object? interval = null,
     Object? group = freezed,
     Object? contactRequest = null,
     Object? groupRequest = null,
@@ -2647,10 +2678,6 @@ class __$$_NewChatStateCopyWithImpl<$Res>
           ? _value._filterContacts
           : filterContacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
-      interval: null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as double,
       group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
@@ -2683,7 +2710,6 @@ class _$_NewChatState extends _NewChatState {
       final List<Contact> contacts = const [],
       final List<Contact> selectedContacts = const [],
       final List<Contact> filterContacts = const [],
-      this.interval = 0,
       this.group,
       this.contactRequest = const ContactRequest(),
       this.groupRequest = const GroupRequest(),
@@ -2736,9 +2762,6 @@ class _$_NewChatState extends _NewChatState {
   }
 
   @override
-  @JsonKey()
-  final double interval;
-  @override
   final Group? group;
   @override
   @JsonKey()
@@ -2751,7 +2774,7 @@ class _$_NewChatState extends _NewChatState {
 
   @override
   String toString() {
-    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, tabType: $tabType, keyword: $keyword, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts, interval: $interval, group: $group, contactRequest: $contactRequest, groupRequest: $groupRequest, avatar: $avatar)';
+    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, tabType: $tabType, keyword: $keyword, contacts: $contacts, selectedContacts: $selectedContacts, filterContacts: $filterContacts, group: $group, contactRequest: $contactRequest, groupRequest: $groupRequest, avatar: $avatar)';
   }
 
   @override
@@ -2772,8 +2795,6 @@ class _$_NewChatState extends _NewChatState {
                 .equals(other._selectedContacts, _selectedContacts) &&
             const DeepCollectionEquality()
                 .equals(other._filterContacts, _filterContacts) &&
-            (identical(other.interval, interval) ||
-                other.interval == interval) &&
             const DeepCollectionEquality().equals(other.group, group) &&
             (identical(other.contactRequest, contactRequest) ||
                 other.contactRequest == contactRequest) &&
@@ -2793,7 +2814,6 @@ class _$_NewChatState extends _NewChatState {
       const DeepCollectionEquality().hash(_contacts),
       const DeepCollectionEquality().hash(_selectedContacts),
       const DeepCollectionEquality().hash(_filterContacts),
-      interval,
       const DeepCollectionEquality().hash(group),
       contactRequest,
       groupRequest,
@@ -2816,7 +2836,6 @@ abstract class _NewChatState extends NewChatState {
       final List<Contact> contacts,
       final List<Contact> selectedContacts,
       final List<Contact> filterContacts,
-      final double interval,
       final Group? group,
       final ContactRequest contactRequest,
       final GroupRequest groupRequest,
@@ -2839,8 +2858,6 @@ abstract class _NewChatState extends NewChatState {
   List<Contact> get selectedContacts;
   @override
   List<Contact> get filterContacts;
-  @override
-  double get interval;
   @override
   Group? get group;
   @override

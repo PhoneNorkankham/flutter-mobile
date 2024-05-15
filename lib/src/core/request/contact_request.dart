@@ -13,6 +13,7 @@ class ContactRequest with _$ContactRequest {
   const factory ContactRequest({
     @Default('') @JsonKey(name: 'id', includeToJson: false) String contactId,
     @Default('') @JsonKey(name: 'owner_id') String ownerId,
+    @Default('') @JsonKey(name: 'group_id') String groupId,
     @Default('') String avatar,
     @Default('') String name,
     @Default('') String email,
@@ -21,7 +22,6 @@ class ContactRequest with _$ContactRequest {
     @DateTimeJsonConverter() DateTime? expiration,
     @DateTimeJsonConverter() @JsonKey(name: 'date_created') DateTime? dateCreated,
     @Default(false) @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
-    @Default([]) @JsonKey(includeFromJson: false, includeToJson: false) List<String> groupIds,
   }) = _ContactRequest;
 
   factory ContactRequest.fromJson(Map<String, dynamic> json) => _$ContactRequestFromJson(json);
@@ -31,5 +31,5 @@ class ContactRequest with _$ContactRequest {
   String? get emailError => AppValidations.validateEmail(email);
 
   bool get isValidate =>
-      groupIds.isNotEmpty && name.isNotEmpty && nameError == null && emailError == null;
+      groupId.isNotEmpty && name.isNotEmpty && nameError == null && emailError == null;
 }

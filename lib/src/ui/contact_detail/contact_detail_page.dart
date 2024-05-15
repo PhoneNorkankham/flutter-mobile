@@ -22,6 +22,7 @@ class ContactDetailPage extends StatelessWidget {
         Get.find(),
         Get.find(),
         Get.find(),
+        Get.find(),
       )..add(const ContactDetailEvent.initial()),
       child: BlocListener<ContactDetailBloc, ContactDetailState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,

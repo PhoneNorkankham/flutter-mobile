@@ -9,7 +9,8 @@ class ContactDetailState with _$ContactDetailState {
     @Default(ContactType.newContact) ContactType contactType,
     @Default(false) bool isLoading,
     @Default('') String contactId,
-    Group? group,
+    @Default([]) List<Group> groups,
+    Group? selectedGroup,
     @Default(ContactRequest()) ContactRequest request,
     File? avatar,
   }) = _ContactDetailState;

@@ -10,6 +10,7 @@ _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
     _$_ContactRequest(
       contactId: json['id'] as String? ?? '',
       ownerId: json['owner_id'] as String? ?? '',
+      groupId: json['group_id'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
@@ -23,6 +24,7 @@ _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_ContactRequestToJson(_$_ContactRequest instance) {
   final val = <String, dynamic>{
     'owner_id': instance.ownerId,
+    'group_id': instance.groupId,
     'avatar': instance.avatar,
     'name': instance.name,
     'email': instance.email,

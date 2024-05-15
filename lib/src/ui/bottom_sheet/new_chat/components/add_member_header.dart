@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -17,6 +18,10 @@ class AddMemberHeader extends StatelessWidget {
           previous.contacts != current.contacts ||
           previous.selectedContacts != current.selectedContacts,
       builder: (context, state) {
+        final List<Contact> contacts = [
+          // Get all contacts that don't belong to any other group
+          ...state.contacts.where((element) => element.groupId.isEmpty).toList()
+        ];
         return Stack(
           alignment: Alignment.center,
           children: [
@@ -33,7 +38,7 @@ class AddMemberHeader extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  '${state.selectedContacts.length}/${state.contacts.length}',
+                  '${state.selectedContacts.length}/${contacts.length}',
                   style: context.appTextTheme.medium10.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),

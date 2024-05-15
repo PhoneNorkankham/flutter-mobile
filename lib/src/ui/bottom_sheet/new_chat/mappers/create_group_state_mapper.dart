@@ -24,7 +24,6 @@ class CreateGroupStateMapper implements BaseStateMapper<NewChatState, DataResult
       return state.copyWith(
         isLoading: false,
         tabType: NewChatTabType.newChat,
-        interval: 0,
         selectedContacts: [],
         group: null,
         groupRequest: const GroupRequest(),

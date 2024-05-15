@@ -35,6 +35,7 @@ class GroupDetailMembers extends StatelessWidget {
               const Spacer(),
               GestureDetector(
                 onTap: () => AddMemberBottomSheet.show(
+                  groupId: bloc.state.groupId,
                   selectedContacts: bloc.state.contacts,
                 ).then((value) {
                   if (value is List<Contact>) {

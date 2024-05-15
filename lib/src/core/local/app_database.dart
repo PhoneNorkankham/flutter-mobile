@@ -7,6 +7,7 @@ import 'package:keepup/src/core/local/dao/contact_dao.dart';
 import 'package:keepup/src/core/local/dao/group_dao.dart';
 import 'package:keepup/src/core/local/table/contacts.dart';
 import 'package:keepup/src/core/local/table/groups.dart';
+import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -29,7 +30,7 @@ LazyDatabase _openConnection() {
     // put the database file, called db.sqlite here, into the documents folder
     // for your app.
     final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_20240514.sqlite'));
+    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_202405152313.sqlite'));
 
     // Also work around limitations on old Android versions
     if (Platform.isAndroid) {

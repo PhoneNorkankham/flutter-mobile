@@ -84,14 +84,14 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
-  Future<Resource<List<Group>>> updateContactInGroups({
+  Future<Resource<void>> updateContactInGroup({
     required String contactId,
-    required List<String> groupIds,
+    required String groupId,
   }) {
-    return NetworkBoundResource<List<Group>, List<Group>>(
+    return NetworkBoundResource<void, List<Group>>(
       createSerializedCall: () => _supabaseManager.updateContactInGroups(
         contactId: contactId,
-        groupIds: groupIds,
+        groupId: groupId,
       ),
       saveCallResult: (groups) async {
         for (Group group in groups) {

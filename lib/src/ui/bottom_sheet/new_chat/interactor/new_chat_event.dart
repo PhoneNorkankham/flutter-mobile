@@ -20,8 +20,9 @@ class NewChatEvent with _$NewChatEvent {
 
   const factory NewChatEvent.onCreateNewContact() = _OnCreateNewContact;
 
-  const factory NewChatEvent.onFrequencyIntervalChanged(double interval) =
-      _OnFrequencyIntervalChanged;
+  const factory NewChatEvent.onFrequencyIntervalChanged(
+    FrequencyIntervalType frequencyIntervalType,
+  ) = _OnFrequencyIntervalChanged;
 
   const factory NewChatEvent.onInputChanged(
     NewChatInputType inputType,

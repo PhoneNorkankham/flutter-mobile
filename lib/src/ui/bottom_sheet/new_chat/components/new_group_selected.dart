@@ -23,7 +23,7 @@ class NewGroupSelected extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
                   '${LocaleKey.members.tr}: ${state.selectedContacts.length} of ${state.contacts.length}'
                       .toUpperCase(),

@@ -28,7 +28,8 @@ mixin _$GroupRequest {
   String get description => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
   @JsonKey(name: 'frequency_interval')
-  int get frequencyInterval => throw _privateConstructorUsedError;
+  FrequencyIntervalType get frequencyInterval =>
+      throw _privateConstructorUsedError;
   List<String> get contacts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +50,8 @@ abstract class $GroupRequestCopyWith<$Res> {
       String name,
       String description,
       String avatar,
-      @JsonKey(name: 'frequency_interval') int frequencyInterval,
+      @JsonKey(name: 'frequency_interval')
+      FrequencyIntervalType frequencyInterval,
       List<String> contacts});
 }
 
@@ -98,7 +100,7 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
       frequencyInterval: null == frequencyInterval
           ? _value.frequencyInterval
           : frequencyInterval // ignore: cast_nullable_to_non_nullable
-              as int,
+              as FrequencyIntervalType,
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -121,7 +123,8 @@ abstract class _$$_GroupRequestCopyWith<$Res>
       String name,
       String description,
       String avatar,
-      @JsonKey(name: 'frequency_interval') int frequencyInterval,
+      @JsonKey(name: 'frequency_interval')
+      FrequencyIntervalType frequencyInterval,
       List<String> contacts});
 }
 
@@ -168,7 +171,7 @@ class __$$_GroupRequestCopyWithImpl<$Res>
       frequencyInterval: null == frequencyInterval
           ? _value.frequencyInterval
           : frequencyInterval // ignore: cast_nullable_to_non_nullable
-              as int,
+              as FrequencyIntervalType,
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -187,7 +190,8 @@ class _$_GroupRequest extends _GroupRequest {
       this.name = '',
       this.description = '',
       this.avatar = '',
-      @JsonKey(name: 'frequency_interval') this.frequencyInterval = 1,
+      @JsonKey(name: 'frequency_interval')
+      this.frequencyInterval = FrequencyIntervalType.none,
       final List<String> contacts = const []})
       : _contacts = contacts,
         super._();
@@ -212,7 +216,7 @@ class _$_GroupRequest extends _GroupRequest {
   final String avatar;
   @override
   @JsonKey(name: 'frequency_interval')
-  final int frequencyInterval;
+  final FrequencyIntervalType frequencyInterval;
   final List<String> _contacts;
   @override
   @JsonKey()
@@ -276,7 +280,8 @@ abstract class _GroupRequest extends GroupRequest {
       final String name,
       final String description,
       final String avatar,
-      @JsonKey(name: 'frequency_interval') final int frequencyInterval,
+      @JsonKey(name: 'frequency_interval')
+      final FrequencyIntervalType frequencyInterval,
       final List<String> contacts}) = _$_GroupRequest;
   const _GroupRequest._() : super._();
 
@@ -297,7 +302,7 @@ abstract class _GroupRequest extends GroupRequest {
   String get avatar;
   @override
   @JsonKey(name: 'frequency_interval')
-  int get frequencyInterval;
+  FrequencyIntervalType get frequencyInterval;
   @override
   List<String> get contacts;
   @override

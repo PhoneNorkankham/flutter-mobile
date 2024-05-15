@@ -28,14 +28,22 @@ class AddMemberBloc extends Bloc<AddMemberEvent, AddMemberState> {
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<AddMemberState> emit) {
+    emit(state.copyWith(groupId: event.groupId));
     return emit.forEach<List<Contact>>(
       _supabaseRepository.watchContacts(),
       onData: (contacts) {
-        final List<Contact> selectedContacts = contacts
+        // Get all contacts that don't belong to any other group
+        final List<Contact> newContacts = contacts
+            .where((element) => element.groupId.isEmpty || element.groupId == state.groupId)
+            .toList();
+
+        // Get all selected contacts
+        final List<Contact> selectedContacts = newContacts
             .where((element) => event.selectedContacts.map((e) => e.id).contains(element.id))
             .toList();
+
         return state.copyWith(
-          contacts: contacts,
+          contacts: newContacts,
           selectedContacts: selectedContacts,
           pageState: PageState.success,
           isLoading: false,

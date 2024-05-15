@@ -18,7 +18,9 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
   @override
   late final GeneratedColumn<String> ownerId = GeneratedColumn<String>(
       'owner_id', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(''));
   static const VerificationMeta _nameMeta = const VerificationMeta('name');
   @override
   late final GeneratedColumn<String> name = GeneratedColumn<String>(
@@ -44,11 +46,14 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
   static const VerificationMeta _frequencyIntervalMeta =
       const VerificationMeta('frequencyInterval');
   @override
-  late final GeneratedColumn<int> frequencyInterval = GeneratedColumn<int>(
-      'frequency_interval', aliasedName, false,
-      type: DriftSqlType.int,
-      requiredDuringInsert: false,
-      defaultValue: const Constant(0));
+  late final GeneratedColumnWithTypeConverter<FrequencyIntervalType, String>
+      frequencyInterval = GeneratedColumn<String>(
+              'frequency_interval', aliasedName, false,
+              type: DriftSqlType.string,
+              requiredDuringInsert: false,
+              defaultValue: Constant(FrequencyIntervalType.none.name))
+          .withConverter<FrequencyIntervalType>(
+              $GroupsTable.$converterfrequencyInterval);
   static const VerificationMeta _contactsMeta =
       const VerificationMeta('contacts');
   @override
@@ -79,8 +84,6 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
     if (data.containsKey('owner_id')) {
       context.handle(_ownerIdMeta,
           ownerId.isAcceptableOrUnknown(data['owner_id']!, _ownerIdMeta));
-    } else if (isInserting) {
-      context.missing(_ownerIdMeta);
     }
     if (data.containsKey('name')) {
       context.handle(
@@ -96,12 +99,7 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
       context.handle(_avatarMeta,
           avatar.isAcceptableOrUnknown(data['avatar']!, _avatarMeta));
     }
-    if (data.containsKey('frequency_interval')) {
-      context.handle(
-          _frequencyIntervalMeta,
-          frequencyInterval.isAcceptableOrUnknown(
-              data['frequency_interval']!, _frequencyIntervalMeta));
-    }
+    context.handle(_frequencyIntervalMeta, const VerificationResult.success());
     context.handle(_contactsMeta, const VerificationResult.success());
     return context;
   }
@@ -122,8 +120,9 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
           .read(DriftSqlType.string, data['${effectivePrefix}description'])!,
       avatar: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}avatar'])!,
-      frequencyInterval: attachedDatabase.typeMapping.read(
-          DriftSqlType.int, data['${effectivePrefix}frequency_interval'])!,
+      frequencyInterval: $GroupsTable.$converterfrequencyInterval.fromSql(
+          attachedDatabase.typeMapping.read(DriftSqlType.string,
+              data['${effectivePrefix}frequency_interval'])!),
       contacts: $GroupsTable.$convertercontacts.fromSql(attachedDatabase
           .typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}contacts'])!),
@@ -135,6 +134,10 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
     return $GroupsTable(attachedDatabase, alias);
   }
 
+  static JsonTypeConverter2<FrequencyIntervalType, String, String>
+      $converterfrequencyInterval =
+      const EnumNameConverter<FrequencyIntervalType>(
+          FrequencyIntervalType.values);
   static TypeConverter<List<dynamic>, String> $convertercontacts =
       const ListStringConverter();
 }
@@ -145,7 +148,7 @@ class Group extends DataClass implements Insertable<Group> {
   final String name;
   final String description;
   final String avatar;
-  final int frequencyInterval;
+  final FrequencyIntervalType frequencyInterval;
   final List<dynamic> contacts;
   const Group(
       {required this.id,
@@ -163,7 +166,10 @@ class Group extends DataClass implements Insertable<Group> {
     map['name'] = Variable<String>(name);
     map['description'] = Variable<String>(description);
     map['avatar'] = Variable<String>(avatar);
-    map['frequency_interval'] = Variable<int>(frequencyInterval);
+    {
+      map['frequency_interval'] = Variable<String>(
+          $GroupsTable.$converterfrequencyInterval.toSql(frequencyInterval));
+    }
     {
       map['contacts'] =
           Variable<String>($GroupsTable.$convertercontacts.toSql(contacts));
@@ -192,7 +198,8 @@ class Group extends DataClass implements Insertable<Group> {
       name: serializer.fromJson<String>(json['name']),
       description: serializer.fromJson<String>(json['description']),
       avatar: serializer.fromJson<String>(json['avatar']),
-      frequencyInterval: serializer.fromJson<int>(json['frequency_interval']),
+      frequencyInterval: $GroupsTable.$converterfrequencyInterval
+          .fromJson(serializer.fromJson<String>(json['frequency_interval'])),
       contacts: serializer.fromJson<List<dynamic>>(json['contacts']),
     );
   }
@@ -205,7 +212,8 @@ class Group extends DataClass implements Insertable<Group> {
       'name': serializer.toJson<String>(name),
       'description': serializer.toJson<String>(description),
       'avatar': serializer.toJson<String>(avatar),
-      'frequency_interval': serializer.toJson<int>(frequencyInterval),
+      'frequency_interval': serializer.toJson<String>(
+          $GroupsTable.$converterfrequencyInterval.toJson(frequencyInterval)),
       'contacts': serializer.toJson<List<dynamic>>(contacts),
     };
   }
@@ -216,7 +224,7 @@ class Group extends DataClass implements Insertable<Group> {
           String? name,
           String? description,
           String? avatar,
-          int? frequencyInterval,
+          FrequencyIntervalType? frequencyInterval,
           List<dynamic>? contacts}) =>
       Group(
         id: id ?? this.id,
@@ -263,7 +271,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
   final Value<String> name;
   final Value<String> description;
   final Value<String> avatar;
-  final Value<int> frequencyInterval;
+  final Value<FrequencyIntervalType> frequencyInterval;
   final Value<List<dynamic>> contacts;
   final Value<int> rowid;
   const GroupsCompanion({
@@ -278,22 +286,21 @@ class GroupsCompanion extends UpdateCompanion<Group> {
   });
   GroupsCompanion.insert({
     required String id,
-    required String ownerId,
+    this.ownerId = const Value.absent(),
     this.name = const Value.absent(),
     this.description = const Value.absent(),
     this.avatar = const Value.absent(),
     this.frequencyInterval = const Value.absent(),
     this.contacts = const Value.absent(),
     this.rowid = const Value.absent(),
-  })  : id = Value(id),
-        ownerId = Value(ownerId);
+  }) : id = Value(id);
   static Insertable<Group> custom({
     Expression<String>? id,
     Expression<String>? ownerId,
     Expression<String>? name,
     Expression<String>? description,
     Expression<String>? avatar,
-    Expression<int>? frequencyInterval,
+    Expression<String>? frequencyInterval,
     Expression<String>? contacts,
     Expression<int>? rowid,
   }) {
@@ -315,7 +322,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       Value<String>? name,
       Value<String>? description,
       Value<String>? avatar,
-      Value<int>? frequencyInterval,
+      Value<FrequencyIntervalType>? frequencyInterval,
       Value<List<dynamic>>? contacts,
       Value<int>? rowid}) {
     return GroupsCompanion(
@@ -349,7 +356,9 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       map['avatar'] = Variable<String>(avatar.value);
     }
     if (frequencyInterval.present) {
-      map['frequency_interval'] = Variable<int>(frequencyInterval.value);
+      map['frequency_interval'] = Variable<String>($GroupsTable
+          .$converterfrequencyInterval
+          .toSql(frequencyInterval.value));
     }
     if (contacts.present) {
       map['contacts'] = Variable<String>(
@@ -392,7 +401,17 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
   @override
   late final GeneratedColumn<String> ownerId = GeneratedColumn<String>(
       'owner_id', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(''));
+  static const VerificationMeta _groupIdMeta =
+      const VerificationMeta('groupId');
+  @override
+  late final GeneratedColumn<String> groupId = GeneratedColumn<String>(
+      'group_id', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(''));
   static const VerificationMeta _avatarMeta = const VerificationMeta('avatar');
   @override
   late final GeneratedColumn<String> avatar = GeneratedColumn<String>(
@@ -444,6 +463,7 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
   List<GeneratedColumn> get $columns => [
         id,
         ownerId,
+        groupId,
         avatar,
         name,
         email,
@@ -470,8 +490,10 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
     if (data.containsKey('owner_id')) {
       context.handle(_ownerIdMeta,
           ownerId.isAcceptableOrUnknown(data['owner_id']!, _ownerIdMeta));
-    } else if (isInserting) {
-      context.missing(_ownerIdMeta);
+    }
+    if (data.containsKey('group_id')) {
+      context.handle(_groupIdMeta,
+          groupId.isAcceptableOrUnknown(data['group_id']!, _groupIdMeta));
     }
     if (data.containsKey('avatar')) {
       context.handle(_avatarMeta,
@@ -520,6 +542,8 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
           .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
       ownerId: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}owner_id'])!,
+      groupId: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}group_id'])!,
       avatar: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}avatar'])!,
       name: attachedDatabase.typeMapping
@@ -546,6 +570,7 @@ class $ContactsTable extends Contacts with TableInfo<$ContactsTable, Contact> {
 class Contact extends DataClass implements Insertable<Contact> {
   final String id;
   final String ownerId;
+  final String groupId;
   final String avatar;
   final String name;
   final String email;
@@ -556,6 +581,7 @@ class Contact extends DataClass implements Insertable<Contact> {
   const Contact(
       {required this.id,
       required this.ownerId,
+      required this.groupId,
       required this.avatar,
       required this.name,
       required this.email,
@@ -568,6 +594,7 @@ class Contact extends DataClass implements Insertable<Contact> {
     final map = <String, Expression>{};
     map['id'] = Variable<String>(id);
     map['owner_id'] = Variable<String>(ownerId);
+    map['group_id'] = Variable<String>(groupId);
     map['avatar'] = Variable<String>(avatar);
     map['name'] = Variable<String>(name);
     map['email'] = Variable<String>(email);
@@ -588,6 +615,7 @@ class Contact extends DataClass implements Insertable<Contact> {
     return ContactsCompanion(
       id: Value(id),
       ownerId: Value(ownerId),
+      groupId: Value(groupId),
       avatar: Value(avatar),
       name: Value(name),
       email: Value(email),
@@ -610,6 +638,7 @@ class Contact extends DataClass implements Insertable<Contact> {
     return Contact(
       id: serializer.fromJson<String>(json['id']),
       ownerId: serializer.fromJson<String>(json['owner_id']),
+      groupId: serializer.fromJson<String>(json['group_id']),
       avatar: serializer.fromJson<String>(json['avatar']),
       name: serializer.fromJson<String>(json['name']),
       email: serializer.fromJson<String>(json['email']),
@@ -625,6 +654,7 @@ class Contact extends DataClass implements Insertable<Contact> {
     return <String, dynamic>{
       'id': serializer.toJson<String>(id),
       'owner_id': serializer.toJson<String>(ownerId),
+      'group_id': serializer.toJson<String>(groupId),
       'avatar': serializer.toJson<String>(avatar),
       'name': serializer.toJson<String>(name),
       'email': serializer.toJson<String>(email),
@@ -638,6 +668,7 @@ class Contact extends DataClass implements Insertable<Contact> {
   Contact copyWith(
           {String? id,
           String? ownerId,
+          String? groupId,
           String? avatar,
           String? name,
           String? email,
@@ -648,6 +679,7 @@ class Contact extends DataClass implements Insertable<Contact> {
       Contact(
         id: id ?? this.id,
         ownerId: ownerId ?? this.ownerId,
+        groupId: groupId ?? this.groupId,
         avatar: avatar ?? this.avatar,
         name: name ?? this.name,
         email: email ?? this.email,
@@ -661,6 +693,7 @@ class Contact extends DataClass implements Insertable<Contact> {
     return (StringBuffer('Contact(')
           ..write('id: $id, ')
           ..write('ownerId: $ownerId, ')
+          ..write('groupId: $groupId, ')
           ..write('avatar: $avatar, ')
           ..write('name: $name, ')
           ..write('email: $email, ')
@@ -673,14 +706,15 @@ class Contact extends DataClass implements Insertable<Contact> {
   }
 
   @override
-  int get hashCode => Object.hash(id, ownerId, avatar, name, email, phoneNo,
-      dateOfBirth, expiration, dateCreated);
+  int get hashCode => Object.hash(id, ownerId, groupId, avatar, name, email,
+      phoneNo, dateOfBirth, expiration, dateCreated);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is Contact &&
           other.id == this.id &&
           other.ownerId == this.ownerId &&
+          other.groupId == this.groupId &&
           other.avatar == this.avatar &&
           other.name == this.name &&
           other.email == this.email &&
@@ -693,6 +727,7 @@ class Contact extends DataClass implements Insertable<Contact> {
 class ContactsCompanion extends UpdateCompanion<Contact> {
   final Value<String> id;
   final Value<String> ownerId;
+  final Value<String> groupId;
   final Value<String> avatar;
   final Value<String> name;
   final Value<String> email;
@@ -704,6 +739,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
   const ContactsCompanion({
     this.id = const Value.absent(),
     this.ownerId = const Value.absent(),
+    this.groupId = const Value.absent(),
     this.avatar = const Value.absent(),
     this.name = const Value.absent(),
     this.email = const Value.absent(),
@@ -715,7 +751,8 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
   });
   ContactsCompanion.insert({
     required String id,
-    required String ownerId,
+    this.ownerId = const Value.absent(),
+    this.groupId = const Value.absent(),
     this.avatar = const Value.absent(),
     this.name = const Value.absent(),
     this.email = const Value.absent(),
@@ -724,11 +761,11 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     this.expiration = const Value.absent(),
     this.dateCreated = const Value.absent(),
     this.rowid = const Value.absent(),
-  })  : id = Value(id),
-        ownerId = Value(ownerId);
+  }) : id = Value(id);
   static Insertable<Contact> custom({
     Expression<String>? id,
     Expression<String>? ownerId,
+    Expression<String>? groupId,
     Expression<String>? avatar,
     Expression<String>? name,
     Expression<String>? email,
@@ -741,6 +778,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (ownerId != null) 'owner_id': ownerId,
+      if (groupId != null) 'group_id': groupId,
       if (avatar != null) 'avatar': avatar,
       if (name != null) 'name': name,
       if (email != null) 'email': email,
@@ -755,6 +793,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
   ContactsCompanion copyWith(
       {Value<String>? id,
       Value<String>? ownerId,
+      Value<String>? groupId,
       Value<String>? avatar,
       Value<String>? name,
       Value<String>? email,
@@ -766,6 +805,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     return ContactsCompanion(
       id: id ?? this.id,
       ownerId: ownerId ?? this.ownerId,
+      groupId: groupId ?? this.groupId,
       avatar: avatar ?? this.avatar,
       name: name ?? this.name,
       email: email ?? this.email,
@@ -785,6 +825,9 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     }
     if (ownerId.present) {
       map['owner_id'] = Variable<String>(ownerId.value);
+    }
+    if (groupId.present) {
+      map['group_id'] = Variable<String>(groupId.value);
     }
     if (avatar.present) {
       map['avatar'] = Variable<String>(avatar.value);
@@ -818,6 +861,7 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
     return (StringBuffer('ContactsCompanion(')
           ..write('id: $id, ')
           ..write('ownerId: $ownerId, ')
+          ..write('groupId: $groupId, ')
           ..write('avatar: $avatar, ')
           ..write('name: $name, ')
           ..write('email: $email, ')

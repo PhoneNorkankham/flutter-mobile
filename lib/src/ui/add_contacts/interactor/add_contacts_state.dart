@@ -28,7 +28,7 @@ class AddContactsState with _$AddContactsState {
   }
 
   bool get enabledDoneButton {
-    final bool enabled = contacts.where((e) => e.groupIds.isNotEmpty).isNotEmpty;
+    final bool enabled = contacts.where((e) => e.groupId.isNotEmpty).isNotEmpty;
     return enabled && !isLoading;
   }
 }

@@ -13,7 +13,9 @@ _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
-      frequencyInterval: json['frequency_interval'] as int? ?? 1,
+      frequencyInterval: $enumDecodeNullable(
+              _$FrequencyIntervalTypeEnumMap, json['frequency_interval']) ??
+          FrequencyIntervalType.none,
       contacts: (json['contacts'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -26,6 +28,18 @@ Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) =>
       'name': instance.name,
       'description': instance.description,
       'avatar': instance.avatar,
-      'frequency_interval': instance.frequencyInterval,
+      'frequency_interval':
+          _$FrequencyIntervalTypeEnumMap[instance.frequencyInterval]!,
       'contacts': instance.contacts,
     };
+
+const _$FrequencyIntervalTypeEnumMap = {
+  FrequencyIntervalType.everyDay: 'everyDay',
+  FrequencyIntervalType.everyWeek: 'everyWeek',
+  FrequencyIntervalType.everyTwoWeeks: 'everyTwoWeeks',
+  FrequencyIntervalType.everyMonth: 'everyMonth',
+  FrequencyIntervalType.everyThreeMonths: 'everyThreeMonths',
+  FrequencyIntervalType.everySixMonths: 'everySixMonths',
+  FrequencyIntervalType.everyYear: 'everyYear',
+  FrequencyIntervalType.none: 'none',
+};

@@ -9,6 +9,7 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
+import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
@@ -56,8 +57,9 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     on<_OnChangedGroupName>((event, emit) => emit(state.copyWith.groupRequest(name: event.name)));
     on<_OnCreateNewGroup>(_onCreateNewGroup);
     on<_OnCreateNewContact>(_onCreateNewContact);
-    on<_OnFrequencyIntervalChanged>(
-        (event, emit) => emit(state.copyWith(interval: event.interval)));
+    on<_OnFrequencyIntervalChanged>((event, emit) => emit(state.copyWith.groupRequest(
+          frequencyInterval: event.frequencyIntervalType,
+        )));
     on<_OnInputChanged>(_onInputChanged);
     on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
   }
@@ -103,7 +105,6 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
         phoneNoController.text = '';
         dateOfBirthController.text = '';
         newState = newState.copyWith(
-          interval: 0,
           avatar: null,
           selectedContacts: [],
           groupRequest: const GroupRequest(),
@@ -162,7 +163,6 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     final request = state.groupRequest.copyWith(
       avatar: avatarUrl,
       contacts: state.selectedContacts.map((e) => e.id).toList(),
-      frequencyInterval: state.interval.toInt(),
     );
     final result = await _createGroupUseCase.run(request);
     emit(_createGroupStateMapper.mapResultToState(state, result));
@@ -196,9 +196,37 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
       }
     }
     final DateTime now = DateUtils.dateOnly(DateTime.now());
+    final DateTime expiration;
+    switch (group.frequencyInterval) {
+      case FrequencyIntervalType.everyDay:
+        expiration = now.add(const Duration(days: 1));
+        break;
+      case FrequencyIntervalType.everyWeek:
+        expiration = now.add(const Duration(days: 7));
+        break;
+      case FrequencyIntervalType.everyTwoWeeks:
+        expiration = now.add(const Duration(days: 14));
+        break;
+      case FrequencyIntervalType.everyMonth:
+        expiration = now.copyWith(month: now.month + 1);
+        break;
+      case FrequencyIntervalType.everyThreeMonths:
+        expiration = now.copyWith(month: now.month + 3);
+        break;
+      case FrequencyIntervalType.everySixMonths:
+        expiration = now.copyWith(month: now.month + 6);
+        break;
+      case FrequencyIntervalType.everyYear:
+        expiration = now.copyWith(year: now.year + 1);
+        break;
+      default:
+        expiration = now;
+        break;
+    }
+
     final request = state.contactRequest.copyWith(
       avatar: avatarUrl,
-      expiration: now.add(Duration(days: group.frequencyInterval)),
+      expiration: expiration,
     );
     final result = await _createContactUseCase.run(request);
     emit(_createContactStateMapper.mapResultToState(state, result));

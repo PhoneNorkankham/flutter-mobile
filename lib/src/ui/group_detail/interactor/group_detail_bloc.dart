@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/group_request.dart';
+import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
@@ -55,8 +56,9 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   ) : super(const GroupDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnFrequencyIntervalChanged>(
-        (event, emit) => emit(state.copyWith(interval: event.interval)));
+    on<_OnFrequencyIntervalChanged>((event, emit) => emit(state.copyWith.request(
+          frequencyInterval: event.frequencyIntervalType,
+        )));
     on<_OnNameChanged>((event, emit) => emit(state.copyWith.request(name: event.value)));
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
     on<_OnSavePressed>(_onSavePressed);
@@ -110,7 +112,6 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     final GroupRequest request = state.request.copyWith(
       avatar: avatarUrl,
       contacts: state.contacts.map((e) => e.id).toList(),
-      frequencyInterval: state.interval.toInt(),
     );
     if (state.groupType == GroupType.newGroup) {
       final result = await _createGroupUseCase.run(request);

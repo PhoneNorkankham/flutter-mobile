@@ -1352,7 +1352,8 @@ mixin _$ContactDetailState {
   ContactType get contactType => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   String get contactId => throw _privateConstructorUsedError;
-  Group? get group => throw _privateConstructorUsedError;
+  List<Group> get groups => throw _privateConstructorUsedError;
+  Group? get selectedGroup => throw _privateConstructorUsedError;
   ContactRequest get request => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
 
@@ -1372,7 +1373,8 @@ abstract class $ContactDetailStateCopyWith<$Res> {
       ContactType contactType,
       bool isLoading,
       String contactId,
-      Group? group,
+      List<Group> groups,
+      Group? selectedGroup,
       ContactRequest request,
       File? avatar});
 
@@ -1397,7 +1399,8 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
     Object? contactType = null,
     Object? isLoading = null,
     Object? contactId = null,
-    Object? group = freezed,
+    Object? groups = null,
+    Object? selectedGroup = freezed,
     Object? request = null,
     Object? avatar = freezed,
   }) {
@@ -1418,9 +1421,13 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
           ? _value.contactId
           : contactId // ignore: cast_nullable_to_non_nullable
               as String,
-      group: freezed == group
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
+      groups: null == groups
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Group>,
+      selectedGroup: freezed == selectedGroup
+          ? _value.selectedGroup
+          : selectedGroup // ignore: cast_nullable_to_non_nullable
               as Group?,
       request: null == request
           ? _value.request
@@ -1467,7 +1474,8 @@ abstract class _$$_ContactDetailStateCopyWith<$Res>
       ContactType contactType,
       bool isLoading,
       String contactId,
-      Group? group,
+      List<Group> groups,
+      Group? selectedGroup,
       ContactRequest request,
       File? avatar});
 
@@ -1492,7 +1500,8 @@ class __$$_ContactDetailStateCopyWithImpl<$Res>
     Object? contactType = null,
     Object? isLoading = null,
     Object? contactId = null,
-    Object? group = freezed,
+    Object? groups = null,
+    Object? selectedGroup = freezed,
     Object? request = null,
     Object? avatar = freezed,
   }) {
@@ -1513,9 +1522,13 @@ class __$$_ContactDetailStateCopyWithImpl<$Res>
           ? _value.contactId
           : contactId // ignore: cast_nullable_to_non_nullable
               as String,
-      group: freezed == group
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
+      groups: null == groups
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Group>,
+      selectedGroup: freezed == selectedGroup
+          ? _value.selectedGroup
+          : selectedGroup // ignore: cast_nullable_to_non_nullable
               as Group?,
       request: null == request
           ? _value.request
@@ -1537,10 +1550,12 @@ class _$_ContactDetailState extends _ContactDetailState {
       this.contactType = ContactType.newContact,
       this.isLoading = false,
       this.contactId = '',
-      this.group,
+      final List<Group> groups = const [],
+      this.selectedGroup,
       this.request = const ContactRequest(),
       this.avatar})
-      : super._();
+      : _groups = groups,
+        super._();
 
   @override
   final PageCommand? pageCommand;
@@ -1553,8 +1568,17 @@ class _$_ContactDetailState extends _ContactDetailState {
   @override
   @JsonKey()
   final String contactId;
+  final List<Group> _groups;
   @override
-  final Group? group;
+  @JsonKey()
+  List<Group> get groups {
+    if (_groups is EqualUnmodifiableListView) return _groups;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groups);
+  }
+
+  @override
+  final Group? selectedGroup;
   @override
   @JsonKey()
   final ContactRequest request;
@@ -1563,7 +1587,7 @@ class _$_ContactDetailState extends _ContactDetailState {
 
   @override
   String toString() {
-    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, group: $group, request: $request, avatar: $avatar)';
+    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, groups: $groups, selectedGroup: $selectedGroup, request: $request, avatar: $avatar)';
   }
 
   @override
@@ -1579,7 +1603,9 @@ class _$_ContactDetailState extends _ContactDetailState {
                 other.isLoading == isLoading) &&
             (identical(other.contactId, contactId) ||
                 other.contactId == contactId) &&
-            const DeepCollectionEquality().equals(other.group, group) &&
+            const DeepCollectionEquality().equals(other._groups, _groups) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedGroup, selectedGroup) &&
             (identical(other.request, request) || other.request == request) &&
             (identical(other.avatar, avatar) || other.avatar == avatar));
   }
@@ -1591,7 +1617,8 @@ class _$_ContactDetailState extends _ContactDetailState {
       contactType,
       isLoading,
       contactId,
-      const DeepCollectionEquality().hash(group),
+      const DeepCollectionEquality().hash(_groups),
+      const DeepCollectionEquality().hash(selectedGroup),
       request,
       avatar);
 
@@ -1609,7 +1636,8 @@ abstract class _ContactDetailState extends ContactDetailState {
       final ContactType contactType,
       final bool isLoading,
       final String contactId,
-      final Group? group,
+      final List<Group> groups,
+      final Group? selectedGroup,
       final ContactRequest request,
       final File? avatar}) = _$_ContactDetailState;
   const _ContactDetailState._() : super._();
@@ -1623,7 +1651,9 @@ abstract class _ContactDetailState extends ContactDetailState {
   @override
   String get contactId;
   @override
-  Group? get group;
+  List<Group> get groups;
+  @override
+  Group? get selectedGroup;
   @override
   ContactRequest get request;
   @override

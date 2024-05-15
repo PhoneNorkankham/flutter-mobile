@@ -4,7 +4,10 @@ class Contacts extends Table {
   TextColumn get id => text()();
 
   @JsonKey('owner_id')
-  TextColumn get ownerId => text().named('owner_id')();
+  TextColumn get ownerId => text().named('owner_id').withDefault(const Constant(''))();
+
+  @JsonKey('group_id')
+  TextColumn get groupId => text().named('group_id').withDefault(const Constant(''))();
 
   TextColumn get avatar => text().withDefault(const Constant(''))();
 

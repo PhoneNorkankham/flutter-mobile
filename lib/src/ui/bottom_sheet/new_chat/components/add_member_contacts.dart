@@ -22,10 +22,13 @@ class AddMemberContacts extends StatelessWidget {
         if (state.pageState == PageState.loading) {
           return const Center(child: CustomCircularProgress());
         }
-        final List<Contact> selectedContacts = state.selectedContacts;
-        final List<Contact> filterContacts = state.filterContacts;
-        final List<Contact> contacts = [...filterContacts]
-          ..removeWhere((element) => selectedContacts.contains(element));
+        final List<Contact> selectedContacts = [...state.selectedContacts];
+        final List<Contact> contacts = [
+          // Get all contacts that don't belong to any other group
+          ...state.filterContacts.where((element) => element.groupId.isEmpty).toList()
+        ];
+        // Remove all contacts belonging to selected groups
+        contacts.removeWhere((element) => selectedContacts.contains(element));
         return ListView.separated(
           padding: const EdgeInsets.symmetric(vertical: 16),
           itemCount: contacts.length,

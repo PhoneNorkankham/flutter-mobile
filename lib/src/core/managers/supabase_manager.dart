@@ -171,7 +171,7 @@ class SupabaseManager {
 
   Future<List<Group>> updateContactInGroups({
     required String contactId,
-    required List<String> groupIds,
+    required String groupId,
   }) async {
     // Get all groups
     final List<Group> groups = await getGroups();
@@ -182,7 +182,7 @@ class SupabaseManager {
 
     // Get all groups to leave from joined groups
     final List<Group> leaveGroups = joinedGroups
-        .where((element) => !groupIds.contains(element.id))
+        .where((element) => groupId != element.id)
         .map((e) => e.copyWith(contacts: e.contacts..remove(contactId)))
         .toList();
 
@@ -192,7 +192,7 @@ class SupabaseManager {
 
     // Get all groups to join
     final List<Group> joinGroups = canJoinGroups
-        .where((element) => groupIds.contains(element.id))
+        .where((element) => groupId == element.id)
         .map((e) => e.copyWith(contacts: e.contacts..add(contactId)))
         .toList();
 

@@ -27,7 +27,6 @@ class UpdateGroupStateMapper implements BaseStateMapper<GroupDetailState, DataRe
         isLoading: false,
         avatar: null,
         request: request,
-        interval: request.frequencyInterval.toDouble(),
         groupId: group.id,
         groupType: GroupType.groupDetail,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.groupUpdatedSuccessfully.tr),

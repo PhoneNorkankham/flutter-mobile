@@ -51,7 +51,7 @@ class AddContactsItem extends StatelessWidget {
                   const SizedBox(width: 16),
                   if (!contact.isExpanded)
                     Icon(
-                      contact.groupIds.isNotEmpty
+                      contact.groupId.isNotEmpty
                           ? Icons.remove_circle_outline
                           : Icons.add_circle_outline,
                       color: Theme.of(context).colorScheme.onPrimary,
@@ -90,7 +90,7 @@ class AddContactsItem extends StatelessWidget {
                               color: Theme.of(context)
                                   .colorScheme
                                   .onPrimary
-                                  .withOpacity(contact.groupIds.contains(e.id) ? 1 : 0.5),
+                                  .withOpacity(contact.groupId == e.id ? 1 : 0.5),
                             ),
                           ),
                         ))
@@ -109,26 +109,19 @@ class AddContactsItem extends StatelessWidget {
     if (isExpanded) {
       onChanged?.call(contact.copyWith(isExpanded: false));
     } else {
-      final List<String> groupIds = [...contact.groupIds];
-      if (groupIds.isEmpty) {
+      String groupId = contact.groupId;
+      if (groupId.isEmpty) {
         final Group? group = bloc.state.groups.firstOrNull;
-        if (group != null) groupIds.add(group.id);
+        if (group != null) groupId = group.id;
       }
       onChanged?.call(contact.copyWith(
         isExpanded: true,
-        groupIds: groupIds,
+        groupId: groupId,
       ));
     }
   }
 
   void _onChangedGroup(Group group) {
-    final List<String> groupIds = [...contact.groupIds];
-    if (groupIds.contains(group.id)) {
-      if (groupIds.length == 1) return;
-      groupIds.remove(group.id);
-    } else {
-      groupIds.add(group.id);
-    }
-    onChanged?.call(contact.copyWith(groupIds: groupIds));
+    onChanged?.call(contact.copyWith(groupId: group.id));
   }
 }

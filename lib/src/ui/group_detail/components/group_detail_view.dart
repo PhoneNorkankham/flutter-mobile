@@ -39,9 +39,9 @@ class GroupDetailView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const GroupDetailHeader(),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 26),
                   const GroupDetailInterval(),
-                  const SizedBox(height: 14),
+                  const SizedBox(height: 26),
                   const GroupDetailMembers(),
                   const SizedBox(height: 46),
                   if (state.groupType == GroupType.newGroup) ...[

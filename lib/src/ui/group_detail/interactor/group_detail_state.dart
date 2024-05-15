@@ -11,7 +11,6 @@ class GroupDetailState with _$GroupDetailState {
     @Default(false) bool isLoading,
     @Default('') String groupId,
     @Default(GroupRequest()) GroupRequest request,
-    @Default(0) double interval,
     @Default('') String keyword,
     @Default([]) List<Contact> contacts,
     File? avatar,

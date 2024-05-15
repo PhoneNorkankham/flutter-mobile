@@ -25,7 +25,6 @@ class GetGroupStateMapper implements BaseStateMapper<GroupDetailState, DataResul
       return state.copyWith(
         pageState: PageState.success,
         request: request,
-        interval: request.frequencyInterval.toDouble(),
         groupId: group.id,
         groupType: GroupType.groupDetail,
       );

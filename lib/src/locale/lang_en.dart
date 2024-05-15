@@ -113,4 +113,13 @@ Map<String, String> enUs = {
   LocaleKey.createManually: 'Create Manually',
   LocaleKey.addContactsToKeepUp: 'Add Contacts To KeepUp',
   LocaleKey.done: 'Done',
+  LocaleKey.frequency: "Frequency",
+  LocaleKey.everyDay: "Every day",
+  LocaleKey.everyWeek: "Every week",
+  LocaleKey.everyTwoWeeks: "Every 2 Weeks",
+  LocaleKey.everyMonth: "Every month",
+  LocaleKey.everyThreeMonths: "Every 3 months",
+  LocaleKey.everySixMonths: "Every 6 months",
+  LocaleKey.everyYear: "Every year",
+  LocaleKey.none: "None",
 };
