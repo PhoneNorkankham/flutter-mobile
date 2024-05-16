@@ -6,6 +6,7 @@ import 'package:keepup/src/design/components/inputs/app_input_text_field.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_group.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_contact_input_type.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
 import 'package:keepup/src/utils/app_validation.dart';
@@ -22,19 +23,7 @@ class NewContactForm extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              LocaleKey.group.tr,
-              style: context.appTextTheme.bold14.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
-            ),
-            const SizedBox(height: 10),
-            AppInputTextField(
-              readOnly: true,
-              hintText: LocaleKey.group.tr,
-              textInputType: TextInputType.name,
-              validator: AppValidations.validateField,
-            ),
+            const NewContactGroup(),
             const SizedBox(height: 10),
             Text(
               LocaleKey.name.tr,

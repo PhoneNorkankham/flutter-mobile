@@ -12,8 +12,8 @@ class NewChatState with _$NewChatState {
     @Default('') String keyword,
     @Default([]) List<Contact> contacts,
     @Default([]) List<Contact> selectedContacts,
-    @Default([]) List<Contact> filterContacts,
-    Group? group,
+    @Default([]) List<Group> groups,
+    Group? selectedGroup,
     @Default(ContactRequest()) ContactRequest contactRequest,
     @Default(GroupRequest()) GroupRequest groupRequest,
     File? avatar,
@@ -22,4 +22,14 @@ class NewChatState with _$NewChatState {
   bool get enabledCreateNewGroupButton => groupRequest.isValidate;
 
   bool get enabledCreateNewContactButton => contactRequest.isValidate;
+
+  List<Contact> get filterContacts {
+    if (keyword.isEmpty) {
+      return contacts;
+    } else {
+      return contacts
+          .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
+          .toList();
+    }
+  }
 }

@@ -63,6 +63,19 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<Resource<void>> addContactToGroup({
+    required String contactId,
+    required String groupId,
+  }) {
+    return NetworkBoundResource<void, Group>(
+      createSerializedCall: () => _supabaseManager.addContactToGroup(
+        contactId: contactId,
+        groupId: groupId,
+      ),
+      saveCallResult: (group) => _groupDao.updateGroup(group),
+    ).getAsFuture();
+  }
+
   Future<Resource<void>> deleteGroup(String groupId) {
     return NetworkBoundResource<void, void>(
       createSerializedCall: () => _supabaseManager.deleteGroup(groupId),

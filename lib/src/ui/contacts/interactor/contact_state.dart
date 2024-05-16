@@ -10,6 +10,15 @@ class ContactState with _$ContactState {
     @Default(false) bool isLoading,
     @Default('') String keyword,
     @Default([]) List<Contact> contacts,
-    @Default([]) List<Contact> filterContacts,
   }) = _ContactState;
+
+  List<Contact> get filterContacts {
+    if (keyword.isNotEmpty) {
+      return contacts
+          .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
+          .toList();
+    } else {
+      return contacts;
+    }
+  }
 }

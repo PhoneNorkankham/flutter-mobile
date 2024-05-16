@@ -122,4 +122,5 @@ Map<String, String> enUs = {
   LocaleKey.everySixMonths: "Every 6 months",
   LocaleKey.everyYear: "Every year",
   LocaleKey.none: "None",
+  LocaleKey.theGroupDoesNotExist: "The group does not exist!",
 };

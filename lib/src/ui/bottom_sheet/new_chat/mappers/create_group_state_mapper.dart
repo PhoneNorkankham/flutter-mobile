@@ -25,7 +25,7 @@ class CreateGroupStateMapper implements BaseStateMapper<NewChatState, DataResult
         isLoading: false,
         tabType: NewChatTabType.newChat,
         selectedContacts: [],
-        group: null,
+        selectedGroup: null,
         groupRequest: const GroupRequest(),
         avatar: null,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.groupCreatedSuccessfully.tr),

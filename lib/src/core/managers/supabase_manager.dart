@@ -169,6 +169,18 @@ class SupabaseManager {
     }
   }
 
+  Future<Group?> addContactToGroup({
+    required String contactId,
+    required String groupId,
+  }) async {
+    final Group? group = await getGroup(groupId);
+    if (group != null) {
+      final Group newGroup = group.copyWith(contacts: [...group.contacts, contactId]);
+      return updateGroup(GroupRequest.fromJson(newGroup.toJson()));
+    }
+    return throw LocaleKey.theGroupDoesNotExist.tr;
+  }
+
   Future<List<Group>> updateContactInGroups({
     required String contactId,
     required String groupId,
