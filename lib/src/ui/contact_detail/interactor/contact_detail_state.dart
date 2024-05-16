@@ -9,9 +9,9 @@ class ContactDetailState with _$ContactDetailState {
     @Default(ContactType.newContact) ContactType contactType,
     @Default(false) bool isLoading,
     @Default('') String contactId,
+    @Default([]) List<Group> groups,
+    Group? selectedGroup,
     @Default(ContactRequest()) ContactRequest request,
-    @Default(0) double interval,
-    @Default(AppConstants.defaultEveryDays) List<ChoiceEveryDayData> everyDays,
     File? avatar,
   }) = _ContactDetailState;
 }

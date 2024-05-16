@@ -18,7 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AddMemberEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Contact> selectedContacts) initial,
+    required TResult Function(String groupId, List<Contact> selectedContacts)
+        initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
@@ -27,7 +28,7 @@ mixin _$AddMemberEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Contact> selectedContacts)? initial,
+    TResult? Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
@@ -36,7 +37,7 @@ mixin _$AddMemberEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Contact> selectedContacts)? initial,
+    TResult Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
@@ -98,7 +99,7 @@ abstract class _$$_InitialCopyWith<$Res> {
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Contact> selectedContacts});
+  $Res call({String groupId, List<Contact> selectedContacts});
 }
 
 /// @nodoc
@@ -111,9 +112,14 @@ class __$$_InitialCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? groupId = null,
     Object? selectedContacts = null,
   }) {
     return _then(_$_Initial(
+      null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String,
       null == selectedContacts
           ? _value._selectedContacts
           : selectedContacts // ignore: cast_nullable_to_non_nullable
@@ -125,9 +131,11 @@ class __$$_InitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial(final List<Contact> selectedContacts)
+  const _$_Initial(this.groupId, final List<Contact> selectedContacts)
       : _selectedContacts = selectedContacts;
 
+  @override
+  final String groupId;
   final List<Contact> _selectedContacts;
   @override
   List<Contact> get selectedContacts {
@@ -139,7 +147,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'AddMemberEvent.initial(selectedContacts: $selectedContacts)';
+    return 'AddMemberEvent.initial(groupId: $groupId, selectedContacts: $selectedContacts)';
   }
 
   @override
@@ -147,13 +155,14 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
+            (identical(other.groupId, groupId) || other.groupId == groupId) &&
             const DeepCollectionEquality()
                 .equals(other._selectedContacts, _selectedContacts));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_selectedContacts));
+  int get hashCode => Object.hash(runtimeType, groupId,
+      const DeepCollectionEquality().hash(_selectedContacts));
 
   @JsonKey(ignore: true)
   @override
@@ -164,31 +173,32 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Contact> selectedContacts) initial,
+    required TResult Function(String groupId, List<Contact> selectedContacts)
+        initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
     required TResult Function(Contact contact) onRemovedContact,
   }) {
-    return initial(selectedContacts);
+    return initial(groupId, selectedContacts);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Contact> selectedContacts)? initial,
+    TResult? Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
     TResult? Function(Contact contact)? onRemovedContact,
   }) {
-    return initial?.call(selectedContacts);
+    return initial?.call(groupId, selectedContacts);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Contact> selectedContacts)? initial,
+    TResult Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
@@ -196,7 +206,7 @@ class _$_Initial implements _Initial {
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(selectedContacts);
+      return initial(groupId, selectedContacts);
     }
     return orElse();
   }
@@ -243,8 +253,10 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements AddMemberEvent {
-  const factory _Initial(final List<Contact> selectedContacts) = _$_Initial;
+  const factory _Initial(
+      final String groupId, final List<Contact> selectedContacts) = _$_Initial;
 
+  String get groupId;
   List<Contact> get selectedContacts;
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>
@@ -289,7 +301,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Contact> selectedContacts) initial,
+    required TResult Function(String groupId, List<Contact> selectedContacts)
+        initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
@@ -301,7 +314,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Contact> selectedContacts)? initial,
+    TResult? Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
@@ -313,7 +326,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Contact> selectedContacts)? initial,
+    TResult Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
@@ -435,7 +448,8 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Contact> selectedContacts) initial,
+    required TResult Function(String groupId, List<Contact> selectedContacts)
+        initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
@@ -447,7 +461,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Contact> selectedContacts)? initial,
+    TResult? Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
@@ -459,7 +473,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Contact> selectedContacts)? initial,
+    TResult Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
@@ -588,7 +602,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Contact> selectedContacts) initial,
+    required TResult Function(String groupId, List<Contact> selectedContacts)
+        initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
@@ -600,7 +615,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Contact> selectedContacts)? initial,
+    TResult? Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
@@ -612,7 +627,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Contact> selectedContacts)? initial,
+    TResult Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
@@ -741,7 +756,8 @@ class _$_OnRemovedContact implements _OnRemovedContact {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Contact> selectedContacts) initial,
+    required TResult Function(String groupId, List<Contact> selectedContacts)
+        initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Contact contact) onSelectedContact,
@@ -753,7 +769,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Contact> selectedContacts)? initial,
+    TResult? Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Contact contact)? onSelectedContact,
@@ -765,7 +781,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Contact> selectedContacts)? initial,
+    TResult Function(String groupId, List<Contact> selectedContacts)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Contact contact)? onSelectedContact,
@@ -834,6 +850,7 @@ mixin _$AddMemberState {
   PageState get pageState => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
+  String get groupId => throw _privateConstructorUsedError;
   List<Contact> get contacts => throw _privateConstructorUsedError;
   List<Contact> get selectedContacts => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
@@ -854,6 +871,7 @@ abstract class $AddMemberStateCopyWith<$Res> {
       PageState pageState,
       bool isLoading,
       String keyword,
+      String groupId,
       List<Contact> contacts,
       List<Contact> selectedContacts,
       File? avatar});
@@ -878,6 +896,7 @@ class _$AddMemberStateCopyWithImpl<$Res, $Val extends AddMemberState>
     Object? pageState = null,
     Object? isLoading = null,
     Object? keyword = null,
+    Object? groupId = null,
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? avatar = freezed,
@@ -898,6 +917,10 @@ class _$AddMemberStateCopyWithImpl<$Res, $Val extends AddMemberState>
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as String,
       contacts: null == contacts
           ? _value.contacts
@@ -940,6 +963,7 @@ abstract class _$$_AddMemberStateCopyWith<$Res>
       PageState pageState,
       bool isLoading,
       String keyword,
+      String groupId,
       List<Contact> contacts,
       List<Contact> selectedContacts,
       File? avatar});
@@ -963,6 +987,7 @@ class __$$_AddMemberStateCopyWithImpl<$Res>
     Object? pageState = null,
     Object? isLoading = null,
     Object? keyword = null,
+    Object? groupId = null,
     Object? contacts = null,
     Object? selectedContacts = null,
     Object? avatar = freezed,
@@ -983,6 +1008,10 @@ class __$$_AddMemberStateCopyWithImpl<$Res>
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as String,
       contacts: null == contacts
           ? _value._contacts
@@ -1008,6 +1037,7 @@ class _$_AddMemberState extends _AddMemberState {
       this.pageState = PageState.loading,
       this.isLoading = false,
       this.keyword = '',
+      this.groupId = '',
       final List<Contact> contacts = const [],
       final List<Contact> selectedContacts = const [],
       this.avatar})
@@ -1026,6 +1056,9 @@ class _$_AddMemberState extends _AddMemberState {
   @override
   @JsonKey()
   final String keyword;
+  @override
+  @JsonKey()
+  final String groupId;
   final List<Contact> _contacts;
   @override
   @JsonKey()
@@ -1050,7 +1083,7 @@ class _$_AddMemberState extends _AddMemberState {
 
   @override
   String toString() {
-    return 'AddMemberState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, keyword: $keyword, contacts: $contacts, selectedContacts: $selectedContacts, avatar: $avatar)';
+    return 'AddMemberState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, keyword: $keyword, groupId: $groupId, contacts: $contacts, selectedContacts: $selectedContacts, avatar: $avatar)';
   }
 
   @override
@@ -1065,6 +1098,7 @@ class _$_AddMemberState extends _AddMemberState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
+            (identical(other.groupId, groupId) || other.groupId == groupId) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
             const DeepCollectionEquality()
                 .equals(other._selectedContacts, _selectedContacts) &&
@@ -1078,6 +1112,7 @@ class _$_AddMemberState extends _AddMemberState {
       pageState,
       isLoading,
       keyword,
+      groupId,
       const DeepCollectionEquality().hash(_contacts),
       const DeepCollectionEquality().hash(_selectedContacts),
       avatar);
@@ -1095,6 +1130,7 @@ abstract class _AddMemberState extends AddMemberState {
       final PageState pageState,
       final bool isLoading,
       final String keyword,
+      final String groupId,
       final List<Contact> contacts,
       final List<Contact> selectedContacts,
       final File? avatar}) = _$_AddMemberState;
@@ -1108,6 +1144,8 @@ abstract class _AddMemberState extends AddMemberState {
   bool get isLoading;
   @override
   String get keyword;
+  @override
+  String get groupId;
   @override
   List<Contact> get contacts;
   @override

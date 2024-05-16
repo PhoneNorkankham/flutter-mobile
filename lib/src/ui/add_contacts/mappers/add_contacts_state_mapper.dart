@@ -5,6 +5,8 @@ import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
+import 'package:keepup/src/ui/routing/pop_result.dart';
+import 'package:keepup/src/utils/app_pages.dart';
 
 class AddContactsStateMapper implements BaseStateMapper<AddContactsState, VoidResult> {
   @override
@@ -20,7 +22,13 @@ class AddContactsStateMapper implements BaseStateMapper<AddContactsState, VoidRe
     } else {
       return state.copyWith(
         isLoading: false,
-        pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactCreatedSuccessfully.tr),
+        pageCommand: PageCommandNavigation.pop(
+          result: PopResult(
+            status: true,
+            resultFromPage: AppPages.addContacts,
+            data: LocaleKey.contactCreatedSuccessfully.tr,
+          ),
+        ),
       );
     }
   }

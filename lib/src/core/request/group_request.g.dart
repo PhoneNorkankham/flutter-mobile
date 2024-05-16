@@ -13,35 +13,33 @@ _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
-      frequencyInterval:
-          const DateTimeJsonConverter().fromJson(json['frequency_interval']),
-      frequency: (json['frequency'] as List<dynamic>?)
-              ?.map((e) => e as bool)
-              .toList() ??
-          const [],
+      frequencyInterval: $enumDecodeNullable(
+              _$FrequencyIntervalTypeEnumMap, json['frequency_interval']) ??
+          FrequencyIntervalType.none,
       contacts: (json['contacts'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) {
-  final val = <String, dynamic>{
-    'owner_id': instance.ownerId,
-    'name': instance.name,
-    'description': instance.description,
-    'avatar': instance.avatar,
-  };
+Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) =>
+    <String, dynamic>{
+      'owner_id': instance.ownerId,
+      'name': instance.name,
+      'description': instance.description,
+      'avatar': instance.avatar,
+      'frequency_interval':
+          _$FrequencyIntervalTypeEnumMap[instance.frequencyInterval]!,
+      'contacts': instance.contacts,
+    };
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('frequency_interval',
-      const DateTimeJsonConverter().toJson(instance.frequencyInterval));
-  val['frequency'] = instance.frequency;
-  val['contacts'] = instance.contacts;
-  return val;
-}
+const _$FrequencyIntervalTypeEnumMap = {
+  FrequencyIntervalType.everyDay: 'everyDay',
+  FrequencyIntervalType.everyWeek: 'everyWeek',
+  FrequencyIntervalType.everyTwoWeeks: 'everyTwoWeeks',
+  FrequencyIntervalType.everyMonth: 'everyMonth',
+  FrequencyIntervalType.everyThreeMonths: 'everyThreeMonths',
+  FrequencyIntervalType.everySixMonths: 'everySixMonths',
+  FrequencyIntervalType.everyYear: 'everyYear',
+  FrequencyIntervalType.none: 'none',
+};

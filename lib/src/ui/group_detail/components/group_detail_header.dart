@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -40,10 +38,11 @@ class GroupDetailHeader extends StatelessWidget {
                     const SizedBox(width: 4),
                     Expanded(
                       child: BlocBuilder<GroupDetailBloc, GroupDetailState>(
-                        buildWhen: (previous, current) => previous.interval != current.interval,
+                        buildWhen: (previous, current) =>
+                            previous.request.daysLeft != current.request.daysLeft,
                         builder: (context, state) {
                           return Text(
-                            '${max(0, state.interval.toInt())} ${LocaleKey.daysLeft.tr}',
+                            '${state.request.daysLeft} ${LocaleKey.daysLeft.tr}',
                             style: context.appTextTheme.medium14.copyWith(
                               color: Theme.of(context).colorScheme.onPrimary,
                             ),
@@ -110,10 +109,11 @@ class GroupDetailHeader extends StatelessWidget {
                     ),
                     const SizedBox(width: 4),
                     BlocBuilder<GroupDetailBloc, GroupDetailState>(
-                      buildWhen: (previous, current) => previous.interval != current.interval,
+                      buildWhen: (previous, current) =>
+                          previous.request.daysLeft != current.request.daysLeft,
                       builder: (context, state) {
                         return Text(
-                          '${max(0, state.interval.toInt())} ${LocaleKey.daysLeft.tr}',
+                          '${state.request.daysLeft} ${LocaleKey.daysLeft.tr}',
                           style: context.appTextTheme.medium14.copyWith(
                             color: Theme.of(context).colorScheme.onPrimary,
                           ),

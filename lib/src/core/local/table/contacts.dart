@@ -1,20 +1,19 @@
 import 'package:drift/drift.dart';
-import 'package:keepup/src/core/converters/list_string_converter.dart';
 
 class Contacts extends Table {
   TextColumn get id => text()();
 
   @JsonKey('owner_id')
-  TextColumn get ownerId => text().named('owner_id')();
+  TextColumn get ownerId => text().named('owner_id').withDefault(const Constant(''))();
+
+  @JsonKey('group_id')
+  TextColumn get groupId => text().named('group_id').withDefault(const Constant(''))();
 
   TextColumn get avatar => text().withDefault(const Constant(''))();
 
   TextColumn get name => text().withDefault(const Constant(''))();
 
   TextColumn get email => text().withDefault(const Constant(''))();
-
-  TextColumn get frequency =>
-      text().map(const ListStringConverter()).withDefault(const Constant('[]'))();
 
   @JsonKey('phone_no')
   TextColumn get phoneNo => text().named('phone_no').withDefault(const Constant(''))();

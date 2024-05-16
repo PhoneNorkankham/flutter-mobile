@@ -6,6 +6,7 @@ import 'package:keepup/src/design/components/inputs/app_input_text_field.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/contact_detail/components/contact_detail_group.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_bloc.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_input_type.dart';
 import 'package:keepup/src/utils/app_validation.dart';
@@ -22,6 +23,8 @@ class ContactDetailForm extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const ContactDetailGroup(),
+            const SizedBox(height: 10),
             Text(
               LocaleKey.name.tr,
               style: context.appTextTheme.bold14.copyWith(

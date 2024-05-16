@@ -8,7 +8,6 @@ import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
-import 'package:keepup/src/utils/app_constants.dart';
 
 class CreateGroupStateMapper implements BaseStateMapper<NewChatState, DataResult<Group>> {
   @override
@@ -25,9 +24,8 @@ class CreateGroupStateMapper implements BaseStateMapper<NewChatState, DataResult
       return state.copyWith(
         isLoading: false,
         tabType: NewChatTabType.newChat,
-        interval: 0,
         selectedContacts: [],
-        everyDays: AppConstants.defaultEveryDays,
+        group: null,
         groupRequest: const GroupRequest(),
         avatar: null,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.groupCreatedSuccessfully.tr),

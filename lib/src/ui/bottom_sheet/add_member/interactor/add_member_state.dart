@@ -9,6 +9,7 @@ class AddMemberState with _$AddMemberState {
     @Default(PageState.loading) PageState pageState,
     @Default(false) bool isLoading,
     @Default('') String keyword,
+    @Default('') String groupId,
     @Default([]) List<Contact> contacts,
     @Default([]) List<Contact> selectedContacts,
     File? avatar,

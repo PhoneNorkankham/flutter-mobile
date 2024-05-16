@@ -6,10 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/core/model/choice_every_day_data.dart';
+import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
+import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
+import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
@@ -23,7 +25,6 @@ import 'package:keepup/src/use_cases/create_contact_use_case.dart';
 import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/use_cases/update_contact_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
-import 'package:keepup/src/utils/app_constants.dart';
 
 part 'contact_detail_bloc.freezed.dart';
 part 'contact_detail_event.dart';
@@ -35,6 +36,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   final phoneNoController = TextEditingController();
   final dateOfBirthController = TextEditingController();
 
+  final SupabaseRepository _supabaseRepository;
   final CreateContactUseCase _createContactUseCase;
   final CreateContactStateMapper _createContactStateMapper;
   final UploadAvatarUseCase _uploadAvatarUseCase;
@@ -46,6 +48,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   final DeleteContactStateMapper _deleteContactStateMapper;
 
   ContactDetailBloc(
+    this._supabaseRepository,
     this._createContactUseCase,
     this._createContactStateMapper,
     this._uploadAvatarUseCase,
@@ -58,8 +61,10 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   ) : super(const ContactDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnIntervalChanged>((event, emit) => emit(state.copyWith(interval: event.interval)));
-    on<_OnFrequencyChanged>((event, emit) => emit(state.copyWith(everyDays: event.frequency)));
+    on<_OnSelectedGroup>((event, emit) => emit(state.copyWith(
+          selectedGroup: event.group,
+          request: state.request.copyWith(groupId: event.group.id),
+        )));
     on<_OnInputChanged>(_onInputChanged);
     on<_OnSavePressed>(_onSavePressed);
     on<_OnCancelPressed>((event, emit) => emit(state.copyWith(
@@ -76,10 +81,11 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
         : arguments is Contact
             ? arguments.id
             : '';
+    final List<Group> groups = await _supabaseRepository.getDBGroups();
     if (contactId.isEmpty) {
-      emit(state.copyWith(contactType: ContactType.newContact));
+      emit(state.copyWith(contactType: ContactType.newContact, groups: groups));
     } else {
-      emit(state.copyWith(isLoading: true));
+      emit(state.copyWith(isLoading: true, groups: groups));
       final result = await _getContactUseCase.run(contactId);
       emit(_getContactStateMapper.mapResultToState(state, result));
       nameController.text = state.request.name;
@@ -109,6 +115,13 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   }
 
   FutureOr<void> _onSavePressed(_OnSavePressed event, Emitter<ContactDetailState> emit) async {
+    final Group? selectedGroup = state.selectedGroup;
+    if (selectedGroup == null) {
+      emit(state.copyWith(
+        pageCommand: PageCommandMessage.showError(LocaleKey.pleaseChooseAGroup.tr),
+      ));
+      return;
+    }
     emit(state.copyWith(isLoading: true));
     final File? avatarFile = state.avatar;
     String avatarUrl = state.request.avatar;
@@ -128,10 +141,37 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
       }
     }
     final DateTime now = DateUtils.dateOnly(DateTime.now());
+    final DateTime expiration;
+    switch (selectedGroup.frequencyInterval) {
+      case FrequencyIntervalType.everyDay:
+        expiration = now.add(const Duration(days: 1));
+        break;
+      case FrequencyIntervalType.everyWeek:
+        expiration = now.add(const Duration(days: 7));
+        break;
+      case FrequencyIntervalType.everyTwoWeeks:
+        expiration = now.add(const Duration(days: 14));
+        break;
+      case FrequencyIntervalType.everyMonth:
+        expiration = now.copyWith(month: now.month + 1);
+        break;
+      case FrequencyIntervalType.everyThreeMonths:
+        expiration = now.copyWith(month: now.month + 3);
+        break;
+      case FrequencyIntervalType.everySixMonths:
+        expiration = now.copyWith(month: now.month + 6);
+        break;
+      case FrequencyIntervalType.everyYear:
+        expiration = now.copyWith(year: now.year + 1);
+        break;
+      default:
+        expiration = now;
+        break;
+    }
+
     final request = state.request.copyWith(
       avatar: avatarUrl,
-      expiration: now.add(Duration(days: state.interval.toInt())),
-      frequency: state.everyDays.map((e) => e.isActive).toList(),
+      expiration: expiration,
     );
     if (state.contactType == ContactType.newContact) {
       final result = await _createContactUseCase.run(request);

@@ -20,9 +20,7 @@ mixin _$ContactDetailEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -35,8 +33,7 @@ mixin _$ContactDetailEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -49,8 +46,7 @@ mixin _$ContactDetailEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -64,8 +60,7 @@ mixin _$ContactDetailEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -77,8 +72,7 @@ mixin _$ContactDetailEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -90,8 +84,7 @@ mixin _$ContactDetailEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -159,9 +152,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -177,8 +168,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -194,8 +184,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -215,8 +204,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -231,8 +219,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -247,8 +234,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -307,9 +293,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -325,8 +309,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -342,8 +325,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -363,8 +345,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -379,8 +360,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -395,8 +375,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -416,265 +395,73 @@ abstract class _ClearPageCommand implements ContactDetailEvent {
 }
 
 /// @nodoc
-abstract class _$$_OnIntervalChangedCopyWith<$Res> {
-  factory _$$_OnIntervalChangedCopyWith(_$_OnIntervalChanged value,
-          $Res Function(_$_OnIntervalChanged) then) =
-      __$$_OnIntervalChangedCopyWithImpl<$Res>;
+abstract class _$$_OnSelectedGroupCopyWith<$Res> {
+  factory _$$_OnSelectedGroupCopyWith(
+          _$_OnSelectedGroup value, $Res Function(_$_OnSelectedGroup) then) =
+      __$$_OnSelectedGroupCopyWithImpl<$Res>;
   @useResult
-  $Res call({double interval});
+  $Res call({Group group});
 }
 
 /// @nodoc
-class __$$_OnIntervalChangedCopyWithImpl<$Res>
-    extends _$ContactDetailEventCopyWithImpl<$Res, _$_OnIntervalChanged>
-    implements _$$_OnIntervalChangedCopyWith<$Res> {
-  __$$_OnIntervalChangedCopyWithImpl(
-      _$_OnIntervalChanged _value, $Res Function(_$_OnIntervalChanged) _then)
+class __$$_OnSelectedGroupCopyWithImpl<$Res>
+    extends _$ContactDetailEventCopyWithImpl<$Res, _$_OnSelectedGroup>
+    implements _$$_OnSelectedGroupCopyWith<$Res> {
+  __$$_OnSelectedGroupCopyWithImpl(
+      _$_OnSelectedGroup _value, $Res Function(_$_OnSelectedGroup) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? interval = null,
+    Object? group = freezed,
   }) {
-    return _then(_$_OnIntervalChanged(
-      null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as double,
+    return _then(_$_OnSelectedGroup(
+      freezed == group
+          ? _value.group
+          : group // ignore: cast_nullable_to_non_nullable
+              as Group,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_OnIntervalChanged implements _OnIntervalChanged {
-  const _$_OnIntervalChanged(this.interval);
+class _$_OnSelectedGroup implements _OnSelectedGroup {
+  const _$_OnSelectedGroup(this.group);
 
   @override
-  final double interval;
+  final Group group;
 
   @override
   String toString() {
-    return 'ContactDetailEvent.onIntervalChanged(interval: $interval)';
+    return 'ContactDetailEvent.onSelectedGroup(group: $group)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnIntervalChanged &&
-            (identical(other.interval, interval) ||
-                other.interval == interval));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, interval);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnIntervalChangedCopyWith<_$_OnIntervalChanged> get copyWith =>
-      __$$_OnIntervalChangedCopyWithImpl<_$_OnIntervalChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
-    required TResult Function(ContactDetailInputType inputType, String value)
-        onInputChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function() onDeleteContact,
-  }) {
-    return onIntervalChanged(interval);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
-    TResult? Function(ContactDetailInputType inputType, String value)?
-        onInputChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function()? onDeleteContact,
-  }) {
-    return onIntervalChanged?.call(interval);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
-    TResult Function(ContactDetailInputType inputType, String value)?
-        onInputChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function()? onDeleteContact,
-    required TResult orElse(),
-  }) {
-    if (onIntervalChanged != null) {
-      return onIntervalChanged(interval);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnDeleteContact value) onDeleteContact,
-  }) {
-    return onIntervalChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnDeleteContact value)? onDeleteContact,
-  }) {
-    return onIntervalChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnDeleteContact value)? onDeleteContact,
-    required TResult orElse(),
-  }) {
-    if (onIntervalChanged != null) {
-      return onIntervalChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnIntervalChanged implements ContactDetailEvent {
-  const factory _OnIntervalChanged(final double interval) =
-      _$_OnIntervalChanged;
-
-  double get interval;
-  @JsonKey(ignore: true)
-  _$$_OnIntervalChangedCopyWith<_$_OnIntervalChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnFrequencyChangedCopyWith<$Res> {
-  factory _$$_OnFrequencyChangedCopyWith(_$_OnFrequencyChanged value,
-          $Res Function(_$_OnFrequencyChanged) then) =
-      __$$_OnFrequencyChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<ChoiceEveryDayData> frequency});
-}
-
-/// @nodoc
-class __$$_OnFrequencyChangedCopyWithImpl<$Res>
-    extends _$ContactDetailEventCopyWithImpl<$Res, _$_OnFrequencyChanged>
-    implements _$$_OnFrequencyChangedCopyWith<$Res> {
-  __$$_OnFrequencyChangedCopyWithImpl(
-      _$_OnFrequencyChanged _value, $Res Function(_$_OnFrequencyChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? frequency = null,
-  }) {
-    return _then(_$_OnFrequencyChanged(
-      null == frequency
-          ? _value._frequency
-          : frequency // ignore: cast_nullable_to_non_nullable
-              as List<ChoiceEveryDayData>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_OnFrequencyChanged implements _OnFrequencyChanged {
-  const _$_OnFrequencyChanged(final List<ChoiceEveryDayData> frequency)
-      : _frequency = frequency;
-
-  final List<ChoiceEveryDayData> _frequency;
-  @override
-  List<ChoiceEveryDayData> get frequency {
-    if (_frequency is EqualUnmodifiableListView) return _frequency;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_frequency);
-  }
-
-  @override
-  String toString() {
-    return 'ContactDetailEvent.onFrequencyChanged(frequency: $frequency)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnFrequencyChanged &&
-            const DeepCollectionEquality()
-                .equals(other._frequency, _frequency));
+            other is _$_OnSelectedGroup &&
+            const DeepCollectionEquality().equals(other.group, group));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_frequency));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(group));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnFrequencyChangedCopyWith<_$_OnFrequencyChanged> get copyWith =>
-      __$$_OnFrequencyChangedCopyWithImpl<_$_OnFrequencyChanged>(
-          this, _$identity);
+  _$$_OnSelectedGroupCopyWith<_$_OnSelectedGroup> get copyWith =>
+      __$$_OnSelectedGroupCopyWithImpl<_$_OnSelectedGroup>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -682,7 +469,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     required TResult Function(File file) onChangedAvatar,
     required TResult Function() onDeleteContact,
   }) {
-    return onFrequencyChanged(frequency);
+    return onSelectedGroup(group);
   }
 
   @override
@@ -690,8 +477,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -699,7 +485,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult? Function(File file)? onChangedAvatar,
     TResult? Function()? onDeleteContact,
   }) {
-    return onFrequencyChanged?.call(frequency);
+    return onSelectedGroup?.call(group);
   }
 
   @override
@@ -707,8 +493,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -717,8 +502,8 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
-    if (onFrequencyChanged != null) {
-      return onFrequencyChanged(frequency);
+    if (onSelectedGroup != null) {
+      return onSelectedGroup(group);
     }
     return orElse();
   }
@@ -728,15 +513,14 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
-    return onFrequencyChanged(this);
+    return onSelectedGroup(this);
   }
 
   @override
@@ -744,15 +528,14 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
-    return onFrequencyChanged?.call(this);
+    return onSelectedGroup?.call(this);
   }
 
   @override
@@ -760,8 +543,7 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -769,20 +551,19 @@ class _$_OnFrequencyChanged implements _OnFrequencyChanged {
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
-    if (onFrequencyChanged != null) {
-      return onFrequencyChanged(this);
+    if (onSelectedGroup != null) {
+      return onSelectedGroup(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnFrequencyChanged implements ContactDetailEvent {
-  const factory _OnFrequencyChanged(final List<ChoiceEveryDayData> frequency) =
-      _$_OnFrequencyChanged;
+abstract class _OnSelectedGroup implements ContactDetailEvent {
+  const factory _OnSelectedGroup(final Group group) = _$_OnSelectedGroup;
 
-  List<ChoiceEveryDayData> get frequency;
+  Group get group;
   @JsonKey(ignore: true)
-  _$$_OnFrequencyChangedCopyWith<_$_OnFrequencyChanged> get copyWith =>
+  _$$_OnSelectedGroupCopyWith<_$_OnSelectedGroup> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -861,9 +642,7 @@ class _$_OnInputChanged implements _OnInputChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -879,8 +658,7 @@ class _$_OnInputChanged implements _OnInputChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -896,8 +674,7 @@ class _$_OnInputChanged implements _OnInputChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -917,8 +694,7 @@ class _$_OnInputChanged implements _OnInputChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -933,8 +709,7 @@ class _$_OnInputChanged implements _OnInputChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -949,8 +724,7 @@ class _$_OnInputChanged implements _OnInputChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -1017,9 +791,7 @@ class _$_OnSavePressed implements _OnSavePressed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -1035,8 +807,7 @@ class _$_OnSavePressed implements _OnSavePressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -1052,8 +823,7 @@ class _$_OnSavePressed implements _OnSavePressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -1073,8 +843,7 @@ class _$_OnSavePressed implements _OnSavePressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -1089,8 +858,7 @@ class _$_OnSavePressed implements _OnSavePressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -1105,8 +873,7 @@ class _$_OnSavePressed implements _OnSavePressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -1165,9 +932,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -1183,8 +948,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -1200,8 +964,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -1221,8 +984,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -1237,8 +999,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -1253,8 +1014,7 @@ class _$_OnCancelPressed implements _OnCancelPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -1339,9 +1099,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -1357,8 +1115,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -1374,8 +1131,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -1395,8 +1151,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -1411,8 +1166,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -1427,8 +1181,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -1492,9 +1245,7 @@ class _$_OnDeleteContact implements _OnDeleteContact {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(double interval) onIntervalChanged,
-    required TResult Function(List<ChoiceEveryDayData> frequency)
-        onFrequencyChanged,
+    required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
     required TResult Function() onSavePressed,
@@ -1510,8 +1261,7 @@ class _$_OnDeleteContact implements _OnDeleteContact {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(double interval)? onIntervalChanged,
-    TResult? Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult? Function()? onSavePressed,
@@ -1527,8 +1277,7 @@ class _$_OnDeleteContact implements _OnDeleteContact {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(double interval)? onIntervalChanged,
-    TResult Function(List<ChoiceEveryDayData> frequency)? onFrequencyChanged,
+    TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
     TResult Function()? onSavePressed,
@@ -1548,8 +1297,7 @@ class _$_OnDeleteContact implements _OnDeleteContact {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnIntervalChanged value) onIntervalChanged,
-    required TResult Function(_OnFrequencyChanged value) onFrequencyChanged,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
@@ -1564,8 +1312,7 @@ class _$_OnDeleteContact implements _OnDeleteContact {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult? Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
@@ -1580,8 +1327,7 @@ class _$_OnDeleteContact implements _OnDeleteContact {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnIntervalChanged value)? onIntervalChanged,
-    TResult Function(_OnFrequencyChanged value)? onFrequencyChanged,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
@@ -1606,9 +1352,9 @@ mixin _$ContactDetailState {
   ContactType get contactType => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   String get contactId => throw _privateConstructorUsedError;
+  List<Group> get groups => throw _privateConstructorUsedError;
+  Group? get selectedGroup => throw _privateConstructorUsedError;
   ContactRequest get request => throw _privateConstructorUsedError;
-  double get interval => throw _privateConstructorUsedError;
-  List<ChoiceEveryDayData> get everyDays => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1627,9 +1373,9 @@ abstract class $ContactDetailStateCopyWith<$Res> {
       ContactType contactType,
       bool isLoading,
       String contactId,
+      List<Group> groups,
+      Group? selectedGroup,
       ContactRequest request,
-      double interval,
-      List<ChoiceEveryDayData> everyDays,
       File? avatar});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -1653,9 +1399,9 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
     Object? contactType = null,
     Object? isLoading = null,
     Object? contactId = null,
+    Object? groups = null,
+    Object? selectedGroup = freezed,
     Object? request = null,
-    Object? interval = null,
-    Object? everyDays = null,
     Object? avatar = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1675,18 +1421,18 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
           ? _value.contactId
           : contactId // ignore: cast_nullable_to_non_nullable
               as String,
+      groups: null == groups
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Group>,
+      selectedGroup: freezed == selectedGroup
+          ? _value.selectedGroup
+          : selectedGroup // ignore: cast_nullable_to_non_nullable
+              as Group?,
       request: null == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as ContactRequest,
-      interval: null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as double,
-      everyDays: null == everyDays
-          ? _value.everyDays
-          : everyDays // ignore: cast_nullable_to_non_nullable
-              as List<ChoiceEveryDayData>,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -1728,9 +1474,9 @@ abstract class _$$_ContactDetailStateCopyWith<$Res>
       ContactType contactType,
       bool isLoading,
       String contactId,
+      List<Group> groups,
+      Group? selectedGroup,
       ContactRequest request,
-      double interval,
-      List<ChoiceEveryDayData> everyDays,
       File? avatar});
 
   @override
@@ -1754,9 +1500,9 @@ class __$$_ContactDetailStateCopyWithImpl<$Res>
     Object? contactType = null,
     Object? isLoading = null,
     Object? contactId = null,
+    Object? groups = null,
+    Object? selectedGroup = freezed,
     Object? request = null,
-    Object? interval = null,
-    Object? everyDays = null,
     Object? avatar = freezed,
   }) {
     return _then(_$_ContactDetailState(
@@ -1776,18 +1522,18 @@ class __$$_ContactDetailStateCopyWithImpl<$Res>
           ? _value.contactId
           : contactId // ignore: cast_nullable_to_non_nullable
               as String,
+      groups: null == groups
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Group>,
+      selectedGroup: freezed == selectedGroup
+          ? _value.selectedGroup
+          : selectedGroup // ignore: cast_nullable_to_non_nullable
+              as Group?,
       request: null == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as ContactRequest,
-      interval: null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as double,
-      everyDays: null == everyDays
-          ? _value._everyDays
-          : everyDays // ignore: cast_nullable_to_non_nullable
-              as List<ChoiceEveryDayData>,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -1804,11 +1550,11 @@ class _$_ContactDetailState extends _ContactDetailState {
       this.contactType = ContactType.newContact,
       this.isLoading = false,
       this.contactId = '',
+      final List<Group> groups = const [],
+      this.selectedGroup,
       this.request = const ContactRequest(),
-      this.interval = 0,
-      final List<ChoiceEveryDayData> everyDays = AppConstants.defaultEveryDays,
       this.avatar})
-      : _everyDays = everyDays,
+      : _groups = groups,
         super._();
 
   @override
@@ -1822,27 +1568,26 @@ class _$_ContactDetailState extends _ContactDetailState {
   @override
   @JsonKey()
   final String contactId;
+  final List<Group> _groups;
+  @override
+  @JsonKey()
+  List<Group> get groups {
+    if (_groups is EqualUnmodifiableListView) return _groups;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groups);
+  }
+
+  @override
+  final Group? selectedGroup;
   @override
   @JsonKey()
   final ContactRequest request;
-  @override
-  @JsonKey()
-  final double interval;
-  final List<ChoiceEveryDayData> _everyDays;
-  @override
-  @JsonKey()
-  List<ChoiceEveryDayData> get everyDays {
-    if (_everyDays is EqualUnmodifiableListView) return _everyDays;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_everyDays);
-  }
-
   @override
   final File? avatar;
 
   @override
   String toString() {
-    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, request: $request, interval: $interval, everyDays: $everyDays, avatar: $avatar)';
+    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, groups: $groups, selectedGroup: $selectedGroup, request: $request, avatar: $avatar)';
   }
 
   @override
@@ -1858,11 +1603,10 @@ class _$_ContactDetailState extends _ContactDetailState {
                 other.isLoading == isLoading) &&
             (identical(other.contactId, contactId) ||
                 other.contactId == contactId) &&
-            (identical(other.request, request) || other.request == request) &&
-            (identical(other.interval, interval) ||
-                other.interval == interval) &&
+            const DeepCollectionEquality().equals(other._groups, _groups) &&
             const DeepCollectionEquality()
-                .equals(other._everyDays, _everyDays) &&
+                .equals(other.selectedGroup, selectedGroup) &&
+            (identical(other.request, request) || other.request == request) &&
             (identical(other.avatar, avatar) || other.avatar == avatar));
   }
 
@@ -1873,9 +1617,9 @@ class _$_ContactDetailState extends _ContactDetailState {
       contactType,
       isLoading,
       contactId,
+      const DeepCollectionEquality().hash(_groups),
+      const DeepCollectionEquality().hash(selectedGroup),
       request,
-      interval,
-      const DeepCollectionEquality().hash(_everyDays),
       avatar);
 
   @JsonKey(ignore: true)
@@ -1892,9 +1636,9 @@ abstract class _ContactDetailState extends ContactDetailState {
       final ContactType contactType,
       final bool isLoading,
       final String contactId,
+      final List<Group> groups,
+      final Group? selectedGroup,
       final ContactRequest request,
-      final double interval,
-      final List<ChoiceEveryDayData> everyDays,
       final File? avatar}) = _$_ContactDetailState;
   const _ContactDetailState._() : super._();
 
@@ -1907,11 +1651,11 @@ abstract class _ContactDetailState extends ContactDetailState {
   @override
   String get contactId;
   @override
+  List<Group> get groups;
+  @override
+  Group? get selectedGroup;
+  @override
   ContactRequest get request;
-  @override
-  double get interval;
-  @override
-  List<ChoiceEveryDayData> get everyDays;
   @override
   File? get avatar;
   @override

@@ -46,7 +46,7 @@ class AddContactsBloc extends Bloc<AddContactsEvent, AddContactsState> {
             final List<Group> joinedGroups =
                 groups.where((element) => element.contacts.contains(contact.contactId)).toList();
             final List<String> groupIds = joinedGroups.map((e) => e.id).toList();
-            return contact.copyWith(groupIds: groupIds);
+            return contact.copyWith(groupId: groupIds.isNotEmpty ? groupIds.first : '');
           }).toList()),
       onData: (contacts) {
         contacts = _combineContacts(contacts, deviceContacts);

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:keepup/src/core/converters/date_time_converter.dart';
-import 'package:keepup/src/core/converters/list_string_converter.dart';
+import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/utils/app_validation.dart';
 
 part 'group_request.freezed.dart';
@@ -17,8 +16,9 @@ class GroupRequest with _$GroupRequest {
     @Default('') String name,
     @Default('') String description,
     @Default('') String avatar,
-    @DateTimeJsonConverter() @JsonKey(name: 'frequency_interval') DateTime? frequencyInterval,
-    @ListStringJsonConverter() @Default([]) List<bool> frequency,
+    @Default(FrequencyIntervalType.none)
+    @JsonKey(name: 'frequency_interval')
+    FrequencyIntervalType frequencyInterval,
     @Default([]) List<String> contacts,
   }) = _GroupRequest;
 
@@ -27,4 +27,6 @@ class GroupRequest with _$GroupRequest {
   String? get nameError => AppValidations.validateField(name);
 
   bool get isValidate => name.isNotEmpty && nameError == null;
+
+  int get daysLeft => 0;
 }
