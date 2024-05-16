@@ -62,16 +62,12 @@ class AddMemberHeader extends StatelessWidget {
                 ),
                 const Spacer(),
                 TextButton(
-                  onPressed: state.selectedContacts.isNotEmpty
-                      ? () => bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newGroup))
-                      : null,
+                  onPressed: () =>
+                      bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newGroup)),
                   child: Text(
                     LocaleKey.next.tr,
                     style: context.appTextTheme.bold16.copyWith(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .onPrimary
-                          .withOpacity(state.selectedContacts.isNotEmpty ? 1 : 0.5),
+                      color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
                 ),

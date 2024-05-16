@@ -51,7 +51,11 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnChangedTabType>(_onChangedTabType);
-    on<_OnChangedKeyword>(_onChangedKeyword);
+    on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
+    on<_OnSelectedGroup>((event, emit) => emit(state.copyWith(
+          selectedGroup: event.group,
+          contactRequest: state.contactRequest.copyWith(groupId: event.group.id),
+        )));
     on<_OnSelectedContact>(_onSelectedContact);
     on<_OnRemovedContact>(_onRemovedContact);
     on<_OnChangedGroupName>((event, emit) => emit(state.copyWith.groupRequest(name: event.name)));
@@ -65,28 +69,15 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) async {
+    final List<Group> groups = await _supabaseRepository.getDBGroups();
     await emit.forEach<List<Contact>>(
       _supabaseRepository.watchContacts(),
-      onData: (contacts) {
-        NewChatState state = this.state.copyWith();
-        final String keyword = state.keyword;
-        final List<Contact> filterContacts;
-        if (keyword.isEmpty) {
-          filterContacts = [...contacts];
-        } else {
-          filterContacts = [
-            ...contacts
-                .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-                .toList()
-          ];
-        }
-        return state.copyWith(
-          contacts: contacts,
-          filterContacts: filterContacts,
-          pageState: PageState.success,
-          isLoading: false,
-        );
-      },
+      onData: (contacts) => state.copyWith(
+        contacts: contacts,
+        groups: groups,
+        pageState: PageState.success,
+        isLoading: false,
+      ),
       onError: (error, stacktrace) => state.copyWith(
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,
@@ -100,10 +91,10 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     switch (event.type) {
       case NewChatTabType.newChat:
       case NewChatTabType.addMembers:
-        nameController.text = '';
-        emailController.text = '';
-        phoneNoController.text = '';
-        dateOfBirthController.text = '';
+        nameController.clear();
+        emailController.clear();
+        phoneNoController.clear();
+        dateOfBirthController.clear();
         newState = newState.copyWith(
           avatar: null,
           selectedContacts: [],
@@ -116,21 +107,6 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
         break;
     }
     emit(newState);
-  }
-
-  FutureOr<void> _onChangedKeyword(_OnChangedKeyword event, Emitter<NewChatState> emit) {
-    NewChatState state = this.state.copyWith();
-    final String keyword = event.keyword;
-    if (keyword.isEmpty) {
-      state = state.copyWith(filterContacts: state.contacts);
-    } else {
-      state = state.copyWith(
-        filterContacts: state.contacts
-            .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-            .toList(),
-      );
-    }
-    emit(state.copyWith(keyword: keyword));
   }
 
   FutureOr<void> _onSelectedContact(_OnSelectedContact event, Emitter<NewChatState> emit) {
@@ -166,12 +142,14 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     );
     final result = await _createGroupUseCase.run(request);
     emit(_createGroupStateMapper.mapResultToState(state, result));
-    nameController.text = '';
+    if (result.isValue) {
+      nameController.clear();
+    }
   }
 
   FutureOr<void> _onCreateNewContact(_OnCreateNewContact event, Emitter<NewChatState> emit) async {
-    final Group? group = state.group;
-    if (group == null) {
+    final Group? selectedGroup = state.selectedGroup;
+    if (selectedGroup == null) {
       emit(state.copyWith(
         pageCommand: PageCommandMessage.showError(LocaleKey.pleaseChooseAGroup.tr),
       ));
@@ -197,7 +175,7 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     }
     final DateTime now = DateUtils.dateOnly(DateTime.now());
     final DateTime expiration;
-    switch (group.frequencyInterval) {
+    switch (selectedGroup.frequencyInterval) {
       case FrequencyIntervalType.everyDay:
         expiration = now.add(const Duration(days: 1));
         break;
@@ -230,10 +208,12 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     );
     final result = await _createContactUseCase.run(request);
     emit(_createContactStateMapper.mapResultToState(state, result));
-    nameController.text = '';
-    emailController.text = '';
-    phoneNoController.text = '';
-    dateOfBirthController.text = '';
+    if (result.isValue) {
+      nameController.clear();
+      emailController.clear();
+      phoneNoController.clear();
+      dateOfBirthController.clear();
+    }
   }
 
   FutureOr<void> _onInputChanged(_OnInputChanged event, Emitter<NewChatState> emit) {

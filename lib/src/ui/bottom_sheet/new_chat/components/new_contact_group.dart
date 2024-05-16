@@ -5,14 +5,14 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_bloc.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
 
-class ContactDetailGroup extends StatelessWidget {
-  const ContactDetailGroup({super.key});
+class NewContactGroup extends StatelessWidget {
+  const NewContactGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ContactDetailBloc bloc = context.read();
+    final NewChatBloc bloc = context.read();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -23,13 +23,13 @@ class ContactDetailGroup extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        BlocBuilder<ContactDetailBloc, ContactDetailState>(
+        BlocBuilder<NewChatBloc, NewChatState>(
           buildWhen: (previous, current) =>
               previous.selectedGroup != current.selectedGroup || previous.groups != current.groups,
           builder: (context, state) {
             final Group? selectedGroup = state.selectedGroup;
             return PopupMenuButton<Group>(
-              onSelected: (value) => bloc.add(ContactDetailEvent.onSelectedGroup(value)),
+              onSelected: (value) => bloc.add(NewChatEvent.onSelectedGroup(value)),
               initialValue: selectedGroup,
               child: Container(
                 constraints: const BoxConstraints(minHeight: 40),

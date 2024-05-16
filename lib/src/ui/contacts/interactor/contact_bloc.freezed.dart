@@ -941,7 +941,6 @@ mixin _$ContactState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
   List<Contact> get contacts => throw _privateConstructorUsedError;
-  List<Contact> get filterContacts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ContactStateCopyWith<ContactState> get copyWith =>
@@ -959,8 +958,7 @@ abstract class $ContactStateCopyWith<$Res> {
       PageCommand? pageCommand,
       bool isLoading,
       String keyword,
-      List<Contact> contacts,
-      List<Contact> filterContacts});
+      List<Contact> contacts});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -983,7 +981,6 @@ class _$ContactStateCopyWithImpl<$Res, $Val extends ContactState>
     Object? isLoading = null,
     Object? keyword = null,
     Object? contacts = null,
-    Object? filterContacts = null,
   }) {
     return _then(_value.copyWith(
       pageState: null == pageState
@@ -1005,10 +1002,6 @@ class _$ContactStateCopyWithImpl<$Res, $Val extends ContactState>
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
-      filterContacts: null == filterContacts
-          ? _value.filterContacts
-          : filterContacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
     ) as $Val);
   }
@@ -1039,8 +1032,7 @@ abstract class _$$_ContactStateCopyWith<$Res>
       PageCommand? pageCommand,
       bool isLoading,
       String keyword,
-      List<Contact> contacts,
-      List<Contact> filterContacts});
+      List<Contact> contacts});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -1062,7 +1054,6 @@ class __$$_ContactStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? keyword = null,
     Object? contacts = null,
-    Object? filterContacts = null,
   }) {
     return _then(_$_ContactState(
       pageState: null == pageState
@@ -1085,10 +1076,6 @@ class __$$_ContactStateCopyWithImpl<$Res>
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
-      filterContacts: null == filterContacts
-          ? _value._filterContacts
-          : filterContacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
     ));
   }
 }
@@ -1101,10 +1088,8 @@ class _$_ContactState extends _ContactState {
       this.pageCommand,
       this.isLoading = false,
       this.keyword = '',
-      final List<Contact> contacts = const [],
-      final List<Contact> filterContacts = const []})
+      final List<Contact> contacts = const []})
       : _contacts = contacts,
-        _filterContacts = filterContacts,
         super._();
 
   @override
@@ -1127,18 +1112,9 @@ class _$_ContactState extends _ContactState {
     return EqualUnmodifiableListView(_contacts);
   }
 
-  final List<Contact> _filterContacts;
-  @override
-  @JsonKey()
-  List<Contact> get filterContacts {
-    if (_filterContacts is EqualUnmodifiableListView) return _filterContacts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_filterContacts);
-  }
-
   @override
   String toString() {
-    return 'ContactState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts, filterContacts: $filterContacts)';
+    return 'ContactState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts)';
   }
 
   @override
@@ -1153,20 +1129,12 @@ class _$_ContactState extends _ContactState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
-            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
-            const DeepCollectionEquality()
-                .equals(other._filterContacts, _filterContacts));
+            const DeepCollectionEquality().equals(other._contacts, _contacts));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      pageState,
-      pageCommand,
-      isLoading,
-      keyword,
-      const DeepCollectionEquality().hash(_contacts),
-      const DeepCollectionEquality().hash(_filterContacts));
+  int get hashCode => Object.hash(runtimeType, pageState, pageCommand,
+      isLoading, keyword, const DeepCollectionEquality().hash(_contacts));
 
   @JsonKey(ignore: true)
   @override
@@ -1181,8 +1149,7 @@ abstract class _ContactState extends ContactState {
       final PageCommand? pageCommand,
       final bool isLoading,
       final String keyword,
-      final List<Contact> contacts,
-      final List<Contact> filterContacts}) = _$_ContactState;
+      final List<Contact> contacts}) = _$_ContactState;
   const _ContactState._() : super._();
 
   @override
@@ -1195,8 +1162,6 @@ abstract class _ContactState extends ContactState {
   String get keyword;
   @override
   List<Contact> get contacts;
-  @override
-  List<Contact> get filterContacts;
   @override
   @JsonKey(ignore: true)
   _$$_ContactStateCopyWith<_$_ContactState> get copyWith =>

@@ -24,7 +24,7 @@ class CreateContactStateMapper implements BaseStateMapper<NewChatState, DataResu
       return state.copyWith(
         isLoading: false,
         tabType: NewChatTabType.newChat,
-        group: null,
+        selectedGroup: null,
         contactRequest: const ContactRequest(),
         avatar: null,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactCreatedSuccessfully.tr),

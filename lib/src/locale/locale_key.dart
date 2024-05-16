@@ -144,6 +144,7 @@ class LocaleKey {
   static const String searchNameOrNumber = "searchNameOrNumber";
   static const String addMembers = "addMembers";
   static const String groupName = "groupName";
+  static const String theGroupDoesNotExist = "theGroupDoesNotExist";
 
   // New Chat Options
   static const String usePhoneContacts = "usePhoneContacts";

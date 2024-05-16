@@ -13,16 +13,12 @@ class GroupState with _$GroupState {
   }) = _GroupState;
 
   List<Group> getFilterGroups() {
-    final List<Group> filterGroups;
     if (keyword.isEmpty) {
-      filterGroups = [...groups];
+      return groups;
     } else {
-      filterGroups = [
-        ...groups
-            .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-            .toList()
-      ];
+      return groups
+          .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
+          .toList();
     }
-    return filterGroups;
   }
 }

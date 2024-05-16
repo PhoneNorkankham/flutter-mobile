@@ -25,7 +25,7 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
   ) : super(const ContactState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnChangedKeyword>(_onChangedKeyword);
+    on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
     on<_OnCheckContactPermission>(_onCheckContactPermission);
     on<_OnGotoNewContact>(_onGotoNewContact);
     on<_OnGotoContactDetails>(_onGotoContactDetails);
@@ -34,48 +34,17 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
   FutureOr<void> _initial(_Initial event, Emitter<ContactState> emit) async {
     await emit.forEach<List<Contact>>(
       _supabaseRepository.watchContacts(),
-      onData: (contacts) {
-        ContactState state = this.state.copyWith();
-        final String keyword = state.keyword;
-        final List<Contact> filterContacts;
-        if (keyword.isEmpty) {
-          filterContacts = [...contacts];
-        } else {
-          filterContacts = [
-            ...contacts
-                .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-                .toList()
-          ];
-        }
-        return state.copyWith(
-          contacts: contacts,
-          filterContacts: filterContacts,
-          pageState: PageState.success,
-          isLoading: false,
-        );
-      },
+      onData: (contacts) => state.copyWith(
+        contacts: contacts,
+        pageState: PageState.success,
+        isLoading: false,
+      ),
       onError: (error, stacktrace) => state.copyWith(
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,
         isLoading: false,
       ),
     );
-  }
-
-  FutureOr<void> _onChangedKeyword(_OnChangedKeyword event, Emitter<ContactState> emit) {
-    ContactState state = this.state.copyWith();
-    final String keyword = event.keyword;
-    final List<Contact> filterContacts;
-    if (keyword.isEmpty) {
-      filterContacts = [...state.contacts];
-    } else {
-      filterContacts = [
-        ...state.contacts
-            .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-            .toList()
-      ];
-    }
-    emit(state.copyWith(keyword: keyword, filterContacts: filterContacts));
   }
 
   FutureOr<void> _onGotoNewContact(_OnGotoNewContact event, Emitter<ContactState> emit) {
