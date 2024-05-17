@@ -5,9 +5,12 @@ import 'package:drift/native.dart';
 import 'package:keepup/src/core/converters/list_string_converter.dart';
 import 'package:keepup/src/core/local/dao/contact_dao.dart';
 import 'package:keepup/src/core/local/dao/group_dao.dart';
+import 'package:keepup/src/core/local/dao/interaction_dao.dart';
 import 'package:keepup/src/core/local/table/contacts.dart';
 import 'package:keepup/src/core/local/table/groups.dart';
+import 'package:keepup/src/core/local/table/interactions.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
+import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -16,7 +19,10 @@ import 'package:sqlite3_flutter_libs/sqlite3_flutter_libs.dart';
 
 part 'app_database.g.dart';
 
-@DriftDatabase(tables: [Groups, Contacts], daos: [GroupDao, ContactDao])
+@DriftDatabase(
+  tables: [Groups, Contacts, Interactions],
+  daos: [GroupDao, ContactDao, InteractionDao],
+)
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 
@@ -30,7 +36,7 @@ LazyDatabase _openConnection() {
     // put the database file, called db.sqlite here, into the documents folder
     // for your app.
     final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_202405152313.sqlite'));
+    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_202405172100.sqlite'));
 
     // Also work around limitations on old Android versions
     if (Platform.isAndroid) {

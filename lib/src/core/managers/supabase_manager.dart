@@ -6,6 +6,7 @@ import 'package:keepup/src/core/model/logged_in_data.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/user_request.dart';
+import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path/path.dart' as p;
@@ -15,9 +16,11 @@ class SupabaseManager {
   final _tbUsers = 'Users';
   final _tbGroups = 'Groups';
   final _tbContacts = 'Contacts';
+  final _tbInteractions = 'Interactions';
 
   final _fieldId = 'id';
   final _fieldOwnerId = 'owner_id';
+  final _fieldContactId = 'contact_id';
 
   static Future<Supabase> initialize() => Supabase.initialize(
         url: AppConstants.supabaseUrl,
@@ -261,4 +264,13 @@ class SupabaseManager {
         )
         .then((value) => _supabaseStorage.from('images').getPublicUrl(avatarPath));
   }
+
+  Future<List<Contact>> getTodayContacts() =>
+      getContacts().then((contacts) => contacts.toKeepUpToday());
+
+  Future<Interaction?> getLastInteractionByContactId(String contactId) => _supabase
+      .from(_tbInteractions)
+      .select()
+      .eq(_fieldContactId, contactId)
+      .then((value) => value.map((e) => Interaction.fromJson(e)).toList().firstOrNull);
 }

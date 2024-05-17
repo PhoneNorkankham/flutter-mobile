@@ -6,5 +6,7 @@ class KeepUpTodayState with _$KeepUpTodayState {
 
   const factory KeepUpTodayState({
     PageCommand? pageCommand,
+    @Default(false) bool isLoading,
+    @Default([]) List<Contact> contacts,
   }) = _KeepUpTodayState;
 }

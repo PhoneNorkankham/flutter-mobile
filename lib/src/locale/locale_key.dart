@@ -89,6 +89,8 @@ class LocaleKey {
   static const String keepUpTodayDescription = "keepUpTodayDescription";
   static const String allSet = "allSet";
   static const String keepUp = "keepUp";
+  static const String noContactsNeedKeepUpToday = "noContactsNeedKeepUpToday";
+  static const String noGroupsNeedKeepUpToday = "noGroupsNeedKeepUpToday";
 
   // KeepUp Soon
   static const String individual = "individual";

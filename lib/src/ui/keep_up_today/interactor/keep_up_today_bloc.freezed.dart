@@ -280,6 +280,8 @@ abstract class _ClearPageCommand implements KeepUpTodayEvent {
 /// @nodoc
 mixin _$KeepUpTodayState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  List<Contact> get contacts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $KeepUpTodayStateCopyWith<KeepUpTodayState> get copyWith =>
@@ -292,7 +294,7 @@ abstract class $KeepUpTodayStateCopyWith<$Res> {
           KeepUpTodayState value, $Res Function(KeepUpTodayState) then) =
       _$KeepUpTodayStateCopyWithImpl<$Res, KeepUpTodayState>;
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call({PageCommand? pageCommand, bool isLoading, List<Contact> contacts});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -311,12 +313,22 @@ class _$KeepUpTodayStateCopyWithImpl<$Res, $Val extends KeepUpTodayState>
   @override
   $Res call({
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? contacts = null,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      contacts: null == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
     ) as $Val);
   }
 
@@ -341,7 +353,7 @@ abstract class _$$_KeepUpTodayStateCopyWith<$Res>
       __$$_KeepUpTodayStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call({PageCommand? pageCommand, bool isLoading, List<Contact> contacts});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -359,12 +371,22 @@ class __$$_KeepUpTodayStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? contacts = null,
   }) {
     return _then(_$_KeepUpTodayState(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      contacts: null == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
     ));
   }
 }
@@ -372,14 +394,30 @@ class __$$_KeepUpTodayStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_KeepUpTodayState extends _KeepUpTodayState {
-  const _$_KeepUpTodayState({this.pageCommand}) : super._();
+  const _$_KeepUpTodayState(
+      {this.pageCommand,
+      this.isLoading = false,
+      final List<Contact> contacts = const []})
+      : _contacts = contacts,
+        super._();
 
   @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final bool isLoading;
+  final List<Contact> _contacts;
+  @override
+  @JsonKey()
+  List<Contact> get contacts {
+    if (_contacts is EqualUnmodifiableListView) return _contacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_contacts);
+  }
 
   @override
   String toString() {
-    return 'KeepUpTodayState(pageCommand: $pageCommand)';
+    return 'KeepUpTodayState(pageCommand: $pageCommand, isLoading: $isLoading, contacts: $contacts)';
   }
 
   @override
@@ -388,11 +426,15 @@ class _$_KeepUpTodayState extends _KeepUpTodayState {
         (other.runtimeType == runtimeType &&
             other is _$_KeepUpTodayState &&
             (identical(other.pageCommand, pageCommand) ||
-                other.pageCommand == pageCommand));
+                other.pageCommand == pageCommand) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageCommand);
+  int get hashCode => Object.hash(runtimeType, pageCommand, isLoading,
+      const DeepCollectionEquality().hash(_contacts));
 
   @JsonKey(ignore: true)
   @override
@@ -402,12 +444,18 @@ class _$_KeepUpTodayState extends _KeepUpTodayState {
 }
 
 abstract class _KeepUpTodayState extends KeepUpTodayState {
-  const factory _KeepUpTodayState({final PageCommand? pageCommand}) =
-      _$_KeepUpTodayState;
+  const factory _KeepUpTodayState(
+      {final PageCommand? pageCommand,
+      final bool isLoading,
+      final List<Contact> contacts}) = _$_KeepUpTodayState;
   const _KeepUpTodayState._() : super._();
 
   @override
   PageCommand? get pageCommand;
+  @override
+  bool get isLoading;
+  @override
+  List<Contact> get contacts;
   @override
   @JsonKey(ignore: true)
   _$$_KeepUpTodayStateCopyWith<_$_KeepUpTodayState> get copyWith =>

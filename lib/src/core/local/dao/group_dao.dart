@@ -10,9 +10,8 @@ class GroupDao extends DatabaseAccessor<AppDatabase> with _$GroupDaoMixin {
 
   GroupDao(this.db) : super(db);
 
-  Future<int> insert(Group group) => into(groups).insert(group, mode: InsertMode.insertOrReplace);
-
-  Future<bool> updateGroup(Group group) => update(groups).replace(group);
+  Future<int> insertOrReplace(Group group) =>
+      into(groups).insert(group, mode: InsertMode.insertOrReplace);
 
   Future<List<Group>> getGroups() => select(groups).get();
 
@@ -45,7 +44,7 @@ class GroupDao extends DatabaseAccessor<AppDatabase> with _$GroupDaoMixin {
 
     // Update groups
     for (Group group in leaveGroups) {
-      await updateGroup(group);
+      await insertOrReplace(group);
     }
   }
 }
