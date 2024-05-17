@@ -875,15 +875,292 @@ class ContactsCompanion extends UpdateCompanion<Contact> {
   }
 }
 
+class $InteractionsTable extends Interactions
+    with TableInfo<$InteractionsTable, Interaction> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $InteractionsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+      'id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _contactIdMeta =
+      const VerificationMeta('contactId');
+  @override
+  late final GeneratedColumn<String> contactId = GeneratedColumn<String>(
+      'contact_id', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(''));
+  static const VerificationMeta _dateCompletedMeta =
+      const VerificationMeta('dateCompleted');
+  @override
+  late final GeneratedColumn<DateTime> dateCompleted =
+      GeneratedColumn<DateTime>('date_completed', aliasedName, true,
+          type: DriftSqlType.dateTime, requiredDuringInsert: false);
+  static const VerificationMeta _methodMeta = const VerificationMeta('method');
+  @override
+  late final GeneratedColumnWithTypeConverter<InteractionMethodType, String>
+      method = GeneratedColumn<String>('method', aliasedName, false,
+              type: DriftSqlType.string,
+              requiredDuringInsert: false,
+              defaultValue: Constant(InteractionMethodType.None.name))
+          .withConverter<InteractionMethodType>(
+              $InteractionsTable.$convertermethod);
+  @override
+  List<GeneratedColumn> get $columns => [id, contactId, dateCompleted, method];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'interactions';
+  @override
+  VerificationContext validateIntegrity(Insertable<Interaction> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('contact_id')) {
+      context.handle(_contactIdMeta,
+          contactId.isAcceptableOrUnknown(data['contact_id']!, _contactIdMeta));
+    }
+    if (data.containsKey('date_completed')) {
+      context.handle(
+          _dateCompletedMeta,
+          dateCompleted.isAcceptableOrUnknown(
+              data['date_completed']!, _dateCompletedMeta));
+    }
+    context.handle(_methodMeta, const VerificationResult.success());
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Interaction map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return Interaction(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
+      contactId: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}contact_id'])!,
+      dateCompleted: attachedDatabase.typeMapping.read(
+          DriftSqlType.dateTime, data['${effectivePrefix}date_completed']),
+      method: $InteractionsTable.$convertermethod.fromSql(attachedDatabase
+          .typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}method'])!),
+    );
+  }
+
+  @override
+  $InteractionsTable createAlias(String alias) {
+    return $InteractionsTable(attachedDatabase, alias);
+  }
+
+  static JsonTypeConverter2<InteractionMethodType, String, String>
+      $convertermethod = const EnumNameConverter<InteractionMethodType>(
+          InteractionMethodType.values);
+}
+
+class Interaction extends DataClass implements Insertable<Interaction> {
+  final String id;
+  final String contactId;
+  final DateTime? dateCompleted;
+  final InteractionMethodType method;
+  const Interaction(
+      {required this.id,
+      required this.contactId,
+      this.dateCompleted,
+      required this.method});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['contact_id'] = Variable<String>(contactId);
+    if (!nullToAbsent || dateCompleted != null) {
+      map['date_completed'] = Variable<DateTime>(dateCompleted);
+    }
+    {
+      map['method'] =
+          Variable<String>($InteractionsTable.$convertermethod.toSql(method));
+    }
+    return map;
+  }
+
+  InteractionsCompanion toCompanion(bool nullToAbsent) {
+    return InteractionsCompanion(
+      id: Value(id),
+      contactId: Value(contactId),
+      dateCompleted: dateCompleted == null && nullToAbsent
+          ? const Value.absent()
+          : Value(dateCompleted),
+      method: Value(method),
+    );
+  }
+
+  factory Interaction.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return Interaction(
+      id: serializer.fromJson<String>(json['id']),
+      contactId: serializer.fromJson<String>(json['contact_id']),
+      dateCompleted: serializer.fromJson<DateTime?>(json['date_completed']),
+      method: $InteractionsTable.$convertermethod
+          .fromJson(serializer.fromJson<String>(json['method'])),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'contact_id': serializer.toJson<String>(contactId),
+      'date_completed': serializer.toJson<DateTime?>(dateCompleted),
+      'method': serializer
+          .toJson<String>($InteractionsTable.$convertermethod.toJson(method)),
+    };
+  }
+
+  Interaction copyWith(
+          {String? id,
+          String? contactId,
+          Value<DateTime?> dateCompleted = const Value.absent(),
+          InteractionMethodType? method}) =>
+      Interaction(
+        id: id ?? this.id,
+        contactId: contactId ?? this.contactId,
+        dateCompleted:
+            dateCompleted.present ? dateCompleted.value : this.dateCompleted,
+        method: method ?? this.method,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('Interaction(')
+          ..write('id: $id, ')
+          ..write('contactId: $contactId, ')
+          ..write('dateCompleted: $dateCompleted, ')
+          ..write('method: $method')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, contactId, dateCompleted, method);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is Interaction &&
+          other.id == this.id &&
+          other.contactId == this.contactId &&
+          other.dateCompleted == this.dateCompleted &&
+          other.method == this.method);
+}
+
+class InteractionsCompanion extends UpdateCompanion<Interaction> {
+  final Value<String> id;
+  final Value<String> contactId;
+  final Value<DateTime?> dateCompleted;
+  final Value<InteractionMethodType> method;
+  final Value<int> rowid;
+  const InteractionsCompanion({
+    this.id = const Value.absent(),
+    this.contactId = const Value.absent(),
+    this.dateCompleted = const Value.absent(),
+    this.method = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  InteractionsCompanion.insert({
+    required String id,
+    this.contactId = const Value.absent(),
+    this.dateCompleted = const Value.absent(),
+    this.method = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : id = Value(id);
+  static Insertable<Interaction> custom({
+    Expression<String>? id,
+    Expression<String>? contactId,
+    Expression<DateTime>? dateCompleted,
+    Expression<String>? method,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (contactId != null) 'contact_id': contactId,
+      if (dateCompleted != null) 'date_completed': dateCompleted,
+      if (method != null) 'method': method,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  InteractionsCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? contactId,
+      Value<DateTime?>? dateCompleted,
+      Value<InteractionMethodType>? method,
+      Value<int>? rowid}) {
+    return InteractionsCompanion(
+      id: id ?? this.id,
+      contactId: contactId ?? this.contactId,
+      dateCompleted: dateCompleted ?? this.dateCompleted,
+      method: method ?? this.method,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (contactId.present) {
+      map['contact_id'] = Variable<String>(contactId.value);
+    }
+    if (dateCompleted.present) {
+      map['date_completed'] = Variable<DateTime>(dateCompleted.value);
+    }
+    if (method.present) {
+      map['method'] = Variable<String>(
+          $InteractionsTable.$convertermethod.toSql(method.value));
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('InteractionsCompanion(')
+          ..write('id: $id, ')
+          ..write('contactId: $contactId, ')
+          ..write('dateCompleted: $dateCompleted, ')
+          ..write('method: $method, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   late final $GroupsTable groups = $GroupsTable(this);
   late final $ContactsTable contacts = $ContactsTable(this);
+  late final $InteractionsTable interactions = $InteractionsTable(this);
   late final GroupDao groupDao = GroupDao(this as AppDatabase);
   late final ContactDao contactDao = ContactDao(this as AppDatabase);
+  late final InteractionDao interactionDao =
+      InteractionDao(this as AppDatabase);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities => [groups, contacts];
+  List<DatabaseSchemaEntity> get allSchemaEntities =>
+      [groups, contacts, interactions];
 }

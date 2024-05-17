@@ -9,7 +9,6 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
-import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
@@ -140,35 +139,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
         return;
       }
     }
-    final DateTime now = DateUtils.dateOnly(DateTime.now());
-    final DateTime expiration;
-    switch (selectedGroup.frequencyInterval) {
-      case FrequencyIntervalType.everyDay:
-        expiration = now.add(const Duration(days: 1));
-        break;
-      case FrequencyIntervalType.everyWeek:
-        expiration = now.add(const Duration(days: 7));
-        break;
-      case FrequencyIntervalType.everyTwoWeeks:
-        expiration = now.add(const Duration(days: 14));
-        break;
-      case FrequencyIntervalType.everyMonth:
-        expiration = now.copyWith(month: now.month + 1);
-        break;
-      case FrequencyIntervalType.everyThreeMonths:
-        expiration = now.copyWith(month: now.month + 3);
-        break;
-      case FrequencyIntervalType.everySixMonths:
-        expiration = now.copyWith(month: now.month + 6);
-        break;
-      case FrequencyIntervalType.everyYear:
-        expiration = now.copyWith(year: now.year + 1);
-        break;
-      default:
-        expiration = now;
-        break;
-    }
-
+    final DateTime expiration = selectedGroup.frequencyInterval.toExpirationDate();
     final request = state.request.copyWith(
       avatar: avatarUrl,
       expiration: expiration,

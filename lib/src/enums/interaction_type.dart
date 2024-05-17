@@ -1,0 +1,4 @@
+enum InteractionMethodType {
+  None,
+  KeepUp;
+}

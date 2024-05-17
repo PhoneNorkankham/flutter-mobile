@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/local/dao/contact_dao.dart';
 import 'package:keepup/src/core/local/dao/group_dao.dart';
+import 'package:keepup/src/core/local/dao/interaction_dao.dart';
 import 'package:keepup/src/core/managers/supabase_manager.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
 import 'package:keepup/src/core/network_bound_resource.dart';
@@ -19,6 +20,8 @@ class SupabaseRepository {
   GroupDao get _groupDao => _appDatabase.groupDao;
 
   ContactDao get _contactDao => _appDatabase.contactDao;
+
+  InteractionDao get _interactionDao => _appDatabase.interactionDao;
 
   SupabaseRepository(
     this._appShared,
@@ -45,21 +48,21 @@ class SupabaseRepository {
   Future<Resource<Group>> joinGroup(GroupRequest group) {
     return NetworkBoundResource<Group, Group>(
       createSerializedCall: () => _supabaseManager.joinGroup(group),
-      saveCallResult: (group) => _groupDao.insert(group),
+      saveCallResult: (group) => _groupDao.insertOrReplace(group),
     ).getAsFuture();
   }
 
   Future<Resource<Group>> insertGroup(GroupRequest group) {
     return NetworkBoundResource<Group, Group>(
       createSerializedCall: () => _supabaseManager.insertGroup(group),
-      saveCallResult: (group) => _groupDao.insert(group),
+      saveCallResult: (group) => _groupDao.insertOrReplace(group),
     ).getAsFuture();
   }
 
   Future<Resource<Group>> updateGroup(GroupRequest request) {
     return NetworkBoundResource<Group, Group>(
       createSerializedCall: () => _supabaseManager.updateGroup(request),
-      saveCallResult: (contact) => _groupDao.updateGroup(contact),
+      saveCallResult: (group) => _groupDao.insertOrReplace(group),
     ).getAsFuture();
   }
 
@@ -72,7 +75,7 @@ class SupabaseRepository {
         contactId: contactId,
         groupId: groupId,
       ),
-      saveCallResult: (group) => _groupDao.updateGroup(group),
+      saveCallResult: (group) => _groupDao.insertOrReplace(group),
     ).getAsFuture();
   }
 
@@ -86,14 +89,14 @@ class SupabaseRepository {
   Future<Resource<Contact>> insertContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
       createSerializedCall: () => _supabaseManager.insertContact(request),
-      saveCallResult: (contact) => _contactDao.insertContact(contact),
+      saveCallResult: (contact) => _contactDao.insertOrReplaceContact(contact),
     ).getAsFuture();
   }
 
   Future<Resource<Contact>> updateContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
       createSerializedCall: () => _supabaseManager.updateContact(request),
-      saveCallResult: (contact) => _contactDao.updateContact(contact),
+      saveCallResult: (contact) => _contactDao.insertOrReplaceContact(contact),
     ).getAsFuture();
   }
 
@@ -108,7 +111,7 @@ class SupabaseRepository {
       ),
       saveCallResult: (groups) async {
         for (Group group in groups) {
-          await _groupDao.insert(group);
+          await _groupDao.insertOrReplace(group);
         }
       },
     ).getAsFuture();
@@ -131,7 +134,7 @@ class SupabaseRepository {
       saveCallResult: (groups) async {
         await _groupDao.deleteAll();
         for (Group group in groups) {
-          await _groupDao.insert(group);
+          await _groupDao.insertOrReplace(group);
         }
       },
     ).getAsFuture();
@@ -154,9 +157,7 @@ class SupabaseRepository {
       loadFromDb: () => _contactDao.getContacts(),
       saveCallResult: (contacts) async {
         await _contactDao.deleteAll();
-        for (Contact contact in contacts) {
-          await _contactDao.insertContact(contact);
-        }
+        await _contactDao.insertAllOnConflictUpdate(contacts);
       },
     ).getAsFuture();
   }
@@ -176,6 +177,43 @@ class SupabaseRepository {
     return NetworkBoundResource<Contact?, Contact?>(
       createSerializedCall: () => _supabaseManager.getContact(contactId),
       loadFromDb: () => _contactDao.getContact(contactId),
+      saveCallResult: (contact) async {
+        if (contact != null) {
+          await _contactDao.insertOrReplaceContact(contact);
+        }
+      },
     ).getAsFuture();
+  }
+
+  Stream<List<Contact>> watchTodayContacts() => _contactDao.watchTodayContacts();
+
+  Future<Resource<List<Contact>>> getTodayContacts() {
+    return NetworkBoundResource<List<Contact>, List<Contact>>(
+      createSerializedCall: () => _supabaseManager.getTodayContacts(),
+      loadFromDb: () => _contactDao.getTodayContacts(),
+    ).getAsFuture();
+  }
+
+  Future<Resource<Interaction?>> getLastInteractionByContactId(String contactId) {
+    return NetworkBoundResource<Interaction?, Interaction?>(
+      createSerializedCall: () => _supabaseManager.getLastInteractionByContactId(contactId),
+      loadFromDb: () => _interactionDao.getLastInteractionByContactId(contactId),
+      saveCallResult: (interaction) async {
+        if (interaction != null) {
+          await _interactionDao.insertOrReplace(interaction);
+        }
+      },
+    ).getAsFuture();
+  }
+
+  Future<List<Group>> getGroupsByContacts(List<Contact> contacts) async {
+    List<String> groupIds = contacts.map((e) => e.groupId).toSet().toList();
+    final List<Group> groups = [];
+    for (String groupId in groupIds) {
+      final Group? group = await _groupDao.getGroup(groupId);
+      if (group == null || groups.contains(group)) continue;
+      groups.add(group);
+    }
+    return groups;
   }
 }

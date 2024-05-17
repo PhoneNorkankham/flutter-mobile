@@ -68,6 +68,8 @@ Map<String, String> enUs = {
   LocaleKey.keepUpTodayDescription: 'Please keep up the contacts which is expiring today!',
   LocaleKey.allSet: 'All Set',
   LocaleKey.keepUp: 'KeepUp',
+  LocaleKey.noContactsNeedKeepUpToday: 'No contacts need Keep Up today!',
+  LocaleKey.noGroupsNeedKeepUpToday: 'No groups need Keep Up today!',
   LocaleKey.individual: 'Individual',
   LocaleKey.inAWeek: 'In a week',
   LocaleKey.inAMonth: 'In a month',
