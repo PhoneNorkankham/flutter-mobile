@@ -5,4 +5,8 @@ class KeepUpTodayEvent with _$KeepUpTodayEvent {
   const factory KeepUpTodayEvent.initial() = _Initial;
 
   const factory KeepUpTodayEvent.clearPageCommand() = _ClearPageCommand;
+
+  const factory KeepUpTodayEvent.onKeepUpAllContacts() = _OnKeepUpAllContacts;
+
+  const factory KeepUpTodayEvent.onKeepUpAllGroups() = _OnKeepUpAllGroups;
 }

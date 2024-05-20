@@ -14,24 +14,37 @@ _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
       frequencyInterval: $enumDecodeNullable(
-              _$FrequencyIntervalTypeEnumMap, json['frequency_interval']) ??
+              _$FrequencyIntervalTypeEnumMap, json['frequency_interval'],
+              unknownValue: FrequencyIntervalType.none) ??
           FrequencyIntervalType.none,
       contacts: (json['contacts'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      dateCreated: const DateTimeJsonConverter().fromJson(json['date_created']),
     );
 
-Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) =>
-    <String, dynamic>{
-      'owner_id': instance.ownerId,
-      'name': instance.name,
-      'description': instance.description,
-      'avatar': instance.avatar,
-      'frequency_interval':
-          _$FrequencyIntervalTypeEnumMap[instance.frequencyInterval]!,
-      'contacts': instance.contacts,
-    };
+Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) {
+  final val = <String, dynamic>{
+    'owner_id': instance.ownerId,
+    'name': instance.name,
+    'description': instance.description,
+    'avatar': instance.avatar,
+    'frequency_interval':
+        _$FrequencyIntervalTypeEnumMap[instance.frequencyInterval]!,
+    'contacts': instance.contacts,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('date_created',
+      const DateTimeJsonConverter().toJson(instance.dateCreated));
+  return val;
+}
 
 const _$FrequencyIntervalTypeEnumMap = {
   FrequencyIntervalType.everyDay: 'everyDay',

@@ -5,6 +5,7 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
+import 'package:keepup/src/core/request/interaction_request.dart';
 import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -268,9 +269,27 @@ class SupabaseManager {
   Future<List<Contact>> getTodayContacts() =>
       getContacts().then((contacts) => contacts.toKeepUpToday());
 
+  Future<List<Interaction>> getInteractions() => _supabase
+      .from(_tbInteractions)
+      .select()
+      .eq(_fieldOwnerId, uid)
+      .then((value) => value.map((e) => Interaction.fromJson(e)).toList());
+
   Future<Interaction?> getLastInteractionByContactId(String contactId) => _supabase
       .from(_tbInteractions)
       .select()
       .eq(_fieldContactId, contactId)
       .then((value) => value.map((e) => Interaction.fromJson(e)).toList().firstOrNull);
+
+  Future<Interaction> insertInteraction(InteractionRequest request) => _supabase
+          .from(_tbInteractions)
+          .insert(request.copyWith(ownerId: uid).toJson())
+          .select()
+          .then((value) {
+        if (value.isNotEmpty) {
+          return Interaction.fromJson(value.first);
+        } else {
+          return Future.error(LocaleKey.creatingInteractionFailed.tr);
+        }
+      });
 }

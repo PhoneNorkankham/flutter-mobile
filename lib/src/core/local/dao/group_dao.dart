@@ -13,9 +13,11 @@ class GroupDao extends DatabaseAccessor<AppDatabase> with _$GroupDaoMixin {
   Future<int> insertOrReplace(Group group) =>
       into(groups).insert(group, mode: InsertMode.insertOrReplace);
 
-  Future<List<Group>> getGroups() => select(groups).get();
+  Future<List<Group>> getGroups() =>
+      (select(groups)..orderBy([(u) => OrderingTerm(expression: u.dateCreated)])).get();
 
-  Stream<List<Group>> watchGroups() => select(groups).watch();
+  Stream<List<Group>> watchGroups() =>
+      (select(groups)..orderBy([(u) => OrderingTerm(expression: u.dateCreated)])).watch();
 
   Future<Group?> getGroup(String groupId) =>
       (select(groups)..where((tbl) => tbl.id.equals(groupId)))

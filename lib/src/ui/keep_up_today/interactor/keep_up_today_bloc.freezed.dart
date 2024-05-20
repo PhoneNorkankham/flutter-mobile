@@ -20,18 +20,24 @@ mixin _$KeepUpTodayEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onKeepUpAllContacts,
+    required TResult Function() onKeepUpAllGroups,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onKeepUpAllContacts,
+    TResult? Function()? onKeepUpAllGroups,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onKeepUpAllContacts,
+    TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$KeepUpTodayEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
+    required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +125,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onKeepUpAllContacts,
+    required TResult Function() onKeepUpAllGroups,
   }) {
     return initial();
   }
@@ -122,6 +136,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onKeepUpAllContacts,
+    TResult? Function()? onKeepUpAllGroups,
   }) {
     return initial?.call();
   }
@@ -131,6 +147,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onKeepUpAllContacts,
+    TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -144,6 +162,8 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
+    required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) {
     return initial(this);
   }
@@ -153,6 +173,8 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) {
     return initial?.call(this);
   }
@@ -162,6 +184,8 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -215,6 +239,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onKeepUpAllContacts,
+    required TResult Function() onKeepUpAllGroups,
   }) {
     return clearPageCommand();
   }
@@ -224,6 +250,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onKeepUpAllContacts,
+    TResult? Function()? onKeepUpAllGroups,
   }) {
     return clearPageCommand?.call();
   }
@@ -233,6 +261,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onKeepUpAllContacts,
+    TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -246,6 +276,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
+    required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) {
     return clearPageCommand(this);
   }
@@ -255,6 +287,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -264,6 +298,8 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -275,6 +311,234 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements KeepUpTodayEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
+}
+
+/// @nodoc
+abstract class _$$_OnKeepUpAllContactsCopyWith<$Res> {
+  factory _$$_OnKeepUpAllContactsCopyWith(_$_OnKeepUpAllContacts value,
+          $Res Function(_$_OnKeepUpAllContacts) then) =
+      __$$_OnKeepUpAllContactsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnKeepUpAllContactsCopyWithImpl<$Res>
+    extends _$KeepUpTodayEventCopyWithImpl<$Res, _$_OnKeepUpAllContacts>
+    implements _$$_OnKeepUpAllContactsCopyWith<$Res> {
+  __$$_OnKeepUpAllContactsCopyWithImpl(_$_OnKeepUpAllContacts _value,
+      $Res Function(_$_OnKeepUpAllContacts) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnKeepUpAllContacts implements _OnKeepUpAllContacts {
+  const _$_OnKeepUpAllContacts();
+
+  @override
+  String toString() {
+    return 'KeepUpTodayEvent.onKeepUpAllContacts()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnKeepUpAllContacts);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onKeepUpAllContacts,
+    required TResult Function() onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllContacts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onKeepUpAllContacts,
+    TResult? Function()? onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllContacts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onKeepUpAllContacts,
+    TResult Function()? onKeepUpAllGroups,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpAllContacts != null) {
+      return onKeepUpAllContacts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
+    required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllContacts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllContacts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpAllContacts != null) {
+      return onKeepUpAllContacts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnKeepUpAllContacts implements KeepUpTodayEvent {
+  const factory _OnKeepUpAllContacts() = _$_OnKeepUpAllContacts;
+}
+
+/// @nodoc
+abstract class _$$_OnKeepUpAllGroupsCopyWith<$Res> {
+  factory _$$_OnKeepUpAllGroupsCopyWith(_$_OnKeepUpAllGroups value,
+          $Res Function(_$_OnKeepUpAllGroups) then) =
+      __$$_OnKeepUpAllGroupsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnKeepUpAllGroupsCopyWithImpl<$Res>
+    extends _$KeepUpTodayEventCopyWithImpl<$Res, _$_OnKeepUpAllGroups>
+    implements _$$_OnKeepUpAllGroupsCopyWith<$Res> {
+  __$$_OnKeepUpAllGroupsCopyWithImpl(
+      _$_OnKeepUpAllGroups _value, $Res Function(_$_OnKeepUpAllGroups) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnKeepUpAllGroups implements _OnKeepUpAllGroups {
+  const _$_OnKeepUpAllGroups();
+
+  @override
+  String toString() {
+    return 'KeepUpTodayEvent.onKeepUpAllGroups()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnKeepUpAllGroups);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onKeepUpAllContacts,
+    required TResult Function() onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllGroups();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onKeepUpAllContacts,
+    TResult? Function()? onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllGroups?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onKeepUpAllContacts,
+    TResult Function()? onKeepUpAllGroups,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpAllGroups != null) {
+      return onKeepUpAllGroups();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
+    required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllGroups(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
+  }) {
+    return onKeepUpAllGroups?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpAllGroups != null) {
+      return onKeepUpAllGroups(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnKeepUpAllGroups implements KeepUpTodayEvent {
+  const factory _OnKeepUpAllGroups() = _$_OnKeepUpAllGroups;
 }
 
 /// @nodoc

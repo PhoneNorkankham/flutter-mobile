@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:keepup/src/core/converters/date_time_converter.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/utils/app_validation.dart';
 
@@ -17,9 +18,10 @@ class GroupRequest with _$GroupRequest {
     @Default('') String description,
     @Default('') String avatar,
     @Default(FrequencyIntervalType.none)
-    @JsonKey(name: 'frequency_interval')
+    @JsonKey(name: 'frequency_interval', unknownEnumValue: FrequencyIntervalType.none)
     FrequencyIntervalType frequencyInterval,
     @Default([]) List<String> contacts,
+    @DateTimeJsonConverter() @JsonKey(name: 'date_created') DateTime? dateCreated,
   }) = _GroupRequest;
 
   factory GroupRequest.fromJson(Map<String, dynamic> json) => _$GroupRequestFromJson(json);
