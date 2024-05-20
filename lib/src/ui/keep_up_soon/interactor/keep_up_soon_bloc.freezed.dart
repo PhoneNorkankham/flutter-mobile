@@ -20,18 +20,33 @@ mixin _$KeepUpSoonEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +54,33 @@ mixin _$KeepUpSoonEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +143,11 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
   }) {
     return initial();
   }
@@ -122,6 +157,11 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
   }) {
     return initial?.call();
   }
@@ -131,6 +171,11 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -144,6 +189,11 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
   }) {
     return initial(this);
   }
@@ -153,6 +203,11 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
   }) {
     return initial?.call(this);
   }
@@ -162,6 +217,11 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -215,6 +275,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
   }) {
     return clearPageCommand();
   }
@@ -224,6 +289,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
   }) {
     return clearPageCommand?.call();
   }
@@ -233,6 +303,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -246,6 +321,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
   }) {
     return clearPageCommand(this);
   }
@@ -255,6 +335,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -264,6 +349,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -278,8 +368,767 @@ abstract class _ClearPageCommand implements KeepUpSoonEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnFetchWeekContactsCopyWith<$Res> {
+  factory _$$_OnFetchWeekContactsCopyWith(_$_OnFetchWeekContacts value,
+          $Res Function(_$_OnFetchWeekContacts) then) =
+      __$$_OnFetchWeekContactsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnFetchWeekContactsCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnFetchWeekContacts>
+    implements _$$_OnFetchWeekContactsCopyWith<$Res> {
+  __$$_OnFetchWeekContactsCopyWithImpl(_$_OnFetchWeekContacts _value,
+      $Res Function(_$_OnFetchWeekContacts) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
+  const _$_OnFetchWeekContacts();
+
+  @override
+  String toString() {
+    return 'KeepUpSoonEvent.onFetchWeekContacts()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnFetchWeekContacts);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
+  }) {
+    return onFetchWeekContacts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
+  }) {
+    return onFetchWeekContacts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onFetchWeekContacts != null) {
+      return onFetchWeekContacts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+  }) {
+    return onFetchWeekContacts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+  }) {
+    return onFetchWeekContacts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onFetchWeekContacts != null) {
+      return onFetchWeekContacts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnFetchWeekContacts implements KeepUpSoonEvent {
+  const factory _OnFetchWeekContacts() = _$_OnFetchWeekContacts;
+}
+
+/// @nodoc
+abstract class _$$_OnFetchMonthContactsCopyWith<$Res> {
+  factory _$$_OnFetchMonthContactsCopyWith(_$_OnFetchMonthContacts value,
+          $Res Function(_$_OnFetchMonthContacts) then) =
+      __$$_OnFetchMonthContactsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnFetchMonthContactsCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnFetchMonthContacts>
+    implements _$$_OnFetchMonthContactsCopyWith<$Res> {
+  __$$_OnFetchMonthContactsCopyWithImpl(_$_OnFetchMonthContacts _value,
+      $Res Function(_$_OnFetchMonthContacts) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
+  const _$_OnFetchMonthContacts();
+
+  @override
+  String toString() {
+    return 'KeepUpSoonEvent.onFetchMonthContacts()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnFetchMonthContacts);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
+  }) {
+    return onFetchMonthContacts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
+  }) {
+    return onFetchMonthContacts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onFetchMonthContacts != null) {
+      return onFetchMonthContacts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+  }) {
+    return onFetchMonthContacts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+  }) {
+    return onFetchMonthContacts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onFetchMonthContacts != null) {
+      return onFetchMonthContacts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnFetchMonthContacts implements KeepUpSoonEvent {
+  const factory _OnFetchMonthContacts() = _$_OnFetchMonthContacts;
+}
+
+/// @nodoc
+abstract class _$$_OnChangedTypeCopyWith<$Res> {
+  factory _$$_OnChangedTypeCopyWith(
+          _$_OnChangedType value, $Res Function(_$_OnChangedType) then) =
+      __$$_OnChangedTypeCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KeepUpSoonType type});
+}
+
+/// @nodoc
+class __$$_OnChangedTypeCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnChangedType>
+    implements _$$_OnChangedTypeCopyWith<$Res> {
+  __$$_OnChangedTypeCopyWithImpl(
+      _$_OnChangedType _value, $Res Function(_$_OnChangedType) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$_OnChangedType(
+      null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as KeepUpSoonType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnChangedType implements _OnChangedType {
+  const _$_OnChangedType(this.type);
+
+  @override
+  final KeepUpSoonType type;
+
+  @override
+  String toString() {
+    return 'KeepUpSoonEvent.onChangedType(type: $type)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnChangedType &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnChangedTypeCopyWith<_$_OnChangedType> get copyWith =>
+      __$$_OnChangedTypeCopyWithImpl<_$_OnChangedType>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
+  }) {
+    return onChangedType(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
+  }) {
+    return onChangedType?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onChangedType != null) {
+      return onChangedType(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+  }) {
+    return onChangedType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+  }) {
+    return onChangedType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onChangedType != null) {
+      return onChangedType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedType implements KeepUpSoonEvent {
+  const factory _OnChangedType(final KeepUpSoonType type) = _$_OnChangedType;
+
+  KeepUpSoonType get type;
+  @JsonKey(ignore: true)
+  _$$_OnChangedTypeCopyWith<_$_OnChangedType> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnKeepUpContactCopyWith<$Res> {
+  factory _$$_OnKeepUpContactCopyWith(
+          _$_OnKeepUpContact value, $Res Function(_$_OnKeepUpContact) then) =
+      __$$_OnKeepUpContactCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Contact contact});
+}
+
+/// @nodoc
+class __$$_OnKeepUpContactCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnKeepUpContact>
+    implements _$$_OnKeepUpContactCopyWith<$Res> {
+  __$$_OnKeepUpContactCopyWithImpl(
+      _$_OnKeepUpContact _value, $Res Function(_$_OnKeepUpContact) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contact = freezed,
+  }) {
+    return _then(_$_OnKeepUpContact(
+      freezed == contact
+          ? _value.contact
+          : contact // ignore: cast_nullable_to_non_nullable
+              as Contact,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnKeepUpContact implements _OnKeepUpContact {
+  const _$_OnKeepUpContact(this.contact);
+
+  @override
+  final Contact contact;
+
+  @override
+  String toString() {
+    return 'KeepUpSoonEvent.onKeepUpContact(contact: $contact)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnKeepUpContact &&
+            const DeepCollectionEquality().equals(other.contact, contact));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnKeepUpContactCopyWith<_$_OnKeepUpContact> get copyWith =>
+      __$$_OnKeepUpContactCopyWithImpl<_$_OnKeepUpContact>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
+  }) {
+    return onKeepUpContact(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
+  }) {
+    return onKeepUpContact?.call(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpContact != null) {
+      return onKeepUpContact(contact);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+  }) {
+    return onKeepUpContact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+  }) {
+    return onKeepUpContact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpContact != null) {
+      return onKeepUpContact(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnKeepUpContact implements KeepUpSoonEvent {
+  const factory _OnKeepUpContact(final Contact contact) = _$_OnKeepUpContact;
+
+  Contact get contact;
+  @JsonKey(ignore: true)
+  _$$_OnKeepUpContactCopyWith<_$_OnKeepUpContact> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnKeepUpGroupCopyWith<$Res> {
+  factory _$$_OnKeepUpGroupCopyWith(
+          _$_OnKeepUpGroup value, $Res Function(_$_OnKeepUpGroup) then) =
+      __$$_OnKeepUpGroupCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Group group});
+}
+
+/// @nodoc
+class __$$_OnKeepUpGroupCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnKeepUpGroup>
+    implements _$$_OnKeepUpGroupCopyWith<$Res> {
+  __$$_OnKeepUpGroupCopyWithImpl(
+      _$_OnKeepUpGroup _value, $Res Function(_$_OnKeepUpGroup) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? group = freezed,
+  }) {
+    return _then(_$_OnKeepUpGroup(
+      freezed == group
+          ? _value.group
+          : group // ignore: cast_nullable_to_non_nullable
+              as Group,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnKeepUpGroup implements _OnKeepUpGroup {
+  const _$_OnKeepUpGroup(this.group);
+
+  @override
+  final Group group;
+
+  @override
+  String toString() {
+    return 'KeepUpSoonEvent.onKeepUpGroup(group: $group)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnKeepUpGroup &&
+            const DeepCollectionEquality().equals(other.group, group));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(group));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnKeepUpGroupCopyWith<_$_OnKeepUpGroup> get copyWith =>
+      __$$_OnKeepUpGroupCopyWithImpl<_$_OnKeepUpGroup>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
+  }) {
+    return onKeepUpGroup(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
+  }) {
+    return onKeepUpGroup?.call(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpGroup != null) {
+      return onKeepUpGroup(group);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+  }) {
+    return onKeepUpGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+  }) {
+    return onKeepUpGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    required TResult orElse(),
+  }) {
+    if (onKeepUpGroup != null) {
+      return onKeepUpGroup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnKeepUpGroup implements KeepUpSoonEvent {
+  const factory _OnKeepUpGroup(final Group group) = _$_OnKeepUpGroup;
+
+  Group get group;
+  @JsonKey(ignore: true)
+  _$$_OnKeepUpGroupCopyWith<_$_OnKeepUpGroup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$KeepUpSoonState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  KeepUpSoonType get type => throw _privateConstructorUsedError;
+  List<Contact> get weekContacts => throw _privateConstructorUsedError;
+  List<Contact> get monthContacts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $KeepUpSoonStateCopyWith<KeepUpSoonState> get copyWith =>
@@ -292,7 +1141,12 @@ abstract class $KeepUpSoonStateCopyWith<$Res> {
           KeepUpSoonState value, $Res Function(KeepUpSoonState) then) =
       _$KeepUpSoonStateCopyWithImpl<$Res, KeepUpSoonState>;
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call(
+      {PageCommand? pageCommand,
+      bool isLoading,
+      KeepUpSoonType type,
+      List<Contact> weekContacts,
+      List<Contact> monthContacts});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -311,12 +1165,32 @@ class _$KeepUpSoonStateCopyWithImpl<$Res, $Val extends KeepUpSoonState>
   @override
   $Res call({
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? type = null,
+    Object? weekContacts = null,
+    Object? monthContacts = null,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as KeepUpSoonType,
+      weekContacts: null == weekContacts
+          ? _value.weekContacts
+          : weekContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      monthContacts: null == monthContacts
+          ? _value.monthContacts
+          : monthContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
     ) as $Val);
   }
 
@@ -341,7 +1215,12 @@ abstract class _$$_KeepUpSoonStateCopyWith<$Res>
       __$$_KeepUpSoonStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageCommand? pageCommand});
+  $Res call(
+      {PageCommand? pageCommand,
+      bool isLoading,
+      KeepUpSoonType type,
+      List<Contact> weekContacts,
+      List<Contact> monthContacts});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -359,12 +1238,32 @@ class __$$_KeepUpSoonStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pageCommand = freezed,
+    Object? isLoading = null,
+    Object? type = null,
+    Object? weekContacts = null,
+    Object? monthContacts = null,
   }) {
     return _then(_$_KeepUpSoonState(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as KeepUpSoonType,
+      weekContacts: null == weekContacts
+          ? _value._weekContacts
+          : weekContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      monthContacts: null == monthContacts
+          ? _value._monthContacts
+          : monthContacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
     ));
   }
 }
@@ -372,14 +1271,45 @@ class __$$_KeepUpSoonStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_KeepUpSoonState extends _KeepUpSoonState {
-  const _$_KeepUpSoonState({this.pageCommand}) : super._();
+  const _$_KeepUpSoonState(
+      {this.pageCommand,
+      this.isLoading = false,
+      this.type = KeepUpSoonType.groups,
+      final List<Contact> weekContacts = const [],
+      final List<Contact> monthContacts = const []})
+      : _weekContacts = weekContacts,
+        _monthContacts = monthContacts,
+        super._();
 
   @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  @JsonKey()
+  final KeepUpSoonType type;
+  final List<Contact> _weekContacts;
+  @override
+  @JsonKey()
+  List<Contact> get weekContacts {
+    if (_weekContacts is EqualUnmodifiableListView) return _weekContacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_weekContacts);
+  }
+
+  final List<Contact> _monthContacts;
+  @override
+  @JsonKey()
+  List<Contact> get monthContacts {
+    if (_monthContacts is EqualUnmodifiableListView) return _monthContacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_monthContacts);
+  }
 
   @override
   String toString() {
-    return 'KeepUpSoonState(pageCommand: $pageCommand)';
+    return 'KeepUpSoonState(pageCommand: $pageCommand, isLoading: $isLoading, type: $type, weekContacts: $weekContacts, monthContacts: $monthContacts)';
   }
 
   @override
@@ -388,11 +1318,24 @@ class _$_KeepUpSoonState extends _KeepUpSoonState {
         (other.runtimeType == runtimeType &&
             other is _$_KeepUpSoonState &&
             (identical(other.pageCommand, pageCommand) ||
-                other.pageCommand == pageCommand));
+                other.pageCommand == pageCommand) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality()
+                .equals(other._weekContacts, _weekContacts) &&
+            const DeepCollectionEquality()
+                .equals(other._monthContacts, _monthContacts));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageCommand);
+  int get hashCode => Object.hash(
+      runtimeType,
+      pageCommand,
+      isLoading,
+      type,
+      const DeepCollectionEquality().hash(_weekContacts),
+      const DeepCollectionEquality().hash(_monthContacts));
 
   @JsonKey(ignore: true)
   @override
@@ -402,12 +1345,24 @@ class _$_KeepUpSoonState extends _KeepUpSoonState {
 }
 
 abstract class _KeepUpSoonState extends KeepUpSoonState {
-  const factory _KeepUpSoonState({final PageCommand? pageCommand}) =
-      _$_KeepUpSoonState;
+  const factory _KeepUpSoonState(
+      {final PageCommand? pageCommand,
+      final bool isLoading,
+      final KeepUpSoonType type,
+      final List<Contact> weekContacts,
+      final List<Contact> monthContacts}) = _$_KeepUpSoonState;
   const _KeepUpSoonState._() : super._();
 
   @override
   PageCommand? get pageCommand;
+  @override
+  bool get isLoading;
+  @override
+  KeepUpSoonType get type;
+  @override
+  List<Contact> get weekContacts;
+  @override
+  List<Contact> get monthContacts;
   @override
   @JsonKey(ignore: true)
   _$$_KeepUpSoonStateCopyWith<_$_KeepUpSoonState> get copyWith =>

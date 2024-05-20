@@ -189,6 +189,10 @@ class SupabaseRepository {
 
   Stream<List<Contact>> watchTodayContacts() => _contactDao.watchTodayContacts();
 
+  Stream<List<Contact>> watchInAWeekContacts() => _contactDao.watchInAWeekContacts();
+
+  Stream<List<Contact>> watchInAMonthContacts() => _contactDao.watchInAMonthContacts();
+
   Future<Resource<List<Contact>>> getTodayContacts() {
     return NetworkBoundResource<List<Contact>, List<Contact>>(
       createSerializedCall: () => _supabaseManager.getTodayContacts(),

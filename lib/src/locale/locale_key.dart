@@ -104,6 +104,10 @@ class LocaleKey {
   static const String individual = "individual";
   static const String inAWeek = "inAWeek";
   static const String inAMonth = "inAMonth";
+  static const String noGroupsNeedKeepUpInAWeek = "noGroupsNeedKeepUpInAWeek";
+  static const String noContactsNeedKeepUpInAWeek = "noContactsNeedKeepUpInAWeek";
+  static const String noGroupsNeedKeepUpInAMonth = "noGroupsNeedKeepUpInAMonth";
+  static const String noContactsNeedKeepUpInAMonth = "noContactsNeedKeepUpInAMonth";
 
   // App Drawer
   static const String socialLogin = "socialLogin";
