@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
+import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_type.dart';
 
@@ -52,7 +54,41 @@ class KeepUpSoonBloc extends Bloc<KeepUpSoonEvent, KeepUpSoonState> {
   Future<List<Group>> getGroupsByContacts(List<Contact> contacts) =>
       _supabaseRepository.getGroupsByContacts(contacts);
 
-  FutureOr<void> _onKeepUpGroup(_OnKeepUpGroup event, Emitter<KeepUpSoonState> emit) {}
+  FutureOr<void> _onKeepUpGroup(_OnKeepUpGroup event, Emitter<KeepUpSoonState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final resource = await _supabaseRepository.keepUpGroup(event.group);
+    PageCommand pageCommand;
+    if (resource.isSuccess) {
+      pageCommand = PageCommandMessage.showSuccess(
+        LocaleKey.keepUpGroupSuccessfully.tr,
+      );
+    } else {
+      pageCommand = PageCommandMessage.showError(
+        resource.message ?? LocaleKey.keepUpGroupFailed.tr,
+      );
+    }
+    emit(state.copyWith(
+      isLoading: false,
+      pageCommand: pageCommand,
+    ));
+  }
 
-  FutureOr<void> _onKeepUpContact(_OnKeepUpContact event, Emitter<KeepUpSoonState> emit) {}
+  FutureOr<void> _onKeepUpContact(_OnKeepUpContact event, Emitter<KeepUpSoonState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final resource = await _supabaseRepository.keepUpContact(event.contact);
+    PageCommand pageCommand;
+    if (resource.isSuccess) {
+      pageCommand = PageCommandMessage.showSuccess(
+        LocaleKey.keepUpContactSuccessfully.tr,
+      );
+    } else {
+      pageCommand = PageCommandMessage.showError(
+        resource.message ?? LocaleKey.keepUpContactFailed.tr,
+      );
+    }
+    emit(state.copyWith(
+      isLoading: false,
+      pageCommand: pageCommand,
+    ));
+  }
 }

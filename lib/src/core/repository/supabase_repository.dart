@@ -238,35 +238,52 @@ class SupabaseRepository {
 
   Future<Resource<bool>> keepUpAllContacts(List<Contact> contacts) async {
     for (Contact contact in contacts) {
-      final Group? group = await _groupDao.getGroup(contact.groupId);
-      if (group != null) {
-        // Update contact's expiration
-        final contactRequest = ContactRequest.fromJson(contact.toJson()).copyWith(
-          expiration: group.frequencyInterval.toExpirationDate(),
+      final Resource<bool> resource = await keepUpContact(contact);
+      if (resource.isError) {
+        return Resource(
+          type: ResourceType.REQUEST_ERROR,
+          message: resource.message,
         );
-        final Resource<Contact> updateContactResource = await updateContact(contactRequest);
-        if (updateContactResource.isSuccess) {
-          // Insert new interaction
-          final interactionRequest = InteractionRequest(
-            contactId: contact.id,
-            method: InteractionMethodType.KeepUp,
-          );
-          final Resource<Interaction> resource = await insertInteraction(interactionRequest);
-          if (resource.isError) {
-            return Resource(
-              type: ResourceType.REQUEST_ERROR,
-              message: resource.message,
-            );
-          }
-        } else {
-          return Resource(
-            type: ResourceType.REQUEST_ERROR,
-            message: updateContactResource.message,
-          );
-        }
       }
     }
     return Resource(type: ResourceType.REQUEST_OK);
+  }
+
+  Future<Resource<bool>> keepUpContact(Contact contact) async {
+    final Group? group = await _groupDao.getGroup(contact.groupId);
+    if (group != null) {
+      // Update contact's expiration
+      final contactRequest = ContactRequest.fromJson(contact.toJson()).copyWith(
+        expiration: group.frequencyInterval.toExpirationDate(fromDate: contact.expiration),
+      );
+      final Resource<Contact> updateContactResource = await updateContact(contactRequest);
+      if (updateContactResource.isSuccess) {
+        // Insert new interaction
+        final interactionRequest = InteractionRequest(
+          contactId: contact.id,
+          method: InteractionMethodType.KeepUp,
+        );
+        final Resource<Interaction> resource = await insertInteraction(interactionRequest);
+        if (resource.isError) {
+          return Resource(
+            type: ResourceType.REQUEST_ERROR,
+            message: resource.message,
+          );
+        }
+      } else {
+        return Resource(
+          type: ResourceType.REQUEST_ERROR,
+          message: updateContactResource.message,
+        );
+      }
+    }
+    return Resource(type: ResourceType.REQUEST_OK);
+  }
+
+  Future<Resource<bool>> keepUpGroup(Group group) async {
+    final List<String> contactIds = group.contacts.map((e) => e.toString()).toList();
+    final List<Contact> contacts = await getAllContactByIds(contactIds);
+    return keepUpAllContacts(contacts);
   }
 
   Future<Resource<Interaction>> insertInteraction(InteractionRequest request) {

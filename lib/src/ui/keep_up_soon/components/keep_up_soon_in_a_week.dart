@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_group.dart';
 import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
@@ -28,7 +29,7 @@ class KeepUpSoonInAWeek extends StatelessWidget {
                 .map((e) => KeepUpSoonItem(
                       name: e.name,
                       avatar: e.avatar,
-                      onPressed: () => bloc.add(KeepUpSoonEvent.onKeepUpContact(e)),
+                      onPressed: () => _onShowKeepUpContactConfirmDialog(bloc, e),
                     ))
                 .toList()
           ];
@@ -49,7 +50,7 @@ class KeepUpSoonInAWeek extends StatelessWidget {
                     .map((e) => KeepUpSoonItem(
                           name: e.name,
                           avatar: e.avatar,
-                          onPressed: () => bloc.add(KeepUpSoonEvent.onKeepUpGroup(e)),
+                          onPressed: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
                         ))
                     .toList()
               ];
@@ -82,5 +83,33 @@ class KeepUpSoonInAWeek extends StatelessWidget {
         );
       },
     );
+  }
+
+  void _onShowKeepUpContactConfirmDialog(KeepUpSoonBloc bloc, Contact contact) {
+    AppDialogs(
+      title: LocaleKey.keepUp.tr,
+      message: LocaleKey.keepUpContactConfirm.tr,
+      contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+      cancelTitle: LocaleKey.cancel.tr,
+      confirmTitle: LocaleKey.keepUp.tr,
+      onConfirmed: () {
+        bloc.add(KeepUpSoonEvent.onKeepUpContact(contact));
+        Get.back();
+      },
+    ).show();
+  }
+
+  void _onShowKeepUpGroupConfirmDialog(KeepUpSoonBloc bloc, Group group) {
+    AppDialogs(
+      title: LocaleKey.keepUp.tr,
+      message: LocaleKey.keepUpGroupConfirm.tr,
+      contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+      cancelTitle: LocaleKey.cancel.tr,
+      confirmTitle: LocaleKey.keepUp.tr,
+      onConfirmed: () {
+        bloc.add(KeepUpSoonEvent.onKeepUpGroup(group));
+        Get.back();
+      },
+    ).show();
   }
 }

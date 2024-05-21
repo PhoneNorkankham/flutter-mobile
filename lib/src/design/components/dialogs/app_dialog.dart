@@ -6,6 +6,7 @@ import 'package:keepup/src/design/components/buttons/app_button_type.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/extensions/scope_extensions.dart';
 import 'package:keepup/src/extensions/string_extensions.dart';
+import 'package:keepup/src/utils/app_utils.dart';
 
 class AppDialog extends StatelessWidget {
   final String message;
@@ -118,7 +119,13 @@ class _Title extends StatelessWidget {
               Icons.close,
               color: AppColors.white,
             ),
-            onPressed: onClose ?? () => Get.back(result: false),
+            onPressed: () => AppUtils.onCloseSnackBar().then((value) {
+              if (onClose == null) {
+                Get.back(result: true);
+              } else {
+                onClose?.call();
+              }
+            }),
           ),
         ),
       ],
@@ -157,7 +164,13 @@ class _Actions extends StatelessWidget {
               child: Container(
                 constraints: const BoxConstraints(maxWidth: 234, minHeight: 56),
                 child: AppButton(
-                  onPressed: onCancelled ?? () => Get.back(result: false),
+                  onPressed: () => AppUtils.onCloseSnackBar().then((value) {
+                    if (onCancelled == null) {
+                      Get.back(result: false);
+                    } else {
+                      onCancelled?.call();
+                    }
+                  }),
                   title: cancelTitle!,
                   buttonType: cancelButtonType,
                   radius: actionRadius,
@@ -172,7 +185,13 @@ class _Actions extends StatelessWidget {
             child: Container(
               constraints: BoxConstraints(maxWidth: actionMaxWith, minHeight: 56),
               child: AppButton(
-                onPressed: onConfirmed ?? () => Get.back(result: true),
+                onPressed: () => AppUtils.onCloseSnackBar().then((value) {
+                  if (onConfirmed == null) {
+                    Get.back(result: true);
+                  } else {
+                    onConfirmed?.call();
+                  }
+                }),
                 title: confirmTitle,
                 buttonType: confirmButtonType,
                 radius: actionRadius,

@@ -26,6 +26,7 @@ class KeepUpSoonItem extends StatelessWidget {
         action: SizedBox(
           width: 100,
           child: AppButton(
+            onPressed: onPressed,
             buttonType: AppButtonType.greenKeepUp,
             title: LocaleKey.keepUp.tr,
           ),

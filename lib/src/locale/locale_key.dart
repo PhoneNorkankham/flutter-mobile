@@ -108,6 +108,12 @@ class LocaleKey {
   static const String noContactsNeedKeepUpInAWeek = "noContactsNeedKeepUpInAWeek";
   static const String noGroupsNeedKeepUpInAMonth = "noGroupsNeedKeepUpInAMonth";
   static const String noContactsNeedKeepUpInAMonth = "noContactsNeedKeepUpInAMonth";
+  static const String keepUpContactConfirm = "keepUpContactConfirm";
+  static const String keepUpContactSuccessfully = "keepUpContactSuccessfully";
+  static const String keepUpContactFailed = "keepUpContactFailed";
+  static const String keepUpGroupConfirm = "keepUpGroupConfirm";
+  static const String keepUpGroupSuccessfully = "keepUpGroupSuccessfully";
+  static const String keepUpGroupFailed = "keepUpGroupFailed";
 
   // App Drawer
   static const String socialLogin = "socialLogin";
