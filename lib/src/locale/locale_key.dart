@@ -73,8 +73,9 @@ class LocaleKey {
   static const String joiningGroupFailed = "joiningGroupFailed";
 
   // Main
+  static const String home = "home";
   static const String today = "today";
-  static const String keepUpSoon = "keepUpSoon";
+  static const String upcoming = "upcoming";
   static const String contacts = "contacts";
   static const String groups = "groups";
 
@@ -93,6 +94,7 @@ class LocaleKey {
   static const String noGroupsNeedKeepUpToday = "noGroupsNeedKeepUpToday";
 
   // KeepUp Soon
+  static const String keepUpSoon = "keepUpSoon";
   static const String individual = "individual";
   static const String inAWeek = "inAWeek";
   static const String inAMonth = "inAMonth";

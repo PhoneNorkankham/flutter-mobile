@@ -3,10 +3,8 @@ import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/design/components/base/app_drawer.dart';
-import 'package:keepup/src/design/components/bottom_navigation/app_bottom_navigation_bar.dart';
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_group.dart';
-import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_header.dart';
@@ -32,7 +30,6 @@ class KeepUpSoonView extends StatelessWidget {
     return Scaffold(
       appBar: AppAppBar(
         title: LocaleKey.keepUpSoon.tr,
-        implyLeading: true,
         actions: const [MenuButton()],
       ),
       body: AppBody(
@@ -60,7 +57,6 @@ class KeepUpSoonView extends StatelessWidget {
         ),
       ),
       endDrawer: const AppDrawer(),
-      bottomNavigationBar: const AppBottomNavigationBar(selectedType: BottomNavType.keepUpSoon),
     );
   }
 }

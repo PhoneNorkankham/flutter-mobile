@@ -15,10 +15,7 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ContactBloc(
-        Get.find(),
-        Get.find(),
-      )..add(const ContactEvent.initial()),
+      create: (_) => Get.find<ContactBloc>()..add(const ContactEvent.initial()),
       child: BlocListener<ContactBloc, ContactState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
         listener: (context, state) {

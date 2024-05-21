@@ -4,10 +4,8 @@ import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/design/components/base/app_drawer.dart';
-import 'package:keepup/src/design/components/bottom_navigation/app_bottom_navigation_bar.dart';
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
-import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/groups/components/add_group_button.dart';
 import 'package:keepup/src/ui/groups/components/group_list.dart';
@@ -21,7 +19,6 @@ class GroupView extends StatelessWidget {
     return Scaffold(
       appBar: AppAppBar(
         title: LocaleKey.groups.tr,
-        implyLeading: true,
         actions: const [MenuButton()],
       ),
       body: BlocBuilder<GroupBloc, GroupState>(
@@ -49,7 +46,6 @@ class GroupView extends StatelessWidget {
         },
       ),
       endDrawer: const AppDrawer(),
-      bottomNavigationBar: const AppBottomNavigationBar(selectedType: BottomNavType.groups),
     );
   }
 }
