@@ -15,6 +15,8 @@ class InteractionDao extends DatabaseAccessor<AppDatabase> with _$InteractionDao
         mode: InsertMode.insertOrReplace,
       );
 
+  Future<List<Interaction>> getInteractions() => select(interactions).get();
+
   Future<Interaction?> getLastInteractionByContactId(String contactId) =>
       (select(interactions)..where((tbl) => tbl.contactId.equals(contactId)))
           .get()

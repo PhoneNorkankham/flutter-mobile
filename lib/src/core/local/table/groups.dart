@@ -22,6 +22,9 @@ class Groups extends Table {
   TextColumn get contacts =>
       text().map(const ListStringConverter()).withDefault(const Constant('[]'))();
 
+  @JsonKey('date_created')
+  DateTimeColumn get dateCreated => dateTime().named('date_created').nullable()();
+
   @override
   Set<Column> get primaryKey => {id};
 }

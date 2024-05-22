@@ -22,6 +22,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _initial(_Initial event, Emitter<HomeState> emit) async {
     await _supabaseRepository.getContacts();
     await _supabaseRepository.getGroups();
+    await _supabaseRepository.getInteractions();
   }
 
   FutureOr<void> _onOpenNewChatBottomSheet(

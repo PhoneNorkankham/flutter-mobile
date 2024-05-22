@@ -173,38 +173,10 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
         return;
       }
     }
-    final DateTime now = DateUtils.dateOnly(DateTime.now());
-    final DateTime expiration;
-    switch (selectedGroup.frequencyInterval) {
-      case FrequencyIntervalType.everyDay:
-        expiration = now.add(const Duration(days: 1));
-        break;
-      case FrequencyIntervalType.everyWeek:
-        expiration = now.add(const Duration(days: 7));
-        break;
-      case FrequencyIntervalType.everyTwoWeeks:
-        expiration = now.add(const Duration(days: 14));
-        break;
-      case FrequencyIntervalType.everyMonth:
-        expiration = now.copyWith(month: now.month + 1);
-        break;
-      case FrequencyIntervalType.everyThreeMonths:
-        expiration = now.copyWith(month: now.month + 3);
-        break;
-      case FrequencyIntervalType.everySixMonths:
-        expiration = now.copyWith(month: now.month + 6);
-        break;
-      case FrequencyIntervalType.everyYear:
-        expiration = now.copyWith(year: now.year + 1);
-        break;
-      default:
-        expiration = now;
-        break;
-    }
 
     final request = state.contactRequest.copyWith(
       avatar: avatarUrl,
-      expiration: expiration,
+      expiration: selectedGroup.frequencyInterval.toExpirationDate(),
     );
     final result = await _createContactUseCase.run(request);
     emit(_createContactStateMapper.mapResultToState(state, result));

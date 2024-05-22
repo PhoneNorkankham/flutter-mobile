@@ -91,6 +91,14 @@ class LocaleKey {
   static const String keepUp = "keepUp";
   static const String noContactsNeedKeepUpToday = "noContactsNeedKeepUpToday";
   static const String noGroupsNeedKeepUpToday = "noGroupsNeedKeepUpToday";
+  static const String keepUpAllTheContactsTodayConfirm = "keepUpAllTheContactsTodayConfirm";
+  static const String keepUpAllTheContactsTodaySuccessfully =
+      "keepUpAllTheContactsTodaySuccessfully";
+  static const String keepUpAllTheContactsTodayFailed = "keepUpAllTheContactsTodayFailed";
+  static const String keepUpAllTheGroupsTodayConfirm = "keepUpAllTheGroupsTodayConfirm";
+  static const String keepUpAllTheGroupsTodaySuccessfully = "keepUpAllTheGroupsTodaySuccessfully";
+  static const String keepUpAllTheGroupsTodayFailed = "keepUpAllTheGroupsTodayFailed";
+  static const String creatingInteractionFailed = "creatingInteractionFailed";
 
   // KeepUp Soon
   static const String individual = "individual";

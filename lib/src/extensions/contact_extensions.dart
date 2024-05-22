@@ -7,8 +7,9 @@ extension ContactsExtensions on List<Contact> {
     if (isEmpty) return this;
     final DateTime now = DateUtils.dateOnly(DateTime.now());
     return where((element) {
-      final DateTime? expiration = element.expiration;
-      return expiration == null || (expiration.isToday || expiration.isBefore(now));
+      final DateTime expiration = element.expiration ?? DateTime.now();
+      final DateTime expirationDateOnly = DateUtils.dateOnly(expiration);
+      return expirationDateOnly.isToday || expirationDateOnly.isBefore(now);
     }).toList();
   }
 }

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 
@@ -26,7 +25,7 @@ enum FrequencyIntervalType {
   }
 
   DateTime toExpirationDate() {
-    final DateTime now = DateUtils.dateOnly(DateTime.now());
+    final DateTime now = DateTime.now();
     switch (this) {
       case FrequencyIntervalType.everyDay:
         return now.add(const Duration(days: 1));
