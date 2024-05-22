@@ -184,4 +184,8 @@ class LocaleKey {
   static const String everySixMonths = "everySixMonths";
   static const String everyYear = "everyYear";
   static const String none = "none";
+
+  // Interaction Bottom Sheet
+  static const String lastKeepUp = "lastKeepUp";
+  static const String birthday = "birthday";
 }

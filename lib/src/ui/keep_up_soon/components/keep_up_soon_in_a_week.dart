@@ -7,6 +7,7 @@ import 'package:keepup/src/design/components/keep_up/keep_up_group.dart';
 import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_item.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_bloc.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_type.dart';
@@ -29,7 +30,8 @@ class KeepUpSoonInAWeek extends StatelessWidget {
                 .map((e) => KeepUpSoonItem(
                       name: e.name,
                       avatar: e.avatar,
-                      onPressed: () => _onShowKeepUpContactConfirmDialog(bloc, e),
+                      onPressed: () => InteractionBottomSheet.show(contact: e),
+                      onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
                     ))
                 .toList()
           ];
@@ -50,7 +52,7 @@ class KeepUpSoonInAWeek extends StatelessWidget {
                     .map((e) => KeepUpSoonItem(
                           name: e.name,
                           avatar: e.avatar,
-                          onPressed: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
+                          onKeepUp: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
                         ))
                     .toList()
               ];

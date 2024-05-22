@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
+import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
 import 'package:keepup/src/ui/keep_up_today/interactor/keep_up_today_bloc.dart';
 
 class KeepUpTodayContactItem extends StatelessWidget {
@@ -12,9 +13,10 @@ class KeepUpTodayContactItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final KeepUpTodayBloc bloc = context.read();
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: KeepUpItem(
+        onPressed: () => InteractionBottomSheet.show(contact: contact),
         name: contact.name,
         action: FutureBuilder<bool>(
           future: bloc.isContactCompleted(contact),

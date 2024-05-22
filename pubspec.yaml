@@ -119,6 +119,9 @@ dependencies:
   # Contacts
   contacts_service: ^0.6.3
 
+  # Date Time
+  timeago: ^3.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -953,7 +953,7 @@ class $InteractionsTable extends Interactions
       method = GeneratedColumn<String>('method', aliasedName, false,
               type: DriftSqlType.string,
               requiredDuringInsert: false,
-              defaultValue: Constant(InteractionMethodType.None.name))
+              defaultValue: Constant(InteractionMethodType.KeepUp.name))
           .withConverter<InteractionMethodType>(
               $InteractionsTable.$convertermethod);
   @override
