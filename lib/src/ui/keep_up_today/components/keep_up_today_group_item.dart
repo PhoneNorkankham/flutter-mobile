@@ -12,8 +12,8 @@ class KeepUpTodayGroupItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final KeepUpTodayBloc bloc = context.read();
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: KeepUpItem(
         name: group.name,
         action: FutureBuilder<bool>(

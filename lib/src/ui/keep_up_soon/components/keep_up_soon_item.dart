@@ -9,12 +9,14 @@ class KeepUpSoonItem extends StatelessWidget {
   final String name;
   final String avatar;
   final VoidCallback? onPressed;
+  final VoidCallback? onKeepUp;
 
   const KeepUpSoonItem({
     super.key,
     this.name = '',
     this.avatar = '',
     this.onPressed,
+    this.onKeepUp,
   });
 
   @override
@@ -22,11 +24,12 @@ class KeepUpSoonItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: KeepUpItem(
+        onPressed: onPressed,
         name: name,
         action: SizedBox(
           width: 100,
           child: AppButton(
-            onPressed: onPressed,
+            onPressed: onKeepUp,
             buttonType: AppButtonType.greenKeepUp,
             title: LocaleKey.keepUp.tr,
           ),
