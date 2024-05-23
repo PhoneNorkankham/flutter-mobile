@@ -79,14 +79,13 @@ class PickerPhotoDialog extends StatelessWidget {
   }
 
   void _onChoosePhotoPressed(ImageSource source) async {
-    // Pop dialog
-    AppUtils().onDialogConfirmPressed(() {
-      AppUtils.pickImage(source).then((value) {
-        if (value != null) {
-          if (Get.isDialogOpen ?? false) Get.back();
-          onSelected(value);
-        }
-      });
+    // Pop snack bar
+    await AppUtils.onCloseSnackBar();
+    AppUtils.pickImage(source).then((value) {
+      if (value != null) {
+        if (Get.isDialogOpen ?? false) Get.back();
+        onSelected(value);
+      }
     });
   }
 }

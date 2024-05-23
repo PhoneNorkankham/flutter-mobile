@@ -45,4 +45,10 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
 
   Stream<List<Contact>> watchTodayContacts() =>
       watchContacts().map((contacts) => contacts.toKeepUpToday());
+
+  Stream<List<Contact>> watchInAWeekContacts() =>
+      watchContacts().map((contacts) => contacts.toKeepUpInAWeek());
+
+  Stream<List<Contact>> watchInAMonthContacts() =>
+      watchContacts().map((contacts) => contacts.toKeepUpInAMonth());
 }
