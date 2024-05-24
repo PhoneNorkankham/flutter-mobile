@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/core/managers/navigator_manager.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
+import 'package:keepup/src/ui/main/interactor/main_bloc.dart';
 
 class AppBottomNavigationBarItem extends StatelessWidget {
   final BottomNavType type;
@@ -21,9 +21,8 @@ class AppBottomNavigationBarItem extends StatelessWidget {
     return Expanded(
       child: Material(
         child: InkWell(
-          onTap: isSelected || type.page.isEmpty
-              ? null
-              : () => Get.find<NavigatorManager>().navigateToPage(type.page),
+          onTap:
+              isSelected ? null : () => Get.find<MainBloc>().add(MainEvent.onSelectedTabType(type)),
           highlightColor: Colors.transparent,
           child: Column(
             mainAxisSize: MainAxisSize.min,

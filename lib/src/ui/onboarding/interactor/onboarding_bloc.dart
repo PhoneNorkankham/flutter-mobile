@@ -52,7 +52,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   }
 
   FutureOr<void> _onGotoMain(_GotoMain event, Emitter<OnboardingState> emit) {
-    emit(state.copyWith(pageCommand: PageCommandNavigation.replacePage(AppPages.home)));
+    emit(state.copyWith(pageCommand: PageCommandNavigation.replacePage(AppPages.main)));
   }
 
   FutureOr<void> _onJoinGroup(_OnJoinGroup event, Emitter<OnboardingState> emit) async {
@@ -75,7 +75,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     if (result.isValue) {
       emit(state.copyWith(
         isLoading: false,
-        pageCommand: PageCommandNavigation.replacePage(AppPages.home),
+        pageCommand: PageCommandNavigation.replacePage(AppPages.main),
       ));
     } else {
       emit(state.copyWith(

@@ -37,7 +37,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     if (result.isValue && loggedInData != null && loggedInData.isLoggedIn) {
       emit(state.copyWith(
         pageCommand: PageCommandNavigation.replacePage(
-          loggedInData.isJoinedGroup ? AppPages.home : AppPages.onboarding,
+          loggedInData.isJoinedGroup ? AppPages.main : AppPages.onboarding,
         ),
       ));
     } else {

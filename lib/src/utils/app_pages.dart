@@ -3,18 +3,10 @@ import 'package:keepup/src/ui/add_contacts/add_contacts_page.dart';
 import 'package:keepup/src/ui/add_contacts/binding/add_contacts_binding.dart';
 import 'package:keepup/src/ui/contact_detail/binding/contact_detail_binding.dart';
 import 'package:keepup/src/ui/contact_detail/contact_detail_page.dart';
-import 'package:keepup/src/ui/contacts/binding/contact_binding.dart';
-import 'package:keepup/src/ui/contacts/contact_page.dart';
 import 'package:keepup/src/ui/group_detail/binding/group_detail_binding.dart';
 import 'package:keepup/src/ui/group_detail/group_detail_page.dart';
-import 'package:keepup/src/ui/groups/binding/group_binding.dart';
-import 'package:keepup/src/ui/groups/group_page.dart';
-import 'package:keepup/src/ui/home/binding/home_binding.dart';
-import 'package:keepup/src/ui/home/home_page.dart';
-import 'package:keepup/src/ui/keep_up_soon/binding/keep_up_soon_binding.dart';
-import 'package:keepup/src/ui/keep_up_soon/keep_up_soon_page.dart';
-import 'package:keepup/src/ui/keep_up_today/binding/keep_up_today_binding.dart';
-import 'package:keepup/src/ui/keep_up_today/keep_up_today_page.dart';
+import 'package:keepup/src/ui/main/binding/main_binding.dart';
+import 'package:keepup/src/ui/main/main_page.dart';
 import 'package:keepup/src/ui/onboarding/binding/onboarding_binding.dart';
 import 'package:keepup/src/ui/onboarding/onboarding_page.dart';
 import 'package:keepup/src/ui/splash/binding/splash_binding.dart';
@@ -24,12 +16,8 @@ class AppPages {
   // Roots
   static const String splash = _Paths.splash;
   static const String onboarding = _Paths.onboarding;
-  static const String home = _Paths.home;
-  static const String keepUpToday = _Paths.keepUpToday;
-  static const String keepUpSoon = _Paths.keepUpSoon;
-  static const String contacts = _Paths.contacts;
+  static const String main = _Paths.main;
   static const String contactDetail = _Paths.contactDetail;
-  static const String groups = _Paths.groups;
   static const String groupDetail = _Paths.groupDetail;
   static const String addContacts = _Paths.addContacts;
 
@@ -45,38 +33,14 @@ class AppPages {
       binding: OnboardingBinding(),
     ),
     GetPage(
-      name: _Paths.home,
-      page: () => const HomePage(),
-      binding: HomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.keepUpToday,
-      page: () => const KeepUpTodayPage(),
-      binding: KeepUpTodayBinding(),
-      transition: Transition.noTransition,
-    ),
-    GetPage(
-      name: _Paths.keepUpSoon,
-      page: () => const KeepUpSoonPage(),
-      binding: KeepUpSoonBinding(),
-      transition: Transition.noTransition,
-    ),
-    GetPage(
-      name: _Paths.contacts,
-      page: () => const ContactPage(),
-      binding: ContactBinding(),
-      transition: Transition.noTransition,
+      name: _Paths.main,
+      page: () => const MainPage(),
+      binding: MainBinding(),
     ),
     GetPage(
       name: _Paths.contactDetail,
       page: () => const ContactDetailPage(),
       binding: ContactDetailBinding(),
-      transition: Transition.noTransition,
-    ),
-    GetPage(
-      name: _Paths.groups,
-      page: () => const GroupPage(),
-      binding: GroupBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
@@ -97,12 +61,8 @@ class AppPages {
 abstract class _Paths {
   static const String splash = "/splash";
   static const String onboarding = "/onboarding";
-  static const String home = "/home";
-  static const String keepUpToday = "/keepUpToday";
-  static const String keepUpSoon = "/keepUpSoon";
-  static const String contacts = "/contacts";
+  static const String main = "/main";
   static const String contactDetail = "/contactDetail";
-  static const String groups = "/groups";
   static const String groupDetail = "/groupDetail";
   static const String addContacts = "/addContacts";
 }

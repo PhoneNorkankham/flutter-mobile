@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:back_system/back_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -16,36 +13,25 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = Get.find<HomeBloc>();
-
-    return WillPopScope(
-      onWillPop: () {
-        if (Platform.isAndroid) {
-          BackSystem.moveTaskToBack();
-          return Future.value(false);
-        } else {
-          return Future.value(true);
-        }
-      },
-      child: BlocProvider(
-        create: (_) => bloc..add(const HomeEvent.initial()),
-        child: BlocListener<HomeBloc, HomeState>(
-          listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
-          listener: (context, state) {
-            final PageCommand? pageCommand = state.pageCommand;
-            if (pageCommand != null) {
-              bloc.add(const HomeEvent.clearPageCommand());
-              if (pageCommand is PageCommandShowBottomSheet) {
-                if (pageCommand.sheetType == SheetType.newChat) {
-                  NewChatBottomSheet.show();
-                }
-              } else {
-                pageCommandListeners(pageCommand);
+    return BlocProvider(
+      create: (_) => Get.find<HomeBloc>()..add(const HomeEvent.initial()),
+      child: BlocListener<HomeBloc, HomeState>(
+        listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
+        listener: (context, state) {
+          final PageCommand? pageCommand = state.pageCommand;
+          if (pageCommand != null) {
+            final HomeBloc bloc = context.read();
+            bloc.add(const HomeEvent.clearPageCommand());
+            if (pageCommand is PageCommandShowBottomSheet) {
+              if (pageCommand.sheetType == SheetType.newChat) {
+                NewChatBottomSheet.show();
               }
+            } else {
+              pageCommandListeners(pageCommand);
             }
-          },
-          child: const HomeView(),
-        ),
+          }
+        },
+        child: const HomeView(),
       ),
     );
   }

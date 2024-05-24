@@ -12,7 +12,7 @@ class KeepUpSoonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => KeepUpSoonBloc(Get.find())..add(const KeepUpSoonEvent.initial()),
+      create: (_) => Get.find<KeepUpSoonBloc>()..add(const KeepUpSoonEvent.initial()),
       child: BlocListener<KeepUpSoonBloc, KeepUpSoonState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
         listener: (context, state) {
