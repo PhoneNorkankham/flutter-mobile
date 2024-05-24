@@ -92,12 +92,30 @@ class LocaleKey {
   static const String keepUp = "keepUp";
   static const String noContactsNeedKeepUpToday = "noContactsNeedKeepUpToday";
   static const String noGroupsNeedKeepUpToday = "noGroupsNeedKeepUpToday";
+  static const String keepUpAllTheContactsTodayConfirm = "keepUpAllTheContactsTodayConfirm";
+  static const String keepUpAllTheContactsTodaySuccessfully =
+      "keepUpAllTheContactsTodaySuccessfully";
+  static const String keepUpAllTheContactsTodayFailed = "keepUpAllTheContactsTodayFailed";
+  static const String keepUpAllTheGroupsTodayConfirm = "keepUpAllTheGroupsTodayConfirm";
+  static const String keepUpAllTheGroupsTodaySuccessfully = "keepUpAllTheGroupsTodaySuccessfully";
+  static const String keepUpAllTheGroupsTodayFailed = "keepUpAllTheGroupsTodayFailed";
+  static const String creatingInteractionFailed = "creatingInteractionFailed";
 
   // KeepUp Soon
   static const String keepUpSoon = "keepUpSoon";
   static const String individual = "individual";
   static const String inAWeek = "inAWeek";
   static const String inAMonth = "inAMonth";
+  static const String noGroupsNeedKeepUpInAWeek = "noGroupsNeedKeepUpInAWeek";
+  static const String noContactsNeedKeepUpInAWeek = "noContactsNeedKeepUpInAWeek";
+  static const String noGroupsNeedKeepUpInAMonth = "noGroupsNeedKeepUpInAMonth";
+  static const String noContactsNeedKeepUpInAMonth = "noContactsNeedKeepUpInAMonth";
+  static const String keepUpContactConfirm = "keepUpContactConfirm";
+  static const String keepUpContactSuccessfully = "keepUpContactSuccessfully";
+  static const String keepUpContactFailed = "keepUpContactFailed";
+  static const String keepUpGroupConfirm = "keepUpGroupConfirm";
+  static const String keepUpGroupSuccessfully = "keepUpGroupSuccessfully";
+  static const String keepUpGroupFailed = "keepUpGroupFailed";
 
   // App Drawer
   static const String socialLogin = "socialLogin";

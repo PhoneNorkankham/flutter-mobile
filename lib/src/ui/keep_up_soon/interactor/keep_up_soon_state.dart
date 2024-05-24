@@ -6,5 +6,9 @@ class KeepUpSoonState with _$KeepUpSoonState {
 
   const factory KeepUpSoonState({
     PageCommand? pageCommand,
+    @Default(false) bool isLoading,
+    @Default(KeepUpSoonType.groups) KeepUpSoonType type,
+    @Default([]) List<Contact> weekContacts,
+    @Default([]) List<Contact> monthContacts,
   }) = _KeepUpSoonState;
 }

@@ -9,7 +9,9 @@ import 'package:keepup/src/core/model/logged_in_data.dart';
 import 'package:keepup/src/core/network_bound_resource.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
+import 'package:keepup/src/core/request/interaction_request.dart';
 import 'package:keepup/src/core/resource.dart';
+import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/utils/app_shared.dart';
 
 class SupabaseRepository {
@@ -187,6 +189,10 @@ class SupabaseRepository {
 
   Stream<List<Contact>> watchTodayContacts() => _contactDao.watchTodayContacts();
 
+  Stream<List<Contact>> watchInAWeekContacts() => _contactDao.watchInAWeekContacts();
+
+  Stream<List<Contact>> watchInAMonthContacts() => _contactDao.watchInAMonthContacts();
+
   Future<Resource<List<Contact>>> getTodayContacts() {
     return NetworkBoundResource<List<Contact>, List<Contact>>(
       createSerializedCall: () => _supabaseManager.getTodayContacts(),
@@ -215,5 +221,75 @@ class SupabaseRepository {
       groups.add(group);
     }
     return groups;
+  }
+
+  Future<Resource<List<Interaction>>> getInteractions() {
+    return NetworkBoundResource<List<Interaction>, List<Interaction>>(
+      createSerializedCall: () => _supabaseManager.getInteractions(),
+      loadFromDb: () => _interactionDao.getInteractions(),
+      saveCallResult: (interactions) async {
+        await _interactionDao.deleteAll();
+        for (Interaction interaction in interactions) {
+          await _interactionDao.insertOrReplace(interaction);
+        }
+      },
+    ).getAsFuture();
+  }
+
+  Future<Resource<bool>> keepUpAllContacts(List<Contact> contacts) async {
+    for (Contact contact in contacts) {
+      final Resource<bool> resource = await keepUpContact(contact);
+      if (resource.isError) {
+        return Resource(
+          type: ResourceType.REQUEST_ERROR,
+          message: resource.message,
+        );
+      }
+    }
+    return Resource(type: ResourceType.REQUEST_OK);
+  }
+
+  Future<Resource<bool>> keepUpContact(Contact contact) async {
+    final Group? group = await _groupDao.getGroup(contact.groupId);
+    if (group != null) {
+      // Update contact's expiration
+      final contactRequest = ContactRequest.fromJson(contact.toJson()).copyWith(
+        expiration: group.frequencyInterval.toExpirationDate(fromDate: contact.expiration),
+      );
+      final Resource<Contact> updateContactResource = await updateContact(contactRequest);
+      if (updateContactResource.isSuccess) {
+        // Insert new interaction
+        final interactionRequest = InteractionRequest(
+          contactId: contact.id,
+          method: InteractionMethodType.KeepUp,
+        );
+        final Resource<Interaction> resource = await insertInteraction(interactionRequest);
+        if (resource.isError) {
+          return Resource(
+            type: ResourceType.REQUEST_ERROR,
+            message: resource.message,
+          );
+        }
+      } else {
+        return Resource(
+          type: ResourceType.REQUEST_ERROR,
+          message: updateContactResource.message,
+        );
+      }
+    }
+    return Resource(type: ResourceType.REQUEST_OK);
+  }
+
+  Future<Resource<bool>> keepUpGroup(Group group) async {
+    final List<String> contactIds = group.contacts.map((e) => e.toString()).toList();
+    final List<Contact> contacts = await getAllContactByIds(contactIds);
+    return keepUpAllContacts(contacts);
+  }
+
+  Future<Resource<Interaction>> insertInteraction(InteractionRequest request) {
+    return NetworkBoundResource<Interaction, Interaction>(
+      createSerializedCall: () => _supabaseManager.insertInteraction(request),
+      saveCallResult: (interaction) => _interactionDao.insertOrReplace(interaction),
+    ).getAsFuture();
   }
 }

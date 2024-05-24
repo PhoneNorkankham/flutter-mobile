@@ -32,5 +32,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     }
     await _supabaseRepository.getContacts();
     await _supabaseRepository.getGroups();
+    await _supabaseRepository.getInteractions();
   }
 }

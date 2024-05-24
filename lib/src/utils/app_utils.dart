@@ -15,14 +15,12 @@ class AppUtils {
     }
   }
 
-  void onDialogConfirmPressed(VoidCallback? onConfirmed) async {
+  static Future<void> onCloseSnackBar() async {
     if (Get.isSnackbarOpen) {
       // Wait for snack bar closing then doing pop the dialog
       await SnackbarController.closeCurrentSnackbar();
       await Future.delayed(const Duration(milliseconds: 100));
     }
-    Get.back();
-    onConfirmed?.call();
   }
 
   static Future<File?> pickImage(ImageSource source) async {
