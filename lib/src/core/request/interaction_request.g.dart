@@ -16,8 +16,8 @@ _$_InteractionRequest _$$_InteractionRequestFromJson(
           const DateTimeJsonConverter().fromJson(json['date_completed']),
       method: $enumDecodeNullable(
               _$InteractionMethodTypeEnumMap, json['method'],
-              unknownValue: InteractionMethodType.None) ??
-          InteractionMethodType.None,
+              unknownValue: InteractionMethodType.KeepUp) ??
+          InteractionMethodType.KeepUp,
     );
 
 Map<String, dynamic> _$$_InteractionRequestToJson(
@@ -40,6 +40,8 @@ Map<String, dynamic> _$$_InteractionRequestToJson(
 }
 
 const _$InteractionMethodTypeEnumMap = {
-  InteractionMethodType.None: 'None',
+  InteractionMethodType.Message: 'Message',
+  InteractionMethodType.Call: 'Call',
+  InteractionMethodType.Contact: 'Contact',
   InteractionMethodType.KeepUp: 'KeepUp',
 };

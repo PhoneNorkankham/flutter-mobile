@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 
 class KeepUpItem extends StatelessWidget {
@@ -31,7 +32,7 @@ class KeepUpItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const Icon(Icons.person, size: 30, color: Colors.white),
+            AppCircleAvatar(url: avatar, radius: 15),
             const SizedBox(width: 16),
             Expanded(
               child: Text(

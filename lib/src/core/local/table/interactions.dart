@@ -11,7 +11,7 @@ class Interactions extends Table {
   DateTimeColumn get dateCompleted => dateTime().named('date_completed').nullable()();
 
   TextColumn get method =>
-      textEnum<InteractionMethodType>().withDefault(Constant(InteractionMethodType.None.name))();
+      textEnum<InteractionMethodType>().withDefault(Constant(InteractionMethodType.KeepUp.name))();
 
   @override
   Set<Column> get primaryKey => {id};

@@ -144,4 +144,6 @@ Map<String, String> enUs = {
   LocaleKey.everyYear: "Every year",
   LocaleKey.none: "None",
   LocaleKey.theGroupDoesNotExist: "The group does not exist!",
+  LocaleKey.lastKeepUp: "Last KeepUp",
+  LocaleKey.birthday: "Birthday",
 };

@@ -15,8 +15,8 @@ class InteractionRequest with _$InteractionRequest {
     @Default('') @JsonKey(name: 'owner_id') String ownerId,
     @Default('') @JsonKey(name: 'contact_id') String contactId,
     @DateTimeJsonConverter() @JsonKey(name: 'date_completed') DateTime? dateCompleted,
-    @Default(InteractionMethodType.None)
-    @JsonKey(unknownEnumValue: InteractionMethodType.None)
+    @Default(InteractionMethodType.KeepUp)
+    @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
     InteractionMethodType method,
   }) = _InteractionRequest;
 

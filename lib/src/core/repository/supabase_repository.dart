@@ -146,6 +146,8 @@ class SupabaseRepository {
 
   Future<List<Group>> getDBGroups() => _groupDao.getGroups();
 
+  Future<Group?> getDBGroup(String groupId) => _groupDao.getGroup(groupId);
+
   Future<Resource<Group?>> getGroup(String groupId) {
     return NetworkBoundResource<Group?, Group?>(
       createSerializedCall: () => _supabaseManager.getGroup(groupId),
@@ -199,6 +201,9 @@ class SupabaseRepository {
       loadFromDb: () => _contactDao.getTodayContacts(),
     ).getAsFuture();
   }
+
+  Future<Interaction?> getDBLastInteractionByContactId(String contactId) =>
+      _interactionDao.getLastInteractionByContactId(contactId);
 
   Future<Resource<Interaction?>> getLastInteractionByContactId(String contactId) {
     return NetworkBoundResource<Interaction?, Interaction?>(

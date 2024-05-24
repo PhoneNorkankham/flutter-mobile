@@ -29,7 +29,7 @@ mixin _$InteractionRequest {
   @DateTimeJsonConverter()
   @JsonKey(name: 'date_completed')
   DateTime? get dateCompleted => throw _privateConstructorUsedError;
-  @JsonKey(unknownEnumValue: InteractionMethodType.None)
+  @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
   InteractionMethodType get method => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,7 +51,7 @@ abstract class $InteractionRequestCopyWith<$Res> {
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_completed')
       DateTime? dateCompleted,
-      @JsonKey(unknownEnumValue: InteractionMethodType.None)
+      @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
       InteractionMethodType method});
 }
 
@@ -114,7 +114,7 @@ abstract class _$$_InteractionRequestCopyWith<$Res>
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_completed')
       DateTime? dateCompleted,
-      @JsonKey(unknownEnumValue: InteractionMethodType.None)
+      @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
       InteractionMethodType method});
 }
 
@@ -171,8 +171,8 @@ class _$_InteractionRequest extends _InteractionRequest {
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_completed')
       this.dateCompleted,
-      @JsonKey(unknownEnumValue: InteractionMethodType.None)
-      this.method = InteractionMethodType.None})
+      @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
+      this.method = InteractionMethodType.KeepUp})
       : super._();
 
   factory _$_InteractionRequest.fromJson(Map<String, dynamic> json) =>
@@ -192,7 +192,7 @@ class _$_InteractionRequest extends _InteractionRequest {
   @JsonKey(name: 'date_completed')
   final DateTime? dateCompleted;
   @override
-  @JsonKey(unknownEnumValue: InteractionMethodType.None)
+  @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
   final InteractionMethodType method;
 
   @override
@@ -243,7 +243,7 @@ abstract class _InteractionRequest extends InteractionRequest {
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_completed')
       final DateTime? dateCompleted,
-      @JsonKey(unknownEnumValue: InteractionMethodType.None)
+      @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
       final InteractionMethodType method}) = _$_InteractionRequest;
   const _InteractionRequest._() : super._();
 
@@ -264,7 +264,7 @@ abstract class _InteractionRequest extends InteractionRequest {
   @JsonKey(name: 'date_completed')
   DateTime? get dateCompleted;
   @override
-  @JsonKey(unknownEnumValue: InteractionMethodType.None)
+  @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
   InteractionMethodType get method;
   @override
   @JsonKey(ignore: true)
