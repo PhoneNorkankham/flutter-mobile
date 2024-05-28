@@ -9,6 +9,8 @@ enum AppDrawerType {
   payments,
   termsAndPolicy,
   about,
+  resetData,
+  deleteAccount,
   logout;
 
   String get title {
@@ -19,6 +21,8 @@ enum AppDrawerType {
       payments => LocaleKey.payments.tr,
       termsAndPolicy => LocaleKey.termsAndPolicy.tr,
       about => LocaleKey.about.tr,
+      resetData => LocaleKey.resetData.tr,
+      deleteAccount => LocaleKey.deleteAccount.tr,
       logout => LocaleKey.logout.tr,
     };
   }
@@ -31,6 +35,8 @@ enum AppDrawerType {
       payments => Icons.paid_outlined,
       termsAndPolicy => Icons.gpp_good_outlined,
       about => Icons.gpp_maybe_outlined,
+      resetData => Icons.restart_alt,
+      deleteAccount => Icons.delete,
       logout => Icons.logout,
     };
   }

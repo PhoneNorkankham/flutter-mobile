@@ -292,4 +292,34 @@ class SupabaseManager {
           return Future.error(LocaleKey.creatingInteractionFailed.tr);
         }
       });
+
+  _deleteAllGroups() => _supabase.from(_tbGroups).delete().match({_fieldOwnerId: uid});
+
+  _deleteAllContacts() => _supabase.from(_tbContacts).delete().match({_fieldOwnerId: uid});
+
+  _deleteAllInteractions() => _supabase.from(_tbInteractions).delete().match({_fieldOwnerId: uid});
+
+  _deleteUser(String uid) => _supabase.from(_tbUsers).delete().match({_fieldId: uid});
+
+  Future<void> _signOut() => _supabaseAuth.signOut(scope: SignOutScope.global);
+
+  Future<void> resetData() async {
+    await _deleteAllGroups();
+    await _deleteAllContacts();
+    await _deleteAllInteractions();
+  }
+
+  Future<void> deleteAccount() async {
+    await resetData();
+    await _deleteUser(uid);
+    await _signOut();
+  }
+
+  Future<void> logout() {
+    if (isAnonymous) {
+      return deleteAccount();
+    } else {
+      return _signOut();
+    }
+  }
 }

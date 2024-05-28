@@ -7,5 +7,6 @@ class MainState with _$MainState {
   const factory MainState({
     PageCommand? pageCommand,
     @Default(BottomNavType.home) BottomNavType type,
+    @Default(false) bool isLoading,
   }) = _MainState;
 }

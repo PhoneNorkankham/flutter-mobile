@@ -124,7 +124,17 @@ class LocaleKey {
   static const String payments = "payments";
   static const String termsAndPolicy = "termsAndPolicy";
   static const String about = "about";
+  static const String resetData = "resetData";
+  static const String resetDataConfirm = "resetDataConfirm";
+  static const String resetDataSuccessfully = "resetDataSuccessfully";
+  static const String resetDataFailed = "resetDataFailed";
+  static const String deleteAccount = "deleteAccount";
+  static const String deleteAccountConfirm = "deleteAccountConfirm";
+  static const String deleteAccountFailed = "deleteAccountFailed";
   static const String logout = "logout";
+  static const String logoutConfirm = "logoutConfirm";
+  static const String logoutAnonymousConfirm = "logoutAnonymousConfirm";
+  static const String logoutFailed = "logoutFailed";
 
   // Contacts
   static const String addContact = "addContact";
