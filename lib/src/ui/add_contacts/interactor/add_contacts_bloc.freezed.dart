@@ -769,6 +769,7 @@ mixin _$AddContactsState {
   PageState get pageState => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
   List<ContactRequest> get contacts => throw _privateConstructorUsedError;
   List<Group> get groups => throw _privateConstructorUsedError;
@@ -788,6 +789,7 @@ abstract class $AddContactsStateCopyWith<$Res> {
       {PageState pageState,
       PageCommand? pageCommand,
       bool isLoading,
+      String title,
       String keyword,
       List<ContactRequest> contacts,
       List<Group> groups});
@@ -811,6 +813,7 @@ class _$AddContactsStateCopyWithImpl<$Res, $Val extends AddContactsState>
     Object? pageState = null,
     Object? pageCommand = freezed,
     Object? isLoading = null,
+    Object? title = null,
     Object? keyword = null,
     Object? contacts = null,
     Object? groups = null,
@@ -828,6 +831,10 @@ class _$AddContactsStateCopyWithImpl<$Res, $Val extends AddContactsState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
@@ -868,6 +875,7 @@ abstract class _$$_AddContactsStateCopyWith<$Res>
       {PageState pageState,
       PageCommand? pageCommand,
       bool isLoading,
+      String title,
       String keyword,
       List<ContactRequest> contacts,
       List<Group> groups});
@@ -890,6 +898,7 @@ class __$$_AddContactsStateCopyWithImpl<$Res>
     Object? pageState = null,
     Object? pageCommand = freezed,
     Object? isLoading = null,
+    Object? title = null,
     Object? keyword = null,
     Object? contacts = null,
     Object? groups = null,
@@ -907,6 +916,10 @@ class __$$_AddContactsStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
@@ -930,6 +943,7 @@ class _$_AddContactsState extends _AddContactsState {
       {this.pageState = PageState.loading,
       this.pageCommand,
       this.isLoading = false,
+      this.title = '',
       this.keyword = '',
       final List<ContactRequest> contacts = const [],
       final List<Group> groups = const []})
@@ -945,6 +959,9 @@ class _$_AddContactsState extends _AddContactsState {
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  @JsonKey()
+  final String title;
   @override
   @JsonKey()
   final String keyword;
@@ -968,7 +985,7 @@ class _$_AddContactsState extends _AddContactsState {
 
   @override
   String toString() {
-    return 'AddContactsState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts, groups: $groups)';
+    return 'AddContactsState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, title: $title, keyword: $keyword, contacts: $contacts, groups: $groups)';
   }
 
   @override
@@ -982,6 +999,7 @@ class _$_AddContactsState extends _AddContactsState {
                 other.pageCommand == pageCommand) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
             const DeepCollectionEquality().equals(other._groups, _groups));
@@ -993,6 +1011,7 @@ class _$_AddContactsState extends _AddContactsState {
       pageState,
       pageCommand,
       isLoading,
+      title,
       keyword,
       const DeepCollectionEquality().hash(_contacts),
       const DeepCollectionEquality().hash(_groups));
@@ -1009,6 +1028,7 @@ abstract class _AddContactsState extends AddContactsState {
       {final PageState pageState,
       final PageCommand? pageCommand,
       final bool isLoading,
+      final String title,
       final String keyword,
       final List<ContactRequest> contacts,
       final List<Group> groups}) = _$_AddContactsState;
@@ -1020,6 +1040,8 @@ abstract class _AddContactsState extends AddContactsState {
   PageCommand? get pageCommand;
   @override
   bool get isLoading;
+  @override
+  String get title;
   @override
   String get keyword;
   @override

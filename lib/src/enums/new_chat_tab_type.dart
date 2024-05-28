@@ -7,6 +7,7 @@ import 'package:keepup/src/ui/bottom_sheet/new_chat/components/new_group_view.da
 enum NewChatTabType {
   newChat,
   addMembers,
+  addContactsToGroup,
   newGroup,
   newContact;
 
@@ -14,6 +15,7 @@ enum NewChatTabType {
     return switch (this) {
       newChat => const NewChatView(),
       addMembers => const AddMemberView(),
+      addContactsToGroup => const SizedBox(),
       newGroup => const NewGroupView(),
       newContact => const NewContactView(),
     };

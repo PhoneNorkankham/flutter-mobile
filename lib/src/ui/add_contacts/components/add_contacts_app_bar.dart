@@ -10,24 +10,30 @@ class AddContactsAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppAppBar(
-      title: LocaleKey.addContactsToKeepUp.tr,
-      implyLeading: true,
-      onlyIconLeading: true,
-      actions: [
-        BlocBuilder<AddContactsBloc, AddContactsState>(
-          buildWhen: (previous, current) => previous.enabledDoneButton != current.enabledDoneButton,
-          builder: (context, state) {
-            final AddContactsBloc bloc = context.read();
-            return state.enabledDoneButton
-                ? TextButton(
-                    onPressed: () => bloc.add(const AddContactsEvent.onDonePressed()),
-                    child: Text(LocaleKey.done.tr),
-                  )
-                : const SizedBox();
-          },
-        ),
-      ],
+    return BlocBuilder<AddContactsBloc, AddContactsState>(
+      buildWhen: (previous, current) => previous.title != current.title,
+      builder: (context, state) {
+        return AppAppBar(
+          title: state.title,
+          implyLeading: true,
+          onlyIconLeading: true,
+          actions: [
+            BlocBuilder<AddContactsBloc, AddContactsState>(
+              buildWhen: (previous, current) =>
+                  previous.enabledDoneButton != current.enabledDoneButton,
+              builder: (context, state) {
+                final AddContactsBloc bloc = context.read();
+                return state.enabledDoneButton
+                    ? TextButton(
+                        onPressed: () => bloc.add(const AddContactsEvent.onDonePressed()),
+                        child: Text(LocaleKey.done.tr),
+                      )
+                    : const SizedBox();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 

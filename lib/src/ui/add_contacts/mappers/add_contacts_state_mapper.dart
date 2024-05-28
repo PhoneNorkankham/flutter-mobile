@@ -1,5 +1,3 @@
-import 'package:get/get.dart';
-import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/add_contacts/interactor/add_contacts_bloc.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
@@ -26,7 +24,6 @@ class AddContactsStateMapper implements BaseStateMapper<AddContactsState, VoidRe
           result: PopResult(
             status: true,
             resultFromPage: AppPages.addContacts,
-            data: LocaleKey.contactCreatedSuccessfully.tr,
           ),
         ),
       );
