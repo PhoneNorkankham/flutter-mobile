@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/components/add_member_selected_item.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
 
@@ -12,7 +12,7 @@ class AddMemberSelected extends StatelessWidget {
     return BlocBuilder<NewChatBloc, NewChatState>(
       buildWhen: (previous, current) => previous.selectedContacts != current.selectedContacts,
       builder: (context, state) {
-        final List<Contact> contacts = state.selectedContacts;
+        final List<ContactRequest> contacts = state.selectedContacts;
         if (contacts.isEmpty) return const SizedBox();
         return Container(
           decoration: BoxDecoration(

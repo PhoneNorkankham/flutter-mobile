@@ -20,10 +20,10 @@ class NewContactAppBar extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 LocaleKey.newContact.tr,
-                style: context.appTextTheme.bold16.copyWith(
+                style: context.appTextTheme.bold18.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
                 textAlign: TextAlign.center,
@@ -37,7 +37,7 @@ class NewContactAppBar extends StatelessWidget {
                       bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newChat)),
                   child: Text(
                     LocaleKey.cancel.tr,
-                    style: context.appTextTheme.bold16.copyWith(
+                    style: context.appTextTheme.bold14.copyWith(
                       color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
@@ -49,7 +49,7 @@ class NewContactAppBar extends StatelessWidget {
                       : null,
                   child: Text(
                     LocaleKey.create.tr,
-                    style: context.appTextTheme.bold16.copyWith(
+                    style: context.appTextTheme.bold14.copyWith(
                       color: Theme.of(context)
                           .colorScheme
                           .onPrimary

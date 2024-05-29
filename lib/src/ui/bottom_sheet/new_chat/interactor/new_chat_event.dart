@@ -12,13 +12,15 @@ class NewChatEvent with _$NewChatEvent {
 
   const factory NewChatEvent.onSelectedGroup(Group group) = _OnSelectedGroup;
 
-  const factory NewChatEvent.onSelectedContact(Contact contact) = _OnSelectedContact;
+  const factory NewChatEvent.onSelectedContact(ContactRequest contact) = _OnSelectedContact;
 
-  const factory NewChatEvent.onRemovedContact(Contact contact) = _OnRemovedContact;
+  const factory NewChatEvent.onRemovedContact(ContactRequest contact) = _OnRemovedContact;
 
   const factory NewChatEvent.onChangedGroupName(String name) = _OnChangedGroupName;
 
   const factory NewChatEvent.onCreateNewGroup() = _OnCreateNewGroup;
+
+  const factory NewChatEvent.onAddContactsToGroup() = _OnAddContactsToGroup;
 
   const factory NewChatEvent.onCreateNewContact() = _OnCreateNewContact;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -16,9 +16,10 @@ class AddMemberHeader extends StatelessWidget {
     return BlocBuilder<NewChatBloc, NewChatState>(
       buildWhen: (previous, current) =>
           previous.contacts != current.contacts ||
+          previous.selectedGroup != current.selectedGroup ||
           previous.selectedContacts != current.selectedContacts,
       builder: (context, state) {
-        final List<Contact> contacts = [
+        final List<ContactRequest> contacts = [
           // Get all contacts that don't belong to any other group
           ...state.contacts.where((element) => element.groupId.isEmpty).toList()
         ];
@@ -31,15 +32,20 @@ class AddMemberHeader extends StatelessWidget {
               children: [
                 const SizedBox(height: 8),
                 Text(
-                  LocaleKey.addMembers.tr,
-                  style: context.appTextTheme.bold16.copyWith(
+                  state.selectedGroup == null
+                      ? LocaleKey.addContactsToGroup.tr
+                      : LocaleKey.addContactsToGroup.tr.replaceFirst(
+                          'Group',
+                          state.selectedGroup?.name ?? '',
+                        ),
+                  style: context.appTextTheme.bold18.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 Text(
                   '${state.selectedContacts.length}/${contacts.length}',
-                  style: context.appTextTheme.medium10.copyWith(
+                  style: context.appTextTheme.medium12.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
                   textAlign: TextAlign.center,
@@ -51,23 +57,35 @@ class AddMemberHeader extends StatelessWidget {
               children: [
                 const SizedBox(width: 8),
                 TextButton(
-                  onPressed: () =>
-                      bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newChat)),
+                  onPressed: () => bloc.add(NewChatEvent.onChangedTabType(
+                      state.selectedGroup == null
+                          ? NewChatTabType.newGroup
+                          : NewChatTabType.groups)),
                   child: Text(
                     LocaleKey.cancel.tr,
-                    style: context.appTextTheme.bold16.copyWith(
+                    style: context.appTextTheme.bold14.copyWith(
                       color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
                 ),
                 const Spacer(),
                 TextButton(
-                  onPressed: () =>
-                      bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newGroup)),
+                  onPressed: state.selectedContacts.isEmpty
+                      ? null
+                      : () {
+                          if (state.selectedGroup == null) {
+                            bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newGroup));
+                          } else {
+                            bloc.add(const NewChatEvent.onAddContactsToGroup());
+                          }
+                        },
                   child: Text(
-                    LocaleKey.next.tr,
-                    style: context.appTextTheme.bold16.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary,
+                    LocaleKey.done.tr,
+                    style: context.appTextTheme.bold14.copyWith(
+                      color: Theme.of(context)
+                          .colorScheme
+                          .onPrimary
+                          .withOpacity(state.selectedContacts.isEmpty ? 0.5 : 1),
                     ),
                   ),
                 ),

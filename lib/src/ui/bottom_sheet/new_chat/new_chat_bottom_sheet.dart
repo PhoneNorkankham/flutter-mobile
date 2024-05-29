@@ -6,6 +6,7 @@ import 'package:keepup/src/design/components/process_indicators/loading_full_scr
 import 'package:keepup/src/design/components/toasts/app_toasts.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/add_contacts/usecases/add_contacts_use_case.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_command_listeners.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
@@ -13,6 +14,7 @@ import 'package:keepup/src/utils/app_pages.dart';
 
 class NewChatBottomSheet extends StatelessWidget {
   static Future<dynamic> show() {
+    Get.put(AddContactsUseCase(Get.find()));
     return Get.bottomSheet(
       isScrollControlled: true,
       ignoreSafeArea: false,
@@ -26,6 +28,9 @@ class NewChatBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => NewChatBloc(
+        Get.find(),
+        Get.find(),
+        Get.find(),
         Get.find(),
         Get.find(),
         Get.find(),

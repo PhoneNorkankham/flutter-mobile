@@ -26,8 +26,8 @@ enum NewChatCategoryType {
 
   NewChatTabType get tabType {
     return switch (this) {
-      createNewGroup => NewChatTabType.addMembers,
-      addContactsToGroup => NewChatTabType.addContactsToGroup,
+      createNewGroup => NewChatTabType.newGroup,
+      addContactsToGroup => NewChatTabType.groups,
       newContact => NewChatTabType.newContact,
     };
   }
