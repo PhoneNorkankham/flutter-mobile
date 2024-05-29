@@ -121,7 +121,7 @@ class _Title extends StatelessWidget {
             ),
             onPressed: () => AppUtils.onCloseSnackBar().then((value) {
               if (onClose == null) {
-                Get.back(result: true);
+                Get.back(result: false);
               } else {
                 onClose?.call();
               }
