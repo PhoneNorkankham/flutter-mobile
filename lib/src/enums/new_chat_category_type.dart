@@ -4,26 +4,30 @@ import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 
 enum NewChatCategoryType {
-  newGroup,
+  createNewGroup,
+  addContactsToGroup,
   newContact;
 
   String get title {
     return switch (this) {
-      newGroup => LocaleKey.newGroup.tr,
+      createNewGroup => LocaleKey.createNewGroup.tr,
+      addContactsToGroup => LocaleKey.addContactsToGroup.tr,
       newContact => LocaleKey.newContact.tr,
     };
   }
 
   IconData get icon {
     return switch (this) {
-      newGroup => Icons.group,
+      createNewGroup => Icons.group,
+      addContactsToGroup => Icons.group_add,
       newContact => Icons.person_add,
     };
   }
 
   NewChatTabType get tabType {
     return switch (this) {
-      newGroup => NewChatTabType.addMembers,
+      createNewGroup => NewChatTabType.addMembers,
+      addContactsToGroup => NewChatTabType.addContactsToGroup,
       newContact => NewChatTabType.newContact,
     };
   }

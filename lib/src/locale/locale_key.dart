@@ -172,11 +172,13 @@ class LocaleKey {
   static const String deleteGroupDescription = "deleteGroupDescription";
 
   // New Chat
-  static const String newChat = "newChat";
   static const String searchNameOrNumber = "searchNameOrNumber";
   static const String addMembers = "addMembers";
   static const String groupName = "groupName";
   static const String theGroupDoesNotExist = "theGroupDoesNotExist";
+  static const String createNewGroup = "createNewGroup";
+  static const String addContactsToGroup = "addContactsToGroup";
+  static const String addContactsToGroupSuccessfully = "addContactsToGroupSuccessfully";
 
   // New Chat Options
   static const String usePhoneContacts = "usePhoneContacts";
@@ -184,6 +186,7 @@ class LocaleKey {
 
   // Add Contacts To KeepUp
   static const String addContactsToKeepUp = "addContactsToKeepUp";
+  static const String addContactsToKeepUpSuccessfully = "addContactsToKeepUpSuccessfully";
   static const String done = "done";
 
   // Frequency Interval

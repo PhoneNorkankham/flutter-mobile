@@ -22,6 +22,7 @@ import 'package:keepup/src/ui/bottom_sheet/new_chat/mappers/create_group_state_m
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
 import 'package:keepup/src/use_cases/create_group_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
+import 'package:keepup/src/utils/app_pages.dart';
 
 part 'new_chat_bloc.freezed.dart';
 part 'new_chat_event.dart';
@@ -90,7 +91,6 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     NewChatState newState = state.copyWith(tabType: event.type);
     switch (event.type) {
       case NewChatTabType.newChat:
-      case NewChatTabType.addMembers:
         nameController.clear();
         emailController.clear();
         phoneNoController.clear();
@@ -102,8 +102,15 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
           contactRequest: const ContactRequest(),
         );
         break;
-      case NewChatTabType.newGroup:
-      case NewChatTabType.newContact:
+      case NewChatTabType.addContactsToGroup:
+        emit(state.copyWith(
+          pageCommand: PageCommandNavigation.toPage(
+            AppPages.addContacts,
+            argument: LocaleKey.addContactsToGroup.tr,
+          ),
+        ));
+        return Future.value();
+      case _:
         break;
     }
     emit(newState);

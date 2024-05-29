@@ -8,6 +8,7 @@ class AddContactsState with _$AddContactsState {
     @Default(PageState.loading) PageState pageState,
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
+    @Default('') String title,
     @Default('') String keyword,
     @Default([]) List<ContactRequest> contacts,
     @Default([]) List<Group> groups,

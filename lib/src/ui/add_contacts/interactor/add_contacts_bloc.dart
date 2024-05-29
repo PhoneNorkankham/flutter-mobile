@@ -38,6 +38,13 @@ class AddContactsBloc extends Bloc<AddContactsEvent, AddContactsState> {
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<AddContactsState> emit) async {
+    final arguments = Get.arguments;
+    if (arguments is String) {
+      emit(state.copyWith(title: arguments));
+    } else {
+      emit(state.copyWith(title: LocaleKey.addContactsToKeepUp.tr));
+    }
+
     final List<Group> groups = await _supabaseRepository.getDBGroups();
     final List<ContactRequest> deviceContacts = await _getDeviceContacts();
     await emit.forEach<List<ContactRequest>>(
