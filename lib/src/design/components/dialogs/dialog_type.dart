@@ -1,14 +1,7 @@
 enum DialogType {
   success,
   error,
-  confirmation,
-  photo,
-  withdrawal,
+  resetData,
+  deleteAccount,
   logout,
-  datePicker,
-  depositAccount,
-  publishTaxBill,
-  attachReceipt,
-  searchSettingsGuide,
-  documentApproved,
 }

@@ -297,4 +297,25 @@ class SupabaseRepository {
       saveCallResult: (interaction) => _interactionDao.insertOrReplace(interaction),
     ).getAsFuture();
   }
+
+  Future<Resource<void>> resetData() {
+    return NetworkBoundResource<void, void>(
+      createSerializedCall: () => _supabaseManager.resetData(),
+      saveCallResult: (_) => _appDatabase.deleteAll(),
+    ).getAsFuture();
+  }
+
+  Future<Resource<void>> deleteAccount() {
+    return NetworkBoundResource<void, void>(
+      createSerializedCall: () => _supabaseManager.deleteAccount(),
+      saveCallResult: (_) => _appDatabase.deleteAll(),
+    ).getAsFuture();
+  }
+
+  Future<Resource<void>> logout() {
+    return NetworkBoundResource<void, void>(
+      createSerializedCall: () => _supabaseManager.logout(),
+      saveCallResult: (_) => _appDatabase.deleteAll(),
+    ).getAsFuture();
+  }
 }

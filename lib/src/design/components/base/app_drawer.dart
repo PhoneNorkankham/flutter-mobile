@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/app_drawer_type.dart';
+import 'package:keepup/src/ui/main/interactor/main_bloc.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -14,7 +16,7 @@ class AppDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
         children: [
-          const SizedBox(height: 60),
+          const SizedBox(height: 40),
           const AppCircleAvatar(url: '', radius: 35),
           const SizedBox(height: 10),
           Text(
@@ -24,9 +26,12 @@ class AppDrawer extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
           ...AppDrawerType.values.map((e) => ListTile(
-                onTap: () {},
+                onTap: () {
+                  Get.back();
+                  Get.find<MainBloc>().add(MainEvent.onDrawerItemPressed(e));
+                },
                 leading: Icon(e.icon, color: Theme.of(context).colorScheme.onPrimary),
                 title: Text(
                   e.title,
@@ -35,6 +40,7 @@ class AppDrawer extends StatelessWidget {
                   ),
                 ),
               )),
+          const SizedBox(height: 20),
         ],
       ),
     );

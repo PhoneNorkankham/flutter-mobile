@@ -28,6 +28,12 @@ class AppDatabase extends _$AppDatabase {
 
   @override
   int get schemaVersion => 1;
+
+  Future<void> deleteAll() async {
+    await groupDao.deleteAll();
+    await contactDao.deleteAll();
+    await interactionDao.deleteAll();
+  }
 }
 
 LazyDatabase _openConnection() {
