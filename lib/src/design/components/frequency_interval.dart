@@ -50,14 +50,14 @@ class FrequencyInterval extends StatelessWidget {
                           Icons.check,
                           size: 20,
                           color: type == e
-                              ? Theme.of(context).colorScheme.onPrimary
+                              ? Theme.of(context).colorScheme.primary
                               : Colors.transparent,
                         ),
                         const SizedBox(width: 6),
                         Text(
                           e.title,
                           style: context.appTextTheme.medium16.copyWith(
-                            color: type == e ? Theme.of(context).colorScheme.onPrimary : null,
+                            color: type == e ? Theme.of(context).colorScheme.primary : null,
                           ),
                         ),
                       ],
