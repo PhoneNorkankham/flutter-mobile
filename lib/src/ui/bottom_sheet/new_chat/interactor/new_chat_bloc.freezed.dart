@@ -23,10 +23,11 @@ mixin _$NewChatEvent {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -42,10 +43,11 @@ mixin _$NewChatEvent {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -60,10 +62,11 @@ mixin _$NewChatEvent {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -83,6 +86,7 @@ mixin _$NewChatEvent {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -101,6 +105,7 @@ mixin _$NewChatEvent {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -119,6 +124,7 @@ mixin _$NewChatEvent {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -189,10 +195,11 @@ class _$_Initial implements _Initial {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -211,10 +218,11 @@ class _$_Initial implements _Initial {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -232,10 +240,11 @@ class _$_Initial implements _Initial {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -261,6 +270,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -282,6 +292,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -303,6 +314,7 @@ class _$_Initial implements _Initial {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -364,10 +376,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -386,10 +399,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -407,10 +421,11 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -436,6 +451,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -457,6 +473,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -478,6 +495,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -565,10 +583,11 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -587,10 +606,11 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -608,10 +628,11 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -637,6 +658,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -658,6 +680,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -679,6 +702,7 @@ class _$_OnChangedTabType implements _OnChangedTabType {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -772,10 +796,11 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -794,10 +819,11 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -815,10 +841,11 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -844,6 +871,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -865,6 +893,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -886,6 +915,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -979,10 +1009,11 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -1001,10 +1032,11 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1022,10 +1054,11 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1051,6 +1084,7 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -1072,6 +1106,7 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1093,6 +1128,7 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1122,7 +1158,9 @@ abstract class _$$_OnSelectedContactCopyWith<$Res> {
           $Res Function(_$_OnSelectedContact) then) =
       __$$_OnSelectedContactCopyWithImpl<$Res>;
   @useResult
-  $Res call({Contact contact});
+  $Res call({ContactRequest contact});
+
+  $ContactRequestCopyWith<$Res> get contact;
 }
 
 /// @nodoc
@@ -1136,14 +1174,22 @@ class __$$_OnSelectedContactCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = freezed,
+    Object? contact = null,
   }) {
     return _then(_$_OnSelectedContact(
-      freezed == contact
+      null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as Contact,
+              as ContactRequest,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactRequestCopyWith<$Res> get contact {
+    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
+      return _then(_value.copyWith(contact: value));
+    });
   }
 }
 
@@ -1153,7 +1199,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
   const _$_OnSelectedContact(this.contact);
 
   @override
-  final Contact contact;
+  final ContactRequest contact;
 
   @override
   String toString() {
@@ -1165,12 +1211,11 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnSelectedContact &&
-            const DeepCollectionEquality().equals(other.contact, contact));
+            (identical(other.contact, contact) || other.contact == contact));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
+  int get hashCode => Object.hash(runtimeType, contact);
 
   @JsonKey(ignore: true)
   @override
@@ -1187,10 +1232,11 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -1209,10 +1255,11 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1230,10 +1277,11 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1259,6 +1307,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -1280,6 +1329,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1301,6 +1351,7 @@ class _$_OnSelectedContact implements _OnSelectedContact {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1316,10 +1367,10 @@ class _$_OnSelectedContact implements _OnSelectedContact {
 }
 
 abstract class _OnSelectedContact implements NewChatEvent {
-  const factory _OnSelectedContact(final Contact contact) =
+  const factory _OnSelectedContact(final ContactRequest contact) =
       _$_OnSelectedContact;
 
-  Contact get contact;
+  ContactRequest get contact;
   @JsonKey(ignore: true)
   _$$_OnSelectedContactCopyWith<_$_OnSelectedContact> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1331,7 +1382,9 @@ abstract class _$$_OnRemovedContactCopyWith<$Res> {
           _$_OnRemovedContact value, $Res Function(_$_OnRemovedContact) then) =
       __$$_OnRemovedContactCopyWithImpl<$Res>;
   @useResult
-  $Res call({Contact contact});
+  $Res call({ContactRequest contact});
+
+  $ContactRequestCopyWith<$Res> get contact;
 }
 
 /// @nodoc
@@ -1345,14 +1398,22 @@ class __$$_OnRemovedContactCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = freezed,
+    Object? contact = null,
   }) {
     return _then(_$_OnRemovedContact(
-      freezed == contact
+      null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as Contact,
+              as ContactRequest,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactRequestCopyWith<$Res> get contact {
+    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
+      return _then(_value.copyWith(contact: value));
+    });
   }
 }
 
@@ -1362,7 +1423,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
   const _$_OnRemovedContact(this.contact);
 
   @override
-  final Contact contact;
+  final ContactRequest contact;
 
   @override
   String toString() {
@@ -1374,12 +1435,11 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnRemovedContact &&
-            const DeepCollectionEquality().equals(other.contact, contact));
+            (identical(other.contact, contact) || other.contact == contact));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
+  int get hashCode => Object.hash(runtimeType, contact);
 
   @JsonKey(ignore: true)
   @override
@@ -1395,10 +1455,11 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -1417,10 +1478,11 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1438,10 +1500,11 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1467,6 +1530,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -1488,6 +1552,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1509,6 +1574,7 @@ class _$_OnRemovedContact implements _OnRemovedContact {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1524,9 +1590,10 @@ class _$_OnRemovedContact implements _OnRemovedContact {
 }
 
 abstract class _OnRemovedContact implements NewChatEvent {
-  const factory _OnRemovedContact(final Contact contact) = _$_OnRemovedContact;
+  const factory _OnRemovedContact(final ContactRequest contact) =
+      _$_OnRemovedContact;
 
-  Contact get contact;
+  ContactRequest get contact;
   @JsonKey(ignore: true)
   _$$_OnRemovedContactCopyWith<_$_OnRemovedContact> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1602,10 +1669,11 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -1624,10 +1692,11 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1645,10 +1714,11 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1674,6 +1744,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -1695,6 +1766,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1716,6 +1788,7 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1782,10 +1855,11 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -1804,10 +1878,11 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1825,10 +1900,11 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -1854,6 +1930,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -1875,6 +1952,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1896,6 +1974,7 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -1912,6 +1991,187 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
 
 abstract class _OnCreateNewGroup implements NewChatEvent {
   const factory _OnCreateNewGroup() = _$_OnCreateNewGroup;
+}
+
+/// @nodoc
+abstract class _$$_OnAddContactsToGroupCopyWith<$Res> {
+  factory _$$_OnAddContactsToGroupCopyWith(_$_OnAddContactsToGroup value,
+          $Res Function(_$_OnAddContactsToGroup) then) =
+      __$$_OnAddContactsToGroupCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnAddContactsToGroupCopyWithImpl<$Res>
+    extends _$NewChatEventCopyWithImpl<$Res, _$_OnAddContactsToGroup>
+    implements _$$_OnAddContactsToGroupCopyWith<$Res> {
+  __$$_OnAddContactsToGroupCopyWithImpl(_$_OnAddContactsToGroup _value,
+      $Res Function(_$_OnAddContactsToGroup) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnAddContactsToGroup implements _OnAddContactsToGroup {
+  const _$_OnAddContactsToGroup();
+
+  @override
+  String toString() {
+    return 'NewChatEvent.onAddContactsToGroup()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnAddContactsToGroup);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(NewChatTabType type) onChangedTabType,
+    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(Group group) onSelectedGroup,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
+    required TResult Function(String name) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
+    required TResult Function() onCreateNewContact,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
+    required TResult Function(NewChatInputType inputType, String value)
+        onInputChanged,
+    required TResult Function(File file) onChangedAvatar,
+  }) {
+    return onAddContactsToGroup();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(NewChatTabType type)? onChangedTabType,
+    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(Group group)? onSelectedGroup,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
+    TResult? Function(String name)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
+    TResult? Function()? onCreateNewContact,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
+    TResult? Function(File file)? onChangedAvatar,
+  }) {
+    return onAddContactsToGroup?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(NewChatTabType type)? onChangedTabType,
+    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(Group group)? onSelectedGroup,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
+    TResult Function(String name)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
+    TResult Function()? onCreateNewContact,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
+    TResult Function(File file)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onAddContactsToGroup != null) {
+      return onAddContactsToGroup();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedTabType value) onChangedTabType,
+    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
+    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
+    required TResult Function(_OnFrequencyIntervalChanged value)
+        onFrequencyIntervalChanged,
+    required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+  }) {
+    return onAddContactsToGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedTabType value)? onChangedTabType,
+    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
+    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
+    TResult? Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+  }) {
+    return onAddContactsToGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedTabType value)? onChangedTabType,
+    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
+    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
+    TResult Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onAddContactsToGroup != null) {
+      return onAddContactsToGroup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnAddContactsToGroup implements NewChatEvent {
+  const factory _OnAddContactsToGroup() = _$_OnAddContactsToGroup;
 }
 
 /// @nodoc
@@ -1957,10 +2217,11 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -1979,10 +2240,11 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2000,10 +2262,11 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2029,6 +2292,7 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -2050,6 +2314,7 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2071,6 +2336,7 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2162,10 +2428,11 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -2184,10 +2451,11 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2205,10 +2473,11 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2234,6 +2503,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -2255,6 +2525,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2276,6 +2547,7 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2379,10 +2651,11 @@ class _$_OnInputChanged implements _OnInputChanged {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -2401,10 +2674,11 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2422,10 +2696,11 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2451,6 +2726,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -2472,6 +2748,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2493,6 +2770,7 @@ class _$_OnInputChanged implements _OnInputChanged {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2587,10 +2865,11 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
+    required TResult Function() onAddContactsToGroup,
     required TResult Function() onCreateNewContact,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
@@ -2609,10 +2888,11 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
+    TResult? Function()? onAddContactsToGroup,
     TResult? Function()? onCreateNewContact,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2630,10 +2910,11 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(Group group)? onSelectedGroup,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
+    TResult Function()? onAddContactsToGroup,
     TResult Function()? onCreateNewContact,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
@@ -2659,6 +2940,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     required TResult Function(_OnRemovedContact value) onRemovedContact,
     required TResult Function(_OnChangedGroupName value) onChangedGroupName,
     required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
     required TResult Function(_OnCreateNewContact value) onCreateNewContact,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
@@ -2680,6 +2962,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult? Function(_OnRemovedContact value)? onRemovedContact,
     TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2701,6 +2984,7 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
     TResult Function(_OnRemovedContact value)? onRemovedContact,
     TResult Function(_OnChangedGroupName value)? onChangedGroupName,
     TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
     TResult Function(_OnCreateNewContact value)? onCreateNewContact,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
@@ -2731,8 +3015,9 @@ mixin _$NewChatState {
   bool get isLoading => throw _privateConstructorUsedError;
   NewChatTabType get tabType => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
-  List<Contact> get contacts => throw _privateConstructorUsedError;
-  List<Contact> get selectedContacts => throw _privateConstructorUsedError;
+  List<ContactRequest> get contacts => throw _privateConstructorUsedError;
+  List<ContactRequest> get selectedContacts =>
+      throw _privateConstructorUsedError;
   List<Group> get groups => throw _privateConstructorUsedError;
   Group? get selectedGroup => throw _privateConstructorUsedError;
   ContactRequest get contactRequest => throw _privateConstructorUsedError;
@@ -2756,8 +3041,8 @@ abstract class $NewChatStateCopyWith<$Res> {
       bool isLoading,
       NewChatTabType tabType,
       String keyword,
-      List<Contact> contacts,
-      List<Contact> selectedContacts,
+      List<ContactRequest> contacts,
+      List<ContactRequest> selectedContacts,
       List<Group> groups,
       Group? selectedGroup,
       ContactRequest contactRequest,
@@ -2819,11 +3104,11 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       selectedContacts: null == selectedContacts
           ? _value.selectedContacts
           : selectedContacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       groups: null == groups
           ? _value.groups
           : groups // ignore: cast_nullable_to_non_nullable
@@ -2890,8 +3175,8 @@ abstract class _$$_NewChatStateCopyWith<$Res>
       bool isLoading,
       NewChatTabType tabType,
       String keyword,
-      List<Contact> contacts,
-      List<Contact> selectedContacts,
+      List<ContactRequest> contacts,
+      List<ContactRequest> selectedContacts,
       List<Group> groups,
       Group? selectedGroup,
       ContactRequest contactRequest,
@@ -2954,11 +3239,11 @@ class __$$_NewChatStateCopyWithImpl<$Res>
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       selectedContacts: null == selectedContacts
           ? _value._selectedContacts
           : selectedContacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       groups: null == groups
           ? _value._groups
           : groups // ignore: cast_nullable_to_non_nullable
@@ -2992,8 +3277,8 @@ class _$_NewChatState extends _NewChatState {
       this.isLoading = false,
       this.tabType = NewChatTabType.newChat,
       this.keyword = '',
-      final List<Contact> contacts = const [],
-      final List<Contact> selectedContacts = const [],
+      final List<ContactRequest> contacts = const [],
+      final List<ContactRequest> selectedContacts = const [],
       final List<Group> groups = const [],
       this.selectedGroup,
       this.contactRequest = const ContactRequest(),
@@ -3018,19 +3303,19 @@ class _$_NewChatState extends _NewChatState {
   @override
   @JsonKey()
   final String keyword;
-  final List<Contact> _contacts;
+  final List<ContactRequest> _contacts;
   @override
   @JsonKey()
-  List<Contact> get contacts {
+  List<ContactRequest> get contacts {
     if (_contacts is EqualUnmodifiableListView) return _contacts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contacts);
   }
 
-  final List<Contact> _selectedContacts;
+  final List<ContactRequest> _selectedContacts;
   @override
   @JsonKey()
-  List<Contact> get selectedContacts {
+  List<ContactRequest> get selectedContacts {
     if (_selectedContacts is EqualUnmodifiableListView)
       return _selectedContacts;
     // ignore: implicit_dynamic_type
@@ -3118,8 +3403,8 @@ abstract class _NewChatState extends NewChatState {
       final bool isLoading,
       final NewChatTabType tabType,
       final String keyword,
-      final List<Contact> contacts,
-      final List<Contact> selectedContacts,
+      final List<ContactRequest> contacts,
+      final List<ContactRequest> selectedContacts,
       final List<Group> groups,
       final Group? selectedGroup,
       final ContactRequest contactRequest,
@@ -3138,9 +3423,9 @@ abstract class _NewChatState extends NewChatState {
   @override
   String get keyword;
   @override
-  List<Contact> get contacts;
+  List<ContactRequest> get contacts;
   @override
-  List<Contact> get selectedContacts;
+  List<ContactRequest> get selectedContacts;
   @override
   List<Group> get groups;
   @override

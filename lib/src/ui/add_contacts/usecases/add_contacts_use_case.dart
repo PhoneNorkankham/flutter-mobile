@@ -5,18 +5,21 @@ import 'package:keepup/src/core/resource.dart';
 import 'package:keepup/src/ui/base/interactor/base_use_case.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 
-class AddContactsUseCase extends InputUseCase<VoidResult, List<ContactRequest>> {
+class AddContactsUseCase extends InputUseCase<ListResult<Contact>, List<ContactRequest>> {
   final SupabaseRepository _supabaseRepository;
 
   AddContactsUseCase(this._supabaseRepository);
 
   @override
-  Future<VoidResult> run(List<ContactRequest> input) async {
+  Future<ListResult<Contact>> run(List<ContactRequest> input) async {
+    List<Contact> contacts = [];
     Resource resource;
     final List<ContactRequest> oldContactRequests =
         input.where((element) => element.contactId.isNotEmpty).toList();
     for (ContactRequest contactRequest in oldContactRequests) {
       resource = await _supabaseRepository.updateContact(contactRequest);
+      final Contact? contact = resource.data;
+      if (contact != null) contacts.add(contact);
       if (resource.isSuccess) {
         resource = await _supabaseRepository.updateContactInGroup(
           contactId: contactRequest.contactId,
@@ -34,6 +37,8 @@ class AddContactsUseCase extends InputUseCase<VoidResult, List<ContactRequest>> 
         input.where((element) => element.contactId.isEmpty && element.groupId.isNotEmpty).toList();
     for (ContactRequest contactRequest in newContactRequests) {
       resource = await _supabaseRepository.insertContact(contactRequest);
+      final Contact? contact = resource.data;
+      if (contact != null) contacts.add(contact);
       if (resource.isSuccess) {
         final Contact? contact = resource.data;
         if (contact != null) {
@@ -50,6 +55,6 @@ class AddContactsUseCase extends InputUseCase<VoidResult, List<ContactRequest>> 
       }
     }
 
-    return Result.value(null);
+    return Result.value(contacts);
   }
 }

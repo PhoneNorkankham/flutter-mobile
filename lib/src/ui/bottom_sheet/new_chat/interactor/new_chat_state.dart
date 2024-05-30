@@ -10,8 +10,8 @@ class NewChatState with _$NewChatState {
     @Default(false) bool isLoading,
     @Default(NewChatTabType.newChat) NewChatTabType tabType,
     @Default('') String keyword,
-    @Default([]) List<Contact> contacts,
-    @Default([]) List<Contact> selectedContacts,
+    @Default([]) List<ContactRequest> contacts,
+    @Default([]) List<ContactRequest> selectedContacts,
     @Default([]) List<Group> groups,
     Group? selectedGroup,
     @Default(ContactRequest()) ContactRequest contactRequest,
@@ -23,11 +23,21 @@ class NewChatState with _$NewChatState {
 
   bool get enabledCreateNewContactButton => contactRequest.isValidate;
 
-  List<Contact> get filterContacts {
+  List<ContactRequest> get filterContacts {
     if (keyword.isEmpty) {
       return contacts;
     } else {
       return contacts
+          .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
+          .toList();
+    }
+  }
+
+  List<Group> get filterGroups {
+    if (keyword.isEmpty) {
+      return groups;
+    } else {
+      return groups
           .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
           .toList();
     }

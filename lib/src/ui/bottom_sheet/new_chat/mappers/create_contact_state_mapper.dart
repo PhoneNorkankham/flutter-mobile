@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
+import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
@@ -24,7 +25,10 @@ class CreateContactStateMapper implements BaseStateMapper<NewChatState, DataResu
       return state.copyWith(
         isLoading: false,
         tabType: NewChatTabType.newChat,
+        keyword: '',
+        selectedContacts: [],
         selectedGroup: null,
+        groupRequest: const GroupRequest(),
         contactRequest: const ContactRequest(),
         avatar: null,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.contactCreatedSuccessfully.tr),

@@ -6,8 +6,8 @@ import 'package:keepup/src/enums/new_chat_tab_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
 
-class NewGroupAppBar extends StatelessWidget {
-  const NewGroupAppBar({super.key});
+class GroupsAppBar extends StatelessWidget {
+  const GroupsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class NewGroupAppBar extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            LocaleKey.newGroup.tr,
+            LocaleKey.groups.tr,
             style: context.appTextTheme.bold18.copyWith(
               color: Theme.of(context).colorScheme.onPrimary,
             ),
@@ -32,34 +32,13 @@ class NewGroupAppBar extends StatelessWidget {
               onPressed: () =>
                   bloc.add(const NewChatEvent.onChangedTabType(NewChatTabType.newChat)),
               child: Text(
-                LocaleKey.back.tr,
+                LocaleKey.cancel.tr,
                 style: context.appTextTheme.bold14.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
               ),
             ),
             const Spacer(),
-            BlocBuilder<NewChatBloc, NewChatState>(
-              buildWhen: (previous, current) =>
-                  previous.enabledCreateNewGroupButton != current.enabledCreateNewGroupButton,
-              builder: (context, state) {
-                return TextButton(
-                  onPressed: state.enabledCreateNewGroupButton
-                      ? () => bloc.add(const NewChatEvent.onCreateNewGroup())
-                      : null,
-                  child: Text(
-                    LocaleKey.create.tr,
-                    style: context.appTextTheme.bold14.copyWith(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .onPrimary
-                          .withOpacity(state.enabledCreateNewGroupButton ? 1 : 0.5),
-                    ),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(width: 8),
           ],
         ),
       ],
