@@ -22,5 +22,8 @@ class InteractionDao extends DatabaseAccessor<AppDatabase> with _$InteractionDao
           .get()
           .then((value) => value.firstOrNull);
 
+  Future<void> deleteInteractionsOfContact(String contactId) =>
+      (delete(interactions)..where((tbl) => tbl.contactId.equals(contactId))).go();
+
   Future<int> deleteAll() => delete(interactions).go();
 }

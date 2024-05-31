@@ -38,10 +38,11 @@ class GroupDao extends DatabaseAccessor<AppDatabase> with _$GroupDaoMixin {
         groups.where((element) => element.contacts.contains(contactId)).toList();
 
     // Get all leave groups
-    final List<Group> leaveGroups = joinedGroups.map((element) {
-      final List<String> contactIds = [...element.contacts]
+    final List<Group> leaveGroups = joinedGroups.map((group) {
+      final List<String> contactIds = [...group.contacts]
+        // Remove contactId in group
         ..removeWhere((element) => element == contactId);
-      return element.copyWith(contacts: contactIds);
+      return group.copyWith(contacts: contactIds);
     }).toList();
 
     // Update groups

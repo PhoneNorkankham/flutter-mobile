@@ -26,6 +26,7 @@ class GetGroupStateMapper implements BaseStateMapper<GroupDetailState, DataResul
         pageState: PageState.success,
         request: request,
         groupId: group.id,
+        groupDetail: group,
         groupType: GroupType.groupDetail,
       );
     }

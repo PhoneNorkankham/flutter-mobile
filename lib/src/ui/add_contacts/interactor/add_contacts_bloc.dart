@@ -61,13 +61,11 @@ class AddContactsBloc extends Bloc<AddContactsEvent, AddContactsState> {
           groups: groups,
           contacts: contacts,
           pageState: PageState.success,
-          isLoading: false,
         );
       },
       onError: (error, stacktrace) => state.copyWith(
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,
-        isLoading: false,
       ),
     );
   }

@@ -119,13 +119,31 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<Resource<void>> updateContacts(List<ContactRequest> requests) {
+    return NetworkBoundResource<void, List<Contact>>(
+      createSerializedCall: () => _supabaseManager.updateContacts(requests),
+      saveCallResult: (contacts) => _contactDao.insertAllOnConflictUpdate(contacts),
+    ).getAsFuture();
+  }
+
   Future<Resource<void>> deleteContact(String contactId) {
     return NetworkBoundResource<void, void>(
       createSerializedCall: () => _supabaseManager.deleteContact(contactId),
-      saveCallResult: (_) async {
-        await _contactDao.deleteContact(contactId);
-        await _groupDao.deleteContactInJoinedGroups(contactId);
-      },
+      saveCallResult: (_) => _contactDao.deleteContact(contactId),
+    ).getAsFuture();
+  }
+
+  Future<Resource<void>> deleteInteractionsOfContact(String contactId) {
+    return NetworkBoundResource<void, void>(
+      createSerializedCall: () => _supabaseManager.deleteInteractionsOfContact(contactId),
+      saveCallResult: (_) => _interactionDao.deleteInteractionsOfContact(contactId),
+    ).getAsFuture();
+  }
+
+  Future<Resource<void>> deleteContactInJoinedGroups(String contactId) {
+    return NetworkBoundResource<void, void>(
+      createSerializedCall: () => _supabaseManager.deleteContactInJoinedGroups(contactId),
+      saveCallResult: (_) => _groupDao.deleteContactInJoinedGroups(contactId),
     ).getAsFuture();
   }
 
@@ -170,6 +188,9 @@ class SupabaseRepository {
 
   Future<List<Contact>> getAllContactByIds(List<String> contactIds) =>
       _contactDao.getAllContactByIds(contactIds);
+
+  Future<List<Contact>> getAllContactByGroupId(String groupId) =>
+      _contactDao.getAllContactByGroupId(groupId);
 
   Future<Resource<String>> uploadAvatar(File file) {
     return NetworkBoundResource<String, String>(

@@ -147,10 +147,17 @@ class SupabaseManager {
         }
       });
 
-  Future<void> deleteContact(String contactId) => _supabase
-      .from(_tbContacts)
-      .delete()
-      .match({'id': contactId}).then((value) => deleteContactInJoinedGroups(contactId));
+  Future<List<Contact>> updateContacts(List<ContactRequest> requests) async {
+    final List<Contact> contacts = [];
+    for (ContactRequest request in requests) {
+      final Contact contact = await updateContact(request);
+      contacts.add(contact);
+    }
+    return contacts;
+  }
+
+  Future<void> deleteContact(String contactId) =>
+      _supabase.from(_tbContacts).delete().match({'id': contactId});
 
   Future<void> deleteContactInJoinedGroups(String contactId) async {
     // Get all groups
@@ -161,10 +168,11 @@ class SupabaseManager {
         groups.where((element) => element.contacts.contains(contactId)).toList();
 
     // Get all leave groups
-    final List<Group> leaveGroups = joinedGroups.map((element) {
-      final List<String> contactIds = [...element.contacts]
+    final List<Group> leaveGroups = joinedGroups.map((group) {
+      final List<String> contactIds = [...group.contacts]
+        // Remove contactId in group
         ..removeWhere((element) => element == contactId);
-      return element.copyWith(contacts: contactIds);
+      return group.copyWith(contacts: contactIds);
     }).toList();
 
     // Update groups
@@ -292,6 +300,9 @@ class SupabaseManager {
           return Future.error(LocaleKey.creatingInteractionFailed.tr);
         }
       });
+
+  Future<void> deleteInteractionsOfContact(String contactId) =>
+      _supabase.from(_tbInteractions).delete().match({_fieldContactId: contactId});
 
   _deleteAllGroups() => _supabase.from(_tbGroups).delete().match({_fieldOwnerId: uid});
 
