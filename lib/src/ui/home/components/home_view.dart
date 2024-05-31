@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppAppBar(
-        title: LocaleKey.homeScreen.tr,
+        title: LocaleKey.home.tr,
         actions: const [MenuButton()],
       ),
       body: const AppBody(

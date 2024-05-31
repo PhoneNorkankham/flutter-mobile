@@ -19,7 +19,7 @@ class KeepUpTodayView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppAppBar(
-        title: LocaleKey.keepUpToday.tr,
+        title: LocaleKey.today.tr,
         actions: const [MenuButton()],
       ),
       body: BlocBuilder<KeepUpTodayBloc, KeepUpTodayState>(

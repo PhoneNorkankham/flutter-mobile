@@ -12,7 +12,7 @@ class KeepUpTodayHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          LocaleKey.keepUpToday.tr,
+          LocaleKey.expiringToday.tr,
           style: context.appTextTheme.bold36.copyWith(
             color: Theme.of(context).colorScheme.onPrimary,
           ),
