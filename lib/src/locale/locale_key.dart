@@ -80,13 +80,12 @@ class LocaleKey {
   static const String groups = "groups";
 
   // Home Screen
-  static const String homeScreen = "homeScreen";
   static const String hiNameKeepUpToday = "hiNameKeepUpToday";
   static const String history = "history";
   static const String notifications = "notifications";
 
   // KeepUp Today
-  static const String keepUpToday = "keepUpToday";
+  static const String expiringToday = "expiringToday";
   static const String keepUpTodayDescription = "keepUpTodayDescription";
   static const String allSet = "allSet";
   static const String keepUp = "keepUp";
