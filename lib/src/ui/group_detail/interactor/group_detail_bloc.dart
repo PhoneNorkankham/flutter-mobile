@@ -91,6 +91,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   }
 
   FutureOr<void> _onSavePressed(_OnSavePressed event, Emitter<GroupDetailState> emit) async {
+    if (state.isLoading) return;
     emit(state.copyWith(isLoading: true));
     final File? avatarFile = state.avatar;
     String avatarUrl = state.request.avatar;
@@ -128,8 +129,10 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   }
 
   FutureOr<void> _onDeleteGroup(_OnDeleteGroup event, Emitter<GroupDetailState> emit) async {
+    final Group? group = state.groupDetail;
+    if (group == null || state.isLoading) return;
     emit(state.copyWith(isLoading: true));
-    final VoidResult result = await _deleteGroupUseCase.run(state.groupId);
+    final VoidResult result = await _deleteGroupUseCase.run(group);
     emit(_deleteGroupStateMapper.mapResultToState(state, result));
   }
 }

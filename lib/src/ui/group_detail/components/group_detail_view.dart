@@ -6,7 +6,6 @@ import 'package:keepup/src/design/components/base/app_drawer.dart';
 import 'package:keepup/src/design/components/bottom_navigation/app_bottom_navigation_bar.dart';
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
-import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_buttons.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_header.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_interval.dart';
@@ -34,21 +33,19 @@ class GroupDetailView extends StatelessWidget {
             isLoading: state.isLoading,
             pageState: state.pageState,
             unFocusWhenTouchOutsideInput: true,
-            success: SingleChildScrollView(
+            success: const SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const GroupDetailHeader(),
-                  const SizedBox(height: 26),
-                  const GroupDetailInterval(),
-                  const SizedBox(height: 26),
-                  const GroupDetailMembers(),
-                  const SizedBox(height: 46),
-                  if (state.groupType == GroupType.newGroup) ...[
-                    const SizedBox(height: 14),
-                    const GroupDetailButtons(),
-                    const SizedBox(height: 26),
-                  ],
+                  GroupDetailHeader(),
+                  SizedBox(height: 26),
+                  GroupDetailInterval(),
+                  SizedBox(height: 26),
+                  GroupDetailMembers(),
+                  SizedBox(height: 46),
+                  SizedBox(height: 14),
+                  GroupDetailButtons(),
+                  SizedBox(height: 26),
                 ],
               ),
             ),

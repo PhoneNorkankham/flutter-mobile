@@ -2126,6 +2126,7 @@ mixin _$GroupDetailState {
   String get keyword => throw _privateConstructorUsedError;
   List<Contact> get contacts => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
+  Group? get groupDetail => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GroupDetailStateCopyWith<GroupDetailState> get copyWith =>
@@ -2147,7 +2148,8 @@ abstract class $GroupDetailStateCopyWith<$Res> {
       GroupRequest request,
       String keyword,
       List<Contact> contacts,
-      File? avatar});
+      File? avatar,
+      Group? groupDetail});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
   $GroupRequestCopyWith<$Res> get request;
@@ -2175,6 +2177,7 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
     Object? keyword = null,
     Object? contacts = null,
     Object? avatar = freezed,
+    Object? groupDetail = freezed,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
@@ -2213,6 +2216,10 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as File?,
+      groupDetail: freezed == groupDetail
+          ? _value.groupDetail
+          : groupDetail // ignore: cast_nullable_to_non_nullable
+              as Group?,
     ) as $Val);
   }
 
@@ -2254,7 +2261,8 @@ abstract class _$$_GroupDetailStateCopyWith<$Res>
       GroupRequest request,
       String keyword,
       List<Contact> contacts,
-      File? avatar});
+      File? avatar,
+      Group? groupDetail});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -2282,6 +2290,7 @@ class __$$_GroupDetailStateCopyWithImpl<$Res>
     Object? keyword = null,
     Object? contacts = null,
     Object? avatar = freezed,
+    Object? groupDetail = freezed,
   }) {
     return _then(_$_GroupDetailState(
       pageCommand: freezed == pageCommand
@@ -2320,6 +2329,10 @@ class __$$_GroupDetailStateCopyWithImpl<$Res>
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as File?,
+      groupDetail: freezed == groupDetail
+          ? _value.groupDetail
+          : groupDetail // ignore: cast_nullable_to_non_nullable
+              as Group?,
     ));
   }
 }
@@ -2336,7 +2349,8 @@ class _$_GroupDetailState extends _GroupDetailState {
       this.request = const GroupRequest(),
       this.keyword = '',
       final List<Contact> contacts = const [],
-      this.avatar})
+      this.avatar,
+      this.groupDetail})
       : _contacts = contacts,
         super._();
 
@@ -2371,10 +2385,12 @@ class _$_GroupDetailState extends _GroupDetailState {
 
   @override
   final File? avatar;
+  @override
+  final Group? groupDetail;
 
   @override
   String toString() {
-    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, groupType: $groupType, isLoading: $isLoading, groupId: $groupId, request: $request, keyword: $keyword, contacts: $contacts, avatar: $avatar)';
+    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, groupType: $groupType, isLoading: $isLoading, groupId: $groupId, request: $request, keyword: $keyword, contacts: $contacts, avatar: $avatar, groupDetail: $groupDetail)';
   }
 
   @override
@@ -2394,7 +2410,9 @@ class _$_GroupDetailState extends _GroupDetailState {
             (identical(other.request, request) || other.request == request) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
-            (identical(other.avatar, avatar) || other.avatar == avatar));
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            const DeepCollectionEquality()
+                .equals(other.groupDetail, groupDetail));
   }
 
   @override
@@ -2408,7 +2426,8 @@ class _$_GroupDetailState extends _GroupDetailState {
       request,
       keyword,
       const DeepCollectionEquality().hash(_contacts),
-      avatar);
+      avatar,
+      const DeepCollectionEquality().hash(groupDetail));
 
   @JsonKey(ignore: true)
   @override
@@ -2427,7 +2446,8 @@ abstract class _GroupDetailState extends GroupDetailState {
       final GroupRequest request,
       final String keyword,
       final List<Contact> contacts,
-      final File? avatar}) = _$_GroupDetailState;
+      final File? avatar,
+      final Group? groupDetail}) = _$_GroupDetailState;
   const _GroupDetailState._() : super._();
 
   @override
@@ -2448,6 +2468,8 @@ abstract class _GroupDetailState extends GroupDetailState {
   List<Contact> get contacts;
   @override
   File? get avatar;
+  @override
+  Group? get groupDetail;
   @override
   @JsonKey(ignore: true)
   _$$_GroupDetailStateCopyWith<_$_GroupDetailState> get copyWith =>

@@ -9,8 +9,10 @@ class DeleteContactUseCase extends InputUseCase<VoidResult, String> {
 
   @override
   Future<VoidResult> run(String input) {
-    return _supabaseRepository.deleteContact(input).then((resource) {
+    return _supabaseRepository.deleteContact(input).then((resource) async {
       if (resource.isSuccess) {
+        await _supabaseRepository.deleteInteractionsOfContact(input);
+        await _supabaseRepository.deleteContactInJoinedGroups(input);
         return Result.value(null);
       } else {
         return Result.error(resource.toPageError());

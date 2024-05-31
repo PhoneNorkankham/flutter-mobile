@@ -14,6 +14,7 @@ class GroupDetailState with _$GroupDetailState {
     @Default('') String keyword,
     @Default([]) List<Contact> contacts,
     File? avatar,
+    Group? groupDetail,
   }) = _GroupDetailState;
 
   List<Contact> getFilterContacts() {

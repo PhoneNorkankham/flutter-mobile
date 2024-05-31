@@ -20,15 +20,20 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
       batch((batch) => batch.insertAllOnConflictUpdate(contacts, entities));
 
   Future<List<Contact>> getContacts() =>
-      (select(contacts)..orderBy([(u) => OrderingTerm(expression: u.dateCreated)])).get();
+      (select(contacts)..orderBy([(u) => OrderingTerm(expression: u.name)])).get();
 
   Future<List<Contact>> getAllContactByIds(List<String> contactIds) => (select(contacts)
-        ..orderBy([(u) => OrderingTerm(expression: u.dateCreated)])
+        ..orderBy([(u) => OrderingTerm(expression: u.name)])
         ..where((tbl) => tbl.id.isIn(contactIds)))
       .get();
 
+  Future<List<Contact>> getAllContactByGroupId(String groupId) => (select(contacts)
+        ..orderBy([(u) => OrderingTerm(expression: u.name)])
+        ..where((tbl) => tbl.groupId.equals(groupId)))
+      .get();
+
   Stream<List<Contact>> watchContacts() =>
-      (select(contacts)..orderBy([(u) => OrderingTerm(expression: u.dateCreated)])).watch();
+      (select(contacts)..orderBy([(u) => OrderingTerm(expression: u.name)])).watch();
 
   Future<Contact?> getContact(String contactId) =>
       (select(contacts)..where((tbl) => tbl.id.equals(contactId)))

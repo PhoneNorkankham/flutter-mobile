@@ -11,10 +11,25 @@ class UpdateContactUseCase extends InputUseCase<DataResult<Contact>, ContactRequ
 
   @override
   Future<DataResult<Contact>> run(ContactRequest input) {
-    return _supabaseRepository.updateContact(input).then((resource) {
-      final Contact? data = resource.data;
-      if (resource.isSuccess && data != null) {
-        return Result.value(data);
+    return _supabaseRepository.updateContact(input).then((resource) async {
+      final Contact? contact = resource.data;
+      if (resource.isSuccess && contact != null) {
+        // Remove contact in joined groups
+        final resource = await _supabaseRepository.deleteContactInJoinedGroups(contact.id);
+        if (resource.isError) {
+          return Result.error(resource.toPageError());
+        }
+        if (contact.groupId.isNotEmpty) {
+          // Add contact to group
+          final resource = await _supabaseRepository.addContactToGroup(
+            contactId: contact.id,
+            groupId: contact.groupId,
+          );
+          if (resource.isError) {
+            return Result.error(resource.toPageError());
+          }
+        }
+        return Result.value(contact);
       } else {
         return Result.error(resource.toPageError());
       }
