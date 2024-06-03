@@ -4,10 +4,11 @@ import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/design/components/base/app_drawer.dart';
+import 'package:keepup/src/design/components/buttons/app_button.dart';
+import 'package:keepup/src/design/components/buttons/app_button_type.dart';
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/groups/components/add_group_button.dart';
 import 'package:keepup/src/ui/groups/components/group_list.dart';
 import 'package:keepup/src/ui/groups/interactor/group_bloc.dart';
 
@@ -38,7 +39,13 @@ class GroupView extends StatelessWidget {
                 const SizedBox(height: 10),
                 const Expanded(child: GroupList()),
                 const SizedBox(height: 15),
-                const AddGroupButton(),
+                Center(
+                  child: AppButton(
+                    onPressed: () => bloc.add(const GroupEvent.onGotoNewGroup()),
+                    buttonType: AppButtonType.whiteCircle,
+                    child: const Icon(Icons.add, size: 34),
+                  ),
+                ),
                 const SizedBox(height: 15),
               ],
             ),

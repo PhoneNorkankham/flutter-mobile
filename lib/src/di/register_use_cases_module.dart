@@ -9,4 +9,5 @@ void _registerUseCasesModule() {
   Get.put(UpdateGroupUseCase(Get.find()));
   Get.put(DeleteGroupUseCase(Get.find()));
   Get.put(UploadAvatarUseCase(Get.find()));
+  Get.put(AddContactsUseCase(Get.find()));
 }

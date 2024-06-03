@@ -6,8 +6,10 @@ import 'package:keepup/src/ui/bottom_sheet/add_member/components/add_member_view
 import 'package:keepup/src/ui/bottom_sheet/add_member/interactor/add_member_bloc.dart';
 
 class AddMemberBottomSheet extends StatelessWidget {
-  static Future<dynamic> show(
-      {required String groupId, List<Contact> selectedContacts = const []}) {
+  static Future<dynamic> show({
+    required String groupId,
+    List<Contact> selectedContacts = const [],
+  }) {
     return Get.bottomSheet(
       isScrollControlled: true,
       ignoreSafeArea: false,

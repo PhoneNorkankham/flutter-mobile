@@ -32,7 +32,6 @@ class MainView extends StatelessWidget {
   }
 
   Widget _createPage(BottomNavType type, BuildContext context) {
-    type.bindings.dependencies();
     return pages.putIfAbsent(
       type,
       () => type.page,

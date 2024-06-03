@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/managers/navigator_manager.dart';
 import 'package:keepup/src/design/components/toasts/app_toasts.dart';
-import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_command_listeners.dart';
 import 'package:keepup/src/ui/contacts/components/contact_view.dart';
@@ -16,7 +15,7 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => Get.find<ContactBloc>()..add(const ContactEvent.initial()),
+      create: (_) => ContactBloc(Get.find())..add(const ContactEvent.initial()),
       child: BlocListener<ContactBloc, ContactState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
         listener: (context, state) {
@@ -32,8 +31,6 @@ class ContactPage extends StatelessWidget {
                       value.status &&
                       value.data is String) {
                     showSuccessToast(value.data.toString());
-                  } else if (value.resultFromPage == AppPages.addContacts && value.status) {
-                    showSuccessToast(LocaleKey.addContactsToKeepUpSuccessfully.tr);
                   }
                 }),
                 orElse: () => pageCommandListeners(pageCommand),

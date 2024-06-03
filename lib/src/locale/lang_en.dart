@@ -109,7 +109,6 @@ Map<String, String> enUs = {
   LocaleKey.logoutAnonymousConfirm:
       "Your account is Anonymous, you will not be able to access this account again after logging out.",
   LocaleKey.logoutFailed: "Logout failed",
-  LocaleKey.addContact: 'Add contact',
   LocaleKey.newContact: 'New Contact',
   LocaleKey.contactDetail: 'Contact Detail',
   LocaleKey.group: 'Group',
@@ -123,7 +122,6 @@ Map<String, String> enUs = {
   LocaleKey.deleteContact: 'Delete contact',
   LocaleKey.deleteContactDescription: 'Do you want to delete the contact?',
   LocaleKey.pleaseChooseAGroup: 'Please choose a group!',
-  LocaleKey.addGroup: 'Add Group',
   LocaleKey.newGroup: 'New Group',
   LocaleKey.groupDetail: 'Group Detail',
   LocaleKey.members: 'Members',
@@ -142,6 +140,7 @@ Map<String, String> enUs = {
   LocaleKey.createNewGroup: 'Create New Group',
   LocaleKey.addContactsToGroup: 'Add Contacts to Group',
   LocaleKey.addContactsToGroupSuccessfully: 'Add Contacts to Group successfully!',
+  LocaleKey.addContacts: 'Add contacts',
   LocaleKey.usePhoneContacts: 'Use Phone Contacts',
   LocaleKey.createManually: 'Create Manually',
   LocaleKey.addContactsToKeepUp: 'Add Contacts To KeepUp',

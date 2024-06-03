@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:keepup/src/design/components/toasts/app_toasts.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/enums/new_chat_category_type.dart';
-import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
+import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_category_type.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_contact/new_contact_bottom_sheet.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_group/new_group_bottom_sheet.dart';
+import 'package:keepup/src/ui/bottom_sheet/select_group/select_group_bottom_sheet.dart';
+import 'package:keepup/src/ui/routing/pop_result.dart';
 
 class NewChatCategory extends StatelessWidget {
   const NewChatCategory({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<NewChatBloc>();
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.onPrimary,
@@ -22,7 +26,31 @@ class NewChatCategory extends StatelessWidget {
         itemBuilder: (context, index) {
           final NewChatCategoryType type = NewChatCategoryType.values.elementAt(index);
           return InkWell(
-            onTap: () => bloc.add(NewChatEvent.onChangedTabType(type.tabType)),
+            onTap: () {
+              switch (type) {
+                case NewChatCategoryType.createNewGroup:
+                  NewGroupBottomSheet.show().then((value) {
+                    if (value is PopResult && value.status) {
+                      showSuccessToast(LocaleKey.groupCreatedSuccessfully.tr);
+                    }
+                  });
+                  return;
+                case NewChatCategoryType.addContactsToGroup:
+                  SelectGroupBottomSheet.show().then((value) {
+                    if (value is PopResult && value.status) {
+                      showSuccessToast(LocaleKey.addContactsToGroupSuccessfully.tr);
+                    }
+                  });
+                  return;
+                case NewChatCategoryType.newContact:
+                  NewContactBottomSheet.show().then((value) {
+                    if (value is PopResult && value.status) {
+                      showSuccessToast(LocaleKey.contactCreatedSuccessfully.tr);
+                    }
+                  });
+                  return;
+              }
+            },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: Row(

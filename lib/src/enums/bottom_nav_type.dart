@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/contacts/binding/contact_binding.dart';
 import 'package:keepup/src/ui/contacts/contact_page.dart';
-import 'package:keepup/src/ui/groups/binding/group_binding.dart';
 import 'package:keepup/src/ui/groups/group_page.dart';
-import 'package:keepup/src/ui/home/binding/home_binding.dart';
 import 'package:keepup/src/ui/home/home_page.dart';
-import 'package:keepup/src/ui/keep_up_soon/binding/keep_up_soon_binding.dart';
 import 'package:keepup/src/ui/keep_up_soon/keep_up_soon_page.dart';
-import 'package:keepup/src/ui/keep_up_today/binding/keep_up_today_binding.dart';
 import 'package:keepup/src/ui/keep_up_today/keep_up_today_page.dart';
 import 'package:keepup/src/utils/app_assets.dart';
 
@@ -62,21 +57,6 @@ enum BottomNavType {
         return const ContactPage();
       case BottomNavType.groups:
         return const GroupPage();
-    }
-  }
-
-  Bindings get bindings {
-    switch (this) {
-      case BottomNavType.home:
-        return HomeBinding();
-      case BottomNavType.today:
-        return KeepUpTodayBinding();
-      case BottomNavType.upcoming:
-        return KeepUpSoonBinding();
-      case BottomNavType.contacts:
-        return ContactBinding();
-      case BottomNavType.groups:
-        return GroupBinding();
     }
   }
 }

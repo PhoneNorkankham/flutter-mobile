@@ -20,58 +20,21 @@ mixin _$NewChatEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,57 +42,21 @@ mixin _$NewChatEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -192,20 +119,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
   }) {
     return initial();
   }
@@ -215,19 +129,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
   }) {
     return initial?.call();
   }
@@ -237,19 +139,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -263,19 +153,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return initial(this);
   }
@@ -285,19 +163,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return initial?.call(this);
   }
@@ -307,19 +173,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -373,20 +227,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
   }) {
     return clearPageCommand();
   }
@@ -396,19 +237,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
   }) {
     return clearPageCommand?.call();
   }
@@ -418,19 +247,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -444,19 +261,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return clearPageCommand(this);
   }
@@ -466,19 +271,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -488,19 +281,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -512,219 +293,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements NewChatEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
-}
-
-/// @nodoc
-abstract class _$$_OnChangedTabTypeCopyWith<$Res> {
-  factory _$$_OnChangedTabTypeCopyWith(
-          _$_OnChangedTabType value, $Res Function(_$_OnChangedTabType) then) =
-      __$$_OnChangedTabTypeCopyWithImpl<$Res>;
-  @useResult
-  $Res call({NewChatTabType type});
-}
-
-/// @nodoc
-class __$$_OnChangedTabTypeCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnChangedTabType>
-    implements _$$_OnChangedTabTypeCopyWith<$Res> {
-  __$$_OnChangedTabTypeCopyWithImpl(
-      _$_OnChangedTabType _value, $Res Function(_$_OnChangedTabType) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-  }) {
-    return _then(_$_OnChangedTabType(
-      null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as NewChatTabType,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_OnChangedTabType implements _OnChangedTabType {
-  const _$_OnChangedTabType(this.type);
-
-  @override
-  final NewChatTabType type;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onChangedTabType(type: $type)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnChangedTabType &&
-            (identical(other.type, type) || other.type == type));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, type);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnChangedTabTypeCopyWith<_$_OnChangedTabType> get copyWith =>
-      __$$_OnChangedTabTypeCopyWithImpl<_$_OnChangedTabType>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onChangedTabType(type);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onChangedTabType?.call(type);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onChangedTabType != null) {
-      return onChangedTabType(type);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onChangedTabType(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onChangedTabType?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onChangedTabType != null) {
-      return onChangedTabType(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnChangedTabType implements NewChatEvent {
-  const factory _OnChangedTabType(final NewChatTabType type) =
-      _$_OnChangedTabType;
-
-  NewChatTabType get type;
-  @JsonKey(ignore: true)
-  _$$_OnChangedTabTypeCopyWith<_$_OnChangedTabType> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -793,20 +361,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
   }) {
     return onChangedKeyword(keyword);
   }
@@ -816,19 +371,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onChangedKeyword?.call(keyword);
   }
@@ -838,19 +381,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -864,19 +395,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onChangedKeyword(this);
   }
@@ -886,19 +405,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onChangedKeyword?.call(this);
   }
@@ -908,19 +415,7 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -940,2089 +435,12 @@ abstract class _OnChangedKeyword implements NewChatEvent {
 }
 
 /// @nodoc
-abstract class _$$_OnSelectedGroupCopyWith<$Res> {
-  factory _$$_OnSelectedGroupCopyWith(
-          _$_OnSelectedGroup value, $Res Function(_$_OnSelectedGroup) then) =
-      __$$_OnSelectedGroupCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Group group});
-}
-
-/// @nodoc
-class __$$_OnSelectedGroupCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnSelectedGroup>
-    implements _$$_OnSelectedGroupCopyWith<$Res> {
-  __$$_OnSelectedGroupCopyWithImpl(
-      _$_OnSelectedGroup _value, $Res Function(_$_OnSelectedGroup) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? group = freezed,
-  }) {
-    return _then(_$_OnSelectedGroup(
-      freezed == group
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
-              as Group,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_OnSelectedGroup implements _OnSelectedGroup {
-  const _$_OnSelectedGroup(this.group);
-
-  @override
-  final Group group;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onSelectedGroup(group: $group)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnSelectedGroup &&
-            const DeepCollectionEquality().equals(other.group, group));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(group));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnSelectedGroupCopyWith<_$_OnSelectedGroup> get copyWith =>
-      __$$_OnSelectedGroupCopyWithImpl<_$_OnSelectedGroup>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onSelectedGroup(group);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onSelectedGroup?.call(group);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onSelectedGroup != null) {
-      return onSelectedGroup(group);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onSelectedGroup(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onSelectedGroup?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onSelectedGroup != null) {
-      return onSelectedGroup(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnSelectedGroup implements NewChatEvent {
-  const factory _OnSelectedGroup(final Group group) = _$_OnSelectedGroup;
-
-  Group get group;
-  @JsonKey(ignore: true)
-  _$$_OnSelectedGroupCopyWith<_$_OnSelectedGroup> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnSelectedContactCopyWith<$Res> {
-  factory _$$_OnSelectedContactCopyWith(_$_OnSelectedContact value,
-          $Res Function(_$_OnSelectedContact) then) =
-      __$$_OnSelectedContactCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ContactRequest contact});
-
-  $ContactRequestCopyWith<$Res> get contact;
-}
-
-/// @nodoc
-class __$$_OnSelectedContactCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnSelectedContact>
-    implements _$$_OnSelectedContactCopyWith<$Res> {
-  __$$_OnSelectedContactCopyWithImpl(
-      _$_OnSelectedContact _value, $Res Function(_$_OnSelectedContact) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contact = null,
-  }) {
-    return _then(_$_OnSelectedContact(
-      null == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as ContactRequest,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ContactRequestCopyWith<$Res> get contact {
-    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
-      return _then(_value.copyWith(contact: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_OnSelectedContact implements _OnSelectedContact {
-  const _$_OnSelectedContact(this.contact);
-
-  @override
-  final ContactRequest contact;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onSelectedContact(contact: $contact)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnSelectedContact &&
-            (identical(other.contact, contact) || other.contact == contact));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, contact);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnSelectedContactCopyWith<_$_OnSelectedContact> get copyWith =>
-      __$$_OnSelectedContactCopyWithImpl<_$_OnSelectedContact>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onSelectedContact(contact);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onSelectedContact?.call(contact);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onSelectedContact != null) {
-      return onSelectedContact(contact);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onSelectedContact(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onSelectedContact?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onSelectedContact != null) {
-      return onSelectedContact(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnSelectedContact implements NewChatEvent {
-  const factory _OnSelectedContact(final ContactRequest contact) =
-      _$_OnSelectedContact;
-
-  ContactRequest get contact;
-  @JsonKey(ignore: true)
-  _$$_OnSelectedContactCopyWith<_$_OnSelectedContact> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnRemovedContactCopyWith<$Res> {
-  factory _$$_OnRemovedContactCopyWith(
-          _$_OnRemovedContact value, $Res Function(_$_OnRemovedContact) then) =
-      __$$_OnRemovedContactCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ContactRequest contact});
-
-  $ContactRequestCopyWith<$Res> get contact;
-}
-
-/// @nodoc
-class __$$_OnRemovedContactCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnRemovedContact>
-    implements _$$_OnRemovedContactCopyWith<$Res> {
-  __$$_OnRemovedContactCopyWithImpl(
-      _$_OnRemovedContact _value, $Res Function(_$_OnRemovedContact) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contact = null,
-  }) {
-    return _then(_$_OnRemovedContact(
-      null == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as ContactRequest,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ContactRequestCopyWith<$Res> get contact {
-    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
-      return _then(_value.copyWith(contact: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_OnRemovedContact implements _OnRemovedContact {
-  const _$_OnRemovedContact(this.contact);
-
-  @override
-  final ContactRequest contact;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onRemovedContact(contact: $contact)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnRemovedContact &&
-            (identical(other.contact, contact) || other.contact == contact));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, contact);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnRemovedContactCopyWith<_$_OnRemovedContact> get copyWith =>
-      __$$_OnRemovedContactCopyWithImpl<_$_OnRemovedContact>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onRemovedContact(contact);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onRemovedContact?.call(contact);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onRemovedContact != null) {
-      return onRemovedContact(contact);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onRemovedContact(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onRemovedContact?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onRemovedContact != null) {
-      return onRemovedContact(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnRemovedContact implements NewChatEvent {
-  const factory _OnRemovedContact(final ContactRequest contact) =
-      _$_OnRemovedContact;
-
-  ContactRequest get contact;
-  @JsonKey(ignore: true)
-  _$$_OnRemovedContactCopyWith<_$_OnRemovedContact> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnChangedGroupNameCopyWith<$Res> {
-  factory _$$_OnChangedGroupNameCopyWith(_$_OnChangedGroupName value,
-          $Res Function(_$_OnChangedGroupName) then) =
-      __$$_OnChangedGroupNameCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String name});
-}
-
-/// @nodoc
-class __$$_OnChangedGroupNameCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnChangedGroupName>
-    implements _$$_OnChangedGroupNameCopyWith<$Res> {
-  __$$_OnChangedGroupNameCopyWithImpl(
-      _$_OnChangedGroupName _value, $Res Function(_$_OnChangedGroupName) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_$_OnChangedGroupName(
-      null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_OnChangedGroupName implements _OnChangedGroupName {
-  const _$_OnChangedGroupName(this.name);
-
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onChangedGroupName(name: $name)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnChangedGroupName &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, name);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnChangedGroupNameCopyWith<_$_OnChangedGroupName> get copyWith =>
-      __$$_OnChangedGroupNameCopyWithImpl<_$_OnChangedGroupName>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onChangedGroupName(name);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onChangedGroupName?.call(name);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onChangedGroupName != null) {
-      return onChangedGroupName(name);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onChangedGroupName(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onChangedGroupName?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onChangedGroupName != null) {
-      return onChangedGroupName(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnChangedGroupName implements NewChatEvent {
-  const factory _OnChangedGroupName(final String name) = _$_OnChangedGroupName;
-
-  String get name;
-  @JsonKey(ignore: true)
-  _$$_OnChangedGroupNameCopyWith<_$_OnChangedGroupName> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnCreateNewGroupCopyWith<$Res> {
-  factory _$$_OnCreateNewGroupCopyWith(
-          _$_OnCreateNewGroup value, $Res Function(_$_OnCreateNewGroup) then) =
-      __$$_OnCreateNewGroupCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_OnCreateNewGroupCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnCreateNewGroup>
-    implements _$$_OnCreateNewGroupCopyWith<$Res> {
-  __$$_OnCreateNewGroupCopyWithImpl(
-      _$_OnCreateNewGroup _value, $Res Function(_$_OnCreateNewGroup) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_OnCreateNewGroup implements _OnCreateNewGroup {
-  const _$_OnCreateNewGroup();
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onCreateNewGroup()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnCreateNewGroup);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onCreateNewGroup();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onCreateNewGroup?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onCreateNewGroup != null) {
-      return onCreateNewGroup();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onCreateNewGroup(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onCreateNewGroup?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onCreateNewGroup != null) {
-      return onCreateNewGroup(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnCreateNewGroup implements NewChatEvent {
-  const factory _OnCreateNewGroup() = _$_OnCreateNewGroup;
-}
-
-/// @nodoc
-abstract class _$$_OnAddContactsToGroupCopyWith<$Res> {
-  factory _$$_OnAddContactsToGroupCopyWith(_$_OnAddContactsToGroup value,
-          $Res Function(_$_OnAddContactsToGroup) then) =
-      __$$_OnAddContactsToGroupCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_OnAddContactsToGroupCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnAddContactsToGroup>
-    implements _$$_OnAddContactsToGroupCopyWith<$Res> {
-  __$$_OnAddContactsToGroupCopyWithImpl(_$_OnAddContactsToGroup _value,
-      $Res Function(_$_OnAddContactsToGroup) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_OnAddContactsToGroup implements _OnAddContactsToGroup {
-  const _$_OnAddContactsToGroup();
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onAddContactsToGroup()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnAddContactsToGroup);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onAddContactsToGroup();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onAddContactsToGroup?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onAddContactsToGroup != null) {
-      return onAddContactsToGroup();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onAddContactsToGroup(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onAddContactsToGroup?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onAddContactsToGroup != null) {
-      return onAddContactsToGroup(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnAddContactsToGroup implements NewChatEvent {
-  const factory _OnAddContactsToGroup() = _$_OnAddContactsToGroup;
-}
-
-/// @nodoc
-abstract class _$$_OnCreateNewContactCopyWith<$Res> {
-  factory _$$_OnCreateNewContactCopyWith(_$_OnCreateNewContact value,
-          $Res Function(_$_OnCreateNewContact) then) =
-      __$$_OnCreateNewContactCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_OnCreateNewContactCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnCreateNewContact>
-    implements _$$_OnCreateNewContactCopyWith<$Res> {
-  __$$_OnCreateNewContactCopyWithImpl(
-      _$_OnCreateNewContact _value, $Res Function(_$_OnCreateNewContact) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_OnCreateNewContact implements _OnCreateNewContact {
-  const _$_OnCreateNewContact();
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onCreateNewContact()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnCreateNewContact);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onCreateNewContact();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onCreateNewContact?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onCreateNewContact != null) {
-      return onCreateNewContact();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onCreateNewContact(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onCreateNewContact?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onCreateNewContact != null) {
-      return onCreateNewContact(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnCreateNewContact implements NewChatEvent {
-  const factory _OnCreateNewContact() = _$_OnCreateNewContact;
-}
-
-/// @nodoc
-abstract class _$$_OnFrequencyIntervalChangedCopyWith<$Res> {
-  factory _$$_OnFrequencyIntervalChangedCopyWith(
-          _$_OnFrequencyIntervalChanged value,
-          $Res Function(_$_OnFrequencyIntervalChanged) then) =
-      __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({FrequencyIntervalType frequencyIntervalType});
-}
-
-/// @nodoc
-class __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnFrequencyIntervalChanged>
-    implements _$$_OnFrequencyIntervalChangedCopyWith<$Res> {
-  __$$_OnFrequencyIntervalChangedCopyWithImpl(
-      _$_OnFrequencyIntervalChanged _value,
-      $Res Function(_$_OnFrequencyIntervalChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? frequencyIntervalType = null,
-  }) {
-    return _then(_$_OnFrequencyIntervalChanged(
-      null == frequencyIntervalType
-          ? _value.frequencyIntervalType
-          : frequencyIntervalType // ignore: cast_nullable_to_non_nullable
-              as FrequencyIntervalType,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
-  const _$_OnFrequencyIntervalChanged(this.frequencyIntervalType);
-
-  @override
-  final FrequencyIntervalType frequencyIntervalType;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onFrequencyIntervalChanged(frequencyIntervalType: $frequencyIntervalType)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnFrequencyIntervalChanged &&
-            (identical(other.frequencyIntervalType, frequencyIntervalType) ||
-                other.frequencyIntervalType == frequencyIntervalType));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, frequencyIntervalType);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnFrequencyIntervalChangedCopyWith<_$_OnFrequencyIntervalChanged>
-      get copyWith => __$$_OnFrequencyIntervalChangedCopyWithImpl<
-          _$_OnFrequencyIntervalChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onFrequencyIntervalChanged(frequencyIntervalType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onFrequencyIntervalChanged?.call(frequencyIntervalType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onFrequencyIntervalChanged != null) {
-      return onFrequencyIntervalChanged(frequencyIntervalType);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onFrequencyIntervalChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onFrequencyIntervalChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onFrequencyIntervalChanged != null) {
-      return onFrequencyIntervalChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnFrequencyIntervalChanged implements NewChatEvent {
-  const factory _OnFrequencyIntervalChanged(
-          final FrequencyIntervalType frequencyIntervalType) =
-      _$_OnFrequencyIntervalChanged;
-
-  FrequencyIntervalType get frequencyIntervalType;
-  @JsonKey(ignore: true)
-  _$$_OnFrequencyIntervalChangedCopyWith<_$_OnFrequencyIntervalChanged>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnInputChangedCopyWith<$Res> {
-  factory _$$_OnInputChangedCopyWith(
-          _$_OnInputChanged value, $Res Function(_$_OnInputChanged) then) =
-      __$$_OnInputChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({NewChatInputType inputType, String value});
-}
-
-/// @nodoc
-class __$$_OnInputChangedCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnInputChanged>
-    implements _$$_OnInputChangedCopyWith<$Res> {
-  __$$_OnInputChangedCopyWithImpl(
-      _$_OnInputChanged _value, $Res Function(_$_OnInputChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inputType = null,
-    Object? value = null,
-  }) {
-    return _then(_$_OnInputChanged(
-      null == inputType
-          ? _value.inputType
-          : inputType // ignore: cast_nullable_to_non_nullable
-              as NewChatInputType,
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_OnInputChanged implements _OnInputChanged {
-  const _$_OnInputChanged(this.inputType, this.value);
-
-  @override
-  final NewChatInputType inputType;
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onInputChanged(inputType: $inputType, value: $value)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnInputChanged &&
-            (identical(other.inputType, inputType) ||
-                other.inputType == inputType) &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, inputType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnInputChangedCopyWith<_$_OnInputChanged> get copyWith =>
-      __$$_OnInputChangedCopyWithImpl<_$_OnInputChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onInputChanged(inputType, value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onInputChanged?.call(inputType, value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onInputChanged != null) {
-      return onInputChanged(inputType, value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onInputChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onInputChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onInputChanged != null) {
-      return onInputChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnInputChanged implements NewChatEvent {
-  const factory _OnInputChanged(
-      final NewChatInputType inputType, final String value) = _$_OnInputChanged;
-
-  NewChatInputType get inputType;
-  String get value;
-  @JsonKey(ignore: true)
-  _$$_OnInputChangedCopyWith<_$_OnInputChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnChangedAvatarCopyWith<$Res> {
-  factory _$$_OnChangedAvatarCopyWith(
-          _$_OnChangedAvatar value, $Res Function(_$_OnChangedAvatar) then) =
-      __$$_OnChangedAvatarCopyWithImpl<$Res>;
-  @useResult
-  $Res call({File file});
-}
-
-/// @nodoc
-class __$$_OnChangedAvatarCopyWithImpl<$Res>
-    extends _$NewChatEventCopyWithImpl<$Res, _$_OnChangedAvatar>
-    implements _$$_OnChangedAvatarCopyWith<$Res> {
-  __$$_OnChangedAvatarCopyWithImpl(
-      _$_OnChangedAvatar _value, $Res Function(_$_OnChangedAvatar) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? file = null,
-  }) {
-    return _then(_$_OnChangedAvatar(
-      null == file
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as File,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_OnChangedAvatar implements _OnChangedAvatar {
-  const _$_OnChangedAvatar(this.file);
-
-  @override
-  final File file;
-
-  @override
-  String toString() {
-    return 'NewChatEvent.onChangedAvatar(file: $file)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnChangedAvatar &&
-            (identical(other.file, file) || other.file == file));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, file);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
-      __$$_OnChangedAvatarCopyWithImpl<_$_OnChangedAvatar>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(NewChatTabType type) onChangedTabType,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(Group group) onSelectedGroup,
-    required TResult Function(ContactRequest contact) onSelectedContact,
-    required TResult Function(ContactRequest contact) onRemovedContact,
-    required TResult Function(String name) onChangedGroupName,
-    required TResult Function() onCreateNewGroup,
-    required TResult Function() onAddContactsToGroup,
-    required TResult Function() onCreateNewContact,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(NewChatInputType inputType, String value)
-        onInputChanged,
-    required TResult Function(File file) onChangedAvatar,
-  }) {
-    return onChangedAvatar(file);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(NewChatTabType type)? onChangedTabType,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(Group group)? onSelectedGroup,
-    TResult? Function(ContactRequest contact)? onSelectedContact,
-    TResult? Function(ContactRequest contact)? onRemovedContact,
-    TResult? Function(String name)? onChangedGroupName,
-    TResult? Function()? onCreateNewGroup,
-    TResult? Function()? onAddContactsToGroup,
-    TResult? Function()? onCreateNewContact,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult? Function(File file)? onChangedAvatar,
-  }) {
-    return onChangedAvatar?.call(file);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(NewChatTabType type)? onChangedTabType,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(Group group)? onSelectedGroup,
-    TResult Function(ContactRequest contact)? onSelectedContact,
-    TResult Function(ContactRequest contact)? onRemovedContact,
-    TResult Function(String name)? onChangedGroupName,
-    TResult Function()? onCreateNewGroup,
-    TResult Function()? onAddContactsToGroup,
-    TResult Function()? onCreateNewContact,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(NewChatInputType inputType, String value)? onInputChanged,
-    TResult Function(File file)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onChangedAvatar != null) {
-      return onChangedAvatar(file);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedTabType value) onChangedTabType,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
-    required TResult Function(_OnSelectedContact value) onSelectedContact,
-    required TResult Function(_OnRemovedContact value) onRemovedContact,
-    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
-    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
-    required TResult Function(_OnAddContactsToGroup value) onAddContactsToGroup,
-    required TResult Function(_OnCreateNewContact value) onCreateNewContact,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnInputChanged value) onInputChanged,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-  }) {
-    return onChangedAvatar(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedTabType value)? onChangedTabType,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult? Function(_OnSelectedContact value)? onSelectedContact,
-    TResult? Function(_OnRemovedContact value)? onRemovedContact,
-    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult? Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult? Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnInputChanged value)? onInputChanged,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-  }) {
-    return onChangedAvatar?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedTabType value)? onChangedTabType,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
-    TResult Function(_OnSelectedContact value)? onSelectedContact,
-    TResult Function(_OnRemovedContact value)? onRemovedContact,
-    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
-    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
-    TResult Function(_OnAddContactsToGroup value)? onAddContactsToGroup,
-    TResult Function(_OnCreateNewContact value)? onCreateNewContact,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnInputChanged value)? onInputChanged,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    required TResult orElse(),
-  }) {
-    if (onChangedAvatar != null) {
-      return onChangedAvatar(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnChangedAvatar implements NewChatEvent {
-  const factory _OnChangedAvatar(final File file) = _$_OnChangedAvatar;
-
-  File get file;
-  @JsonKey(ignore: true)
-  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$NewChatState {
   PageState get pageState => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  NewChatTabType get tabType => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
-  List<ContactRequest> get contacts => throw _privateConstructorUsedError;
-  List<ContactRequest> get selectedContacts =>
-      throw _privateConstructorUsedError;
-  List<Group> get groups => throw _privateConstructorUsedError;
-  Group? get selectedGroup => throw _privateConstructorUsedError;
-  ContactRequest get contactRequest => throw _privateConstructorUsedError;
-  GroupRequest get groupRequest => throw _privateConstructorUsedError;
-  File? get avatar => throw _privateConstructorUsedError;
+  List<Contact> get contacts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewChatStateCopyWith<NewChatState> get copyWith =>
@@ -3039,19 +457,10 @@ abstract class $NewChatStateCopyWith<$Res> {
       {PageState pageState,
       PageCommand? pageCommand,
       bool isLoading,
-      NewChatTabType tabType,
       String keyword,
-      List<ContactRequest> contacts,
-      List<ContactRequest> selectedContacts,
-      List<Group> groups,
-      Group? selectedGroup,
-      ContactRequest contactRequest,
-      GroupRequest groupRequest,
-      File? avatar});
+      List<Contact> contacts});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
-  $ContactRequestCopyWith<$Res> get contactRequest;
-  $GroupRequestCopyWith<$Res> get groupRequest;
 }
 
 /// @nodoc
@@ -3070,15 +479,8 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
     Object? pageState = null,
     Object? pageCommand = freezed,
     Object? isLoading = null,
-    Object? tabType = null,
     Object? keyword = null,
     Object? contacts = null,
-    Object? selectedContacts = null,
-    Object? groups = null,
-    Object? selectedGroup = freezed,
-    Object? contactRequest = null,
-    Object? groupRequest = null,
-    Object? avatar = freezed,
   }) {
     return _then(_value.copyWith(
       pageState: null == pageState
@@ -3093,10 +495,6 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      tabType: null == tabType
-          ? _value.tabType
-          : tabType // ignore: cast_nullable_to_non_nullable
-              as NewChatTabType,
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
@@ -3104,31 +502,7 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
-      selectedContacts: null == selectedContacts
-          ? _value.selectedContacts
-          : selectedContacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
-      groups: null == groups
-          ? _value.groups
-          : groups // ignore: cast_nullable_to_non_nullable
-              as List<Group>,
-      selectedGroup: freezed == selectedGroup
-          ? _value.selectedGroup
-          : selectedGroup // ignore: cast_nullable_to_non_nullable
-              as Group?,
-      contactRequest: null == contactRequest
-          ? _value.contactRequest
-          : contactRequest // ignore: cast_nullable_to_non_nullable
-              as ContactRequest,
-      groupRequest: null == groupRequest
-          ? _value.groupRequest
-          : groupRequest // ignore: cast_nullable_to_non_nullable
-              as GroupRequest,
-      avatar: freezed == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
-              as File?,
+              as List<Contact>,
     ) as $Val);
   }
 
@@ -3141,22 +515,6 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
 
     return $PageCommandCopyWith<$Res>(_value.pageCommand!, (value) {
       return _then(_value.copyWith(pageCommand: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ContactRequestCopyWith<$Res> get contactRequest {
-    return $ContactRequestCopyWith<$Res>(_value.contactRequest, (value) {
-      return _then(_value.copyWith(contactRequest: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $GroupRequestCopyWith<$Res> get groupRequest {
-    return $GroupRequestCopyWith<$Res>(_value.groupRequest, (value) {
-      return _then(_value.copyWith(groupRequest: value) as $Val);
     });
   }
 }
@@ -3173,22 +531,11 @@ abstract class _$$_NewChatStateCopyWith<$Res>
       {PageState pageState,
       PageCommand? pageCommand,
       bool isLoading,
-      NewChatTabType tabType,
       String keyword,
-      List<ContactRequest> contacts,
-      List<ContactRequest> selectedContacts,
-      List<Group> groups,
-      Group? selectedGroup,
-      ContactRequest contactRequest,
-      GroupRequest groupRequest,
-      File? avatar});
+      List<Contact> contacts});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
-  @override
-  $ContactRequestCopyWith<$Res> get contactRequest;
-  @override
-  $GroupRequestCopyWith<$Res> get groupRequest;
 }
 
 /// @nodoc
@@ -3205,15 +552,8 @@ class __$$_NewChatStateCopyWithImpl<$Res>
     Object? pageState = null,
     Object? pageCommand = freezed,
     Object? isLoading = null,
-    Object? tabType = null,
     Object? keyword = null,
     Object? contacts = null,
-    Object? selectedContacts = null,
-    Object? groups = null,
-    Object? selectedGroup = freezed,
-    Object? contactRequest = null,
-    Object? groupRequest = null,
-    Object? avatar = freezed,
   }) {
     return _then(_$_NewChatState(
       pageState: null == pageState
@@ -3228,10 +568,6 @@ class __$$_NewChatStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      tabType: null == tabType
-          ? _value.tabType
-          : tabType // ignore: cast_nullable_to_non_nullable
-              as NewChatTabType,
       keyword: null == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
@@ -3239,31 +575,7 @@ class __$$_NewChatStateCopyWithImpl<$Res>
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
-      selectedContacts: null == selectedContacts
-          ? _value._selectedContacts
-          : selectedContacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
-      groups: null == groups
-          ? _value._groups
-          : groups // ignore: cast_nullable_to_non_nullable
-              as List<Group>,
-      selectedGroup: freezed == selectedGroup
-          ? _value.selectedGroup
-          : selectedGroup // ignore: cast_nullable_to_non_nullable
-              as Group?,
-      contactRequest: null == contactRequest
-          ? _value.contactRequest
-          : contactRequest // ignore: cast_nullable_to_non_nullable
-              as ContactRequest,
-      groupRequest: null == groupRequest
-          ? _value.groupRequest
-          : groupRequest // ignore: cast_nullable_to_non_nullable
-              as GroupRequest,
-      avatar: freezed == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
-              as File?,
+              as List<Contact>,
     ));
   }
 }
@@ -3275,18 +587,9 @@ class _$_NewChatState extends _NewChatState {
       {this.pageState = PageState.loading,
       this.pageCommand,
       this.isLoading = false,
-      this.tabType = NewChatTabType.newChat,
       this.keyword = '',
-      final List<ContactRequest> contacts = const [],
-      final List<ContactRequest> selectedContacts = const [],
-      final List<Group> groups = const [],
-      this.selectedGroup,
-      this.contactRequest = const ContactRequest(),
-      this.groupRequest = const GroupRequest(),
-      this.avatar})
+      final List<Contact> contacts = const []})
       : _contacts = contacts,
-        _selectedContacts = selectedContacts,
-        _groups = groups,
         super._();
 
   @override
@@ -3299,52 +602,19 @@ class _$_NewChatState extends _NewChatState {
   final bool isLoading;
   @override
   @JsonKey()
-  final NewChatTabType tabType;
-  @override
-  @JsonKey()
   final String keyword;
-  final List<ContactRequest> _contacts;
+  final List<Contact> _contacts;
   @override
   @JsonKey()
-  List<ContactRequest> get contacts {
+  List<Contact> get contacts {
     if (_contacts is EqualUnmodifiableListView) return _contacts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contacts);
   }
 
-  final List<ContactRequest> _selectedContacts;
-  @override
-  @JsonKey()
-  List<ContactRequest> get selectedContacts {
-    if (_selectedContacts is EqualUnmodifiableListView)
-      return _selectedContacts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_selectedContacts);
-  }
-
-  final List<Group> _groups;
-  @override
-  @JsonKey()
-  List<Group> get groups {
-    if (_groups is EqualUnmodifiableListView) return _groups;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_groups);
-  }
-
-  @override
-  final Group? selectedGroup;
-  @override
-  @JsonKey()
-  final ContactRequest contactRequest;
-  @override
-  @JsonKey()
-  final GroupRequest groupRequest;
-  @override
-  final File? avatar;
-
   @override
   String toString() {
-    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, tabType: $tabType, keyword: $keyword, contacts: $contacts, selectedContacts: $selectedContacts, groups: $groups, selectedGroup: $selectedGroup, contactRequest: $contactRequest, groupRequest: $groupRequest, avatar: $avatar)';
+    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts)';
   }
 
   @override
@@ -3358,36 +628,13 @@ class _$_NewChatState extends _NewChatState {
                 other.pageCommand == pageCommand) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.tabType, tabType) || other.tabType == tabType) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
-            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
-            const DeepCollectionEquality()
-                .equals(other._selectedContacts, _selectedContacts) &&
-            const DeepCollectionEquality().equals(other._groups, _groups) &&
-            const DeepCollectionEquality()
-                .equals(other.selectedGroup, selectedGroup) &&
-            (identical(other.contactRequest, contactRequest) ||
-                other.contactRequest == contactRequest) &&
-            (identical(other.groupRequest, groupRequest) ||
-                other.groupRequest == groupRequest) &&
-            (identical(other.avatar, avatar) || other.avatar == avatar));
+            const DeepCollectionEquality().equals(other._contacts, _contacts));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      pageState,
-      pageCommand,
-      isLoading,
-      tabType,
-      keyword,
-      const DeepCollectionEquality().hash(_contacts),
-      const DeepCollectionEquality().hash(_selectedContacts),
-      const DeepCollectionEquality().hash(_groups),
-      const DeepCollectionEquality().hash(selectedGroup),
-      contactRequest,
-      groupRequest,
-      avatar);
+  int get hashCode => Object.hash(runtimeType, pageState, pageCommand,
+      isLoading, keyword, const DeepCollectionEquality().hash(_contacts));
 
   @JsonKey(ignore: true)
   @override
@@ -3401,15 +648,8 @@ abstract class _NewChatState extends NewChatState {
       {final PageState pageState,
       final PageCommand? pageCommand,
       final bool isLoading,
-      final NewChatTabType tabType,
       final String keyword,
-      final List<ContactRequest> contacts,
-      final List<ContactRequest> selectedContacts,
-      final List<Group> groups,
-      final Group? selectedGroup,
-      final ContactRequest contactRequest,
-      final GroupRequest groupRequest,
-      final File? avatar}) = _$_NewChatState;
+      final List<Contact> contacts}) = _$_NewChatState;
   const _NewChatState._() : super._();
 
   @override
@@ -3419,23 +659,9 @@ abstract class _NewChatState extends NewChatState {
   @override
   bool get isLoading;
   @override
-  NewChatTabType get tabType;
-  @override
   String get keyword;
   @override
-  List<ContactRequest> get contacts;
-  @override
-  List<ContactRequest> get selectedContacts;
-  @override
-  List<Group> get groups;
-  @override
-  Group? get selectedGroup;
-  @override
-  ContactRequest get contactRequest;
-  @override
-  GroupRequest get groupRequest;
-  @override
-  File? get avatar;
+  List<Contact> get contacts;
   @override
   @JsonKey(ignore: true)
   _$$_NewChatStateCopyWith<_$_NewChatState> get copyWith =>

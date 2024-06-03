@@ -20,21 +20,18 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() onOpenNewChatBottomSheet,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? onOpenNewChatBottomSheet,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? onOpenNewChatBottomSheet,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,23 +39,18 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnOpenNewChatBottomSheet value)
-        onOpenNewChatBottomSheet,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnOpenNewChatBottomSheet value)?
-        onOpenNewChatBottomSheet,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnOpenNewChatBottomSheet value)? onOpenNewChatBottomSheet,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,7 +112,6 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() onOpenNewChatBottomSheet,
   }) {
     return initial();
   }
@@ -130,7 +121,6 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? onOpenNewChatBottomSheet,
   }) {
     return initial?.call();
   }
@@ -140,7 +130,6 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? onOpenNewChatBottomSheet,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -154,8 +143,6 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnOpenNewChatBottomSheet value)
-        onOpenNewChatBottomSheet,
   }) {
     return initial(this);
   }
@@ -165,8 +152,6 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnOpenNewChatBottomSheet value)?
-        onOpenNewChatBottomSheet,
   }) {
     return initial?.call(this);
   }
@@ -176,7 +161,6 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnOpenNewChatBottomSheet value)? onOpenNewChatBottomSheet,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -230,7 +214,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() onOpenNewChatBottomSheet,
   }) {
     return clearPageCommand();
   }
@@ -240,7 +223,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? onOpenNewChatBottomSheet,
   }) {
     return clearPageCommand?.call();
   }
@@ -250,7 +232,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? onOpenNewChatBottomSheet,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -264,8 +245,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnOpenNewChatBottomSheet value)
-        onOpenNewChatBottomSheet,
   }) {
     return clearPageCommand(this);
   }
@@ -275,8 +254,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnOpenNewChatBottomSheet value)?
-        onOpenNewChatBottomSheet,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -286,7 +263,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnOpenNewChatBottomSheet value)? onOpenNewChatBottomSheet,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -298,118 +274,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements HomeEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
-}
-
-/// @nodoc
-abstract class _$$_OnOpenNewChatBottomSheetCopyWith<$Res> {
-  factory _$$_OnOpenNewChatBottomSheetCopyWith(
-          _$_OnOpenNewChatBottomSheet value,
-          $Res Function(_$_OnOpenNewChatBottomSheet) then) =
-      __$$_OnOpenNewChatBottomSheetCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_OnOpenNewChatBottomSheetCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$_OnOpenNewChatBottomSheet>
-    implements _$$_OnOpenNewChatBottomSheetCopyWith<$Res> {
-  __$$_OnOpenNewChatBottomSheetCopyWithImpl(_$_OnOpenNewChatBottomSheet _value,
-      $Res Function(_$_OnOpenNewChatBottomSheet) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_OnOpenNewChatBottomSheet implements _OnOpenNewChatBottomSheet {
-  const _$_OnOpenNewChatBottomSheet();
-
-  @override
-  String toString() {
-    return 'HomeEvent.onOpenNewChatBottomSheet()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnOpenNewChatBottomSheet);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function() onOpenNewChatBottomSheet,
-  }) {
-    return onOpenNewChatBottomSheet();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function()? onOpenNewChatBottomSheet,
-  }) {
-    return onOpenNewChatBottomSheet?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function()? onOpenNewChatBottomSheet,
-    required TResult orElse(),
-  }) {
-    if (onOpenNewChatBottomSheet != null) {
-      return onOpenNewChatBottomSheet();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnOpenNewChatBottomSheet value)
-        onOpenNewChatBottomSheet,
-  }) {
-    return onOpenNewChatBottomSheet(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnOpenNewChatBottomSheet value)?
-        onOpenNewChatBottomSheet,
-  }) {
-    return onOpenNewChatBottomSheet?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnOpenNewChatBottomSheet value)? onOpenNewChatBottomSheet,
-    required TResult orElse(),
-  }) {
-    if (onOpenNewChatBottomSheet != null) {
-      return onOpenNewChatBottomSheet(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnOpenNewChatBottomSheet implements HomeEvent {
-  const factory _OnOpenNewChatBottomSheet() = _$_OnOpenNewChatBottomSheet;
 }
 
 /// @nodoc

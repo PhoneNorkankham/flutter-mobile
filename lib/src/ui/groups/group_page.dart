@@ -15,7 +15,7 @@ class GroupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => Get.find<GroupBloc>()..add(const GroupEvent.initial()),
+      create: (_) => GroupBloc(Get.find())..add(const GroupEvent.initial()),
       child: BlocListener<GroupBloc, GroupState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
         listener: (context, state) {
