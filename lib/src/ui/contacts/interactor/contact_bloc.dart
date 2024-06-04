@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/core/managers/permission_manager.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
@@ -16,17 +15,14 @@ part 'contact_event.dart';
 part 'contact_state.dart';
 
 class ContactBloc extends Bloc<ContactEvent, ContactState> {
-  final PermissionManager _permissionManager;
   final SupabaseRepository _supabaseRepository;
 
   ContactBloc(
-    this._permissionManager,
     this._supabaseRepository,
   ) : super(const ContactState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
-    on<_OnCheckContactPermission>(_onCheckContactPermission);
     on<_OnGotoNewContact>(_onGotoNewContact);
     on<_OnGotoContactDetails>(_onGotoContactDetails);
   }
@@ -37,12 +33,10 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
       onData: (contacts) => state.copyWith(
         contacts: contacts,
         pageState: PageState.success,
-        isLoading: false,
       ),
       onError: (error, stacktrace) => state.copyWith(
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,
-        isLoading: false,
       ),
     );
   }
@@ -58,15 +52,5 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
         argument: event.contact,
       ),
     ));
-  }
-
-  FutureOr<void> _onCheckContactPermission(
-    _OnCheckContactPermission event,
-    Emitter<ContactState> emit,
-  ) async {
-    final bool isGranted = await _permissionManager.checkPermission(PermissionType.Contacts);
-    if (isGranted) {
-      emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(AppPages.addContacts)));
-    }
   }
 }

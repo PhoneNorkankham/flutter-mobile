@@ -8,36 +8,15 @@ class NewChatState with _$NewChatState {
     @Default(PageState.loading) PageState pageState,
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
-    @Default(NewChatTabType.newChat) NewChatTabType tabType,
     @Default('') String keyword,
-    @Default([]) List<ContactRequest> contacts,
-    @Default([]) List<ContactRequest> selectedContacts,
-    @Default([]) List<Group> groups,
-    Group? selectedGroup,
-    @Default(ContactRequest()) ContactRequest contactRequest,
-    @Default(GroupRequest()) GroupRequest groupRequest,
-    File? avatar,
+    @Default([]) List<Contact> contacts,
   }) = _NewChatState;
 
-  bool get enabledCreateNewGroupButton => groupRequest.isValidate;
-
-  bool get enabledCreateNewContactButton => contactRequest.isValidate;
-
-  List<ContactRequest> get filterContacts {
+  List<Contact> get filterContacts {
     if (keyword.isEmpty) {
       return contacts;
     } else {
       return contacts
-          .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-          .toList();
-    }
-  }
-
-  List<Group> get filterGroups {
-    if (keyword.isEmpty) {
-      return groups;
-    } else {
-      return groups
           .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
           .toList();
     }

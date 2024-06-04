@@ -135,9 +135,6 @@ class LocaleKey {
   static const String logoutAnonymousConfirm = "logoutAnonymousConfirm";
   static const String logoutFailed = "logoutFailed";
 
-  // Contacts
-  static const String addContact = "addContact";
-
   // Contact Detail
   static const String newContact = "newContact";
   static const String contactDetail = "contactDetail";
@@ -152,9 +149,6 @@ class LocaleKey {
   static const String deleteContact = "deleteContact";
   static const String deleteContactDescription = "deleteContactDescription";
   static const String pleaseChooseAGroup = "pleaseChooseAGroup";
-
-  // Groups
-  static const String addGroup = "addGroup";
 
   // Group Detail
   static const String newGroup = "newGroup";
@@ -180,6 +174,7 @@ class LocaleKey {
   static const String addContactsToGroupSuccessfully = "addContactsToGroupSuccessfully";
 
   // New Chat Options
+  static const String addContacts = "addContacts";
   static const String usePhoneContacts = "usePhoneContacts";
   static const String createManually = "createManually";
 

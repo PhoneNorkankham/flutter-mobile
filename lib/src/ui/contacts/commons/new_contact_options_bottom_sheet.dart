@@ -14,7 +14,7 @@ class NewContactOptionsBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoActionSheet(
-      title: Text(LocaleKey.addContact.tr),
+      title: Text(LocaleKey.addContacts.tr),
       actions: [
         CupertinoActionSheetAction(
           onPressed: () => Get.back(result: NewContactOptions.phoneContacts),

@@ -46,13 +46,11 @@ class AddMemberBloc extends Bloc<AddMemberEvent, AddMemberState> {
           contacts: newContacts,
           selectedContacts: selectedContacts,
           pageState: PageState.success,
-          isLoading: false,
         );
       },
       onError: (error, stacktrace) => state.copyWith(
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,
-        isLoading: false,
       ),
     );
   }

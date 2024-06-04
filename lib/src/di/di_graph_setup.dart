@@ -6,6 +6,7 @@ import 'package:keepup/src/core/managers/permission_manager.dart';
 import 'package:keepup/src/core/managers/supabase_manager.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/translation_manager.dart';
+import 'package:keepup/src/use_cases/add_contacts_use_case.dart';
 import 'package:keepup/src/use_cases/check_logged_in_use_case.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
 import 'package:keepup/src/use_cases/create_group_use_case.dart';

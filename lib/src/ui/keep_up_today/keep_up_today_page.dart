@@ -12,7 +12,7 @@ class KeepUpTodayPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => Get.find<KeepUpTodayBloc>()..add(const KeepUpTodayEvent.initial()),
+      create: (_) => KeepUpTodayBloc(Get.find())..add(const KeepUpTodayEvent.initial()),
       child: BlocListener<KeepUpTodayBloc, KeepUpTodayState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
         listener: (context, state) {

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/home/interactor/home_bloc.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_chat/new_chat_bottom_sheet.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -35,8 +34,7 @@ class HomeHeader extends StatelessWidget {
         Positioned(
           right: 0,
           child: IconButton(
-            onPressed: () =>
-                context.read<HomeBloc>().add(const HomeEvent.onOpenNewChatBottomSheet()),
+            onPressed: () => NewChatBottomSheet.show(),
             padding: EdgeInsets.zero,
             icon: const Icon(
               Icons.add_circle,
