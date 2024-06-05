@@ -1,92 +1,19 @@
 # Keepup
-App flutter
+App flutter - Using flutter sdk ver 3.13.0
+
+## KeepUp project document
+https://docs.google.com/document/d/1ZnThl3endLxCzjakC6baqmesMbNTkVogxobN8XpxNrs/edit
+
+## KeepUp Feature Roadmap
+Flutter - get started
+https://docs.google.com/document/d/1-05qer2QZ-DZpwlwbrMe08Z4jfojSx0o/edit
 
 ## Menu
 
-- [Format code](#format-project)
-- [Format Git](#format-git)
-- [Merge Request preview](#merge-request-preview)
 - [Guide to building apps](#Guide-to-building-apps)
 - [Run rebuilding the app icons](#rebuilding-to-generated-files-serialization-retrofit-moor)
 - [Architecture](#app-architecture)
 - [Folder Structure](#folder-structure)
-
-## Format project:
-
-- Write clean code, avoid too many blank lines, always format code before uploading code to git
-  + Format code: Ctrl + Alt + L
-  + Remove import unused: Ctrl + Alt + O
-- Naming (requires English, clear by function):
-  + File name in snake_case format, ex: login_page, login_bloc,...
-  + Class name capitalizes the first letter, ex: LoginPage, LoginBloc,...
-  + Function name:
-    + Get function: getNameFunc()
-    + Function: onNameFunc()
-  + All fields in the class use private, ex: String _nameField;
-  + If you want to use it publicly, you must create a set/get class
-  + Asset name:
-    + Icon: ic_name
-    + Image: img_name
-    + Background: bg_name
-
-## Format Git:
-- How to name commits:
-  + fix: fix content
-  + feature: feature content
-  + refactor: optimized content
-  + docs: document change content
-  + style: content changes style
-  + perf: optimized content, performance
-  + vendor: update package, composer
-  + chore: as trivial as changing text
-- How to name a branch:
-  + New feature branch: git branch feature/name_of_function
-    + git branch feature/login_ui
-    + git branch feature/login_function
-    + git branch feature/login_api
-  + Hotfix branch - quick fixes:
-    + git branch hotfix/name_of_bug
-    + git branch hotfix/login_fail
-    + git branch hotfix/miss_key
-  + Release branch: release/version_name, ex: release/0.1.0
-- When creating a branch, create it from the `dev` branch
-- When done, merge into `dev` branch
-
-## Merge Request preview:
-The PR description template has been created, just select it in the select Description section when creating the PR and update the content.
-
-Note:
-- set `Assignee` as code reviewer and will approve Merge request to allow code merge (as PM or Team Leader)
-- Set `Reviewer` is the person in charge of reviewing the code (people in the same team will cross-review each other)
-
-```
-### 🗃 Issue Or Explanation for this PR. (What is it supposed to do and Why is needed)
-
-- Feature: Login ...
-- UI: ...
-
-### ✅ Checklist
-
-- [x] Issue Or Task detail are up to date for people to QA
-- [x] I have functionally tested all my changes
-- [x] I handled the code format
-- [x] I have Tested on Android (only App)
-- [x] I have Tested on iOS (only App)
-
-### 🕵️‍♂️ Notes for Code Reviewer
-
-Example: Change the Subscription Billing Flow with using SetupIntent to collect user billing information first.
-
-### 🙈 Screenshots
-
-No UI
-or take screenshot before change and after change
-Or take a screenshot of the design if the task is new
-
-### 👯‍♀️ Paired with
-
-Solo
-```
 
 ## Guide to building apps
 
@@ -155,7 +82,7 @@ The `assets_gen` configuration resides in the `assets_gen.yaml` file.
 
 The overall app architecture can be summed up in these plugins:
 
-- [Floor](https://pub.dev/packages/floor) for the local sqlite database
+- [Drift](https://pub.dev/packages/drift) for the local sqlite database
 - [Retrofit](https://pub.dev/packages/retrofit) for REST API
 - [JsonSerializable](https://pub.dev/packages/json_serializable) for generating models
 - [GetX](https://pub.dev/packages/get) for our state management (refactor is ongoing)
@@ -166,13 +93,13 @@ The overall app architecture can be summed up in these plugins:
   ┣ 📂local
   ┃ ┣ 📂converter - This has all of the `TypeConverter` classes for the database
   ┃ ┣ 📂dao - These are the Data Access Object definitions for the databse
+  ┃ ┗ 📂table - These are the Object definitions for the databse
   ┣ 📂manager - classed for manager services
   ┣ 📂model - data models
   ┣ 📂remote
-  ┃ ┣ 📂request - request data models for the Retrofit API
-  ┃ ┣ 📂response - response data models for the Retrofit API
-  ┃ ┣ 📂service - definitions of all requests for the API
-  ┗ 📂repository - data repositories
+  ┣ 📂repository - data repositories
+  ┗ 📂request - request data models for the Retrofit API
+  📂design - Theme of App
   📂di - definitions for Dependency Injection (Get)
   📂helper - various helper classes **(needs to be broken apart)**
   📂locale - Key lang **(needs to be broken apart)**
