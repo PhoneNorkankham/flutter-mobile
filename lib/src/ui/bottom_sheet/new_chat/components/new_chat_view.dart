@@ -38,7 +38,7 @@ class NewChatView extends StatelessWidget {
               AppSearchInput(
                 controller: bloc.keywordController,
                 margin: EdgeInsets.zero,
-                hintText: LocaleKey.searchNameOrNumber.tr,
+                hintText: LocaleKey.searchContacts.tr,
                 onChanged: (value) => bloc.add(NewChatEvent.onChangedKeyword(value)),
               ),
               const SizedBox(height: 16),

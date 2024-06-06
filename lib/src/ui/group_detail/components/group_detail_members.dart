@@ -53,7 +53,10 @@ class GroupDetailMembers extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        AppSearchInput(onChanged: (value) => bloc.add(GroupDetailEvent.onChangedKeyword(value))),
+        AppSearchInput(
+          hintText: LocaleKey.searchGroups.tr,
+          onChanged: (value) => bloc.add(GroupDetailEvent.onChangedKeyword(value)),
+        ),
         const SizedBox(height: 12),
         BlocBuilder<GroupDetailBloc, GroupDetailState>(
           buildWhen: (previous, current) =>

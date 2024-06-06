@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 
 enum NewChatCategoryType {
-  createNewGroup,
+  newGroup,
   addContactsToGroup,
   newContact;
 
   String get title {
     return switch (this) {
-      createNewGroup => LocaleKey.createNewGroup.tr,
+      newGroup => LocaleKey.newGroup.tr,
       addContactsToGroup => LocaleKey.addContactsToGroup.tr,
       newContact => LocaleKey.newContact.tr,
     };
@@ -17,7 +17,7 @@ enum NewChatCategoryType {
 
   IconData get icon {
     return switch (this) {
-      createNewGroup => Icons.group,
+      newGroup => Icons.group,
       addContactsToGroup => Icons.group_add,
       newContact => Icons.person_add,
     };

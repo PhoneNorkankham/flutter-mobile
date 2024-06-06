@@ -84,6 +84,10 @@ class LocaleKey {
   static const String history = "history";
   static const String notifications = "notifications";
 
+  // Contacts
+  static const String availableContacts = "availableContacts";
+  static const String searchContacts = "searchContacts";
+
   // KeepUp Today
   static const String expiringToday = "expiringToday";
   static const String keepUpTodayDescription = "keepUpTodayDescription";
@@ -169,7 +173,8 @@ class LocaleKey {
   static const String addMembers = "addMembers";
   static const String groupName = "groupName";
   static const String theGroupDoesNotExist = "theGroupDoesNotExist";
-  static const String createNewGroup = "createNewGroup";
+  static const String selectGroup = "selectGroup";
+  static const String searchGroups = "searchGroups";
   static const String addContactsToGroup = "addContactsToGroup";
   static const String addContactsToGroupSuccessfully = "addContactsToGroupSuccessfully";
 

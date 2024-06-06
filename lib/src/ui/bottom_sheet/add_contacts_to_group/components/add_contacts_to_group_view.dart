@@ -35,7 +35,7 @@ class AddMemberView extends StatelessWidget {
               AppSearchInput(
                 controller: bloc.keywordController,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
-                hintText: LocaleKey.searchNameOrNumber.tr,
+                hintText: LocaleKey.searchContacts.tr,
                 onChanged: (value) => bloc.add(AddContactsToGroupEvent.onChangedKeyword(value)),
               ),
               const AddContactsToGroupSelected(),

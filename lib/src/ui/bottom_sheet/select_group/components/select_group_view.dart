@@ -33,7 +33,7 @@ class SelectGroupView extends StatelessWidget {
               AppSearchInput(
                 controller: bloc.keywordController,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
-                hintText: LocaleKey.searchNameOrNumber.tr,
+                hintText: LocaleKey.searchGroups.tr,
                 onChanged: (value) => bloc.add(SelectGroupEvent.onChangedKeyword(value)),
               ),
               const Expanded(

@@ -28,7 +28,7 @@ class NewChatCategory extends StatelessWidget {
           return InkWell(
             onTap: () {
               switch (type) {
-                case NewChatCategoryType.createNewGroup:
+                case NewChatCategoryType.newGroup:
                   NewGroupBottomSheet.show().then((value) {
                     if (value is PopResult && value.status) {
                       showSuccessToast(LocaleKey.groupCreatedSuccessfully.tr);

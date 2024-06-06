@@ -35,7 +35,10 @@ class GroupView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 26),
-                AppSearchInput(onChanged: (value) => bloc.add(GroupEvent.onChangedKeyword(value))),
+                AppSearchInput(
+                  hintText: LocaleKey.searchGroups.tr,
+                  onChanged: (value) => bloc.add(GroupEvent.onChangedKeyword(value)),
+                ),
                 const SizedBox(height: 10),
                 const Expanded(child: GroupList()),
                 const SizedBox(height: 15),
