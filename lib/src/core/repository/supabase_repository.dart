@@ -280,7 +280,7 @@ class SupabaseRepository {
     if (group != null) {
       // Update contact's expiration
       final contactRequest = ContactRequest.fromJson(contact.toJson()).copyWith(
-        expiration: group.frequencyInterval.toExpirationDate(fromDate: contact.expiration),
+        expiration: group.frequencyInterval.toExpirationDate(),
       );
       final Resource<Contact> updateContactResource = await updateContact(contactRequest);
       if (updateContactResource.isSuccess) {
