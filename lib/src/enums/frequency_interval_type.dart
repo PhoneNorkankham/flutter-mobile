@@ -24,8 +24,8 @@ enum FrequencyIntervalType {
     };
   }
 
-  DateTime toExpirationDate({DateTime? fromDate}) {
-    final DateTime now = fromDate ?? DateTime.now();
+  DateTime toExpirationDate() {
+    final DateTime now = DateTime.now();
     switch (this) {
       case FrequencyIntervalType.everyDay:
         return now.add(const Duration(days: 1));

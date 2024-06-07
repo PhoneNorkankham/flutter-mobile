@@ -1,3 +1,4 @@
+import 'package:drift/drift.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
@@ -35,6 +36,7 @@ class UpdateGroupUseCase extends InputUseCase<DataResult<Group>, GroupRequest> {
               final Contact contact = e.copyWith(
                 // Removed or replace this group
                 groupId: contactIds.contains(e.id) ? group.id : '',
+                expiration: Value(group.frequencyInterval.toExpirationDate()),
               );
               return ContactRequest.fromJson(contact.toJson());
             }).toList();

@@ -113,8 +113,12 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
     final Group? group = state.group;
     if (group == null) return;
     emit(state.copyWith(isLoading: true));
-    final result = await _addContactsUseCase
-        .run(state.selectedContacts.map((e) => e.copyWith(groupId: group.id)).toList());
+    final result = await _addContactsUseCase.run(state.selectedContacts
+        .map((e) => e.copyWith(
+              groupId: group.id,
+              expiration: group.frequencyInterval.toExpirationDate(),
+            ))
+        .toList());
     final List<Contact> contacts = result.valueOrNull ?? [];
     if (result.isValue && contacts.isNotEmpty) {
       final contactIds = [
