@@ -84,7 +84,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     if (contactId.isEmpty) {
       emit(state.copyWith(contactType: ContactType.newContact, groups: groups));
     } else {
-      emit(state.copyWith(isLoading: true, groups: groups));
+      emit(state.copyWith(isLoading: true, contactType: ContactType.contactDetail, groups: groups));
       final result = await _getContactUseCase.run(contactId);
       emit(_getContactStateMapper.mapResultToState(state, result));
       nameController.text = state.request.name;

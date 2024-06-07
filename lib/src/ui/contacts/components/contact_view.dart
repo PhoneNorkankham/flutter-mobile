@@ -18,7 +18,7 @@ class ContactView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppAppBar(
-        title: LocaleKey.contacts.tr,
+        title: LocaleKey.availableContacts.tr,
         actions: const [MenuButton()],
       ),
       body: BlocBuilder<ContactBloc, ContactState>(
@@ -33,6 +33,7 @@ class ContactView extends StatelessWidget {
               children: [
                 const SizedBox(height: 26),
                 AppSearchInput(
+                  hintText: LocaleKey.searchContacts.tr,
                   onChanged: (value) => bloc.add(ContactEvent.onChangedKeyword(value)),
                 ),
                 const SizedBox(height: 10),

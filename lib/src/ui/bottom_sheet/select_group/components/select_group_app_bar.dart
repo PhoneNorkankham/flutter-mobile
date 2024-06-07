@@ -14,7 +14,7 @@ class SelectGroupAppBar extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            LocaleKey.groups.tr,
+            LocaleKey.selectGroup.tr,
             style: context.appTextTheme.bold18.copyWith(
               color: Theme.of(context).colorScheme.onPrimary,
             ),

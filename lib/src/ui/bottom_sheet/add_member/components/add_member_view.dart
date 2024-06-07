@@ -34,7 +34,7 @@ class AddMemberView extends StatelessWidget {
               const SizedBox(height: 18),
               AppSearchInput(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
-                hintText: LocaleKey.searchNameOrNumber.tr,
+                hintText: LocaleKey.searchContacts.tr,
                 onChanged: (value) => bloc.add(AddMemberEvent.onChangedKeyword(value)),
               ),
               const AddMemberSelected(),
