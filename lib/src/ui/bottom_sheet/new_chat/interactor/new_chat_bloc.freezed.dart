@@ -441,6 +441,8 @@ mixin _$NewChatState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
   List<Contact> get contacts => throw _privateConstructorUsedError;
+  List<NewChatCategoryType> get categories =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewChatStateCopyWith<NewChatState> get copyWith =>
@@ -458,7 +460,8 @@ abstract class $NewChatStateCopyWith<$Res> {
       PageCommand? pageCommand,
       bool isLoading,
       String keyword,
-      List<Contact> contacts});
+      List<Contact> contacts,
+      List<NewChatCategoryType> categories});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -481,6 +484,7 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
     Object? isLoading = null,
     Object? keyword = null,
     Object? contacts = null,
+    Object? categories = null,
   }) {
     return _then(_value.copyWith(
       pageState: null == pageState
@@ -503,6 +507,10 @@ class _$NewChatStateCopyWithImpl<$Res, $Val extends NewChatState>
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
+      categories: null == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<NewChatCategoryType>,
     ) as $Val);
   }
 
@@ -532,7 +540,8 @@ abstract class _$$_NewChatStateCopyWith<$Res>
       PageCommand? pageCommand,
       bool isLoading,
       String keyword,
-      List<Contact> contacts});
+      List<Contact> contacts,
+      List<NewChatCategoryType> categories});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -554,6 +563,7 @@ class __$$_NewChatStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? keyword = null,
     Object? contacts = null,
+    Object? categories = null,
   }) {
     return _then(_$_NewChatState(
       pageState: null == pageState
@@ -576,6 +586,10 @@ class __$$_NewChatStateCopyWithImpl<$Res>
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
               as List<Contact>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<NewChatCategoryType>,
     ));
   }
 }
@@ -588,8 +602,10 @@ class _$_NewChatState extends _NewChatState {
       this.pageCommand,
       this.isLoading = false,
       this.keyword = '',
-      final List<Contact> contacts = const []})
+      final List<Contact> contacts = const [],
+      final List<NewChatCategoryType> categories = const []})
       : _contacts = contacts,
+        _categories = categories,
         super._();
 
   @override
@@ -612,9 +628,18 @@ class _$_NewChatState extends _NewChatState {
     return EqualUnmodifiableListView(_contacts);
   }
 
+  final List<NewChatCategoryType> _categories;
+  @override
+  @JsonKey()
+  List<NewChatCategoryType> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
   @override
   String toString() {
-    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts)';
+    return 'NewChatState(pageState: $pageState, pageCommand: $pageCommand, isLoading: $isLoading, keyword: $keyword, contacts: $contacts, categories: $categories)';
   }
 
   @override
@@ -629,12 +654,20 @@ class _$_NewChatState extends _NewChatState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
-            const DeepCollectionEquality().equals(other._contacts, _contacts));
+            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageState, pageCommand,
-      isLoading, keyword, const DeepCollectionEquality().hash(_contacts));
+  int get hashCode => Object.hash(
+      runtimeType,
+      pageState,
+      pageCommand,
+      isLoading,
+      keyword,
+      const DeepCollectionEquality().hash(_contacts),
+      const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
@@ -649,7 +682,8 @@ abstract class _NewChatState extends NewChatState {
       final PageCommand? pageCommand,
       final bool isLoading,
       final String keyword,
-      final List<Contact> contacts}) = _$_NewChatState;
+      final List<Contact> contacts,
+      final List<NewChatCategoryType> categories}) = _$_NewChatState;
   const _NewChatState._() : super._();
 
   @override
@@ -662,6 +696,8 @@ abstract class _NewChatState extends NewChatState {
   String get keyword;
   @override
   List<Contact> get contacts;
+  @override
+  List<NewChatCategoryType> get categories;
   @override
   @JsonKey(ignore: true)
   _$$_NewChatStateCopyWith<_$_NewChatState> get copyWith =>
