@@ -34,6 +34,7 @@ class NewChatCategory extends StatelessWidget {
               final NewChatCategoryType type = categories.elementAt(index);
               return InkWell(
                 onTap: () {
+                  Get.back();
                   switch (type) {
                     case NewChatCategoryType.newGroup:
                       NewGroupBottomSheet.show().then((value) {
