@@ -10,6 +10,7 @@ class NewChatState with _$NewChatState {
     @Default(false) bool isLoading,
     @Default('') String keyword,
     @Default([]) List<Contact> contacts,
+    @Default([]) List<NewChatCategoryType> categories,
   }) = _NewChatState;
 
   List<Contact> get filterContacts {

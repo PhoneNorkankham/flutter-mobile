@@ -9,6 +9,8 @@ import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_category_type.dart';
+import 'package:rxdart/rxdart.dart';
 
 part 'new_chat_bloc.freezed.dart';
 part 'new_chat_event.dart';
@@ -25,11 +27,21 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
   }
 
-  FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) async {
-    await emit.forEach<List<Contact>>(
-      _supabaseRepository.watchContacts(),
-      onData: (contacts) => state.copyWith(
-        contacts: contacts,
+  FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) {
+    return emit.forEach<_DispatchNewChatState>(
+      Rx.combineLatest2(
+        _supabaseRepository.watchGroups(),
+        _supabaseRepository.watchContacts(),
+        (groups, contacts) => _DispatchNewChatState(
+          groups,
+          contacts,
+        ),
+      ),
+      onData: (viewState) => state.copyWith(
+        contacts: viewState.contacts,
+        categories: viewState.groups.isEmpty
+            ? [NewChatCategoryType.newGroup, NewChatCategoryType.newContact]
+            : NewChatCategoryType.values,
         pageState: PageState.success,
       ),
       onError: (error, stacktrace) => state.copyWith(
@@ -44,4 +56,11 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     keywordController.dispose();
     return super.close();
   }
+}
+
+class _DispatchNewChatState {
+  final List<Group> groups;
+  final List<Contact> contacts;
+
+  _DispatchNewChatState(this.groups, this.contacts);
 }
