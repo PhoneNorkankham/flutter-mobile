@@ -20,6 +20,7 @@ mixin _$KeepUpTodayEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onGotoGroupDetails,
     required TResult Function() onKeepUpAllContacts,
     required TResult Function() onKeepUpAllGroups,
   }) =>
@@ -28,6 +29,7 @@ mixin _$KeepUpTodayEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onGotoGroupDetails,
     TResult? Function()? onKeepUpAllContacts,
     TResult? Function()? onKeepUpAllGroups,
   }) =>
@@ -36,6 +38,7 @@ mixin _$KeepUpTodayEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onGotoGroupDetails,
     TResult Function()? onKeepUpAllContacts,
     TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
@@ -45,6 +48,7 @@ mixin _$KeepUpTodayEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
     required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
     required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) =>
@@ -53,6 +57,7 @@ mixin _$KeepUpTodayEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) =>
@@ -61,6 +66,7 @@ mixin _$KeepUpTodayEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),
@@ -125,6 +131,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onGotoGroupDetails,
     required TResult Function() onKeepUpAllContacts,
     required TResult Function() onKeepUpAllGroups,
   }) {
@@ -136,6 +143,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onGotoGroupDetails,
     TResult? Function()? onKeepUpAllContacts,
     TResult? Function()? onKeepUpAllGroups,
   }) {
@@ -147,6 +155,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onGotoGroupDetails,
     TResult Function()? onKeepUpAllContacts,
     TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
@@ -162,6 +171,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
     required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
     required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) {
@@ -173,6 +183,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) {
@@ -184,6 +195,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),
@@ -239,6 +251,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onGotoGroupDetails,
     required TResult Function() onKeepUpAllContacts,
     required TResult Function() onKeepUpAllGroups,
   }) {
@@ -250,6 +263,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onGotoGroupDetails,
     TResult? Function()? onKeepUpAllContacts,
     TResult? Function()? onKeepUpAllGroups,
   }) {
@@ -261,6 +275,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onGotoGroupDetails,
     TResult Function()? onKeepUpAllContacts,
     TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
@@ -276,6 +291,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
     required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
     required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) {
@@ -287,6 +303,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) {
@@ -298,6 +315,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),
@@ -311,6 +329,159 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 
 abstract class _ClearPageCommand implements KeepUpTodayEvent {
   const factory _ClearPageCommand() = _$_ClearPageCommand;
+}
+
+/// @nodoc
+abstract class _$$_OnGotoGroupDetailsCopyWith<$Res> {
+  factory _$$_OnGotoGroupDetailsCopyWith(_$_OnGotoGroupDetails value,
+          $Res Function(_$_OnGotoGroupDetails) then) =
+      __$$_OnGotoGroupDetailsCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Group group});
+}
+
+/// @nodoc
+class __$$_OnGotoGroupDetailsCopyWithImpl<$Res>
+    extends _$KeepUpTodayEventCopyWithImpl<$Res, _$_OnGotoGroupDetails>
+    implements _$$_OnGotoGroupDetailsCopyWith<$Res> {
+  __$$_OnGotoGroupDetailsCopyWithImpl(
+      _$_OnGotoGroupDetails _value, $Res Function(_$_OnGotoGroupDetails) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? group = freezed,
+  }) {
+    return _then(_$_OnGotoGroupDetails(
+      freezed == group
+          ? _value.group
+          : group // ignore: cast_nullable_to_non_nullable
+              as Group,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
+  const _$_OnGotoGroupDetails(this.group);
+
+  @override
+  final Group group;
+
+  @override
+  String toString() {
+    return 'KeepUpTodayEvent.onGotoGroupDetails(group: $group)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnGotoGroupDetails &&
+            const DeepCollectionEquality().equals(other.group, group));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(group));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnGotoGroupDetailsCopyWith<_$_OnGotoGroupDetails> get copyWith =>
+      __$$_OnGotoGroupDetailsCopyWithImpl<_$_OnGotoGroupDetails>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onGotoGroupDetails,
+    required TResult Function() onKeepUpAllContacts,
+    required TResult Function() onKeepUpAllGroups,
+  }) {
+    return onGotoGroupDetails(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onGotoGroupDetails,
+    TResult? Function()? onKeepUpAllContacts,
+    TResult? Function()? onKeepUpAllGroups,
+  }) {
+    return onGotoGroupDetails?.call(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onGotoGroupDetails,
+    TResult Function()? onKeepUpAllContacts,
+    TResult Function()? onKeepUpAllGroups,
+    required TResult orElse(),
+  }) {
+    if (onGotoGroupDetails != null) {
+      return onGotoGroupDetails(group);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
+    required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
+    required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
+  }) {
+    return onGotoGroupDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
+    TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
+  }) {
+    return onGotoGroupDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
+    TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
+    TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
+    required TResult orElse(),
+  }) {
+    if (onGotoGroupDetails != null) {
+      return onGotoGroupDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnGotoGroupDetails implements KeepUpTodayEvent {
+  const factory _OnGotoGroupDetails(final Group group) = _$_OnGotoGroupDetails;
+
+  Group get group;
+  @JsonKey(ignore: true)
+  _$$_OnGotoGroupDetailsCopyWith<_$_OnGotoGroupDetails> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -353,6 +524,7 @@ class _$_OnKeepUpAllContacts implements _OnKeepUpAllContacts {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onGotoGroupDetails,
     required TResult Function() onKeepUpAllContacts,
     required TResult Function() onKeepUpAllGroups,
   }) {
@@ -364,6 +536,7 @@ class _$_OnKeepUpAllContacts implements _OnKeepUpAllContacts {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onGotoGroupDetails,
     TResult? Function()? onKeepUpAllContacts,
     TResult? Function()? onKeepUpAllGroups,
   }) {
@@ -375,6 +548,7 @@ class _$_OnKeepUpAllContacts implements _OnKeepUpAllContacts {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onGotoGroupDetails,
     TResult Function()? onKeepUpAllContacts,
     TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
@@ -390,6 +564,7 @@ class _$_OnKeepUpAllContacts implements _OnKeepUpAllContacts {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
     required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
     required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) {
@@ -401,6 +576,7 @@ class _$_OnKeepUpAllContacts implements _OnKeepUpAllContacts {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) {
@@ -412,6 +588,7 @@ class _$_OnKeepUpAllContacts implements _OnKeepUpAllContacts {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),
@@ -467,6 +644,7 @@ class _$_OnKeepUpAllGroups implements _OnKeepUpAllGroups {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onGotoGroupDetails,
     required TResult Function() onKeepUpAllContacts,
     required TResult Function() onKeepUpAllGroups,
   }) {
@@ -478,6 +656,7 @@ class _$_OnKeepUpAllGroups implements _OnKeepUpAllGroups {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onGotoGroupDetails,
     TResult? Function()? onKeepUpAllContacts,
     TResult? Function()? onKeepUpAllGroups,
   }) {
@@ -489,6 +668,7 @@ class _$_OnKeepUpAllGroups implements _OnKeepUpAllGroups {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onGotoGroupDetails,
     TResult Function()? onKeepUpAllContacts,
     TResult Function()? onKeepUpAllGroups,
     required TResult orElse(),
@@ -504,6 +684,7 @@ class _$_OnKeepUpAllGroups implements _OnKeepUpAllGroups {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
     required TResult Function(_OnKeepUpAllContacts value) onKeepUpAllContacts,
     required TResult Function(_OnKeepUpAllGroups value) onKeepUpAllGroups,
   }) {
@@ -515,6 +696,7 @@ class _$_OnKeepUpAllGroups implements _OnKeepUpAllGroups {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult? Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult? Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
   }) {
@@ -526,6 +708,7 @@ class _$_OnKeepUpAllGroups implements _OnKeepUpAllGroups {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     TResult Function(_OnKeepUpAllContacts value)? onKeepUpAllContacts,
     TResult Function(_OnKeepUpAllGroups value)? onKeepUpAllGroups,
     required TResult orElse(),

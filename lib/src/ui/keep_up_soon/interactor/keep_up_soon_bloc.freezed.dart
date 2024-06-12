@@ -25,6 +25,7 @@ mixin _$KeepUpSoonEvent {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +37,7 @@ mixin _$KeepUpSoonEvent {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +49,7 @@ mixin _$KeepUpSoonEvent {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +62,7 @@ mixin _$KeepUpSoonEvent {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +74,7 @@ mixin _$KeepUpSoonEvent {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +86,7 @@ mixin _$KeepUpSoonEvent {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,6 +154,7 @@ class _$_Initial implements _Initial {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return initial();
   }
@@ -162,6 +169,7 @@ class _$_Initial implements _Initial {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return initial?.call();
   }
@@ -176,6 +184,7 @@ class _$_Initial implements _Initial {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -194,6 +203,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return initial(this);
   }
@@ -208,6 +218,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return initial?.call(this);
   }
@@ -222,6 +233,7 @@ class _$_Initial implements _Initial {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -280,6 +292,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return clearPageCommand();
   }
@@ -294,6 +307,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return clearPageCommand?.call();
   }
@@ -308,6 +322,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -326,6 +341,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return clearPageCommand(this);
   }
@@ -340,6 +356,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -354,6 +371,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -412,6 +430,7 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return onFetchWeekContacts();
   }
@@ -426,6 +445,7 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return onFetchWeekContacts?.call();
   }
@@ -440,6 +460,7 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onFetchWeekContacts != null) {
@@ -458,6 +479,7 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return onFetchWeekContacts(this);
   }
@@ -472,6 +494,7 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return onFetchWeekContacts?.call(this);
   }
@@ -486,6 +509,7 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onFetchWeekContacts != null) {
@@ -544,6 +568,7 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return onFetchMonthContacts();
   }
@@ -558,6 +583,7 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return onFetchMonthContacts?.call();
   }
@@ -572,6 +598,7 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onFetchMonthContacts != null) {
@@ -590,6 +617,7 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return onFetchMonthContacts(this);
   }
@@ -604,6 +632,7 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return onFetchMonthContacts?.call(this);
   }
@@ -618,6 +647,7 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onFetchMonthContacts != null) {
@@ -702,6 +732,7 @@ class _$_OnChangedType implements _OnChangedType {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return onChangedType(type);
   }
@@ -716,6 +747,7 @@ class _$_OnChangedType implements _OnChangedType {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return onChangedType?.call(type);
   }
@@ -730,6 +762,7 @@ class _$_OnChangedType implements _OnChangedType {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onChangedType != null) {
@@ -748,6 +781,7 @@ class _$_OnChangedType implements _OnChangedType {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return onChangedType(this);
   }
@@ -762,6 +796,7 @@ class _$_OnChangedType implements _OnChangedType {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return onChangedType?.call(this);
   }
@@ -776,6 +811,7 @@ class _$_OnChangedType implements _OnChangedType {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onChangedType != null) {
@@ -866,6 +902,7 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return onKeepUpContact(contact);
   }
@@ -880,6 +917,7 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return onKeepUpContact?.call(contact);
   }
@@ -894,6 +932,7 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onKeepUpContact != null) {
@@ -912,6 +951,7 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return onKeepUpContact(this);
   }
@@ -926,6 +966,7 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return onKeepUpContact?.call(this);
   }
@@ -940,6 +981,7 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onKeepUpContact != null) {
@@ -1030,6 +1072,7 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
     required TResult Function(KeepUpSoonType type) onChangedType,
     required TResult Function(Contact contact) onKeepUpContact,
     required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return onKeepUpGroup(group);
   }
@@ -1044,6 +1087,7 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
     TResult? Function(KeepUpSoonType type)? onChangedType,
     TResult? Function(Contact contact)? onKeepUpContact,
     TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return onKeepUpGroup?.call(group);
   }
@@ -1058,6 +1102,7 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
     TResult Function(KeepUpSoonType type)? onChangedType,
     TResult Function(Contact contact)? onKeepUpContact,
     TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onKeepUpGroup != null) {
@@ -1076,6 +1121,7 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
     required TResult Function(_OnChangedType value) onChangedType,
     required TResult Function(_OnKeepUpContact value) onKeepUpContact,
     required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return onKeepUpGroup(this);
   }
@@ -1090,6 +1136,7 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
     TResult? Function(_OnChangedType value)? onChangedType,
     TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return onKeepUpGroup?.call(this);
   }
@@ -1104,6 +1151,7 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
     TResult Function(_OnChangedType value)? onChangedType,
     TResult Function(_OnKeepUpContact value)? onKeepUpContact,
     TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
     if (onKeepUpGroup != null) {
@@ -1119,6 +1167,177 @@ abstract class _OnKeepUpGroup implements KeepUpSoonEvent {
   Group get group;
   @JsonKey(ignore: true)
   _$$_OnKeepUpGroupCopyWith<_$_OnKeepUpGroup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnGotoGroupDetailsCopyWith<$Res> {
+  factory _$$_OnGotoGroupDetailsCopyWith(_$_OnGotoGroupDetails value,
+          $Res Function(_$_OnGotoGroupDetails) then) =
+      __$$_OnGotoGroupDetailsCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Group group});
+}
+
+/// @nodoc
+class __$$_OnGotoGroupDetailsCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnGotoGroupDetails>
+    implements _$$_OnGotoGroupDetailsCopyWith<$Res> {
+  __$$_OnGotoGroupDetailsCopyWithImpl(
+      _$_OnGotoGroupDetails _value, $Res Function(_$_OnGotoGroupDetails) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? group = freezed,
+  }) {
+    return _then(_$_OnGotoGroupDetails(
+      freezed == group
+          ? _value.group
+          : group // ignore: cast_nullable_to_non_nullable
+              as Group,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnGotoGroupDetails implements _OnGotoGroupDetails {
+  const _$_OnGotoGroupDetails(this.group);
+
+  @override
+  final Group group;
+
+  @override
+  String toString() {
+    return 'KeepUpSoonEvent.onGotoGroupDetails(group: $group)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnGotoGroupDetails &&
+            const DeepCollectionEquality().equals(other.group, group));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(group));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnGotoGroupDetailsCopyWith<_$_OnGotoGroupDetails> get copyWith =>
+      __$$_OnGotoGroupDetailsCopyWithImpl<_$_OnGotoGroupDetails>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function() onFetchWeekContacts,
+    required TResult Function() onFetchMonthContacts,
+    required TResult Function(KeepUpSoonType type) onChangedType,
+    required TResult Function(Contact contact) onKeepUpContact,
+    required TResult Function(Group group) onKeepUpGroup,
+    required TResult Function(Group group) onGotoGroupDetails,
+  }) {
+    return onGotoGroupDetails(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function()? onFetchWeekContacts,
+    TResult? Function()? onFetchMonthContacts,
+    TResult? Function(KeepUpSoonType type)? onChangedType,
+    TResult? Function(Contact contact)? onKeepUpContact,
+    TResult? Function(Group group)? onKeepUpGroup,
+    TResult? Function(Group group)? onGotoGroupDetails,
+  }) {
+    return onGotoGroupDetails?.call(group);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function()? onFetchWeekContacts,
+    TResult Function()? onFetchMonthContacts,
+    TResult Function(KeepUpSoonType type)? onChangedType,
+    TResult Function(Contact contact)? onKeepUpContact,
+    TResult Function(Group group)? onKeepUpGroup,
+    TResult Function(Group group)? onGotoGroupDetails,
+    required TResult orElse(),
+  }) {
+    if (onGotoGroupDetails != null) {
+      return onGotoGroupDetails(group);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnFetchWeekContacts value) onFetchWeekContacts,
+    required TResult Function(_OnFetchMonthContacts value) onFetchMonthContacts,
+    required TResult Function(_OnChangedType value) onChangedType,
+    required TResult Function(_OnKeepUpContact value) onKeepUpContact,
+    required TResult Function(_OnKeepUpGroup value) onKeepUpGroup,
+    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
+  }) {
+    return onGotoGroupDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult? Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult? Function(_OnChangedType value)? onChangedType,
+    TResult? Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult? Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
+  }) {
+    return onGotoGroupDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnFetchWeekContacts value)? onFetchWeekContacts,
+    TResult Function(_OnFetchMonthContacts value)? onFetchMonthContacts,
+    TResult Function(_OnChangedType value)? onChangedType,
+    TResult Function(_OnKeepUpContact value)? onKeepUpContact,
+    TResult Function(_OnKeepUpGroup value)? onKeepUpGroup,
+    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
+    required TResult orElse(),
+  }) {
+    if (onGotoGroupDetails != null) {
+      return onGotoGroupDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnGotoGroupDetails implements KeepUpSoonEvent {
+  const factory _OnGotoGroupDetails(final Group group) = _$_OnGotoGroupDetails;
+
+  Group get group;
+  @JsonKey(ignore: true)
+  _$$_OnGotoGroupDetailsCopyWith<_$_OnGotoGroupDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

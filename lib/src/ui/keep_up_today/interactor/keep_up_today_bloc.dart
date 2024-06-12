@@ -7,6 +7,7 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
+import 'package:keepup/src/utils/app_pages.dart';
 
 part 'keep_up_today_bloc.freezed.dart';
 part 'keep_up_today_event.dart';
@@ -18,6 +19,7 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
   KeepUpTodayBloc(this._supabaseRepository) : super(const KeepUpTodayState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
+    on<_OnGotoGroupDetails>(_onGotoGroupDetails);
     on<_OnKeepUpAllContacts>(_onKeepUpAllContacts);
     on<_OnKeepUpAllGroups>(_onKeepUpAllGroups);
   }
@@ -103,6 +105,15 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
     emit(state.copyWith(
       isLoading: false,
       pageCommand: pageCommand,
+    ));
+  }
+
+  FutureOr<void> _onGotoGroupDetails(_OnGotoGroupDetails event, Emitter<KeepUpTodayState> emit) {
+    emit(state.copyWith(
+      pageCommand: PageCommandNavigation.toPage(
+        AppPages.groupDetail,
+        argument: event.group,
+      ),
     ));
   }
 }

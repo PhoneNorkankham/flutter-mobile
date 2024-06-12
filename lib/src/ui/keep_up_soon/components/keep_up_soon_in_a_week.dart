@@ -52,6 +52,7 @@ class KeepUpSoonInAWeek extends StatelessWidget {
                     .map((e) => KeepUpSoonItem(
                           name: e.name,
                           avatar: e.avatar,
+                          onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(e)),
                           onKeepUp: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
                         ))
                     .toList()
