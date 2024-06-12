@@ -8,7 +8,5 @@ class ContactEvent with _$ContactEvent {
 
   const factory ContactEvent.onChangedKeyword(String keyword) = _OnChangedKeyword;
 
-  const factory ContactEvent.onGotoNewContact() = _OnGotoNewContact;
-
   const factory ContactEvent.onGotoContactDetails(Contact contact) = _OnGotoContactDetails;
 }

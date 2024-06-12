@@ -23,7 +23,6 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
-    on<_OnGotoNewContact>(_onGotoNewContact);
     on<_OnGotoContactDetails>(_onGotoContactDetails);
   }
 
@@ -39,10 +38,6 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
         pageState: PageState.success,
       ),
     );
-  }
-
-  FutureOr<void> _onGotoNewContact(_OnGotoNewContact event, Emitter<ContactState> emit) {
-    emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(AppPages.contactDetail)));
   }
 
   FutureOr<void> _onGotoContactDetails(_OnGotoContactDetails event, Emitter<ContactState> emit) {

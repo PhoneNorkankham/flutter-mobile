@@ -1227,7 +1227,7 @@ class __$$_MainStateCopyWithImpl<$Res>
 class _$_MainState extends _MainState {
   const _$_MainState(
       {this.pageCommand,
-      this.type = BottomNavType.home,
+      this.type = BottomNavType.today,
       this.isLoading = false})
       : super._();
 

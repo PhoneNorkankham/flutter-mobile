@@ -21,7 +21,6 @@ mixin _$ContactEvent {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +29,6 @@ mixin _$ContactEvent {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +37,6 @@ mixin _$ContactEvent {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) =>
@@ -49,7 +46,6 @@ mixin _$ContactEvent {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -58,7 +54,6 @@ mixin _$ContactEvent {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,7 +62,6 @@ mixin _$ContactEvent {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) =>
@@ -132,7 +126,6 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
     return initial();
@@ -144,7 +137,6 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
     return initial?.call();
@@ -156,7 +148,6 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) {
@@ -172,7 +163,6 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
     return initial(this);
@@ -184,7 +174,6 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
     return initial?.call(this);
@@ -196,7 +185,6 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) {
@@ -252,7 +240,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
     return clearPageCommand();
@@ -264,7 +251,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
     return clearPageCommand?.call();
@@ -276,7 +262,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) {
@@ -292,7 +277,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
     return clearPageCommand(this);
@@ -304,7 +288,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
     return clearPageCommand?.call(this);
@@ -316,7 +299,6 @@ class _$_ClearPageCommand implements _ClearPageCommand {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) {
@@ -398,7 +380,6 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
     return onChangedKeyword(keyword);
@@ -410,7 +391,6 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
     return onChangedKeyword?.call(keyword);
@@ -422,7 +402,6 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) {
@@ -438,7 +417,6 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
     return onChangedKeyword(this);
@@ -450,7 +428,6 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
     return onChangedKeyword?.call(this);
@@ -462,7 +439,6 @@ class _$_OnChangedKeyword implements _OnChangedKeyword {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) {
@@ -480,126 +456,6 @@ abstract class _OnChangedKeyword implements ContactEvent {
   @JsonKey(ignore: true)
   _$$_OnChangedKeywordCopyWith<_$_OnChangedKeyword> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_OnGotoNewContactCopyWith<$Res> {
-  factory _$$_OnGotoNewContactCopyWith(
-          _$_OnGotoNewContact value, $Res Function(_$_OnGotoNewContact) then) =
-      __$$_OnGotoNewContactCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_OnGotoNewContactCopyWithImpl<$Res>
-    extends _$ContactEventCopyWithImpl<$Res, _$_OnGotoNewContact>
-    implements _$$_OnGotoNewContactCopyWith<$Res> {
-  __$$_OnGotoNewContactCopyWithImpl(
-      _$_OnGotoNewContact _value, $Res Function(_$_OnGotoNewContact) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_OnGotoNewContact implements _OnGotoNewContact {
-  const _$_OnGotoNewContact();
-
-  @override
-  String toString() {
-    return 'ContactEvent.onGotoNewContact()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnGotoNewContact);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewContact,
-    required TResult Function(Contact contact) onGotoContactDetails,
-  }) {
-    return onGotoNewContact();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewContact,
-    TResult? Function(Contact contact)? onGotoContactDetails,
-  }) {
-    return onGotoNewContact?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewContact,
-    TResult Function(Contact contact)? onGotoContactDetails,
-    required TResult orElse(),
-  }) {
-    if (onGotoNewContact != null) {
-      return onGotoNewContact();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
-    required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
-  }) {
-    return onGotoNewContact(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
-    TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
-  }) {
-    return onGotoNewContact?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
-    TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
-    required TResult orElse(),
-  }) {
-    if (onGotoNewContact != null) {
-      return onGotoNewContact(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnGotoNewContact implements ContactEvent {
-  const factory _OnGotoNewContact() = _$_OnGotoNewContact;
 }
 
 /// @nodoc
@@ -671,7 +527,6 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewContact,
     required TResult Function(Contact contact) onGotoContactDetails,
   }) {
     return onGotoContactDetails(contact);
@@ -683,7 +538,6 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewContact,
     TResult? Function(Contact contact)? onGotoContactDetails,
   }) {
     return onGotoContactDetails?.call(contact);
@@ -695,7 +549,6 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewContact,
     TResult Function(Contact contact)? onGotoContactDetails,
     required TResult orElse(),
   }) {
@@ -711,7 +564,6 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewContact value) onGotoNewContact,
     required TResult Function(_OnGotoContactDetails value) onGotoContactDetails,
   }) {
     return onGotoContactDetails(this);
@@ -723,7 +575,6 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult? Function(_OnGotoContactDetails value)? onGotoContactDetails,
   }) {
     return onGotoContactDetails?.call(this);
@@ -735,7 +586,6 @@ class _$_OnGotoContactDetails implements _OnGotoContactDetails {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewContact value)? onGotoNewContact,
     TResult Function(_OnGotoContactDetails value)? onGotoContactDetails,
     required TResult orElse(),
   }) {

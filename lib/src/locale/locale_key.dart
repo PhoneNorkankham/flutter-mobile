@@ -73,7 +73,6 @@ class LocaleKey {
   static const String joiningGroupFailed = "joiningGroupFailed";
 
   // Main
-  static const String home = "home";
   static const String today = "today";
   static const String upcoming = "upcoming";
   static const String contacts = "contacts";
