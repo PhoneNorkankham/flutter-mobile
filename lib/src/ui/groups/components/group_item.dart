@@ -20,6 +20,7 @@ class GroupItem extends StatelessWidget {
     return KeepUpItem(
       onPressed: () => onPressed?.call(group),
       name: group.name,
+      avatar: group.avatar,
       action: Text(
         LocaleKey.details.tr,
         style: context.appTextTheme.bold16.copyWith(

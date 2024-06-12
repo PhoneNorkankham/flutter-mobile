@@ -31,6 +31,7 @@ class SelectGroupList extends StatelessWidget {
                 if (value is PopResult && value.status) Get.back(result: value);
               }),
               name: group.name,
+              avatar: group.avatar,
             );
           },
           separatorBuilder: (context, index) => const SizedBox(height: 4),

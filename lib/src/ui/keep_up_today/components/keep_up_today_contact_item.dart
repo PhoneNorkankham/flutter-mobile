@@ -18,6 +18,7 @@ class KeepUpTodayContactItem extends StatelessWidget {
       child: KeepUpItem(
         onPressed: () => InteractionBottomSheet.show(contact: contact),
         name: contact.name,
+        avatar: contact.avatar,
         action: FutureBuilder<bool>(
           future: bloc.isContactCompleted(contact),
           builder: (context, snapshot) {

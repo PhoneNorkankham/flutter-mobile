@@ -37,6 +37,7 @@ class AddContactsToGroupContacts extends StatelessWidget {
             return KeepUpItem(
               onPressed: () => bloc.add(AddContactsToGroupEvent.onSelectedContact(contact)),
               name: contact.name,
+              avatar: contact.avatar,
               action: Container(
                 width: 21,
                 height: 21,
