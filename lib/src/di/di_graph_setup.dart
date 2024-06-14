@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/core/managers/connectivity_manager.dart';
 import 'package:keepup/src/core/managers/navigator_manager.dart';
 import 'package:keepup/src/core/managers/permission_manager.dart';
 import 'package:keepup/src/core/managers/supabase_manager.dart';

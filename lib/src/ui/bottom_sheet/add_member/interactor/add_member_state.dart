@@ -21,9 +21,7 @@ class AddMemberState with _$AddMemberState {
       filterContacts = [...contacts];
     } else {
       filterContacts = [
-        ...contacts
-            .where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-            .toList()
+        ...contacts.where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
       ];
     }
     return filterContacts..removeWhere((element) => selectedContacts.contains(element));

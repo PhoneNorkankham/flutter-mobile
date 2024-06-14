@@ -6,16 +6,16 @@ class LoadingFullScreen extends StatelessWidget {
   final Color? backgroundColor;
 
   const LoadingFullScreen({
-    Key? key,
+    super.key,
     required this.child,
     this.loading = false,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => !loading,
+    return PopScope(
+      canPop: !loading,
       child: AbsorbPointer(
         absorbing: loading,
         child: Stack(

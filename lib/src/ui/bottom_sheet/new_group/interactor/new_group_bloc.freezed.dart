@@ -12,7 +12,7 @@ part of 'new_group_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NewGroupEvent {
@@ -123,24 +123,25 @@ class _$NewGroupEventCopyWithImpl<$Res, $Val extends NewGroupEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -148,9 +149,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -268,29 +269,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements NewGroupEvent {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_ClearPageCommandCopyWith<$Res> {
-  factory _$$_ClearPageCommandCopyWith(
-          _$_ClearPageCommand value, $Res Function(_$_ClearPageCommand) then) =
-      __$$_ClearPageCommandCopyWithImpl<$Res>;
+abstract class _$$ClearPageCommandImplCopyWith<$Res> {
+  factory _$$ClearPageCommandImplCopyWith(_$ClearPageCommandImpl value,
+          $Res Function(_$ClearPageCommandImpl) then) =
+      __$$ClearPageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearPageCommandCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_ClearPageCommand>
-    implements _$$_ClearPageCommandCopyWith<$Res> {
-  __$$_ClearPageCommandCopyWithImpl(
-      _$_ClearPageCommand _value, $Res Function(_$_ClearPageCommand) _then)
+class __$$ClearPageCommandImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$ClearPageCommandImpl>
+    implements _$$ClearPageCommandImplCopyWith<$Res> {
+  __$$ClearPageCommandImplCopyWithImpl(_$ClearPageCommandImpl _value,
+      $Res Function(_$ClearPageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearPageCommand implements _ClearPageCommand {
-  const _$_ClearPageCommand();
+class _$ClearPageCommandImpl implements _ClearPageCommand {
+  const _$ClearPageCommandImpl();
 
   @override
   String toString() {
@@ -298,9 +299,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearPageCommand);
+        (other.runtimeType == runtimeType && other is _$ClearPageCommandImpl);
   }
 
   @override
@@ -418,24 +419,24 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 }
 
 abstract class _ClearPageCommand implements NewGroupEvent {
-  const factory _ClearPageCommand() = _$_ClearPageCommand;
+  const factory _ClearPageCommand() = _$ClearPageCommandImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnSelectedContactCopyWith<$Res> {
-  factory _$$_OnSelectedContactCopyWith(_$_OnSelectedContact value,
-          $Res Function(_$_OnSelectedContact) then) =
-      __$$_OnSelectedContactCopyWithImpl<$Res>;
+abstract class _$$OnSelectedContactImplCopyWith<$Res> {
+  factory _$$OnSelectedContactImplCopyWith(_$OnSelectedContactImpl value,
+          $Res Function(_$OnSelectedContactImpl) then) =
+      __$$OnSelectedContactImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Contact contact});
 }
 
 /// @nodoc
-class __$$_OnSelectedContactCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_OnSelectedContact>
-    implements _$$_OnSelectedContactCopyWith<$Res> {
-  __$$_OnSelectedContactCopyWithImpl(
-      _$_OnSelectedContact _value, $Res Function(_$_OnSelectedContact) _then)
+class __$$OnSelectedContactImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnSelectedContactImpl>
+    implements _$$OnSelectedContactImplCopyWith<$Res> {
+  __$$OnSelectedContactImplCopyWithImpl(_$OnSelectedContactImpl _value,
+      $Res Function(_$OnSelectedContactImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -443,7 +444,7 @@ class __$$_OnSelectedContactCopyWithImpl<$Res>
   $Res call({
     Object? contact = freezed,
   }) {
-    return _then(_$_OnSelectedContact(
+    return _then(_$OnSelectedContactImpl(
       freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
@@ -454,8 +455,8 @@ class __$$_OnSelectedContactCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnSelectedContact implements _OnSelectedContact {
-  const _$_OnSelectedContact(this.contact);
+class _$OnSelectedContactImpl implements _OnSelectedContact {
+  const _$OnSelectedContactImpl(this.contact);
 
   @override
   final Contact contact;
@@ -466,10 +467,10 @@ class _$_OnSelectedContact implements _OnSelectedContact {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnSelectedContact &&
+            other is _$OnSelectedContactImpl &&
             const DeepCollectionEquality().equals(other.contact, contact));
   }
 
@@ -480,8 +481,8 @@ class _$_OnSelectedContact implements _OnSelectedContact {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnSelectedContactCopyWith<_$_OnSelectedContact> get copyWith =>
-      __$$_OnSelectedContactCopyWithImpl<_$_OnSelectedContact>(
+  _$$OnSelectedContactImplCopyWith<_$OnSelectedContactImpl> get copyWith =>
+      __$$OnSelectedContactImplCopyWithImpl<_$OnSelectedContactImpl>(
           this, _$identity);
 
   @override
@@ -597,29 +598,29 @@ class _$_OnSelectedContact implements _OnSelectedContact {
 
 abstract class _OnSelectedContact implements NewGroupEvent {
   const factory _OnSelectedContact(final Contact contact) =
-      _$_OnSelectedContact;
+      _$OnSelectedContactImpl;
 
   Contact get contact;
   @JsonKey(ignore: true)
-  _$$_OnSelectedContactCopyWith<_$_OnSelectedContact> get copyWith =>
+  _$$OnSelectedContactImplCopyWith<_$OnSelectedContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnRemovedContactCopyWith<$Res> {
-  factory _$$_OnRemovedContactCopyWith(
-          _$_OnRemovedContact value, $Res Function(_$_OnRemovedContact) then) =
-      __$$_OnRemovedContactCopyWithImpl<$Res>;
+abstract class _$$OnRemovedContactImplCopyWith<$Res> {
+  factory _$$OnRemovedContactImplCopyWith(_$OnRemovedContactImpl value,
+          $Res Function(_$OnRemovedContactImpl) then) =
+      __$$OnRemovedContactImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Contact contact});
 }
 
 /// @nodoc
-class __$$_OnRemovedContactCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_OnRemovedContact>
-    implements _$$_OnRemovedContactCopyWith<$Res> {
-  __$$_OnRemovedContactCopyWithImpl(
-      _$_OnRemovedContact _value, $Res Function(_$_OnRemovedContact) _then)
+class __$$OnRemovedContactImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnRemovedContactImpl>
+    implements _$$OnRemovedContactImplCopyWith<$Res> {
+  __$$OnRemovedContactImplCopyWithImpl(_$OnRemovedContactImpl _value,
+      $Res Function(_$OnRemovedContactImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -627,7 +628,7 @@ class __$$_OnRemovedContactCopyWithImpl<$Res>
   $Res call({
     Object? contact = freezed,
   }) {
-    return _then(_$_OnRemovedContact(
+    return _then(_$OnRemovedContactImpl(
       freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
@@ -638,8 +639,8 @@ class __$$_OnRemovedContactCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnRemovedContact implements _OnRemovedContact {
-  const _$_OnRemovedContact(this.contact);
+class _$OnRemovedContactImpl implements _OnRemovedContact {
+  const _$OnRemovedContactImpl(this.contact);
 
   @override
   final Contact contact;
@@ -650,10 +651,10 @@ class _$_OnRemovedContact implements _OnRemovedContact {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnRemovedContact &&
+            other is _$OnRemovedContactImpl &&
             const DeepCollectionEquality().equals(other.contact, contact));
   }
 
@@ -664,8 +665,9 @@ class _$_OnRemovedContact implements _OnRemovedContact {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnRemovedContactCopyWith<_$_OnRemovedContact> get copyWith =>
-      __$$_OnRemovedContactCopyWithImpl<_$_OnRemovedContact>(this, _$identity);
+  _$$OnRemovedContactImplCopyWith<_$OnRemovedContactImpl> get copyWith =>
+      __$$OnRemovedContactImplCopyWithImpl<_$OnRemovedContactImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -779,29 +781,30 @@ class _$_OnRemovedContact implements _OnRemovedContact {
 }
 
 abstract class _OnRemovedContact implements NewGroupEvent {
-  const factory _OnRemovedContact(final Contact contact) = _$_OnRemovedContact;
+  const factory _OnRemovedContact(final Contact contact) =
+      _$OnRemovedContactImpl;
 
   Contact get contact;
   @JsonKey(ignore: true)
-  _$$_OnRemovedContactCopyWith<_$_OnRemovedContact> get copyWith =>
+  _$$OnRemovedContactImplCopyWith<_$OnRemovedContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnChangedGroupNameCopyWith<$Res> {
-  factory _$$_OnChangedGroupNameCopyWith(_$_OnChangedGroupName value,
-          $Res Function(_$_OnChangedGroupName) then) =
-      __$$_OnChangedGroupNameCopyWithImpl<$Res>;
+abstract class _$$OnChangedGroupNameImplCopyWith<$Res> {
+  factory _$$OnChangedGroupNameImplCopyWith(_$OnChangedGroupNameImpl value,
+          $Res Function(_$OnChangedGroupNameImpl) then) =
+      __$$OnChangedGroupNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_OnChangedGroupNameCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_OnChangedGroupName>
-    implements _$$_OnChangedGroupNameCopyWith<$Res> {
-  __$$_OnChangedGroupNameCopyWithImpl(
-      _$_OnChangedGroupName _value, $Res Function(_$_OnChangedGroupName) _then)
+class __$$OnChangedGroupNameImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnChangedGroupNameImpl>
+    implements _$$OnChangedGroupNameImplCopyWith<$Res> {
+  __$$OnChangedGroupNameImplCopyWithImpl(_$OnChangedGroupNameImpl _value,
+      $Res Function(_$OnChangedGroupNameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -809,7 +812,7 @@ class __$$_OnChangedGroupNameCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_OnChangedGroupName(
+    return _then(_$OnChangedGroupNameImpl(
       null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -820,8 +823,8 @@ class __$$_OnChangedGroupNameCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnChangedGroupName implements _OnChangedGroupName {
-  const _$_OnChangedGroupName(this.name);
+class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
+  const _$OnChangedGroupNameImpl(this.name);
 
   @override
   final String name;
@@ -832,10 +835,10 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnChangedGroupName &&
+            other is _$OnChangedGroupNameImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -845,8 +848,8 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnChangedGroupNameCopyWith<_$_OnChangedGroupName> get copyWith =>
-      __$$_OnChangedGroupNameCopyWithImpl<_$_OnChangedGroupName>(
+  _$$OnChangedGroupNameImplCopyWith<_$OnChangedGroupNameImpl> get copyWith =>
+      __$$OnChangedGroupNameImplCopyWithImpl<_$OnChangedGroupNameImpl>(
           this, _$identity);
 
   @override
@@ -961,34 +964,35 @@ class _$_OnChangedGroupName implements _OnChangedGroupName {
 }
 
 abstract class _OnChangedGroupName implements NewGroupEvent {
-  const factory _OnChangedGroupName(final String name) = _$_OnChangedGroupName;
+  const factory _OnChangedGroupName(final String name) =
+      _$OnChangedGroupNameImpl;
 
   String get name;
   @JsonKey(ignore: true)
-  _$$_OnChangedGroupNameCopyWith<_$_OnChangedGroupName> get copyWith =>
+  _$$OnChangedGroupNameImplCopyWith<_$OnChangedGroupNameImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnCreateNewGroupCopyWith<$Res> {
-  factory _$$_OnCreateNewGroupCopyWith(
-          _$_OnCreateNewGroup value, $Res Function(_$_OnCreateNewGroup) then) =
-      __$$_OnCreateNewGroupCopyWithImpl<$Res>;
+abstract class _$$OnCreateNewGroupImplCopyWith<$Res> {
+  factory _$$OnCreateNewGroupImplCopyWith(_$OnCreateNewGroupImpl value,
+          $Res Function(_$OnCreateNewGroupImpl) then) =
+      __$$OnCreateNewGroupImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnCreateNewGroupCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_OnCreateNewGroup>
-    implements _$$_OnCreateNewGroupCopyWith<$Res> {
-  __$$_OnCreateNewGroupCopyWithImpl(
-      _$_OnCreateNewGroup _value, $Res Function(_$_OnCreateNewGroup) _then)
+class __$$OnCreateNewGroupImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnCreateNewGroupImpl>
+    implements _$$OnCreateNewGroupImplCopyWith<$Res> {
+  __$$OnCreateNewGroupImplCopyWithImpl(_$OnCreateNewGroupImpl _value,
+      $Res Function(_$OnCreateNewGroupImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnCreateNewGroup implements _OnCreateNewGroup {
-  const _$_OnCreateNewGroup();
+class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
+  const _$OnCreateNewGroupImpl();
 
   @override
   String toString() {
@@ -996,9 +1000,9 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnCreateNewGroup);
+        (other.runtimeType == runtimeType && other is _$OnCreateNewGroupImpl);
   }
 
   @override
@@ -1116,24 +1120,24 @@ class _$_OnCreateNewGroup implements _OnCreateNewGroup {
 }
 
 abstract class _OnCreateNewGroup implements NewGroupEvent {
-  const factory _OnCreateNewGroup() = _$_OnCreateNewGroup;
+  const factory _OnCreateNewGroup() = _$OnCreateNewGroupImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnSelectedContactsCopyWith<$Res> {
-  factory _$$_OnSelectedContactsCopyWith(_$_OnSelectedContacts value,
-          $Res Function(_$_OnSelectedContacts) then) =
-      __$$_OnSelectedContactsCopyWithImpl<$Res>;
+abstract class _$$OnSelectedContactsImplCopyWith<$Res> {
+  factory _$$OnSelectedContactsImplCopyWith(_$OnSelectedContactsImpl value,
+          $Res Function(_$OnSelectedContactsImpl) then) =
+      __$$OnSelectedContactsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Contact> contacts});
 }
 
 /// @nodoc
-class __$$_OnSelectedContactsCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_OnSelectedContacts>
-    implements _$$_OnSelectedContactsCopyWith<$Res> {
-  __$$_OnSelectedContactsCopyWithImpl(
-      _$_OnSelectedContacts _value, $Res Function(_$_OnSelectedContacts) _then)
+class __$$OnSelectedContactsImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnSelectedContactsImpl>
+    implements _$$OnSelectedContactsImplCopyWith<$Res> {
+  __$$OnSelectedContactsImplCopyWithImpl(_$OnSelectedContactsImpl _value,
+      $Res Function(_$OnSelectedContactsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1141,7 +1145,7 @@ class __$$_OnSelectedContactsCopyWithImpl<$Res>
   $Res call({
     Object? contacts = null,
   }) {
-    return _then(_$_OnSelectedContacts(
+    return _then(_$OnSelectedContactsImpl(
       null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -1152,8 +1156,8 @@ class __$$_OnSelectedContactsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnSelectedContacts implements _OnSelectedContacts {
-  const _$_OnSelectedContacts(final List<Contact> contacts)
+class _$OnSelectedContactsImpl implements _OnSelectedContacts {
+  const _$OnSelectedContactsImpl(final List<Contact> contacts)
       : _contacts = contacts;
 
   final List<Contact> _contacts;
@@ -1170,10 +1174,10 @@ class _$_OnSelectedContacts implements _OnSelectedContacts {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnSelectedContacts &&
+            other is _$OnSelectedContactsImpl &&
             const DeepCollectionEquality().equals(other._contacts, _contacts));
   }
 
@@ -1184,8 +1188,8 @@ class _$_OnSelectedContacts implements _OnSelectedContacts {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnSelectedContactsCopyWith<_$_OnSelectedContacts> get copyWith =>
-      __$$_OnSelectedContactsCopyWithImpl<_$_OnSelectedContacts>(
+  _$$OnSelectedContactsImplCopyWith<_$OnSelectedContactsImpl> get copyWith =>
+      __$$OnSelectedContactsImplCopyWithImpl<_$OnSelectedContactsImpl>(
           this, _$identity);
 
   @override
@@ -1301,31 +1305,31 @@ class _$_OnSelectedContacts implements _OnSelectedContacts {
 
 abstract class _OnSelectedContacts implements NewGroupEvent {
   const factory _OnSelectedContacts(final List<Contact> contacts) =
-      _$_OnSelectedContacts;
+      _$OnSelectedContactsImpl;
 
   List<Contact> get contacts;
   @JsonKey(ignore: true)
-  _$$_OnSelectedContactsCopyWith<_$_OnSelectedContacts> get copyWith =>
+  _$$OnSelectedContactsImplCopyWith<_$OnSelectedContactsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnFrequencyIntervalChangedCopyWith<$Res> {
-  factory _$$_OnFrequencyIntervalChangedCopyWith(
-          _$_OnFrequencyIntervalChanged value,
-          $Res Function(_$_OnFrequencyIntervalChanged) then) =
-      __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>;
+abstract class _$$OnFrequencyIntervalChangedImplCopyWith<$Res> {
+  factory _$$OnFrequencyIntervalChangedImplCopyWith(
+          _$OnFrequencyIntervalChangedImpl value,
+          $Res Function(_$OnFrequencyIntervalChangedImpl) then) =
+      __$$OnFrequencyIntervalChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({FrequencyIntervalType frequencyIntervalType});
 }
 
 /// @nodoc
-class __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_OnFrequencyIntervalChanged>
-    implements _$$_OnFrequencyIntervalChangedCopyWith<$Res> {
-  __$$_OnFrequencyIntervalChangedCopyWithImpl(
-      _$_OnFrequencyIntervalChanged _value,
-      $Res Function(_$_OnFrequencyIntervalChanged) _then)
+class __$$OnFrequencyIntervalChangedImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnFrequencyIntervalChangedImpl>
+    implements _$$OnFrequencyIntervalChangedImplCopyWith<$Res> {
+  __$$OnFrequencyIntervalChangedImplCopyWithImpl(
+      _$OnFrequencyIntervalChangedImpl _value,
+      $Res Function(_$OnFrequencyIntervalChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1333,7 +1337,7 @@ class __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>
   $Res call({
     Object? frequencyIntervalType = null,
   }) {
-    return _then(_$_OnFrequencyIntervalChanged(
+    return _then(_$OnFrequencyIntervalChangedImpl(
       null == frequencyIntervalType
           ? _value.frequencyIntervalType
           : frequencyIntervalType // ignore: cast_nullable_to_non_nullable
@@ -1344,8 +1348,8 @@ class __$$_OnFrequencyIntervalChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
-  const _$_OnFrequencyIntervalChanged(this.frequencyIntervalType);
+class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
+  const _$OnFrequencyIntervalChangedImpl(this.frequencyIntervalType);
 
   @override
   final FrequencyIntervalType frequencyIntervalType;
@@ -1356,10 +1360,10 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnFrequencyIntervalChanged &&
+            other is _$OnFrequencyIntervalChangedImpl &&
             (identical(other.frequencyIntervalType, frequencyIntervalType) ||
                 other.frequencyIntervalType == frequencyIntervalType));
   }
@@ -1370,9 +1374,9 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnFrequencyIntervalChangedCopyWith<_$_OnFrequencyIntervalChanged>
-      get copyWith => __$$_OnFrequencyIntervalChangedCopyWithImpl<
-          _$_OnFrequencyIntervalChanged>(this, _$identity);
+  _$$OnFrequencyIntervalChangedImplCopyWith<_$OnFrequencyIntervalChangedImpl>
+      get copyWith => __$$OnFrequencyIntervalChangedImplCopyWithImpl<
+          _$OnFrequencyIntervalChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1488,29 +1492,29 @@ class _$_OnFrequencyIntervalChanged implements _OnFrequencyIntervalChanged {
 abstract class _OnFrequencyIntervalChanged implements NewGroupEvent {
   const factory _OnFrequencyIntervalChanged(
           final FrequencyIntervalType frequencyIntervalType) =
-      _$_OnFrequencyIntervalChanged;
+      _$OnFrequencyIntervalChangedImpl;
 
   FrequencyIntervalType get frequencyIntervalType;
   @JsonKey(ignore: true)
-  _$$_OnFrequencyIntervalChangedCopyWith<_$_OnFrequencyIntervalChanged>
+  _$$OnFrequencyIntervalChangedImplCopyWith<_$OnFrequencyIntervalChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnChangedAvatarCopyWith<$Res> {
-  factory _$$_OnChangedAvatarCopyWith(
-          _$_OnChangedAvatar value, $Res Function(_$_OnChangedAvatar) then) =
-      __$$_OnChangedAvatarCopyWithImpl<$Res>;
+abstract class _$$OnChangedAvatarImplCopyWith<$Res> {
+  factory _$$OnChangedAvatarImplCopyWith(_$OnChangedAvatarImpl value,
+          $Res Function(_$OnChangedAvatarImpl) then) =
+      __$$OnChangedAvatarImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File file});
 }
 
 /// @nodoc
-class __$$_OnChangedAvatarCopyWithImpl<$Res>
-    extends _$NewGroupEventCopyWithImpl<$Res, _$_OnChangedAvatar>
-    implements _$$_OnChangedAvatarCopyWith<$Res> {
-  __$$_OnChangedAvatarCopyWithImpl(
-      _$_OnChangedAvatar _value, $Res Function(_$_OnChangedAvatar) _then)
+class __$$OnChangedAvatarImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnChangedAvatarImpl>
+    implements _$$OnChangedAvatarImplCopyWith<$Res> {
+  __$$OnChangedAvatarImplCopyWithImpl(
+      _$OnChangedAvatarImpl _value, $Res Function(_$OnChangedAvatarImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1518,7 +1522,7 @@ class __$$_OnChangedAvatarCopyWithImpl<$Res>
   $Res call({
     Object? file = null,
   }) {
-    return _then(_$_OnChangedAvatar(
+    return _then(_$OnChangedAvatarImpl(
       null == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -1529,8 +1533,8 @@ class __$$_OnChangedAvatarCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnChangedAvatar implements _OnChangedAvatar {
-  const _$_OnChangedAvatar(this.file);
+class _$OnChangedAvatarImpl implements _OnChangedAvatar {
+  const _$OnChangedAvatarImpl(this.file);
 
   @override
   final File file;
@@ -1541,10 +1545,10 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnChangedAvatar &&
+            other is _$OnChangedAvatarImpl &&
             (identical(other.file, file) || other.file == file));
   }
 
@@ -1554,8 +1558,9 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
-      __$$_OnChangedAvatarCopyWithImpl<_$_OnChangedAvatar>(this, _$identity);
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
+      __$$OnChangedAvatarImplCopyWithImpl<_$OnChangedAvatarImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1669,11 +1674,11 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
 }
 
 abstract class _OnChangedAvatar implements NewGroupEvent {
-  const factory _OnChangedAvatar(final File file) = _$_OnChangedAvatar;
+  const factory _OnChangedAvatar(final File file) = _$OnChangedAvatarImpl;
 
   File get file;
   @JsonKey(ignore: true)
-  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1779,11 +1784,11 @@ class _$NewGroupStateCopyWithImpl<$Res, $Val extends NewGroupState>
 }
 
 /// @nodoc
-abstract class _$$_NewGroupStateCopyWith<$Res>
+abstract class _$$NewGroupStateImplCopyWith<$Res>
     implements $NewGroupStateCopyWith<$Res> {
-  factory _$$_NewGroupStateCopyWith(
-          _$_NewGroupState value, $Res Function(_$_NewGroupState) then) =
-      __$$_NewGroupStateCopyWithImpl<$Res>;
+  factory _$$NewGroupStateImplCopyWith(
+          _$NewGroupStateImpl value, $Res Function(_$NewGroupStateImpl) then) =
+      __$$NewGroupStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1801,11 +1806,11 @@ abstract class _$$_NewGroupStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NewGroupStateCopyWithImpl<$Res>
-    extends _$NewGroupStateCopyWithImpl<$Res, _$_NewGroupState>
-    implements _$$_NewGroupStateCopyWith<$Res> {
-  __$$_NewGroupStateCopyWithImpl(
-      _$_NewGroupState _value, $Res Function(_$_NewGroupState) _then)
+class __$$NewGroupStateImplCopyWithImpl<$Res>
+    extends _$NewGroupStateCopyWithImpl<$Res, _$NewGroupStateImpl>
+    implements _$$NewGroupStateImplCopyWith<$Res> {
+  __$$NewGroupStateImplCopyWithImpl(
+      _$NewGroupStateImpl _value, $Res Function(_$NewGroupStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1818,7 +1823,7 @@ class __$$_NewGroupStateCopyWithImpl<$Res>
     Object? groupRequest = null,
     Object? avatar = freezed,
   }) {
-    return _then(_$_NewGroupState(
+    return _then(_$NewGroupStateImpl(
       pageState: null == pageState
           ? _value.pageState
           : pageState // ignore: cast_nullable_to_non_nullable
@@ -1849,8 +1854,8 @@ class __$$_NewGroupStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NewGroupState extends _NewGroupState {
-  const _$_NewGroupState(
+class _$NewGroupStateImpl extends _NewGroupState {
+  const _$NewGroupStateImpl(
       {this.pageState = PageState.loading,
       this.pageCommand,
       this.isLoading = false,
@@ -1890,10 +1895,10 @@ class _$_NewGroupState extends _NewGroupState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewGroupState &&
+            other is _$NewGroupStateImpl &&
             (identical(other.pageState, pageState) ||
                 other.pageState == pageState) &&
             (identical(other.pageCommand, pageCommand) ||
@@ -1920,8 +1925,8 @@ class _$_NewGroupState extends _NewGroupState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NewGroupStateCopyWith<_$_NewGroupState> get copyWith =>
-      __$$_NewGroupStateCopyWithImpl<_$_NewGroupState>(this, _$identity);
+  _$$NewGroupStateImplCopyWith<_$NewGroupStateImpl> get copyWith =>
+      __$$NewGroupStateImplCopyWithImpl<_$NewGroupStateImpl>(this, _$identity);
 }
 
 abstract class _NewGroupState extends NewGroupState {
@@ -1931,7 +1936,7 @@ abstract class _NewGroupState extends NewGroupState {
       final bool isLoading,
       final List<Contact> selectedContacts,
       final GroupRequest groupRequest,
-      final File? avatar}) = _$_NewGroupState;
+      final File? avatar}) = _$NewGroupStateImpl;
   const _NewGroupState._() : super._();
 
   @override
@@ -1948,6 +1953,6 @@ abstract class _NewGroupState extends NewGroupState {
   File? get avatar;
   @override
   @JsonKey(ignore: true)
-  _$$_NewGroupStateCopyWith<_$_NewGroupState> get copyWith =>
+  _$$NewGroupStateImplCopyWith<_$NewGroupStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -25,7 +25,7 @@ class AddContactsToGroupContacts extends StatelessWidget {
         final List<ContactRequest> selectedContacts = [...state.selectedContacts];
         final List<ContactRequest> contacts = [
           // Get all contacts that don't belong to any other group
-          ...state.filterContacts.where((element) => element.groupId.isEmpty).toList()
+          ...state.filterContacts.where((element) => element.groupId.isEmpty)
         ];
         // Remove all contacts belonging to selected groups
         contacts.removeWhere((element) => selectedContacts.contains(element));

@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomCircularProgress extends StatelessWidget {
-  const CustomCircularProgress({Key? key}) : super(key: key);
+  const CustomCircularProgress({super.key});
 
   @override
   Widget build(BuildContext context) {

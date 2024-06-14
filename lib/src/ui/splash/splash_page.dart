@@ -10,7 +10,7 @@ import 'package:keepup/src/ui/splash/components/splash_view.dart';
 import 'package:keepup/src/ui/splash/interactor/splash_bloc.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -6,8 +6,8 @@ part of 'group_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
-    _$_GroupRequest(
+_$GroupRequestImpl _$$GroupRequestImplFromJson(Map<String, dynamic> json) =>
+    _$GroupRequestImpl(
       groupId: json['id'] as String? ?? '',
       ownerId: json['owner_id'] as String? ?? '',
       name: json['name'] as String? ?? '',
@@ -24,7 +24,7 @@ _$_GroupRequest _$$_GroupRequestFromJson(Map<String, dynamic> json) =>
       dateCreated: const DateTimeJsonConverter().fromJson(json['date_created']),
     );
 
-Map<String, dynamic> _$$_GroupRequestToJson(_$_GroupRequest instance) {
+Map<String, dynamic> _$$GroupRequestImplToJson(_$GroupRequestImpl instance) {
   final val = <String, dynamic>{
     'owner_id': instance.ownerId,
     'name': instance.name,
