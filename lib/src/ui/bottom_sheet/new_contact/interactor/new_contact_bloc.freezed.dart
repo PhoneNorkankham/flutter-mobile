@@ -12,7 +12,7 @@ part of 'new_contact_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NewContactEvent {
@@ -102,24 +102,25 @@ class _$NewContactEventCopyWithImpl<$Res, $Val extends NewContactEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$NewContactEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$NewContactEventCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -127,9 +128,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -226,29 +227,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements NewContactEvent {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_ClearPageCommandCopyWith<$Res> {
-  factory _$$_ClearPageCommandCopyWith(
-          _$_ClearPageCommand value, $Res Function(_$_ClearPageCommand) then) =
-      __$$_ClearPageCommandCopyWithImpl<$Res>;
+abstract class _$$ClearPageCommandImplCopyWith<$Res> {
+  factory _$$ClearPageCommandImplCopyWith(_$ClearPageCommandImpl value,
+          $Res Function(_$ClearPageCommandImpl) then) =
+      __$$ClearPageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearPageCommandCopyWithImpl<$Res>
-    extends _$NewContactEventCopyWithImpl<$Res, _$_ClearPageCommand>
-    implements _$$_ClearPageCommandCopyWith<$Res> {
-  __$$_ClearPageCommandCopyWithImpl(
-      _$_ClearPageCommand _value, $Res Function(_$_ClearPageCommand) _then)
+class __$$ClearPageCommandImplCopyWithImpl<$Res>
+    extends _$NewContactEventCopyWithImpl<$Res, _$ClearPageCommandImpl>
+    implements _$$ClearPageCommandImplCopyWith<$Res> {
+  __$$ClearPageCommandImplCopyWithImpl(_$ClearPageCommandImpl _value,
+      $Res Function(_$ClearPageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearPageCommand implements _ClearPageCommand {
-  const _$_ClearPageCommand();
+class _$ClearPageCommandImpl implements _ClearPageCommand {
+  const _$ClearPageCommandImpl();
 
   @override
   String toString() {
@@ -256,9 +257,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearPageCommand);
+        (other.runtimeType == runtimeType && other is _$ClearPageCommandImpl);
   }
 
   @override
@@ -355,24 +356,24 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 }
 
 abstract class _ClearPageCommand implements NewContactEvent {
-  const factory _ClearPageCommand() = _$_ClearPageCommand;
+  const factory _ClearPageCommand() = _$ClearPageCommandImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnSelectedGroupCopyWith<$Res> {
-  factory _$$_OnSelectedGroupCopyWith(
-          _$_OnSelectedGroup value, $Res Function(_$_OnSelectedGroup) then) =
-      __$$_OnSelectedGroupCopyWithImpl<$Res>;
+abstract class _$$OnSelectedGroupImplCopyWith<$Res> {
+  factory _$$OnSelectedGroupImplCopyWith(_$OnSelectedGroupImpl value,
+          $Res Function(_$OnSelectedGroupImpl) then) =
+      __$$OnSelectedGroupImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Group group});
 }
 
 /// @nodoc
-class __$$_OnSelectedGroupCopyWithImpl<$Res>
-    extends _$NewContactEventCopyWithImpl<$Res, _$_OnSelectedGroup>
-    implements _$$_OnSelectedGroupCopyWith<$Res> {
-  __$$_OnSelectedGroupCopyWithImpl(
-      _$_OnSelectedGroup _value, $Res Function(_$_OnSelectedGroup) _then)
+class __$$OnSelectedGroupImplCopyWithImpl<$Res>
+    extends _$NewContactEventCopyWithImpl<$Res, _$OnSelectedGroupImpl>
+    implements _$$OnSelectedGroupImplCopyWith<$Res> {
+  __$$OnSelectedGroupImplCopyWithImpl(
+      _$OnSelectedGroupImpl _value, $Res Function(_$OnSelectedGroupImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -380,7 +381,7 @@ class __$$_OnSelectedGroupCopyWithImpl<$Res>
   $Res call({
     Object? group = freezed,
   }) {
-    return _then(_$_OnSelectedGroup(
+    return _then(_$OnSelectedGroupImpl(
       freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
@@ -391,8 +392,8 @@ class __$$_OnSelectedGroupCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnSelectedGroup implements _OnSelectedGroup {
-  const _$_OnSelectedGroup(this.group);
+class _$OnSelectedGroupImpl implements _OnSelectedGroup {
+  const _$OnSelectedGroupImpl(this.group);
 
   @override
   final Group group;
@@ -403,10 +404,10 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnSelectedGroup &&
+            other is _$OnSelectedGroupImpl &&
             const DeepCollectionEquality().equals(other.group, group));
   }
 
@@ -417,8 +418,9 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnSelectedGroupCopyWith<_$_OnSelectedGroup> get copyWith =>
-      __$$_OnSelectedGroupCopyWithImpl<_$_OnSelectedGroup>(this, _$identity);
+  _$$OnSelectedGroupImplCopyWith<_$OnSelectedGroupImpl> get copyWith =>
+      __$$OnSelectedGroupImplCopyWithImpl<_$OnSelectedGroupImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -511,34 +513,34 @@ class _$_OnSelectedGroup implements _OnSelectedGroup {
 }
 
 abstract class _OnSelectedGroup implements NewContactEvent {
-  const factory _OnSelectedGroup(final Group group) = _$_OnSelectedGroup;
+  const factory _OnSelectedGroup(final Group group) = _$OnSelectedGroupImpl;
 
   Group get group;
   @JsonKey(ignore: true)
-  _$$_OnSelectedGroupCopyWith<_$_OnSelectedGroup> get copyWith =>
+  _$$OnSelectedGroupImplCopyWith<_$OnSelectedGroupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnCreateNewContactCopyWith<$Res> {
-  factory _$$_OnCreateNewContactCopyWith(_$_OnCreateNewContact value,
-          $Res Function(_$_OnCreateNewContact) then) =
-      __$$_OnCreateNewContactCopyWithImpl<$Res>;
+abstract class _$$OnCreateNewContactImplCopyWith<$Res> {
+  factory _$$OnCreateNewContactImplCopyWith(_$OnCreateNewContactImpl value,
+          $Res Function(_$OnCreateNewContactImpl) then) =
+      __$$OnCreateNewContactImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnCreateNewContactCopyWithImpl<$Res>
-    extends _$NewContactEventCopyWithImpl<$Res, _$_OnCreateNewContact>
-    implements _$$_OnCreateNewContactCopyWith<$Res> {
-  __$$_OnCreateNewContactCopyWithImpl(
-      _$_OnCreateNewContact _value, $Res Function(_$_OnCreateNewContact) _then)
+class __$$OnCreateNewContactImplCopyWithImpl<$Res>
+    extends _$NewContactEventCopyWithImpl<$Res, _$OnCreateNewContactImpl>
+    implements _$$OnCreateNewContactImplCopyWith<$Res> {
+  __$$OnCreateNewContactImplCopyWithImpl(_$OnCreateNewContactImpl _value,
+      $Res Function(_$OnCreateNewContactImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnCreateNewContact implements _OnCreateNewContact {
-  const _$_OnCreateNewContact();
+class _$OnCreateNewContactImpl implements _OnCreateNewContact {
+  const _$OnCreateNewContactImpl();
 
   @override
   String toString() {
@@ -546,9 +548,9 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnCreateNewContact);
+        (other.runtimeType == runtimeType && other is _$OnCreateNewContactImpl);
   }
 
   @override
@@ -645,24 +647,24 @@ class _$_OnCreateNewContact implements _OnCreateNewContact {
 }
 
 abstract class _OnCreateNewContact implements NewContactEvent {
-  const factory _OnCreateNewContact() = _$_OnCreateNewContact;
+  const factory _OnCreateNewContact() = _$OnCreateNewContactImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnInputChangedCopyWith<$Res> {
-  factory _$$_OnInputChangedCopyWith(
-          _$_OnInputChanged value, $Res Function(_$_OnInputChanged) then) =
-      __$$_OnInputChangedCopyWithImpl<$Res>;
+abstract class _$$OnInputChangedImplCopyWith<$Res> {
+  factory _$$OnInputChangedImplCopyWith(_$OnInputChangedImpl value,
+          $Res Function(_$OnInputChangedImpl) then) =
+      __$$OnInputChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({NewContactInputType inputType, String value});
 }
 
 /// @nodoc
-class __$$_OnInputChangedCopyWithImpl<$Res>
-    extends _$NewContactEventCopyWithImpl<$Res, _$_OnInputChanged>
-    implements _$$_OnInputChangedCopyWith<$Res> {
-  __$$_OnInputChangedCopyWithImpl(
-      _$_OnInputChanged _value, $Res Function(_$_OnInputChanged) _then)
+class __$$OnInputChangedImplCopyWithImpl<$Res>
+    extends _$NewContactEventCopyWithImpl<$Res, _$OnInputChangedImpl>
+    implements _$$OnInputChangedImplCopyWith<$Res> {
+  __$$OnInputChangedImplCopyWithImpl(
+      _$OnInputChangedImpl _value, $Res Function(_$OnInputChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -671,7 +673,7 @@ class __$$_OnInputChangedCopyWithImpl<$Res>
     Object? inputType = null,
     Object? value = null,
   }) {
-    return _then(_$_OnInputChanged(
+    return _then(_$OnInputChangedImpl(
       null == inputType
           ? _value.inputType
           : inputType // ignore: cast_nullable_to_non_nullable
@@ -686,8 +688,8 @@ class __$$_OnInputChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnInputChanged implements _OnInputChanged {
-  const _$_OnInputChanged(this.inputType, this.value);
+class _$OnInputChangedImpl implements _OnInputChanged {
+  const _$OnInputChangedImpl(this.inputType, this.value);
 
   @override
   final NewContactInputType inputType;
@@ -700,10 +702,10 @@ class _$_OnInputChanged implements _OnInputChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnInputChanged &&
+            other is _$OnInputChangedImpl &&
             (identical(other.inputType, inputType) ||
                 other.inputType == inputType) &&
             (identical(other.value, value) || other.value == value));
@@ -715,8 +717,9 @@ class _$_OnInputChanged implements _OnInputChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnInputChangedCopyWith<_$_OnInputChanged> get copyWith =>
-      __$$_OnInputChangedCopyWithImpl<_$_OnInputChanged>(this, _$identity);
+  _$$OnInputChangedImplCopyWith<_$OnInputChangedImpl> get copyWith =>
+      __$$OnInputChangedImplCopyWithImpl<_$OnInputChangedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -811,30 +814,30 @@ class _$_OnInputChanged implements _OnInputChanged {
 abstract class _OnInputChanged implements NewContactEvent {
   const factory _OnInputChanged(
           final NewContactInputType inputType, final String value) =
-      _$_OnInputChanged;
+      _$OnInputChangedImpl;
 
   NewContactInputType get inputType;
   String get value;
   @JsonKey(ignore: true)
-  _$$_OnInputChangedCopyWith<_$_OnInputChanged> get copyWith =>
+  _$$OnInputChangedImplCopyWith<_$OnInputChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnChangedAvatarCopyWith<$Res> {
-  factory _$$_OnChangedAvatarCopyWith(
-          _$_OnChangedAvatar value, $Res Function(_$_OnChangedAvatar) then) =
-      __$$_OnChangedAvatarCopyWithImpl<$Res>;
+abstract class _$$OnChangedAvatarImplCopyWith<$Res> {
+  factory _$$OnChangedAvatarImplCopyWith(_$OnChangedAvatarImpl value,
+          $Res Function(_$OnChangedAvatarImpl) then) =
+      __$$OnChangedAvatarImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File file});
 }
 
 /// @nodoc
-class __$$_OnChangedAvatarCopyWithImpl<$Res>
-    extends _$NewContactEventCopyWithImpl<$Res, _$_OnChangedAvatar>
-    implements _$$_OnChangedAvatarCopyWith<$Res> {
-  __$$_OnChangedAvatarCopyWithImpl(
-      _$_OnChangedAvatar _value, $Res Function(_$_OnChangedAvatar) _then)
+class __$$OnChangedAvatarImplCopyWithImpl<$Res>
+    extends _$NewContactEventCopyWithImpl<$Res, _$OnChangedAvatarImpl>
+    implements _$$OnChangedAvatarImplCopyWith<$Res> {
+  __$$OnChangedAvatarImplCopyWithImpl(
+      _$OnChangedAvatarImpl _value, $Res Function(_$OnChangedAvatarImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -842,7 +845,7 @@ class __$$_OnChangedAvatarCopyWithImpl<$Res>
   $Res call({
     Object? file = null,
   }) {
-    return _then(_$_OnChangedAvatar(
+    return _then(_$OnChangedAvatarImpl(
       null == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -853,8 +856,8 @@ class __$$_OnChangedAvatarCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnChangedAvatar implements _OnChangedAvatar {
-  const _$_OnChangedAvatar(this.file);
+class _$OnChangedAvatarImpl implements _OnChangedAvatar {
+  const _$OnChangedAvatarImpl(this.file);
 
   @override
   final File file;
@@ -865,10 +868,10 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnChangedAvatar &&
+            other is _$OnChangedAvatarImpl &&
             (identical(other.file, file) || other.file == file));
   }
 
@@ -878,8 +881,9 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
-      __$$_OnChangedAvatarCopyWithImpl<_$_OnChangedAvatar>(this, _$identity);
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
+      __$$OnChangedAvatarImplCopyWithImpl<_$OnChangedAvatarImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -972,11 +976,11 @@ class _$_OnChangedAvatar implements _OnChangedAvatar {
 }
 
 abstract class _OnChangedAvatar implements NewContactEvent {
-  const factory _OnChangedAvatar(final File file) = _$_OnChangedAvatar;
+  const factory _OnChangedAvatar(final File file) = _$OnChangedAvatarImpl;
 
   File get file;
   @JsonKey(ignore: true)
-  _$$_OnChangedAvatarCopyWith<_$_OnChangedAvatar> get copyWith =>
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1089,11 +1093,11 @@ class _$NewContactStateCopyWithImpl<$Res, $Val extends NewContactState>
 }
 
 /// @nodoc
-abstract class _$$_NewContactStateCopyWith<$Res>
+abstract class _$$NewContactStateImplCopyWith<$Res>
     implements $NewContactStateCopyWith<$Res> {
-  factory _$$_NewContactStateCopyWith(
-          _$_NewContactState value, $Res Function(_$_NewContactState) then) =
-      __$$_NewContactStateCopyWithImpl<$Res>;
+  factory _$$NewContactStateImplCopyWith(_$NewContactStateImpl value,
+          $Res Function(_$NewContactStateImpl) then) =
+      __$$NewContactStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1112,11 +1116,11 @@ abstract class _$$_NewContactStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NewContactStateCopyWithImpl<$Res>
-    extends _$NewContactStateCopyWithImpl<$Res, _$_NewContactState>
-    implements _$$_NewContactStateCopyWith<$Res> {
-  __$$_NewContactStateCopyWithImpl(
-      _$_NewContactState _value, $Res Function(_$_NewContactState) _then)
+class __$$NewContactStateImplCopyWithImpl<$Res>
+    extends _$NewContactStateCopyWithImpl<$Res, _$NewContactStateImpl>
+    implements _$$NewContactStateImplCopyWith<$Res> {
+  __$$NewContactStateImplCopyWithImpl(
+      _$NewContactStateImpl _value, $Res Function(_$NewContactStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1130,7 +1134,7 @@ class __$$_NewContactStateCopyWithImpl<$Res>
     Object? contactRequest = null,
     Object? avatar = freezed,
   }) {
-    return _then(_$_NewContactState(
+    return _then(_$NewContactStateImpl(
       pageState: null == pageState
           ? _value.pageState
           : pageState // ignore: cast_nullable_to_non_nullable
@@ -1165,8 +1169,8 @@ class __$$_NewContactStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NewContactState extends _NewContactState {
-  const _$_NewContactState(
+class _$NewContactStateImpl extends _NewContactState {
+  const _$NewContactStateImpl(
       {this.pageState = PageState.loading,
       this.pageCommand,
       this.isLoading = false,
@@ -1208,10 +1212,10 @@ class _$_NewContactState extends _NewContactState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewContactState &&
+            other is _$NewContactStateImpl &&
             (identical(other.pageState, pageState) ||
                 other.pageState == pageState) &&
             (identical(other.pageCommand, pageCommand) ||
@@ -1240,8 +1244,9 @@ class _$_NewContactState extends _NewContactState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NewContactStateCopyWith<_$_NewContactState> get copyWith =>
-      __$$_NewContactStateCopyWithImpl<_$_NewContactState>(this, _$identity);
+  _$$NewContactStateImplCopyWith<_$NewContactStateImpl> get copyWith =>
+      __$$NewContactStateImplCopyWithImpl<_$NewContactStateImpl>(
+          this, _$identity);
 }
 
 abstract class _NewContactState extends NewContactState {
@@ -1252,7 +1257,7 @@ abstract class _NewContactState extends NewContactState {
       final List<Group> groups,
       final Group? selectedGroup,
       final ContactRequest contactRequest,
-      final File? avatar}) = _$_NewContactState;
+      final File? avatar}) = _$NewContactStateImpl;
   const _NewContactState._() : super._();
 
   @override
@@ -1271,6 +1276,6 @@ abstract class _NewContactState extends NewContactState {
   File? get avatar;
   @override
   @JsonKey(ignore: true)
-  _$$_NewContactStateCopyWith<_$_NewContactState> get copyWith =>
+  _$$NewContactStateImplCopyWith<_$NewContactStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

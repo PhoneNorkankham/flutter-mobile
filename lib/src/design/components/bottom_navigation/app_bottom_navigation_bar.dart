@@ -5,7 +5,7 @@ import 'package:keepup/src/enums/bottom_nav_type.dart';
 class AppBottomNavigationBar extends StatelessWidget {
   final BottomNavType? selectedType;
 
-  const AppBottomNavigationBar({Key? key, this.selectedType}) : super(key: key);
+  const AppBottomNavigationBar({super.key, this.selectedType});
 
   @override
   Widget build(BuildContext context) {

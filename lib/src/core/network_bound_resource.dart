@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:keepup/src/core/resource.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -61,9 +60,7 @@ class NetworkBoundResource<RequestType, ResultType> {
       }
     }).catchError((e) async {
       ResultType? data = await loadFromDb?.call(); // call request from database
-      if (e is DioException) {
-        _result.complete(Resource.withError(e, data: data));
-      } else if (e is PostgrestException) {
+      if (e is PostgrestException) {
         _result.complete(Resource(
           data: data,
           message: e.message,

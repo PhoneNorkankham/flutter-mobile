@@ -6,8 +6,8 @@ part of 'contact_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
-    _$_ContactRequest(
+_$ContactRequestImpl _$$ContactRequestImplFromJson(Map<String, dynamic> json) =>
+    _$ContactRequestImpl(
       contactId: json['id'] as String? ?? '',
       ownerId: json['owner_id'] as String? ?? '',
       groupId: json['group_id'] as String? ?? '',
@@ -21,7 +21,8 @@ _$_ContactRequest _$$_ContactRequestFromJson(Map<String, dynamic> json) =>
       dateCreated: const DateTimeJsonConverter().fromJson(json['date_created']),
     );
 
-Map<String, dynamic> _$$_ContactRequestToJson(_$_ContactRequest instance) {
+Map<String, dynamic> _$$ContactRequestImplToJson(
+    _$ContactRequestImpl instance) {
   final val = <String, dynamic>{
     'owner_id': instance.ownerId,
     'group_id': instance.groupId,

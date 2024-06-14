@@ -14,7 +14,7 @@ class ExpandedChildScrollView extends StatelessWidget {
   final bool Function(ScrollNotification scrollNotification)? onNotification;
 
   const ExpandedChildScrollView(
-      {Key? key,
+      {super.key,
       this.child,
       this.primary,
       this.reverse,
@@ -24,8 +24,7 @@ class ExpandedChildScrollView extends StatelessWidget {
       this.controller,
       this.dragStartBehavior,
       this.scrollBehavior,
-      this.onNotification})
-      : super(key: key);
+      this.onNotification});
 
   @override
   Widget build(BuildContext context) {

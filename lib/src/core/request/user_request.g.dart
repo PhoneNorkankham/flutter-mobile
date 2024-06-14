@@ -6,8 +6,8 @@ part of 'user_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserRequest _$$_UserRequestFromJson(Map<String, dynamic> json) =>
-    _$_UserRequest(
+_$UserRequestImpl _$$UserRequestImplFromJson(Map<String, dynamic> json) =>
+    _$UserRequestImpl(
       id: json['id'] as String,
       name: json['name'] as String? ?? '',
       dateCreated: json['date_created'] == null
@@ -18,7 +18,7 @@ _$_UserRequest _$$_UserRequestFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['date_logged_in'] as String),
     );
 
-Map<String, dynamic> _$$_UserRequestToJson(_$_UserRequest instance) {
+Map<String, dynamic> _$$UserRequestImplToJson(_$UserRequestImpl instance) {
   final val = <String, dynamic>{
     'id': instance.id,
     'name': instance.name,

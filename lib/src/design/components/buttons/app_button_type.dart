@@ -74,22 +74,22 @@ enum AppButtonType {
         break;
     }
     return style?.copyWith(
-      textStyle: MaterialStatePropertyAll(textStyle.copyWith(height: 1)),
-      foregroundColor: MaterialStatePropertyAll(foregroundColor),
-      backgroundColor: backgroundColor.let((self) => MaterialStatePropertyAll(self)),
-      minimumSize: MaterialStatePropertyAll(minimumSize),
-      shape: MaterialStatePropertyAll(
+      textStyle: WidgetStatePropertyAll(textStyle.copyWith(height: 1)),
+      foregroundColor: WidgetStatePropertyAll(foregroundColor),
+      backgroundColor: backgroundColor.let((self) => WidgetStatePropertyAll(self)),
+      minimumSize: WidgetStatePropertyAll(minimumSize),
+      shape: WidgetStatePropertyAll(
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius ?? borderRadius)),
       ),
-      side: MaterialStatePropertyAll(BorderSide(
+      side: WidgetStatePropertyAll(BorderSide(
         color: isOutlined ? foregroundColor : Colors.transparent,
       )),
-      padding: MaterialStatePropertyAll(padding),
+      padding: WidgetStatePropertyAll(padding),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       // To bypass Flutter's complex logic that reduces [padding]'s vertical value
       visualDensity: const VisualDensity(),
       overlayColor: backgroundColor.let(
-        (self) => MaterialStateProperty.resolveWith<Color>((states) {
+        (self) => WidgetStateProperty.resolveWith<Color>((states) {
           return self.withOpacity(.2);
         }),
       ),

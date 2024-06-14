@@ -12,7 +12,7 @@ part of 'keep_up_soon_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$KeepUpSoonEvent {
@@ -105,24 +105,25 @@ class _$KeepUpSoonEventCopyWithImpl<$Res, $Val extends KeepUpSoonEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -130,9 +131,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -232,29 +233,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements KeepUpSoonEvent {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_ClearPageCommandCopyWith<$Res> {
-  factory _$$_ClearPageCommandCopyWith(
-          _$_ClearPageCommand value, $Res Function(_$_ClearPageCommand) then) =
-      __$$_ClearPageCommandCopyWithImpl<$Res>;
+abstract class _$$ClearPageCommandImplCopyWith<$Res> {
+  factory _$$ClearPageCommandImplCopyWith(_$ClearPageCommandImpl value,
+          $Res Function(_$ClearPageCommandImpl) then) =
+      __$$ClearPageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearPageCommandCopyWithImpl<$Res>
-    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_ClearPageCommand>
-    implements _$$_ClearPageCommandCopyWith<$Res> {
-  __$$_ClearPageCommandCopyWithImpl(
-      _$_ClearPageCommand _value, $Res Function(_$_ClearPageCommand) _then)
+class __$$ClearPageCommandImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$ClearPageCommandImpl>
+    implements _$$ClearPageCommandImplCopyWith<$Res> {
+  __$$ClearPageCommandImplCopyWithImpl(_$ClearPageCommandImpl _value,
+      $Res Function(_$ClearPageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearPageCommand implements _ClearPageCommand {
-  const _$_ClearPageCommand();
+class _$ClearPageCommandImpl implements _ClearPageCommand {
+  const _$ClearPageCommandImpl();
 
   @override
   String toString() {
@@ -262,9 +263,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearPageCommand);
+        (other.runtimeType == runtimeType && other is _$ClearPageCommandImpl);
   }
 
   @override
@@ -364,29 +365,29 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 }
 
 abstract class _ClearPageCommand implements KeepUpSoonEvent {
-  const factory _ClearPageCommand() = _$_ClearPageCommand;
+  const factory _ClearPageCommand() = _$ClearPageCommandImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnFetchWeekContactsCopyWith<$Res> {
-  factory _$$_OnFetchWeekContactsCopyWith(_$_OnFetchWeekContacts value,
-          $Res Function(_$_OnFetchWeekContacts) then) =
-      __$$_OnFetchWeekContactsCopyWithImpl<$Res>;
+abstract class _$$OnFetchWeekContactsImplCopyWith<$Res> {
+  factory _$$OnFetchWeekContactsImplCopyWith(_$OnFetchWeekContactsImpl value,
+          $Res Function(_$OnFetchWeekContactsImpl) then) =
+      __$$OnFetchWeekContactsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnFetchWeekContactsCopyWithImpl<$Res>
-    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnFetchWeekContacts>
-    implements _$$_OnFetchWeekContactsCopyWith<$Res> {
-  __$$_OnFetchWeekContactsCopyWithImpl(_$_OnFetchWeekContacts _value,
-      $Res Function(_$_OnFetchWeekContacts) _then)
+class __$$OnFetchWeekContactsImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$OnFetchWeekContactsImpl>
+    implements _$$OnFetchWeekContactsImplCopyWith<$Res> {
+  __$$OnFetchWeekContactsImplCopyWithImpl(_$OnFetchWeekContactsImpl _value,
+      $Res Function(_$OnFetchWeekContactsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
-  const _$_OnFetchWeekContacts();
+class _$OnFetchWeekContactsImpl implements _OnFetchWeekContacts {
+  const _$OnFetchWeekContactsImpl();
 
   @override
   String toString() {
@@ -394,9 +395,10 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnFetchWeekContacts);
+        (other.runtimeType == runtimeType &&
+            other is _$OnFetchWeekContactsImpl);
   }
 
   @override
@@ -496,29 +498,29 @@ class _$_OnFetchWeekContacts implements _OnFetchWeekContacts {
 }
 
 abstract class _OnFetchWeekContacts implements KeepUpSoonEvent {
-  const factory _OnFetchWeekContacts() = _$_OnFetchWeekContacts;
+  const factory _OnFetchWeekContacts() = _$OnFetchWeekContactsImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnFetchMonthContactsCopyWith<$Res> {
-  factory _$$_OnFetchMonthContactsCopyWith(_$_OnFetchMonthContacts value,
-          $Res Function(_$_OnFetchMonthContacts) then) =
-      __$$_OnFetchMonthContactsCopyWithImpl<$Res>;
+abstract class _$$OnFetchMonthContactsImplCopyWith<$Res> {
+  factory _$$OnFetchMonthContactsImplCopyWith(_$OnFetchMonthContactsImpl value,
+          $Res Function(_$OnFetchMonthContactsImpl) then) =
+      __$$OnFetchMonthContactsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnFetchMonthContactsCopyWithImpl<$Res>
-    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnFetchMonthContacts>
-    implements _$$_OnFetchMonthContactsCopyWith<$Res> {
-  __$$_OnFetchMonthContactsCopyWithImpl(_$_OnFetchMonthContacts _value,
-      $Res Function(_$_OnFetchMonthContacts) _then)
+class __$$OnFetchMonthContactsImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$OnFetchMonthContactsImpl>
+    implements _$$OnFetchMonthContactsImplCopyWith<$Res> {
+  __$$OnFetchMonthContactsImplCopyWithImpl(_$OnFetchMonthContactsImpl _value,
+      $Res Function(_$OnFetchMonthContactsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
-  const _$_OnFetchMonthContacts();
+class _$OnFetchMonthContactsImpl implements _OnFetchMonthContacts {
+  const _$OnFetchMonthContactsImpl();
 
   @override
   String toString() {
@@ -526,9 +528,10 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnFetchMonthContacts);
+        (other.runtimeType == runtimeType &&
+            other is _$OnFetchMonthContactsImpl);
   }
 
   @override
@@ -628,24 +631,24 @@ class _$_OnFetchMonthContacts implements _OnFetchMonthContacts {
 }
 
 abstract class _OnFetchMonthContacts implements KeepUpSoonEvent {
-  const factory _OnFetchMonthContacts() = _$_OnFetchMonthContacts;
+  const factory _OnFetchMonthContacts() = _$OnFetchMonthContactsImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnChangedTypeCopyWith<$Res> {
-  factory _$$_OnChangedTypeCopyWith(
-          _$_OnChangedType value, $Res Function(_$_OnChangedType) then) =
-      __$$_OnChangedTypeCopyWithImpl<$Res>;
+abstract class _$$OnChangedTypeImplCopyWith<$Res> {
+  factory _$$OnChangedTypeImplCopyWith(
+          _$OnChangedTypeImpl value, $Res Function(_$OnChangedTypeImpl) then) =
+      __$$OnChangedTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({KeepUpSoonType type});
 }
 
 /// @nodoc
-class __$$_OnChangedTypeCopyWithImpl<$Res>
-    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnChangedType>
-    implements _$$_OnChangedTypeCopyWith<$Res> {
-  __$$_OnChangedTypeCopyWithImpl(
-      _$_OnChangedType _value, $Res Function(_$_OnChangedType) _then)
+class __$$OnChangedTypeImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$OnChangedTypeImpl>
+    implements _$$OnChangedTypeImplCopyWith<$Res> {
+  __$$OnChangedTypeImplCopyWithImpl(
+      _$OnChangedTypeImpl _value, $Res Function(_$OnChangedTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -653,7 +656,7 @@ class __$$_OnChangedTypeCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$_OnChangedType(
+    return _then(_$OnChangedTypeImpl(
       null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -664,8 +667,8 @@ class __$$_OnChangedTypeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnChangedType implements _OnChangedType {
-  const _$_OnChangedType(this.type);
+class _$OnChangedTypeImpl implements _OnChangedType {
+  const _$OnChangedTypeImpl(this.type);
 
   @override
   final KeepUpSoonType type;
@@ -676,10 +679,10 @@ class _$_OnChangedType implements _OnChangedType {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnChangedType &&
+            other is _$OnChangedTypeImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -689,8 +692,8 @@ class _$_OnChangedType implements _OnChangedType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnChangedTypeCopyWith<_$_OnChangedType> get copyWith =>
-      __$$_OnChangedTypeCopyWithImpl<_$_OnChangedType>(this, _$identity);
+  _$$OnChangedTypeImplCopyWith<_$OnChangedTypeImpl> get copyWith =>
+      __$$OnChangedTypeImplCopyWithImpl<_$OnChangedTypeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -786,29 +789,29 @@ class _$_OnChangedType implements _OnChangedType {
 }
 
 abstract class _OnChangedType implements KeepUpSoonEvent {
-  const factory _OnChangedType(final KeepUpSoonType type) = _$_OnChangedType;
+  const factory _OnChangedType(final KeepUpSoonType type) = _$OnChangedTypeImpl;
 
   KeepUpSoonType get type;
   @JsonKey(ignore: true)
-  _$$_OnChangedTypeCopyWith<_$_OnChangedType> get copyWith =>
+  _$$OnChangedTypeImplCopyWith<_$OnChangedTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnKeepUpContactCopyWith<$Res> {
-  factory _$$_OnKeepUpContactCopyWith(
-          _$_OnKeepUpContact value, $Res Function(_$_OnKeepUpContact) then) =
-      __$$_OnKeepUpContactCopyWithImpl<$Res>;
+abstract class _$$OnKeepUpContactImplCopyWith<$Res> {
+  factory _$$OnKeepUpContactImplCopyWith(_$OnKeepUpContactImpl value,
+          $Res Function(_$OnKeepUpContactImpl) then) =
+      __$$OnKeepUpContactImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Contact contact});
 }
 
 /// @nodoc
-class __$$_OnKeepUpContactCopyWithImpl<$Res>
-    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnKeepUpContact>
-    implements _$$_OnKeepUpContactCopyWith<$Res> {
-  __$$_OnKeepUpContactCopyWithImpl(
-      _$_OnKeepUpContact _value, $Res Function(_$_OnKeepUpContact) _then)
+class __$$OnKeepUpContactImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$OnKeepUpContactImpl>
+    implements _$$OnKeepUpContactImplCopyWith<$Res> {
+  __$$OnKeepUpContactImplCopyWithImpl(
+      _$OnKeepUpContactImpl _value, $Res Function(_$OnKeepUpContactImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -816,7 +819,7 @@ class __$$_OnKeepUpContactCopyWithImpl<$Res>
   $Res call({
     Object? contact = freezed,
   }) {
-    return _then(_$_OnKeepUpContact(
+    return _then(_$OnKeepUpContactImpl(
       freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
@@ -827,8 +830,8 @@ class __$$_OnKeepUpContactCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnKeepUpContact implements _OnKeepUpContact {
-  const _$_OnKeepUpContact(this.contact);
+class _$OnKeepUpContactImpl implements _OnKeepUpContact {
+  const _$OnKeepUpContactImpl(this.contact);
 
   @override
   final Contact contact;
@@ -839,10 +842,10 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnKeepUpContact &&
+            other is _$OnKeepUpContactImpl &&
             const DeepCollectionEquality().equals(other.contact, contact));
   }
 
@@ -853,8 +856,9 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnKeepUpContactCopyWith<_$_OnKeepUpContact> get copyWith =>
-      __$$_OnKeepUpContactCopyWithImpl<_$_OnKeepUpContact>(this, _$identity);
+  _$$OnKeepUpContactImplCopyWith<_$OnKeepUpContactImpl> get copyWith =>
+      __$$OnKeepUpContactImplCopyWithImpl<_$OnKeepUpContactImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -950,29 +954,29 @@ class _$_OnKeepUpContact implements _OnKeepUpContact {
 }
 
 abstract class _OnKeepUpContact implements KeepUpSoonEvent {
-  const factory _OnKeepUpContact(final Contact contact) = _$_OnKeepUpContact;
+  const factory _OnKeepUpContact(final Contact contact) = _$OnKeepUpContactImpl;
 
   Contact get contact;
   @JsonKey(ignore: true)
-  _$$_OnKeepUpContactCopyWith<_$_OnKeepUpContact> get copyWith =>
+  _$$OnKeepUpContactImplCopyWith<_$OnKeepUpContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnKeepUpGroupCopyWith<$Res> {
-  factory _$$_OnKeepUpGroupCopyWith(
-          _$_OnKeepUpGroup value, $Res Function(_$_OnKeepUpGroup) then) =
-      __$$_OnKeepUpGroupCopyWithImpl<$Res>;
+abstract class _$$OnKeepUpGroupImplCopyWith<$Res> {
+  factory _$$OnKeepUpGroupImplCopyWith(
+          _$OnKeepUpGroupImpl value, $Res Function(_$OnKeepUpGroupImpl) then) =
+      __$$OnKeepUpGroupImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Group group});
 }
 
 /// @nodoc
-class __$$_OnKeepUpGroupCopyWithImpl<$Res>
-    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$_OnKeepUpGroup>
-    implements _$$_OnKeepUpGroupCopyWith<$Res> {
-  __$$_OnKeepUpGroupCopyWithImpl(
-      _$_OnKeepUpGroup _value, $Res Function(_$_OnKeepUpGroup) _then)
+class __$$OnKeepUpGroupImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonEventCopyWithImpl<$Res, _$OnKeepUpGroupImpl>
+    implements _$$OnKeepUpGroupImplCopyWith<$Res> {
+  __$$OnKeepUpGroupImplCopyWithImpl(
+      _$OnKeepUpGroupImpl _value, $Res Function(_$OnKeepUpGroupImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -980,7 +984,7 @@ class __$$_OnKeepUpGroupCopyWithImpl<$Res>
   $Res call({
     Object? group = freezed,
   }) {
-    return _then(_$_OnKeepUpGroup(
+    return _then(_$OnKeepUpGroupImpl(
       freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
@@ -991,8 +995,8 @@ class __$$_OnKeepUpGroupCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnKeepUpGroup implements _OnKeepUpGroup {
-  const _$_OnKeepUpGroup(this.group);
+class _$OnKeepUpGroupImpl implements _OnKeepUpGroup {
+  const _$OnKeepUpGroupImpl(this.group);
 
   @override
   final Group group;
@@ -1003,10 +1007,10 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnKeepUpGroup &&
+            other is _$OnKeepUpGroupImpl &&
             const DeepCollectionEquality().equals(other.group, group));
   }
 
@@ -1017,8 +1021,8 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnKeepUpGroupCopyWith<_$_OnKeepUpGroup> get copyWith =>
-      __$$_OnKeepUpGroupCopyWithImpl<_$_OnKeepUpGroup>(this, _$identity);
+  _$$OnKeepUpGroupImplCopyWith<_$OnKeepUpGroupImpl> get copyWith =>
+      __$$OnKeepUpGroupImplCopyWithImpl<_$OnKeepUpGroupImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1114,11 +1118,11 @@ class _$_OnKeepUpGroup implements _OnKeepUpGroup {
 }
 
 abstract class _OnKeepUpGroup implements KeepUpSoonEvent {
-  const factory _OnKeepUpGroup(final Group group) = _$_OnKeepUpGroup;
+  const factory _OnKeepUpGroup(final Group group) = _$OnKeepUpGroupImpl;
 
   Group get group;
   @JsonKey(ignore: true)
-  _$$_OnKeepUpGroupCopyWith<_$_OnKeepUpGroup> get copyWith =>
+  _$$OnKeepUpGroupImplCopyWith<_$OnKeepUpGroupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1208,11 +1212,11 @@ class _$KeepUpSoonStateCopyWithImpl<$Res, $Val extends KeepUpSoonState>
 }
 
 /// @nodoc
-abstract class _$$_KeepUpSoonStateCopyWith<$Res>
+abstract class _$$KeepUpSoonStateImplCopyWith<$Res>
     implements $KeepUpSoonStateCopyWith<$Res> {
-  factory _$$_KeepUpSoonStateCopyWith(
-          _$_KeepUpSoonState value, $Res Function(_$_KeepUpSoonState) then) =
-      __$$_KeepUpSoonStateCopyWithImpl<$Res>;
+  factory _$$KeepUpSoonStateImplCopyWith(_$KeepUpSoonStateImpl value,
+          $Res Function(_$KeepUpSoonStateImpl) then) =
+      __$$KeepUpSoonStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1227,11 +1231,11 @@ abstract class _$$_KeepUpSoonStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_KeepUpSoonStateCopyWithImpl<$Res>
-    extends _$KeepUpSoonStateCopyWithImpl<$Res, _$_KeepUpSoonState>
-    implements _$$_KeepUpSoonStateCopyWith<$Res> {
-  __$$_KeepUpSoonStateCopyWithImpl(
-      _$_KeepUpSoonState _value, $Res Function(_$_KeepUpSoonState) _then)
+class __$$KeepUpSoonStateImplCopyWithImpl<$Res>
+    extends _$KeepUpSoonStateCopyWithImpl<$Res, _$KeepUpSoonStateImpl>
+    implements _$$KeepUpSoonStateImplCopyWith<$Res> {
+  __$$KeepUpSoonStateImplCopyWithImpl(
+      _$KeepUpSoonStateImpl _value, $Res Function(_$KeepUpSoonStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1243,7 +1247,7 @@ class __$$_KeepUpSoonStateCopyWithImpl<$Res>
     Object? weekContacts = null,
     Object? monthContacts = null,
   }) {
-    return _then(_$_KeepUpSoonState(
+    return _then(_$KeepUpSoonStateImpl(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
@@ -1270,8 +1274,8 @@ class __$$_KeepUpSoonStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_KeepUpSoonState extends _KeepUpSoonState {
-  const _$_KeepUpSoonState(
+class _$KeepUpSoonStateImpl extends _KeepUpSoonState {
+  const _$KeepUpSoonStateImpl(
       {this.pageCommand,
       this.isLoading = false,
       this.type = KeepUpSoonType.groups,
@@ -1313,10 +1317,10 @@ class _$_KeepUpSoonState extends _KeepUpSoonState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_KeepUpSoonState &&
+            other is _$KeepUpSoonStateImpl &&
             (identical(other.pageCommand, pageCommand) ||
                 other.pageCommand == pageCommand) &&
             (identical(other.isLoading, isLoading) ||
@@ -1340,8 +1344,9 @@ class _$_KeepUpSoonState extends _KeepUpSoonState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_KeepUpSoonStateCopyWith<_$_KeepUpSoonState> get copyWith =>
-      __$$_KeepUpSoonStateCopyWithImpl<_$_KeepUpSoonState>(this, _$identity);
+  _$$KeepUpSoonStateImplCopyWith<_$KeepUpSoonStateImpl> get copyWith =>
+      __$$KeepUpSoonStateImplCopyWithImpl<_$KeepUpSoonStateImpl>(
+          this, _$identity);
 }
 
 abstract class _KeepUpSoonState extends KeepUpSoonState {
@@ -1350,7 +1355,7 @@ abstract class _KeepUpSoonState extends KeepUpSoonState {
       final bool isLoading,
       final KeepUpSoonType type,
       final List<Contact> weekContacts,
-      final List<Contact> monthContacts}) = _$_KeepUpSoonState;
+      final List<Contact> monthContacts}) = _$KeepUpSoonStateImpl;
   const _KeepUpSoonState._() : super._();
 
   @override
@@ -1365,6 +1370,6 @@ abstract class _KeepUpSoonState extends KeepUpSoonState {
   List<Contact> get monthContacts;
   @override
   @JsonKey(ignore: true)
-  _$$_KeepUpSoonStateCopyWith<_$_KeepUpSoonState> get copyWith =>
+  _$$KeepUpSoonStateImplCopyWith<_$KeepUpSoonStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

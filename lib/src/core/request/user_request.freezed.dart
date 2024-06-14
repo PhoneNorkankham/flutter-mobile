@@ -12,7 +12,7 @@ part of 'user_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UserRequest _$UserRequestFromJson(Map<String, dynamic> json) {
   return _UserRequest.fromJson(json);
@@ -86,11 +86,11 @@ class _$UserRequestCopyWithImpl<$Res, $Val extends UserRequest>
 }
 
 /// @nodoc
-abstract class _$$_UserRequestCopyWith<$Res>
+abstract class _$$UserRequestImplCopyWith<$Res>
     implements $UserRequestCopyWith<$Res> {
-  factory _$$_UserRequestCopyWith(
-          _$_UserRequest value, $Res Function(_$_UserRequest) then) =
-      __$$_UserRequestCopyWithImpl<$Res>;
+  factory _$$UserRequestImplCopyWith(
+          _$UserRequestImpl value, $Res Function(_$UserRequestImpl) then) =
+      __$$UserRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -101,11 +101,11 @@ abstract class _$$_UserRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserRequestCopyWithImpl<$Res>
-    extends _$UserRequestCopyWithImpl<$Res, _$_UserRequest>
-    implements _$$_UserRequestCopyWith<$Res> {
-  __$$_UserRequestCopyWithImpl(
-      _$_UserRequest _value, $Res Function(_$_UserRequest) _then)
+class __$$UserRequestImplCopyWithImpl<$Res>
+    extends _$UserRequestCopyWithImpl<$Res, _$UserRequestImpl>
+    implements _$$UserRequestImplCopyWith<$Res> {
+  __$$UserRequestImplCopyWithImpl(
+      _$UserRequestImpl _value, $Res Function(_$UserRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +116,7 @@ class __$$_UserRequestCopyWithImpl<$Res>
     Object? dateCreated = freezed,
     Object? dateLoggedIn = freezed,
   }) {
-    return _then(_$_UserRequest(
+    return _then(_$UserRequestImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -140,15 +140,15 @@ class __$$_UserRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_UserRequest implements _UserRequest {
-  const _$_UserRequest(
+class _$UserRequestImpl implements _UserRequest {
+  const _$UserRequestImpl(
       {required this.id,
       this.name = '',
       @JsonKey(name: 'date_created') this.dateCreated,
       @JsonKey(name: 'date_logged_in') this.dateLoggedIn});
 
-  factory _$_UserRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UserRequestFromJson(json);
+  factory _$UserRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserRequestImplFromJson(json);
 
   @override
   final String id;
@@ -168,10 +168,10 @@ class _$_UserRequest implements _UserRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserRequest &&
+            other is _$UserRequestImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.dateCreated, dateCreated) ||
@@ -188,12 +188,12 @@ class _$_UserRequest implements _UserRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserRequestCopyWith<_$_UserRequest> get copyWith =>
-      __$$_UserRequestCopyWithImpl<_$_UserRequest>(this, _$identity);
+  _$$UserRequestImplCopyWith<_$UserRequestImpl> get copyWith =>
+      __$$UserRequestImplCopyWithImpl<_$UserRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserRequestToJson(
+    return _$$UserRequestImplToJson(
       this,
     );
   }
@@ -205,10 +205,10 @@ abstract class _UserRequest implements UserRequest {
           final String name,
           @JsonKey(name: 'date_created') final DateTime? dateCreated,
           @JsonKey(name: 'date_logged_in') final DateTime? dateLoggedIn}) =
-      _$_UserRequest;
+      _$UserRequestImpl;
 
   factory _UserRequest.fromJson(Map<String, dynamic> json) =
-      _$_UserRequest.fromJson;
+      _$UserRequestImpl.fromJson;
 
   @override
   String get id;
@@ -222,6 +222,6 @@ abstract class _UserRequest implements UserRequest {
   DateTime? get dateLoggedIn;
   @override
   @JsonKey(ignore: true)
-  _$$_UserRequestCopyWith<_$_UserRequest> get copyWith =>
+  _$$UserRequestImplCopyWith<_$UserRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -10,8 +10,6 @@ const lightColorScheme = ColorScheme(
   tertiary: AppColors.cyan,
   error: AppColors.error,
   onError: AppColors.white,
-  background: AppColors.white,
-  onBackground: AppColors.primaryDark,
   surface: AppColors.white,
   onSurface: AppColors.primaryDark,
 );
@@ -24,8 +22,6 @@ const darkColorScheme = ColorScheme(
   onSecondary: AppColors.grey600,
   error: AppColors.error,
   onError: AppColors.white,
-  background: AppColors.white,
-  onBackground: AppColors.primaryDark,
   surface: AppColors.white,
   onSurface: AppColors.primaryDark,
 );

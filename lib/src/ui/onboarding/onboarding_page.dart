@@ -7,7 +7,7 @@ import 'package:keepup/src/ui/onboarding/components/onboarding_view.dart';
 import 'package:keepup/src/ui/onboarding/interactor/onboarding_bloc.dart';
 
 class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({Key? key}) : super(key: key);
+  const OnboardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
