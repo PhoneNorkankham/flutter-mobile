@@ -17,13 +17,12 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
+    return PopScope(
+      canPop: Platform.isIOS,
+      onPopInvoked: (didPop) {
+        if (didPop || Platform.isIOS) return;
         if (Platform.isAndroid) {
           BackSystem.moveTaskToBack();
-          return Future.value(false);
-        } else {
-          return Future.value(true);
         }
       },
       child: BlocProvider(

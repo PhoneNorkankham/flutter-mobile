@@ -12,7 +12,7 @@ part of 'group_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 GroupRequest _$GroupRequestFromJson(Map<String, dynamic> json) {
   return _GroupRequest.fromJson(json);
@@ -124,11 +124,11 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
 }
 
 /// @nodoc
-abstract class _$$_GroupRequestCopyWith<$Res>
+abstract class _$$GroupRequestImplCopyWith<$Res>
     implements $GroupRequestCopyWith<$Res> {
-  factory _$$_GroupRequestCopyWith(
-          _$_GroupRequest value, $Res Function(_$_GroupRequest) then) =
-      __$$_GroupRequestCopyWithImpl<$Res>;
+  factory _$$GroupRequestImplCopyWith(
+          _$GroupRequestImpl value, $Res Function(_$GroupRequestImpl) then) =
+      __$$GroupRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -148,11 +148,11 @@ abstract class _$$_GroupRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GroupRequestCopyWithImpl<$Res>
-    extends _$GroupRequestCopyWithImpl<$Res, _$_GroupRequest>
-    implements _$$_GroupRequestCopyWith<$Res> {
-  __$$_GroupRequestCopyWithImpl(
-      _$_GroupRequest _value, $Res Function(_$_GroupRequest) _then)
+class __$$GroupRequestImplCopyWithImpl<$Res>
+    extends _$GroupRequestCopyWithImpl<$Res, _$GroupRequestImpl>
+    implements _$$GroupRequestImplCopyWith<$Res> {
+  __$$GroupRequestImplCopyWithImpl(
+      _$GroupRequestImpl _value, $Res Function(_$GroupRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -167,7 +167,7 @@ class __$$_GroupRequestCopyWithImpl<$Res>
     Object? contacts = null,
     Object? dateCreated = freezed,
   }) {
-    return _then(_$_GroupRequest(
+    return _then(_$GroupRequestImpl(
       groupId: null == groupId
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
@@ -207,8 +207,8 @@ class __$$_GroupRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GroupRequest extends _GroupRequest {
-  const _$_GroupRequest(
+class _$GroupRequestImpl extends _GroupRequest {
+  const _$GroupRequestImpl(
       {@JsonKey(name: 'id', includeToJson: false) this.groupId = '',
       @JsonKey(name: 'owner_id') this.ownerId = '',
       this.name = '',
@@ -223,8 +223,8 @@ class _$_GroupRequest extends _GroupRequest {
       : _contacts = contacts,
         super._();
 
-  factory _$_GroupRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_GroupRequestFromJson(json);
+  factory _$GroupRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GroupRequestImplFromJson(json);
 
   @override
   @JsonKey(name: 'id', includeToJson: false)
@@ -265,10 +265,10 @@ class _$_GroupRequest extends _GroupRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GroupRequest &&
+            other is _$GroupRequestImpl &&
             (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -298,12 +298,12 @@ class _$_GroupRequest extends _GroupRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GroupRequestCopyWith<_$_GroupRequest> get copyWith =>
-      __$$_GroupRequestCopyWithImpl<_$_GroupRequest>(this, _$identity);
+  _$$GroupRequestImplCopyWith<_$GroupRequestImpl> get copyWith =>
+      __$$GroupRequestImplCopyWithImpl<_$GroupRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupRequestToJson(
+    return _$$GroupRequestImplToJson(
       this,
     );
   }
@@ -323,11 +323,11 @@ abstract class _GroupRequest extends GroupRequest {
       final List<String> contacts,
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
-      final DateTime? dateCreated}) = _$_GroupRequest;
+      final DateTime? dateCreated}) = _$GroupRequestImpl;
   const _GroupRequest._() : super._();
 
   factory _GroupRequest.fromJson(Map<String, dynamic> json) =
-      _$_GroupRequest.fromJson;
+      _$GroupRequestImpl.fromJson;
 
   @override
   @JsonKey(name: 'id', includeToJson: false)
@@ -353,6 +353,6 @@ abstract class _GroupRequest extends GroupRequest {
   DateTime? get dateCreated;
   @override
   @JsonKey(ignore: true)
-  _$$_GroupRequestCopyWith<_$_GroupRequest> get copyWith =>
+  _$$GroupRequestImplCopyWith<_$GroupRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

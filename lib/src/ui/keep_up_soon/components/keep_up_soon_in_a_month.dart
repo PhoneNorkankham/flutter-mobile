@@ -25,14 +25,12 @@ class KeepUpSoonInAMonth extends StatelessWidget {
         List<Widget> children = [];
         if (state.type == KeepUpSoonType.individual) {
           children = [
-            ...state.monthContacts
-                .map((e) => KeepUpSoonItem(
-                      name: e.name,
-                      avatar: e.avatar,
-                      onPressed: () => InteractionBottomSheet.show(contact: e),
-                      onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
-                    ))
-                .toList()
+            ...state.monthContacts.map((e) => KeepUpSoonItem(
+                  name: e.name,
+                  avatar: e.avatar,
+                  onPressed: () => InteractionBottomSheet.show(contact: e),
+                  onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
+                ))
           ];
         }
         return FutureBuilder<List<Group>>(
@@ -46,13 +44,11 @@ class KeepUpSoonInAMonth extends StatelessWidget {
             final List<Group> groups = snapshot.data ?? [];
             if (state.type == KeepUpSoonType.groups && groups.isNotEmpty) {
               children = [
-                ...groups
-                    .map((e) => KeepUpSoonItem(
-                          name: e.name,
-                          avatar: e.avatar,
-                          onKeepUp: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
-                        ))
-                    .toList()
+                ...groups.map((e) => KeepUpSoonItem(
+                      name: e.name,
+                      avatar: e.avatar,
+                      onKeepUp: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
+                    ))
               ];
             }
             return KeepUpGroup(

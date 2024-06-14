@@ -12,7 +12,7 @@ part of 'onboarding_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$OnboardingEvent {
@@ -87,24 +87,25 @@ class _$OnboardingEventCopyWithImpl<$Res, $Val extends OnboardingEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -112,9 +113,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -196,29 +197,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements OnboardingEvent {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_ClearPageCommandCopyWith<$Res> {
-  factory _$$_ClearPageCommandCopyWith(
-          _$_ClearPageCommand value, $Res Function(_$_ClearPageCommand) then) =
-      __$$_ClearPageCommandCopyWithImpl<$Res>;
+abstract class _$$ClearPageCommandImplCopyWith<$Res> {
+  factory _$$ClearPageCommandImplCopyWith(_$ClearPageCommandImpl value,
+          $Res Function(_$ClearPageCommandImpl) then) =
+      __$$ClearPageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearPageCommandCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$_ClearPageCommand>
-    implements _$$_ClearPageCommandCopyWith<$Res> {
-  __$$_ClearPageCommandCopyWithImpl(
-      _$_ClearPageCommand _value, $Res Function(_$_ClearPageCommand) _then)
+class __$$ClearPageCommandImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$ClearPageCommandImpl>
+    implements _$$ClearPageCommandImplCopyWith<$Res> {
+  __$$ClearPageCommandImplCopyWithImpl(_$ClearPageCommandImpl _value,
+      $Res Function(_$ClearPageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearPageCommand implements _ClearPageCommand {
-  const _$_ClearPageCommand();
+class _$ClearPageCommandImpl implements _ClearPageCommand {
+  const _$ClearPageCommandImpl();
 
   @override
   String toString() {
@@ -226,9 +227,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearPageCommand);
+        (other.runtimeType == runtimeType && other is _$ClearPageCommandImpl);
   }
 
   @override
@@ -310,29 +311,29 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 }
 
 abstract class _ClearPageCommand implements OnboardingEvent {
-  const factory _ClearPageCommand() = _$_ClearPageCommand;
+  const factory _ClearPageCommand() = _$ClearPageCommandImpl;
 }
 
 /// @nodoc
-abstract class _$$_GotoMainCopyWith<$Res> {
-  factory _$$_GotoMainCopyWith(
-          _$_GotoMain value, $Res Function(_$_GotoMain) then) =
-      __$$_GotoMainCopyWithImpl<$Res>;
+abstract class _$$GotoMainImplCopyWith<$Res> {
+  factory _$$GotoMainImplCopyWith(
+          _$GotoMainImpl value, $Res Function(_$GotoMainImpl) then) =
+      __$$GotoMainImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GotoMainCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$_GotoMain>
-    implements _$$_GotoMainCopyWith<$Res> {
-  __$$_GotoMainCopyWithImpl(
-      _$_GotoMain _value, $Res Function(_$_GotoMain) _then)
+class __$$GotoMainImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$GotoMainImpl>
+    implements _$$GotoMainImplCopyWith<$Res> {
+  __$$GotoMainImplCopyWithImpl(
+      _$GotoMainImpl _value, $Res Function(_$GotoMainImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GotoMain implements _GotoMain {
-  const _$_GotoMain();
+class _$GotoMainImpl implements _GotoMain {
+  const _$GotoMainImpl();
 
   @override
   String toString() {
@@ -340,9 +341,9 @@ class _$_GotoMain implements _GotoMain {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GotoMain);
+        (other.runtimeType == runtimeType && other is _$GotoMainImpl);
   }
 
   @override
@@ -424,14 +425,14 @@ class _$_GotoMain implements _GotoMain {
 }
 
 abstract class _GotoMain implements OnboardingEvent {
-  const factory _GotoMain() = _$_GotoMain;
+  const factory _GotoMain() = _$GotoMainImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnJoinGroupCopyWith<$Res> {
-  factory _$$_OnJoinGroupCopyWith(
-          _$_OnJoinGroup value, $Res Function(_$_OnJoinGroup) then) =
-      __$$_OnJoinGroupCopyWithImpl<$Res>;
+abstract class _$$OnJoinGroupImplCopyWith<$Res> {
+  factory _$$OnJoinGroupImplCopyWith(
+          _$OnJoinGroupImpl value, $Res Function(_$OnJoinGroupImpl) then) =
+      __$$OnJoinGroupImplCopyWithImpl<$Res>;
   @useResult
   $Res call({GroupRequest group});
 
@@ -439,11 +440,11 @@ abstract class _$$_OnJoinGroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_OnJoinGroupCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$_OnJoinGroup>
-    implements _$$_OnJoinGroupCopyWith<$Res> {
-  __$$_OnJoinGroupCopyWithImpl(
-      _$_OnJoinGroup _value, $Res Function(_$_OnJoinGroup) _then)
+class __$$OnJoinGroupImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$OnJoinGroupImpl>
+    implements _$$OnJoinGroupImplCopyWith<$Res> {
+  __$$OnJoinGroupImplCopyWithImpl(
+      _$OnJoinGroupImpl _value, $Res Function(_$OnJoinGroupImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -451,7 +452,7 @@ class __$$_OnJoinGroupCopyWithImpl<$Res>
   $Res call({
     Object? group = null,
   }) {
-    return _then(_$_OnJoinGroup(
+    return _then(_$OnJoinGroupImpl(
       null == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
@@ -470,8 +471,8 @@ class __$$_OnJoinGroupCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnJoinGroup implements _OnJoinGroup {
-  const _$_OnJoinGroup(this.group);
+class _$OnJoinGroupImpl implements _OnJoinGroup {
+  const _$OnJoinGroupImpl(this.group);
 
   @override
   final GroupRequest group;
@@ -482,10 +483,10 @@ class _$_OnJoinGroup implements _OnJoinGroup {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnJoinGroup &&
+            other is _$OnJoinGroupImpl &&
             (identical(other.group, group) || other.group == group));
   }
 
@@ -495,8 +496,8 @@ class _$_OnJoinGroup implements _OnJoinGroup {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnJoinGroupCopyWith<_$_OnJoinGroup> get copyWith =>
-      __$$_OnJoinGroupCopyWithImpl<_$_OnJoinGroup>(this, _$identity);
+  _$$OnJoinGroupImplCopyWith<_$OnJoinGroupImpl> get copyWith =>
+      __$$OnJoinGroupImplCopyWithImpl<_$OnJoinGroupImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -574,11 +575,11 @@ class _$_OnJoinGroup implements _OnJoinGroup {
 }
 
 abstract class _OnJoinGroup implements OnboardingEvent {
-  const factory _OnJoinGroup(final GroupRequest group) = _$_OnJoinGroup;
+  const factory _OnJoinGroup(final GroupRequest group) = _$OnJoinGroupImpl;
 
   GroupRequest get group;
   @JsonKey(ignore: true)
-  _$$_OnJoinGroupCopyWith<_$_OnJoinGroup> get copyWith =>
+  _$$OnJoinGroupImplCopyWith<_$OnJoinGroupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -657,22 +658,22 @@ class _$SplashPageCommandCopyWithImpl<$Res, $Val extends SplashPageCommand>
 }
 
 /// @nodoc
-abstract class _$$_ShowDialogCopyWith<$Res>
+abstract class _$$ShowDialogImplCopyWith<$Res>
     implements $SplashPageCommandCopyWith<$Res> {
-  factory _$$_ShowDialogCopyWith(
-          _$_ShowDialog value, $Res Function(_$_ShowDialog) then) =
-      __$$_ShowDialogCopyWithImpl<$Res>;
+  factory _$$ShowDialogImplCopyWith(
+          _$ShowDialogImpl value, $Res Function(_$ShowDialogImpl) then) =
+      __$$ShowDialogImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_ShowDialogCopyWithImpl<$Res>
-    extends _$SplashPageCommandCopyWithImpl<$Res, _$_ShowDialog>
-    implements _$$_ShowDialogCopyWith<$Res> {
-  __$$_ShowDialogCopyWithImpl(
-      _$_ShowDialog _value, $Res Function(_$_ShowDialog) _then)
+class __$$ShowDialogImplCopyWithImpl<$Res>
+    extends _$SplashPageCommandCopyWithImpl<$Res, _$ShowDialogImpl>
+    implements _$$ShowDialogImplCopyWith<$Res> {
+  __$$ShowDialogImplCopyWithImpl(
+      _$ShowDialogImpl _value, $Res Function(_$ShowDialogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -680,7 +681,7 @@ class __$$_ShowDialogCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_ShowDialog(
+    return _then(_$ShowDialogImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -691,8 +692,8 @@ class __$$_ShowDialogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowDialog implements _ShowDialog {
-  _$_ShowDialog(this.message);
+class _$ShowDialogImpl implements _ShowDialog {
+  _$ShowDialogImpl(this.message);
 
   @override
   final String message;
@@ -703,10 +704,10 @@ class _$_ShowDialog implements _ShowDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowDialog &&
+            other is _$ShowDialogImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -716,8 +717,8 @@ class _$_ShowDialog implements _ShowDialog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShowDialogCopyWith<_$_ShowDialog> get copyWith =>
-      __$$_ShowDialogCopyWithImpl<_$_ShowDialog>(this, _$identity);
+  _$$ShowDialogImplCopyWith<_$ShowDialogImpl> get copyWith =>
+      __$$ShowDialogImplCopyWithImpl<_$ShowDialogImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -777,13 +778,13 @@ class _$_ShowDialog implements _ShowDialog {
 }
 
 abstract class _ShowDialog implements SplashPageCommand {
-  factory _ShowDialog(final String message) = _$_ShowDialog;
+  factory _ShowDialog(final String message) = _$ShowDialogImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$_ShowDialogCopyWith<_$_ShowDialog> get copyWith =>
+  _$$ShowDialogImplCopyWith<_$ShowDialogImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -882,11 +883,11 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
 }
 
 /// @nodoc
-abstract class _$$_OnboardingStateCopyWith<$Res>
+abstract class _$$OnboardingStateImplCopyWith<$Res>
     implements $OnboardingStateCopyWith<$Res> {
-  factory _$$_OnboardingStateCopyWith(
-          _$_OnboardingState value, $Res Function(_$_OnboardingState) then) =
-      __$$_OnboardingStateCopyWithImpl<$Res>;
+  factory _$$OnboardingStateImplCopyWith(_$OnboardingStateImpl value,
+          $Res Function(_$OnboardingStateImpl) then) =
+      __$$OnboardingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -903,11 +904,11 @@ abstract class _$$_OnboardingStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OnboardingStateCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingState>
-    implements _$$_OnboardingStateCopyWith<$Res> {
-  __$$_OnboardingStateCopyWithImpl(
-      _$_OnboardingState _value, $Res Function(_$_OnboardingState) _then)
+class __$$OnboardingStateImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$OnboardingStateImpl>
+    implements _$$OnboardingStateImplCopyWith<$Res> {
+  __$$OnboardingStateImplCopyWithImpl(
+      _$OnboardingStateImpl _value, $Res Function(_$OnboardingStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -919,7 +920,7 @@ class __$$_OnboardingStateCopyWithImpl<$Res>
     Object? groups = null,
     Object? loggedInData = null,
   }) {
-    return _then(_$_OnboardingState(
+    return _then(_$OnboardingStateImpl(
       pageStatus: null == pageStatus
           ? _value.pageStatus
           : pageStatus // ignore: cast_nullable_to_non_nullable
@@ -946,8 +947,8 @@ class __$$_OnboardingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnboardingState extends _OnboardingState {
-  const _$_OnboardingState(
+class _$OnboardingStateImpl extends _OnboardingState {
+  const _$OnboardingStateImpl(
       {this.pageStatus = PageState.initial,
       this.pageCommand,
       this.isLoading = false,
@@ -980,8 +981,9 @@ class _$_OnboardingState extends _OnboardingState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
-      __$$_OnboardingStateCopyWithImpl<_$_OnboardingState>(this, _$identity);
+  _$$OnboardingStateImplCopyWith<_$OnboardingStateImpl> get copyWith =>
+      __$$OnboardingStateImplCopyWithImpl<_$OnboardingStateImpl>(
+          this, _$identity);
 }
 
 abstract class _OnboardingState extends OnboardingState {
@@ -990,7 +992,7 @@ abstract class _OnboardingState extends OnboardingState {
       final PageCommand? pageCommand,
       final bool isLoading,
       final List<GroupRequest> groups,
-      final LoggedInData loggedInData}) = _$_OnboardingState;
+      final LoggedInData loggedInData}) = _$OnboardingStateImpl;
   const _OnboardingState._() : super._();
 
   @override
@@ -1005,6 +1007,6 @@ abstract class _OnboardingState extends OnboardingState {
   LoggedInData get loggedInData;
   @override
   @JsonKey(ignore: true)
-  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
+  _$$OnboardingStateImplCopyWith<_$OnboardingStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
