@@ -12,7 +12,7 @@ part of 'contact_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ContactRequest _$ContactRequestFromJson(Map<String, dynamic> json) {
   return _ContactRequest.fromJson(json);
@@ -147,11 +147,11 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
 }
 
 /// @nodoc
-abstract class _$$_ContactRequestCopyWith<$Res>
+abstract class _$$ContactRequestImplCopyWith<$Res>
     implements $ContactRequestCopyWith<$Res> {
-  factory _$$_ContactRequestCopyWith(
-          _$_ContactRequest value, $Res Function(_$_ContactRequest) then) =
-      __$$_ContactRequestCopyWithImpl<$Res>;
+  factory _$$ContactRequestImplCopyWith(_$ContactRequestImpl value,
+          $Res Function(_$ContactRequestImpl) then) =
+      __$$ContactRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -173,11 +173,11 @@ abstract class _$$_ContactRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ContactRequestCopyWithImpl<$Res>
-    extends _$ContactRequestCopyWithImpl<$Res, _$_ContactRequest>
-    implements _$$_ContactRequestCopyWith<$Res> {
-  __$$_ContactRequestCopyWithImpl(
-      _$_ContactRequest _value, $Res Function(_$_ContactRequest) _then)
+class __$$ContactRequestImplCopyWithImpl<$Res>
+    extends _$ContactRequestCopyWithImpl<$Res, _$ContactRequestImpl>
+    implements _$$ContactRequestImplCopyWith<$Res> {
+  __$$ContactRequestImplCopyWithImpl(
+      _$ContactRequestImpl _value, $Res Function(_$ContactRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -195,7 +195,7 @@ class __$$_ContactRequestCopyWithImpl<$Res>
     Object? dateCreated = freezed,
     Object? isExpanded = null,
   }) {
-    return _then(_$_ContactRequest(
+    return _then(_$ContactRequestImpl(
       contactId: null == contactId
           ? _value.contactId
           : contactId // ignore: cast_nullable_to_non_nullable
@@ -247,8 +247,8 @@ class __$$_ContactRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_ContactRequest extends _ContactRequest {
-  const _$_ContactRequest(
+class _$ContactRequestImpl extends _ContactRequest {
+  const _$ContactRequestImpl(
       {@JsonKey(name: 'id', includeToJson: false) this.contactId = '',
       @JsonKey(name: 'owner_id') this.ownerId = '',
       @JsonKey(name: 'group_id') this.groupId = '',
@@ -263,8 +263,8 @@ class _$_ContactRequest extends _ContactRequest {
       this.isExpanded = false})
       : super._();
 
-  factory _$_ContactRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ContactRequestFromJson(json);
+  factory _$ContactRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ContactRequestImplFromJson(json);
 
   @override
   @JsonKey(name: 'id', includeToJson: false)
@@ -308,10 +308,10 @@ class _$_ContactRequest extends _ContactRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ContactRequest &&
+            other is _$ContactRequestImpl &&
             (identical(other.contactId, contactId) ||
                 other.contactId == contactId) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
@@ -349,12 +349,13 @@ class _$_ContactRequest extends _ContactRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ContactRequestCopyWith<_$_ContactRequest> get copyWith =>
-      __$$_ContactRequestCopyWithImpl<_$_ContactRequest>(this, _$identity);
+  _$$ContactRequestImplCopyWith<_$ContactRequestImpl> get copyWith =>
+      __$$ContactRequestImplCopyWithImpl<_$ContactRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ContactRequestToJson(
+    return _$$ContactRequestImplToJson(
       this,
     );
   }
@@ -377,11 +378,11 @@ abstract class _ContactRequest extends ContactRequest {
       @JsonKey(name: 'date_created')
       final DateTime? dateCreated,
       @JsonKey(includeFromJson: false, includeToJson: false)
-      final bool isExpanded}) = _$_ContactRequest;
+      final bool isExpanded}) = _$ContactRequestImpl;
   const _ContactRequest._() : super._();
 
   factory _ContactRequest.fromJson(Map<String, dynamic> json) =
-      _$_ContactRequest.fromJson;
+      _$ContactRequestImpl.fromJson;
 
   @override
   @JsonKey(name: 'id', includeToJson: false)
@@ -417,6 +418,6 @@ abstract class _ContactRequest extends ContactRequest {
   bool get isExpanded;
   @override
   @JsonKey(ignore: true)
-  _$$_ContactRequestCopyWith<_$_ContactRequest> get copyWith =>
+  _$$ContactRequestImplCopyWith<_$ContactRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 # Keepup
-App flutter - Using flutter sdk ver 3.13.0
+App flutter - Using flutter SDK ver >= 3.22.0
 
 ## KeepUp project document
 https://docs.google.com/document/d/1ZnThl3endLxCzjakC6baqmesMbNTkVogxobN8XpxNrs/edit
@@ -83,7 +83,7 @@ The `assets_gen` configuration resides in the `assets_gen.yaml` file.
 The overall app architecture can be summed up in these plugins:
 
 - [Drift](https://pub.dev/packages/drift) for the local sqlite database
-- [Retrofit](https://pub.dev/packages/retrofit) for REST API
+- [Supabase](https://pub.dev/packages/supabase) for REST API
 - [JsonSerializable](https://pub.dev/packages/json_serializable) for generating models
 - [GetX](https://pub.dev/packages/get) for our state management (refactor is ongoing)
 

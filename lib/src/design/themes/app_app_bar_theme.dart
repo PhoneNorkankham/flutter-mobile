@@ -8,8 +8,8 @@ class AppAppBarTheme {
       titleTextStyle: appTextTheme.medium24.copyWith(color: AppColors.primaryDark),
       elevation: 0.0,
       iconTheme: const IconThemeData(color: AppColors.grey600),
-      backgroundColor: colorScheme.background,
-      surfaceTintColor: colorScheme.background,
+      backgroundColor: colorScheme.surface,
+      surfaceTintColor: colorScheme.surface,
     );
   }
 }

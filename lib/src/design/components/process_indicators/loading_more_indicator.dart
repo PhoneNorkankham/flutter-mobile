@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
 
 class LoadingMoreIndicator extends StatelessWidget {
-  const LoadingMoreIndicator({Key? key}) : super(key: key);
+  const LoadingMoreIndicator({super.key});
 
   @override
   Widget build(BuildContext context) {

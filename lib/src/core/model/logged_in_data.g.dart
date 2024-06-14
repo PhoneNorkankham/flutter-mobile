@@ -53,15 +53,15 @@ class LoggedInDataAdapter extends TypeAdapter<LoggedInData> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_LoggedInData _$$_LoggedInDataFromJson(Map<String, dynamic> json) =>
-    _$_LoggedInData(
+_$LoggedInDataImpl _$$LoggedInDataImplFromJson(Map<String, dynamic> json) =>
+    _$LoggedInDataImpl(
       isLoggedIn: json['is_logged_in'] as bool? ?? false,
       isExpired: json['is_expired'] as bool? ?? false,
       isAnonymous: json['is_anonymous'] as bool? ?? false,
       isJoinedGroup: json['is_joined_group'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_LoggedInDataToJson(_$_LoggedInData instance) =>
+Map<String, dynamic> _$$LoggedInDataImplToJson(_$LoggedInDataImpl instance) =>
     <String, dynamic>{
       'is_logged_in': instance.isLoggedIn,
       'is_expired': instance.isExpired,

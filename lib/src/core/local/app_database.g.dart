@@ -1197,6 +1197,7 @@ class InteractionsCompanion extends UpdateCompanion<Interaction> {
 
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
+  _$AppDatabaseManager get managers => _$AppDatabaseManager(this);
   late final $GroupsTable groups = $GroupsTable(this);
   late final $ContactsTable contacts = $ContactsTable(this);
   late final $InteractionsTable interactions = $InteractionsTable(this);
@@ -1210,4 +1211,561 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities =>
       [groups, contacts, interactions];
+}
+
+typedef $$GroupsTableInsertCompanionBuilder = GroupsCompanion Function({
+  required String id,
+  Value<String> ownerId,
+  Value<String> name,
+  Value<String> description,
+  Value<String> avatar,
+  Value<FrequencyIntervalType> frequencyInterval,
+  Value<List<dynamic>> contacts,
+  Value<DateTime?> dateCreated,
+  Value<int> rowid,
+});
+typedef $$GroupsTableUpdateCompanionBuilder = GroupsCompanion Function({
+  Value<String> id,
+  Value<String> ownerId,
+  Value<String> name,
+  Value<String> description,
+  Value<String> avatar,
+  Value<FrequencyIntervalType> frequencyInterval,
+  Value<List<dynamic>> contacts,
+  Value<DateTime?> dateCreated,
+  Value<int> rowid,
+});
+
+class $$GroupsTableTableManager extends RootTableManager<
+    _$AppDatabase,
+    $GroupsTable,
+    Group,
+    $$GroupsTableFilterComposer,
+    $$GroupsTableOrderingComposer,
+    $$GroupsTableProcessedTableManager,
+    $$GroupsTableInsertCompanionBuilder,
+    $$GroupsTableUpdateCompanionBuilder> {
+  $$GroupsTableTableManager(_$AppDatabase db, $GroupsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$GroupsTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$GroupsTableOrderingComposer(ComposerState(db, table)),
+          getChildManagerBuilder: (p) => $$GroupsTableProcessedTableManager(p),
+          getUpdateCompanionBuilder: ({
+            Value<String> id = const Value.absent(),
+            Value<String> ownerId = const Value.absent(),
+            Value<String> name = const Value.absent(),
+            Value<String> description = const Value.absent(),
+            Value<String> avatar = const Value.absent(),
+            Value<FrequencyIntervalType> frequencyInterval =
+                const Value.absent(),
+            Value<List<dynamic>> contacts = const Value.absent(),
+            Value<DateTime?> dateCreated = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              GroupsCompanion(
+            id: id,
+            ownerId: ownerId,
+            name: name,
+            description: description,
+            avatar: avatar,
+            frequencyInterval: frequencyInterval,
+            contacts: contacts,
+            dateCreated: dateCreated,
+            rowid: rowid,
+          ),
+          getInsertCompanionBuilder: ({
+            required String id,
+            Value<String> ownerId = const Value.absent(),
+            Value<String> name = const Value.absent(),
+            Value<String> description = const Value.absent(),
+            Value<String> avatar = const Value.absent(),
+            Value<FrequencyIntervalType> frequencyInterval =
+                const Value.absent(),
+            Value<List<dynamic>> contacts = const Value.absent(),
+            Value<DateTime?> dateCreated = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              GroupsCompanion.insert(
+            id: id,
+            ownerId: ownerId,
+            name: name,
+            description: description,
+            avatar: avatar,
+            frequencyInterval: frequencyInterval,
+            contacts: contacts,
+            dateCreated: dateCreated,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$GroupsTableProcessedTableManager extends ProcessedTableManager<
+    _$AppDatabase,
+    $GroupsTable,
+    Group,
+    $$GroupsTableFilterComposer,
+    $$GroupsTableOrderingComposer,
+    $$GroupsTableProcessedTableManager,
+    $$GroupsTableInsertCompanionBuilder,
+    $$GroupsTableUpdateCompanionBuilder> {
+  $$GroupsTableProcessedTableManager(super.$state);
+}
+
+class $$GroupsTableFilterComposer
+    extends FilterComposer<_$AppDatabase, $GroupsTable> {
+  $$GroupsTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get ownerId => $state.composableBuilder(
+      column: $state.table.ownerId,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get description => $state.composableBuilder(
+      column: $state.table.description,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get avatar => $state.composableBuilder(
+      column: $state.table.avatar,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnWithTypeConverterFilters<FrequencyIntervalType, FrequencyIntervalType,
+          String>
+      get frequencyInterval => $state.composableBuilder(
+          column: $state.table.frequencyInterval,
+          builder: (column, joinBuilders) => ColumnWithTypeConverterFilters(
+              column,
+              joinBuilders: joinBuilders));
+
+  ColumnWithTypeConverterFilters<List<dynamic>, List<dynamic>, String>
+      get contacts => $state.composableBuilder(
+          column: $state.table.contacts,
+          builder: (column, joinBuilders) => ColumnWithTypeConverterFilters(
+              column,
+              joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get dateCreated => $state.composableBuilder(
+      column: $state.table.dateCreated,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$GroupsTableOrderingComposer
+    extends OrderingComposer<_$AppDatabase, $GroupsTable> {
+  $$GroupsTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get ownerId => $state.composableBuilder(
+      column: $state.table.ownerId,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get description => $state.composableBuilder(
+      column: $state.table.description,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get avatar => $state.composableBuilder(
+      column: $state.table.avatar,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get frequencyInterval => $state.composableBuilder(
+      column: $state.table.frequencyInterval,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get contacts => $state.composableBuilder(
+      column: $state.table.contacts,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get dateCreated => $state.composableBuilder(
+      column: $state.table.dateCreated,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+typedef $$ContactsTableInsertCompanionBuilder = ContactsCompanion Function({
+  required String id,
+  Value<String> ownerId,
+  Value<String> groupId,
+  Value<String> avatar,
+  Value<String> name,
+  Value<String> email,
+  Value<String> phoneNo,
+  Value<DateTime?> dateOfBirth,
+  Value<DateTime?> expiration,
+  Value<DateTime?> dateCreated,
+  Value<int> rowid,
+});
+typedef $$ContactsTableUpdateCompanionBuilder = ContactsCompanion Function({
+  Value<String> id,
+  Value<String> ownerId,
+  Value<String> groupId,
+  Value<String> avatar,
+  Value<String> name,
+  Value<String> email,
+  Value<String> phoneNo,
+  Value<DateTime?> dateOfBirth,
+  Value<DateTime?> expiration,
+  Value<DateTime?> dateCreated,
+  Value<int> rowid,
+});
+
+class $$ContactsTableTableManager extends RootTableManager<
+    _$AppDatabase,
+    $ContactsTable,
+    Contact,
+    $$ContactsTableFilterComposer,
+    $$ContactsTableOrderingComposer,
+    $$ContactsTableProcessedTableManager,
+    $$ContactsTableInsertCompanionBuilder,
+    $$ContactsTableUpdateCompanionBuilder> {
+  $$ContactsTableTableManager(_$AppDatabase db, $ContactsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$ContactsTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$ContactsTableOrderingComposer(ComposerState(db, table)),
+          getChildManagerBuilder: (p) =>
+              $$ContactsTableProcessedTableManager(p),
+          getUpdateCompanionBuilder: ({
+            Value<String> id = const Value.absent(),
+            Value<String> ownerId = const Value.absent(),
+            Value<String> groupId = const Value.absent(),
+            Value<String> avatar = const Value.absent(),
+            Value<String> name = const Value.absent(),
+            Value<String> email = const Value.absent(),
+            Value<String> phoneNo = const Value.absent(),
+            Value<DateTime?> dateOfBirth = const Value.absent(),
+            Value<DateTime?> expiration = const Value.absent(),
+            Value<DateTime?> dateCreated = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ContactsCompanion(
+            id: id,
+            ownerId: ownerId,
+            groupId: groupId,
+            avatar: avatar,
+            name: name,
+            email: email,
+            phoneNo: phoneNo,
+            dateOfBirth: dateOfBirth,
+            expiration: expiration,
+            dateCreated: dateCreated,
+            rowid: rowid,
+          ),
+          getInsertCompanionBuilder: ({
+            required String id,
+            Value<String> ownerId = const Value.absent(),
+            Value<String> groupId = const Value.absent(),
+            Value<String> avatar = const Value.absent(),
+            Value<String> name = const Value.absent(),
+            Value<String> email = const Value.absent(),
+            Value<String> phoneNo = const Value.absent(),
+            Value<DateTime?> dateOfBirth = const Value.absent(),
+            Value<DateTime?> expiration = const Value.absent(),
+            Value<DateTime?> dateCreated = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ContactsCompanion.insert(
+            id: id,
+            ownerId: ownerId,
+            groupId: groupId,
+            avatar: avatar,
+            name: name,
+            email: email,
+            phoneNo: phoneNo,
+            dateOfBirth: dateOfBirth,
+            expiration: expiration,
+            dateCreated: dateCreated,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$ContactsTableProcessedTableManager extends ProcessedTableManager<
+    _$AppDatabase,
+    $ContactsTable,
+    Contact,
+    $$ContactsTableFilterComposer,
+    $$ContactsTableOrderingComposer,
+    $$ContactsTableProcessedTableManager,
+    $$ContactsTableInsertCompanionBuilder,
+    $$ContactsTableUpdateCompanionBuilder> {
+  $$ContactsTableProcessedTableManager(super.$state);
+}
+
+class $$ContactsTableFilterComposer
+    extends FilterComposer<_$AppDatabase, $ContactsTable> {
+  $$ContactsTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get ownerId => $state.composableBuilder(
+      column: $state.table.ownerId,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get groupId => $state.composableBuilder(
+      column: $state.table.groupId,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get avatar => $state.composableBuilder(
+      column: $state.table.avatar,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get email => $state.composableBuilder(
+      column: $state.table.email,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get phoneNo => $state.composableBuilder(
+      column: $state.table.phoneNo,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get dateOfBirth => $state.composableBuilder(
+      column: $state.table.dateOfBirth,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get expiration => $state.composableBuilder(
+      column: $state.table.expiration,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get dateCreated => $state.composableBuilder(
+      column: $state.table.dateCreated,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$ContactsTableOrderingComposer
+    extends OrderingComposer<_$AppDatabase, $ContactsTable> {
+  $$ContactsTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get ownerId => $state.composableBuilder(
+      column: $state.table.ownerId,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get groupId => $state.composableBuilder(
+      column: $state.table.groupId,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get avatar => $state.composableBuilder(
+      column: $state.table.avatar,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get email => $state.composableBuilder(
+      column: $state.table.email,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get phoneNo => $state.composableBuilder(
+      column: $state.table.phoneNo,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get dateOfBirth => $state.composableBuilder(
+      column: $state.table.dateOfBirth,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get expiration => $state.composableBuilder(
+      column: $state.table.expiration,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get dateCreated => $state.composableBuilder(
+      column: $state.table.dateCreated,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+typedef $$InteractionsTableInsertCompanionBuilder = InteractionsCompanion
+    Function({
+  required String id,
+  Value<String> contactId,
+  Value<DateTime?> dateCompleted,
+  Value<InteractionMethodType> method,
+  Value<int> rowid,
+});
+typedef $$InteractionsTableUpdateCompanionBuilder = InteractionsCompanion
+    Function({
+  Value<String> id,
+  Value<String> contactId,
+  Value<DateTime?> dateCompleted,
+  Value<InteractionMethodType> method,
+  Value<int> rowid,
+});
+
+class $$InteractionsTableTableManager extends RootTableManager<
+    _$AppDatabase,
+    $InteractionsTable,
+    Interaction,
+    $$InteractionsTableFilterComposer,
+    $$InteractionsTableOrderingComposer,
+    $$InteractionsTableProcessedTableManager,
+    $$InteractionsTableInsertCompanionBuilder,
+    $$InteractionsTableUpdateCompanionBuilder> {
+  $$InteractionsTableTableManager(_$AppDatabase db, $InteractionsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$InteractionsTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$InteractionsTableOrderingComposer(ComposerState(db, table)),
+          getChildManagerBuilder: (p) =>
+              $$InteractionsTableProcessedTableManager(p),
+          getUpdateCompanionBuilder: ({
+            Value<String> id = const Value.absent(),
+            Value<String> contactId = const Value.absent(),
+            Value<DateTime?> dateCompleted = const Value.absent(),
+            Value<InteractionMethodType> method = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              InteractionsCompanion(
+            id: id,
+            contactId: contactId,
+            dateCompleted: dateCompleted,
+            method: method,
+            rowid: rowid,
+          ),
+          getInsertCompanionBuilder: ({
+            required String id,
+            Value<String> contactId = const Value.absent(),
+            Value<DateTime?> dateCompleted = const Value.absent(),
+            Value<InteractionMethodType> method = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              InteractionsCompanion.insert(
+            id: id,
+            contactId: contactId,
+            dateCompleted: dateCompleted,
+            method: method,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$InteractionsTableProcessedTableManager extends ProcessedTableManager<
+    _$AppDatabase,
+    $InteractionsTable,
+    Interaction,
+    $$InteractionsTableFilterComposer,
+    $$InteractionsTableOrderingComposer,
+    $$InteractionsTableProcessedTableManager,
+    $$InteractionsTableInsertCompanionBuilder,
+    $$InteractionsTableUpdateCompanionBuilder> {
+  $$InteractionsTableProcessedTableManager(super.$state);
+}
+
+class $$InteractionsTableFilterComposer
+    extends FilterComposer<_$AppDatabase, $InteractionsTable> {
+  $$InteractionsTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get contactId => $state.composableBuilder(
+      column: $state.table.contactId,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get dateCompleted => $state.composableBuilder(
+      column: $state.table.dateCompleted,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnWithTypeConverterFilters<InteractionMethodType, InteractionMethodType,
+          String>
+      get method => $state.composableBuilder(
+          column: $state.table.method,
+          builder: (column, joinBuilders) => ColumnWithTypeConverterFilters(
+              column,
+              joinBuilders: joinBuilders));
+}
+
+class $$InteractionsTableOrderingComposer
+    extends OrderingComposer<_$AppDatabase, $InteractionsTable> {
+  $$InteractionsTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get contactId => $state.composableBuilder(
+      column: $state.table.contactId,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get dateCompleted => $state.composableBuilder(
+      column: $state.table.dateCompleted,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get method => $state.composableBuilder(
+      column: $state.table.method,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+class _$AppDatabaseManager {
+  final _$AppDatabase _db;
+  _$AppDatabaseManager(this._db);
+  $$GroupsTableTableManager get groups =>
+      $$GroupsTableTableManager(_db, _db.groups);
+  $$ContactsTableTableManager get contacts =>
+      $$ContactsTableTableManager(_db, _db.contacts);
+  $$InteractionsTableTableManager get interactions =>
+      $$InteractionsTableTableManager(_db, _db.interactions);
 }
