@@ -12,7 +12,7 @@ part of 'page_command.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PageCommand {}
@@ -36,25 +36,25 @@ class _$PageCommandCopyWithImpl<$Res, $Val extends PageCommand>
 }
 
 /// @nodoc
-abstract class _$$_PageCommandCopyWith<$Res> {
-  factory _$$_PageCommandCopyWith(
-          _$_PageCommand value, $Res Function(_$_PageCommand) then) =
-      __$$_PageCommandCopyWithImpl<$Res>;
+abstract class _$$PageCommandImplCopyWith<$Res> {
+  factory _$$PageCommandImplCopyWith(
+          _$PageCommandImpl value, $Res Function(_$PageCommandImpl) then) =
+      __$$PageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_PageCommandCopyWithImpl<$Res>
-    extends _$PageCommandCopyWithImpl<$Res, _$_PageCommand>
-    implements _$$_PageCommandCopyWith<$Res> {
-  __$$_PageCommandCopyWithImpl(
-      _$_PageCommand _value, $Res Function(_$_PageCommand) _then)
+class __$$PageCommandImplCopyWithImpl<$Res>
+    extends _$PageCommandCopyWithImpl<$Res, _$PageCommandImpl>
+    implements _$$PageCommandImplCopyWith<$Res> {
+  __$$PageCommandImplCopyWithImpl(
+      _$PageCommandImpl _value, $Res Function(_$PageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_PageCommand extends _PageCommand {
-  _$_PageCommand() : super._();
+class _$PageCommandImpl extends _PageCommand {
+  _$PageCommandImpl() : super._();
 
   @override
   String toString() {
@@ -62,9 +62,9 @@ class _$_PageCommand extends _PageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PageCommand);
+        (other.runtimeType == runtimeType && other is _$PageCommandImpl);
   }
 
   @override
@@ -72,7 +72,7 @@ class _$_PageCommand extends _PageCommand {
 }
 
 abstract class _PageCommand extends PageCommand {
-  factory _PageCommand() = _$_PageCommand;
+  factory _PageCommand() = _$PageCommandImpl;
   _PageCommand._() : super._();
 }
 
@@ -161,18 +161,20 @@ class _$PageCommandNavigationCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ToPageCopyWith<$Res> {
-  factory _$$_ToPageCopyWith(_$_ToPage value, $Res Function(_$_ToPage) then) =
-      __$$_ToPageCopyWithImpl<$Res>;
+abstract class _$$ToPageImplCopyWith<$Res> {
+  factory _$$ToPageImplCopyWith(
+          _$ToPageImpl value, $Res Function(_$ToPageImpl) then) =
+      __$$ToPageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String page, dynamic argument});
 }
 
 /// @nodoc
-class __$$_ToPageCopyWithImpl<$Res>
-    extends _$PageCommandNavigationCopyWithImpl<$Res, _$_ToPage>
-    implements _$$_ToPageCopyWith<$Res> {
-  __$$_ToPageCopyWithImpl(_$_ToPage _value, $Res Function(_$_ToPage) _then)
+class __$$ToPageImplCopyWithImpl<$Res>
+    extends _$PageCommandNavigationCopyWithImpl<$Res, _$ToPageImpl>
+    implements _$$ToPageImplCopyWith<$Res> {
+  __$$ToPageImplCopyWithImpl(
+      _$ToPageImpl _value, $Res Function(_$ToPageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -181,7 +183,7 @@ class __$$_ToPageCopyWithImpl<$Res>
     Object? page = null,
     Object? argument = freezed,
   }) {
-    return _then(_$_ToPage(
+    return _then(_$ToPageImpl(
       null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -196,8 +198,8 @@ class __$$_ToPageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ToPage extends _ToPage {
-  _$_ToPage(this.page, {this.argument}) : super._();
+class _$ToPageImpl extends _ToPage {
+  _$ToPageImpl(this.page, {this.argument}) : super._();
 
   @override
   final String page;
@@ -210,10 +212,10 @@ class _$_ToPage extends _ToPage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ToPage &&
+            other is _$ToPageImpl &&
             (identical(other.page, page) || other.page == page) &&
             const DeepCollectionEquality().equals(other.argument, argument));
   }
@@ -225,8 +227,8 @@ class _$_ToPage extends _ToPage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ToPageCopyWith<_$_ToPage> get copyWith =>
-      __$$_ToPageCopyWithImpl<_$_ToPage>(this, _$identity);
+  _$$ToPageImplCopyWith<_$ToPageImpl> get copyWith =>
+      __$$ToPageImplCopyWithImpl<_$ToPageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -315,31 +317,31 @@ class _$_ToPage extends _ToPage {
 }
 
 abstract class _ToPage extends PageCommandNavigation {
-  factory _ToPage(final String page, {final dynamic argument}) = _$_ToPage;
+  factory _ToPage(final String page, {final dynamic argument}) = _$ToPageImpl;
   _ToPage._() : super._();
 
   String get page;
   dynamic get argument;
   @JsonKey(ignore: true)
-  _$$_ToPageCopyWith<_$_ToPage> get copyWith =>
+  _$$ToPageImplCopyWith<_$ToPageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ReplacePageCopyWith<$Res> {
-  factory _$$_ReplacePageCopyWith(
-          _$_ReplacePage value, $Res Function(_$_ReplacePage) then) =
-      __$$_ReplacePageCopyWithImpl<$Res>;
+abstract class _$$ReplacePageImplCopyWith<$Res> {
+  factory _$$ReplacePageImplCopyWith(
+          _$ReplacePageImpl value, $Res Function(_$ReplacePageImpl) then) =
+      __$$ReplacePageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String page, dynamic argument});
 }
 
 /// @nodoc
-class __$$_ReplacePageCopyWithImpl<$Res>
-    extends _$PageCommandNavigationCopyWithImpl<$Res, _$_ReplacePage>
-    implements _$$_ReplacePageCopyWith<$Res> {
-  __$$_ReplacePageCopyWithImpl(
-      _$_ReplacePage _value, $Res Function(_$_ReplacePage) _then)
+class __$$ReplacePageImplCopyWithImpl<$Res>
+    extends _$PageCommandNavigationCopyWithImpl<$Res, _$ReplacePageImpl>
+    implements _$$ReplacePageImplCopyWith<$Res> {
+  __$$ReplacePageImplCopyWithImpl(
+      _$ReplacePageImpl _value, $Res Function(_$ReplacePageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -348,7 +350,7 @@ class __$$_ReplacePageCopyWithImpl<$Res>
     Object? page = null,
     Object? argument = freezed,
   }) {
-    return _then(_$_ReplacePage(
+    return _then(_$ReplacePageImpl(
       null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -363,8 +365,8 @@ class __$$_ReplacePageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReplacePage extends _ReplacePage {
-  _$_ReplacePage(this.page, {this.argument}) : super._();
+class _$ReplacePageImpl extends _ReplacePage {
+  _$ReplacePageImpl(this.page, {this.argument}) : super._();
 
   @override
   final String page;
@@ -377,10 +379,10 @@ class _$_ReplacePage extends _ReplacePage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReplacePage &&
+            other is _$ReplacePageImpl &&
             (identical(other.page, page) || other.page == page) &&
             const DeepCollectionEquality().equals(other.argument, argument));
   }
@@ -392,8 +394,8 @@ class _$_ReplacePage extends _ReplacePage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReplacePageCopyWith<_$_ReplacePage> get copyWith =>
-      __$$_ReplacePageCopyWithImpl<_$_ReplacePage>(this, _$identity);
+  _$$ReplacePageImplCopyWith<_$ReplacePageImpl> get copyWith =>
+      __$$ReplacePageImplCopyWithImpl<_$ReplacePageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -483,31 +485,34 @@ class _$_ReplacePage extends _ReplacePage {
 
 abstract class _ReplacePage extends PageCommandNavigation {
   factory _ReplacePage(final String page, {final dynamic argument}) =
-      _$_ReplacePage;
+      _$ReplacePageImpl;
   _ReplacePage._() : super._();
 
   String get page;
   dynamic get argument;
   @JsonKey(ignore: true)
-  _$$_ReplacePageCopyWith<_$_ReplacePage> get copyWith =>
+  _$$ReplacePageImplCopyWith<_$ReplacePageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PushAndRemoveUntilPageCopyWith<$Res> {
-  factory _$$_PushAndRemoveUntilPageCopyWith(_$_PushAndRemoveUntilPage value,
-          $Res Function(_$_PushAndRemoveUntilPage) then) =
-      __$$_PushAndRemoveUntilPageCopyWithImpl<$Res>;
+abstract class _$$PushAndRemoveUntilPageImplCopyWith<$Res> {
+  factory _$$PushAndRemoveUntilPageImplCopyWith(
+          _$PushAndRemoveUntilPageImpl value,
+          $Res Function(_$PushAndRemoveUntilPageImpl) then) =
+      __$$PushAndRemoveUntilPageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String page, RoutePredicate predicate, dynamic argument});
 }
 
 /// @nodoc
-class __$$_PushAndRemoveUntilPageCopyWithImpl<$Res>
-    extends _$PageCommandNavigationCopyWithImpl<$Res, _$_PushAndRemoveUntilPage>
-    implements _$$_PushAndRemoveUntilPageCopyWith<$Res> {
-  __$$_PushAndRemoveUntilPageCopyWithImpl(_$_PushAndRemoveUntilPage _value,
-      $Res Function(_$_PushAndRemoveUntilPage) _then)
+class __$$PushAndRemoveUntilPageImplCopyWithImpl<$Res>
+    extends _$PageCommandNavigationCopyWithImpl<$Res,
+        _$PushAndRemoveUntilPageImpl>
+    implements _$$PushAndRemoveUntilPageImplCopyWith<$Res> {
+  __$$PushAndRemoveUntilPageImplCopyWithImpl(
+      _$PushAndRemoveUntilPageImpl _value,
+      $Res Function(_$PushAndRemoveUntilPageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -517,7 +522,7 @@ class __$$_PushAndRemoveUntilPageCopyWithImpl<$Res>
     Object? predicate = null,
     Object? argument = freezed,
   }) {
-    return _then(_$_PushAndRemoveUntilPage(
+    return _then(_$PushAndRemoveUntilPageImpl(
       null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -536,8 +541,8 @@ class __$$_PushAndRemoveUntilPageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PushAndRemoveUntilPage extends _PushAndRemoveUntilPage {
-  _$_PushAndRemoveUntilPage(this.page, this.predicate, {this.argument})
+class _$PushAndRemoveUntilPageImpl extends _PushAndRemoveUntilPage {
+  _$PushAndRemoveUntilPageImpl(this.page, this.predicate, {this.argument})
       : super._();
 
   @override
@@ -553,10 +558,10 @@ class _$_PushAndRemoveUntilPage extends _PushAndRemoveUntilPage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PushAndRemoveUntilPage &&
+            other is _$PushAndRemoveUntilPageImpl &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.predicate, predicate) ||
                 other.predicate == predicate) &&
@@ -570,9 +575,9 @@ class _$_PushAndRemoveUntilPage extends _PushAndRemoveUntilPage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PushAndRemoveUntilPageCopyWith<_$_PushAndRemoveUntilPage> get copyWith =>
-      __$$_PushAndRemoveUntilPageCopyWithImpl<_$_PushAndRemoveUntilPage>(
-          this, _$identity);
+  _$$PushAndRemoveUntilPageImplCopyWith<_$PushAndRemoveUntilPageImpl>
+      get copyWith => __$$PushAndRemoveUntilPageImplCopyWithImpl<
+          _$PushAndRemoveUntilPageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -663,30 +668,30 @@ class _$_PushAndRemoveUntilPage extends _PushAndRemoveUntilPage {
 abstract class _PushAndRemoveUntilPage extends PageCommandNavigation {
   factory _PushAndRemoveUntilPage(
       final String page, final RoutePredicate predicate,
-      {final dynamic argument}) = _$_PushAndRemoveUntilPage;
+      {final dynamic argument}) = _$PushAndRemoveUntilPageImpl;
   _PushAndRemoveUntilPage._() : super._();
 
   String get page;
   RoutePredicate get predicate;
   dynamic get argument;
   @JsonKey(ignore: true)
-  _$$_PushAndRemoveUntilPageCopyWith<_$_PushAndRemoveUntilPage> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PushAndRemoveUntilPageImplCopyWith<_$PushAndRemoveUntilPageImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PopCopyWith<$Res> {
-  factory _$$_PopCopyWith(_$_Pop value, $Res Function(_$_Pop) then) =
-      __$$_PopCopyWithImpl<$Res>;
+abstract class _$$PopImplCopyWith<$Res> {
+  factory _$$PopImplCopyWith(_$PopImpl value, $Res Function(_$PopImpl) then) =
+      __$$PopImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PopResult? result, bool isDialog});
 }
 
 /// @nodoc
-class __$$_PopCopyWithImpl<$Res>
-    extends _$PageCommandNavigationCopyWithImpl<$Res, _$_Pop>
-    implements _$$_PopCopyWith<$Res> {
-  __$$_PopCopyWithImpl(_$_Pop _value, $Res Function(_$_Pop) _then)
+class __$$PopImplCopyWithImpl<$Res>
+    extends _$PageCommandNavigationCopyWithImpl<$Res, _$PopImpl>
+    implements _$$PopImplCopyWith<$Res> {
+  __$$PopImplCopyWithImpl(_$PopImpl _value, $Res Function(_$PopImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -695,7 +700,7 @@ class __$$_PopCopyWithImpl<$Res>
     Object? result = freezed,
     Object? isDialog = null,
   }) {
-    return _then(_$_Pop(
+    return _then(_$PopImpl(
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -710,8 +715,8 @@ class __$$_PopCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Pop extends _Pop {
-  _$_Pop({this.result, this.isDialog = false}) : super._();
+class _$PopImpl extends _Pop {
+  _$PopImpl({this.result, this.isDialog = false}) : super._();
 
   @override
   final PopResult? result;
@@ -725,10 +730,10 @@ class _$_Pop extends _Pop {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Pop &&
+            other is _$PopImpl &&
             (identical(other.result, result) || other.result == result) &&
             (identical(other.isDialog, isDialog) ||
                 other.isDialog == isDialog));
@@ -740,8 +745,8 @@ class _$_Pop extends _Pop {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PopCopyWith<_$_Pop> get copyWith =>
-      __$$_PopCopyWithImpl<_$_Pop>(this, _$identity);
+  _$$PopImplCopyWith<_$PopImpl> get copyWith =>
+      __$$PopImplCopyWithImpl<_$PopImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -830,30 +835,31 @@ class _$_Pop extends _Pop {
 }
 
 abstract class _Pop extends PageCommandNavigation {
-  factory _Pop({final PopResult? result, final bool isDialog}) = _$_Pop;
+  factory _Pop({final PopResult? result, final bool isDialog}) = _$PopImpl;
   _Pop._() : super._();
 
   PopResult? get result;
   bool get isDialog;
   @JsonKey(ignore: true)
-  _$$_PopCopyWith<_$_Pop> get copyWith => throw _privateConstructorUsedError;
+  _$$PopImplCopyWith<_$PopImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PopUntilCopyWith<$Res> {
-  factory _$$_PopUntilCopyWith(
-          _$_PopUntil value, $Res Function(_$_PopUntil) then) =
-      __$$_PopUntilCopyWithImpl<$Res>;
+abstract class _$$PopUntilImplCopyWith<$Res> {
+  factory _$$PopUntilImplCopyWith(
+          _$PopUntilImpl value, $Res Function(_$PopUntilImpl) then) =
+      __$$PopUntilImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String page, PopResult? popResult});
 }
 
 /// @nodoc
-class __$$_PopUntilCopyWithImpl<$Res>
-    extends _$PageCommandNavigationCopyWithImpl<$Res, _$_PopUntil>
-    implements _$$_PopUntilCopyWith<$Res> {
-  __$$_PopUntilCopyWithImpl(
-      _$_PopUntil _value, $Res Function(_$_PopUntil) _then)
+class __$$PopUntilImplCopyWithImpl<$Res>
+    extends _$PageCommandNavigationCopyWithImpl<$Res, _$PopUntilImpl>
+    implements _$$PopUntilImplCopyWith<$Res> {
+  __$$PopUntilImplCopyWithImpl(
+      _$PopUntilImpl _value, $Res Function(_$PopUntilImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -862,7 +868,7 @@ class __$$_PopUntilCopyWithImpl<$Res>
     Object? page = null,
     Object? popResult = freezed,
   }) {
-    return _then(_$_PopUntil(
+    return _then(_$PopUntilImpl(
       null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -877,8 +883,8 @@ class __$$_PopUntilCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PopUntil extends _PopUntil {
-  _$_PopUntil(this.page, {this.popResult}) : super._();
+class _$PopUntilImpl extends _PopUntil {
+  _$PopUntilImpl(this.page, {this.popResult}) : super._();
 
   @override
   final String page;
@@ -891,10 +897,10 @@ class _$_PopUntil extends _PopUntil {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PopUntil &&
+            other is _$PopUntilImpl &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.popResult, popResult) ||
                 other.popResult == popResult));
@@ -906,8 +912,8 @@ class _$_PopUntil extends _PopUntil {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PopUntilCopyWith<_$_PopUntil> get copyWith =>
-      __$$_PopUntilCopyWithImpl<_$_PopUntil>(this, _$identity);
+  _$$PopUntilImplCopyWith<_$PopUntilImpl> get copyWith =>
+      __$$PopUntilImplCopyWithImpl<_$PopUntilImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -997,13 +1003,13 @@ class _$_PopUntil extends _PopUntil {
 
 abstract class _PopUntil extends PageCommandNavigation {
   factory _PopUntil(final String page, {final PopResult? popResult}) =
-      _$_PopUntil;
+      _$PopUntilImpl;
   _PopUntil._() : super._();
 
   String get page;
   PopResult? get popResult;
   @JsonKey(ignore: true)
-  _$$_PopUntilCopyWith<_$_PopUntil> get copyWith =>
+  _$$PopUntilImplCopyWith<_$PopUntilImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1088,22 +1094,22 @@ class _$PageCommandMessageCopyWithImpl<$Res, $Val extends PageCommandMessage>
 }
 
 /// @nodoc
-abstract class _$$_ShowErrorMessageCopyWith<$Res>
+abstract class _$$ShowErrorMessageImplCopyWith<$Res>
     implements $PageCommandMessageCopyWith<$Res> {
-  factory _$$_ShowErrorMessageCopyWith(
-          _$_ShowErrorMessage value, $Res Function(_$_ShowErrorMessage) then) =
-      __$$_ShowErrorMessageCopyWithImpl<$Res>;
+  factory _$$ShowErrorMessageImplCopyWith(_$ShowErrorMessageImpl value,
+          $Res Function(_$ShowErrorMessageImpl) then) =
+      __$$ShowErrorMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String msg});
 }
 
 /// @nodoc
-class __$$_ShowErrorMessageCopyWithImpl<$Res>
-    extends _$PageCommandMessageCopyWithImpl<$Res, _$_ShowErrorMessage>
-    implements _$$_ShowErrorMessageCopyWith<$Res> {
-  __$$_ShowErrorMessageCopyWithImpl(
-      _$_ShowErrorMessage _value, $Res Function(_$_ShowErrorMessage) _then)
+class __$$ShowErrorMessageImplCopyWithImpl<$Res>
+    extends _$PageCommandMessageCopyWithImpl<$Res, _$ShowErrorMessageImpl>
+    implements _$$ShowErrorMessageImplCopyWith<$Res> {
+  __$$ShowErrorMessageImplCopyWithImpl(_$ShowErrorMessageImpl _value,
+      $Res Function(_$ShowErrorMessageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1111,7 +1117,7 @@ class __$$_ShowErrorMessageCopyWithImpl<$Res>
   $Res call({
     Object? msg = null,
   }) {
-    return _then(_$_ShowErrorMessage(
+    return _then(_$ShowErrorMessageImpl(
       null == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
@@ -1122,8 +1128,8 @@ class __$$_ShowErrorMessageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowErrorMessage extends _ShowErrorMessage {
-  _$_ShowErrorMessage(this.msg) : super._();
+class _$ShowErrorMessageImpl extends _ShowErrorMessage {
+  _$ShowErrorMessageImpl(this.msg) : super._();
 
   @override
   final String msg;
@@ -1134,10 +1140,10 @@ class _$_ShowErrorMessage extends _ShowErrorMessage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowErrorMessage &&
+            other is _$ShowErrorMessageImpl &&
             (identical(other.msg, msg) || other.msg == msg));
   }
 
@@ -1147,8 +1153,9 @@ class _$_ShowErrorMessage extends _ShowErrorMessage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShowErrorMessageCopyWith<_$_ShowErrorMessage> get copyWith =>
-      __$$_ShowErrorMessageCopyWithImpl<_$_ShowErrorMessage>(this, _$identity);
+  _$$ShowErrorMessageImplCopyWith<_$ShowErrorMessageImpl> get copyWith =>
+      __$$ShowErrorMessageImplCopyWithImpl<_$ShowErrorMessageImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1214,34 +1221,34 @@ class _$_ShowErrorMessage extends _ShowErrorMessage {
 }
 
 abstract class _ShowErrorMessage extends PageCommandMessage {
-  factory _ShowErrorMessage(final String msg) = _$_ShowErrorMessage;
+  factory _ShowErrorMessage(final String msg) = _$ShowErrorMessageImpl;
   _ShowErrorMessage._() : super._();
 
   @override
   String get msg;
   @override
   @JsonKey(ignore: true)
-  _$$_ShowErrorMessageCopyWith<_$_ShowErrorMessage> get copyWith =>
+  _$$ShowErrorMessageImplCopyWith<_$ShowErrorMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShowSuccessMessageCopyWith<$Res>
+abstract class _$$ShowSuccessMessageImplCopyWith<$Res>
     implements $PageCommandMessageCopyWith<$Res> {
-  factory _$$_ShowSuccessMessageCopyWith(_$_ShowSuccessMessage value,
-          $Res Function(_$_ShowSuccessMessage) then) =
-      __$$_ShowSuccessMessageCopyWithImpl<$Res>;
+  factory _$$ShowSuccessMessageImplCopyWith(_$ShowSuccessMessageImpl value,
+          $Res Function(_$ShowSuccessMessageImpl) then) =
+      __$$ShowSuccessMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String msg});
 }
 
 /// @nodoc
-class __$$_ShowSuccessMessageCopyWithImpl<$Res>
-    extends _$PageCommandMessageCopyWithImpl<$Res, _$_ShowSuccessMessage>
-    implements _$$_ShowSuccessMessageCopyWith<$Res> {
-  __$$_ShowSuccessMessageCopyWithImpl(
-      _$_ShowSuccessMessage _value, $Res Function(_$_ShowSuccessMessage) _then)
+class __$$ShowSuccessMessageImplCopyWithImpl<$Res>
+    extends _$PageCommandMessageCopyWithImpl<$Res, _$ShowSuccessMessageImpl>
+    implements _$$ShowSuccessMessageImplCopyWith<$Res> {
+  __$$ShowSuccessMessageImplCopyWithImpl(_$ShowSuccessMessageImpl _value,
+      $Res Function(_$ShowSuccessMessageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1249,7 +1256,7 @@ class __$$_ShowSuccessMessageCopyWithImpl<$Res>
   $Res call({
     Object? msg = null,
   }) {
-    return _then(_$_ShowSuccessMessage(
+    return _then(_$ShowSuccessMessageImpl(
       null == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
@@ -1260,8 +1267,8 @@ class __$$_ShowSuccessMessageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowSuccessMessage extends _ShowSuccessMessage {
-  _$_ShowSuccessMessage(this.msg) : super._();
+class _$ShowSuccessMessageImpl extends _ShowSuccessMessage {
+  _$ShowSuccessMessageImpl(this.msg) : super._();
 
   @override
   final String msg;
@@ -1272,10 +1279,10 @@ class _$_ShowSuccessMessage extends _ShowSuccessMessage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowSuccessMessage &&
+            other is _$ShowSuccessMessageImpl &&
             (identical(other.msg, msg) || other.msg == msg));
   }
 
@@ -1285,8 +1292,8 @@ class _$_ShowSuccessMessage extends _ShowSuccessMessage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShowSuccessMessageCopyWith<_$_ShowSuccessMessage> get copyWith =>
-      __$$_ShowSuccessMessageCopyWithImpl<_$_ShowSuccessMessage>(
+  _$$ShowSuccessMessageImplCopyWith<_$ShowSuccessMessageImpl> get copyWith =>
+      __$$ShowSuccessMessageImplCopyWithImpl<_$ShowSuccessMessageImpl>(
           this, _$identity);
 
   @override
@@ -1353,14 +1360,14 @@ class _$_ShowSuccessMessage extends _ShowSuccessMessage {
 }
 
 abstract class _ShowSuccessMessage extends PageCommandMessage {
-  factory _ShowSuccessMessage(final String msg) = _$_ShowSuccessMessage;
+  factory _ShowSuccessMessage(final String msg) = _$ShowSuccessMessageImpl;
   _ShowSuccessMessage._() : super._();
 
   @override
   String get msg;
   @override
   @JsonKey(ignore: true)
-  _$$_ShowSuccessMessageCopyWith<_$_ShowSuccessMessage> get copyWith =>
+  _$$ShowSuccessMessageImplCopyWith<_$ShowSuccessMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1439,20 +1446,20 @@ class _$PageCommandDialogCopyWithImpl<$Res, $Val extends PageCommandDialog>
 }
 
 /// @nodoc
-abstract class _$$_PageCommandDialogCopyWith<$Res> {
-  factory _$$_PageCommandDialogCopyWith(_$_PageCommandDialog value,
-          $Res Function(_$_PageCommandDialog) then) =
-      __$$_PageCommandDialogCopyWithImpl<$Res>;
+abstract class _$$PageCommandDialogImplCopyWith<$Res> {
+  factory _$$PageCommandDialogImplCopyWith(_$PageCommandDialogImpl value,
+          $Res Function(_$PageCommandDialogImpl) then) =
+      __$$PageCommandDialogImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DialogType dialogType, dynamic argument});
 }
 
 /// @nodoc
-class __$$_PageCommandDialogCopyWithImpl<$Res>
-    extends _$PageCommandDialogCopyWithImpl<$Res, _$_PageCommandDialog>
-    implements _$$_PageCommandDialogCopyWith<$Res> {
-  __$$_PageCommandDialogCopyWithImpl(
-      _$_PageCommandDialog _value, $Res Function(_$_PageCommandDialog) _then)
+class __$$PageCommandDialogImplCopyWithImpl<$Res>
+    extends _$PageCommandDialogCopyWithImpl<$Res, _$PageCommandDialogImpl>
+    implements _$$PageCommandDialogImplCopyWith<$Res> {
+  __$$PageCommandDialogImplCopyWithImpl(_$PageCommandDialogImpl _value,
+      $Res Function(_$PageCommandDialogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1461,7 +1468,7 @@ class __$$_PageCommandDialogCopyWithImpl<$Res>
     Object? dialogType = null,
     Object? argument = freezed,
   }) {
-    return _then(_$_PageCommandDialog(
+    return _then(_$PageCommandDialogImpl(
       null == dialogType
           ? _value.dialogType
           : dialogType // ignore: cast_nullable_to_non_nullable
@@ -1476,8 +1483,8 @@ class __$$_PageCommandDialogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PageCommandDialog extends _PageCommandDialog {
-  _$_PageCommandDialog(this.dialogType, {this.argument}) : super._();
+class _$PageCommandDialogImpl extends _PageCommandDialog {
+  _$PageCommandDialogImpl(this.dialogType, {this.argument}) : super._();
 
   @override
   final DialogType dialogType;
@@ -1490,10 +1497,10 @@ class _$_PageCommandDialog extends _PageCommandDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PageCommandDialog &&
+            other is _$PageCommandDialogImpl &&
             (identical(other.dialogType, dialogType) ||
                 other.dialogType == dialogType) &&
             const DeepCollectionEquality().equals(other.argument, argument));
@@ -1506,8 +1513,8 @@ class _$_PageCommandDialog extends _PageCommandDialog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PageCommandDialogCopyWith<_$_PageCommandDialog> get copyWith =>
-      __$$_PageCommandDialogCopyWithImpl<_$_PageCommandDialog>(
+  _$$PageCommandDialogImplCopyWith<_$PageCommandDialogImpl> get copyWith =>
+      __$$PageCommandDialogImplCopyWithImpl<_$PageCommandDialogImpl>(
           this, _$identity);
 
   @override
@@ -1589,31 +1596,31 @@ class _$_PageCommandDialog extends _PageCommandDialog {
 
 abstract class _PageCommandDialog extends PageCommandDialog {
   factory _PageCommandDialog(final DialogType dialogType,
-      {final dynamic argument}) = _$_PageCommandDialog;
+      {final dynamic argument}) = _$PageCommandDialogImpl;
   _PageCommandDialog._() : super._();
 
   DialogType get dialogType;
   dynamic get argument;
   @JsonKey(ignore: true)
-  _$$_PageCommandDialogCopyWith<_$_PageCommandDialog> get copyWith =>
+  _$$PageCommandDialogImplCopyWith<_$PageCommandDialogImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShowErrorDialogCopyWith<$Res> {
-  factory _$$_ShowErrorDialogCopyWith(
-          _$_ShowErrorDialog value, $Res Function(_$_ShowErrorDialog) then) =
-      __$$_ShowErrorDialogCopyWithImpl<$Res>;
+abstract class _$$ShowErrorDialogImplCopyWith<$Res> {
+  factory _$$ShowErrorDialogImplCopyWith(_$ShowErrorDialogImpl value,
+          $Res Function(_$ShowErrorDialogImpl) then) =
+      __$$ShowErrorDialogImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String msg});
 }
 
 /// @nodoc
-class __$$_ShowErrorDialogCopyWithImpl<$Res>
-    extends _$PageCommandDialogCopyWithImpl<$Res, _$_ShowErrorDialog>
-    implements _$$_ShowErrorDialogCopyWith<$Res> {
-  __$$_ShowErrorDialogCopyWithImpl(
-      _$_ShowErrorDialog _value, $Res Function(_$_ShowErrorDialog) _then)
+class __$$ShowErrorDialogImplCopyWithImpl<$Res>
+    extends _$PageCommandDialogCopyWithImpl<$Res, _$ShowErrorDialogImpl>
+    implements _$$ShowErrorDialogImplCopyWith<$Res> {
+  __$$ShowErrorDialogImplCopyWithImpl(
+      _$ShowErrorDialogImpl _value, $Res Function(_$ShowErrorDialogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1621,7 +1628,7 @@ class __$$_ShowErrorDialogCopyWithImpl<$Res>
   $Res call({
     Object? msg = null,
   }) {
-    return _then(_$_ShowErrorDialog(
+    return _then(_$ShowErrorDialogImpl(
       null == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
@@ -1632,8 +1639,8 @@ class __$$_ShowErrorDialogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowErrorDialog extends _ShowErrorDialog {
-  _$_ShowErrorDialog(this.msg) : super._();
+class _$ShowErrorDialogImpl extends _ShowErrorDialog {
+  _$ShowErrorDialogImpl(this.msg) : super._();
 
   @override
   final String msg;
@@ -1644,10 +1651,10 @@ class _$_ShowErrorDialog extends _ShowErrorDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowErrorDialog &&
+            other is _$ShowErrorDialogImpl &&
             (identical(other.msg, msg) || other.msg == msg));
   }
 
@@ -1657,8 +1664,9 @@ class _$_ShowErrorDialog extends _ShowErrorDialog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShowErrorDialogCopyWith<_$_ShowErrorDialog> get copyWith =>
-      __$$_ShowErrorDialogCopyWithImpl<_$_ShowErrorDialog>(this, _$identity);
+  _$$ShowErrorDialogImplCopyWith<_$ShowErrorDialogImpl> get copyWith =>
+      __$$ShowErrorDialogImplCopyWithImpl<_$ShowErrorDialogImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1738,30 +1746,30 @@ class _$_ShowErrorDialog extends _ShowErrorDialog {
 }
 
 abstract class _ShowErrorDialog extends PageCommandDialog {
-  factory _ShowErrorDialog(final String msg) = _$_ShowErrorDialog;
+  factory _ShowErrorDialog(final String msg) = _$ShowErrorDialogImpl;
   _ShowErrorDialog._() : super._();
 
   String get msg;
   @JsonKey(ignore: true)
-  _$$_ShowErrorDialogCopyWith<_$_ShowErrorDialog> get copyWith =>
+  _$$ShowErrorDialogImplCopyWith<_$ShowErrorDialogImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShowSuccessDialogCopyWith<$Res> {
-  factory _$$_ShowSuccessDialogCopyWith(_$_ShowSuccessDialog value,
-          $Res Function(_$_ShowSuccessDialog) then) =
-      __$$_ShowSuccessDialogCopyWithImpl<$Res>;
+abstract class _$$ShowSuccessDialogImplCopyWith<$Res> {
+  factory _$$ShowSuccessDialogImplCopyWith(_$ShowSuccessDialogImpl value,
+          $Res Function(_$ShowSuccessDialogImpl) then) =
+      __$$ShowSuccessDialogImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String msg});
 }
 
 /// @nodoc
-class __$$_ShowSuccessDialogCopyWithImpl<$Res>
-    extends _$PageCommandDialogCopyWithImpl<$Res, _$_ShowSuccessDialog>
-    implements _$$_ShowSuccessDialogCopyWith<$Res> {
-  __$$_ShowSuccessDialogCopyWithImpl(
-      _$_ShowSuccessDialog _value, $Res Function(_$_ShowSuccessDialog) _then)
+class __$$ShowSuccessDialogImplCopyWithImpl<$Res>
+    extends _$PageCommandDialogCopyWithImpl<$Res, _$ShowSuccessDialogImpl>
+    implements _$$ShowSuccessDialogImplCopyWith<$Res> {
+  __$$ShowSuccessDialogImplCopyWithImpl(_$ShowSuccessDialogImpl _value,
+      $Res Function(_$ShowSuccessDialogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1769,7 +1777,7 @@ class __$$_ShowSuccessDialogCopyWithImpl<$Res>
   $Res call({
     Object? msg = null,
   }) {
-    return _then(_$_ShowSuccessDialog(
+    return _then(_$ShowSuccessDialogImpl(
       null == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
@@ -1780,8 +1788,8 @@ class __$$_ShowSuccessDialogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowSuccessDialog extends _ShowSuccessDialog {
-  _$_ShowSuccessDialog(this.msg) : super._();
+class _$ShowSuccessDialogImpl extends _ShowSuccessDialog {
+  _$ShowSuccessDialogImpl(this.msg) : super._();
 
   @override
   final String msg;
@@ -1792,10 +1800,10 @@ class _$_ShowSuccessDialog extends _ShowSuccessDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowSuccessDialog &&
+            other is _$ShowSuccessDialogImpl &&
             (identical(other.msg, msg) || other.msg == msg));
   }
 
@@ -1805,8 +1813,8 @@ class _$_ShowSuccessDialog extends _ShowSuccessDialog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShowSuccessDialogCopyWith<_$_ShowSuccessDialog> get copyWith =>
-      __$$_ShowSuccessDialogCopyWithImpl<_$_ShowSuccessDialog>(
+  _$$ShowSuccessDialogImplCopyWith<_$ShowSuccessDialogImpl> get copyWith =>
+      __$$ShowSuccessDialogImplCopyWithImpl<_$ShowSuccessDialogImpl>(
           this, _$identity);
 
   @override
@@ -1887,38 +1895,38 @@ class _$_ShowSuccessDialog extends _ShowSuccessDialog {
 }
 
 abstract class _ShowSuccessDialog extends PageCommandDialog {
-  factory _ShowSuccessDialog(final String msg) = _$_ShowSuccessDialog;
+  factory _ShowSuccessDialog(final String msg) = _$ShowSuccessDialogImpl;
   _ShowSuccessDialog._() : super._();
 
   String get msg;
   @JsonKey(ignore: true)
-  _$$_ShowSuccessDialogCopyWith<_$_ShowSuccessDialog> get copyWith =>
+  _$$ShowSuccessDialogImplCopyWith<_$ShowSuccessDialogImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShowExpirationSessionDialogCopyWith<$Res> {
-  factory _$$_ShowExpirationSessionDialogCopyWith(
-          _$_ShowExpirationSessionDialog value,
-          $Res Function(_$_ShowExpirationSessionDialog) then) =
-      __$$_ShowExpirationSessionDialogCopyWithImpl<$Res>;
+abstract class _$$ShowExpirationSessionDialogImplCopyWith<$Res> {
+  factory _$$ShowExpirationSessionDialogImplCopyWith(
+          _$ShowExpirationSessionDialogImpl value,
+          $Res Function(_$ShowExpirationSessionDialogImpl) then) =
+      __$$ShowExpirationSessionDialogImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ShowExpirationSessionDialogCopyWithImpl<$Res>
+class __$$ShowExpirationSessionDialogImplCopyWithImpl<$Res>
     extends _$PageCommandDialogCopyWithImpl<$Res,
-        _$_ShowExpirationSessionDialog>
-    implements _$$_ShowExpirationSessionDialogCopyWith<$Res> {
-  __$$_ShowExpirationSessionDialogCopyWithImpl(
-      _$_ShowExpirationSessionDialog _value,
-      $Res Function(_$_ShowExpirationSessionDialog) _then)
+        _$ShowExpirationSessionDialogImpl>
+    implements _$$ShowExpirationSessionDialogImplCopyWith<$Res> {
+  __$$ShowExpirationSessionDialogImplCopyWithImpl(
+      _$ShowExpirationSessionDialogImpl _value,
+      $Res Function(_$ShowExpirationSessionDialogImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ShowExpirationSessionDialog extends _ShowExpirationSessionDialog {
-  _$_ShowExpirationSessionDialog() : super._();
+class _$ShowExpirationSessionDialogImpl extends _ShowExpirationSessionDialog {
+  _$ShowExpirationSessionDialogImpl() : super._();
 
   @override
   String toString() {
@@ -1926,10 +1934,10 @@ class _$_ShowExpirationSessionDialog extends _ShowExpirationSessionDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowExpirationSessionDialog);
+            other is _$ShowExpirationSessionDialogImpl);
   }
 
   @override
@@ -2013,7 +2021,7 @@ class _$_ShowExpirationSessionDialog extends _ShowExpirationSessionDialog {
 }
 
 abstract class _ShowExpirationSessionDialog extends PageCommandDialog {
-  factory _ShowExpirationSessionDialog() = _$_ShowExpirationSessionDialog;
+  factory _ShowExpirationSessionDialog() = _$ShowExpirationSessionDialogImpl;
   _ShowExpirationSessionDialog._() : super._();
 }
 
@@ -2068,25 +2076,25 @@ class _$PageCommandShowBottomSheetCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_PageCommandShowBottomSheetCopyWith<$Res>
+abstract class _$$PageCommandShowBottomSheetImplCopyWith<$Res>
     implements $PageCommandShowBottomSheetCopyWith<$Res> {
-  factory _$$_PageCommandShowBottomSheetCopyWith(
-          _$_PageCommandShowBottomSheet value,
-          $Res Function(_$_PageCommandShowBottomSheet) then) =
-      __$$_PageCommandShowBottomSheetCopyWithImpl<$Res>;
+  factory _$$PageCommandShowBottomSheetImplCopyWith(
+          _$PageCommandShowBottomSheetImpl value,
+          $Res Function(_$PageCommandShowBottomSheetImpl) then) =
+      __$$PageCommandShowBottomSheetImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({SheetType sheetType, dynamic argument});
 }
 
 /// @nodoc
-class __$$_PageCommandShowBottomSheetCopyWithImpl<$Res>
+class __$$PageCommandShowBottomSheetImplCopyWithImpl<$Res>
     extends _$PageCommandShowBottomSheetCopyWithImpl<$Res,
-        _$_PageCommandShowBottomSheet>
-    implements _$$_PageCommandShowBottomSheetCopyWith<$Res> {
-  __$$_PageCommandShowBottomSheetCopyWithImpl(
-      _$_PageCommandShowBottomSheet _value,
-      $Res Function(_$_PageCommandShowBottomSheet) _then)
+        _$PageCommandShowBottomSheetImpl>
+    implements _$$PageCommandShowBottomSheetImplCopyWith<$Res> {
+  __$$PageCommandShowBottomSheetImplCopyWithImpl(
+      _$PageCommandShowBottomSheetImpl _value,
+      $Res Function(_$PageCommandShowBottomSheetImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2095,7 +2103,7 @@ class __$$_PageCommandShowBottomSheetCopyWithImpl<$Res>
     Object? sheetType = null,
     Object? argument = freezed,
   }) {
-    return _then(_$_PageCommandShowBottomSheet(
+    return _then(_$PageCommandShowBottomSheetImpl(
       sheetType: null == sheetType
           ? _value.sheetType
           : sheetType // ignore: cast_nullable_to_non_nullable
@@ -2110,8 +2118,8 @@ class __$$_PageCommandShowBottomSheetCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PageCommandShowBottomSheet extends _PageCommandShowBottomSheet {
-  _$_PageCommandShowBottomSheet({required this.sheetType, this.argument})
+class _$PageCommandShowBottomSheetImpl extends _PageCommandShowBottomSheet {
+  _$PageCommandShowBottomSheetImpl({required this.sheetType, this.argument})
       : super._();
 
   @override
@@ -2125,10 +2133,10 @@ class _$_PageCommandShowBottomSheet extends _PageCommandShowBottomSheet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PageCommandShowBottomSheet &&
+            other is _$PageCommandShowBottomSheetImpl &&
             (identical(other.sheetType, sheetType) ||
                 other.sheetType == sheetType) &&
             const DeepCollectionEquality().equals(other.argument, argument));
@@ -2141,15 +2149,15 @@ class _$_PageCommandShowBottomSheet extends _PageCommandShowBottomSheet {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PageCommandShowBottomSheetCopyWith<_$_PageCommandShowBottomSheet>
-      get copyWith => __$$_PageCommandShowBottomSheetCopyWithImpl<
-          _$_PageCommandShowBottomSheet>(this, _$identity);
+  _$$PageCommandShowBottomSheetImplCopyWith<_$PageCommandShowBottomSheetImpl>
+      get copyWith => __$$PageCommandShowBottomSheetImplCopyWithImpl<
+          _$PageCommandShowBottomSheetImpl>(this, _$identity);
 }
 
 abstract class _PageCommandShowBottomSheet extends PageCommandShowBottomSheet {
   factory _PageCommandShowBottomSheet(
       {required final SheetType sheetType,
-      final dynamic argument}) = _$_PageCommandShowBottomSheet;
+      final dynamic argument}) = _$PageCommandShowBottomSheetImpl;
   _PageCommandShowBottomSheet._() : super._();
 
   @override
@@ -2158,6 +2166,6 @@ abstract class _PageCommandShowBottomSheet extends PageCommandShowBottomSheet {
   dynamic get argument;
   @override
   @JsonKey(ignore: true)
-  _$$_PageCommandShowBottomSheetCopyWith<_$_PageCommandShowBottomSheet>
+  _$$PageCommandShowBottomSheetImplCopyWith<_$PageCommandShowBottomSheetImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

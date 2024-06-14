@@ -12,7 +12,7 @@ part of 'logged_in_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 LoggedInData _$LoggedInDataFromJson(Map<String, dynamic> json) {
   return _LoggedInData.fromJson(json);
@@ -88,11 +88,11 @@ class _$LoggedInDataCopyWithImpl<$Res, $Val extends LoggedInData>
 }
 
 /// @nodoc
-abstract class _$$_LoggedInDataCopyWith<$Res>
+abstract class _$$LoggedInDataImplCopyWith<$Res>
     implements $LoggedInDataCopyWith<$Res> {
-  factory _$$_LoggedInDataCopyWith(
-          _$_LoggedInData value, $Res Function(_$_LoggedInData) then) =
-      __$$_LoggedInDataCopyWithImpl<$Res>;
+  factory _$$LoggedInDataImplCopyWith(
+          _$LoggedInDataImpl value, $Res Function(_$LoggedInDataImpl) then) =
+      __$$LoggedInDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_LoggedInDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LoggedInDataCopyWithImpl<$Res>
-    extends _$LoggedInDataCopyWithImpl<$Res, _$_LoggedInData>
-    implements _$$_LoggedInDataCopyWith<$Res> {
-  __$$_LoggedInDataCopyWithImpl(
-      _$_LoggedInData _value, $Res Function(_$_LoggedInData) _then)
+class __$$LoggedInDataImplCopyWithImpl<$Res>
+    extends _$LoggedInDataCopyWithImpl<$Res, _$LoggedInDataImpl>
+    implements _$$LoggedInDataImplCopyWith<$Res> {
+  __$$LoggedInDataImplCopyWithImpl(
+      _$LoggedInDataImpl _value, $Res Function(_$LoggedInDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$_LoggedInDataCopyWithImpl<$Res>
     Object? isAnonymous = null,
     Object? isJoinedGroup = null,
   }) {
-    return _then(_$_LoggedInData(
+    return _then(_$LoggedInDataImpl(
       isLoggedIn: null == isLoggedIn
           ? _value.isLoggedIn
           : isLoggedIn // ignore: cast_nullable_to_non_nullable
@@ -141,15 +141,15 @@ class __$$_LoggedInDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_LoggedInData implements _LoggedInData {
-  const _$_LoggedInData(
+class _$LoggedInDataImpl implements _LoggedInData {
+  const _$LoggedInDataImpl(
       {@HiveField(0, defaultValue: false) this.isLoggedIn = false,
       @HiveField(1, defaultValue: false) this.isExpired = false,
       @HiveField(2, defaultValue: false) this.isAnonymous = false,
       @HiveField(3, defaultValue: false) this.isJoinedGroup = false});
 
-  factory _$_LoggedInData.fromJson(Map<String, dynamic> json) =>
-      _$$_LoggedInDataFromJson(json);
+  factory _$LoggedInDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoggedInDataImplFromJson(json);
 
   @override
   @JsonKey()
@@ -174,10 +174,10 @@ class _$_LoggedInData implements _LoggedInData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoggedInData &&
+            other is _$LoggedInDataImpl &&
             (identical(other.isLoggedIn, isLoggedIn) ||
                 other.isLoggedIn == isLoggedIn) &&
             (identical(other.isExpired, isExpired) ||
@@ -196,12 +196,12 @@ class _$_LoggedInData implements _LoggedInData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoggedInDataCopyWith<_$_LoggedInData> get copyWith =>
-      __$$_LoggedInDataCopyWithImpl<_$_LoggedInData>(this, _$identity);
+  _$$LoggedInDataImplCopyWith<_$LoggedInDataImpl> get copyWith =>
+      __$$LoggedInDataImplCopyWithImpl<_$LoggedInDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LoggedInDataToJson(
+    return _$$LoggedInDataImplToJson(
       this,
     );
   }
@@ -213,10 +213,10 @@ abstract class _LoggedInData implements LoggedInData {
           @HiveField(1, defaultValue: false) final bool isExpired,
           @HiveField(2, defaultValue: false) final bool isAnonymous,
           @HiveField(3, defaultValue: false) final bool isJoinedGroup}) =
-      _$_LoggedInData;
+      _$LoggedInDataImpl;
 
   factory _LoggedInData.fromJson(Map<String, dynamic> json) =
-      _$_LoggedInData.fromJson;
+      _$LoggedInDataImpl.fromJson;
 
   @override
   @HiveField(0, defaultValue: false)
@@ -232,6 +232,6 @@ abstract class _LoggedInData implements LoggedInData {
   bool get isJoinedGroup;
   @override
   @JsonKey(ignore: true)
-  _$$_LoggedInDataCopyWith<_$_LoggedInData> get copyWith =>
+  _$$LoggedInDataImplCopyWith<_$LoggedInDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

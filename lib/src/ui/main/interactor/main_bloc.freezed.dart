@@ -12,7 +12,7 @@ part of 'main_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$MainEvent {
@@ -106,24 +106,25 @@ class _$MainEventCopyWithImpl<$Res, $Val extends MainEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -131,9 +132,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -235,29 +236,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements MainEvent {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_ClearPageCommandCopyWith<$Res> {
-  factory _$$_ClearPageCommandCopyWith(
-          _$_ClearPageCommand value, $Res Function(_$_ClearPageCommand) then) =
-      __$$_ClearPageCommandCopyWithImpl<$Res>;
+abstract class _$$ClearPageCommandImplCopyWith<$Res> {
+  factory _$$ClearPageCommandImplCopyWith(_$ClearPageCommandImpl value,
+          $Res Function(_$ClearPageCommandImpl) then) =
+      __$$ClearPageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearPageCommandCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_ClearPageCommand>
-    implements _$$_ClearPageCommandCopyWith<$Res> {
-  __$$_ClearPageCommandCopyWithImpl(
-      _$_ClearPageCommand _value, $Res Function(_$_ClearPageCommand) _then)
+class __$$ClearPageCommandImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$ClearPageCommandImpl>
+    implements _$$ClearPageCommandImplCopyWith<$Res> {
+  __$$ClearPageCommandImplCopyWithImpl(_$ClearPageCommandImpl _value,
+      $Res Function(_$ClearPageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearPageCommand implements _ClearPageCommand {
-  const _$_ClearPageCommand();
+class _$ClearPageCommandImpl implements _ClearPageCommand {
+  const _$ClearPageCommandImpl();
 
   @override
   String toString() {
@@ -265,9 +266,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearPageCommand);
+        (other.runtimeType == runtimeType && other is _$ClearPageCommandImpl);
   }
 
   @override
@@ -369,24 +370,24 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 }
 
 abstract class _ClearPageCommand implements MainEvent {
-  const factory _ClearPageCommand() = _$_ClearPageCommand;
+  const factory _ClearPageCommand() = _$ClearPageCommandImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnSelectedTabTypeCopyWith<$Res> {
-  factory _$$_OnSelectedTabTypeCopyWith(_$_OnSelectedTabType value,
-          $Res Function(_$_OnSelectedTabType) then) =
-      __$$_OnSelectedTabTypeCopyWithImpl<$Res>;
+abstract class _$$OnSelectedTabTypeImplCopyWith<$Res> {
+  factory _$$OnSelectedTabTypeImplCopyWith(_$OnSelectedTabTypeImpl value,
+          $Res Function(_$OnSelectedTabTypeImpl) then) =
+      __$$OnSelectedTabTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BottomNavType type});
 }
 
 /// @nodoc
-class __$$_OnSelectedTabTypeCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_OnSelectedTabType>
-    implements _$$_OnSelectedTabTypeCopyWith<$Res> {
-  __$$_OnSelectedTabTypeCopyWithImpl(
-      _$_OnSelectedTabType _value, $Res Function(_$_OnSelectedTabType) _then)
+class __$$OnSelectedTabTypeImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$OnSelectedTabTypeImpl>
+    implements _$$OnSelectedTabTypeImplCopyWith<$Res> {
+  __$$OnSelectedTabTypeImplCopyWithImpl(_$OnSelectedTabTypeImpl _value,
+      $Res Function(_$OnSelectedTabTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -394,7 +395,7 @@ class __$$_OnSelectedTabTypeCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$_OnSelectedTabType(
+    return _then(_$OnSelectedTabTypeImpl(
       null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -405,8 +406,8 @@ class __$$_OnSelectedTabTypeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnSelectedTabType implements _OnSelectedTabType {
-  const _$_OnSelectedTabType(this.type);
+class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
+  const _$OnSelectedTabTypeImpl(this.type);
 
   @override
   final BottomNavType type;
@@ -417,10 +418,10 @@ class _$_OnSelectedTabType implements _OnSelectedTabType {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnSelectedTabType &&
+            other is _$OnSelectedTabTypeImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -430,8 +431,8 @@ class _$_OnSelectedTabType implements _OnSelectedTabType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnSelectedTabTypeCopyWith<_$_OnSelectedTabType> get copyWith =>
-      __$$_OnSelectedTabTypeCopyWithImpl<_$_OnSelectedTabType>(
+  _$$OnSelectedTabTypeImplCopyWith<_$OnSelectedTabTypeImpl> get copyWith =>
+      __$$OnSelectedTabTypeImplCopyWithImpl<_$OnSelectedTabTypeImpl>(
           this, _$identity);
 
   @override
@@ -531,29 +532,29 @@ class _$_OnSelectedTabType implements _OnSelectedTabType {
 
 abstract class _OnSelectedTabType implements MainEvent {
   const factory _OnSelectedTabType(final BottomNavType type) =
-      _$_OnSelectedTabType;
+      _$OnSelectedTabTypeImpl;
 
   BottomNavType get type;
   @JsonKey(ignore: true)
-  _$$_OnSelectedTabTypeCopyWith<_$_OnSelectedTabType> get copyWith =>
+  _$$OnSelectedTabTypeImplCopyWith<_$OnSelectedTabTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnDrawerItemPressedCopyWith<$Res> {
-  factory _$$_OnDrawerItemPressedCopyWith(_$_OnDrawerItemPressed value,
-          $Res Function(_$_OnDrawerItemPressed) then) =
-      __$$_OnDrawerItemPressedCopyWithImpl<$Res>;
+abstract class _$$OnDrawerItemPressedImplCopyWith<$Res> {
+  factory _$$OnDrawerItemPressedImplCopyWith(_$OnDrawerItemPressedImpl value,
+          $Res Function(_$OnDrawerItemPressedImpl) then) =
+      __$$OnDrawerItemPressedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppDrawerType type});
 }
 
 /// @nodoc
-class __$$_OnDrawerItemPressedCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_OnDrawerItemPressed>
-    implements _$$_OnDrawerItemPressedCopyWith<$Res> {
-  __$$_OnDrawerItemPressedCopyWithImpl(_$_OnDrawerItemPressed _value,
-      $Res Function(_$_OnDrawerItemPressed) _then)
+class __$$OnDrawerItemPressedImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$OnDrawerItemPressedImpl>
+    implements _$$OnDrawerItemPressedImplCopyWith<$Res> {
+  __$$OnDrawerItemPressedImplCopyWithImpl(_$OnDrawerItemPressedImpl _value,
+      $Res Function(_$OnDrawerItemPressedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -561,7 +562,7 @@ class __$$_OnDrawerItemPressedCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$_OnDrawerItemPressed(
+    return _then(_$OnDrawerItemPressedImpl(
       null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -572,8 +573,8 @@ class __$$_OnDrawerItemPressedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnDrawerItemPressed implements _OnDrawerItemPressed {
-  const _$_OnDrawerItemPressed(this.type);
+class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
+  const _$OnDrawerItemPressedImpl(this.type);
 
   @override
   final AppDrawerType type;
@@ -584,10 +585,10 @@ class _$_OnDrawerItemPressed implements _OnDrawerItemPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnDrawerItemPressed &&
+            other is _$OnDrawerItemPressedImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -597,8 +598,8 @@ class _$_OnDrawerItemPressed implements _OnDrawerItemPressed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnDrawerItemPressedCopyWith<_$_OnDrawerItemPressed> get copyWith =>
-      __$$_OnDrawerItemPressedCopyWithImpl<_$_OnDrawerItemPressed>(
+  _$$OnDrawerItemPressedImplCopyWith<_$OnDrawerItemPressedImpl> get copyWith =>
+      __$$OnDrawerItemPressedImplCopyWithImpl<_$OnDrawerItemPressedImpl>(
           this, _$identity);
 
   @override
@@ -698,34 +699,34 @@ class _$_OnDrawerItemPressed implements _OnDrawerItemPressed {
 
 abstract class _OnDrawerItemPressed implements MainEvent {
   const factory _OnDrawerItemPressed(final AppDrawerType type) =
-      _$_OnDrawerItemPressed;
+      _$OnDrawerItemPressedImpl;
 
   AppDrawerType get type;
   @JsonKey(ignore: true)
-  _$$_OnDrawerItemPressedCopyWith<_$_OnDrawerItemPressed> get copyWith =>
+  _$$OnDrawerItemPressedImplCopyWith<_$OnDrawerItemPressedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnConfirmedLogoutCopyWith<$Res> {
-  factory _$$_OnConfirmedLogoutCopyWith(_$_OnConfirmedLogout value,
-          $Res Function(_$_OnConfirmedLogout) then) =
-      __$$_OnConfirmedLogoutCopyWithImpl<$Res>;
+abstract class _$$OnConfirmedLogoutImplCopyWith<$Res> {
+  factory _$$OnConfirmedLogoutImplCopyWith(_$OnConfirmedLogoutImpl value,
+          $Res Function(_$OnConfirmedLogoutImpl) then) =
+      __$$OnConfirmedLogoutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnConfirmedLogoutCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_OnConfirmedLogout>
-    implements _$$_OnConfirmedLogoutCopyWith<$Res> {
-  __$$_OnConfirmedLogoutCopyWithImpl(
-      _$_OnConfirmedLogout _value, $Res Function(_$_OnConfirmedLogout) _then)
+class __$$OnConfirmedLogoutImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$OnConfirmedLogoutImpl>
+    implements _$$OnConfirmedLogoutImplCopyWith<$Res> {
+  __$$OnConfirmedLogoutImplCopyWithImpl(_$OnConfirmedLogoutImpl _value,
+      $Res Function(_$OnConfirmedLogoutImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnConfirmedLogout implements _OnConfirmedLogout {
-  const _$_OnConfirmedLogout();
+class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
+  const _$OnConfirmedLogoutImpl();
 
   @override
   String toString() {
@@ -733,9 +734,9 @@ class _$_OnConfirmedLogout implements _OnConfirmedLogout {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnConfirmedLogout);
+        (other.runtimeType == runtimeType && other is _$OnConfirmedLogoutImpl);
   }
 
   @override
@@ -837,29 +838,29 @@ class _$_OnConfirmedLogout implements _OnConfirmedLogout {
 }
 
 abstract class _OnConfirmedLogout implements MainEvent {
-  const factory _OnConfirmedLogout() = _$_OnConfirmedLogout;
+  const factory _OnConfirmedLogout() = _$OnConfirmedLogoutImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnConfirmedResetDataCopyWith<$Res> {
-  factory _$$_OnConfirmedResetDataCopyWith(_$_OnConfirmedResetData value,
-          $Res Function(_$_OnConfirmedResetData) then) =
-      __$$_OnConfirmedResetDataCopyWithImpl<$Res>;
+abstract class _$$OnConfirmedResetDataImplCopyWith<$Res> {
+  factory _$$OnConfirmedResetDataImplCopyWith(_$OnConfirmedResetDataImpl value,
+          $Res Function(_$OnConfirmedResetDataImpl) then) =
+      __$$OnConfirmedResetDataImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnConfirmedResetDataCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_OnConfirmedResetData>
-    implements _$$_OnConfirmedResetDataCopyWith<$Res> {
-  __$$_OnConfirmedResetDataCopyWithImpl(_$_OnConfirmedResetData _value,
-      $Res Function(_$_OnConfirmedResetData) _then)
+class __$$OnConfirmedResetDataImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$OnConfirmedResetDataImpl>
+    implements _$$OnConfirmedResetDataImplCopyWith<$Res> {
+  __$$OnConfirmedResetDataImplCopyWithImpl(_$OnConfirmedResetDataImpl _value,
+      $Res Function(_$OnConfirmedResetDataImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnConfirmedResetData implements _OnConfirmedResetData {
-  const _$_OnConfirmedResetData();
+class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
+  const _$OnConfirmedResetDataImpl();
 
   @override
   String toString() {
@@ -867,9 +868,10 @@ class _$_OnConfirmedResetData implements _OnConfirmedResetData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnConfirmedResetData);
+        (other.runtimeType == runtimeType &&
+            other is _$OnConfirmedResetDataImpl);
   }
 
   @override
@@ -971,30 +973,31 @@ class _$_OnConfirmedResetData implements _OnConfirmedResetData {
 }
 
 abstract class _OnConfirmedResetData implements MainEvent {
-  const factory _OnConfirmedResetData() = _$_OnConfirmedResetData;
+  const factory _OnConfirmedResetData() = _$OnConfirmedResetDataImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnConfirmedDeleteAccountCopyWith<$Res> {
-  factory _$$_OnConfirmedDeleteAccountCopyWith(
-          _$_OnConfirmedDeleteAccount value,
-          $Res Function(_$_OnConfirmedDeleteAccount) then) =
-      __$$_OnConfirmedDeleteAccountCopyWithImpl<$Res>;
+abstract class _$$OnConfirmedDeleteAccountImplCopyWith<$Res> {
+  factory _$$OnConfirmedDeleteAccountImplCopyWith(
+          _$OnConfirmedDeleteAccountImpl value,
+          $Res Function(_$OnConfirmedDeleteAccountImpl) then) =
+      __$$OnConfirmedDeleteAccountImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnConfirmedDeleteAccountCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_OnConfirmedDeleteAccount>
-    implements _$$_OnConfirmedDeleteAccountCopyWith<$Res> {
-  __$$_OnConfirmedDeleteAccountCopyWithImpl(_$_OnConfirmedDeleteAccount _value,
-      $Res Function(_$_OnConfirmedDeleteAccount) _then)
+class __$$OnConfirmedDeleteAccountImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$OnConfirmedDeleteAccountImpl>
+    implements _$$OnConfirmedDeleteAccountImplCopyWith<$Res> {
+  __$$OnConfirmedDeleteAccountImplCopyWithImpl(
+      _$OnConfirmedDeleteAccountImpl _value,
+      $Res Function(_$OnConfirmedDeleteAccountImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnConfirmedDeleteAccount implements _OnConfirmedDeleteAccount {
-  const _$_OnConfirmedDeleteAccount();
+class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
+  const _$OnConfirmedDeleteAccountImpl();
 
   @override
   String toString() {
@@ -1002,10 +1005,10 @@ class _$_OnConfirmedDeleteAccount implements _OnConfirmedDeleteAccount {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnConfirmedDeleteAccount);
+            other is _$OnConfirmedDeleteAccountImpl);
   }
 
   @override
@@ -1107,7 +1110,7 @@ class _$_OnConfirmedDeleteAccount implements _OnConfirmedDeleteAccount {
 }
 
 abstract class _OnConfirmedDeleteAccount implements MainEvent {
-  const factory _OnConfirmedDeleteAccount() = _$_OnConfirmedDeleteAccount;
+  const factory _OnConfirmedDeleteAccount() = _$OnConfirmedDeleteAccountImpl;
 }
 
 /// @nodoc
@@ -1178,10 +1181,11 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
 }
 
 /// @nodoc
-abstract class _$$_MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
-  factory _$$_MainStateCopyWith(
-          _$_MainState value, $Res Function(_$_MainState) then) =
-      __$$_MainStateCopyWithImpl<$Res>;
+abstract class _$$MainStateImplCopyWith<$Res>
+    implements $MainStateCopyWith<$Res> {
+  factory _$$MainStateImplCopyWith(
+          _$MainStateImpl value, $Res Function(_$MainStateImpl) then) =
+      __$$MainStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({PageCommand? pageCommand, BottomNavType type, bool isLoading});
@@ -1191,11 +1195,11 @@ abstract class _$$_MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MainStateCopyWithImpl<$Res>
-    extends _$MainStateCopyWithImpl<$Res, _$_MainState>
-    implements _$$_MainStateCopyWith<$Res> {
-  __$$_MainStateCopyWithImpl(
-      _$_MainState _value, $Res Function(_$_MainState) _then)
+class __$$MainStateImplCopyWithImpl<$Res>
+    extends _$MainStateCopyWithImpl<$Res, _$MainStateImpl>
+    implements _$$MainStateImplCopyWith<$Res> {
+  __$$MainStateImplCopyWithImpl(
+      _$MainStateImpl _value, $Res Function(_$MainStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1205,7 +1209,7 @@ class __$$_MainStateCopyWithImpl<$Res>
     Object? type = null,
     Object? isLoading = null,
   }) {
-    return _then(_$_MainState(
+    return _then(_$MainStateImpl(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
@@ -1224,8 +1228,8 @@ class __$$_MainStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MainState extends _MainState {
-  const _$_MainState(
+class _$MainStateImpl extends _MainState {
+  const _$MainStateImpl(
       {this.pageCommand,
       this.type = BottomNavType.today,
       this.isLoading = false})
@@ -1246,10 +1250,10 @@ class _$_MainState extends _MainState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MainState &&
+            other is _$MainStateImpl &&
             (identical(other.pageCommand, pageCommand) ||
                 other.pageCommand == pageCommand) &&
             (identical(other.type, type) || other.type == type) &&
@@ -1263,15 +1267,15 @@ class _$_MainState extends _MainState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
-      __$$_MainStateCopyWithImpl<_$_MainState>(this, _$identity);
+  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
+      __$$MainStateImplCopyWithImpl<_$MainStateImpl>(this, _$identity);
 }
 
 abstract class _MainState extends MainState {
   const factory _MainState(
       {final PageCommand? pageCommand,
       final BottomNavType type,
-      final bool isLoading}) = _$_MainState;
+      final bool isLoading}) = _$MainStateImpl;
   const _MainState._() : super._();
 
   @override
@@ -1282,6 +1286,6 @@ abstract class _MainState extends MainState {
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
+  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'interaction_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 InteractionRequest _$InteractionRequestFromJson(Map<String, dynamic> json) {
   return _InteractionRequest.fromJson(json);
@@ -100,11 +100,11 @@ class _$InteractionRequestCopyWithImpl<$Res, $Val extends InteractionRequest>
 }
 
 /// @nodoc
-abstract class _$$_InteractionRequestCopyWith<$Res>
+abstract class _$$InteractionRequestImplCopyWith<$Res>
     implements $InteractionRequestCopyWith<$Res> {
-  factory _$$_InteractionRequestCopyWith(_$_InteractionRequest value,
-          $Res Function(_$_InteractionRequest) then) =
-      __$$_InteractionRequestCopyWithImpl<$Res>;
+  factory _$$InteractionRequestImplCopyWith(_$InteractionRequestImpl value,
+          $Res Function(_$InteractionRequestImpl) then) =
+      __$$InteractionRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -119,11 +119,11 @@ abstract class _$$_InteractionRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InteractionRequestCopyWithImpl<$Res>
-    extends _$InteractionRequestCopyWithImpl<$Res, _$_InteractionRequest>
-    implements _$$_InteractionRequestCopyWith<$Res> {
-  __$$_InteractionRequestCopyWithImpl(
-      _$_InteractionRequest _value, $Res Function(_$_InteractionRequest) _then)
+class __$$InteractionRequestImplCopyWithImpl<$Res>
+    extends _$InteractionRequestCopyWithImpl<$Res, _$InteractionRequestImpl>
+    implements _$$InteractionRequestImplCopyWith<$Res> {
+  __$$InteractionRequestImplCopyWithImpl(_$InteractionRequestImpl _value,
+      $Res Function(_$InteractionRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -135,7 +135,7 @@ class __$$_InteractionRequestCopyWithImpl<$Res>
     Object? dateCompleted = freezed,
     Object? method = null,
   }) {
-    return _then(_$_InteractionRequest(
+    return _then(_$InteractionRequestImpl(
       interactionId: null == interactionId
           ? _value.interactionId
           : interactionId // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$_InteractionRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_InteractionRequest extends _InteractionRequest {
-  const _$_InteractionRequest(
+class _$InteractionRequestImpl extends _InteractionRequest {
+  const _$InteractionRequestImpl(
       {@JsonKey(name: 'id', includeToJson: false) this.interactionId = '',
       @JsonKey(name: 'owner_id') this.ownerId = '',
       @JsonKey(name: 'contact_id') this.contactId = '',
@@ -175,8 +175,8 @@ class _$_InteractionRequest extends _InteractionRequest {
       this.method = InteractionMethodType.KeepUp})
       : super._();
 
-  factory _$_InteractionRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_InteractionRequestFromJson(json);
+  factory _$InteractionRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InteractionRequestImplFromJson(json);
 
   @override
   @JsonKey(name: 'id', includeToJson: false)
@@ -201,10 +201,10 @@ class _$_InteractionRequest extends _InteractionRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InteractionRequest &&
+            other is _$InteractionRequestImpl &&
             (identical(other.interactionId, interactionId) ||
                 other.interactionId == interactionId) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
@@ -223,13 +223,13 @@ class _$_InteractionRequest extends _InteractionRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InteractionRequestCopyWith<_$_InteractionRequest> get copyWith =>
-      __$$_InteractionRequestCopyWithImpl<_$_InteractionRequest>(
+  _$$InteractionRequestImplCopyWith<_$InteractionRequestImpl> get copyWith =>
+      __$$InteractionRequestImplCopyWithImpl<_$InteractionRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_InteractionRequestToJson(
+    return _$$InteractionRequestImplToJson(
       this,
     );
   }
@@ -244,11 +244,11 @@ abstract class _InteractionRequest extends InteractionRequest {
       @JsonKey(name: 'date_completed')
       final DateTime? dateCompleted,
       @JsonKey(unknownEnumValue: InteractionMethodType.KeepUp)
-      final InteractionMethodType method}) = _$_InteractionRequest;
+      final InteractionMethodType method}) = _$InteractionRequestImpl;
   const _InteractionRequest._() : super._();
 
   factory _InteractionRequest.fromJson(Map<String, dynamic> json) =
-      _$_InteractionRequest.fromJson;
+      _$InteractionRequestImpl.fromJson;
 
   @override
   @JsonKey(name: 'id', includeToJson: false)
@@ -268,6 +268,6 @@ abstract class _InteractionRequest extends InteractionRequest {
   InteractionMethodType get method;
   @override
   @JsonKey(ignore: true)
-  _$$_InteractionRequestCopyWith<_$_InteractionRequest> get copyWith =>
+  _$$InteractionRequestImplCopyWith<_$InteractionRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
