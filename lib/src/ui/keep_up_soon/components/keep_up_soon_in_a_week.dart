@@ -26,14 +26,12 @@ class KeepUpSoonInAWeek extends StatelessWidget {
         if (state.type == KeepUpSoonType.individual) {
           // Add all contacts item to children
           children = [
-            ...state.weekContacts
-                .map((e) => KeepUpSoonItem(
-                      name: e.name,
-                      avatar: e.avatar,
-                      onPressed: () => InteractionBottomSheet.show(contact: e),
-                      onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
-                    ))
-                .toList()
+            ...state.weekContacts.map((e) => KeepUpSoonItem(
+                  name: e.name,
+                  avatar: e.avatar,
+                  onPressed: () => InteractionBottomSheet.show(contact: e),
+                  onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
+                ))
           ];
         }
         return FutureBuilder<List<Group>>(
@@ -48,14 +46,12 @@ class KeepUpSoonInAWeek extends StatelessWidget {
             // Add all groups item to children
             if (state.type == KeepUpSoonType.groups && groups.isNotEmpty) {
               children = [
-                ...groups
-                    .map((e) => KeepUpSoonItem(
-                          name: e.name,
-                          avatar: e.avatar,
-                          onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(e)),
-                          onKeepUp: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
-                        ))
-                    .toList()
+                ...groups.map((e) => KeepUpSoonItem(
+                      name: e.name,
+                      avatar: e.avatar,
+                      onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(e)),
+                      onKeepUp: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
+                    ))
               ];
             }
             return KeepUpGroup(

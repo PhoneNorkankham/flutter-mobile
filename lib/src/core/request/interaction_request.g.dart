@@ -6,9 +6,9 @@ part of 'interaction_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_InteractionRequest _$$_InteractionRequestFromJson(
+_$InteractionRequestImpl _$$InteractionRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_InteractionRequest(
+    _$InteractionRequestImpl(
       interactionId: json['id'] as String? ?? '',
       ownerId: json['owner_id'] as String? ?? '',
       contactId: json['contact_id'] as String? ?? '',
@@ -20,8 +20,8 @@ _$_InteractionRequest _$$_InteractionRequestFromJson(
           InteractionMethodType.KeepUp,
     );
 
-Map<String, dynamic> _$$_InteractionRequestToJson(
-    _$_InteractionRequest instance) {
+Map<String, dynamic> _$$InteractionRequestImplToJson(
+    _$InteractionRequestImpl instance) {
   final val = <String, dynamic>{
     'owner_id': instance.ownerId,
     'contact_id': instance.contactId,

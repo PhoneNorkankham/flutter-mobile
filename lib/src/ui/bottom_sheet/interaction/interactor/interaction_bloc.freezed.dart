@@ -12,7 +12,7 @@ part of 'interaction_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$InteractionEvent {
@@ -81,19 +81,20 @@ class _$InteractionEventCopyWithImpl<$Res, $Val extends InteractionEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Contact contact});
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$InteractionEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$InteractionEventCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +102,7 @@ class __$$_InitialCopyWithImpl<$Res>
   $Res call({
     Object? contact = freezed,
   }) {
-    return _then(_$_Initial(
+    return _then(_$InitialImpl(
       freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
@@ -112,8 +113,8 @@ class __$$_InitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial(this.contact);
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl(this.contact);
 
   @override
   final Contact contact;
@@ -124,10 +125,10 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Initial &&
+            other is _$InitialImpl &&
             const DeepCollectionEquality().equals(other.contact, contact));
   }
 
@@ -138,8 +139,8 @@ class _$_Initial implements _Initial {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
-      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -211,34 +212,34 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements InteractionEvent {
-  const factory _Initial(final Contact contact) = _$_Initial;
+  const factory _Initial(final Contact contact) = _$InitialImpl;
 
   Contact get contact;
   @JsonKey(ignore: true)
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ClearPageCommandCopyWith<$Res> {
-  factory _$$_ClearPageCommandCopyWith(
-          _$_ClearPageCommand value, $Res Function(_$_ClearPageCommand) then) =
-      __$$_ClearPageCommandCopyWithImpl<$Res>;
+abstract class _$$ClearPageCommandImplCopyWith<$Res> {
+  factory _$$ClearPageCommandImplCopyWith(_$ClearPageCommandImpl value,
+          $Res Function(_$ClearPageCommandImpl) then) =
+      __$$ClearPageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearPageCommandCopyWithImpl<$Res>
-    extends _$InteractionEventCopyWithImpl<$Res, _$_ClearPageCommand>
-    implements _$$_ClearPageCommandCopyWith<$Res> {
-  __$$_ClearPageCommandCopyWithImpl(
-      _$_ClearPageCommand _value, $Res Function(_$_ClearPageCommand) _then)
+class __$$ClearPageCommandImplCopyWithImpl<$Res>
+    extends _$InteractionEventCopyWithImpl<$Res, _$ClearPageCommandImpl>
+    implements _$$ClearPageCommandImplCopyWith<$Res> {
+  __$$ClearPageCommandImplCopyWithImpl(_$ClearPageCommandImpl _value,
+      $Res Function(_$ClearPageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearPageCommand implements _ClearPageCommand {
-  const _$_ClearPageCommand();
+class _$ClearPageCommandImpl implements _ClearPageCommand {
+  const _$ClearPageCommandImpl();
 
   @override
   String toString() {
@@ -246,9 +247,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearPageCommand);
+        (other.runtimeType == runtimeType && other is _$ClearPageCommandImpl);
   }
 
   @override
@@ -324,24 +325,24 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 }
 
 abstract class _ClearPageCommand implements InteractionEvent {
-  const factory _ClearPageCommand() = _$_ClearPageCommand;
+  const factory _ClearPageCommand() = _$ClearPageCommandImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnInteractionCopyWith<$Res> {
-  factory _$$_OnInteractionCopyWith(
-          _$_OnInteraction value, $Res Function(_$_OnInteraction) then) =
-      __$$_OnInteractionCopyWithImpl<$Res>;
+abstract class _$$OnInteractionImplCopyWith<$Res> {
+  factory _$$OnInteractionImplCopyWith(
+          _$OnInteractionImpl value, $Res Function(_$OnInteractionImpl) then) =
+      __$$OnInteractionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({InteractionMethodType type});
 }
 
 /// @nodoc
-class __$$_OnInteractionCopyWithImpl<$Res>
-    extends _$InteractionEventCopyWithImpl<$Res, _$_OnInteraction>
-    implements _$$_OnInteractionCopyWith<$Res> {
-  __$$_OnInteractionCopyWithImpl(
-      _$_OnInteraction _value, $Res Function(_$_OnInteraction) _then)
+class __$$OnInteractionImplCopyWithImpl<$Res>
+    extends _$InteractionEventCopyWithImpl<$Res, _$OnInteractionImpl>
+    implements _$$OnInteractionImplCopyWith<$Res> {
+  __$$OnInteractionImplCopyWithImpl(
+      _$OnInteractionImpl _value, $Res Function(_$OnInteractionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -349,7 +350,7 @@ class __$$_OnInteractionCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$_OnInteraction(
+    return _then(_$OnInteractionImpl(
       null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -360,8 +361,8 @@ class __$$_OnInteractionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnInteraction implements _OnInteraction {
-  const _$_OnInteraction(this.type);
+class _$OnInteractionImpl implements _OnInteraction {
+  const _$OnInteractionImpl(this.type);
 
   @override
   final InteractionMethodType type;
@@ -372,10 +373,10 @@ class _$_OnInteraction implements _OnInteraction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnInteraction &&
+            other is _$OnInteractionImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -385,8 +386,8 @@ class _$_OnInteraction implements _OnInteraction {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnInteractionCopyWith<_$_OnInteraction> get copyWith =>
-      __$$_OnInteractionCopyWithImpl<_$_OnInteraction>(this, _$identity);
+  _$$OnInteractionImplCopyWith<_$OnInteractionImpl> get copyWith =>
+      __$$OnInteractionImplCopyWithImpl<_$OnInteractionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -459,11 +460,11 @@ class _$_OnInteraction implements _OnInteraction {
 
 abstract class _OnInteraction implements InteractionEvent {
   const factory _OnInteraction(final InteractionMethodType type) =
-      _$_OnInteraction;
+      _$OnInteractionImpl;
 
   InteractionMethodType get type;
   @JsonKey(ignore: true)
-  _$$_OnInteractionCopyWith<_$_OnInteraction> get copyWith =>
+  _$$OnInteractionImplCopyWith<_$OnInteractionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -553,11 +554,11 @@ class _$InteractionStateCopyWithImpl<$Res, $Val extends InteractionState>
 }
 
 /// @nodoc
-abstract class _$$_InteractionStateCopyWith<$Res>
+abstract class _$$InteractionStateImplCopyWith<$Res>
     implements $InteractionStateCopyWith<$Res> {
-  factory _$$_InteractionStateCopyWith(
-          _$_InteractionState value, $Res Function(_$_InteractionState) then) =
-      __$$_InteractionStateCopyWithImpl<$Res>;
+  factory _$$InteractionStateImplCopyWith(_$InteractionStateImpl value,
+          $Res Function(_$InteractionStateImpl) then) =
+      __$$InteractionStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -572,11 +573,11 @@ abstract class _$$_InteractionStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InteractionStateCopyWithImpl<$Res>
-    extends _$InteractionStateCopyWithImpl<$Res, _$_InteractionState>
-    implements _$$_InteractionStateCopyWith<$Res> {
-  __$$_InteractionStateCopyWithImpl(
-      _$_InteractionState _value, $Res Function(_$_InteractionState) _then)
+class __$$InteractionStateImplCopyWithImpl<$Res>
+    extends _$InteractionStateCopyWithImpl<$Res, _$InteractionStateImpl>
+    implements _$$InteractionStateImplCopyWith<$Res> {
+  __$$InteractionStateImplCopyWithImpl(_$InteractionStateImpl _value,
+      $Res Function(_$InteractionStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -588,7 +589,7 @@ class __$$_InteractionStateCopyWithImpl<$Res>
     Object? contact = freezed,
     Object? avatar = freezed,
   }) {
-    return _then(_$_InteractionState(
+    return _then(_$InteractionStateImpl(
       pageCommand: freezed == pageCommand
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
@@ -615,8 +616,8 @@ class __$$_InteractionStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InteractionState extends _InteractionState {
-  const _$_InteractionState(
+class _$InteractionStateImpl extends _InteractionState {
+  const _$InteractionStateImpl(
       {this.pageCommand,
       this.pageState = PageState.loading,
       this.isLoading = false,
@@ -643,10 +644,10 @@ class _$_InteractionState extends _InteractionState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InteractionState &&
+            other is _$InteractionStateImpl &&
             (identical(other.pageCommand, pageCommand) ||
                 other.pageCommand == pageCommand) &&
             (identical(other.pageState, pageState) ||
@@ -664,8 +665,9 @@ class _$_InteractionState extends _InteractionState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InteractionStateCopyWith<_$_InteractionState> get copyWith =>
-      __$$_InteractionStateCopyWithImpl<_$_InteractionState>(this, _$identity);
+  _$$InteractionStateImplCopyWith<_$InteractionStateImpl> get copyWith =>
+      __$$InteractionStateImplCopyWithImpl<_$InteractionStateImpl>(
+          this, _$identity);
 }
 
 abstract class _InteractionState extends InteractionState {
@@ -674,7 +676,7 @@ abstract class _InteractionState extends InteractionState {
       final PageState pageState,
       final bool isLoading,
       final Contact? contact,
-      final File? avatar}) = _$_InteractionState;
+      final File? avatar}) = _$InteractionStateImpl;
   const _InteractionState._() : super._();
 
   @override
@@ -689,6 +691,6 @@ abstract class _InteractionState extends InteractionState {
   File? get avatar;
   @override
   @JsonKey(ignore: true)
-  _$$_InteractionStateCopyWith<_$_InteractionState> get copyWith =>
+  _$$InteractionStateImplCopyWith<_$InteractionStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

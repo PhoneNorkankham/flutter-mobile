@@ -12,7 +12,7 @@ part of 'splash_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SplashEvent {
@@ -81,24 +81,25 @@ class _$SplashEventCopyWithImpl<$Res, $Val extends SplashEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$SplashEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$SplashEventCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -106,9 +107,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -184,29 +185,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements SplashEvent {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnGetStartedCopyWith<$Res> {
-  factory _$$_OnGetStartedCopyWith(
-          _$_OnGetStarted value, $Res Function(_$_OnGetStarted) then) =
-      __$$_OnGetStartedCopyWithImpl<$Res>;
+abstract class _$$OnGetStartedImplCopyWith<$Res> {
+  factory _$$OnGetStartedImplCopyWith(
+          _$OnGetStartedImpl value, $Res Function(_$OnGetStartedImpl) then) =
+      __$$OnGetStartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnGetStartedCopyWithImpl<$Res>
-    extends _$SplashEventCopyWithImpl<$Res, _$_OnGetStarted>
-    implements _$$_OnGetStartedCopyWith<$Res> {
-  __$$_OnGetStartedCopyWithImpl(
-      _$_OnGetStarted _value, $Res Function(_$_OnGetStarted) _then)
+class __$$OnGetStartedImplCopyWithImpl<$Res>
+    extends _$SplashEventCopyWithImpl<$Res, _$OnGetStartedImpl>
+    implements _$$OnGetStartedImplCopyWith<$Res> {
+  __$$OnGetStartedImplCopyWithImpl(
+      _$OnGetStartedImpl _value, $Res Function(_$OnGetStartedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnGetStarted implements _OnGetStarted {
-  const _$_OnGetStarted();
+class _$OnGetStartedImpl implements _OnGetStarted {
+  const _$OnGetStartedImpl();
 
   @override
   String toString() {
@@ -214,9 +215,9 @@ class _$_OnGetStarted implements _OnGetStarted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnGetStarted);
+        (other.runtimeType == runtimeType && other is _$OnGetStartedImpl);
   }
 
   @override
@@ -292,29 +293,29 @@ class _$_OnGetStarted implements _OnGetStarted {
 }
 
 abstract class _OnGetStarted implements SplashEvent {
-  const factory _OnGetStarted() = _$_OnGetStarted;
+  const factory _OnGetStarted() = _$OnGetStartedImpl;
 }
 
 /// @nodoc
-abstract class _$$_ClearPageCommandCopyWith<$Res> {
-  factory _$$_ClearPageCommandCopyWith(
-          _$_ClearPageCommand value, $Res Function(_$_ClearPageCommand) then) =
-      __$$_ClearPageCommandCopyWithImpl<$Res>;
+abstract class _$$ClearPageCommandImplCopyWith<$Res> {
+  factory _$$ClearPageCommandImplCopyWith(_$ClearPageCommandImpl value,
+          $Res Function(_$ClearPageCommandImpl) then) =
+      __$$ClearPageCommandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearPageCommandCopyWithImpl<$Res>
-    extends _$SplashEventCopyWithImpl<$Res, _$_ClearPageCommand>
-    implements _$$_ClearPageCommandCopyWith<$Res> {
-  __$$_ClearPageCommandCopyWithImpl(
-      _$_ClearPageCommand _value, $Res Function(_$_ClearPageCommand) _then)
+class __$$ClearPageCommandImplCopyWithImpl<$Res>
+    extends _$SplashEventCopyWithImpl<$Res, _$ClearPageCommandImpl>
+    implements _$$ClearPageCommandImplCopyWith<$Res> {
+  __$$ClearPageCommandImplCopyWithImpl(_$ClearPageCommandImpl _value,
+      $Res Function(_$ClearPageCommandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearPageCommand implements _ClearPageCommand {
-  const _$_ClearPageCommand();
+class _$ClearPageCommandImpl implements _ClearPageCommand {
+  const _$ClearPageCommandImpl();
 
   @override
   String toString() {
@@ -322,9 +323,9 @@ class _$_ClearPageCommand implements _ClearPageCommand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearPageCommand);
+        (other.runtimeType == runtimeType && other is _$ClearPageCommandImpl);
   }
 
   @override
@@ -400,7 +401,7 @@ class _$_ClearPageCommand implements _ClearPageCommand {
 }
 
 abstract class _ClearPageCommand implements SplashEvent {
-  const factory _ClearPageCommand() = _$_ClearPageCommand;
+  const factory _ClearPageCommand() = _$ClearPageCommandImpl;
 }
 
 /// @nodoc
@@ -478,22 +479,22 @@ class _$SplashPageCommandCopyWithImpl<$Res, $Val extends SplashPageCommand>
 }
 
 /// @nodoc
-abstract class _$$_ShowDialogCopyWith<$Res>
+abstract class _$$ShowDialogImplCopyWith<$Res>
     implements $SplashPageCommandCopyWith<$Res> {
-  factory _$$_ShowDialogCopyWith(
-          _$_ShowDialog value, $Res Function(_$_ShowDialog) then) =
-      __$$_ShowDialogCopyWithImpl<$Res>;
+  factory _$$ShowDialogImplCopyWith(
+          _$ShowDialogImpl value, $Res Function(_$ShowDialogImpl) then) =
+      __$$ShowDialogImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_ShowDialogCopyWithImpl<$Res>
-    extends _$SplashPageCommandCopyWithImpl<$Res, _$_ShowDialog>
-    implements _$$_ShowDialogCopyWith<$Res> {
-  __$$_ShowDialogCopyWithImpl(
-      _$_ShowDialog _value, $Res Function(_$_ShowDialog) _then)
+class __$$ShowDialogImplCopyWithImpl<$Res>
+    extends _$SplashPageCommandCopyWithImpl<$Res, _$ShowDialogImpl>
+    implements _$$ShowDialogImplCopyWith<$Res> {
+  __$$ShowDialogImplCopyWithImpl(
+      _$ShowDialogImpl _value, $Res Function(_$ShowDialogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -501,7 +502,7 @@ class __$$_ShowDialogCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_ShowDialog(
+    return _then(_$ShowDialogImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -512,8 +513,8 @@ class __$$_ShowDialogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowDialog implements _ShowDialog {
-  _$_ShowDialog(this.message);
+class _$ShowDialogImpl implements _ShowDialog {
+  _$ShowDialogImpl(this.message);
 
   @override
   final String message;
@@ -524,10 +525,10 @@ class _$_ShowDialog implements _ShowDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowDialog &&
+            other is _$ShowDialogImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -537,8 +538,8 @@ class _$_ShowDialog implements _ShowDialog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShowDialogCopyWith<_$_ShowDialog> get copyWith =>
-      __$$_ShowDialogCopyWithImpl<_$_ShowDialog>(this, _$identity);
+  _$$ShowDialogImplCopyWith<_$ShowDialogImpl> get copyWith =>
+      __$$ShowDialogImplCopyWithImpl<_$ShowDialogImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -598,13 +599,13 @@ class _$_ShowDialog implements _ShowDialog {
 }
 
 abstract class _ShowDialog implements SplashPageCommand {
-  factory _ShowDialog(final String message) = _$_ShowDialog;
+  factory _ShowDialog(final String message) = _$ShowDialogImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$_ShowDialogCopyWith<_$_ShowDialog> get copyWith =>
+  _$$ShowDialogImplCopyWith<_$ShowDialogImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -677,11 +678,11 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
 }
 
 /// @nodoc
-abstract class _$$_SplashStateCopyWith<$Res>
+abstract class _$$SplashStateImplCopyWith<$Res>
     implements $SplashStateCopyWith<$Res> {
-  factory _$$_SplashStateCopyWith(
-          _$_SplashState value, $Res Function(_$_SplashState) then) =
-      __$$_SplashStateCopyWithImpl<$Res>;
+  factory _$$SplashStateImplCopyWith(
+          _$SplashStateImpl value, $Res Function(_$SplashStateImpl) then) =
+      __$$SplashStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({PageState pageStatus, PageCommand? pageCommand, bool showButton});
@@ -691,11 +692,11 @@ abstract class _$$_SplashStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SplashStateCopyWithImpl<$Res>
-    extends _$SplashStateCopyWithImpl<$Res, _$_SplashState>
-    implements _$$_SplashStateCopyWith<$Res> {
-  __$$_SplashStateCopyWithImpl(
-      _$_SplashState _value, $Res Function(_$_SplashState) _then)
+class __$$SplashStateImplCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res, _$SplashStateImpl>
+    implements _$$SplashStateImplCopyWith<$Res> {
+  __$$SplashStateImplCopyWithImpl(
+      _$SplashStateImpl _value, $Res Function(_$SplashStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -705,7 +706,7 @@ class __$$_SplashStateCopyWithImpl<$Res>
     Object? pageCommand = freezed,
     Object? showButton = null,
   }) {
-    return _then(_$_SplashState(
+    return _then(_$SplashStateImpl(
       pageStatus: null == pageStatus
           ? _value.pageStatus
           : pageStatus // ignore: cast_nullable_to_non_nullable
@@ -724,8 +725,8 @@ class __$$_SplashStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashState extends _SplashState {
-  const _$_SplashState(
+class _$SplashStateImpl extends _SplashState {
+  const _$SplashStateImpl(
       {this.pageStatus = PageState.initial,
       this.pageCommand,
       this.showButton = false})
@@ -743,15 +744,15 @@ class _$_SplashState extends _SplashState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>
-      __$$_SplashStateCopyWithImpl<_$_SplashState>(this, _$identity);
+  _$$SplashStateImplCopyWith<_$SplashStateImpl> get copyWith =>
+      __$$SplashStateImplCopyWithImpl<_$SplashStateImpl>(this, _$identity);
 }
 
 abstract class _SplashState extends SplashState {
   const factory _SplashState(
       {final PageState pageStatus,
       final PageCommand? pageCommand,
-      final bool showButton}) = _$_SplashState;
+      final bool showButton}) = _$SplashStateImpl;
   const _SplashState._() : super._();
 
   @override
@@ -762,6 +763,6 @@ abstract class _SplashState extends SplashState {
   bool get showButton;
   @override
   @JsonKey(ignore: true)
-  _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>
+  _$$SplashStateImplCopyWith<_$SplashStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
