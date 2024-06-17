@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
@@ -36,6 +38,17 @@ class AddContactsUseCase extends InputUseCase<ListResult<Contact>, List<ContactR
     final List<ContactRequest> newContactRequests =
         input.where((element) => element.contactId.isEmpty && element.groupId.isNotEmpty).toList();
     for (ContactRequest contactRequest in newContactRequests) {
+      final File? file = contactRequest.file;
+      if (file != null) {
+        // Upload avatar
+        final resource = await _supabaseRepository.uploadAvatar(file);
+        final String avatar = resource.data ?? '';
+        if (resource.isSuccess && avatar.isNotEmpty) {
+          contactRequest = contactRequest.copyWith(avatar: avatar);
+        }
+      }
+
+      // Insert contact
       resource = await _supabaseRepository.insertContact(contactRequest);
       final Contact? contact = resource.data;
       if (contact != null) contacts.add(contact);
