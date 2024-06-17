@@ -5,7 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
-import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
@@ -22,7 +21,6 @@ class GroupBloc extends Bloc<GroupEvent, GroupState> {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
-    on<_OnGotoNewGroup>(_onGotoNewGroup);
     on<_OnGotoGroupDetails>(_onGotoGroupDetails);
   }
 
@@ -38,15 +36,6 @@ class GroupBloc extends Bloc<GroupEvent, GroupState> {
         pageState: PageState.success,
       ),
     );
-  }
-
-  FutureOr<void> _onGotoNewGroup(_OnGotoNewGroup event, Emitter<GroupState> emit) {
-    emit(state.copyWith(
-      pageCommand: PageCommandNavigation.toPage(
-        AppPages.groupDetail,
-        argument: GroupType.newGroup,
-      ),
-    ));
   }
 
   FutureOr<void> _onGotoGroupDetails(_OnGotoGroupDetails event, Emitter<GroupState> emit) {

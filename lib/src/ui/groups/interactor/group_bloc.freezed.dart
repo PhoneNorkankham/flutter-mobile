@@ -21,7 +21,6 @@ mixin _$GroupEvent {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +29,6 @@ mixin _$GroupEvent {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +37,6 @@ mixin _$GroupEvent {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) =>
@@ -49,7 +46,6 @@ mixin _$GroupEvent {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -58,7 +54,6 @@ mixin _$GroupEvent {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,7 +62,6 @@ mixin _$GroupEvent {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) =>
@@ -133,7 +127,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return initial();
@@ -145,7 +138,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return initial?.call();
@@ -157,7 +149,6 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
@@ -173,7 +164,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return initial(this);
@@ -185,7 +175,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return initial?.call(this);
@@ -197,7 +186,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
@@ -253,7 +241,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return clearPageCommand();
@@ -265,7 +252,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return clearPageCommand?.call();
@@ -277,7 +263,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
@@ -293,7 +278,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return clearPageCommand(this);
@@ -305,7 +289,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return clearPageCommand?.call(this);
@@ -317,7 +300,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
@@ -400,7 +382,6 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return onChangedKeyword(keyword);
@@ -412,7 +393,6 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return onChangedKeyword?.call(keyword);
@@ -424,7 +404,6 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
@@ -440,7 +419,6 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return onChangedKeyword(this);
@@ -452,7 +430,6 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return onChangedKeyword?.call(this);
@@ -464,7 +441,6 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
@@ -483,126 +459,6 @@ abstract class _OnChangedKeyword implements GroupEvent {
   @JsonKey(ignore: true)
   _$$OnChangedKeywordImplCopyWith<_$OnChangedKeywordImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$OnGotoNewGroupImplCopyWith<$Res> {
-  factory _$$OnGotoNewGroupImplCopyWith(_$OnGotoNewGroupImpl value,
-          $Res Function(_$OnGotoNewGroupImpl) then) =
-      __$$OnGotoNewGroupImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OnGotoNewGroupImplCopyWithImpl<$Res>
-    extends _$GroupEventCopyWithImpl<$Res, _$OnGotoNewGroupImpl>
-    implements _$$OnGotoNewGroupImplCopyWith<$Res> {
-  __$$OnGotoNewGroupImplCopyWithImpl(
-      _$OnGotoNewGroupImpl _value, $Res Function(_$OnGotoNewGroupImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$OnGotoNewGroupImpl implements _OnGotoNewGroup {
-  const _$OnGotoNewGroupImpl();
-
-  @override
-  String toString() {
-    return 'GroupEvent.onGotoNewGroup()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnGotoNewGroupImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewGroup,
-    required TResult Function(Group group) onGotoGroupDetails,
-  }) {
-    return onGotoNewGroup();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewGroup,
-    TResult? Function(Group group)? onGotoGroupDetails,
-  }) {
-    return onGotoNewGroup?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewGroup,
-    TResult Function(Group group)? onGotoGroupDetails,
-    required TResult orElse(),
-  }) {
-    if (onGotoNewGroup != null) {
-      return onGotoNewGroup();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
-    required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
-  }) {
-    return onGotoNewGroup(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
-    TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
-  }) {
-    return onGotoNewGroup?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
-    TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
-    required TResult orElse(),
-  }) {
-    if (onGotoNewGroup != null) {
-      return onGotoNewGroup(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnGotoNewGroup implements GroupEvent {
-  const factory _OnGotoNewGroup() = _$OnGotoNewGroupImpl;
 }
 
 /// @nodoc
@@ -674,7 +530,6 @@ class _$OnGotoGroupDetailsImpl implements _OnGotoGroupDetails {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function() onGotoNewGroup,
     required TResult Function(Group group) onGotoGroupDetails,
   }) {
     return onGotoGroupDetails(group);
@@ -686,7 +541,6 @@ class _$OnGotoGroupDetailsImpl implements _OnGotoGroupDetails {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function()? onGotoNewGroup,
     TResult? Function(Group group)? onGotoGroupDetails,
   }) {
     return onGotoGroupDetails?.call(group);
@@ -698,7 +552,6 @@ class _$OnGotoGroupDetailsImpl implements _OnGotoGroupDetails {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
-    TResult Function()? onGotoNewGroup,
     TResult Function(Group group)? onGotoGroupDetails,
     required TResult orElse(),
   }) {
@@ -714,7 +567,6 @@ class _$OnGotoGroupDetailsImpl implements _OnGotoGroupDetails {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnGotoNewGroup value) onGotoNewGroup,
     required TResult Function(_OnGotoGroupDetails value) onGotoGroupDetails,
   }) {
     return onGotoGroupDetails(this);
@@ -726,7 +578,6 @@ class _$OnGotoGroupDetailsImpl implements _OnGotoGroupDetails {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult? Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
   }) {
     return onGotoGroupDetails?.call(this);
@@ -738,7 +589,6 @@ class _$OnGotoGroupDetailsImpl implements _OnGotoGroupDetails {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnGotoNewGroup value)? onGotoNewGroup,
     TResult Function(_OnGotoGroupDetails value)? onGotoGroupDetails,
     required TResult orElse(),
   }) {

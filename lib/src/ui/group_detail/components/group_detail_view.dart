@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
-import 'package:keepup/src/design/components/base/app_drawer.dart';
-import 'package:keepup/src/design/components/bottom_navigation/app_bottom_navigation_bar.dart';
-import 'package:keepup/src/design/components/buttons/menu_button.dart';
-import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_buttons.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_header.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_interval.dart';
@@ -27,7 +23,6 @@ class GroupDetailView extends StatelessWidget {
           appBar: AppAppBar(
             title: state.groupType.title,
             implyLeading: true,
-            actions: const [MenuButton()],
           ),
           body: AppBody(
             isLoading: state.isLoading,
@@ -50,8 +45,6 @@ class GroupDetailView extends StatelessWidget {
               ),
             ),
           ),
-          endDrawer: const AppDrawer(),
-          bottomNavigationBar: const AppBottomNavigationBar(selectedType: BottomNavType.groups),
         );
       },
     );

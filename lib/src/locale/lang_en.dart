@@ -51,7 +51,6 @@ Map<String, String> enUs = {
   LocaleKey.creatingContactFailed: 'Creating contact failed!',
   LocaleKey.updatingContactFailed: 'Updating contact failed!',
   LocaleKey.joiningGroupFailed: 'Joining group failed!',
-  LocaleKey.home: 'Home',
   LocaleKey.today: 'Today',
   LocaleKey.upcoming: 'Upcoming',
   LocaleKey.contacts: 'Contacts',

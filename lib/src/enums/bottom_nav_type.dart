@@ -3,13 +3,11 @@ import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/contacts/contact_page.dart';
 import 'package:keepup/src/ui/groups/group_page.dart';
-import 'package:keepup/src/ui/home/home_page.dart';
 import 'package:keepup/src/ui/keep_up_soon/keep_up_soon_page.dart';
 import 'package:keepup/src/ui/keep_up_today/keep_up_today_page.dart';
 import 'package:keepup/src/utils/app_assets.dart';
 
 enum BottomNavType {
-  home,
   today,
   upcoming,
   contacts,
@@ -17,8 +15,6 @@ enum BottomNavType {
 
   String get name {
     switch (this) {
-      case BottomNavType.home:
-        return LocaleKey.home.tr;
       case BottomNavType.today:
         return LocaleKey.today.tr;
       case BottomNavType.upcoming:
@@ -32,8 +28,6 @@ enum BottomNavType {
 
   String get icon {
     switch (this) {
-      case BottomNavType.home:
-        return AppAssets.ic_home_svg;
       case BottomNavType.today:
         return AppAssets.ic_today_svg;
       case BottomNavType.upcoming:
@@ -47,8 +41,6 @@ enum BottomNavType {
 
   Widget get page {
     switch (this) {
-      case BottomNavType.home:
-        return const HomePage();
       case BottomNavType.today:
         return const KeepUpTodayPage();
       case BottomNavType.upcoming:

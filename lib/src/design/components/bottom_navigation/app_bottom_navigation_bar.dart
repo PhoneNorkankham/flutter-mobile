@@ -9,31 +9,27 @@ class AppBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double additionalBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
-    return Container(
+    final List<Widget> children = [
+      ...BottomNavType.values
+          .map((e) => AppBottomNavigationBarItem(
+                type: e,
+                isSelected: e == selectedType,
+              ))
+          .toList()
+    ];
+    if (children.length >= 2 && children.length % 2 == 0) {
+      children.insert(children.length ~/ 2, const Expanded(child: SizedBox()));
+    }
+    return BottomAppBar(
+      notchMargin: 6,
+      padding: EdgeInsets.zero,
       color: Theme.of(context).colorScheme.onPrimary,
-      constraints: BoxConstraints(
-        minHeight: kBottomNavigationBarHeight + additionalBottomPadding,
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(bottom: additionalBottomPadding),
-        child: MediaQuery.removePadding(
-          context: context,
-          removeBottom: true,
-          child: DefaultTextStyle.merge(
-            overflow: TextOverflow.ellipsis,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: BottomNavType.values
-                  .map((e) => AppBottomNavigationBarItem(
-                        type: e,
-                        isSelected: e == selectedType,
-                      ))
-                  .toList(),
-            ),
-          ),
-        ),
+      surfaceTintColor: Theme.of(context).colorScheme.onPrimary,
+      shape: const CircularNotchedRectangle(),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: children,
       ),
     );
   }

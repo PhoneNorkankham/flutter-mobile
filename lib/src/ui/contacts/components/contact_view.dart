@@ -7,7 +7,6 @@ import 'package:keepup/src/design/components/base/app_drawer.dart';
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/contacts/components/add_contact_button.dart';
 import 'package:keepup/src/ui/contacts/components/contact_list.dart';
 import 'package:keepup/src/ui/contacts/interactor/contact_bloc.dart';
 
@@ -38,8 +37,6 @@ class ContactView extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Expanded(child: ContactList()),
-                const SizedBox(height: 22),
-                const AddContactButton(),
                 const SizedBox(height: 15),
               ],
             ),

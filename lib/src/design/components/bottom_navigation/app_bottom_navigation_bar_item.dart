@@ -18,39 +18,34 @@ class AppBottomNavigationBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final MainBloc bloc = Get.find();
     return Expanded(
-      child: Material(
-        child: InkWell(
-          onTap:
-              isSelected ? null : () => Get.find<MainBloc>().add(MainEvent.onSelectedTabType(type)),
-          highlightColor: Colors.transparent,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 10),
-              SvgPicture.asset(
-                type.icon,
-                width: 20,
-                height: 20,
-                colorFilter: ColorFilter.mode(
-                  isSelected
-                      ? Theme.of(context).bottomNavigationBarTheme.selectedItemColor!
-                      : Theme.of(context).bottomNavigationBarTheme.unselectedItemColor!,
-                  BlendMode.srcIn,
-                ),
+      child: InkWell(
+        onTap: isSelected ? null : () => bloc.add(MainEvent.onSelectedTabType(type)),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              type.icon,
+              width: 20,
+              height: 20,
+              colorFilter: ColorFilter.mode(
+                isSelected
+                    ? Theme.of(context).bottomNavigationBarTheme.selectedItemColor!
+                    : Theme.of(context).bottomNavigationBarTheme.unselectedItemColor!,
+                BlendMode.srcIn,
               ),
-              const SizedBox(height: 5),
-              Text(
-                type.name,
-                textAlign: TextAlign.center,
-                style: context.appTextTheme.bold10.copyWith(
-                  color: isSelected ? AppColors.selectedItemColor : AppColors.unselectedItemColor,
-                ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              type.name,
+              textAlign: TextAlign.center,
+              style: context.appTextTheme.bold10.copyWith(
+                color: isSelected ? AppColors.selectedItemColor : AppColors.unselectedItemColor,
               ),
-              const SizedBox(height: 8),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
