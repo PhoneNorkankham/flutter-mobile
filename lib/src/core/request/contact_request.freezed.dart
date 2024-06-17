@@ -41,6 +41,8 @@ mixin _$ContactRequest {
   DateTime? get dateCreated => throw _privateConstructorUsedError;
   @JsonKey(includeFromJson: false, includeToJson: false)
   bool get isExpanded => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  File? get file => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,7 +71,8 @@ abstract class $ContactRequestCopyWith<$Res> {
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
       DateTime? dateCreated,
-      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded});
+      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
+      @JsonKey(includeFromJson: false, includeToJson: false) File? file});
 }
 
 /// @nodoc
@@ -96,6 +99,7 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
     Object? expiration = freezed,
     Object? dateCreated = freezed,
     Object? isExpanded = null,
+    Object? file = freezed,
   }) {
     return _then(_value.copyWith(
       contactId: null == contactId
@@ -142,6 +146,10 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
           ? _value.isExpanded
           : isExpanded // ignore: cast_nullable_to_non_nullable
               as bool,
+      file: freezed == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File?,
     ) as $Val);
   }
 }
@@ -169,7 +177,8 @@ abstract class _$$ContactRequestImplCopyWith<$Res>
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_created')
       DateTime? dateCreated,
-      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded});
+      @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
+      @JsonKey(includeFromJson: false, includeToJson: false) File? file});
 }
 
 /// @nodoc
@@ -194,6 +203,7 @@ class __$$ContactRequestImplCopyWithImpl<$Res>
     Object? expiration = freezed,
     Object? dateCreated = freezed,
     Object? isExpanded = null,
+    Object? file = freezed,
   }) {
     return _then(_$ContactRequestImpl(
       contactId: null == contactId
@@ -240,6 +250,10 @@ class __$$ContactRequestImplCopyWithImpl<$Res>
           ? _value.isExpanded
           : isExpanded // ignore: cast_nullable_to_non_nullable
               as bool,
+      file: freezed == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File?,
     ));
   }
 }
@@ -260,7 +274,8 @@ class _$ContactRequestImpl extends _ContactRequest {
       @DateTimeJsonConverter() this.expiration,
       @DateTimeJsonConverter() @JsonKey(name: 'date_created') this.dateCreated,
       @JsonKey(includeFromJson: false, includeToJson: false)
-      this.isExpanded = false})
+      this.isExpanded = false,
+      @JsonKey(includeFromJson: false, includeToJson: false) this.file})
       : super._();
 
   factory _$ContactRequestImpl.fromJson(Map<String, dynamic> json) =>
@@ -301,10 +316,13 @@ class _$ContactRequestImpl extends _ContactRequest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   final bool isExpanded;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final File? file;
 
   @override
   String toString() {
-    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, groupId: $groupId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded)';
+    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, groupId: $groupId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded, file: $file)';
   }
 
   @override
@@ -327,7 +345,8 @@ class _$ContactRequestImpl extends _ContactRequest {
             (identical(other.dateCreated, dateCreated) ||
                 other.dateCreated == dateCreated) &&
             (identical(other.isExpanded, isExpanded) ||
-                other.isExpanded == isExpanded));
+                other.isExpanded == isExpanded) &&
+            (identical(other.file, file) || other.file == file));
   }
 
   @JsonKey(ignore: true)
@@ -344,7 +363,8 @@ class _$ContactRequestImpl extends _ContactRequest {
       dateOfBirth,
       expiration,
       dateCreated,
-      isExpanded);
+      isExpanded,
+      file);
 
   @JsonKey(ignore: true)
   @override
@@ -378,7 +398,9 @@ abstract class _ContactRequest extends ContactRequest {
       @JsonKey(name: 'date_created')
       final DateTime? dateCreated,
       @JsonKey(includeFromJson: false, includeToJson: false)
-      final bool isExpanded}) = _$ContactRequestImpl;
+      final bool isExpanded,
+      @JsonKey(includeFromJson: false, includeToJson: false)
+      final File? file}) = _$ContactRequestImpl;
   const _ContactRequest._() : super._();
 
   factory _ContactRequest.fromJson(Map<String, dynamic> json) =
@@ -416,6 +438,9 @@ abstract class _ContactRequest extends ContactRequest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   bool get isExpanded;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  File? get file;
   @override
   @JsonKey(ignore: true)
   _$$ContactRequestImplCopyWith<_$ContactRequestImpl> get copyWith =>
