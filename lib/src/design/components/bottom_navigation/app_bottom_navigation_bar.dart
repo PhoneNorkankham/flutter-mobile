@@ -10,12 +10,10 @@ class AppBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> children = [
-      ...BottomNavType.values
-          .map((e) => AppBottomNavigationBarItem(
-                type: e,
-                isSelected: e == selectedType,
-              ))
-          .toList()
+      ...BottomNavType.values.map((e) => AppBottomNavigationBarItem(
+            type: e,
+            isSelected: e == selectedType,
+          ))
     ];
     if (children.length >= 2 && children.length % 2 == 0) {
       children.insert(children.length ~/ 2, const Expanded(child: SizedBox()));

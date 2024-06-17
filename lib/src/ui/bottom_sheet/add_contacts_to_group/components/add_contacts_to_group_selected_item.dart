@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_initicon/flutter_initicon.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
@@ -24,11 +25,15 @@ class AddMemberSelectedItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              AppCircleAvatar(
-                url: contact.avatar,
-                radius: 27,
-                backgroundColor: AppColors.grey350,
-                foregroundColor: AppColors.white,
+              Center(
+                child: contact.avatar.isNotEmpty
+                    ? AppCircleAvatar(url: contact.avatar, radius: 27)
+                    : Initicon(
+                        text: contact.name,
+                        size: 54,
+                        borderRadius: BorderRadius.circular(27),
+                        backgroundColor: AppColors.grey350,
+                      ),
               ),
               const SizedBox(height: 4),
               Text(

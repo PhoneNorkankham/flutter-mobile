@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/new_chat_bottom_sheet.dart';
 
 class AppFloatingActionButton extends StatelessWidget {
-  const AppFloatingActionButton({Key? key}) : super(key: key);
+  const AppFloatingActionButton({super.key});
 
   @override
   Widget build(BuildContext context) {
