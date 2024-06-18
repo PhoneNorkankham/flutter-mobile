@@ -64,6 +64,7 @@ class NewGroupSelected extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                           child: KeepUpItem(
                             name: e.name,
+                            avatar: e.avatar,
                             action: GestureDetector(
                               onTap: () => bloc.add(NewGroupEvent.onRemovedContact(e)),
                               child: DecoratedBox(

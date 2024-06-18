@@ -31,6 +31,7 @@ class OnboardingGroups extends StatelessWidget {
               KeepUpItem(
                 onPressed: () => bloc.add(OnboardingEvent.onJoinGroup(group)),
                 name: group.name,
+                avatar: group.avatar,
                 action: Icon(
                   Icons.add_circle,
                   size: 24,

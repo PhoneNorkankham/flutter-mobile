@@ -24,8 +24,8 @@ class AddMemberSelectedItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const AppCircleAvatar(
-                url: '',
+              AppCircleAvatar(
+                url: contact.avatar,
                 radius: 27,
                 backgroundColor: AppColors.grey350,
                 foregroundColor: AppColors.white,

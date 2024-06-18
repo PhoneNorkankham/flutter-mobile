@@ -26,6 +26,7 @@ class KeepUpSoonItem extends StatelessWidget {
       child: KeepUpItem(
         onPressed: onPressed,
         name: name,
+        avatar: avatar,
         action: SizedBox(
           width: 100,
           child: AppButton(

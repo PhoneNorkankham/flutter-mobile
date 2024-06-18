@@ -18,7 +18,10 @@ class NewChatContacts extends StatelessWidget {
           itemCount: filterContacts.length,
           itemBuilder: (context, index) {
             final Contact contact = filterContacts.elementAt(index);
-            return KeepUpItem(name: contact.name);
+            return KeepUpItem(
+              name: contact.name,
+              avatar: contact.avatar,
+            );
           },
           separatorBuilder: (context, index) => const SizedBox(height: 4),
         );

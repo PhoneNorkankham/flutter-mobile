@@ -20,6 +20,7 @@ class ContactItem extends StatelessWidget {
     return KeepUpItem(
       onPressed: () => onPressed?.call(contact),
       name: contact.name,
+      avatar: contact.avatar,
       action: Text(
         LocaleKey.details.tr,
         style: context.appTextTheme.bold16.copyWith(
