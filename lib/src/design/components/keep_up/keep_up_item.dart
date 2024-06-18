@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_initicon/flutter_initicon.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 
@@ -32,7 +33,14 @@ class KeepUpItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            AppCircleAvatar(url: avatar, radius: 15),
+            avatar.isNotEmpty
+                ? AppCircleAvatar(url: avatar, radius: 15)
+                : Initicon(
+                    text: name,
+                    size: 30,
+                    borderRadius: BorderRadius.circular(15),
+                    backgroundColor: Theme.of(context).colorScheme.onPrimary,
+                  ),
             const SizedBox(width: 16),
             Expanded(
               child: Text(
