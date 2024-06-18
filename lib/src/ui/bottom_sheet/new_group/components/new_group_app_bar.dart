@@ -30,7 +30,7 @@ class NewGroupAppBar extends StatelessWidget {
             TextButton(
               onPressed: () => Get.back(),
               child: Text(
-                LocaleKey.back.tr,
+                LocaleKey.cancel.tr,
                 style: context.appTextTheme.bold14.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
