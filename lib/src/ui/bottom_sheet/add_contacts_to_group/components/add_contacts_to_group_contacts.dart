@@ -38,6 +38,7 @@ class AddContactsToGroupContacts extends StatelessWidget {
               onPressed: () => bloc.add(AddContactsToGroupEvent.onSelectedContact(contact)),
               name: contact.name,
               avatar: contact.avatar,
+              file: contact.file,
               action: Container(
                 width: 21,
                 height: 21,

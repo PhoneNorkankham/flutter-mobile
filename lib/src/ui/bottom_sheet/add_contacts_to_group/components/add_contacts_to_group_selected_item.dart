@@ -26,14 +26,23 @@ class AddMemberSelectedItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Center(
-                child: contact.avatar.isNotEmpty
-                    ? AppCircleAvatar(url: contact.avatar, radius: 27)
-                    : Initicon(
-                        text: contact.name,
-                        size: 54,
-                        borderRadius: BorderRadius.circular(27),
-                        backgroundColor: AppColors.grey350,
-                      ),
+                child: contact.file != null
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.file(
+                          contact.file!,
+                          width: 54,
+                          height: 54,
+                        ),
+                      )
+                    : contact.avatar.isNotEmpty
+                        ? AppCircleAvatar(url: contact.avatar, radius: 27)
+                        : Initicon(
+                            text: contact.name,
+                            size: 54,
+                            borderRadius: BorderRadius.circular(27),
+                            backgroundColor: AppColors.grey350,
+                          ),
               ),
               const SizedBox(height: 4),
               Text(

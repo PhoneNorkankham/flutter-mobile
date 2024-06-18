@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:keepup/src/core/converters/date_time_converter.dart';
 import 'package:keepup/src/utils/app_validation.dart';
@@ -22,6 +24,7 @@ class ContactRequest with _$ContactRequest {
     @DateTimeJsonConverter() DateTime? expiration,
     @DateTimeJsonConverter() @JsonKey(name: 'date_created') DateTime? dateCreated,
     @Default(false) @JsonKey(includeFromJson: false, includeToJson: false) bool isExpanded,
+    @JsonKey(includeFromJson: false, includeToJson: false) File? file,
   }) = _ContactRequest;
 
   factory ContactRequest.fromJson(Map<String, dynamic> json) => _$ContactRequestFromJson(json);

@@ -1,4 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:bloc/bloc.dart';
 import 'package:contacts_service/contacts_service.dart' as CS;
@@ -17,6 +21,7 @@ import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
 import 'package:keepup/src/use_cases/add_contacts_use_case.dart';
 import 'package:keepup/src/use_cases/update_group_use_case.dart';
+import 'package:path_provider/path_provider.dart';
 
 part 'add_contacts_to_group_bloc.freezed.dart';
 part 'add_contacts_to_group_event.dart';
@@ -67,13 +72,29 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
     final bool isGranted = await _permissionManager.checkPermission(PermissionType.Contacts);
     if (isGranted) {
       final contacts = await CS.ContactsService.getContacts();
-      return contacts
-          .map((e) => ContactRequest(
-                name: e.displayName ?? '',
-                email: e.emails?.firstOrNull?.value ?? '',
-                phoneNo: e.phones?.firstOrNull?.value ?? '',
-              ))
-          .toList();
+      final List<ContactRequest> contactRequests = [];
+      for (final contact in contacts) {
+        final contactRequest = ContactRequest(
+          name: contact.displayName ?? '',
+          email: contact.emails?.firstOrNull?.value ?? '',
+          phoneNo: contact.phones?.firstOrNull?.value ?? '',
+        );
+
+        File? file;
+        final Uint8List? avatar = contact.avatar;
+        if (avatar != null && avatar.isNotEmpty) {
+          try {
+            final String phoneNo = contactRequest.phoneNo;
+            final String fileName = jsonEncode(phoneNo) + Random().nextInt(1000).toString();
+            final Directory tempDir = await getTemporaryDirectory();
+            final tempFile = await File('${tempDir.path}/$fileName.png').create();
+            await tempFile.writeAsBytes(avatar);
+            file = tempFile;
+          } catch (_) {}
+        }
+        contactRequests.add(contactRequest.copyWith(file: file));
+      }
+      return contactRequests;
     }
     return [];
   }

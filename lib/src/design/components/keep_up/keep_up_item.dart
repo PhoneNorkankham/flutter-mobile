@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_initicon/flutter_initicon.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
@@ -6,6 +8,7 @@ import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 class KeepUpItem extends StatelessWidget {
   final String name;
   final String avatar;
+  final File? file;
   final Widget? action;
   final VoidCallback? onPressed;
 
@@ -13,6 +16,7 @@ class KeepUpItem extends StatelessWidget {
     super.key,
     required this.name,
     this.avatar = '',
+    this.file,
     this.action,
     this.onPressed,
   });
@@ -33,14 +37,23 @@ class KeepUpItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            avatar.isNotEmpty
-                ? AppCircleAvatar(url: avatar, radius: 15)
-                : Initicon(
-                    text: name,
-                    size: 30,
+            file != null
+                ? ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    backgroundColor: Theme.of(context).colorScheme.onPrimary,
-                  ),
+                    child: Image.file(
+                      file!,
+                      width: 30,
+                      height: 30,
+                    ),
+                  )
+                : avatar.isNotEmpty
+                    ? AppCircleAvatar(url: avatar, radius: 15)
+                    : Initicon(
+                        text: name,
+                        size: 30,
+                        borderRadius: BorderRadius.circular(15),
+                        backgroundColor: Theme.of(context).colorScheme.onPrimary,
+                      ),
             const SizedBox(width: 16),
             Expanded(
               child: Text(
