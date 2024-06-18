@@ -15,6 +15,7 @@ class KeepUpTodayGroupItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: KeepUpItem(
+        onPressed: () => bloc.add(KeepUpTodayEvent.onGotoGroupDetails(group)),
         name: group.name,
         avatar: group.avatar,
         action: FutureBuilder<bool>(

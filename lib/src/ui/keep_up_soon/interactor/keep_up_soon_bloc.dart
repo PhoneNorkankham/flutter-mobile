@@ -8,6 +8,7 @@ import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_type.dart';
+import 'package:keepup/src/utils/app_pages.dart';
 
 part 'keep_up_soon_bloc.freezed.dart';
 part 'keep_up_soon_event.dart';
@@ -24,6 +25,7 @@ class KeepUpSoonBloc extends Bloc<KeepUpSoonEvent, KeepUpSoonState> {
     on<_OnChangedType>((event, emit) => emit(state.copyWith(type: event.type)));
     on<_OnKeepUpGroup>(_onKeepUpGroup);
     on<_OnKeepUpContact>(_onKeepUpContact);
+    on<_OnGotoGroupDetails>(_onGotoGroupDetails);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<KeepUpSoonState> emit) {
@@ -89,6 +91,15 @@ class KeepUpSoonBloc extends Bloc<KeepUpSoonEvent, KeepUpSoonState> {
     emit(state.copyWith(
       isLoading: false,
       pageCommand: pageCommand,
+    ));
+  }
+
+  FutureOr<void> _onGotoGroupDetails(_OnGotoGroupDetails event, Emitter<KeepUpSoonState> emit) {
+    emit(state.copyWith(
+      pageCommand: PageCommandNavigation.toPage(
+        AppPages.groupDetail,
+        argument: event.group,
+      ),
     ));
   }
 }

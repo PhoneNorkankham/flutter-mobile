@@ -15,4 +15,6 @@ class KeepUpSoonEvent with _$KeepUpSoonEvent {
   const factory KeepUpSoonEvent.onKeepUpContact(Contact contact) = _OnKeepUpContact;
 
   const factory KeepUpSoonEvent.onKeepUpGroup(Group group) = _OnKeepUpGroup;
+
+  const factory KeepUpSoonEvent.onGotoGroupDetails(Group group) = _OnGotoGroupDetails;
 }
