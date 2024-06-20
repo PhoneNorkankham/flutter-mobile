@@ -28,7 +28,7 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
 
   FutureOr<void> _initial(_Initial event, Emitter<ContactState> emit) async {
     await emit.forEach<List<Contact>>(
-      _supabaseRepository.watchContacts(),
+      _supabaseRepository.watchDBContacts(),
       onData: (contacts) => state.copyWith(
         contacts: contacts,
         pageState: PageState.success,

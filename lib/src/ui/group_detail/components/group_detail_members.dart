@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
@@ -38,7 +38,7 @@ class GroupDetailMembers extends StatelessWidget {
                   groupId: bloc.state.groupId,
                   selectedContacts: bloc.state.contacts,
                 ).then((value) {
-                  if (value is List<Contact>) {
+                  if (value is List<ContactRequest>) {
                     bloc.add(GroupDetailEvent.onAddedMembers(value));
                   }
                 }),
@@ -62,16 +62,17 @@ class GroupDetailMembers extends StatelessWidget {
           buildWhen: (previous, current) =>
               previous.getFilterContacts() != current.getFilterContacts(),
           builder: (context, state) {
-            final List<Contact> contacts = state.getFilterContacts();
+            final List<ContactRequest> contacts = state.getFilterContacts();
             return ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               itemBuilder: (context, index) {
-                final Contact contact = contacts.elementAt(index);
+                final ContactRequest contact = contacts.elementAt(index);
                 return KeepUpItem(
                   name: contact.name,
                   avatar: contact.avatar,
+                  file: contact.file,
                   action: GestureDetector(
                     onTap: () => bloc.add(GroupDetailEvent.onRemoveContact(contact)),
                     child: DecoratedBox(

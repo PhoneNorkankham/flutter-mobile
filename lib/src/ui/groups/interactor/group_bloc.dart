@@ -26,7 +26,7 @@ class GroupBloc extends Bloc<GroupEvent, GroupState> {
 
   FutureOr<void> _initial(_Initial event, Emitter<GroupState> emit) {
     return emit.forEach<List<Group>>(
-      _supabaseRepository.watchGroups(),
+      _supabaseRepository.watchDBGroups(),
       onData: (groups) => state.copyWith(
         groups: groups,
         pageState: PageState.success,

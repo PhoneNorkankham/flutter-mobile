@@ -7,18 +7,17 @@ class GroupDetailState with _$GroupDetailState {
   const factory GroupDetailState({
     PageCommand? pageCommand,
     @Default(PageState.loading) PageState pageState,
-    @Default(GroupType.newGroup) GroupType groupType,
     @Default(false) bool isLoading,
     @Default('') String groupId,
     @Default(GroupRequest()) GroupRequest request,
     @Default('') String keyword,
-    @Default([]) List<Contact> contacts,
+    @Default([]) List<ContactRequest> contacts,
     File? avatar,
     Group? groupDetail,
   }) = _GroupDetailState;
 
-  List<Contact> getFilterContacts() {
-    final List<Contact> filterContacts;
+  List<ContactRequest> getFilterContacts() {
+    final List<ContactRequest> filterContacts;
     if (keyword.isEmpty) {
       filterContacts = [...contacts];
     } else {

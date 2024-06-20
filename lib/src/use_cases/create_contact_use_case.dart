@@ -11,7 +11,7 @@ class CreateContactUseCase extends InputUseCase<DataResult<Contact>, ContactRequ
 
   @override
   Future<DataResult<Contact>> run(ContactRequest input) {
-    return _supabaseRepository.insertContact(input).then((resource) {
+    return _supabaseRepository.createContact(input).then((resource) {
       final Contact? contact = resource.data;
       if (resource.isSuccess && contact != null) {
         // Add contact to group

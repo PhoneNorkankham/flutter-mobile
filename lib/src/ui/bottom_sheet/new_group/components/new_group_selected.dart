@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
@@ -18,7 +18,7 @@ class NewGroupSelected extends StatelessWidget {
     return BlocBuilder<NewGroupBloc, NewGroupState>(
       buildWhen: (previous, current) => previous.selectedContacts != current.selectedContacts,
       builder: (context, state) {
-        final List<Contact> contacts = state.selectedContacts;
+        final List<ContactRequest> contacts = state.selectedContacts;
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 24.0),
           child: Column(
@@ -42,7 +42,7 @@ class NewGroupSelected extends StatelessWidget {
                         groupId: '',
                         selectedContacts: bloc.state.selectedContacts,
                       ).then((value) {
-                        if (value is List<Contact>) {
+                        if (value is List<ContactRequest>) {
                           bloc.add(NewGroupEvent.onSelectedContacts(value));
                         }
                       }),
@@ -65,6 +65,7 @@ class NewGroupSelected extends StatelessWidget {
                           child: KeepUpItem(
                             name: e.name,
                             avatar: e.avatar,
+                            file: e.file,
                             action: GestureDetector(
                               onTap: () => bloc.add(NewGroupEvent.onRemovedContact(e)),
                               child: DecoratedBox(

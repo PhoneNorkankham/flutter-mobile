@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
-import 'package:keepup/src/core/resource.dart';
 import 'package:keepup/src/ui/base/interactor/base_use_case.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 
@@ -14,33 +13,23 @@ class AddContactsUseCase extends InputUseCase<ListResult<Contact>, List<ContactR
 
   @override
   Future<ListResult<Contact>> run(List<ContactRequest> input) async {
-    List<Contact> contacts = [];
-    Resource resource;
-    final List<ContactRequest> oldContactRequests =
-        input.where((element) => element.contactId.isNotEmpty).toList();
-    for (ContactRequest contactRequest in oldContactRequests) {
-      resource = await _supabaseRepository.updateContact(contactRequest);
-      final Contact? contact = resource.data;
-      if (contact != null) contacts.add(contact);
-      if (resource.isSuccess) {
-        resource = await _supabaseRepository.updateContactInGroup(
-          contactId: contactRequest.contactId,
-          groupId: contactRequest.groupId,
-        );
-        if (resource.isError) {
-          return Result.error(resource.toPageError());
-        }
-      } else {
-        return Result.error(resource.toPageError());
-      }
+    final List<Contact> contacts = [];
+
+    // #1. Update old contacts
+    final List<ContactRequest> oldContacts = input.where((e) => e.contactId.isNotEmpty).toList();
+    final resource = await _supabaseRepository.updateContacts(oldContacts);
+    if (resource.isSuccess) {
+      contacts.addAll(resource.data ?? []);
+    } else {
+      return Result.error(resource.toPageError());
     }
 
-    final List<ContactRequest> newContactRequests =
-        input.where((element) => element.contactId.isEmpty && element.groupId.isNotEmpty).toList();
-    for (ContactRequest contactRequest in newContactRequests) {
+    // #2. Create new contacts
+    final List<ContactRequest> newContacts = input.where((e) => e.contactId.isEmpty).toList();
+    for (ContactRequest contactRequest in newContacts) {
       final File? file = contactRequest.file;
       if (file != null) {
-        // Upload avatar
+        // #2.1 Upload avatar of contact
         final resource = await _supabaseRepository.uploadAvatar(file);
         final String avatar = resource.data ?? '';
         if (resource.isSuccess && avatar.isNotEmpty) {
@@ -48,25 +37,17 @@ class AddContactsUseCase extends InputUseCase<ListResult<Contact>, List<ContactR
         }
       }
 
-      // Insert contact
-      resource = await _supabaseRepository.insertContact(contactRequest);
+      // #2.2 Create new contact
+      final resource = await _supabaseRepository.createContact(contactRequest);
       final Contact? contact = resource.data;
       if (contact != null) contacts.add(contact);
-      if (resource.isSuccess) {
-        final Contact? contact = resource.data;
-        if (contact != null) {
-          resource = await _supabaseRepository.updateContactInGroup(
-            contactId: contact.id,
-            groupId: contactRequest.groupId,
-          );
-          if (resource.isError) {
-            return Result.error(resource.toPageError());
-          }
-        }
-      } else {
+      if (resource.isError) {
         return Result.error(resource.toPageError());
       }
     }
+
+    // #3. Sort contacts by name
+    contacts.sort((a, b) => a.name.compareTo(b.name));
 
     return Result.value(contacts);
   }

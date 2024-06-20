@@ -22,6 +22,8 @@ class NewGroupBottomSheet extends StatelessWidget {
       create: (_) => NewGroupBloc(
         Get.find(),
         Get.find(),
+        Get.find(),
+        Get.find(),
       )..add(const NewGroupEvent.initial()),
       child: BlocConsumer<NewGroupBloc, NewGroupState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,

@@ -1,6 +1,5 @@
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/request/group_request.dart';
-import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
@@ -27,7 +26,6 @@ class GetGroupStateMapper implements BaseStateMapper<GroupDetailState, DataResul
         request: request,
         groupId: group.id,
         groupDetail: group,
-        groupType: GroupType.groupDetail,
       );
     }
   }

@@ -7,22 +7,24 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
-import 'package:keepup/src/enums/group_type.dart';
+import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
-import 'package:keepup/src/ui/group_detail/mappers/create_group_state_mapper.dart';
 import 'package:keepup/src/ui/group_detail/mappers/delete_group_state_mapper.dart';
 import 'package:keepup/src/ui/group_detail/mappers/get_group_state_mapper.dart';
 import 'package:keepup/src/ui/group_detail/mappers/update_group_state_mapper.dart';
 import 'package:keepup/src/ui/group_detail/usecases/get_group_use_case.dart';
-import 'package:keepup/src/use_cases/create_group_use_case.dart';
+import 'package:keepup/src/ui/routing/pop_result.dart';
+import 'package:keepup/src/use_cases/add_contacts_use_case.dart';
 import 'package:keepup/src/use_cases/delete_group_use_case.dart';
 import 'package:keepup/src/use_cases/update_group_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
+import 'package:keepup/src/utils/app_pages.dart';
 
 part 'group_detail_bloc.freezed.dart';
 part 'group_detail_event.dart';
@@ -32,8 +34,6 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   final nameController = TextEditingController();
 
   final SupabaseRepository _supabaseRepository;
-  final CreateGroupUseCase _createGroupUseCase;
-  final CreateGroupStateMapper _createGroupStateMapper;
   final UploadAvatarUseCase _uploadAvatarUseCase;
   final GetGroupUseCase _getGroupUseCase;
   final GetGroupStateMapper _getGroupStateMapper;
@@ -41,11 +41,10 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   final UpdateGroupStateMapper _updateGroupStateMapper;
   final DeleteGroupUseCase _deleteGroupUseCase;
   final DeleteGroupStateMapper _deleteGroupStateMapper;
+  final AddContactsUseCase _addContactsUseCase;
 
   GroupDetailBloc(
     this._supabaseRepository,
-    this._createGroupUseCase,
-    this._createGroupStateMapper,
     this._uploadAvatarUseCase,
     this._getGroupUseCase,
     this._getGroupStateMapper,
@@ -53,6 +52,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     this._updateGroupStateMapper,
     this._deleteGroupUseCase,
     this._deleteGroupStateMapper,
+    this._addContactsUseCase,
   ) : super(const GroupDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -78,14 +78,24 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
             ? arguments
             : '';
     if (groupId.isEmpty) {
-      emit(state.copyWith(pageState: PageState.success, groupType: GroupType.newGroup));
+      emit(state.copyWith(
+        pageState: PageState.success,
+        pageCommand: PageCommandNavigation.pop(
+          result: PopResult(
+            status: false,
+            resultFromPage: AppPages.groupDetail,
+            data: LocaleKey.theGroupDoesNotExist.tr,
+          ),
+        ),
+      ));
     } else {
-      emit(state.copyWith(groupType: GroupType.groupDetail));
       final result = await _getGroupUseCase.run(groupId);
       emit(_getGroupStateMapper.mapResultToState(state, result));
       nameController.text = state.request.name;
       final List<String> contactIds = state.request.contacts;
-      final List<Contact> contacts = await _supabaseRepository.getAllContactByIds(contactIds);
+      final List<ContactRequest> contacts = await _supabaseRepository
+          .getDBContactByIds(contactIds)
+          .then((value) => value.map((e) => ContactRequest.fromJson(e.toJson())).toList());
       emit(state.copyWith(contacts: contacts));
     }
   }
@@ -93,38 +103,65 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   FutureOr<void> _onSavePressed(_OnSavePressed event, Emitter<GroupDetailState> emit) async {
     if (state.isLoading) return;
     emit(state.copyWith(isLoading: true));
+
+    GroupRequest request = state.request.copyWith();
+
+    // #1. Upload Avatar of Group
     final File? avatarFile = state.avatar;
-    String avatarUrl = state.request.avatar;
     if (avatarFile != null) {
       final DataResult<String> result = await _uploadAvatarUseCase.run(avatarFile);
       if (result.isValue) {
-        avatarUrl = result.valueOrCrash;
+        request = request.copyWith(avatar: result.valueOrNull ?? '');
       } else {
         final PageError pageError = result.asError!.error;
-        emit(state.copyWith(
+        return emit(state.copyWith(
           isLoading: false,
-          pageCommand: pageError.pageErrorType == NetworkError.token
-              ? PageCommandDialog.showExpirationSession()
-              : PageCommandMessage.showError(pageError.message),
+          pageCommand: pageError.toPageCommand(),
         ));
-        return;
       }
     }
-    final GroupRequest request = state.request.copyWith(
-      avatar: avatarUrl,
-      contacts: state.contacts.map((e) => e.id).toList(),
-    );
-    if (state.groupType == GroupType.newGroup) {
-      final result = await _createGroupUseCase.run(request);
-      emit(_createGroupStateMapper.mapResultToState(state, result));
-    } else {
-      final result = await _updateGroupUseCase.run(request);
-      emit(_updateGroupStateMapper.mapResultToState(state, result));
+
+    // #2. Remove groupId in the group's old contacts
+    final List<String> contactIds = request.contacts;
+    if (contactIds.isNotEmpty) {
+      // Get old contacts of group
+      final List<Contact> oldContacts = await _supabaseRepository.getDBContactByIds(contactIds);
+      // Get requests of contacts
+      final List<ContactRequest> oldContactRequests = oldContacts.map((e) {
+        // Remove groupId
+        final Contact contact = e.copyWith(groupId: '');
+        return ContactRequest.fromJson(contact.toJson());
+      }).toList();
+      if (oldContactRequests.isNotEmpty) {
+        final result = await _addContactsUseCase.run(oldContactRequests);
+        if (result.isValue) {
+          // Remove contacts in group request
+          request = request.copyWith(contacts: []);
+        }
+      }
     }
+
+    // #3. Add new contacts
+    final List<ContactRequest> contacts = state.contacts
+        .map((e) => e.copyWith(
+              groupId: state.request.groupId,
+              expiration: state.request.frequencyInterval.toExpirationDate(),
+            ))
+        .toList();
+    if (contacts.isNotEmpty) {
+      final result = await _addContactsUseCase.run(contacts);
+      final List<String> contactIds = result.valueOrNull?.map((e) => e.id).toList() ?? [];
+      // Add new contacts to group request
+      request = request.copyWith(contacts: contactIds);
+    }
+
+    // #4. Update group
+    final result = await _updateGroupUseCase.run(request);
+    emit(_updateGroupStateMapper.mapResultToState(state, result));
   }
 
   FutureOr<void> _onRemoveContact(_OnRemoveContact event, Emitter<GroupDetailState> emit) {
-    final List<Contact> contacts = [...state.contacts]..remove(event.contact);
+    final List<ContactRequest> contacts = [...state.contacts]..remove(event.contact);
     emit(state.copyWith(contacts: contacts));
   }
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
+import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_buttons.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_header.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_interval.dart';
@@ -15,13 +17,11 @@ class GroupDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GroupDetailBloc, GroupDetailState>(
       buildWhen: (previous, current) =>
-          previous.groupType != current.groupType ||
-          previous.pageState != current.pageState ||
-          previous.isLoading != current.isLoading,
+          previous.pageState != current.pageState || previous.isLoading != current.isLoading,
       builder: (context, state) {
         return Scaffold(
           appBar: AppAppBar(
-            title: state.groupType.title,
+            title: LocaleKey.groupDetail.tr,
             implyLeading: true,
           ),
           body: AppBody(

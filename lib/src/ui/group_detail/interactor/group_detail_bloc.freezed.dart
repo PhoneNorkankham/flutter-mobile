@@ -27,9 +27,9 @@ mixin _$GroupDetailEvent {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,9 +43,9 @@ mixin _$GroupDetailEvent {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,9 +59,9 @@ mixin _$GroupDetailEvent {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -181,9 +181,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return initial();
   }
@@ -200,9 +200,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return initial?.call();
   }
@@ -219,9 +219,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -343,9 +343,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return clearPageCommand();
   }
@@ -362,9 +362,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return clearPageCommand?.call();
   }
@@ -381,9 +381,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -532,9 +532,9 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onChangedKeyword(keyword);
   }
@@ -551,9 +551,9 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onChangedKeyword?.call(keyword);
   }
@@ -570,9 +570,9 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onChangedKeyword != null) {
@@ -731,9 +731,9 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onFrequencyIntervalChanged(frequencyIntervalType);
   }
@@ -750,9 +750,9 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onFrequencyIntervalChanged?.call(frequencyIntervalType);
   }
@@ -769,9 +769,9 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
@@ -926,9 +926,9 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onNameChanged(value);
   }
@@ -945,9 +945,9 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onNameChanged?.call(value);
   }
@@ -964,9 +964,9 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onNameChanged != null) {
@@ -1093,9 +1093,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onSavePressed();
   }
@@ -1112,9 +1112,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onSavePressed?.call();
   }
@@ -1131,9 +1131,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onSavePressed != null) {
@@ -1255,9 +1255,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onCancelPressed();
   }
@@ -1274,9 +1274,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onCancelPressed?.call();
   }
@@ -1293,9 +1293,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onCancelPressed != null) {
@@ -1444,9 +1444,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onChangedAvatar(file);
   }
@@ -1463,9 +1463,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onChangedAvatar?.call(file);
   }
@@ -1482,9 +1482,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onChangedAvatar != null) {
@@ -1570,7 +1570,9 @@ abstract class _$$OnRemoveContactImplCopyWith<$Res> {
           $Res Function(_$OnRemoveContactImpl) then) =
       __$$OnRemoveContactImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Contact contact});
+  $Res call({ContactRequest contact});
+
+  $ContactRequestCopyWith<$Res> get contact;
 }
 
 /// @nodoc
@@ -1584,14 +1586,22 @@ class __$$OnRemoveContactImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = freezed,
+    Object? contact = null,
   }) {
     return _then(_$OnRemoveContactImpl(
-      freezed == contact
+      null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as Contact,
+              as ContactRequest,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactRequestCopyWith<$Res> get contact {
+    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
+      return _then(_value.copyWith(contact: value));
+    });
   }
 }
 
@@ -1601,7 +1611,7 @@ class _$OnRemoveContactImpl implements _OnRemoveContact {
   const _$OnRemoveContactImpl(this.contact);
 
   @override
-  final Contact contact;
+  final ContactRequest contact;
 
   @override
   String toString() {
@@ -1613,12 +1623,11 @@ class _$OnRemoveContactImpl implements _OnRemoveContact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnRemoveContactImpl &&
-            const DeepCollectionEquality().equals(other.contact, contact));
+            (identical(other.contact, contact) || other.contact == contact));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
+  int get hashCode => Object.hash(runtimeType, contact);
 
   @JsonKey(ignore: true)
   @override
@@ -1639,9 +1648,9 @@ class _$OnRemoveContactImpl implements _OnRemoveContact {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onRemoveContact(contact);
   }
@@ -1658,9 +1667,9 @@ class _$OnRemoveContactImpl implements _OnRemoveContact {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onRemoveContact?.call(contact);
   }
@@ -1677,9 +1686,9 @@ class _$OnRemoveContactImpl implements _OnRemoveContact {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onRemoveContact != null) {
@@ -1751,9 +1760,10 @@ class _$OnRemoveContactImpl implements _OnRemoveContact {
 }
 
 abstract class _OnRemoveContact implements GroupDetailEvent {
-  const factory _OnRemoveContact(final Contact contact) = _$OnRemoveContactImpl;
+  const factory _OnRemoveContact(final ContactRequest contact) =
+      _$OnRemoveContactImpl;
 
-  Contact get contact;
+  ContactRequest get contact;
   @JsonKey(ignore: true)
   _$$OnRemoveContactImplCopyWith<_$OnRemoveContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1806,9 +1816,9 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onDeleteGroup();
   }
@@ -1825,9 +1835,9 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onDeleteGroup?.call();
   }
@@ -1844,9 +1854,9 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onDeleteGroup != null) {
@@ -1927,7 +1937,7 @@ abstract class _$$OnAddedMembersImplCopyWith<$Res> {
           $Res Function(_$OnAddedMembersImpl) then) =
       __$$OnAddedMembersImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Contact> contacts});
+  $Res call({List<ContactRequest> contacts});
 }
 
 /// @nodoc
@@ -1947,7 +1957,7 @@ class __$$OnAddedMembersImplCopyWithImpl<$Res>
       null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
     ));
   }
 }
@@ -1955,12 +1965,12 @@ class __$$OnAddedMembersImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnAddedMembersImpl implements _OnAddedMembers {
-  const _$OnAddedMembersImpl(final List<Contact> contacts)
+  const _$OnAddedMembersImpl(final List<ContactRequest> contacts)
       : _contacts = contacts;
 
-  final List<Contact> _contacts;
+  final List<ContactRequest> _contacts;
   @override
-  List<Contact> get contacts {
+  List<ContactRequest> get contacts {
     if (_contacts is EqualUnmodifiableListView) return _contacts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contacts);
@@ -2002,9 +2012,9 @@ class _$OnAddedMembersImpl implements _OnAddedMembers {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
-    required TResult Function(Contact contact) onRemoveContact,
+    required TResult Function(ContactRequest contact) onRemoveContact,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<Contact> contacts) onAddedMembers,
+    required TResult Function(List<ContactRequest> contacts) onAddedMembers,
   }) {
     return onAddedMembers(contacts);
   }
@@ -2021,9 +2031,9 @@ class _$OnAddedMembersImpl implements _OnAddedMembers {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(Contact contact)? onRemoveContact,
+    TResult? Function(ContactRequest contact)? onRemoveContact,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<Contact> contacts)? onAddedMembers,
+    TResult? Function(List<ContactRequest> contacts)? onAddedMembers,
   }) {
     return onAddedMembers?.call(contacts);
   }
@@ -2040,9 +2050,9 @@ class _$OnAddedMembersImpl implements _OnAddedMembers {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
-    TResult Function(Contact contact)? onRemoveContact,
+    TResult Function(ContactRequest contact)? onRemoveContact,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<Contact> contacts)? onAddedMembers,
+    TResult Function(List<ContactRequest> contacts)? onAddedMembers,
     required TResult orElse(),
   }) {
     if (onAddedMembers != null) {
@@ -2114,10 +2124,10 @@ class _$OnAddedMembersImpl implements _OnAddedMembers {
 }
 
 abstract class _OnAddedMembers implements GroupDetailEvent {
-  const factory _OnAddedMembers(final List<Contact> contacts) =
+  const factory _OnAddedMembers(final List<ContactRequest> contacts) =
       _$OnAddedMembersImpl;
 
-  List<Contact> get contacts;
+  List<ContactRequest> get contacts;
   @JsonKey(ignore: true)
   _$$OnAddedMembersImplCopyWith<_$OnAddedMembersImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2127,12 +2137,11 @@ abstract class _OnAddedMembers implements GroupDetailEvent {
 mixin _$GroupDetailState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   PageState get pageState => throw _privateConstructorUsedError;
-  GroupType get groupType => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   String get groupId => throw _privateConstructorUsedError;
   GroupRequest get request => throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
-  List<Contact> get contacts => throw _privateConstructorUsedError;
+  List<ContactRequest> get contacts => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
   Group? get groupDetail => throw _privateConstructorUsedError;
 
@@ -2150,12 +2159,11 @@ abstract class $GroupDetailStateCopyWith<$Res> {
   $Res call(
       {PageCommand? pageCommand,
       PageState pageState,
-      GroupType groupType,
       bool isLoading,
       String groupId,
       GroupRequest request,
       String keyword,
-      List<Contact> contacts,
+      List<ContactRequest> contacts,
       File? avatar,
       Group? groupDetail});
 
@@ -2178,7 +2186,6 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
   $Res call({
     Object? pageCommand = freezed,
     Object? pageState = null,
-    Object? groupType = null,
     Object? isLoading = null,
     Object? groupId = null,
     Object? request = null,
@@ -2196,10 +2203,6 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
           ? _value.pageState
           : pageState // ignore: cast_nullable_to_non_nullable
               as PageState,
-      groupType: null == groupType
-          ? _value.groupType
-          : groupType // ignore: cast_nullable_to_non_nullable
-              as GroupType,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -2219,7 +2222,7 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -2263,12 +2266,11 @@ abstract class _$$GroupDetailStateImplCopyWith<$Res>
   $Res call(
       {PageCommand? pageCommand,
       PageState pageState,
-      GroupType groupType,
       bool isLoading,
       String groupId,
       GroupRequest request,
       String keyword,
-      List<Contact> contacts,
+      List<ContactRequest> contacts,
       File? avatar,
       Group? groupDetail});
 
@@ -2291,7 +2293,6 @@ class __$$GroupDetailStateImplCopyWithImpl<$Res>
   $Res call({
     Object? pageCommand = freezed,
     Object? pageState = null,
-    Object? groupType = null,
     Object? isLoading = null,
     Object? groupId = null,
     Object? request = null,
@@ -2309,10 +2310,6 @@ class __$$GroupDetailStateImplCopyWithImpl<$Res>
           ? _value.pageState
           : pageState // ignore: cast_nullable_to_non_nullable
               as PageState,
-      groupType: null == groupType
-          ? _value.groupType
-          : groupType // ignore: cast_nullable_to_non_nullable
-              as GroupType,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -2332,7 +2329,7 @@ class __$$GroupDetailStateImplCopyWithImpl<$Res>
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -2351,12 +2348,11 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
   const _$GroupDetailStateImpl(
       {this.pageCommand,
       this.pageState = PageState.loading,
-      this.groupType = GroupType.newGroup,
       this.isLoading = false,
       this.groupId = '',
       this.request = const GroupRequest(),
       this.keyword = '',
-      final List<Contact> contacts = const [],
+      final List<ContactRequest> contacts = const [],
       this.avatar,
       this.groupDetail})
       : _contacts = contacts,
@@ -2369,9 +2365,6 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
   final PageState pageState;
   @override
   @JsonKey()
-  final GroupType groupType;
-  @override
-  @JsonKey()
   final bool isLoading;
   @override
   @JsonKey()
@@ -2382,10 +2375,10 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
   @override
   @JsonKey()
   final String keyword;
-  final List<Contact> _contacts;
+  final List<ContactRequest> _contacts;
   @override
   @JsonKey()
-  List<Contact> get contacts {
+  List<ContactRequest> get contacts {
     if (_contacts is EqualUnmodifiableListView) return _contacts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contacts);
@@ -2398,7 +2391,7 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
 
   @override
   String toString() {
-    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, groupType: $groupType, isLoading: $isLoading, groupId: $groupId, request: $request, keyword: $keyword, contacts: $contacts, avatar: $avatar, groupDetail: $groupDetail)';
+    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, groupId: $groupId, request: $request, keyword: $keyword, contacts: $contacts, avatar: $avatar, groupDetail: $groupDetail)';
   }
 
   @override
@@ -2410,8 +2403,6 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
                 other.pageCommand == pageCommand) &&
             (identical(other.pageState, pageState) ||
                 other.pageState == pageState) &&
-            (identical(other.groupType, groupType) ||
-                other.groupType == groupType) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.groupId, groupId) || other.groupId == groupId) &&
@@ -2428,7 +2419,6 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
       runtimeType,
       pageCommand,
       pageState,
-      groupType,
       isLoading,
       groupId,
       request,
@@ -2449,12 +2439,11 @@ abstract class _GroupDetailState extends GroupDetailState {
   const factory _GroupDetailState(
       {final PageCommand? pageCommand,
       final PageState pageState,
-      final GroupType groupType,
       final bool isLoading,
       final String groupId,
       final GroupRequest request,
       final String keyword,
-      final List<Contact> contacts,
+      final List<ContactRequest> contacts,
       final File? avatar,
       final Group? groupDetail}) = _$GroupDetailStateImpl;
   const _GroupDetailState._() : super._();
@@ -2464,8 +2453,6 @@ abstract class _GroupDetailState extends GroupDetailState {
   @override
   PageState get pageState;
   @override
-  GroupType get groupType;
-  @override
   bool get isLoading;
   @override
   String get groupId;
@@ -2474,7 +2461,7 @@ abstract class _GroupDetailState extends GroupDetailState {
   @override
   String get keyword;
   @override
-  List<Contact> get contacts;
+  List<ContactRequest> get contacts;
   @override
   File? get avatar;
   @override

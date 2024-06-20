@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/request/group_request.dart';
-import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
@@ -28,7 +27,6 @@ class UpdateGroupStateMapper implements BaseStateMapper<GroupDetailState, DataRe
         avatar: null,
         request: request,
         groupId: group.id,
-        groupType: GroupType.groupDetail,
         pageCommand: PageCommandMessage.showSuccess(LocaleKey.groupUpdatedSuccessfully.tr),
       );
     }

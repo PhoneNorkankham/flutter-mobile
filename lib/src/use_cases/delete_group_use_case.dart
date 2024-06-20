@@ -15,17 +15,19 @@ class DeleteGroupUseCase extends InputUseCase<VoidResult, Group> {
       if (resource.isSuccess) {
         // Get contactIds
         final List<String> contactIds = input.contacts.map((e) => e.toString()).toList();
-        // Get all contacts by contactIds
-        final List<Contact> contacts = await _supabaseRepository.getAllContactByIds(contactIds);
-        if (contacts.isNotEmpty) {
-          // Get requests of new contacts
-          final List<ContactRequest> requests = contacts.map((e) {
-            // Removed this group
-            final Contact contact = e.copyWith(groupId: '');
-            return ContactRequest.fromJson(contact.toJson());
-          }).toList();
-          // Update all contacts
-          await _supabaseRepository.updateContacts(requests);
+        if (contactIds.isNotEmpty) {
+          // Get all contacts by contactIds
+          final List<Contact> contacts = await _supabaseRepository.getDBContactByIds(contactIds);
+          if (contacts.isNotEmpty) {
+            // Get requests of new contacts
+            final List<ContactRequest> requests = contacts.map((e) {
+              // Removed this group
+              final Contact contact = e.copyWith(groupId: '');
+              return ContactRequest.fromJson(contact.toJson());
+            }).toList();
+            // Update all contacts
+            await _supabaseRepository.updateContacts(requests);
+          }
         }
         return Result.value(null);
       } else {

@@ -49,7 +49,7 @@ class NewContactBloc extends Bloc<NewContactEvent, NewContactState> {
 
   FutureOr<void> _initial(_Initial event, Emitter<NewContactState> emit) async {
     await emit.forEach<List<Group>>(
-      _supabaseRepository.watchGroups(),
+      _supabaseRepository.watchDBGroups(),
       onData: (groups) => state.copyWith(
         groups: groups,
         pageState: PageState.success,
