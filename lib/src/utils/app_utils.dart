@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:keepup/src/core/managers/permission_manager.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 
 class AppUtils {
   /// Check is debug mode
@@ -45,5 +46,24 @@ class AppUtils {
     } else {
       return null;
     }
+  }
+
+  static List<ContactRequest> combineContacts(
+    List<ContactRequest> contacts,
+    List<ContactRequest> deviceContacts,
+  ) {
+    final List<ContactRequest> newContacts = [...contacts];
+    for (ContactRequest contact in deviceContacts) {
+      // Combine supabase contacts to match device contacts
+      final ContactRequest? oldContact = contacts
+          .where((e) => e.contactId == contact.contactId || e.phoneNo == contact.phoneNo)
+          .firstOrNull;
+      if (oldContact == null) {
+        // Add contact from device to new contacts
+        newContacts.add(contact);
+      }
+    }
+    newContacts.sort((a, b) => a.name.compareTo(b.name));
+    return newContacts;
   }
 }
