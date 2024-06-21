@@ -10,13 +10,13 @@ class AddMemberState with _$AddMemberState {
     @Default(false) bool isLoading,
     @Default('') String keyword,
     @Default('') String groupId,
-    @Default([]) List<Contact> contacts,
-    @Default([]) List<Contact> selectedContacts,
+    @Default([]) List<ContactRequest> contacts,
+    @Default([]) List<ContactRequest> selectedContacts,
     File? avatar,
   }) = _AddMemberState;
 
-  List<Contact> getFilterContacts() {
-    final List<Contact> filterContacts;
+  List<ContactRequest> getFilterContacts() {
+    final List<ContactRequest> filterContacts;
     if (keyword.isEmpty) {
       filterContacts = [...contacts];
     } else {

@@ -20,11 +20,11 @@ mixin _$NewGroupEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -34,11 +34,11 @@ mixin _$NewGroupEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -48,11 +48,11 @@ mixin _$NewGroupEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -162,11 +162,11 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -179,11 +179,11 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -196,11 +196,11 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -312,11 +312,11 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -329,11 +329,11 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -346,11 +346,11 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -428,7 +428,9 @@ abstract class _$$OnSelectedContactImplCopyWith<$Res> {
           $Res Function(_$OnSelectedContactImpl) then) =
       __$$OnSelectedContactImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Contact contact});
+  $Res call({ContactRequest contact});
+
+  $ContactRequestCopyWith<$Res> get contact;
 }
 
 /// @nodoc
@@ -442,14 +444,22 @@ class __$$OnSelectedContactImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = freezed,
+    Object? contact = null,
   }) {
     return _then(_$OnSelectedContactImpl(
-      freezed == contact
+      null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as Contact,
+              as ContactRequest,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactRequestCopyWith<$Res> get contact {
+    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
+      return _then(_value.copyWith(contact: value));
+    });
   }
 }
 
@@ -459,7 +469,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
   const _$OnSelectedContactImpl(this.contact);
 
   @override
-  final Contact contact;
+  final ContactRequest contact;
 
   @override
   String toString() {
@@ -471,12 +481,11 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnSelectedContactImpl &&
-            const DeepCollectionEquality().equals(other.contact, contact));
+            (identical(other.contact, contact) || other.contact == contact));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
+  int get hashCode => Object.hash(runtimeType, contact);
 
   @JsonKey(ignore: true)
   @override
@@ -490,11 +499,11 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -507,11 +516,11 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -524,11 +533,11 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -597,10 +606,10 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
 }
 
 abstract class _OnSelectedContact implements NewGroupEvent {
-  const factory _OnSelectedContact(final Contact contact) =
+  const factory _OnSelectedContact(final ContactRequest contact) =
       _$OnSelectedContactImpl;
 
-  Contact get contact;
+  ContactRequest get contact;
   @JsonKey(ignore: true)
   _$$OnSelectedContactImplCopyWith<_$OnSelectedContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -612,7 +621,9 @@ abstract class _$$OnRemovedContactImplCopyWith<$Res> {
           $Res Function(_$OnRemovedContactImpl) then) =
       __$$OnRemovedContactImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Contact contact});
+  $Res call({ContactRequest contact});
+
+  $ContactRequestCopyWith<$Res> get contact;
 }
 
 /// @nodoc
@@ -626,14 +637,22 @@ class __$$OnRemovedContactImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contact = freezed,
+    Object? contact = null,
   }) {
     return _then(_$OnRemovedContactImpl(
-      freezed == contact
+      null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as Contact,
+              as ContactRequest,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactRequestCopyWith<$Res> get contact {
+    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
+      return _then(_value.copyWith(contact: value));
+    });
   }
 }
 
@@ -643,7 +662,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
   const _$OnRemovedContactImpl(this.contact);
 
   @override
-  final Contact contact;
+  final ContactRequest contact;
 
   @override
   String toString() {
@@ -655,12 +674,11 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnRemovedContactImpl &&
-            const DeepCollectionEquality().equals(other.contact, contact));
+            (identical(other.contact, contact) || other.contact == contact));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
+  int get hashCode => Object.hash(runtimeType, contact);
 
   @JsonKey(ignore: true)
   @override
@@ -674,11 +692,11 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -691,11 +709,11 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -708,11 +726,11 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -781,10 +799,10 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
 }
 
 abstract class _OnRemovedContact implements NewGroupEvent {
-  const factory _OnRemovedContact(final Contact contact) =
+  const factory _OnRemovedContact(final ContactRequest contact) =
       _$OnRemovedContactImpl;
 
-  Contact get contact;
+  ContactRequest get contact;
   @JsonKey(ignore: true)
   _$$OnRemovedContactImplCopyWith<_$OnRemovedContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -857,11 +875,11 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -874,11 +892,11 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -891,11 +909,11 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -1013,11 +1031,11 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1030,11 +1048,11 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -1047,11 +1065,11 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -1129,7 +1147,7 @@ abstract class _$$OnSelectedContactsImplCopyWith<$Res> {
           $Res Function(_$OnSelectedContactsImpl) then) =
       __$$OnSelectedContactsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Contact> contacts});
+  $Res call({List<ContactRequest> contacts});
 }
 
 /// @nodoc
@@ -1149,7 +1167,7 @@ class __$$OnSelectedContactsImplCopyWithImpl<$Res>
       null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
     ));
   }
 }
@@ -1157,12 +1175,12 @@ class __$$OnSelectedContactsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnSelectedContactsImpl implements _OnSelectedContacts {
-  const _$OnSelectedContactsImpl(final List<Contact> contacts)
+  const _$OnSelectedContactsImpl(final List<ContactRequest> contacts)
       : _contacts = contacts;
 
-  final List<Contact> _contacts;
+  final List<ContactRequest> _contacts;
   @override
-  List<Contact> get contacts {
+  List<ContactRequest> get contacts {
     if (_contacts is EqualUnmodifiableListView) return _contacts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contacts);
@@ -1197,11 +1215,11 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1214,11 +1232,11 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -1231,11 +1249,11 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -1304,10 +1322,10 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
 }
 
 abstract class _OnSelectedContacts implements NewGroupEvent {
-  const factory _OnSelectedContacts(final List<Contact> contacts) =
+  const factory _OnSelectedContacts(final List<ContactRequest> contacts) =
       _$OnSelectedContactsImpl;
 
-  List<Contact> get contacts;
+  List<ContactRequest> get contacts;
   @JsonKey(ignore: true)
   _$$OnSelectedContactsImplCopyWith<_$OnSelectedContactsImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1383,11 +1401,11 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1400,11 +1418,11 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -1417,11 +1435,11 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -1567,11 +1585,11 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(Contact contact) onSelectedContact,
-    required TResult Function(Contact contact) onRemovedContact,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function(String name) onChangedGroupName,
     required TResult Function() onCreateNewGroup,
-    required TResult Function(List<Contact> contacts) onSelectedContacts,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
     required TResult Function(File file) onChangedAvatar,
@@ -1584,11 +1602,11 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(Contact contact)? onSelectedContact,
-    TResult? Function(Contact contact)? onRemovedContact,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function(String name)? onChangedGroupName,
     TResult? Function()? onCreateNewGroup,
-    TResult? Function(List<Contact> contacts)? onSelectedContacts,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult? Function(File file)? onChangedAvatar,
@@ -1601,11 +1619,11 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(Contact contact)? onSelectedContact,
-    TResult Function(Contact contact)? onRemovedContact,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
     TResult Function(String name)? onChangedGroupName,
     TResult Function()? onCreateNewGroup,
-    TResult Function(List<Contact> contacts)? onSelectedContacts,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
     TResult Function(File file)? onChangedAvatar,
@@ -1687,7 +1705,8 @@ mixin _$NewGroupState {
   PageState get pageState => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  List<Contact> get selectedContacts => throw _privateConstructorUsedError;
+  List<ContactRequest> get selectedContacts =>
+      throw _privateConstructorUsedError;
   GroupRequest get groupRequest => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
 
@@ -1706,7 +1725,7 @@ abstract class $NewGroupStateCopyWith<$Res> {
       {PageState pageState,
       PageCommand? pageCommand,
       bool isLoading,
-      List<Contact> selectedContacts,
+      List<ContactRequest> selectedContacts,
       GroupRequest groupRequest,
       File? avatar});
 
@@ -1750,7 +1769,7 @@ class _$NewGroupStateCopyWithImpl<$Res, $Val extends NewGroupState>
       selectedContacts: null == selectedContacts
           ? _value.selectedContacts
           : selectedContacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       groupRequest: null == groupRequest
           ? _value.groupRequest
           : groupRequest // ignore: cast_nullable_to_non_nullable
@@ -1795,7 +1814,7 @@ abstract class _$$NewGroupStateImplCopyWith<$Res>
       {PageState pageState,
       PageCommand? pageCommand,
       bool isLoading,
-      List<Contact> selectedContacts,
+      List<ContactRequest> selectedContacts,
       GroupRequest groupRequest,
       File? avatar});
 
@@ -1839,7 +1858,7 @@ class __$$NewGroupStateImplCopyWithImpl<$Res>
       selectedContacts: null == selectedContacts
           ? _value._selectedContacts
           : selectedContacts // ignore: cast_nullable_to_non_nullable
-              as List<Contact>,
+              as List<ContactRequest>,
       groupRequest: null == groupRequest
           ? _value.groupRequest
           : groupRequest // ignore: cast_nullable_to_non_nullable
@@ -1859,7 +1878,7 @@ class _$NewGroupStateImpl extends _NewGroupState {
       {this.pageState = PageState.loading,
       this.pageCommand,
       this.isLoading = false,
-      final List<Contact> selectedContacts = const [],
+      final List<ContactRequest> selectedContacts = const [],
       this.groupRequest = const GroupRequest(),
       this.avatar})
       : _selectedContacts = selectedContacts,
@@ -1873,10 +1892,10 @@ class _$NewGroupStateImpl extends _NewGroupState {
   @override
   @JsonKey()
   final bool isLoading;
-  final List<Contact> _selectedContacts;
+  final List<ContactRequest> _selectedContacts;
   @override
   @JsonKey()
-  List<Contact> get selectedContacts {
+  List<ContactRequest> get selectedContacts {
     if (_selectedContacts is EqualUnmodifiableListView)
       return _selectedContacts;
     // ignore: implicit_dynamic_type
@@ -1934,7 +1953,7 @@ abstract class _NewGroupState extends NewGroupState {
       {final PageState pageState,
       final PageCommand? pageCommand,
       final bool isLoading,
-      final List<Contact> selectedContacts,
+      final List<ContactRequest> selectedContacts,
       final GroupRequest groupRequest,
       final File? avatar}) = _$NewGroupStateImpl;
   const _NewGroupState._() : super._();
@@ -1946,7 +1965,7 @@ abstract class _NewGroupState extends NewGroupState {
   @override
   bool get isLoading;
   @override
-  List<Contact> get selectedContacts;
+  List<ContactRequest> get selectedContacts;
   @override
   GroupRequest get groupRequest;
   @override

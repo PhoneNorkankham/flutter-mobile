@@ -54,7 +54,7 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
-  Future<Resource<Group>> insertGroup(GroupRequest group) {
+  Future<Resource<Group>> createGroup(GroupRequest group) {
     return NetworkBoundResource<Group, Group>(
       createSerializedCall: () => _supabaseManager.insertGroup(group),
       saveCallResult: (group) => _groupDao.insertOrReplace(group),
@@ -88,7 +88,7 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
-  Future<Resource<Contact>> insertContact(ContactRequest request) {
+  Future<Resource<Contact>> createContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
       createSerializedCall: () => _supabaseManager.insertContact(request),
       saveCallResult: (contact) => _contactDao.insertOrReplaceContact(contact),
@@ -102,25 +102,8 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
-  Future<Resource<void>> updateContactInGroup({
-    required String contactId,
-    required String groupId,
-  }) {
-    return NetworkBoundResource<void, List<Group>>(
-      createSerializedCall: () => _supabaseManager.updateContactInGroups(
-        contactId: contactId,
-        groupId: groupId,
-      ),
-      saveCallResult: (groups) async {
-        for (Group group in groups) {
-          await _groupDao.insertOrReplace(group);
-        }
-      },
-    ).getAsFuture();
-  }
-
-  Future<Resource<void>> updateContacts(List<ContactRequest> requests) {
-    return NetworkBoundResource<void, List<Contact>>(
+  Future<Resource<List<Contact>>> updateContacts(List<ContactRequest> requests) {
+    return NetworkBoundResource<List<Contact>, List<Contact>>(
       createSerializedCall: () => _supabaseManager.updateContacts(requests),
       saveCallResult: (contacts) => _contactDao.insertAllOnConflictUpdate(contacts),
     ).getAsFuture();
@@ -160,7 +143,7 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
-  Stream<List<Group>> watchGroups() => _groupDao.watchGroups();
+  Stream<List<Group>> watchDBGroups() => _groupDao.watchGroups();
 
   Future<List<Group>> getDBGroups() => _groupDao.getGroups();
 
@@ -184,13 +167,12 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
-  Stream<List<Contact>> watchContacts() => _contactDao.watchContacts();
+  Future<List<Contact>> getDBContacts() => _contactDao.getContacts();
 
-  Future<List<Contact>> getAllContactByIds(List<String> contactIds) =>
+  Stream<List<Contact>> watchDBContacts() => _contactDao.watchContacts();
+
+  Future<List<Contact>> getDBContactByIds(List<String> contactIds) =>
       _contactDao.getAllContactByIds(contactIds);
-
-  Future<List<Contact>> getAllContactByGroupId(String groupId) =>
-      _contactDao.getAllContactByGroupId(groupId);
 
   Future<Resource<String>> uploadAvatar(File file) {
     return NetworkBoundResource<String, String>(
@@ -308,7 +290,7 @@ class SupabaseRepository {
 
   Future<Resource<bool>> keepUpGroup(Group group) async {
     final List<String> contactIds = group.contacts.map((e) => e.toString()).toList();
-    final List<Contact> contacts = await getAllContactByIds(contactIds);
+    final List<Contact> contacts = await getDBContactByIds(contactIds);
     return keepUpAllContacts(contacts);
   }
 

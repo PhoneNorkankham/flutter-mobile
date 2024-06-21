@@ -20,9 +20,9 @@ class GroupDetailEvent with _$GroupDetailEvent {
 
   const factory GroupDetailEvent.onChangedAvatar(File file) = _OnChangedAvatar;
 
-  const factory GroupDetailEvent.onRemoveContact(Contact contact) = _OnRemoveContact;
+  const factory GroupDetailEvent.onRemoveContact(ContactRequest contact) = _OnRemoveContact;
 
   const factory GroupDetailEvent.onDeleteGroup() = _OnDeleteGroup;
 
-  const factory GroupDetailEvent.onAddedMembers(List<Contact> contacts) = _OnAddedMembers;
+  const factory GroupDetailEvent.onAddedMembers(List<ContactRequest> contacts) = _OnAddedMembers;
 }

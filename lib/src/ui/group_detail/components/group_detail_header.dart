@@ -7,7 +7,6 @@ import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
 import 'package:keepup/src/design/components/inputs/app_input_text_field.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/enums/group_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/group_detail/interactor/group_detail_bloc.dart';
 
@@ -17,139 +16,113 @@ class GroupDetailHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GroupDetailBloc bloc = context.read();
-    return BlocBuilder<GroupDetailBloc, GroupDetailState>(
-      buildWhen: (previous, current) => previous.groupType != current.groupType,
-      builder: (context, state) {
-        return Container(
-          constraints: const BoxConstraints(minHeight: 216),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+    return Container(
+      constraints: const BoxConstraints(minHeight: 216),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 28),
+          Row(
+            mainAxisSize: MainAxisSize.max,
             children: [
-              const SizedBox(height: 28),
-              if (state.groupType == GroupType.groupDetail)
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.av_timer,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                    const SizedBox(width: 4),
-                    Expanded(
-                      child: BlocBuilder<GroupDetailBloc, GroupDetailState>(
-                        buildWhen: (previous, current) =>
-                            previous.request.daysLeft != current.request.daysLeft,
-                        builder: (context, state) {
-                          return Text(
-                            '${state.request.daysLeft} ${LocaleKey.daysLeft.tr}',
-                            style: context.appTextTheme.medium14.copyWith(
-                              color: Theme.of(context).colorScheme.onPrimary,
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () => _showDeleteConfirmDialog(context, bloc),
-                      child: Text(
-                        LocaleKey.delete.tr,
-                        style: context.appTextTheme.medium14.copyWith(
-                          color: Theme.of(context).colorScheme.onPrimary,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              GestureDetector(
-                onTap: () => AppDialogs(
-                  title: LocaleKey.uploadAvatar.tr,
-                  content: PickerPhotoDialog(
-                    onSelected: (file) => bloc.add(GroupDetailEvent.onChangedAvatar(file)),
-                  ),
-                  contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-                ).show(),
+              Icon(
+                Icons.av_timer,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+              const SizedBox(width: 4),
+              Expanded(
                 child: BlocBuilder<GroupDetailBloc, GroupDetailState>(
                   buildWhen: (previous, current) =>
-                      previous.avatar != current.avatar ||
-                      previous.request.avatar != current.request.avatar,
-                  builder: (context, state) => AppCircleAvatar(
-                    file: state.avatar,
-                    url: state.request.avatar,
-                    radius: 50,
-                  ),
+                      previous.request.daysLeft != current.request.daysLeft,
+                  builder: (context, state) {
+                    return Text(
+                      '${state.request.daysLeft} ${LocaleKey.daysLeft.tr}',
+                      style: context.appTextTheme.medium14.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
+                    );
+                  },
                 ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Icon(
-                    Icons.group,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: BlocBuilder<GroupDetailBloc, GroupDetailState>(
-                      buildWhen: (previous, current) =>
-                          previous.request.contacts.length != current.request.contacts.length,
-                      builder: (context, state) {
-                        return Text(
-                          '${state.request.contacts.length} ${LocaleKey.members.tr}',
-                          style: context.appTextTheme.medium14.copyWith(
-                            color: Theme.of(context).colorScheme.onPrimary,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  if (state.groupType == GroupType.newGroup) ...[
-                    Icon(
-                      Icons.av_timer,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                    const SizedBox(width: 4),
-                    BlocBuilder<GroupDetailBloc, GroupDetailState>(
-                      buildWhen: (previous, current) =>
-                          previous.request.daysLeft != current.request.daysLeft,
-                      builder: (context, state) {
-                        return Text(
-                          '${state.request.daysLeft} ${LocaleKey.daysLeft.tr}',
-                          style: context.appTextTheme.medium14.copyWith(
-                            color: Theme.of(context).colorScheme.onPrimary,
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ],
-              ),
-              const SizedBox(height: 20),
-              AppInputTextField(
-                maxLines: 1,
-                textStyle: context.appTextTheme.medium20.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
-                controller: bloc.nameController,
-                enabled: state.groupType == GroupType.newGroup,
-                textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  errorBorder: InputBorder.none,
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  disabledBorder: InputBorder.none,
-                  hintText: LocaleKey.tabToAddGroupName.tr,
-                  hintStyle: context.appTextTheme.medium20.copyWith(
+              GestureDetector(
+                onTap: () => _showDeleteConfirmDialog(context, bloc),
+                child: Text(
+                  LocaleKey.delete.tr,
+                  style: context.appTextTheme.medium14.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
-                cursorColor: Theme.of(context).colorScheme.onPrimary,
-                onChanged: (value) => bloc.add(GroupDetailEvent.onNameChanged(value)),
               ),
             ],
           ),
-        );
-      },
+          GestureDetector(
+            onTap: () => AppDialogs(
+              title: LocaleKey.uploadAvatar.tr,
+              content: PickerPhotoDialog(
+                onSelected: (file) => bloc.add(GroupDetailEvent.onChangedAvatar(file)),
+              ),
+              contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+            ).show(),
+            child: BlocBuilder<GroupDetailBloc, GroupDetailState>(
+              buildWhen: (previous, current) =>
+                  previous.avatar != current.avatar ||
+                  previous.request.avatar != current.request.avatar,
+              builder: (context, state) => AppCircleAvatar(
+                file: state.avatar,
+                url: state.request.avatar,
+                radius: 50,
+              ),
+            ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Icon(
+                Icons.group,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: BlocBuilder<GroupDetailBloc, GroupDetailState>(
+                  buildWhen: (previous, current) =>
+                      previous.request.contacts.length != current.request.contacts.length,
+                  builder: (context, state) {
+                    return Text(
+                      '${state.request.contacts.length} ${LocaleKey.members.tr}',
+                      style: context.appTextTheme.medium14.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          AppInputTextField(
+            maxLines: 1,
+            textStyle: context.appTextTheme.medium20.copyWith(
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+            controller: bloc.nameController,
+            textAlign: TextAlign.center,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              errorBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              hintText: LocaleKey.tabToAddGroupName.tr,
+              hintStyle: context.appTextTheme.medium20.copyWith(
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+            ),
+            cursorColor: Theme.of(context).colorScheme.onPrimary,
+            onChanged: (value) => bloc.add(GroupDetailEvent.onNameChanged(value)),
+          ),
+        ],
+      ),
     );
   }
 

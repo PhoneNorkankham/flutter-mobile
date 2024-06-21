@@ -193,44 +193,6 @@ class SupabaseManager {
     return throw LocaleKey.theGroupDoesNotExist.tr;
   }
 
-  Future<List<Group>> updateContactInGroups({
-    required String contactId,
-    required String groupId,
-  }) async {
-    // Get all groups
-    final List<Group> groups = await getGroups();
-
-    // Get all joined groups
-    final List<Group> joinedGroups =
-        groups.where((element) => element.contacts.contains(contactId)).toList();
-
-    // Get all groups to leave from joined groups
-    final List<Group> leaveGroups = joinedGroups
-        .where((element) => groupId != element.id)
-        .map((e) => e.copyWith(contacts: e.contacts..remove(contactId)))
-        .toList();
-
-    // Get all joined groups
-    final List<Group> canJoinGroups =
-        groups.where((element) => !element.contacts.contains(contactId)).toList();
-
-    // Get all groups to join
-    final List<Group> joinGroups = canJoinGroups
-        .where((element) => groupId == element.id)
-        .map((e) => e.copyWith(contacts: e.contacts..add(contactId)))
-        .toList();
-
-    // Get all groups to update
-    final List<Group> newGroups = [...leaveGroups, ...joinGroups];
-
-    // Update groups
-    for (Group group in newGroups) {
-      await updateGroup(GroupRequest.fromJson(group.toJson()));
-    }
-
-    return newGroups;
-  }
-
   Future<List<Group>> getGroups() => _supabase
       .from(_tbGroups)
       .select()

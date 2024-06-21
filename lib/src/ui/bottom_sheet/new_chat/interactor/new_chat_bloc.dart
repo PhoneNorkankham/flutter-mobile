@@ -30,8 +30,8 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
   FutureOr<void> _initial(_Initial event, Emitter<NewChatState> emit) {
     return emit.forEach<_DispatchNewChatState>(
       Rx.combineLatest2(
-        _supabaseRepository.watchGroups(),
-        _supabaseRepository.watchContacts(),
+        _supabaseRepository.watchDBGroups(),
+        _supabaseRepository.watchDBContacts(),
         (groups, contacts) => _DispatchNewChatState(
           groups,
           contacts,

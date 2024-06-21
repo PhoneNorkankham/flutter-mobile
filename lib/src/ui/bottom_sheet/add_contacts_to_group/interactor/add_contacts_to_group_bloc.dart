@@ -8,13 +8,11 @@ import 'package:bloc/bloc.dart';
 import 'package:contacts_service/contacts_service.dart' as CS;
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:get/get.dart' hide Rx;
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/managers/permission_manager.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
-import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
@@ -50,22 +48,17 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<AddContactsToGroupState> emit) async {
-    emit(state.copyWith(group: event.group, selectedContacts: event.selectedContacts));
     final List<ContactRequest> deviceContacts = await _getDeviceContacts();
-    await emit.forEach<List<Contact>>(
-      _supabaseRepository.watchContacts(),
-      onData: (contacts) => state.copyWith(
-        contacts: _combineContacts(
-          contacts.map((e) => ContactRequest.fromJson(e.toJson())).toList(),
-          deviceContacts,
-        ),
-        pageState: PageState.success,
+    final List<Contact> contacts = await _supabaseRepository.getDBContacts();
+    emit(state.copyWith(
+      contacts: _combineContacts(
+        contacts.map((e) => ContactRequest.fromJson(e.toJson())).toList(),
+        deviceContacts,
       ),
-      onError: (error, stacktrace) => state.copyWith(
-        pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
-        pageState: PageState.success,
-      ),
-    );
+      group: event.group,
+      selectedContacts: event.selectedContacts,
+      pageState: PageState.success,
+    ));
   }
 
   Future<List<ContactRequest>> _getDeviceContacts() async {
@@ -134,35 +127,33 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
     final Group? group = state.group;
     if (group == null) return;
     emit(state.copyWith(isLoading: true));
-    final result = await _addContactsUseCase.run(state.selectedContacts
+
+    GroupRequest request = GroupRequest.fromJson(group.toJson());
+    // #1. Add new contacts
+    final List<ContactRequest> selectedContacts = state.selectedContacts
         .map((e) => e.copyWith(
               groupId: group.id,
               expiration: group.frequencyInterval.toExpirationDate(),
             ))
-        .toList());
-    final List<Contact> contacts = result.valueOrNull ?? [];
-    if (result.isValue && contacts.isNotEmpty) {
-      final contactIds = [
-        ...group.contacts, // Old contacts
-        ...contacts.map((e) => e.id), // New contacts
-      ];
-      final request = GroupRequest.fromJson(group.toJson())
-          .copyWith(contacts: contactIds.toSet().map((e) => e.toString()).toList());
-      final result = await _updateGroupUseCase.run(request);
-      if (result.isValue) {
-        emit(state.copyWith(
-          isLoading: false,
-          pageCommand: PageCommandNavigation.pop(
-            result: PopResult(status: true, resultFromPage: ''),
-            isDialog: true,
-          ),
-        ));
-      } else {
-        emit(state.copyWith(
-          isLoading: false,
-          pageCommand: result.asError?.error.toPageCommand(),
-        ));
-      }
+        .toList();
+    if (selectedContacts.isNotEmpty) {
+      final result = await _addContactsUseCase.run(selectedContacts);
+      final List<String> newContactIds = result.valueOrNull?.map((e) => e.id).toList() ?? [];
+      final List<String> contactIds = [...group.contacts, ...newContactIds];
+      contactIds.sort((a, b) => a.compareTo(b));
+      request = request.copyWith(contacts: contactIds);
+    }
+
+    // #2. Update group
+    final result = await _updateGroupUseCase.run(request);
+    if (result.isValue) {
+      emit(state.copyWith(
+        isLoading: false,
+        pageCommand: PageCommandNavigation.pop(
+          result: PopResult(status: true, resultFromPage: ''),
+          isDialog: true,
+        ),
+      ));
     } else {
       emit(state.copyWith(
         isLoading: false,

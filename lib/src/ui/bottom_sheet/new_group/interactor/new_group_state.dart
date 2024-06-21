@@ -8,7 +8,7 @@ class NewGroupState with _$NewGroupState {
     @Default(PageState.loading) PageState pageState,
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
-    @Default([]) List<Contact> selectedContacts,
+    @Default([]) List<ContactRequest> selectedContacts,
     @Default(GroupRequest()) GroupRequest groupRequest,
     File? avatar,
   }) = _NewGroupState;

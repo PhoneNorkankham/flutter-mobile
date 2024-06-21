@@ -6,15 +6,16 @@ class NewGroupEvent with _$NewGroupEvent {
 
   const factory NewGroupEvent.clearPageCommand() = _ClearPageCommand;
 
-  const factory NewGroupEvent.onSelectedContact(Contact contact) = _OnSelectedContact;
+  const factory NewGroupEvent.onSelectedContact(ContactRequest contact) = _OnSelectedContact;
 
-  const factory NewGroupEvent.onRemovedContact(Contact contact) = _OnRemovedContact;
+  const factory NewGroupEvent.onRemovedContact(ContactRequest contact) = _OnRemovedContact;
 
   const factory NewGroupEvent.onChangedGroupName(String name) = _OnChangedGroupName;
 
   const factory NewGroupEvent.onCreateNewGroup() = _OnCreateNewGroup;
 
-  const factory NewGroupEvent.onSelectedContacts(List<Contact> contacts) = _OnSelectedContacts;
+  const factory NewGroupEvent.onSelectedContacts(List<ContactRequest> contacts) =
+      _OnSelectedContacts;
 
   const factory NewGroupEvent.onFrequencyIntervalChanged(
     FrequencyIntervalType frequencyIntervalType,

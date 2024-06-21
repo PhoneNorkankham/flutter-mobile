@@ -29,7 +29,7 @@ class SelectGroupBloc extends Bloc<SelectGroupEvent, SelectGroupState> {
 
   FutureOr<void> _initial(_Initial event, Emitter<SelectGroupState> emit) async {
     await emit.forEach<List<Group>>(
-      _supabaseRepository.watchGroups(),
+      _supabaseRepository.watchDBGroups(),
       onData: (groups) => state.copyWith(
         groups: groups,
         pageState: PageState.success,
