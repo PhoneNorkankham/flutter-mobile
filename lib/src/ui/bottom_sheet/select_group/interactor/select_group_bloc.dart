@@ -35,7 +35,7 @@ class SelectGroupBloc extends Bloc<SelectGroupEvent, SelectGroupState> {
         pageState: PageState.success,
       ),
       onError: (error, stacktrace) => state.copyWith(
-        pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
+        pageCommand: PageCommandMessage.showError(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,
       ),
     );

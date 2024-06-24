@@ -6,7 +6,7 @@ class OnboardingEvent with _$OnboardingEvent {
 
   const factory OnboardingEvent.clearPageCommand() = _ClearPageCommand;
 
-  const factory OnboardingEvent.gotoMain() = _GotoMain;
+  const factory OnboardingEvent.onLoginLater() = _OnLoginLater;
 
-  const factory OnboardingEvent.onJoinGroup(GroupRequest group) = _OnJoinGroup;
+  const factory OnboardingEvent.onSignInWithSocial(SocialType type) = _OnSignInWithSocial;
 }

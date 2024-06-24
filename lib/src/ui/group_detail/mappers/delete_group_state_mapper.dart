@@ -15,9 +15,7 @@ class DeleteGroupStateMapper implements BaseStateMapper<GroupDetailState, VoidRe
       final PageError pageError = result.asError!.error;
       return state.copyWith(
         isLoading: false,
-        pageCommand: pageError.pageErrorType == NetworkError.token
-            ? PageCommandDialog.showExpirationSession()
-            : PageCommandMessage.showError(pageError.message),
+        pageCommand: pageError.toPageCommand(),
       );
     } else {
       return state.copyWith(

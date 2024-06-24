@@ -20,24 +20,24 @@ mixin _$OnboardingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() gotoMain,
-    required TResult Function(GroupRequest group) onJoinGroup,
+    required TResult Function() onLoginLater,
+    required TResult Function(SocialType type) onSignInWithSocial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? gotoMain,
-    TResult? Function(GroupRequest group)? onJoinGroup,
+    TResult? Function()? onLoginLater,
+    TResult? Function(SocialType type)? onSignInWithSocial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? gotoMain,
-    TResult Function(GroupRequest group)? onJoinGroup,
+    TResult Function()? onLoginLater,
+    TResult Function(SocialType type)? onSignInWithSocial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,24 +45,24 @@ mixin _$OnboardingEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_GotoMain value) gotoMain,
-    required TResult Function(_OnJoinGroup value) onJoinGroup,
+    required TResult Function(_OnLoginLater value) onLoginLater,
+    required TResult Function(_OnSignInWithSocial value) onSignInWithSocial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_GotoMain value)? gotoMain,
-    TResult? Function(_OnJoinGroup value)? onJoinGroup,
+    TResult? Function(_OnLoginLater value)? onLoginLater,
+    TResult? Function(_OnSignInWithSocial value)? onSignInWithSocial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_GotoMain value)? gotoMain,
-    TResult Function(_OnJoinGroup value)? onJoinGroup,
+    TResult Function(_OnLoginLater value)? onLoginLater,
+    TResult Function(_OnSignInWithSocial value)? onSignInWithSocial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,8 +126,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() gotoMain,
-    required TResult Function(GroupRequest group) onJoinGroup,
+    required TResult Function() onLoginLater,
+    required TResult Function(SocialType type) onSignInWithSocial,
   }) {
     return initial();
   }
@@ -137,8 +137,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? gotoMain,
-    TResult? Function(GroupRequest group)? onJoinGroup,
+    TResult? Function()? onLoginLater,
+    TResult? Function(SocialType type)? onSignInWithSocial,
   }) {
     return initial?.call();
   }
@@ -148,8 +148,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? gotoMain,
-    TResult Function(GroupRequest group)? onJoinGroup,
+    TResult Function()? onLoginLater,
+    TResult Function(SocialType type)? onSignInWithSocial,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -163,8 +163,8 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_GotoMain value) gotoMain,
-    required TResult Function(_OnJoinGroup value) onJoinGroup,
+    required TResult Function(_OnLoginLater value) onLoginLater,
+    required TResult Function(_OnSignInWithSocial value) onSignInWithSocial,
   }) {
     return initial(this);
   }
@@ -174,8 +174,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_GotoMain value)? gotoMain,
-    TResult? Function(_OnJoinGroup value)? onJoinGroup,
+    TResult? Function(_OnLoginLater value)? onLoginLater,
+    TResult? Function(_OnSignInWithSocial value)? onSignInWithSocial,
   }) {
     return initial?.call(this);
   }
@@ -185,8 +185,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_GotoMain value)? gotoMain,
-    TResult Function(_OnJoinGroup value)? onJoinGroup,
+    TResult Function(_OnLoginLater value)? onLoginLater,
+    TResult Function(_OnSignInWithSocial value)? onSignInWithSocial,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -240,8 +240,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() gotoMain,
-    required TResult Function(GroupRequest group) onJoinGroup,
+    required TResult Function() onLoginLater,
+    required TResult Function(SocialType type) onSignInWithSocial,
   }) {
     return clearPageCommand();
   }
@@ -251,8 +251,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? gotoMain,
-    TResult? Function(GroupRequest group)? onJoinGroup,
+    TResult? Function()? onLoginLater,
+    TResult? Function(SocialType type)? onSignInWithSocial,
   }) {
     return clearPageCommand?.call();
   }
@@ -262,8 +262,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? gotoMain,
-    TResult Function(GroupRequest group)? onJoinGroup,
+    TResult Function()? onLoginLater,
+    TResult Function(SocialType type)? onSignInWithSocial,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -277,8 +277,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_GotoMain value) gotoMain,
-    required TResult Function(_OnJoinGroup value) onJoinGroup,
+    required TResult Function(_OnLoginLater value) onLoginLater,
+    required TResult Function(_OnSignInWithSocial value) onSignInWithSocial,
   }) {
     return clearPageCommand(this);
   }
@@ -288,8 +288,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_GotoMain value)? gotoMain,
-    TResult? Function(_OnJoinGroup value)? onJoinGroup,
+    TResult? Function(_OnLoginLater value)? onLoginLater,
+    TResult? Function(_OnSignInWithSocial value)? onSignInWithSocial,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -299,8 +299,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_GotoMain value)? gotoMain,
-    TResult Function(_OnJoinGroup value)? onJoinGroup,
+    TResult Function(_OnLoginLater value)? onLoginLater,
+    TResult Function(_OnSignInWithSocial value)? onSignInWithSocial,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -315,35 +315,35 @@ abstract class _ClearPageCommand implements OnboardingEvent {
 }
 
 /// @nodoc
-abstract class _$$GotoMainImplCopyWith<$Res> {
-  factory _$$GotoMainImplCopyWith(
-          _$GotoMainImpl value, $Res Function(_$GotoMainImpl) then) =
-      __$$GotoMainImplCopyWithImpl<$Res>;
+abstract class _$$OnLoginLaterImplCopyWith<$Res> {
+  factory _$$OnLoginLaterImplCopyWith(
+          _$OnLoginLaterImpl value, $Res Function(_$OnLoginLaterImpl) then) =
+      __$$OnLoginLaterImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GotoMainImplCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$GotoMainImpl>
-    implements _$$GotoMainImplCopyWith<$Res> {
-  __$$GotoMainImplCopyWithImpl(
-      _$GotoMainImpl _value, $Res Function(_$GotoMainImpl) _then)
+class __$$OnLoginLaterImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$OnLoginLaterImpl>
+    implements _$$OnLoginLaterImplCopyWith<$Res> {
+  __$$OnLoginLaterImplCopyWithImpl(
+      _$OnLoginLaterImpl _value, $Res Function(_$OnLoginLaterImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GotoMainImpl implements _GotoMain {
-  const _$GotoMainImpl();
+class _$OnLoginLaterImpl implements _OnLoginLater {
+  const _$OnLoginLaterImpl();
 
   @override
   String toString() {
-    return 'OnboardingEvent.gotoMain()';
+    return 'OnboardingEvent.onLoginLater()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GotoMainImpl);
+        (other.runtimeType == runtimeType && other is _$OnLoginLaterImpl);
   }
 
   @override
@@ -354,10 +354,10 @@ class _$GotoMainImpl implements _GotoMain {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() gotoMain,
-    required TResult Function(GroupRequest group) onJoinGroup,
+    required TResult Function() onLoginLater,
+    required TResult Function(SocialType type) onSignInWithSocial,
   }) {
-    return gotoMain();
+    return onLoginLater();
   }
 
   @override
@@ -365,10 +365,10 @@ class _$GotoMainImpl implements _GotoMain {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? gotoMain,
-    TResult? Function(GroupRequest group)? onJoinGroup,
+    TResult? Function()? onLoginLater,
+    TResult? Function(SocialType type)? onSignInWithSocial,
   }) {
-    return gotoMain?.call();
+    return onLoginLater?.call();
   }
 
   @override
@@ -376,12 +376,12 @@ class _$GotoMainImpl implements _GotoMain {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? gotoMain,
-    TResult Function(GroupRequest group)? onJoinGroup,
+    TResult Function()? onLoginLater,
+    TResult Function(SocialType type)? onSignInWithSocial,
     required TResult orElse(),
   }) {
-    if (gotoMain != null) {
-      return gotoMain();
+    if (onLoginLater != null) {
+      return onLoginLater();
     }
     return orElse();
   }
@@ -391,10 +391,10 @@ class _$GotoMainImpl implements _GotoMain {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_GotoMain value) gotoMain,
-    required TResult Function(_OnJoinGroup value) onJoinGroup,
+    required TResult Function(_OnLoginLater value) onLoginLater,
+    required TResult Function(_OnSignInWithSocial value) onSignInWithSocial,
   }) {
-    return gotoMain(this);
+    return onLoginLater(this);
   }
 
   @override
@@ -402,10 +402,10 @@ class _$GotoMainImpl implements _GotoMain {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_GotoMain value)? gotoMain,
-    TResult? Function(_OnJoinGroup value)? onJoinGroup,
+    TResult? Function(_OnLoginLater value)? onLoginLater,
+    TResult? Function(_OnSignInWithSocial value)? onSignInWithSocial,
   }) {
-    return gotoMain?.call(this);
+    return onLoginLater?.call(this);
   }
 
   @override
@@ -413,101 +413,92 @@ class _$GotoMainImpl implements _GotoMain {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_GotoMain value)? gotoMain,
-    TResult Function(_OnJoinGroup value)? onJoinGroup,
+    TResult Function(_OnLoginLater value)? onLoginLater,
+    TResult Function(_OnSignInWithSocial value)? onSignInWithSocial,
     required TResult orElse(),
   }) {
-    if (gotoMain != null) {
-      return gotoMain(this);
+    if (onLoginLater != null) {
+      return onLoginLater(this);
     }
     return orElse();
   }
 }
 
-abstract class _GotoMain implements OnboardingEvent {
-  const factory _GotoMain() = _$GotoMainImpl;
+abstract class _OnLoginLater implements OnboardingEvent {
+  const factory _OnLoginLater() = _$OnLoginLaterImpl;
 }
 
 /// @nodoc
-abstract class _$$OnJoinGroupImplCopyWith<$Res> {
-  factory _$$OnJoinGroupImplCopyWith(
-          _$OnJoinGroupImpl value, $Res Function(_$OnJoinGroupImpl) then) =
-      __$$OnJoinGroupImplCopyWithImpl<$Res>;
+abstract class _$$OnSignInWithSocialImplCopyWith<$Res> {
+  factory _$$OnSignInWithSocialImplCopyWith(_$OnSignInWithSocialImpl value,
+          $Res Function(_$OnSignInWithSocialImpl) then) =
+      __$$OnSignInWithSocialImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({GroupRequest group});
-
-  $GroupRequestCopyWith<$Res> get group;
+  $Res call({SocialType type});
 }
 
 /// @nodoc
-class __$$OnJoinGroupImplCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$OnJoinGroupImpl>
-    implements _$$OnJoinGroupImplCopyWith<$Res> {
-  __$$OnJoinGroupImplCopyWithImpl(
-      _$OnJoinGroupImpl _value, $Res Function(_$OnJoinGroupImpl) _then)
+class __$$OnSignInWithSocialImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$OnSignInWithSocialImpl>
+    implements _$$OnSignInWithSocialImplCopyWith<$Res> {
+  __$$OnSignInWithSocialImplCopyWithImpl(_$OnSignInWithSocialImpl _value,
+      $Res Function(_$OnSignInWithSocialImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? group = null,
+    Object? type = null,
   }) {
-    return _then(_$OnJoinGroupImpl(
-      null == group
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
-              as GroupRequest,
+    return _then(_$OnSignInWithSocialImpl(
+      null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as SocialType,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $GroupRequestCopyWith<$Res> get group {
-    return $GroupRequestCopyWith<$Res>(_value.group, (value) {
-      return _then(_value.copyWith(group: value));
-    });
   }
 }
 
 /// @nodoc
 
-class _$OnJoinGroupImpl implements _OnJoinGroup {
-  const _$OnJoinGroupImpl(this.group);
+class _$OnSignInWithSocialImpl implements _OnSignInWithSocial {
+  const _$OnSignInWithSocialImpl(this.type);
 
   @override
-  final GroupRequest group;
+  final SocialType type;
 
   @override
   String toString() {
-    return 'OnboardingEvent.onJoinGroup(group: $group)';
+    return 'OnboardingEvent.onSignInWithSocial(type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnJoinGroupImpl &&
-            (identical(other.group, group) || other.group == group));
+            other is _$OnSignInWithSocialImpl &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, group);
+  int get hashCode => Object.hash(runtimeType, type);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnJoinGroupImplCopyWith<_$OnJoinGroupImpl> get copyWith =>
-      __$$OnJoinGroupImplCopyWithImpl<_$OnJoinGroupImpl>(this, _$identity);
+  _$$OnSignInWithSocialImplCopyWith<_$OnSignInWithSocialImpl> get copyWith =>
+      __$$OnSignInWithSocialImplCopyWithImpl<_$OnSignInWithSocialImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function() gotoMain,
-    required TResult Function(GroupRequest group) onJoinGroup,
+    required TResult Function() onLoginLater,
+    required TResult Function(SocialType type) onSignInWithSocial,
   }) {
-    return onJoinGroup(group);
+    return onSignInWithSocial(type);
   }
 
   @override
@@ -515,10 +506,10 @@ class _$OnJoinGroupImpl implements _OnJoinGroup {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function()? gotoMain,
-    TResult? Function(GroupRequest group)? onJoinGroup,
+    TResult? Function()? onLoginLater,
+    TResult? Function(SocialType type)? onSignInWithSocial,
   }) {
-    return onJoinGroup?.call(group);
+    return onSignInWithSocial?.call(type);
   }
 
   @override
@@ -526,12 +517,12 @@ class _$OnJoinGroupImpl implements _OnJoinGroup {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function()? gotoMain,
-    TResult Function(GroupRequest group)? onJoinGroup,
+    TResult Function()? onLoginLater,
+    TResult Function(SocialType type)? onSignInWithSocial,
     required TResult orElse(),
   }) {
-    if (onJoinGroup != null) {
-      return onJoinGroup(group);
+    if (onSignInWithSocial != null) {
+      return onSignInWithSocial(type);
     }
     return orElse();
   }
@@ -541,10 +532,10 @@ class _$OnJoinGroupImpl implements _OnJoinGroup {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_GotoMain value) gotoMain,
-    required TResult Function(_OnJoinGroup value) onJoinGroup,
+    required TResult Function(_OnLoginLater value) onLoginLater,
+    required TResult Function(_OnSignInWithSocial value) onSignInWithSocial,
   }) {
-    return onJoinGroup(this);
+    return onSignInWithSocial(this);
   }
 
   @override
@@ -552,10 +543,10 @@ class _$OnJoinGroupImpl implements _OnJoinGroup {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_GotoMain value)? gotoMain,
-    TResult? Function(_OnJoinGroup value)? onJoinGroup,
+    TResult? Function(_OnLoginLater value)? onLoginLater,
+    TResult? Function(_OnSignInWithSocial value)? onSignInWithSocial,
   }) {
-    return onJoinGroup?.call(this);
+    return onSignInWithSocial?.call(this);
   }
 
   @override
@@ -563,23 +554,24 @@ class _$OnJoinGroupImpl implements _OnJoinGroup {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_GotoMain value)? gotoMain,
-    TResult Function(_OnJoinGroup value)? onJoinGroup,
+    TResult Function(_OnLoginLater value)? onLoginLater,
+    TResult Function(_OnSignInWithSocial value)? onSignInWithSocial,
     required TResult orElse(),
   }) {
-    if (onJoinGroup != null) {
-      return onJoinGroup(this);
+    if (onSignInWithSocial != null) {
+      return onSignInWithSocial(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnJoinGroup implements OnboardingEvent {
-  const factory _OnJoinGroup(final GroupRequest group) = _$OnJoinGroupImpl;
+abstract class _OnSignInWithSocial implements OnboardingEvent {
+  const factory _OnSignInWithSocial(final SocialType type) =
+      _$OnSignInWithSocialImpl;
 
-  GroupRequest get group;
+  SocialType get type;
   @JsonKey(ignore: true)
-  _$$OnJoinGroupImplCopyWith<_$OnJoinGroupImpl> get copyWith =>
+  _$$OnSignInWithSocialImplCopyWith<_$OnSignInWithSocialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -793,7 +785,7 @@ mixin _$OnboardingState {
   PageState get pageStatus => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  List<GroupRequest> get groups => throw _privateConstructorUsedError;
+  List<Group> get groups => throw _privateConstructorUsedError;
   LoggedInData get loggedInData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -811,7 +803,7 @@ abstract class $OnboardingStateCopyWith<$Res> {
       {PageState pageStatus,
       PageCommand? pageCommand,
       bool isLoading,
-      List<GroupRequest> groups,
+      List<Group> groups,
       LoggedInData loggedInData});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -853,7 +845,7 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
       groups: null == groups
           ? _value.groups
           : groups // ignore: cast_nullable_to_non_nullable
-              as List<GroupRequest>,
+              as List<Group>,
       loggedInData: null == loggedInData
           ? _value.loggedInData
           : loggedInData // ignore: cast_nullable_to_non_nullable
@@ -894,7 +886,7 @@ abstract class _$$OnboardingStateImplCopyWith<$Res>
       {PageState pageStatus,
       PageCommand? pageCommand,
       bool isLoading,
-      List<GroupRequest> groups,
+      List<Group> groups,
       LoggedInData loggedInData});
 
   @override
@@ -936,7 +928,7 @@ class __$$OnboardingStateImplCopyWithImpl<$Res>
       groups: null == groups
           ? _value._groups
           : groups // ignore: cast_nullable_to_non_nullable
-              as List<GroupRequest>,
+              as List<Group>,
       loggedInData: null == loggedInData
           ? _value.loggedInData
           : loggedInData // ignore: cast_nullable_to_non_nullable
@@ -952,7 +944,7 @@ class _$OnboardingStateImpl extends _OnboardingState {
       {this.pageStatus = PageState.initial,
       this.pageCommand,
       this.isLoading = false,
-      final List<GroupRequest> groups = const [],
+      final List<Group> groups = const [],
       this.loggedInData = const LoggedInData()})
       : _groups = groups,
         super._();
@@ -965,10 +957,10 @@ class _$OnboardingStateImpl extends _OnboardingState {
   @override
   @JsonKey()
   final bool isLoading;
-  final List<GroupRequest> _groups;
+  final List<Group> _groups;
   @override
   @JsonKey()
-  List<GroupRequest> get groups {
+  List<Group> get groups {
     if (_groups is EqualUnmodifiableListView) return _groups;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_groups);
@@ -977,6 +969,31 @@ class _$OnboardingStateImpl extends _OnboardingState {
   @override
   @JsonKey()
   final LoggedInData loggedInData;
+
+  @override
+  String toString() {
+    return 'OnboardingState(pageStatus: $pageStatus, pageCommand: $pageCommand, isLoading: $isLoading, groups: $groups, loggedInData: $loggedInData)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnboardingStateImpl &&
+            (identical(other.pageStatus, pageStatus) ||
+                other.pageStatus == pageStatus) &&
+            (identical(other.pageCommand, pageCommand) ||
+                other.pageCommand == pageCommand) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            const DeepCollectionEquality().equals(other._groups, _groups) &&
+            (identical(other.loggedInData, loggedInData) ||
+                other.loggedInData == loggedInData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pageStatus, pageCommand,
+      isLoading, const DeepCollectionEquality().hash(_groups), loggedInData);
 
   @JsonKey(ignore: true)
   @override
@@ -991,7 +1008,7 @@ abstract class _OnboardingState extends OnboardingState {
       {final PageState pageStatus,
       final PageCommand? pageCommand,
       final bool isLoading,
-      final List<GroupRequest> groups,
+      final List<Group> groups,
       final LoggedInData loggedInData}) = _$OnboardingStateImpl;
   const _OnboardingState._() : super._();
 
@@ -1002,7 +1019,7 @@ abstract class _OnboardingState extends OnboardingState {
   @override
   bool get isLoading;
   @override
-  List<GroupRequest> get groups;
+  List<Group> get groups;
   @override
   LoggedInData get loggedInData;
   @override

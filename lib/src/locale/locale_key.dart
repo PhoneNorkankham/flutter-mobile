@@ -66,7 +66,7 @@ class LocaleKey {
   static const String updatingGroupFailed = "updatingGroupFailed";
   static const String creatingContactFailed = "creatingContactFailed";
   static const String updatingContactFailed = "updatingContactFailed";
-  static const String joiningGroupFailed = "joiningGroupFailed";
+  static const String iWillLoginLater = "iWillLoginLater";
 
   // Main
   static const String today = "today";

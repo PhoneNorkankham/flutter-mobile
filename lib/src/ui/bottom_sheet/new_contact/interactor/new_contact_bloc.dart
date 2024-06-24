@@ -55,7 +55,7 @@ class NewContactBloc extends Bloc<NewContactEvent, NewContactState> {
         pageState: PageState.success,
       ),
       onError: (error, stacktrace) => state.copyWith(
-        pageCommand: PageCommandMessage.showSuccess(LocaleKey.somethingWentWrong.tr),
+        pageCommand: PageCommandMessage.showError(LocaleKey.somethingWentWrong.tr),
         pageState: PageState.success,
       ),
     );
@@ -83,9 +83,7 @@ class NewContactBloc extends Bloc<NewContactEvent, NewContactState> {
         final PageError pageError = result.asError!.error;
         emit(state.copyWith(
           isLoading: false,
-          pageCommand: pageError.pageErrorType == NetworkError.token
-              ? PageCommandDialog.showExpirationSession()
-              : PageCommandMessage.showError(pageError.message),
+          pageCommand: pageError.toPageCommand(),
         ));
         return;
       }

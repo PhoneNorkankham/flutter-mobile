@@ -26,6 +26,19 @@ enum BottomNavType {
     }
   }
 
+  String get title {
+    switch (this) {
+      case BottomNavType.today:
+        return LocaleKey.today.tr;
+      case BottomNavType.upcoming:
+        return LocaleKey.keepUpSoon.tr;
+      case BottomNavType.contacts:
+        return LocaleKey.availableContacts.tr;
+      case BottomNavType.groups:
+        return LocaleKey.groups.tr;
+    }
+  }
+
   String get icon {
     switch (this) {
       case BottomNavType.today:

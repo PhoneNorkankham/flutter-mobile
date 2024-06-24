@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
-import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
-import 'package:keepup/src/design/components/base/app_drawer.dart';
-import 'package:keepup/src/design/components/buttons/menu_button.dart';
-import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_header.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_in_a_month.dart';
@@ -18,10 +13,6 @@ class KeepUpSoonView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppAppBar(
-        title: LocaleKey.keepUpSoon.tr,
-        actions: const [MenuButton()],
-      ),
       body: BlocBuilder<KeepUpSoonBloc, KeepUpSoonState>(
         buildWhen: (previous, current) => previous.isLoading != current.isLoading,
         builder: (context, state) {
@@ -46,7 +37,6 @@ class KeepUpSoonView extends StatelessWidget {
           );
         },
       ),
-      endDrawer: const AppDrawer(),
     );
   }
 }

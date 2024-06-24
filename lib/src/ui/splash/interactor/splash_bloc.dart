@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
+import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/locale/translation_manager.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
@@ -19,10 +20,12 @@ part 'splash_state.dart';
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
   final TranslationManager _translationManager;
   final GetLoggedInDataUseCase _getLoggedInDataUseCase;
+  final SupabaseRepository _supabaseRepository;
 
   SplashBloc(
     this._translationManager,
     this._getLoggedInDataUseCase,
+    this._supabaseRepository,
   ) : super(const SplashState()) {
     on<_Initial>(_initial);
     on<_OnGetStarted>(_onGetStarted);
@@ -35,11 +38,16 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     final DataResult<LoggedInData> result = await _getLoggedInDataUseCase.run();
     final LoggedInData? loggedInData = result.valueOrNull;
     if (result.isValue && loggedInData != null && loggedInData.isLoggedIn) {
-      emit(state.copyWith(
-        pageCommand: PageCommandNavigation.replacePage(
-          loggedInData.isJoinedGroup ? AppPages.main : AppPages.onboarding,
-        ),
-      ));
+      if (loggedInData.isExpired) {
+        await _supabaseRepository.logout();
+        emit(state.copyWith(pageCommand: PageCommandNavigation.replacePage(AppPages.onboarding)));
+      } else {
+        emit(state.copyWith(
+          pageCommand: PageCommandNavigation.replacePage(
+            loggedInData.isJoinedGroup ? AppPages.main : AppPages.onboarding,
+          ),
+        ));
+      }
     } else {
       emit(state.copyWith(showButton: true));
     }

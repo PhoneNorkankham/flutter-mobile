@@ -1,7 +1,6 @@
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
-import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
@@ -14,9 +13,7 @@ class GetGroupStateMapper implements BaseStateMapper<GroupDetailState, DataResul
       PageError pageError = result.asError!.error;
       return state.copyWith(
         pageState: PageState.success,
-        pageCommand: pageError.pageErrorType == NetworkError.token
-            ? PageCommandDialog.showExpirationSession()
-            : PageCommandMessage.showError(pageError.message),
+        pageCommand: pageError.toPageCommand(),
       );
     } else {
       final Group group = result.valueOrCrash;

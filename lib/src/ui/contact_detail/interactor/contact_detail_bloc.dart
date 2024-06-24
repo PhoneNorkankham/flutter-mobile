@@ -132,9 +132,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
         final PageError pageError = result.asError!.error;
         emit(state.copyWith(
           isLoading: false,
-          pageCommand: pageError.pageErrorType == NetworkError.token
-              ? PageCommandDialog.showExpirationSession()
-              : PageCommandMessage.showError(pageError.message),
+          pageCommand: pageError.toPageCommand(),
         ));
         return;
       }
