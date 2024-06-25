@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_initicon/flutter_initicon.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
+import 'package:keepup/src/extensions/date_time_extensions.dart';
 
 class KeepUpItem extends StatelessWidget {
   final String name;
@@ -11,6 +11,7 @@ class KeepUpItem extends StatelessWidget {
   final File? file;
   final Widget? action;
   final VoidCallback? onPressed;
+  final DateTime? expiration;
 
   const KeepUpItem({
     super.key,
@@ -19,6 +20,7 @@ class KeepUpItem extends StatelessWidget {
     this.file,
     this.action,
     this.onPressed,
+    this.expiration,
   });
 
   @override
@@ -37,23 +39,18 @@ class KeepUpItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            file != null
-                ? ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.file(
-                      file!,
-                      width: 30,
-                      height: 30,
-                    ),
-                  )
-                : avatar.isNotEmpty
-                    ? AppCircleAvatar(url: avatar, radius: 15)
-                    : Initicon(
-                        text: name,
-                        size: 30,
-                        borderRadius: BorderRadius.circular(15),
-                        backgroundColor: Theme.of(context).colorScheme.onPrimary,
-                      ),
+            Container(
+              decoration: BoxDecoration(
+                color: expiration?.urgentColor ?? Theme.of(context).colorScheme.onPrimary,
+                borderRadius: BorderRadius.circular(90),
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                  width: 2,
+                ),
+              ),
+              padding: const EdgeInsets.all(3),
+              child: AppCircleAvatar(radius: 15, url: avatar, text: name, file: file),
+            ),
             const SizedBox(width: 16),
             Expanded(
               child: Text(

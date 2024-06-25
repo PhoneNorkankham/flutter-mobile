@@ -71,6 +71,7 @@ class GroupDetailHeader extends StatelessWidget {
               builder: (context, state) => AppCircleAvatar(
                 file: state.avatar,
                 url: state.request.avatar,
+                text: state.request.name,
                 radius: 50,
               ),
             ),

@@ -10,6 +10,7 @@ class KeepUpSoonItem extends StatelessWidget {
   final String avatar;
   final VoidCallback? onPressed;
   final VoidCallback? onKeepUp;
+  final DateTime? expiration;
 
   const KeepUpSoonItem({
     super.key,
@@ -17,6 +18,7 @@ class KeepUpSoonItem extends StatelessWidget {
     this.avatar = '',
     this.onPressed,
     this.onKeepUp,
+    this.expiration,
   });
 
   @override
@@ -27,6 +29,7 @@ class KeepUpSoonItem extends StatelessWidget {
         onPressed: onPressed,
         name: name,
         avatar: avatar,
+        expiration: expiration,
         action: SizedBox(
           width: 100,
           child: AppButton(

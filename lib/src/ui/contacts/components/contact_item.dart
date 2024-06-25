@@ -21,6 +21,7 @@ class ContactItem extends StatelessWidget {
       onPressed: () => onPressed?.call(contact),
       name: contact.name,
       avatar: contact.avatar,
+      expiration: contact.expiration,
       action: Text(
         LocaleKey.details.tr,
         style: context.appTextTheme.bold16.copyWith(
