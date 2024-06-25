@@ -9,6 +9,7 @@ import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/onboarding/components/onboarding_groups.dart';
 import 'package:keepup/src/ui/onboarding/components/onboarding_header.dart';
+import 'package:keepup/src/ui/onboarding/components/onboarding_login_later.dart';
 import 'package:keepup/src/ui/onboarding/components/onboarding_socials.dart';
 import 'package:keepup/src/ui/onboarding/interactor/onboarding_bloc.dart';
 
@@ -30,15 +31,15 @@ class OnboardingView extends StatelessWidget {
             body: const ExpandedChildScrollView(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(flex: 60, child: SizedBox(height: 12)),
+                  Expanded(flex: 3, child: SizedBox()),
                   OnboardingHeader(),
-                  Expanded(flex: 40, child: SizedBox(height: 12)),
+                  Expanded(flex: 2, child: SizedBox(height: 12)),
                   OnboardingGroups(),
-                  Expanded(flex: 60, child: SizedBox(height: 12)),
+                  Expanded(flex: 3, child: SizedBox(height: 12)),
                   OnboardingSocials(),
-                  Expanded(flex: 48, child: SizedBox(height: 12)),
+                  OnboardingLoginLater(),
                 ],
               ),
             ),

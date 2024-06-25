@@ -7,6 +7,7 @@ import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/interaction_request.dart';
 import 'package:keepup/src/core/request/user_request.dart';
+import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/utils/app_constants.dart';
@@ -88,14 +89,21 @@ class SupabaseManager {
     });
   }
 
-  Future<Group> joinGroup(GroupRequest request) async {
-    if (uid.isEmpty) await createGuests();
-    return insertGroup(request);
-  }
-
   Future<void> insertUser(UserRequest request) => _supabase.from(_tbUsers).insert(request.toJson());
 
-  Future<Group> insertGroup(GroupRequest request) => _supabase
+  Future<List<Group>> createDefaultGroups() async {
+    final List<GroupRequest> requests = AppConstants.onBoardingGroups
+        .map((e) => GroupRequest(name: e, frequencyInterval: FrequencyIntervalType.everyWeek))
+        .toList();
+    final List<Group> groups = [];
+    for (GroupRequest request in requests) {
+      final Group group = await createGroup(request);
+      groups.add(group);
+    }
+    return groups;
+  }
+
+  Future<Group> createGroup(GroupRequest request) => _supabase
           .from(_tbGroups)
           .insert(request.copyWith(ownerId: uid).toJson())
           .select()

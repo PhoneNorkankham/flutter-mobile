@@ -47,24 +47,28 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
-  Future<Resource<Group>> joinGroup(GroupRequest group) {
-    return NetworkBoundResource<Group, Group>(
-      createSerializedCall: () => _supabaseManager.joinGroup(group),
-      saveCallResult: (group) => _groupDao.insertOrReplace(group),
+  Future<Resource<List<Group>>> createDefaultGroups() {
+    return NetworkBoundResource<List<Group>, List<Group>>(
+      createSerializedCall: () => _supabaseManager.createDefaultGroups(),
+      saveCallResult: (groups) async {
+        await _groupDao.insertAllOnConflictUpdate(groups);
+        final LoggedInData loggedInData = _appShared.loggedInData;
+        await _appShared.setLoggedInData(loggedInData.copyWith(isJoinedGroup: true));
+      },
     ).getAsFuture();
   }
 
   Future<Resource<Group>> createGroup(GroupRequest group) {
     return NetworkBoundResource<Group, Group>(
-      createSerializedCall: () => _supabaseManager.insertGroup(group),
-      saveCallResult: (group) => _groupDao.insertOrReplace(group),
+      createSerializedCall: () => _supabaseManager.createGroup(group),
+      saveCallResult: (group) => _groupDao.insertOnConflictUpdate(group),
     ).getAsFuture();
   }
 
   Future<Resource<Group>> updateGroup(GroupRequest request) {
     return NetworkBoundResource<Group, Group>(
       createSerializedCall: () => _supabaseManager.updateGroup(request),
-      saveCallResult: (group) => _groupDao.insertOrReplace(group),
+      saveCallResult: (group) => _groupDao.insertOnConflictUpdate(group),
     ).getAsFuture();
   }
 
@@ -77,7 +81,7 @@ class SupabaseRepository {
         contactId: contactId,
         groupId: groupId,
       ),
-      saveCallResult: (group) => _groupDao.insertOrReplace(group),
+      saveCallResult: (group) => _groupDao.insertOnConflictUpdate(group),
     ).getAsFuture();
   }
 
@@ -137,7 +141,7 @@ class SupabaseRepository {
       saveCallResult: (groups) async {
         await _groupDao.deleteAll();
         for (Group group in groups) {
-          await _groupDao.insertOrReplace(group);
+          await _groupDao.insertOnConflictUpdate(group);
         }
       },
     ).getAsFuture();

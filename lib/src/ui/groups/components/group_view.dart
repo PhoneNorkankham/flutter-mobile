@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
-import 'package:keepup/src/design/components/base/app_drawer.dart';
-import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/groups/components/group_list.dart';
@@ -16,10 +13,6 @@ class GroupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppAppBar(
-        title: LocaleKey.groups.tr,
-        actions: const [MenuButton()],
-      ),
       body: BlocBuilder<GroupBloc, GroupState>(
         buildWhen: (previous, current) =>
             previous.pageState != current.pageState || previous.isLoading != current.isLoading,
@@ -45,7 +38,6 @@ class GroupView extends StatelessWidget {
           );
         },
       ),
-      endDrawer: const AppDrawer(),
     );
   }
 }

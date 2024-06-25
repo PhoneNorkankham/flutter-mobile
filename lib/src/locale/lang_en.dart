@@ -50,7 +50,7 @@ Map<String, String> enUs = {
   LocaleKey.updatingGroupFailed: 'Updating group failed!',
   LocaleKey.creatingContactFailed: 'Creating contact failed!',
   LocaleKey.updatingContactFailed: 'Updating contact failed!',
-  LocaleKey.joiningGroupFailed: 'Joining group failed!',
+  LocaleKey.iWillLoginLater: 'I\'ll login later!',
   LocaleKey.today: 'Today',
   LocaleKey.upcoming: 'Upcoming',
   LocaleKey.contacts: 'Contacts',

@@ -9,6 +9,7 @@ import 'package:keepup/src/enums/app_drawer_type.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
+import 'package:keepup/src/use_cases/create_default_groups_use_case.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
 part 'main_bloc.freezed.dart';
@@ -17,8 +18,12 @@ part 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
   final SupabaseRepository _supabaseRepository;
+  final CreateDefaultGroupsUseCase _createDefaultGroupsUseCase;
 
-  MainBloc(this._supabaseRepository) : super(const MainState()) {
+  MainBloc(
+    this._supabaseRepository,
+    this._createDefaultGroupsUseCase,
+  ) : super(const MainState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnSelectedTabType>((event, emit) => emit(state.copyWith(
@@ -61,13 +66,15 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   FutureOr<void> _onConfirmedResetData(_OnConfirmedResetData event, Emitter<MainState> emit) async {
     emit(state.copyWith(isLoading: true));
     final resource = await _supabaseRepository.resetData();
+    if (resource.isSuccess) {
+      // Create default groups after reset data
+      await _createDefaultGroupsUseCase.run();
+    }
     emit(state.copyWith(
       isLoading: false,
-      pageCommand: PageCommandMessage.showSuccess(
-        resource.isSuccess
-            ? LocaleKey.resetDataSuccessfully.tr
-            : resource.message ?? LocaleKey.resetDataFailed.tr,
-      ),
+      pageCommand: resource.isSuccess
+          ? PageCommandMessage.showSuccess(LocaleKey.resetDataSuccessfully.tr)
+          : PageCommandMessage.showError(resource.message ?? LocaleKey.resetDataFailed.tr),
     ));
   }
 
@@ -81,7 +88,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       emit(state.copyWith(
         isLoading: false,
         pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(
-          AppPages.onboarding,
+          AppPages.splash,
           (route) => false,
         ),
       ));
@@ -100,7 +107,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       emit(state.copyWith(
         isLoading: false,
         pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(
-          AppPages.onboarding,
+          AppPages.splash,
           (route) => false,
         ),
       ));

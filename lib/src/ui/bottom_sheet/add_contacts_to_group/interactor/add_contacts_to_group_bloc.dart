@@ -11,6 +11,7 @@ import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
+import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
@@ -109,9 +110,10 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
         ),
       ));
     } else {
+      final PageError pageError = result.asError!.error;
       emit(state.copyWith(
         isLoading: false,
-        pageCommand: result.asError?.error.toPageCommand(),
+        pageCommand: pageError.toPageCommand(),
       ));
     }
   }
