@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
+import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/components/interaction_action_item.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/components/interaction_info_item.dart';
@@ -30,7 +32,8 @@ class InteractionView extends StatelessWidget {
         buildWhen: (previous, current) => previous.contact != current.contact,
         builder: (context, state) {
           final Contact? contact = state.contact;
-          final DateTime? birthday = contact?.dateOfBirth;
+          if (contact == null) return const SizedBox();
+          final DateTime? birthday = contact.dateOfBirth;
           return Stack(
             children: [
               Column(
@@ -38,10 +41,29 @@ class InteractionView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 32),
-                  AppCircleAvatar(url: contact?.avatar ?? '', radius: 28),
+                  Center(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: contact.expiration?.urgentColor ??
+                            Theme.of(context).colorScheme.onPrimary,
+                        borderRadius: BorderRadius.circular(90),
+                        border: Border.all(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                          width: 4,
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(6),
+                      child: AppCircleAvatar(
+                        radius: 28,
+                        url: contact.avatar,
+                        text: contact.name,
+                        backgroundColor: AppColors.grey350,
+                      ),
+                    ),
+                  ),
                   const SizedBox(height: 8),
                   Text(
-                    contact?.name ?? '',
+                    contact.name,
                     textAlign: TextAlign.center,
                     style: context.appTextTheme.medium18.copyWith(
                       color: Theme.of(context).colorScheme.onPrimary,

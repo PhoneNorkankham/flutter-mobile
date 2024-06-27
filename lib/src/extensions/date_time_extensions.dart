@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:rainbow_color/rainbow_color.dart';
 
 extension DateTimeExtensions on DateTime {
   /// E.g. `15:11`
@@ -16,5 +17,15 @@ extension DateTimeExtensions on DateTime {
 
   bool get isOverTomorrow {
     return isAfter(DateTime.now().tomorrow) && !isTomorrow;
+  }
+
+  Color get urgentColor {
+    final int days = difference(DateTime.now()).inDays;
+    final rb = Rainbow(
+      spectrum: [Colors.red, Colors.yellow, Colors.green],
+      rangeStart: 0,
+      rangeEnd: 7,
+    );
+    return rb[days];
   }
 }

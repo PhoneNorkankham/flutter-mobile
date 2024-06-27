@@ -73,6 +73,7 @@ class GroupDetailMembers extends StatelessWidget {
                   name: contact.name,
                   avatar: contact.avatar,
                   file: contact.file,
+                  expiration: contact.expiration,
                   action: GestureDetector(
                     onTap: () => bloc.add(GroupDetailEvent.onRemoveContact(contact)),
                     child: DecoratedBox(

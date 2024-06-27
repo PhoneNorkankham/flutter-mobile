@@ -7,6 +7,7 @@ import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/contact_type.dart';
+import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_bloc.dart';
 
@@ -66,11 +67,25 @@ class ContactDetailHeader extends StatelessWidget {
                 child: BlocBuilder<ContactDetailBloc, ContactDetailState>(
                   buildWhen: (previous, current) =>
                       previous.avatar != current.avatar ||
-                      previous.request.avatar != current.request.avatar,
-                  builder: (context, state) => AppCircleAvatar(
-                    file: state.avatar,
-                    url: state.request.avatar,
-                    radius: 50,
+                      previous.request.avatar != current.request.avatar ||
+                      previous.request.expiration != current.request.expiration,
+                  builder: (context, state) => Container(
+                    decoration: BoxDecoration(
+                      color: state.request.expiration?.urgentColor ??
+                          Theme.of(context).colorScheme.onPrimary,
+                      borderRadius: BorderRadius.circular(90),
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        width: 4,
+                      ),
+                    ),
+                    padding: const EdgeInsets.all(6),
+                    child: AppCircleAvatar(
+                      radius: 50,
+                      url: state.request.avatar,
+                      file: state.avatar,
+                      text: state.request.name,
+                    ),
                   ),
                 ),
               ),

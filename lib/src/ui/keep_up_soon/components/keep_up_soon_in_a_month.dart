@@ -28,6 +28,7 @@ class KeepUpSoonInAMonth extends StatelessWidget {
             ...state.monthContacts.map((e) => KeepUpSoonItem(
                   name: e.name,
                   avatar: e.avatar,
+                  expiration: e.expiration,
                   onPressed: () => InteractionBottomSheet.show(contact: e),
                   onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
                 ))

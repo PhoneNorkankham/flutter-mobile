@@ -21,6 +21,7 @@ class NewChatContacts extends StatelessWidget {
             return KeepUpItem(
               name: contact.name,
               avatar: contact.avatar,
+              expiration: contact.expiration,
             );
           },
           separatorBuilder: (context, index) => const SizedBox(height: 4),

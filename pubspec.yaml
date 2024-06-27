@@ -103,6 +103,8 @@ dependencies:
   # Date Time
   timeago: ^3.6.1
 
+  rainbow_color: ^2.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

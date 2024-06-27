@@ -32,6 +32,7 @@ class AddMemberList extends StatelessWidget {
               name: contact.name,
               avatar: contact.avatar,
               file: contact.file,
+              expiration: contact.expiration,
               action: Container(
                 width: 21,
                 height: 21,

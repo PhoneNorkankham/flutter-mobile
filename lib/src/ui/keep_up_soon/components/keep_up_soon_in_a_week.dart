@@ -29,6 +29,7 @@ class KeepUpSoonInAWeek extends StatelessWidget {
             ...state.weekContacts.map((e) => KeepUpSoonItem(
                   name: e.name,
                   avatar: e.avatar,
+                  expiration: e.expiration,
                   onPressed: () => InteractionBottomSheet.show(contact: e),
                   onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
                 ))
