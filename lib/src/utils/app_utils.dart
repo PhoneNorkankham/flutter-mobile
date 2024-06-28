@@ -1,10 +1,13 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:keepup/src/core/managers/permission_manager.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
+import 'package:keepup/src/utils/app_country_codes.dart';
+import 'package:path_provider/path_provider.dart';
 
 class AppUtils {
   /// Check is debug mode
@@ -65,5 +68,28 @@ class AppUtils {
     }
     newContacts.sort((a, b) => a.name.compareTo(b.name));
     return newContacts;
+  }
+
+  static Future<File?> getFile(Uint8List uint8list) async {
+    if (uint8list.isEmpty) return null;
+    try {
+      final fileName = '${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(1000)}.png';
+      final tempDir = await getTemporaryDirectory();
+      final file = await File('${tempDir.path}/$fileName').create();
+      await file.writeAsBytes(uint8list);
+      return file;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  static String getPhoneNumber(String phone) {
+    if (phone.startsWith('+')) {
+      return phone;
+    } else if (phone.startsWith('0')) {
+      return phone.replaceFirst('0', AppCountryCodes.country?.dialCode ?? '+1');
+    } else {
+      return '${AppCountryCodes.country?.dialCode ?? '+1'}$phone';
+    }
   }
 }

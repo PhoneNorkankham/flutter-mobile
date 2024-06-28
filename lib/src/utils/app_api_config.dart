@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:keepup/src/utils/app_constants.dart';
 
 enum Flavor { dev, prod }
 
@@ -38,16 +37,4 @@ class AppApiConfig {
     }
     debugPrint('AppApiConfig init');
   }
-
-  static String get baseApiUrl => '$apiUrl/api';
-
-  static String get apiUrl {
-    switch (flavor) {
-      case Flavor.prod:
-        return AppConstants.API_PROD_URL;
-      case Flavor.dev:
-        return AppConstants.API_DEV_URL;
-    }
-  }
-
 }

@@ -27,6 +27,10 @@ class LocaleKey {
   static const String alertDisconnect = "alertDisconnect";
   static const String alertNullData = "alertNullData";
   static const String alertGetDataSuccess = "alertGetDataSuccess";
+  static const String alertConnectTimeout = "alertConnectTimeout";
+  static const String alertSendTimeout = "alertSendTimeout";
+  static const String alertReceiveTimeout = "alertReceiveTimeout";
+  static const String alertErrorServer = "alertErrorServer";
 
   // Validations
   static const String thisFieldIsRequired = "thisFieldIsRequired";
