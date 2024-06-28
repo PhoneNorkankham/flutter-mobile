@@ -5,4 +5,5 @@ void _registerManagersModule() {
   Get.put(PermissionManager());
   Get.put(TranslationManager(Get.find()));
   Get.put(SupabaseManager());
+  Get.put(UploadContactAvatarManager());
 }

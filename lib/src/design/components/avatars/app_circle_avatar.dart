@@ -32,14 +32,8 @@ class AppCircleAvatar extends StatelessWidget {
     final Color foregroundColor = this.foregroundColor ?? Theme.of(context).colorScheme.primary;
 
     ImageProvider? imageProvider;
-    if (file == null && url.isEmpty && text.isNotEmpty) {
-      return Initicon(
-        text: text,
-        size: radius * 2,
-        borderRadius: BorderRadius.circular(radius),
-        backgroundColor: backgroundColor,
-      );
-    } else if (file != null) {
+
+    if (file != null) {
       /// Image is from file
       imageProvider = FileImage(file!);
     } else if (url.isNotEmpty && url.isNetworkUri) {
@@ -47,32 +41,34 @@ class AppCircleAvatar extends StatelessWidget {
       imageProvider = CachedNetworkImageProvider(url, cacheManager: CustomImageCacheManager());
     }
 
-    final Widget placeholder = Icon(
-      Icons.person,
-      size: radius * 1.5,
-      color: foregroundColor,
-    );
+    final Widget placeholder;
+    if (text.isNotEmpty) {
+      placeholder = Initicon(
+        text: text,
+        size: radius * 2,
+        borderRadius: BorderRadius.circular(radius),
+        backgroundColor: backgroundColor,
+      );
+    } else {
+      placeholder = Icon(
+        Icons.person,
+        size: radius * 1.5,
+        color: foregroundColor,
+      );
+    }
 
     return CircleAvatar(
-      backgroundColor: backgroundColor,
-      foregroundColor: foregroundColor,
       radius: radius,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          if (!placeholderDisabled) placeholder,
-          if (imageProvider != null)
-            CircleAvatar(
-              radius: radius,
-              foregroundImage: imageProvider,
-              foregroundColor: foregroundColor,
-              onForegroundImageError: (exception, stackTrace) => Container(
+      foregroundImage: imageProvider,
+      foregroundColor: foregroundColor,
+      backgroundColor: backgroundColor,
+      onForegroundImageError: imageProvider == null
+          ? null
+          : (_, __) => Container(
                 color: backgroundColor,
-                child: placeholder,
+                child: placeholderDisabled ? const SizedBox() : placeholder,
               ),
-            ),
-        ],
-      ),
+      child: placeholderDisabled ? const SizedBox() : placeholder,
     );
   }
 }

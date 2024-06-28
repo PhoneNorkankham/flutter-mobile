@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'dart:io';
-import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:contacts_service/contacts_service.dart' as cs;
@@ -9,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:keepup/src/utils/app_utils.dart';
 
 extension ContactsExtensions on List<Contact> {
   List<Contact> toKeepUpToday() {
@@ -82,17 +80,13 @@ extension CSContactExtensions on cs.Contact {
         phoneNo: phoneNo,
       );
 
-      final Uint8List? avatar = this.avatar;
-      if (avatar != null && avatar.isNotEmpty) {
-        try {
-          final String fileName = jsonEncode(phoneNo) + Random().nextInt(1000).toString();
-          final Directory tempDir = await getTemporaryDirectory();
-          final File file = await File('${tempDir.path}/$fileName.png').create();
-          await file.writeAsBytes(avatar);
-          contactRequest = contactRequest.copyWith(file: file);
-        } catch (_) {}
+      final Uint8List? unit8List = avatar;
+      if (unit8List != null && unit8List.isNotEmpty) {
+        final File? file = await AppUtils.getFile(unit8List);
+        return contactRequest.copyWith(file: file);
+      } else {
+        return contactRequest;
       }
-      return contactRequest;
     }
     return null;
   }

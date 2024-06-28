@@ -23,6 +23,7 @@ class SupabaseManager {
   final _fieldId = 'id';
   final _fieldOwnerId = 'owner_id';
   final _fieldContactId = 'contact_id';
+  final _fieldAvatar = 'avatar';
 
   static Future<Supabase> initialize() => Supabase.initialize(
         url: AppConstants.supabaseUrl,
@@ -142,10 +143,23 @@ class SupabaseManager {
         }
       });
 
+  Future<Contact> updateContactAvatar(String contactId, String avatar) => _supabase
+      .from(_tbContacts)
+      .update({_fieldAvatar: avatar})
+      .match({_fieldId: contactId})
+      .select()
+      .then((value) {
+        if (value.isNotEmpty) {
+          return Contact.fromJson(value.first);
+        } else {
+          return Future.error(LocaleKey.updatingContactFailed.tr);
+        }
+      });
+
   Future<Contact> updateContact(ContactRequest request) => _supabase
       .from(_tbContacts)
       .update(request.toJson())
-      .match({'id': request.contactId})
+      .match({_fieldId: request.contactId})
       .select()
       .then((value) {
         if (value.isNotEmpty) {

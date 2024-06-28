@@ -99,6 +99,16 @@ class SupabaseRepository {
     ).getAsFuture();
   }
 
+  Future<Resource<Contact>> updateContactAvatar({
+    required String contactId,
+    required String avatar,
+  }) {
+    return NetworkBoundResource<Contact, Contact>(
+      createSerializedCall: () => _supabaseManager.updateContactAvatar(contactId, avatar),
+      saveCallResult: (contact) => _contactDao.insertOrReplaceContact(contact),
+    ).getAsFuture();
+  }
+
   Future<Resource<Contact>> updateContact(ContactRequest request) {
     return NetworkBoundResource<Contact, Contact>(
       createSerializedCall: () => _supabaseManager.updateContact(request),

@@ -6,8 +6,11 @@ class AppConstants {
   static const String supabaseKey = String.fromEnvironment('SUPABASE_KEY');
 
   // Base url
-  static const String API_PROD_URL = "http://keepup.com";
-  static const String API_DEV_URL = "http://dev.keepup.comr";
+  static const bool enabledWhatsappProfilePicApi = true;
+  static const String rapidapiApi = "https://whatsapp-profile-pic.p.rapidapi.com";
+  static const String rapidapiUA = 'RapidAPI-Playground';
+  static const String rapidapiKey = 'a843ed676amsh69ee20a060cd814p1680c0jsn4d2ab7e7c362';
+  static const String rapidapiHost = 'whatsapp-profile-pic.p.rapidapi.com';
 
   // Link demo image when make UI
   // 150x150: width x height => we can change it.

@@ -10,6 +10,7 @@ import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/use_cases/create_default_groups_use_case.dart';
+import 'package:keepup/src/use_cases/upload_contact_avatar_manager.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
 part 'main_bloc.freezed.dart';
@@ -18,10 +19,12 @@ part 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
   final SupabaseRepository _supabaseRepository;
+  final UploadContactAvatarManager _uploadContactAvatarManager;
   final CreateDefaultGroupsUseCase _createDefaultGroupsUseCase;
 
   MainBloc(
     this._supabaseRepository,
+    this._uploadContactAvatarManager,
     this._createDefaultGroupsUseCase,
   ) : super(const MainState()) {
     on<_Initial>(_initial);
@@ -64,6 +67,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   }
 
   FutureOr<void> _onConfirmedResetData(_OnConfirmedResetData event, Emitter<MainState> emit) async {
+    _uploadContactAvatarManager.clearAll();
     emit(state.copyWith(isLoading: true));
     final resource = await _supabaseRepository.resetData();
     if (resource.isSuccess) {
@@ -82,6 +86,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     _OnConfirmedDeleteAccount event,
     Emitter<MainState> emit,
   ) async {
+    _uploadContactAvatarManager.clearAll();
     emit(state.copyWith(isLoading: true));
     final resource = await _supabaseRepository.deleteAccount();
     if (resource.isSuccess) {
@@ -101,6 +106,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   }
 
   FutureOr<void> _onConfirmedLogout(_OnConfirmedLogout event, Emitter<MainState> emit) async {
+    _uploadContactAvatarManager.clearAll();
     emit(state.copyWith(isLoading: true));
     final resource = await _supabaseRepository.logout();
     if (resource.isSuccess) {
