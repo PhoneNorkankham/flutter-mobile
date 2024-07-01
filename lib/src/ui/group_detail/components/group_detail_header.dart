@@ -90,7 +90,7 @@ class GroupDetailHeader extends StatelessWidget {
                       previous.request.contacts.length != current.request.contacts.length,
                   builder: (context, state) {
                     return Text(
-                      '${state.request.contacts.length} ${LocaleKey.members.tr}',
+                      '${state.request.contacts.length} ${LocaleKey.contacts.tr}',
                       style: context.appTextTheme.medium14.copyWith(
                         color: Theme.of(context).colorScheme.onPrimary,
                       ),

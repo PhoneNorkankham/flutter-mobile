@@ -5,9 +5,9 @@ import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_buttons.dart';
+import 'package:keepup/src/ui/group_detail/components/group_detail_contacts.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_header.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_interval.dart';
-import 'package:keepup/src/ui/group_detail/components/group_detail_members.dart';
 import 'package:keepup/src/ui/group_detail/interactor/group_detail_bloc.dart';
 
 class GroupDetailView extends StatelessWidget {
@@ -36,7 +36,7 @@ class GroupDetailView extends StatelessWidget {
                   SizedBox(height: 26),
                   GroupDetailInterval(),
                   SizedBox(height: 26),
-                  GroupDetailMembers(),
+                  GroupDetailContacts(),
                   SizedBox(height: 46),
                   SizedBox(height: 14),
                   GroupDetailButtons(),
