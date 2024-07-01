@@ -67,7 +67,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
     on<_OnRemoveContact>(_onRemoveContact);
     on<_OnDeleteGroup>(_onDeleteGroup);
-    on<_OnAddedMembers>((event, emit) => emit(state.copyWith(contacts: event.contacts)));
+    on<_OnChangedContacts>((event, emit) => emit(state.copyWith(contacts: event.contacts)));
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<GroupDetailState> emit) async {

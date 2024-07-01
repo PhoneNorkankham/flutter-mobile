@@ -10,8 +10,8 @@ import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_member/add_member_bottom_sheet.dart';
 import 'package:keepup/src/ui/group_detail/interactor/group_detail_bloc.dart';
 
-class GroupDetailMembers extends StatelessWidget {
-  const GroupDetailMembers({super.key});
+class GroupDetailContacts extends StatelessWidget {
+  const GroupDetailContacts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class GroupDetailMembers extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                LocaleKey.members.tr,
+                LocaleKey.contacts.tr,
                 style: context.appTextTheme.medium18.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
@@ -39,11 +39,11 @@ class GroupDetailMembers extends StatelessWidget {
                   selectedContacts: bloc.state.contacts,
                 ).then((value) {
                   if (value is List<ContactRequest>) {
-                    bloc.add(GroupDetailEvent.onAddedMembers(value));
+                    bloc.add(GroupDetailEvent.onChangedContacts(value));
                   }
                 }),
                 child: Text(
-                  LocaleKey.addMember.tr,
+                  LocaleKey.addContacts.tr,
                   style: context.appTextTheme.medium14.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
@@ -54,7 +54,7 @@ class GroupDetailMembers extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         AppSearchInput(
-          hintText: LocaleKey.searchGroups.tr,
+          hintText: LocaleKey.search.tr,
           onChanged: (value) => bloc.add(GroupDetailEvent.onChangedKeyword(value)),
         ),
         const SizedBox(height: 12),

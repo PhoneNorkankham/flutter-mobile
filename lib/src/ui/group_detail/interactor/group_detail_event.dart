@@ -24,5 +24,7 @@ class GroupDetailEvent with _$GroupDetailEvent {
 
   const factory GroupDetailEvent.onDeleteGroup() = _OnDeleteGroup;
 
-  const factory GroupDetailEvent.onAddedMembers(List<ContactRequest> contacts) = _OnAddedMembers;
+  const factory GroupDetailEvent.onChangedContacts(
+    List<ContactRequest> contacts,
+  ) = _OnChangedContacts;
 }

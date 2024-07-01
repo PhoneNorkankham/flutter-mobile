@@ -31,7 +31,7 @@ class NewGroupSelected extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      LocaleKey.members.tr,
+                      LocaleKey.contacts.tr,
                       style: context.appTextTheme.medium18.copyWith(
                         color: Theme.of(context).colorScheme.onPrimary,
                       ),
@@ -47,7 +47,7 @@ class NewGroupSelected extends StatelessWidget {
                         }
                       }),
                       child: Text(
-                        LocaleKey.addMember.tr,
+                        LocaleKey.addContacts.tr,
                         style: context.appTextTheme.medium14.copyWith(
                           color: Theme.of(context).colorScheme.onPrimary,
                         ),
