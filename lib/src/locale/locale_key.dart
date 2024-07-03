@@ -156,8 +156,6 @@ class LocaleKey {
   // Group Detail
   static const String newGroup = "newGroup";
   static const String groupDetail = "groupDetail";
-  static const String members = "members";
-  static const String addMember = "addMember";
   static const String tabToAddGroupName = "tabToAddGroupName";
   static const String days = "days";
   static const String daysLeft = "daysLeft";
@@ -169,7 +167,6 @@ class LocaleKey {
 
   // New Chat
   static const String searchNameOrNumber = "searchNameOrNumber";
-  static const String addMembers = "addMembers";
   static const String groupName = "groupName";
   static const String theGroupDoesNotExist = "theGroupDoesNotExist";
   static const String selectGroup = "selectGroup";

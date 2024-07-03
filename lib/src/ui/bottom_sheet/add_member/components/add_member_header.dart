@@ -25,7 +25,7 @@ class AddMemberHeader extends StatelessWidget {
               children: [
                 const SizedBox(height: 8),
                 Text(
-                  LocaleKey.addMembers.tr,
+                  LocaleKey.addContacts.tr,
                   style: context.appTextTheme.bold16.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
