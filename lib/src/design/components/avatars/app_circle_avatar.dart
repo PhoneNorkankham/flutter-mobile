@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_initicon/flutter_initicon.dart';
 import 'package:keepup/src/core/managers/custom_image_cache_manager.dart';
+import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/extensions/string_extensions.dart';
 
 class AppCircleAvatar extends StatelessWidget {
@@ -28,7 +29,7 @@ class AppCircleAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color backgroundColor = this.backgroundColor ?? Theme.of(context).colorScheme.onPrimary;
+    final Color backgroundColor = this.backgroundColor ?? AppColors.grey350;
     final Color foregroundColor = this.foregroundColor ?? Theme.of(context).colorScheme.primary;
 
     ImageProvider? imageProvider;

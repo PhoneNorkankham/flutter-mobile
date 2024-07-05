@@ -9,14 +9,14 @@ class AppFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () => NewChatBottomSheet.show(),
       elevation: 5,
-      backgroundColor: Theme.of(context).colorScheme.onPrimary,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),
       ),
       child: Icon(
         Icons.add,
         size: 36,
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.onSurface,
       ),
     );
   }

@@ -27,9 +27,7 @@ class ContactDetailForm extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               LocaleKey.name.tr,
-              style: context.appTextTheme.bold14.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+              style: context.appTextTheme.bold14,
             ),
             const SizedBox(height: 10),
             AppInputTextField(
@@ -45,9 +43,7 @@ class ContactDetailForm extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               LocaleKey.email.tr,
-              style: context.appTextTheme.bold14.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+              style: context.appTextTheme.bold14,
             ),
             const SizedBox(height: 10),
             AppInputTextField(
@@ -63,9 +59,7 @@ class ContactDetailForm extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               LocaleKey.phoneNo.tr,
-              style: context.appTextTheme.bold14.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+              style: context.appTextTheme.bold14,
             ),
             const SizedBox(height: 10),
             AppInputTextField(
@@ -81,9 +75,7 @@ class ContactDetailForm extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               LocaleKey.dateOfBirth.tr,
-              style: context.appTextTheme.bold14.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+              style: context.appTextTheme.bold14,
             ),
             const SizedBox(height: 10),
             AppInputTextField(

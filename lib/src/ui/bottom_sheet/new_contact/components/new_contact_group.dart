@@ -16,12 +16,7 @@ class NewContactGroup extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          LocaleKey.group.tr,
-          style: context.appTextTheme.bold14.copyWith(
-            color: Theme.of(context).colorScheme.primary,
-          ),
-        ),
+        Text(LocaleKey.group.tr, style: context.appTextTheme.bold14),
         const SizedBox(height: 10),
         BlocBuilder<NewContactBloc, NewContactState>(
           buildWhen: (previous, current) =>
@@ -62,7 +57,7 @@ class NewContactGroup extends StatelessWidget {
                               Icons.check,
                               size: 20,
                               color: selectedGroup == e
-                                  ? Theme.of(context).colorScheme.primary
+                                  ? Theme.of(context).colorScheme.tertiary
                                   : Colors.transparent,
                             ),
                             const SizedBox(width: 6),
@@ -70,8 +65,8 @@ class NewContactGroup extends StatelessWidget {
                               e.name,
                               style: context.appTextTheme.medium16.copyWith(
                                 color: selectedGroup == e
-                                    ? Theme.of(context).colorScheme.primary
-                                    : null,
+                                    ? Theme.of(context).colorScheme.tertiary
+                                    : Theme.of(context).colorScheme.onSurface,
                               ),
                             ),
                           ],

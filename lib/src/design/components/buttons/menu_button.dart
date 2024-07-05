@@ -12,7 +12,7 @@ class MenuButton extends StatelessWidget {
       icon: SvgPicture.asset(
         AppAssets.ic_filter_svg,
         colorFilter: ColorFilter.mode(
-          Theme.of(context).colorScheme.primary,
+          Theme.of(context).colorScheme.onSurface,
           BlendMode.srcIn,
         ),
         width: 20,

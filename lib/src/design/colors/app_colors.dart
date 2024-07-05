@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 class AppColors {
   /// Primary Colors
   /// Our color palette is built with our core principles and guidelines as its foundation.
-  static const primary = Color(0xFF346DF6);
+  static const primary = Color(0xFFF4F6F9);
   static const primaryDark = Color(0xFF091835);
+  static const tertiary = Color(0xFF86C144);
   static const cyan = Color(0xFF5EB9AF);
   static const columbiaBlue = Color(0xFFA0AEFF);
   static const error = Color(0xFFFF0000);
-  static const primaryText = Color(0xFFFFFFFF);
+  static const primaryText = Color(0xFF4F5256);
   static const yellow = Color(0xFFFFB400);
   static const red = Color(0xFFC50000);
 
@@ -45,9 +46,8 @@ class AppColors {
   static const lightTeal = Color(0xFFE4E8FF);
   static const peach = Color(0xFFFF7979);
 
-  static const selectedItemColor = Color(0xFF346DF6);
+  static const selectedItemColor = Color(0xFFFFFFFF);
   static const unselectedItemColor = Color(0xFF8E8E93);
 
-  static const lightGreen = Color(0xFF86C144);
   static const orange = Color(0xFFFF5722);
 }

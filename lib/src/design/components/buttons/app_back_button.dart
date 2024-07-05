@@ -23,13 +23,11 @@ class AppBackButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.arrow_back_ios, color: Theme.of(context).colorScheme.primary),
+          const Icon(Icons.arrow_back_ios),
           if (!onlyIconLeading)
             Text(
               LocaleKey.back.tr,
-              style: context.appTextTheme.bold16.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+              style: context.appTextTheme.bold16,
             ),
         ],
       ),

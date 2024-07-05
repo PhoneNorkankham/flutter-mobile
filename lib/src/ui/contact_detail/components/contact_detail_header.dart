@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/dialogs/app_dialogs.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
@@ -38,9 +39,7 @@ class ContactDetailHeader extends StatelessWidget {
                   Expanded(
                     child: Text(
                       '0 Days left',
-                      style: context.appTextTheme.medium14.copyWith(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                      ),
+                      style: context.appTextTheme.medium14,
                     ),
                   ),
                   if (state.contactType == ContactType.contactDetail)
@@ -48,9 +47,7 @@ class ContactDetailHeader extends StatelessWidget {
                       onTap: () => _showDeleteConfirmDialog(context, bloc),
                       child: Text(
                         LocaleKey.delete.tr,
-                        style: context.appTextTheme.medium14.copyWith(
-                          color: Theme.of(context).colorScheme.onPrimary,
-                        ),
+                        style: context.appTextTheme.medium14,
                       ),
                     ),
                 ],
@@ -71,11 +68,10 @@ class ContactDetailHeader extends StatelessWidget {
                       previous.request.expiration != current.request.expiration,
                   builder: (context, state) => Container(
                     decoration: BoxDecoration(
-                      color: state.request.expiration?.urgentColor ??
-                          Theme.of(context).colorScheme.onPrimary,
+                      color: state.request.expiration?.urgentColor ?? AppColors.grey350,
                       borderRadius: BorderRadius.circular(90),
                       border: Border.all(
-                        color: Theme.of(context).colorScheme.onPrimary,
+                        color: AppColors.grey350,
                         width: 4,
                       ),
                     ),
@@ -95,9 +91,7 @@ class ContactDetailHeader extends StatelessWidget {
                 builder: (context, state) {
                   return Text(
                     state.contactType == ContactType.newContact ? '' : state.request.name,
-                    style: context.appTextTheme.medium14.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
+                    style: context.appTextTheme.medium14,
                   );
                 },
               ),
