@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
@@ -41,10 +42,10 @@ class KeepUpItem extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: expiration?.urgentColor ?? Theme.of(context).colorScheme.onPrimary,
+                color: expiration?.urgentColor ?? AppColors.grey350,
                 borderRadius: BorderRadius.circular(90),
                 border: Border.all(
-                  color: Theme.of(context).colorScheme.onPrimary,
+                  color: AppColors.grey350,
                   width: 2,
                 ),
               ),

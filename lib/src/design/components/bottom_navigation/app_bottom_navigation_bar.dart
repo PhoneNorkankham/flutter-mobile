@@ -20,10 +20,10 @@ class AppBottomNavigationBar extends StatelessWidget {
     }
     return BottomAppBar(
       notchMargin: 6,
+      elevation: 20.0,
       padding: EdgeInsets.zero,
-      color: Theme.of(context).colorScheme.onPrimary,
-      surfaceTintColor: Theme.of(context).colorScheme.onPrimary,
       shape: const CircularNotchedRectangle(),
+      shadowColor: Theme.of(context).colorScheme.onSurface,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

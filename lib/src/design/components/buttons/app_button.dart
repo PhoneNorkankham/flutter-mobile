@@ -16,7 +16,7 @@ class AppButton extends StatelessWidget {
 
   const AppButton({
     super.key,
-    this.buttonType = AppButtonType.primary,
+    this.buttonType = AppButtonType.greenKeepUp,
     this.onPressed,
     this.title,
     this.child,

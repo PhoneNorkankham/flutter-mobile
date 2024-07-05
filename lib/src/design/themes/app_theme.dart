@@ -9,6 +9,7 @@ import 'package:keepup/src/design/themes/app_card_theme.dart';
 import 'package:keepup/src/design/themes/app_dialog_theme.dart';
 import 'package:keepup/src/design/themes/app_divider_theme.dart';
 import 'package:keepup/src/design/themes/app_input_theme.dart';
+import 'package:keepup/src/design/themes/app_popup_menu_theme.dart';
 import 'package:keepup/src/design/themes/app_tab_bar_theme.dart';
 import 'package:keepup/src/design/themes/extensions/app_text_theme.dart';
 
@@ -51,6 +52,7 @@ class AppTheme {
           borderRadius: BorderRadius.zero,
         ),
       ),
+      popupMenuTheme: AppPopupMenuTheme.appPopupMenuThemeData(colorScheme, appTextTheme),
     );
   }
 
@@ -84,11 +86,12 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.primary,
       cardTheme: AppCardTheme.lightThemeData(),
       drawerTheme: const DrawerThemeData(
-        backgroundColor: Color(0xFF0A84FF),
+        backgroundColor: Color(0xFFF4F6F9),
         endShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,
         ),
       ),
+      popupMenuTheme: AppPopupMenuTheme.appPopupMenuThemeData(colorScheme, appTextTheme),
     );
   }
 }

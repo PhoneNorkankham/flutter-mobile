@@ -18,9 +18,7 @@ class ContactDetailGroup extends StatelessWidget {
       children: [
         Text(
           LocaleKey.group.tr,
-          style: context.appTextTheme.bold14.copyWith(
-            color: Theme.of(context).colorScheme.primary,
-          ),
+          style: context.appTextTheme.bold14,
         ),
         const SizedBox(height: 10),
         BlocBuilder<ContactDetailBloc, ContactDetailState>(
@@ -62,7 +60,7 @@ class ContactDetailGroup extends StatelessWidget {
                               Icons.check,
                               size: 20,
                               color: selectedGroup == e
-                                  ? Theme.of(context).colorScheme.primary
+                                  ? Theme.of(context).colorScheme.tertiary
                                   : Colors.transparent,
                             ),
                             const SizedBox(width: 6),
@@ -70,8 +68,8 @@ class ContactDetailGroup extends StatelessWidget {
                               e.name,
                               style: context.appTextTheme.medium16.copyWith(
                                 color: selectedGroup == e
-                                    ? Theme.of(context).colorScheme.primary
-                                    : null,
+                                    ? Theme.of(context).colorScheme.tertiary
+                                    : Theme.of(context).colorScheme.onSurface,
                               ),
                             ),
                           ],

@@ -5,8 +5,8 @@ import 'package:keepup/src/design/themes/extensions/app_text_theme.dart';
 class AppAppBarTheme {
   static AppBarTheme appBarThemeData(ColorScheme colorScheme, AppTextTheme appTextTheme) {
     return AppBarTheme(
-      titleTextStyle: appTextTheme.medium24.copyWith(color: AppColors.primaryDark),
-      elevation: 0.0,
+      elevation: 10.0,
+      titleTextStyle: appTextTheme.medium24.copyWith(color: colorScheme.onSurface),
       iconTheme: const IconThemeData(color: AppColors.grey600),
       backgroundColor: colorScheme.surface,
       surfaceTintColor: colorScheme.surface,

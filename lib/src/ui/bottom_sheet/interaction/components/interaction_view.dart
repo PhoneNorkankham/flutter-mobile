@@ -44,11 +44,10 @@ class InteractionView extends StatelessWidget {
                   Center(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: contact.expiration?.urgentColor ??
-                            Theme.of(context).colorScheme.onPrimary,
+                        color: contact.expiration?.urgentColor ?? AppColors.grey350,
                         borderRadius: BorderRadius.circular(90),
                         border: Border.all(
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: AppColors.grey350,
                           width: 4,
                         ),
                       ),

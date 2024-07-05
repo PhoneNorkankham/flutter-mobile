@@ -10,7 +10,7 @@ enum AppButtonType {
   whitePrimary,
   outlined,
   greenKeepUp,
-  whiteKeepUp,
+  greenKeepUpOutline,
 
   // Height 50
   whiteCircle,
@@ -18,14 +18,14 @@ enum AppButtonType {
   // Height 70
   getStarted;
 
-  bool get isOutlined => this == outlined;
+  bool get isOutlined => this == outlined || this == greenKeepUpOutline;
 
   ButtonStyle? buttonStyle(BuildContext context, double? radius) {
     final style =
         isOutlined ? OutlinedButtonTheme.of(context).style : ElevatedButtonTheme.of(context).style;
     final textTheme = context.appTextTheme;
-    Color backgroundColor = AppColors.primary;
-    Color foregroundColor = AppColors.white;
+    Color backgroundColor = AppColors.primaryText;
+    Color foregroundColor = AppColors.primary;
     Size minimumSize = const Size.fromHeight(40);
     double borderRadius = 10;
     TextStyle textStyle = textTheme.medium16.copyWith(color: foregroundColor);
@@ -40,18 +40,18 @@ enum AppButtonType {
         break;
       case outlined:
         backgroundColor = AppColors.white;
-        foregroundColor = AppColors.primary;
+        foregroundColor = AppColors.primaryText;
         break;
       case greenKeepUp:
         padding = EdgeInsets.zero;
-        backgroundColor = AppColors.lightGreen;
+        backgroundColor = AppColors.tertiary;
         borderRadius = 10;
         padding = const EdgeInsets.symmetric(horizontal: 8);
         break;
-      case whiteKeepUp:
+      case greenKeepUpOutline:
         padding = EdgeInsets.zero;
         backgroundColor = AppColors.white;
-        foregroundColor = AppColors.lightGreen;
+        foregroundColor = AppColors.tertiary;
         borderRadius = 10;
         padding = const EdgeInsets.symmetric(horizontal: 8);
         break;
@@ -65,8 +65,8 @@ enum AppButtonType {
         textStyle = textTheme.medium16.copyWith(color: foregroundColor);
         break;
       case getStarted:
-        backgroundColor = AppColors.white;
-        foregroundColor = AppColors.primary;
+        backgroundColor = AppColors.tertiary;
+        foregroundColor = AppColors.white;
         borderRadius = 60;
         minimumSize = const Size.fromHeight(70);
         padding = const EdgeInsets.symmetric(horizontal: 8).copyWith(bottom: 1);
