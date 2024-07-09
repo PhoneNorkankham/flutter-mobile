@@ -36,8 +36,8 @@ class AppDialog extends StatelessWidget {
     this.centerMessage = false,
     this.content,
     this.contentPadding,
-    this.confirmButtonType = AppButtonType.greenKeepUp,
-    this.cancelButtonType = AppButtonType.greenKeepUpOutline,
+    this.confirmButtonType = AppButtonType.primary,
+    this.cancelButtonType = AppButtonType.outlined,
     this.actionsPaddingHorizontal,
     this.actionRadius,
     this.actionsBottomPadding,
@@ -145,8 +145,8 @@ class _Actions extends StatelessWidget {
     required this.confirmTitle,
     this.onCancelled,
     this.onConfirmed,
-    this.confirmButtonType = AppButtonType.greenKeepUp,
-    this.cancelButtonType = AppButtonType.greenKeepUpOutline,
+    this.confirmButtonType = AppButtonType.primary,
+    this.cancelButtonType = AppButtonType.outlined,
     this.actionMaxWith = 234,
   });
 

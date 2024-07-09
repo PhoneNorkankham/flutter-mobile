@@ -41,7 +41,7 @@ class ContactDetailButtons extends StatelessWidget {
             flex: 145,
             child: AppButton(
               onPressed: () => bloc.add(const ContactDetailEvent.onCancelPressed()),
-              buttonType: AppButtonType.greenKeepUpOutline,
+              buttonType: AppButtonType.outlined,
               title: LocaleKey.cancel.tr,
             ),
           ),

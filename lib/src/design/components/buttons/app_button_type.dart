@@ -9,16 +9,12 @@ enum AppButtonType {
   primary,
   whitePrimary,
   outlined,
-  greenKeepUp,
-  greenKeepUpOutline,
-
-  // Height 50
-  whiteCircle,
+  keepUp,
 
   // Height 70
   getStarted;
 
-  bool get isOutlined => this == outlined || this == greenKeepUpOutline;
+  bool get isOutlined => this == outlined;
 
   ButtonStyle? buttonStyle(BuildContext context, double? radius) {
     final style =
@@ -29,47 +25,27 @@ enum AppButtonType {
     Size minimumSize = const Size.fromHeight(40);
     double borderRadius = 10;
     TextStyle textStyle = textTheme.medium16.copyWith(color: foregroundColor);
-    EdgeInsets? padding;
+    EdgeInsets padding = const EdgeInsets.symmetric(horizontal: 8);
 
     switch (this) {
       case primary:
-        padding = EdgeInsets.zero;
         break;
       case whitePrimary:
-        padding = EdgeInsets.zero;
-        break;
-      case outlined:
-        backgroundColor = AppColors.white;
+        backgroundColor = AppColors.primary;
         foregroundColor = AppColors.primaryText;
         break;
-      case greenKeepUp:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.tertiary;
-        borderRadius = 10;
-        padding = const EdgeInsets.symmetric(horizontal: 8);
+      case outlined:
+        backgroundColor = AppColors.primary;
+        foregroundColor = AppColors.primaryText;
         break;
-      case greenKeepUpOutline:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.white;
-        foregroundColor = AppColors.tertiary;
-        borderRadius = 10;
-        padding = const EdgeInsets.symmetric(horizontal: 8);
-        break;
-      case whiteCircle:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.white;
+      case keepUp:
+        backgroundColor = AppColors.keepUp;
         foregroundColor = AppColors.primary;
-        borderRadius = 50;
-        minimumSize = const Size.fromRadius(25);
-        padding = const EdgeInsets.symmetric(horizontal: 8);
-        textStyle = textTheme.medium16.copyWith(color: foregroundColor);
         break;
       case getStarted:
-        backgroundColor = AppColors.tertiary;
-        foregroundColor = AppColors.white;
         borderRadius = 60;
         minimumSize = const Size.fromHeight(70);
-        padding = const EdgeInsets.symmetric(horizontal: 8).copyWith(bottom: 1);
+        padding = padding.copyWith(bottom: 1);
         textStyle = textTheme.medium20.copyWith(color: foregroundColor);
         break;
     }
@@ -82,7 +58,7 @@ enum AppButtonType {
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius ?? borderRadius)),
       ),
       side: WidgetStatePropertyAll(BorderSide(
-        color: isOutlined ? foregroundColor : Colors.transparent,
+        color: isOutlined ? foregroundColor : AppColors.transparent,
       )),
       padding: WidgetStatePropertyAll(padding),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,

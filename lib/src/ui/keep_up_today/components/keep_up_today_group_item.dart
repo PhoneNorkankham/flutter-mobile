@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
 import 'package:keepup/src/ui/keep_up_today/interactor/keep_up_today_bloc.dart';
 
@@ -25,13 +26,13 @@ class KeepUpTodayGroupItem extends StatelessWidget {
             return Container(
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                color: isCompleted ? const Color(0xFF86C144) : const Color(0xFFFF5722),
+                color: isCompleted ? AppColors.tertiary : AppColors.orange,
                 borderRadius: BorderRadius.circular(60),
               ),
               child: Icon(
                 isCompleted ? Icons.check : Icons.close,
                 size: 14,
-                color: Theme.of(context).colorScheme.onPrimary,
+                color: Theme.of(context).colorScheme.primary,
               ),
             );
           },
