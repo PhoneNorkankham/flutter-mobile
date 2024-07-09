@@ -4,14 +4,14 @@ import 'package:keepup/src/design/colors/app_colors.dart';
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: AppColors.primary,
-  onPrimary: AppColors.white,
+  onPrimary: AppColors.primaryText,
   secondary: AppColors.primaryDark,
   onSecondary: AppColors.white,
-  tertiary: AppColors.cyan,
+  tertiary: AppColors.tertiary,
   error: AppColors.error,
   onError: AppColors.white,
-  surface: AppColors.white,
-  onSurface: AppColors.primaryDark,
+  surface: AppColors.primary,
+  onSurface: AppColors.primaryText,
 );
 
 const darkColorScheme = ColorScheme(
@@ -20,6 +20,7 @@ const darkColorScheme = ColorScheme(
   onPrimary: AppColors.primaryText,
   secondary: AppColors.primaryDark,
   onSecondary: AppColors.grey600,
+  tertiary: AppColors.tertiary,
   error: AppColors.error,
   onError: AppColors.white,
   surface: AppColors.white,

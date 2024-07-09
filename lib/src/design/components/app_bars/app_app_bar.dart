@@ -9,7 +9,6 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool implyLeading;
   final bool onlyIconLeading;
   final double? titleSpacing;
-  final TextStyle? titleTextStyle;
   final VoidCallback? onBackPressed;
 
   const AppAppBar({
@@ -19,7 +18,6 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.implyLeading = false,
     this.titleSpacing = 27,
-    this.titleTextStyle,
     this.onBackPressed,
   });
 
@@ -40,14 +38,10 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
               ? 60
               : 100
           : 0,
+      elevation: 6.0,
+      shadowColor: Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
       titleSpacing: implyLeading ? 0 : titleSpacing,
-      title: title?.let((self) => Text(
-            self,
-            style: titleTextStyle ??
-                context.appTextTheme.bold18.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-          )),
+      title: title?.let((self) => Text(self, style: context.appTextTheme.bold18)),
     );
   }
 

@@ -9,11 +9,7 @@ enum AppButtonType {
   primary,
   whitePrimary,
   outlined,
-  greenKeepUp,
-  whiteKeepUp,
-
-  // Height 50
-  whiteCircle,
+  keepUp,
 
   // Height 70
   getStarted;
@@ -24,52 +20,32 @@ enum AppButtonType {
     final style =
         isOutlined ? OutlinedButtonTheme.of(context).style : ElevatedButtonTheme.of(context).style;
     final textTheme = context.appTextTheme;
-    Color backgroundColor = AppColors.primary;
-    Color foregroundColor = AppColors.white;
+    Color backgroundColor = AppColors.primaryText;
+    Color foregroundColor = AppColors.primary;
     Size minimumSize = const Size.fromHeight(40);
     double borderRadius = 10;
     TextStyle textStyle = textTheme.medium16.copyWith(color: foregroundColor);
-    EdgeInsets? padding;
+    EdgeInsets padding = const EdgeInsets.symmetric(horizontal: 8);
 
     switch (this) {
       case primary:
-        padding = EdgeInsets.zero;
         break;
       case whitePrimary:
-        padding = EdgeInsets.zero;
+        backgroundColor = AppColors.primary;
+        foregroundColor = AppColors.primaryText;
         break;
       case outlined:
-        backgroundColor = AppColors.white;
+        backgroundColor = AppColors.primary;
+        foregroundColor = AppColors.primaryText;
+        break;
+      case keepUp:
+        backgroundColor = AppColors.keepUp;
         foregroundColor = AppColors.primary;
-        break;
-      case greenKeepUp:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.lightGreen;
-        borderRadius = 10;
-        padding = const EdgeInsets.symmetric(horizontal: 8);
-        break;
-      case whiteKeepUp:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.white;
-        foregroundColor = AppColors.lightGreen;
-        borderRadius = 10;
-        padding = const EdgeInsets.symmetric(horizontal: 8);
-        break;
-      case whiteCircle:
-        padding = EdgeInsets.zero;
-        backgroundColor = AppColors.white;
-        foregroundColor = AppColors.primary;
-        borderRadius = 50;
-        minimumSize = const Size.fromRadius(25);
-        padding = const EdgeInsets.symmetric(horizontal: 8);
-        textStyle = textTheme.medium16.copyWith(color: foregroundColor);
         break;
       case getStarted:
-        backgroundColor = AppColors.white;
-        foregroundColor = AppColors.primary;
         borderRadius = 60;
         minimumSize = const Size.fromHeight(70);
-        padding = const EdgeInsets.symmetric(horizontal: 8).copyWith(bottom: 1);
+        padding = padding.copyWith(bottom: 1);
         textStyle = textTheme.medium20.copyWith(color: foregroundColor);
         break;
     }
@@ -82,7 +58,7 @@ enum AppButtonType {
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius ?? borderRadius)),
       ),
       side: WidgetStatePropertyAll(BorderSide(
-        color: isOutlined ? foregroundColor : Colors.transparent,
+        color: isOutlined ? foregroundColor : AppColors.transparent,
       )),
       padding: WidgetStatePropertyAll(padding),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,

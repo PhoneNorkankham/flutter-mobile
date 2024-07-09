@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/buttons/app_button.dart';
 import 'package:keepup/src/design/components/buttons/app_button_type.dart';
-import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/extensions/scope_extensions.dart';
 import 'package:keepup/src/extensions/string_extensions.dart';
 import 'package:keepup/src/utils/app_utils.dart';
@@ -72,7 +71,7 @@ class AppDialog extends StatelessWidget {
         child: content ??
             Text(
               message,
-              style: context.appTextTheme.medium16.copyWith(color: AppColors.primaryDark),
+              style: Theme.of(context).dialogTheme.contentTextStyle,
               textAlign: TextAlign.center,
             ),
       ),
@@ -107,7 +106,7 @@ class _Title extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             title,
-            style: context.appTextTheme.medium24.copyWith(color: AppColors.white),
+            style: Theme.of(context).dialogTheme.titleTextStyle,
           ),
         ),
         Align(
@@ -115,10 +114,7 @@ class _Title extends StatelessWidget {
           child: IconButton(
             constraints: const BoxConstraints(),
             padding: const EdgeInsets.all(8.0).copyWith(right: 13),
-            icon: const Icon(
-              Icons.close,
-              color: AppColors.white,
-            ),
+            icon: const Icon(Icons.close),
             onPressed: () => AppUtils.onCloseSnackBar().then((value) {
               if (onClose == null) {
                 Get.back(result: false);

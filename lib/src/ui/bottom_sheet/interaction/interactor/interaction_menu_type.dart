@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 
 enum InteractionMenuType {
@@ -21,10 +20,5 @@ enum InteractionMenuType {
     };
   }
 
-  Color? get color {
-    if (this == InteractionMenuType.delete) {
-      return AppColors.red;
-    }
-    return null;
-  }
+  Color? get color => this == InteractionMenuType.delete ? Colors.red : null;
 }

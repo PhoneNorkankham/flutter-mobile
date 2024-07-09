@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/ui/main/interactor/main_bloc.dart';
@@ -42,7 +41,9 @@ class AppBottomNavigationBarItem extends StatelessWidget {
               type.name,
               textAlign: TextAlign.center,
               style: context.appTextTheme.bold10.copyWith(
-                color: isSelected ? AppColors.selectedItemColor : AppColors.unselectedItemColor,
+                color: isSelected
+                    ? Theme.of(context).bottomNavigationBarTheme.selectedItemColor!
+                    : Theme.of(context).bottomNavigationBarTheme.unselectedItemColor!,
               ),
             ),
           ],

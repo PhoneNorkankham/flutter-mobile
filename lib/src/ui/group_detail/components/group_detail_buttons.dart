@@ -30,7 +30,7 @@ class GroupDetailButtons extends StatelessWidget {
                     onPressed: state.request.isValidate
                         ? () => bloc.add(const GroupDetailEvent.onSavePressed())
                         : null,
-                    buttonType: AppButtonType.greenKeepUp,
+                    buttonType: AppButtonType.primary,
                     title: LocaleKey.save.tr,
                   ),
                 );
@@ -42,7 +42,7 @@ class GroupDetailButtons extends StatelessWidget {
             flex: 145,
             child: AppButton(
               onPressed: () => bloc.add(const GroupDetailEvent.onCancelPressed()),
-              buttonType: AppButtonType.whiteKeepUp,
+              buttonType: AppButtonType.outlined,
               title: LocaleKey.cancel.tr,
             ),
           ),

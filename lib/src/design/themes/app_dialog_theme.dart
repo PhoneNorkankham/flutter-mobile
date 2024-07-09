@@ -8,8 +8,8 @@ class AppDialogTheme {
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4.0))),
       elevation: 4,
       shadowColor: AppColors.black25,
-      titleTextStyle: textTheme.bold18,
-      contentTextStyle: textTheme.regular16,
+      titleTextStyle: textTheme.medium24.copyWith(color: colorScheme.onSurface),
+      contentTextStyle: textTheme.medium16.copyWith(color: colorScheme.onSurface),
       backgroundColor: colorScheme.surface,
       surfaceTintColor: colorScheme.surface,
     );

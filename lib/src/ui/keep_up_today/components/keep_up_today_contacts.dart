@@ -57,7 +57,7 @@ class KeepUpTodayContacts extends StatelessWidget {
                   width: 110,
                   child: AppButton(
                     onPressed: () => _onShowConfirmDialog(context),
-                    buttonType: AppButtonType.greenKeepUp,
+                    buttonType: AppButtonType.keepUp,
                     title: LocaleKey.keepUp.tr,
                   ),
                 ),
