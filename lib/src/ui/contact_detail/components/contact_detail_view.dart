@@ -26,7 +26,6 @@ class ContactDetailView extends StatelessWidget {
           body: AppBody(
             pageState: PageState.success,
             unFocusWhenTouchOutsideInput: true,
-            backgroundColor: Theme.of(context).colorScheme.onPrimary,
             isLoading: state.isLoading,
             success: const SingleChildScrollView(
               child: Column(

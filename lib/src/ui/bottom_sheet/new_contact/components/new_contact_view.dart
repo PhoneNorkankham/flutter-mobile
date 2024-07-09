@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:keepup/src/ui/base/base_page.dart';
 import 'package:keepup/src/ui//bottom_sheet/new_contact/components/new_contact_app_bar.dart';
 import 'package:keepup/src/ui//bottom_sheet/new_contact/components/new_contact_form.dart';
 import 'package:keepup/src/ui//bottom_sheet/new_contact/components/new_contact_header.dart';
+import 'package:keepup/src/ui/base/base_page.dart';
 
 class NewContactView extends StatelessWidget {
   const NewContactView({super.key});
@@ -21,23 +21,20 @@ class NewContactView extends StatelessWidget {
             ),
           ),
           margin: const EdgeInsets.only(top: 15),
-          child: Column(
+          child: const Column(
             children: [
-              const NewContactAppBar(),
+              NewContactAppBar(),
               Expanded(
-                child: Container(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                  child: const SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        NewContactHeader(),
-                        SizedBox(height: 34),
-                        NewContactForm(),
-                        SizedBox(height: 36),
-                      ],
-                    ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      NewContactHeader(),
+                      SizedBox(height: 34),
+                      NewContactForm(),
+                      SizedBox(height: 36),
+                    ],
                   ),
                 ),
               ),

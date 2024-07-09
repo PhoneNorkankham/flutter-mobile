@@ -34,7 +34,7 @@ class KeepUpSoonItem extends StatelessWidget {
           width: 100,
           child: AppButton(
             onPressed: onKeepUp,
-            buttonType: AppButtonType.greenKeepUp,
+            buttonType: AppButtonType.keepUp,
             title: LocaleKey.keepUp.tr,
           ),
         ),

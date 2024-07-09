@@ -37,7 +37,7 @@ class KeepUpSoonHeader extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 4),
                   child: AppButton(
                     onPressed: isSelected ? null : () => bloc.add(KeepUpSoonEvent.onChangedType(e)),
-                    buttonType: isSelected ? AppButtonType.greenKeepUp : AppButtonType.whiteKeepUp,
+                    buttonType: isSelected ? AppButtonType.primary : AppButtonType.outlined,
                     title: e.title,
                   ),
                 );

@@ -26,9 +26,7 @@ class FrequencyInterval extends StatelessWidget {
         Expanded(
           child: Text(
             LocaleKey.frequency.tr,
-            style: context.appTextTheme.bold18.copyWith(
-              color: textColor ?? Theme.of(context).colorScheme.primary,
-            ),
+            style: context.appTextTheme.bold18,
           ),
         ),
         const SizedBox(width: 20),
@@ -37,9 +35,7 @@ class FrequencyInterval extends StatelessWidget {
           initialValue: type,
           child: Text(
             type.title,
-            style: context.appTextTheme.bold16.copyWith(
-              color: textColor ?? Theme.of(context).colorScheme.primary,
-            ),
+            style: context.appTextTheme.bold16,
           ),
           itemBuilder: (context) => FrequencyIntervalType.values
               .map((e) => PopupMenuItem<FrequencyIntervalType>(
@@ -50,14 +46,16 @@ class FrequencyInterval extends StatelessWidget {
                           Icons.check,
                           size: 20,
                           color: type == e
-                              ? Theme.of(context).colorScheme.primary
+                              ? Theme.of(context).colorScheme.tertiary
                               : Colors.transparent,
                         ),
                         const SizedBox(width: 6),
                         Text(
                           e.title,
                           style: context.appTextTheme.medium16.copyWith(
-                            color: type == e ? Theme.of(context).colorScheme.primary : null,
+                            color: type == e
+                                ? Theme.of(context).colorScheme.tertiary
+                                : Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                       ],
