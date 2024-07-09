@@ -9,4 +9,6 @@ class GroupEvent with _$GroupEvent {
   const factory GroupEvent.onChangedKeyword(String keyword) = _OnChangedKeyword;
 
   const factory GroupEvent.onGotoGroupDetails(Group group) = _OnGotoGroupDetails;
+
+  const factory GroupEvent.onKeepUpGroup(Group group) = _OnKeepUpGroup;
 }

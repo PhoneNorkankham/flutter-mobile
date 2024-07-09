@@ -22,6 +22,7 @@ class GroupBloc extends Bloc<GroupEvent, GroupState> {
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
     on<_OnGotoGroupDetails>(_onGotoGroupDetails);
+    on<_OnKeepUpGroup>(_onKeepUpGroup);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<GroupState> emit) {
@@ -44,6 +45,25 @@ class GroupBloc extends Bloc<GroupEvent, GroupState> {
         AppPages.groupDetail,
         argument: event.group,
       ),
+    ));
+  }
+
+  FutureOr<void> _onKeepUpGroup(_OnKeepUpGroup event, Emitter<GroupState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final resource = await _supabaseRepository.keepUpGroup(event.group);
+    PageCommand pageCommand;
+    if (resource.isSuccess) {
+      pageCommand = PageCommandMessage.showSuccess(
+        LocaleKey.keepUpGroupSuccessfully.tr,
+      );
+    } else {
+      pageCommand = PageCommandMessage.showError(
+        resource.message ?? LocaleKey.keepUpGroupFailed.tr,
+      );
+    }
+    emit(state.copyWith(
+      isLoading: false,
+      pageCommand: pageCommand,
     ));
   }
 }

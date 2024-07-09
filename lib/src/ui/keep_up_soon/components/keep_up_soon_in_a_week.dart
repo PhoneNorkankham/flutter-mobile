@@ -8,7 +8,8 @@ import 'package:keepup/src/design/components/process_indicators/custom_circular_
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
-import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_item.dart';
+import 'package:keepup/src/ui/contacts/components/contact_item.dart';
+import 'package:keepup/src/ui/groups/components/group_item.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_bloc.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_type.dart';
 
@@ -26,12 +27,10 @@ class KeepUpSoonInAWeek extends StatelessWidget {
         if (state.type == KeepUpSoonType.individual) {
           // Add all contacts item to children
           children = [
-            ...state.weekContacts.map((e) => KeepUpSoonItem(
-                  name: e.name,
-                  avatar: e.avatar,
-                  expiration: e.expiration,
+            ...state.weekContacts.map((e) => ContactItem(
+                  contact: e,
                   onPressed: () => InteractionBottomSheet.show(contact: e),
-                  onKeepUp: () => _onShowKeepUpContactConfirmDialog(bloc, e),
+                  onKeepUpPressed: () => _onShowKeepUpContactConfirmDialog(bloc, e),
                 ))
           ];
         }
@@ -47,11 +46,10 @@ class KeepUpSoonInAWeek extends StatelessWidget {
             // Add all groups item to children
             if (state.type == KeepUpSoonType.groups && groups.isNotEmpty) {
               children = [
-                ...groups.map((e) => KeepUpSoonItem(
-                      name: e.name,
-                      avatar: e.avatar,
+                ...groups.map((e) => GroupItem(
+                      group: e,
                       onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(e)),
-                      onKeepUp: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
+                      onKeepUpPressed: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
                     ))
               ];
             }

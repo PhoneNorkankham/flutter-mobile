@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
+import 'package:keepup/src/design/components/dialogs/app_dialogs.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
@@ -12,6 +13,7 @@ import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/components/interaction_action_item.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/components/interaction_info_item.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/interactor/interaction_bloc.dart';
+import 'package:keepup/src/ui/bottom_sheet/interaction/interactor/interaction_menu_type.dart';
 import 'package:timeago/timeago.dart';
 
 class InteractionView extends StatelessWidget {
@@ -119,8 +121,19 @@ class InteractionView extends StatelessWidget {
               Positioned(
                 top: 16,
                 right: 4,
-                child: GestureDetector(
-                  onTap: () => Get.back(),
+                child: PopupMenuButton<InteractionMenuType>(
+                  onSelected: (value) {
+                    switch (value) {
+                      case InteractionMenuType.edit:
+                        bloc.add(const InteractionEvent.onInteraction(
+                          InteractionMethodType.Contact,
+                        ));
+                        break;
+                      case InteractionMenuType.delete:
+                        _onShowDeleteConfirmDialog(bloc, contact);
+                        break;
+                    }
+                  },
                   child: Container(
                     width: 32,
                     height: 32,
@@ -132,17 +145,49 @@ class InteractionView extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.all(4),
                     child: Icon(
-                      Icons.close,
+                      Icons.settings,
                       size: 16,
                       color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
+                  itemBuilder: (context) => InteractionMenuType.values
+                      .map((e) => PopupMenuItem<InteractionMenuType>(
+                            value: e,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  e.icon,
+                                  color: e.color,
+                                  size: 20,
+                                ),
+                                const SizedBox(width: 6),
+                                Text(
+                                  e.title,
+                                  style: context.appTextTheme.medium16.copyWith(color: e.color),
+                                ),
+                              ],
+                            ),
+                          ))
+                      .toList(),
                 ),
               ),
             ],
           );
         },
       ),
+    );
+  }
+
+  void _onShowDeleteConfirmDialog(InteractionBloc bloc, Contact contact) {
+    showConfirmDialog(
+      LocaleKey.deleteContactDescription.tr,
+      title: LocaleKey.deleteContact.tr,
+      cancelTitle: LocaleKey.cancel.tr,
+      confirmTitle: LocaleKey.delete.tr,
+      onConfirmed: () {
+        Get.back();
+        bloc.add(InteractionEvent.onDeleteContact(contact));
+      },
     );
   }
 }

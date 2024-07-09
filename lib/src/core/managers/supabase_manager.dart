@@ -1,6 +1,7 @@
 import 'dart:io';
 
-import 'package:get/get.dart';
+import 'package:drift/drift.dart';
+import 'package:get/get.dart' hide Value;
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
@@ -108,9 +109,10 @@ class SupabaseManager {
           .from(_tbGroups)
           .insert(request.copyWith(ownerId: uid).toJson())
           .select()
+          .maybeSingle()
           .then((value) {
-        if (value.isNotEmpty) {
-          return Group.fromJson(value.first);
+        if (value != null) {
+          return Group.fromJson(value);
         }
         return Future.error(LocaleKey.creatingGroupFailed.tr);
       });
@@ -120,9 +122,10 @@ class SupabaseManager {
       .update(request.toJson())
       .match({'id': request.groupId})
       .select()
+      .maybeSingle()
       .then((value) {
-        if (value.isNotEmpty) {
-          return Group.fromJson(value.first);
+        if (value != null) {
+          return Group.fromJson(value);
         } else {
           return Future.error(LocaleKey.updatingGroupFailed.tr);
         }
@@ -131,43 +134,65 @@ class SupabaseManager {
   Future<void> deleteGroup(String groupId) =>
       _supabase.from(_tbGroups).delete().match({'id': groupId});
 
-  Future<Contact> insertContact(ContactRequest request) => _supabase
+  Future<Contact> _combineGroupName(Contact contact) async {
+    if (contact.groupId.isNotEmpty) {
+      final Group? group = await getGroup(contact.groupId);
+      return contact.copyWith(groupName: Value(group?.name ?? ''));
+    }
+    return contact;
+  }
+
+  Future<List<Contact>> getContacts() => _supabase
           .from(_tbContacts)
-          .insert(request.copyWith(ownerId: uid).toJson())
           .select()
-          .then((value) {
-        if (value.isNotEmpty) {
-          return Contact.fromJson(value.first);
-        } else {
-          return Future.error(LocaleKey.creatingContactFailed.tr);
+          .eq(_fieldOwnerId, uid)
+          .then((value) => value.map((e) => Contact.fromJson(e)).toList())
+          .then((contacts) async {
+        final List<Contact> newContacts = [];
+        for (Contact contact in contacts) {
+          Contact newContact = await _combineGroupName(contact);
+          newContacts.add(newContact);
         }
+        return newContacts;
       });
+
+  Future<Contact?> getContact(String contactId) => _supabase
+      .from(_tbContacts)
+      .select()
+      .eq(_fieldId, contactId)
+      .maybeSingle()
+      .then((value) => value != null
+          ? _combineGroupName(Contact.fromJson(value))
+          : Future.error(LocaleKey.contactNotFound.tr));
+
+  Future<Contact> insertContact(ContactRequest request) => _supabase
+      .from(_tbContacts)
+      .insert(request.copyWith(ownerId: uid).toJson())
+      .select()
+      .maybeSingle()
+      .then((value) => value != null
+          ? _combineGroupName(Contact.fromJson(value))
+          : Future.error(LocaleKey.creatingContactFailed.tr));
 
   Future<Contact> updateContactAvatar(String contactId, String avatar) => _supabase
       .from(_tbContacts)
       .update({_fieldAvatar: avatar})
       .match({_fieldId: contactId})
       .select()
-      .then((value) {
-        if (value.isNotEmpty) {
-          return Contact.fromJson(value.first);
-        } else {
-          return Future.error(LocaleKey.updatingContactFailed.tr);
-        }
-      });
+      .maybeSingle()
+      .then((value) => value != null
+          ? _combineGroupName(Contact.fromJson(value))
+          : Future.error(LocaleKey.updatingContactFailed.tr));
 
   Future<Contact> updateContact(ContactRequest request) => _supabase
       .from(_tbContacts)
       .update(request.toJson())
       .match({_fieldId: request.contactId})
       .select()
-      .then((value) {
-        if (value.isNotEmpty) {
-          return Contact.fromJson(value.first);
-        } else {
-          return Future.error(LocaleKey.updatingContactFailed.tr);
-        }
-      });
+      .maybeSingle()
+      .then((value) => value != null
+          ? _combineGroupName(Contact.fromJson(value))
+          : Future.error(LocaleKey.updatingContactFailed.tr));
 
   Future<List<Contact>> updateContacts(List<ContactRequest> requests) async {
     final List<Contact> contacts = [];
@@ -225,19 +250,8 @@ class SupabaseManager {
       .from(_tbGroups)
       .select()
       .eq(_fieldId, groupId)
-      .then((value) => value.map((e) => Group.fromJson(e)).toList().firstOrNull);
-
-  Future<List<Contact>> getContacts() => _supabase
-      .from(_tbContacts)
-      .select()
-      .eq(_fieldOwnerId, uid)
-      .then((value) => value.map((e) => Contact.fromJson(e)).toList());
-
-  Future<Contact?> getContact(String contactId) => _supabase
-      .from(_tbContacts)
-      .select()
-      .eq(_fieldId, contactId)
-      .then((value) => value.map((e) => Contact.fromJson(e)).toList().firstOrNull);
+      .maybeSingle()
+      .then((value) => value == null ? null : Group.fromJson(value));
 
   Future<String> uploadAvatar(File file) {
     String fileExtension = p.extension(file.path, 2);
