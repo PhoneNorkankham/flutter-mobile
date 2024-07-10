@@ -12,6 +12,7 @@ import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
+import 'package:keepup/src/utils/app_globals.dart';
 import 'package:keepup/src/utils/app_utils.dart';
 
 part 'add_member_bloc.freezed.dart';
@@ -35,13 +36,15 @@ class AddMemberBloc extends Bloc<AddMemberEvent, AddMemberState> {
 
   FutureOr<void> _initial(_Initial event, Emitter<AddMemberState> emit) async {
     emit(state.copyWith(groupId: event.groupId, selectedContacts: event.selectedContacts));
-    final bool isGranted = await _permissionManager.checkPermission(PermissionType.Contacts);
-    final List<ContactRequest> deviceContacts;
-    if (isGranted) {
-      final List<CS.Contact> contacts = await CS.ContactsService.getContacts();
-      deviceContacts = await contacts.toContactRequests();
-    } else {
-      deviceContacts = [];
+    final List<ContactRequest> deviceContacts = [...AppGlobals.deviceContacts];
+    if (deviceContacts.isEmpty) {
+      final bool isGranted = await _permissionManager.checkPermission(PermissionType.Contacts);
+      if (isGranted) {
+        final List<CS.Contact> contacts = await CS.ContactsService.getContacts();
+        final List<ContactRequest> newContacts = await contacts.toContactRequests();
+        AppGlobals.setDeviceContacts(newContacts);
+        deviceContacts.addAll(newContacts);
+      }
     }
     final List<Contact> contacts = await _supabaseRepository.getDBContacts();
     // Get all contacts that don't belong to any other group

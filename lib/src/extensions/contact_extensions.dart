@@ -45,9 +45,8 @@ extension ContactsExtensions on List<Contact> {
 
 extension CSContactsExtensions on List<cs.Contact> {
   Future<List<ContactRequest>> toContactRequests() async {
-    final List<cs.Contact> contacts = await cs.ContactsService.getContacts();
     final List<ContactRequest> contactRequests = [];
-    for (final contact in contacts) {
+    for (final contact in this) {
       final ContactRequest? contactRequest = await contact.toContactRequest();
       if (contactRequest != null) {
         contactRequests.add(contactRequest);
