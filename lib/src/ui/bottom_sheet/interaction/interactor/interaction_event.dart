@@ -7,4 +7,6 @@ class InteractionEvent with _$InteractionEvent {
   const factory InteractionEvent.clearPageCommand() = _ClearPageCommand;
 
   const factory InteractionEvent.onInteraction(InteractionMethodType type) = _OnInteraction;
+
+  const factory InteractionEvent.onDeleteContact(Contact contact) = _OnDeleteContact;
 }

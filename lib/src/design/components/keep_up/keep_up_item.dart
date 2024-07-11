@@ -36,7 +36,7 @@ class KeepUpItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 1, color: Colors.white),
+          border: Border.all(width: 1, color: AppColors.inputBorder),
         ),
         child: Row(
           children: [

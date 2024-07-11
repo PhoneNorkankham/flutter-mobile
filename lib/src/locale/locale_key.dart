@@ -70,6 +70,7 @@ class LocaleKey {
   static const String updatingGroupFailed = "updatingGroupFailed";
   static const String creatingContactFailed = "creatingContactFailed";
   static const String updatingContactFailed = "updatingContactFailed";
+  static const String contactNotFound = "contactNotFound";
   static const String iWillLoginLater = "iWillLoginLater";
 
   // Main
@@ -198,4 +199,5 @@ class LocaleKey {
   // Interaction Bottom Sheet
   static const String lastKeepUp = "lastKeepUp";
   static const String birthday = "birthday";
+  static const String edit = "edit";
 }

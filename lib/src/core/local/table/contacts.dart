@@ -9,6 +9,9 @@ class Contacts extends Table {
   @JsonKey('group_id')
   TextColumn get groupId => text().named('group_id').withDefault(const Constant(''))();
 
+  @JsonKey('group_name')
+  TextColumn get groupName => text().named('group_name').nullable()();
+
   TextColumn get avatar => text().withDefault(const Constant(''))();
 
   TextColumn get name => text().withDefault(const Constant(''))();

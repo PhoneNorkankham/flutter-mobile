@@ -42,7 +42,7 @@ LazyDatabase _openConnection() {
     // put the database file, called db.sqlite here, into the documents folder
     // for your app.
     final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_202405222222.sqlite'));
+    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_202407090000.sqlite'));
 
     // Also work around limitations on old Android versions
     if (Platform.isAndroid) {

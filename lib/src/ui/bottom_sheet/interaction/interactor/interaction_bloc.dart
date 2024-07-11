@@ -10,7 +10,11 @@ import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
+import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
+import 'package:keepup/src/ui/base/result/result.dart';
+import 'package:keepup/src/ui/routing/pop_result.dart';
+import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/utils/app_async_action.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
@@ -20,11 +24,16 @@ part 'interaction_state.dart';
 
 class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
   final SupabaseRepository _supabaseRepository;
+  final DeleteContactUseCase _deleteContactUseCase;
 
-  InteractionBloc(this._supabaseRepository) : super(const InteractionState()) {
+  InteractionBloc(
+    this._supabaseRepository,
+    this._deleteContactUseCase,
+  ) : super(const InteractionState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnInteraction>(_onInteraction);
+    on<_OnDeleteContact>(_onDeleteContact);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<InteractionState> emit) {
@@ -89,5 +98,28 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
       }
     }
     return FrequencyIntervalType.everyDay.title;
+  }
+
+  FutureOr<void> _onDeleteContact(_OnDeleteContact event, Emitter<InteractionState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final VoidResult result = await _deleteContactUseCase.run(event.contact.id);
+    if (result.isError) {
+      final PageError pageError = result.asError!.error;
+      emit(state.copyWith(
+        isLoading: false,
+        pageCommand: pageError.toPageCommand(),
+      ));
+    } else {
+      emit(state.copyWith(
+        isLoading: false,
+        pageCommand: PageCommandNavigation.pop(
+          result: PopResult(
+            status: true,
+            resultFromPage: '',
+            data: LocaleKey.contactDeletedSuccessfully.tr,
+          ),
+        ),
+      ));
+    }
   }
 }

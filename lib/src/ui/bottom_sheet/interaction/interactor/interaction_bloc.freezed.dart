@@ -21,6 +21,7 @@ mixin _$InteractionEvent {
     required TResult Function(Contact contact) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
+    required TResult Function(Contact contact) onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$InteractionEvent {
     TResult? Function(Contact contact)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
+    TResult? Function(Contact contact)? onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$InteractionEvent {
     TResult Function(Contact contact)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
+    TResult Function(Contact contact)? onDeleteContact,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$InteractionEvent {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$InteractionEvent {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$InteractionEvent {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,6 +154,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Contact contact) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
+    required TResult Function(Contact contact) onDeleteContact,
   }) {
     return initial(contact);
   }
@@ -158,6 +165,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Contact contact)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
+    TResult? Function(Contact contact)? onDeleteContact,
   }) {
     return initial?.call(contact);
   }
@@ -168,6 +176,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(Contact contact)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
+    TResult Function(Contact contact)? onDeleteContact,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -182,6 +191,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return initial(this);
   }
@@ -192,6 +202,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return initial?.call(this);
   }
@@ -202,6 +213,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -261,6 +273,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(Contact contact) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
+    required TResult Function(Contact contact) onDeleteContact,
   }) {
     return clearPageCommand();
   }
@@ -271,6 +284,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(Contact contact)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
+    TResult? Function(Contact contact)? onDeleteContact,
   }) {
     return clearPageCommand?.call();
   }
@@ -281,6 +295,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(Contact contact)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
+    TResult Function(Contact contact)? onDeleteContact,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -295,6 +310,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return clearPageCommand(this);
   }
@@ -305,6 +321,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -315,6 +332,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -395,6 +413,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     required TResult Function(Contact contact) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
+    required TResult Function(Contact contact) onDeleteContact,
   }) {
     return onInteraction(type);
   }
@@ -405,6 +424,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult? Function(Contact contact)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
+    TResult? Function(Contact contact)? onDeleteContact,
   }) {
     return onInteraction?.call(type);
   }
@@ -415,6 +435,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult Function(Contact contact)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
+    TResult Function(Contact contact)? onDeleteContact,
     required TResult orElse(),
   }) {
     if (onInteraction != null) {
@@ -429,6 +450,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return onInteraction(this);
   }
@@ -439,6 +461,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return onInteraction?.call(this);
   }
@@ -449,6 +472,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
     if (onInteraction != null) {
@@ -465,6 +489,153 @@ abstract class _OnInteraction implements InteractionEvent {
   InteractionMethodType get type;
   @JsonKey(ignore: true)
   _$$OnInteractionImplCopyWith<_$OnInteractionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnDeleteContactImplCopyWith<$Res> {
+  factory _$$OnDeleteContactImplCopyWith(_$OnDeleteContactImpl value,
+          $Res Function(_$OnDeleteContactImpl) then) =
+      __$$OnDeleteContactImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Contact contact});
+}
+
+/// @nodoc
+class __$$OnDeleteContactImplCopyWithImpl<$Res>
+    extends _$InteractionEventCopyWithImpl<$Res, _$OnDeleteContactImpl>
+    implements _$$OnDeleteContactImplCopyWith<$Res> {
+  __$$OnDeleteContactImplCopyWithImpl(
+      _$OnDeleteContactImpl _value, $Res Function(_$OnDeleteContactImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contact = freezed,
+  }) {
+    return _then(_$OnDeleteContactImpl(
+      freezed == contact
+          ? _value.contact
+          : contact // ignore: cast_nullable_to_non_nullable
+              as Contact,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnDeleteContactImpl implements _OnDeleteContact {
+  const _$OnDeleteContactImpl(this.contact);
+
+  @override
+  final Contact contact;
+
+  @override
+  String toString() {
+    return 'InteractionEvent.onDeleteContact(contact: $contact)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnDeleteContactImpl &&
+            const DeepCollectionEquality().equals(other.contact, contact));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(contact));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnDeleteContactImplCopyWith<_$OnDeleteContactImpl> get copyWith =>
+      __$$OnDeleteContactImplCopyWithImpl<_$OnDeleteContactImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Contact contact) initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(InteractionMethodType type) onInteraction,
+    required TResult Function(Contact contact) onDeleteContact,
+  }) {
+    return onDeleteContact(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Contact contact)? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(InteractionMethodType type)? onInteraction,
+    TResult? Function(Contact contact)? onDeleteContact,
+  }) {
+    return onDeleteContact?.call(contact);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Contact contact)? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(InteractionMethodType type)? onInteraction,
+    TResult Function(Contact contact)? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onDeleteContact != null) {
+      return onDeleteContact(contact);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnInteraction value) onInteraction,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
+  }) {
+    return onDeleteContact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnInteraction value)? onInteraction,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
+  }) {
+    return onDeleteContact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnInteraction value)? onInteraction,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onDeleteContact != null) {
+      return onDeleteContact(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnDeleteContact implements InteractionEvent {
+  const factory _OnDeleteContact(final Contact contact) = _$OnDeleteContactImpl;
+
+  Contact get contact;
+  @JsonKey(ignore: true)
+  _$$OnDeleteContactImplCopyWith<_$OnDeleteContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -30,7 +30,7 @@ class KeepUpSoonView extends StatelessWidget {
                   KeepUpSoonInAWeek(),
                   SizedBox(height: 28),
                   KeepUpSoonInAMonth(),
-                  SizedBox(height: 30),
+                  SizedBox(height: 50),
                 ],
               ),
             ),

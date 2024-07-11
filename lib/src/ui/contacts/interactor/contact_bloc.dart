@@ -24,6 +24,7 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnChangedKeyword>((event, emit) => emit(state.copyWith(keyword: event.keyword)));
     on<_OnGotoContactDetails>(_onGotoContactDetails);
+    on<_OnKeepUpContact>(_onKeepUpContact);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<ContactState> emit) async {
@@ -46,6 +47,25 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
         AppPages.contactDetail,
         argument: event.contact,
       ),
+    ));
+  }
+
+  FutureOr<void> _onKeepUpContact(_OnKeepUpContact event, Emitter<ContactState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final resource = await _supabaseRepository.keepUpContact(event.contact);
+    PageCommand pageCommand;
+    if (resource.isSuccess) {
+      pageCommand = PageCommandMessage.showSuccess(
+        LocaleKey.keepUpContactSuccessfully.tr,
+      );
+    } else {
+      pageCommand = PageCommandMessage.showError(
+        resource.message ?? LocaleKey.keepUpContactFailed.tr,
+      );
+    }
+    emit(state.copyWith(
+      isLoading: false,
+      pageCommand: pageCommand,
     ));
   }
 }
