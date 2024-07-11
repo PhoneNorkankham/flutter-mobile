@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
+import 'package:keepup/src/design/components/keep_up/contact_grid_item.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_group.dart';
 import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
-import 'package:keepup/src/ui/contacts/components/contact_item.dart';
 import 'package:keepup/src/ui/groups/components/group_item.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_bloc.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_type.dart';
@@ -23,76 +23,65 @@ class KeepUpSoonInAMonth extends StatelessWidget {
           previous.type != current.type || previous.monthContacts != current.monthContacts,
       builder: (context, state) {
         final KeepUpSoonBloc bloc = context.read();
-        List<Widget> children = [];
         if (state.type == KeepUpSoonType.individual) {
-          children = [
-            ...state.monthContacts.map((e) => ContactItem(
-                  contact: e,
-                  onPressed: () => InteractionBottomSheet.show(contact: e),
-                  onKeepUpPressed: () => _onShowKeepUpContactConfirmDialog(bloc, e),
-                ))
-          ];
-        }
-        return FutureBuilder<List<Group>>(
-          future: state.type == KeepUpSoonType.groups
-              ? bloc.getGroupsByContacts(state.monthContacts)
-              : Future.value([]),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState != ConnectionState.done) {
-              return const SizedBox();
-            }
-            final List<Group> groups = snapshot.data ?? [];
-            if (state.type == KeepUpSoonType.groups && groups.isNotEmpty) {
-              children = [
-                ...groups.map((e) => GroupItem(
-                      group: e,
-                      onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(e)),
-                      onKeepUpPressed: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
-                    ))
-              ];
-            }
-            return KeepUpGroup(
-              title: LocaleKey.inAMonth.tr,
-              children: children.isNotEmpty
-                  ? children
-                  : [
-                      state.isLoading
-                          ? const Padding(
-                              padding: EdgeInsets.all(24.0),
-                              child: Center(child: CustomCircularProgress()),
-                            )
-                          : Padding(
-                              padding: const EdgeInsets.all(24.0),
-                              child: Center(
-                                child: Text(
-                                  state.type.inAMonthEmptyMessage,
-                                  style: context.appTextTheme.bold16.copyWith(
-                                    color: Theme.of(context).colorScheme.onPrimary,
-                                  ),
-                                  textAlign: TextAlign.center,
+          return KeepUpGroup(
+            title: LocaleKey.inAMonth.tr,
+            child: Wrap(
+              children: state.monthContacts
+                  .map((contact) => AppGridItem(
+                        onPressed: () => InteractionBottomSheet.show(contact: contact),
+                        avatarUrl: contact.avatar,
+                        title: contact.name,
+                        titleColor: Theme.of(context).colorScheme.onPrimary,
+                        expiration: contact.expiration,
+                      ))
+                  .toList(),
+            ),
+          );
+        } else {
+          return FutureBuilder<List<Group>>(
+            future: bloc.getGroupsByContacts(state.monthContacts),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState != ConnectionState.done) {
+                return const SizedBox();
+              }
+              final List<Group> groups = snapshot.data ?? [];
+              return KeepUpGroup(
+                title: LocaleKey.inAMonth.tr,
+                child: groups.isNotEmpty
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: groups
+                            .map((e) => GroupItem(
+                                  group: e,
+                                  onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(e)),
+                                  onKeepUpPressed: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
+                                ))
+                            .toList(),
+                      )
+                    : state.isLoading
+                        ? const Padding(
+                            padding: EdgeInsets.all(24.0),
+                            child: Center(child: CustomCircularProgress()),
+                          )
+                        : Padding(
+                            padding: const EdgeInsets.all(24.0),
+                            child: Center(
+                              child: Text(
+                                state.type.inAMonthEmptyMessage,
+                                style: context.appTextTheme.bold16.copyWith(
+                                  color: Theme.of(context).colorScheme.onPrimary,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                            )
-                    ],
-            );
-          },
-        );
+                            ),
+                          ),
+              );
+            },
+          );
+        }
       },
     );
-  }
-
-  void _onShowKeepUpContactConfirmDialog(KeepUpSoonBloc bloc, Contact contact) {
-    AppDialogs(
-      title: LocaleKey.keepUp.tr,
-      message: LocaleKey.keepUpContactConfirm.tr,
-      contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-      cancelTitle: LocaleKey.cancel.tr,
-      confirmTitle: LocaleKey.keepUp.tr,
-      onConfirmed: () {
-        bloc.add(KeepUpSoonEvent.onKeepUpContact(contact));
-        Get.back();
-      },
-    ).show();
   }
 
   void _onShowKeepUpGroupConfirmDialog(KeepUpSoonBloc bloc, Group group) {

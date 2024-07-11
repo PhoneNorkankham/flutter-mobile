@@ -28,7 +28,7 @@ class ContactView extends StatelessWidget {
                   hintText: LocaleKey.searchContacts.tr,
                   onChanged: (value) => bloc.add(ContactEvent.onChangedKeyword(value)),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 24),
                 const Expanded(child: ContactList()),
                 const SizedBox(height: 15),
               ],

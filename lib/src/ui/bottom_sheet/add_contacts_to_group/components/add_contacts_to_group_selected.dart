@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
-import 'package:keepup/src/ui//bottom_sheet/add_contacts_to_group/components/add_contacts_to_group_selected_item.dart';
+import 'package:keepup/src/design/components/keep_up/contact_grid_item.dart';
 import 'package:keepup/src/ui//bottom_sheet/add_contacts_to_group/interactor/add_contacts_to_group_bloc.dart';
 
 class AddContactsToGroupSelected extends StatelessWidget {
@@ -23,7 +23,17 @@ class AddContactsToGroupSelected extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 4),
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.start,
-            children: contacts.map((e) => AddMemberSelectedItem(contact: e)).toList(),
+            children: contacts
+                .map((contact) => AppGridItem(
+                      avatarUrl: contact.avatar,
+                      avatarFile: contact.file,
+                      title: contact.name,
+                      onRemovedPressed: () {
+                        final bloc = context.read<AddContactsToGroupBloc>();
+                        bloc.add(AddContactsToGroupEvent.onRemovedContact(contact));
+                      },
+                    ))
+                .toList(),
           ),
         );
       },

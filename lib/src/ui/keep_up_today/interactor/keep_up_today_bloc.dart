@@ -20,8 +20,7 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnGotoGroupDetails>(_onGotoGroupDetails);
-    on<_OnKeepUpAllContacts>(_onKeepUpAllContacts);
-    on<_OnKeepUpAllGroups>(_onKeepUpAllGroups);
+    on<_OnKeepUpGroup>(_onKeepUpGroup);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<KeepUpTodayState> emit) async {
@@ -64,56 +63,31 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
     return true;
   }
 
-  FutureOr<void> _onKeepUpAllContacts(
-    _OnKeepUpAllContacts event,
-    Emitter<KeepUpTodayState> emit,
-  ) async {
-    emit(state.copyWith(isLoading: true));
-    final resource = await _supabaseRepository.keepUpAllContacts(state.contacts);
-    PageCommand pageCommand;
-    if (resource.isSuccess) {
-      pageCommand = PageCommandMessage.showSuccess(
-        LocaleKey.keepUpAllTheContactsTodaySuccessfully.tr,
-      );
-    } else {
-      pageCommand = PageCommandMessage.showError(
-        resource.message ?? LocaleKey.keepUpAllTheContactsTodayFailed.tr,
-      );
-    }
-    emit(state.copyWith(
-      isLoading: false,
-      pageCommand: pageCommand,
-    ));
-  }
-
-  FutureOr<void> _onKeepUpAllGroups(
-    _OnKeepUpAllGroups event,
-    Emitter<KeepUpTodayState> emit,
-  ) async {
-    emit(state.copyWith(isLoading: true));
-    final resource = await _supabaseRepository.keepUpAllContacts(state.contacts);
-    PageCommand pageCommand;
-    if (resource.isSuccess) {
-      pageCommand = PageCommandMessage.showSuccess(
-        LocaleKey.keepUpAllTheGroupsTodaySuccessfully.tr,
-      );
-    } else {
-      pageCommand = PageCommandMessage.showError(
-        resource.message ?? LocaleKey.keepUpAllTheGroupsTodayFailed.tr,
-      );
-    }
-    emit(state.copyWith(
-      isLoading: false,
-      pageCommand: pageCommand,
-    ));
-  }
-
   FutureOr<void> _onGotoGroupDetails(_OnGotoGroupDetails event, Emitter<KeepUpTodayState> emit) {
     emit(state.copyWith(
       pageCommand: PageCommandNavigation.toPage(
         AppPages.groupDetail,
         argument: event.group,
       ),
+    ));
+  }
+
+  FutureOr<void> _onKeepUpGroup(_OnKeepUpGroup event, Emitter<KeepUpTodayState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final resource = await _supabaseRepository.keepUpGroup(event.group);
+    PageCommand pageCommand;
+    if (resource.isSuccess) {
+      pageCommand = PageCommandMessage.showSuccess(
+        LocaleKey.keepUpGroupSuccessfully.tr,
+      );
+    } else {
+      pageCommand = PageCommandMessage.showError(
+        resource.message ?? LocaleKey.keepUpGroupFailed.tr,
+      );
+    }
+    emit(state.copyWith(
+      isLoading: false,
+      pageCommand: pageCommand,
     ));
   }
 }
