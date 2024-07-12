@@ -4,10 +4,11 @@ import 'package:get/get.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/group_detail/components/group_detail_buttons.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_contacts.dart';
+import 'package:keepup/src/ui/group_detail/components/group_detail_delete.dart';
+import 'package:keepup/src/ui/group_detail/components/group_detail_description.dart';
 import 'package:keepup/src/ui/group_detail/components/group_detail_header.dart';
-import 'package:keepup/src/ui/group_detail/components/group_detail_interval.dart';
+import 'package:keepup/src/ui/group_detail/components/group_detail_settings.dart';
 import 'package:keepup/src/ui/group_detail/interactor/group_detail_bloc.dart';
 
 class GroupDetailView extends StatelessWidget {
@@ -34,12 +35,13 @@ class GroupDetailView extends StatelessWidget {
                 children: [
                   GroupDetailHeader(),
                   SizedBox(height: 26),
-                  GroupDetailInterval(),
+                  GroupDetailDescription(),
+                  SizedBox(height: 16),
+                  GroupDetailSettings(),
                   SizedBox(height: 26),
                   GroupDetailContacts(),
-                  SizedBox(height: 46),
-                  SizedBox(height: 14),
-                  GroupDetailButtons(),
+                  SizedBox(height: 16),
+                  GroupDetailDelete(),
                   SizedBox(height: 26),
                 ],
               ),

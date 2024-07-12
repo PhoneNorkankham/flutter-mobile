@@ -18,9 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AddContactsToGroupEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Group? group, List<ContactRequest> selectedContacts)
-        initial,
+    required TResult Function(Group group) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(ContactRequest contact) onSelectedContact,
@@ -30,8 +28,7 @@ mixin _$AddContactsToGroupEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult? Function(Group group)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(ContactRequest contact)? onSelectedContact,
@@ -41,8 +38,7 @@ mixin _$AddContactsToGroupEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult Function(Group group)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(ContactRequest contact)? onSelectedContact,
@@ -109,7 +105,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
           _$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Group? group, List<ContactRequest> selectedContacts});
+  $Res call({Group group});
 }
 
 /// @nodoc
@@ -124,17 +120,12 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? group = freezed,
-    Object? selectedContacts = null,
   }) {
     return _then(_$InitialImpl(
       freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
-              as Group?,
-      null == selectedContacts
-          ? _value._selectedContacts
-          : selectedContacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
+              as Group,
     ));
   }
 }
@@ -142,23 +133,14 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl(this.group, final List<ContactRequest> selectedContacts)
-      : _selectedContacts = selectedContacts;
+  const _$InitialImpl(this.group);
 
   @override
-  final Group? group;
-  final List<ContactRequest> _selectedContacts;
-  @override
-  List<ContactRequest> get selectedContacts {
-    if (_selectedContacts is EqualUnmodifiableListView)
-      return _selectedContacts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_selectedContacts);
-  }
+  final Group group;
 
   @override
   String toString() {
-    return 'AddContactsToGroupEvent.initial(group: $group, selectedContacts: $selectedContacts)';
+    return 'AddContactsToGroupEvent.initial(group: $group)';
   }
 
   @override
@@ -166,16 +148,12 @@ class _$InitialImpl implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
-            const DeepCollectionEquality().equals(other.group, group) &&
-            const DeepCollectionEquality()
-                .equals(other._selectedContacts, _selectedContacts));
+            const DeepCollectionEquality().equals(other.group, group));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(group),
-      const DeepCollectionEquality().hash(_selectedContacts));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(group));
 
   @JsonKey(ignore: true)
   @override
@@ -186,37 +164,33 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Group? group, List<ContactRequest> selectedContacts)
-        initial,
+    required TResult Function(Group group) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(ContactRequest contact) onSelectedContact,
     required TResult Function(ContactRequest contact) onRemovedContact,
     required TResult Function() onAddContactsToGroup,
   }) {
-    return initial(group, selectedContacts);
+    return initial(group);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult? Function(Group group)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(ContactRequest contact)? onSelectedContact,
     TResult? Function(ContactRequest contact)? onRemovedContact,
     TResult? Function()? onAddContactsToGroup,
   }) {
-    return initial?.call(group, selectedContacts);
+    return initial?.call(group);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult Function(Group group)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(ContactRequest contact)? onSelectedContact,
@@ -225,7 +199,7 @@ class _$InitialImpl implements _Initial {
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(group, selectedContacts);
+      return initial(group);
     }
     return orElse();
   }
@@ -275,12 +249,9 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements AddContactsToGroupEvent {
-  const factory _Initial(
-          final Group? group, final List<ContactRequest> selectedContacts) =
-      _$InitialImpl;
+  const factory _Initial(final Group group) = _$InitialImpl;
 
-  Group? get group;
-  List<ContactRequest> get selectedContacts;
+  Group get group;
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -324,9 +295,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Group? group, List<ContactRequest> selectedContacts)
-        initial,
+    required TResult Function(Group group) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(ContactRequest contact) onSelectedContact,
@@ -339,8 +308,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult? Function(Group group)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(ContactRequest contact)? onSelectedContact,
@@ -353,8 +321,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult Function(Group group)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(ContactRequest contact)? onSelectedContact,
@@ -481,9 +448,7 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Group? group, List<ContactRequest> selectedContacts)
-        initial,
+    required TResult Function(Group group) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(ContactRequest contact) onSelectedContact,
@@ -496,8 +461,7 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult? Function(Group group)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(ContactRequest contact)? onSelectedContact,
@@ -510,8 +474,7 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult Function(Group group)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(ContactRequest contact)? onSelectedContact,
@@ -654,9 +617,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Group? group, List<ContactRequest> selectedContacts)
-        initial,
+    required TResult Function(Group group) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(ContactRequest contact) onSelectedContact,
@@ -669,8 +630,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult? Function(Group group)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(ContactRequest contact)? onSelectedContact,
@@ -683,8 +643,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult Function(Group group)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(ContactRequest contact)? onSelectedContact,
@@ -827,9 +786,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Group? group, List<ContactRequest> selectedContacts)
-        initial,
+    required TResult Function(Group group) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(ContactRequest contact) onSelectedContact,
@@ -842,8 +799,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult? Function(Group group)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(ContactRequest contact)? onSelectedContact,
@@ -856,8 +812,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult Function(Group group)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(ContactRequest contact)? onSelectedContact,
@@ -965,9 +920,7 @@ class _$OnAddContactsToGroupImpl implements _OnAddContactsToGroup {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Group? group, List<ContactRequest> selectedContacts)
-        initial,
+    required TResult Function(Group group) initial,
     required TResult Function() clearPageCommand,
     required TResult Function(String keyword) onChangedKeyword,
     required TResult Function(ContactRequest contact) onSelectedContact,
@@ -980,8 +933,7 @@ class _$OnAddContactsToGroupImpl implements _OnAddContactsToGroup {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult? Function(Group group)? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(String keyword)? onChangedKeyword,
     TResult? Function(ContactRequest contact)? onSelectedContact,
@@ -994,8 +946,7 @@ class _$OnAddContactsToGroupImpl implements _OnAddContactsToGroup {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Group? group, List<ContactRequest> selectedContacts)?
-        initial,
+    TResult Function(Group group)? initial,
     TResult Function()? clearPageCommand,
     TResult Function(String keyword)? onChangedKeyword,
     TResult Function(ContactRequest contact)? onSelectedContact,

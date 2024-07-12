@@ -11,13 +11,16 @@ import 'package:keepup/src/ui/bottom_sheet/interaction/interactor/interaction_bl
 import 'package:keepup/src/ui/routing/pop_result.dart';
 
 class InteractionBottomSheet extends StatelessWidget {
-  static Future<dynamic> show({required Contact contact}) {
+  static Future<bool> show({required Contact contact}) {
     return Get.bottomSheet(
       enableDrag: true,
       InteractionBottomSheet(contact: contact),
     ).then((value) {
       if (value is PopResult && value.status && value.data is String) {
         showSuccessToast(value.data);
+        return true;
+      } else {
+        return false;
       }
     });
   }

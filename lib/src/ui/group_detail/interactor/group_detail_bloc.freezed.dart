@@ -20,48 +20,42 @@ mixin _$GroupDetailEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,48 +63,42 @@ mixin _$GroupDetailEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,16 +162,14 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) {
     return initial();
   }
@@ -193,16 +179,14 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) {
     return initial?.call();
   }
@@ -212,16 +196,14 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -235,16 +217,14 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
     return initial(this);
   }
@@ -254,16 +234,14 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
     return initial?.call(this);
   }
@@ -273,16 +251,14 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -336,16 +312,14 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) {
     return clearPageCommand();
   }
@@ -355,16 +329,14 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) {
     return clearPageCommand?.call();
   }
@@ -374,16 +346,14 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -397,16 +367,14 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
     return clearPageCommand(this);
   }
@@ -416,16 +384,14 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -435,16 +401,14 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -459,65 +423,65 @@ abstract class _ClearPageCommand implements GroupDetailEvent {
 }
 
 /// @nodoc
-abstract class _$$OnChangedKeywordImplCopyWith<$Res> {
-  factory _$$OnChangedKeywordImplCopyWith(_$OnChangedKeywordImpl value,
-          $Res Function(_$OnChangedKeywordImpl) then) =
-      __$$OnChangedKeywordImplCopyWithImpl<$Res>;
+abstract class _$$OnAvatarChangedImplCopyWith<$Res> {
+  factory _$$OnAvatarChangedImplCopyWith(_$OnAvatarChangedImpl value,
+          $Res Function(_$OnAvatarChangedImpl) then) =
+      __$$OnAvatarChangedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String keyword});
+  $Res call({File file});
 }
 
 /// @nodoc
-class __$$OnChangedKeywordImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnChangedKeywordImpl>
-    implements _$$OnChangedKeywordImplCopyWith<$Res> {
-  __$$OnChangedKeywordImplCopyWithImpl(_$OnChangedKeywordImpl _value,
-      $Res Function(_$OnChangedKeywordImpl) _then)
+class __$$OnAvatarChangedImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnAvatarChangedImpl>
+    implements _$$OnAvatarChangedImplCopyWith<$Res> {
+  __$$OnAvatarChangedImplCopyWithImpl(
+      _$OnAvatarChangedImpl _value, $Res Function(_$OnAvatarChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? keyword = null,
+    Object? file = null,
   }) {
-    return _then(_$OnChangedKeywordImpl(
-      null == keyword
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$OnAvatarChangedImpl(
+      null == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
 
 /// @nodoc
 
-class _$OnChangedKeywordImpl implements _OnChangedKeyword {
-  const _$OnChangedKeywordImpl(this.keyword);
+class _$OnAvatarChangedImpl implements _OnAvatarChanged {
+  const _$OnAvatarChangedImpl(this.file);
 
   @override
-  final String keyword;
+  final File file;
 
   @override
   String toString() {
-    return 'GroupDetailEvent.onChangedKeyword(keyword: $keyword)';
+    return 'GroupDetailEvent.onAvatarChanged(file: $file)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnChangedKeywordImpl &&
-            (identical(other.keyword, keyword) || other.keyword == keyword));
+            other is _$OnAvatarChangedImpl &&
+            (identical(other.file, file) || other.file == file));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, keyword);
+  int get hashCode => Object.hash(runtimeType, file);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnChangedKeywordImplCopyWith<_$OnChangedKeywordImpl> get copyWith =>
-      __$$OnChangedKeywordImplCopyWithImpl<_$OnChangedKeywordImpl>(
+  _$$OnAvatarChangedImplCopyWith<_$OnAvatarChangedImpl> get copyWith =>
+      __$$OnAvatarChangedImplCopyWithImpl<_$OnAvatarChangedImpl>(
           this, _$identity);
 
   @override
@@ -525,18 +489,16 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) {
-    return onChangedKeyword(keyword);
+    return onAvatarChanged(file);
   }
 
   @override
@@ -544,18 +506,16 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) {
-    return onChangedKeyword?.call(keyword);
+    return onAvatarChanged?.call(file);
   }
 
   @override
@@ -563,20 +523,18 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) {
-    if (onChangedKeyword != null) {
-      return onChangedKeyword(keyword);
+    if (onAvatarChanged != null) {
+      return onAvatarChanged(file);
     }
     return orElse();
   }
@@ -586,18 +544,16 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
-    return onChangedKeyword(this);
+    return onAvatarChanged(this);
   }
 
   @override
@@ -605,18 +561,16 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
-    return onChangedKeyword?.call(this);
+    return onAvatarChanged?.call(this);
   }
 
   @override
@@ -624,33 +578,395 @@ class _$OnChangedKeywordImpl implements _OnChangedKeyword {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) {
-    if (onChangedKeyword != null) {
-      return onChangedKeyword(this);
+    if (onAvatarChanged != null) {
+      return onAvatarChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnChangedKeyword implements GroupDetailEvent {
-  const factory _OnChangedKeyword(final String keyword) =
-      _$OnChangedKeywordImpl;
+abstract class _OnAvatarChanged implements GroupDetailEvent {
+  const factory _OnAvatarChanged(final File file) = _$OnAvatarChangedImpl;
 
-  String get keyword;
+  File get file;
   @JsonKey(ignore: true)
-  _$$OnChangedKeywordImplCopyWith<_$OnChangedKeywordImpl> get copyWith =>
+  _$$OnAvatarChangedImplCopyWith<_$OnAvatarChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnNameChangedImplCopyWith<$Res> {
+  factory _$$OnNameChangedImplCopyWith(
+          _$OnNameChangedImpl value, $Res Function(_$OnNameChangedImpl) then) =
+      __$$OnNameChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$OnNameChangedImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnNameChangedImpl>
+    implements _$$OnNameChangedImplCopyWith<$Res> {
+  __$$OnNameChangedImplCopyWithImpl(
+      _$OnNameChangedImpl _value, $Res Function(_$OnNameChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$OnNameChangedImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnNameChangedImpl implements _OnNameChanged {
+  const _$OnNameChangedImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'GroupDetailEvent.onNameChanged(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnNameChangedImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnNameChangedImplCopyWith<_$OnNameChangedImpl> get copyWith =>
+      __$$OnNameChangedImplCopyWithImpl<_$OnNameChangedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
+    required TResult Function() onDeleteGroup,
+  }) {
+    return onNameChanged(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
+    TResult? Function()? onDeleteGroup,
+  }) {
+    return onNameChanged?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
+    TResult Function()? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onNameChanged != null) {
+      return onNameChanged(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
+    required TResult Function(_OnFrequencyIntervalChanged value)
+        onFrequencyIntervalChanged,
+    required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+  }) {
+    return onNameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult? Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+  }) {
+    return onNameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onNameChanged != null) {
+      return onNameChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnNameChanged implements GroupDetailEvent {
+  const factory _OnNameChanged(final String value) = _$OnNameChangedImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$OnNameChangedImplCopyWith<_$OnNameChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnDescriptionChangedImplCopyWith<$Res> {
+  factory _$$OnDescriptionChangedImplCopyWith(_$OnDescriptionChangedImpl value,
+          $Res Function(_$OnDescriptionChangedImpl) then) =
+      __$$OnDescriptionChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$OnDescriptionChangedImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnDescriptionChangedImpl>
+    implements _$$OnDescriptionChangedImplCopyWith<$Res> {
+  __$$OnDescriptionChangedImplCopyWithImpl(_$OnDescriptionChangedImpl _value,
+      $Res Function(_$OnDescriptionChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$OnDescriptionChangedImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
+  const _$OnDescriptionChangedImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'GroupDetailEvent.onDescriptionChanged(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnDescriptionChangedImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnDescriptionChangedImplCopyWith<_$OnDescriptionChangedImpl>
+      get copyWith =>
+          __$$OnDescriptionChangedImplCopyWithImpl<_$OnDescriptionChangedImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
+    required TResult Function() onDeleteGroup,
+  }) {
+    return onDescriptionChanged(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
+    TResult? Function()? onDeleteGroup,
+  }) {
+    return onDescriptionChanged?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
+    TResult Function()? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onDescriptionChanged != null) {
+      return onDescriptionChanged(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
+    required TResult Function(_OnFrequencyIntervalChanged value)
+        onFrequencyIntervalChanged,
+    required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+  }) {
+    return onDescriptionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult? Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+  }) {
+    return onDescriptionChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onDescriptionChanged != null) {
+      return onDescriptionChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnDescriptionChanged implements GroupDetailEvent {
+  const factory _OnDescriptionChanged(final String value) =
+      _$OnDescriptionChangedImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$OnDescriptionChangedImplCopyWith<_$OnDescriptionChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -724,16 +1040,14 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) {
     return onFrequencyIntervalChanged(frequencyIntervalType);
   }
@@ -743,16 +1057,14 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) {
     return onFrequencyIntervalChanged?.call(frequencyIntervalType);
   }
@@ -762,16 +1074,14 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
@@ -785,16 +1095,14 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
     return onFrequencyIntervalChanged(this);
   }
@@ -804,16 +1112,14 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
     return onFrequencyIntervalChanged?.call(this);
   }
@@ -823,16 +1129,14 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
@@ -854,228 +1158,35 @@ abstract class _OnFrequencyIntervalChanged implements GroupDetailEvent {
 }
 
 /// @nodoc
-abstract class _$$OnNameChangedImplCopyWith<$Res> {
-  factory _$$OnNameChangedImplCopyWith(
-          _$OnNameChangedImpl value, $Res Function(_$OnNameChangedImpl) then) =
-      __$$OnNameChangedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract class _$$OnChangedContactsImplCopyWith<$Res> {
+  factory _$$OnChangedContactsImplCopyWith(_$OnChangedContactsImpl value,
+          $Res Function(_$OnChangedContactsImpl) then) =
+      __$$OnChangedContactsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnNameChangedImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnNameChangedImpl>
-    implements _$$OnNameChangedImplCopyWith<$Res> {
-  __$$OnNameChangedImplCopyWithImpl(
-      _$OnNameChangedImpl _value, $Res Function(_$OnNameChangedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$OnNameChangedImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OnNameChangedImpl implements _OnNameChanged {
-  const _$OnNameChangedImpl(this.value);
-
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'GroupDetailEvent.onNameChanged(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnNameChangedImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnNameChangedImplCopyWith<_$OnNameChangedImpl> get copyWith =>
-      __$$OnNameChangedImplCopyWithImpl<_$OnNameChangedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
-    required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
-  }) {
-    return onNameChanged(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
-    TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
-  }) {
-    return onNameChanged?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
-    TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onNameChanged != null) {
-      return onNameChanged(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
-    required TResult Function(_OnChangedContacts value) onChangedContacts,
-  }) {
-    return onNameChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult? Function(_OnChangedContacts value)? onChangedContacts,
-  }) {
-    return onNameChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult Function(_OnChangedContacts value)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onNameChanged != null) {
-      return onNameChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnNameChanged implements GroupDetailEvent {
-  const factory _OnNameChanged(final String value) = _$OnNameChangedImpl;
-
-  String get value;
-  @JsonKey(ignore: true)
-  _$$OnNameChangedImplCopyWith<_$OnNameChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$OnSavePressedImplCopyWith<$Res> {
-  factory _$$OnSavePressedImplCopyWith(
-          _$OnSavePressedImpl value, $Res Function(_$OnSavePressedImpl) then) =
-      __$$OnSavePressedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OnSavePressedImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnSavePressedImpl>
-    implements _$$OnSavePressedImplCopyWith<$Res> {
-  __$$OnSavePressedImplCopyWithImpl(
-      _$OnSavePressedImpl _value, $Res Function(_$OnSavePressedImpl) _then)
+class __$$OnChangedContactsImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnChangedContactsImpl>
+    implements _$$OnChangedContactsImplCopyWith<$Res> {
+  __$$OnChangedContactsImplCopyWithImpl(_$OnChangedContactsImpl _value,
+      $Res Function(_$OnChangedContactsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$OnSavePressedImpl implements _OnSavePressed {
-  const _$OnSavePressedImpl();
+class _$OnChangedContactsImpl implements _OnChangedContacts {
+  const _$OnChangedContactsImpl();
 
   @override
   String toString() {
-    return 'GroupDetailEvent.onSavePressed()';
+    return 'GroupDetailEvent.onChangedContacts()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnSavePressedImpl);
+        (other.runtimeType == runtimeType && other is _$OnChangedContactsImpl);
   }
 
   @override
@@ -1086,18 +1197,16 @@ class _$OnSavePressedImpl implements _OnSavePressed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) {
-    return onSavePressed();
+    return onChangedContacts();
   }
 
   @override
@@ -1105,18 +1214,16 @@ class _$OnSavePressedImpl implements _OnSavePressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) {
-    return onSavePressed?.call();
+    return onChangedContacts?.call();
   }
 
   @override
@@ -1124,20 +1231,18 @@ class _$OnSavePressedImpl implements _OnSavePressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) {
-    if (onSavePressed != null) {
-      return onSavePressed();
+    if (onChangedContacts != null) {
+      return onChangedContacts();
     }
     return orElse();
   }
@@ -1147,18 +1252,16 @@ class _$OnSavePressedImpl implements _OnSavePressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
-    return onSavePressed(this);
+    return onChangedContacts(this);
   }
 
   @override
@@ -1166,18 +1269,16 @@ class _$OnSavePressedImpl implements _OnSavePressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
-    return onSavePressed?.call(this);
+    return onChangedContacts?.call(this);
   }
 
   @override
@@ -1185,59 +1286,57 @@ class _$OnSavePressedImpl implements _OnSavePressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) {
-    if (onSavePressed != null) {
-      return onSavePressed(this);
+    if (onChangedContacts != null) {
+      return onChangedContacts(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnSavePressed implements GroupDetailEvent {
-  const factory _OnSavePressed() = _$OnSavePressedImpl;
+abstract class _OnChangedContacts implements GroupDetailEvent {
+  const factory _OnChangedContacts() = _$OnChangedContactsImpl;
 }
 
 /// @nodoc
-abstract class _$$OnCancelPressedImplCopyWith<$Res> {
-  factory _$$OnCancelPressedImplCopyWith(_$OnCancelPressedImpl value,
-          $Res Function(_$OnCancelPressedImpl) then) =
-      __$$OnCancelPressedImplCopyWithImpl<$Res>;
+abstract class _$$OnOpenedSeeAllImplCopyWith<$Res> {
+  factory _$$OnOpenedSeeAllImplCopyWith(_$OnOpenedSeeAllImpl value,
+          $Res Function(_$OnOpenedSeeAllImpl) then) =
+      __$$OnOpenedSeeAllImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnCancelPressedImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnCancelPressedImpl>
-    implements _$$OnCancelPressedImplCopyWith<$Res> {
-  __$$OnCancelPressedImplCopyWithImpl(
-      _$OnCancelPressedImpl _value, $Res Function(_$OnCancelPressedImpl) _then)
+class __$$OnOpenedSeeAllImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnOpenedSeeAllImpl>
+    implements _$$OnOpenedSeeAllImplCopyWith<$Res> {
+  __$$OnOpenedSeeAllImplCopyWithImpl(
+      _$OnOpenedSeeAllImpl _value, $Res Function(_$OnOpenedSeeAllImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$OnCancelPressedImpl implements _OnCancelPressed {
-  const _$OnCancelPressedImpl();
+class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
+  const _$OnOpenedSeeAllImpl();
 
   @override
   String toString() {
-    return 'GroupDetailEvent.onCancelPressed()';
+    return 'GroupDetailEvent.onOpenedSeeAll()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnCancelPressedImpl);
+        (other.runtimeType == runtimeType && other is _$OnOpenedSeeAllImpl);
   }
 
   @override
@@ -1248,18 +1347,16 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) {
-    return onCancelPressed();
+    return onOpenedSeeAll();
   }
 
   @override
@@ -1267,18 +1364,16 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) {
-    return onCancelPressed?.call();
+    return onOpenedSeeAll?.call();
   }
 
   @override
@@ -1286,20 +1381,18 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) {
-    if (onCancelPressed != null) {
-      return onCancelPressed();
+    if (onOpenedSeeAll != null) {
+      return onOpenedSeeAll();
     }
     return orElse();
   }
@@ -1309,18 +1402,16 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
-    return onCancelPressed(this);
+    return onOpenedSeeAll(this);
   }
 
   @override
@@ -1328,18 +1419,16 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
-    return onCancelPressed?.call(this);
+    return onOpenedSeeAll?.call(this);
   }
 
   @override
@@ -1347,426 +1436,25 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onCancelPressed != null) {
-      return onCancelPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnCancelPressed implements GroupDetailEvent {
-  const factory _OnCancelPressed() = _$OnCancelPressedImpl;
-}
-
-/// @nodoc
-abstract class _$$OnChangedAvatarImplCopyWith<$Res> {
-  factory _$$OnChangedAvatarImplCopyWith(_$OnChangedAvatarImpl value,
-          $Res Function(_$OnChangedAvatarImpl) then) =
-      __$$OnChangedAvatarImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({File file});
-}
-
-/// @nodoc
-class __$$OnChangedAvatarImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnChangedAvatarImpl>
-    implements _$$OnChangedAvatarImplCopyWith<$Res> {
-  __$$OnChangedAvatarImplCopyWithImpl(
-      _$OnChangedAvatarImpl _value, $Res Function(_$OnChangedAvatarImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? file = null,
-  }) {
-    return _then(_$OnChangedAvatarImpl(
-      null == file
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as File,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OnChangedAvatarImpl implements _OnChangedAvatar {
-  const _$OnChangedAvatarImpl(this.file);
-
-  @override
-  final File file;
-
-  @override
-  String toString() {
-    return 'GroupDetailEvent.onChangedAvatar(file: $file)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnChangedAvatarImpl &&
-            (identical(other.file, file) || other.file == file));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, file);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
-      __$$OnChangedAvatarImplCopyWithImpl<_$OnChangedAvatarImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
-    required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
-  }) {
-    return onChangedAvatar(file);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
-    TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
-  }) {
-    return onChangedAvatar?.call(file);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
-    TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onChangedAvatar != null) {
-      return onChangedAvatar(file);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
-    required TResult Function(_OnChangedContacts value) onChangedContacts,
-  }) {
-    return onChangedAvatar(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult? Function(_OnChangedContacts value)? onChangedContacts,
-  }) {
-    return onChangedAvatar?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult Function(_OnChangedContacts value)? onChangedContacts,
     required TResult orElse(),
   }) {
-    if (onChangedAvatar != null) {
-      return onChangedAvatar(this);
+    if (onOpenedSeeAll != null) {
+      return onOpenedSeeAll(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnChangedAvatar implements GroupDetailEvent {
-  const factory _OnChangedAvatar(final File file) = _$OnChangedAvatarImpl;
-
-  File get file;
-  @JsonKey(ignore: true)
-  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$OnRemoveContactImplCopyWith<$Res> {
-  factory _$$OnRemoveContactImplCopyWith(_$OnRemoveContactImpl value,
-          $Res Function(_$OnRemoveContactImpl) then) =
-      __$$OnRemoveContactImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ContactRequest contact});
-
-  $ContactRequestCopyWith<$Res> get contact;
-}
-
-/// @nodoc
-class __$$OnRemoveContactImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnRemoveContactImpl>
-    implements _$$OnRemoveContactImplCopyWith<$Res> {
-  __$$OnRemoveContactImplCopyWithImpl(
-      _$OnRemoveContactImpl _value, $Res Function(_$OnRemoveContactImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contact = null,
-  }) {
-    return _then(_$OnRemoveContactImpl(
-      null == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as ContactRequest,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ContactRequestCopyWith<$Res> get contact {
-    return $ContactRequestCopyWith<$Res>(_value.contact, (value) {
-      return _then(_value.copyWith(contact: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$OnRemoveContactImpl implements _OnRemoveContact {
-  const _$OnRemoveContactImpl(this.contact);
-
-  @override
-  final ContactRequest contact;
-
-  @override
-  String toString() {
-    return 'GroupDetailEvent.onRemoveContact(contact: $contact)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnRemoveContactImpl &&
-            (identical(other.contact, contact) || other.contact == contact));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, contact);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnRemoveContactImplCopyWith<_$OnRemoveContactImpl> get copyWith =>
-      __$$OnRemoveContactImplCopyWithImpl<_$OnRemoveContactImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
-    required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
-  }) {
-    return onRemoveContact(contact);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
-    TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
-  }) {
-    return onRemoveContact?.call(contact);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
-    TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onRemoveContact != null) {
-      return onRemoveContact(contact);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
-    required TResult Function(_OnChangedContacts value) onChangedContacts,
-  }) {
-    return onRemoveContact(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult? Function(_OnChangedContacts value)? onChangedContacts,
-  }) {
-    return onRemoveContact?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult Function(_OnChangedContacts value)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onRemoveContact != null) {
-      return onRemoveContact(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnRemoveContact implements GroupDetailEvent {
-  const factory _OnRemoveContact(final ContactRequest contact) =
-      _$OnRemoveContactImpl;
-
-  ContactRequest get contact;
-  @JsonKey(ignore: true)
-  _$$OnRemoveContactImplCopyWith<_$OnRemoveContactImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _OnOpenedSeeAll implements GroupDetailEvent {
+  const factory _OnOpenedSeeAll() = _$OnOpenedSeeAllImpl;
 }
 
 /// @nodoc
@@ -1809,16 +1497,14 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
   }) {
     return onDeleteGroup();
   }
@@ -1828,16 +1514,14 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
   }) {
     return onDeleteGroup?.call();
   }
@@ -1847,16 +1531,14 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
     required TResult orElse(),
   }) {
     if (onDeleteGroup != null) {
@@ -1870,16 +1552,14 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
     return onDeleteGroup(this);
   }
@@ -1889,16 +1569,14 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
     return onDeleteGroup?.call(this);
   }
@@ -1908,16 +1586,14 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) {
     if (onDeleteGroup != null) {
@@ -1932,218 +1608,16 @@ abstract class _OnDeleteGroup implements GroupDetailEvent {
 }
 
 /// @nodoc
-abstract class _$$OnChangedContactsImplCopyWith<$Res> {
-  factory _$$OnChangedContactsImplCopyWith(_$OnChangedContactsImpl value,
-          $Res Function(_$OnChangedContactsImpl) then) =
-      __$$OnChangedContactsImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<ContactRequest> contacts});
-}
-
-/// @nodoc
-class __$$OnChangedContactsImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnChangedContactsImpl>
-    implements _$$OnChangedContactsImplCopyWith<$Res> {
-  __$$OnChangedContactsImplCopyWithImpl(_$OnChangedContactsImpl _value,
-      $Res Function(_$OnChangedContactsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contacts = null,
-  }) {
-    return _then(_$OnChangedContactsImpl(
-      null == contacts
-          ? _value._contacts
-          : contacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OnChangedContactsImpl implements _OnChangedContacts {
-  const _$OnChangedContactsImpl(final List<ContactRequest> contacts)
-      : _contacts = contacts;
-
-  final List<ContactRequest> _contacts;
-  @override
-  List<ContactRequest> get contacts {
-    if (_contacts is EqualUnmodifiableListView) return _contacts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_contacts);
-  }
-
-  @override
-  String toString() {
-    return 'GroupDetailEvent.onChangedContacts(contacts: $contacts)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnChangedContactsImpl &&
-            const DeepCollectionEquality().equals(other._contacts, _contacts));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_contacts));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnChangedContactsImplCopyWith<_$OnChangedContactsImpl> get copyWith =>
-      __$$OnChangedContactsImplCopyWithImpl<_$OnChangedContactsImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(String keyword) onChangedKeyword,
-    required TResult Function(FrequencyIntervalType frequencyIntervalType)
-        onFrequencyIntervalChanged,
-    required TResult Function(String value) onNameChanged,
-    required TResult Function() onSavePressed,
-    required TResult Function() onCancelPressed,
-    required TResult Function(File file) onChangedAvatar,
-    required TResult Function(ContactRequest contact) onRemoveContact,
-    required TResult Function() onDeleteGroup,
-    required TResult Function(List<ContactRequest> contacts) onChangedContacts,
-  }) {
-    return onChangedContacts(contacts);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(String keyword)? onChangedKeyword,
-    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult? Function(String value)? onNameChanged,
-    TResult? Function()? onSavePressed,
-    TResult? Function()? onCancelPressed,
-    TResult? Function(File file)? onChangedAvatar,
-    TResult? Function(ContactRequest contact)? onRemoveContact,
-    TResult? Function()? onDeleteGroup,
-    TResult? Function(List<ContactRequest> contacts)? onChangedContacts,
-  }) {
-    return onChangedContacts?.call(contacts);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(String keyword)? onChangedKeyword,
-    TResult Function(FrequencyIntervalType frequencyIntervalType)?
-        onFrequencyIntervalChanged,
-    TResult Function(String value)? onNameChanged,
-    TResult Function()? onSavePressed,
-    TResult Function()? onCancelPressed,
-    TResult Function(File file)? onChangedAvatar,
-    TResult Function(ContactRequest contact)? onRemoveContact,
-    TResult Function()? onDeleteGroup,
-    TResult Function(List<ContactRequest> contacts)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onChangedContacts != null) {
-      return onChangedContacts(contacts);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnChangedKeyword value) onChangedKeyword,
-    required TResult Function(_OnFrequencyIntervalChanged value)
-        onFrequencyIntervalChanged,
-    required TResult Function(_OnNameChanged value) onNameChanged,
-    required TResult Function(_OnSavePressed value) onSavePressed,
-    required TResult Function(_OnCancelPressed value) onCancelPressed,
-    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
-    required TResult Function(_OnRemoveContact value) onRemoveContact,
-    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
-    required TResult Function(_OnChangedContacts value) onChangedContacts,
-  }) {
-    return onChangedContacts(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult? Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult? Function(_OnNameChanged value)? onNameChanged,
-    TResult? Function(_OnSavePressed value)? onSavePressed,
-    TResult? Function(_OnCancelPressed value)? onCancelPressed,
-    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult? Function(_OnRemoveContact value)? onRemoveContact,
-    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult? Function(_OnChangedContacts value)? onChangedContacts,
-  }) {
-    return onChangedContacts?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnChangedKeyword value)? onChangedKeyword,
-    TResult Function(_OnFrequencyIntervalChanged value)?
-        onFrequencyIntervalChanged,
-    TResult Function(_OnNameChanged value)? onNameChanged,
-    TResult Function(_OnSavePressed value)? onSavePressed,
-    TResult Function(_OnCancelPressed value)? onCancelPressed,
-    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
-    TResult Function(_OnRemoveContact value)? onRemoveContact,
-    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
-    TResult Function(_OnChangedContacts value)? onChangedContacts,
-    required TResult orElse(),
-  }) {
-    if (onChangedContacts != null) {
-      return onChangedContacts(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnChangedContacts implements GroupDetailEvent {
-  const factory _OnChangedContacts(final List<ContactRequest> contacts) =
-      _$OnChangedContactsImpl;
-
-  List<ContactRequest> get contacts;
-  @JsonKey(ignore: true)
-  _$$OnChangedContactsImplCopyWith<_$OnChangedContactsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$GroupDetailState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   PageState get pageState => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   String get groupId => throw _privateConstructorUsedError;
   GroupRequest get request => throw _privateConstructorUsedError;
-  String get keyword => throw _privateConstructorUsedError;
-  List<ContactRequest> get contacts => throw _privateConstructorUsedError;
-  File? get avatar => throw _privateConstructorUsedError;
+  List<Contact> get contacts => throw _privateConstructorUsedError;
+  File? get avatarFile => throw _privateConstructorUsedError;
   Group? get groupDetail => throw _privateConstructorUsedError;
+  bool get openedSeeAll => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GroupDetailStateCopyWith<GroupDetailState> get copyWith =>
@@ -2162,10 +1636,10 @@ abstract class $GroupDetailStateCopyWith<$Res> {
       bool isLoading,
       String groupId,
       GroupRequest request,
-      String keyword,
-      List<ContactRequest> contacts,
-      File? avatar,
-      Group? groupDetail});
+      List<Contact> contacts,
+      File? avatarFile,
+      Group? groupDetail,
+      bool openedSeeAll});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
   $GroupRequestCopyWith<$Res> get request;
@@ -2189,10 +1663,10 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
     Object? isLoading = null,
     Object? groupId = null,
     Object? request = null,
-    Object? keyword = null,
     Object? contacts = null,
-    Object? avatar = freezed,
+    Object? avatarFile = freezed,
     Object? groupDetail = freezed,
+    Object? openedSeeAll = null,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
@@ -2215,22 +1689,22 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as GroupRequest,
-      keyword: null == keyword
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String,
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
-      avatar: freezed == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      avatarFile: freezed == avatarFile
+          ? _value.avatarFile
+          : avatarFile // ignore: cast_nullable_to_non_nullable
               as File?,
       groupDetail: freezed == groupDetail
           ? _value.groupDetail
           : groupDetail // ignore: cast_nullable_to_non_nullable
               as Group?,
+      openedSeeAll: null == openedSeeAll
+          ? _value.openedSeeAll
+          : openedSeeAll // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -2269,10 +1743,10 @@ abstract class _$$GroupDetailStateImplCopyWith<$Res>
       bool isLoading,
       String groupId,
       GroupRequest request,
-      String keyword,
-      List<ContactRequest> contacts,
-      File? avatar,
-      Group? groupDetail});
+      List<Contact> contacts,
+      File? avatarFile,
+      Group? groupDetail,
+      bool openedSeeAll});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -2296,10 +1770,10 @@ class __$$GroupDetailStateImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? groupId = null,
     Object? request = null,
-    Object? keyword = null,
     Object? contacts = null,
-    Object? avatar = freezed,
+    Object? avatarFile = freezed,
     Object? groupDetail = freezed,
+    Object? openedSeeAll = null,
   }) {
     return _then(_$GroupDetailStateImpl(
       pageCommand: freezed == pageCommand
@@ -2322,22 +1796,22 @@ class __$$GroupDetailStateImplCopyWithImpl<$Res>
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as GroupRequest,
-      keyword: null == keyword
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String,
       contacts: null == contacts
           ? _value._contacts
           : contacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactRequest>,
-      avatar: freezed == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      avatarFile: freezed == avatarFile
+          ? _value.avatarFile
+          : avatarFile // ignore: cast_nullable_to_non_nullable
               as File?,
       groupDetail: freezed == groupDetail
           ? _value.groupDetail
           : groupDetail // ignore: cast_nullable_to_non_nullable
               as Group?,
+      openedSeeAll: null == openedSeeAll
+          ? _value.openedSeeAll
+          : openedSeeAll // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2351,10 +1825,10 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
       this.isLoading = false,
       this.groupId = '',
       this.request = const GroupRequest(),
-      this.keyword = '',
-      final List<ContactRequest> contacts = const [],
-      this.avatar,
-      this.groupDetail})
+      final List<Contact> contacts = const [],
+      this.avatarFile,
+      this.groupDetail,
+      this.openedSeeAll = false})
       : _contacts = contacts,
         super._();
 
@@ -2372,26 +1846,26 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
   @override
   @JsonKey()
   final GroupRequest request;
+  final List<Contact> _contacts;
   @override
   @JsonKey()
-  final String keyword;
-  final List<ContactRequest> _contacts;
-  @override
-  @JsonKey()
-  List<ContactRequest> get contacts {
+  List<Contact> get contacts {
     if (_contacts is EqualUnmodifiableListView) return _contacts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contacts);
   }
 
   @override
-  final File? avatar;
+  final File? avatarFile;
   @override
   final Group? groupDetail;
+  @override
+  @JsonKey()
+  final bool openedSeeAll;
 
   @override
   String toString() {
-    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, groupId: $groupId, request: $request, keyword: $keyword, contacts: $contacts, avatar: $avatar, groupDetail: $groupDetail)';
+    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, groupId: $groupId, request: $request, contacts: $contacts, avatarFile: $avatarFile, groupDetail: $groupDetail, openedSeeAll: $openedSeeAll)';
   }
 
   @override
@@ -2407,11 +1881,13 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
                 other.isLoading == isLoading) &&
             (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.request, request) || other.request == request) &&
-            (identical(other.keyword, keyword) || other.keyword == keyword) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
-            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.avatarFile, avatarFile) ||
+                other.avatarFile == avatarFile) &&
             const DeepCollectionEquality()
-                .equals(other.groupDetail, groupDetail));
+                .equals(other.groupDetail, groupDetail) &&
+            (identical(other.openedSeeAll, openedSeeAll) ||
+                other.openedSeeAll == openedSeeAll));
   }
 
   @override
@@ -2422,10 +1898,10 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
       isLoading,
       groupId,
       request,
-      keyword,
       const DeepCollectionEquality().hash(_contacts),
-      avatar,
-      const DeepCollectionEquality().hash(groupDetail));
+      avatarFile,
+      const DeepCollectionEquality().hash(groupDetail),
+      openedSeeAll);
 
   @JsonKey(ignore: true)
   @override
@@ -2442,10 +1918,10 @@ abstract class _GroupDetailState extends GroupDetailState {
       final bool isLoading,
       final String groupId,
       final GroupRequest request,
-      final String keyword,
-      final List<ContactRequest> contacts,
-      final File? avatar,
-      final Group? groupDetail}) = _$GroupDetailStateImpl;
+      final List<Contact> contacts,
+      final File? avatarFile,
+      final Group? groupDetail,
+      final bool openedSeeAll}) = _$GroupDetailStateImpl;
   const _GroupDetailState._() : super._();
 
   @override
@@ -2459,13 +1935,13 @@ abstract class _GroupDetailState extends GroupDetailState {
   @override
   GroupRequest get request;
   @override
-  String get keyword;
+  List<Contact> get contacts;
   @override
-  List<ContactRequest> get contacts;
-  @override
-  File? get avatar;
+  File? get avatarFile;
   @override
   Group? get groupDetail;
+  @override
+  bool get openedSeeAll;
   @override
   @JsonKey(ignore: true)
   _$$GroupDetailStateImplCopyWith<_$GroupDetailStateImpl> get copyWith =>

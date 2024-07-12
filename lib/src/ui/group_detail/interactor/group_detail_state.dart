@@ -10,21 +10,11 @@ class GroupDetailState with _$GroupDetailState {
     @Default(false) bool isLoading,
     @Default('') String groupId,
     @Default(GroupRequest()) GroupRequest request,
-    @Default('') String keyword,
-    @Default([]) List<ContactRequest> contacts,
-    File? avatar,
+    @Default([]) List<Contact> contacts,
+    File? avatarFile,
     Group? groupDetail,
+    @Default(false) bool openedSeeAll,
   }) = _GroupDetailState;
 
-  List<ContactRequest> getFilterContacts() {
-    final List<ContactRequest> filterContacts;
-    if (keyword.isEmpty) {
-      filterContacts = [...contacts];
-    } else {
-      filterContacts = [
-        ...contacts.where((element) => element.name.toLowerCase().contains(keyword.toLowerCase()))
-      ];
-    }
-    return filterContacts;
-  }
+  bool get hiddenSeeAllButton => contacts.length <= 3 || openedSeeAll;
 }

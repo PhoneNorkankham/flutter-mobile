@@ -165,6 +165,8 @@ class LocaleKey {
   static const String groupDeletedSuccessfully = "groupDeletedSuccessfully";
   static const String deleteGroup = "deleteGroup";
   static const String deleteGroupDescription = "deleteGroupDescription";
+  static const String contact = "contact";
+  static const String seeAll = "seeAll";
 
   // New Chat
   static const String searchNameOrNumber = "searchNameOrNumber";
@@ -187,6 +189,7 @@ class LocaleKey {
 
   // Frequency Interval
   static const String frequency = "frequency";
+  static const String remind = "remind";
   static const String everyDay = "everyDay";
   static const String everyWeek = "everyWeek";
   static const String everyTwoWeeks = "everyTwoWeeks";
@@ -200,4 +203,9 @@ class LocaleKey {
   static const String lastKeepUp = "lastKeepUp";
   static const String birthday = "birthday";
   static const String edit = "edit";
+
+  // Add Text Bottom Sheet
+  static const String addGroupName = "addGroupName";
+  static const String groupDescription = "groupDescription";
+  static const String addGroupDescription = "addGroupDescription";
 }

@@ -2,10 +2,7 @@ part of 'add_contacts_to_group_bloc.dart';
 
 @freezed
 class AddContactsToGroupEvent with _$AddContactsToGroupEvent {
-  const factory AddContactsToGroupEvent.initial(
-    Group? group,
-    List<ContactRequest> selectedContacts,
-  ) = _Initial;
+  const factory AddContactsToGroupEvent.initial(Group group) = _Initial;
 
   const factory AddContactsToGroupEvent.clearPageCommand() = _ClearPageCommand;
 

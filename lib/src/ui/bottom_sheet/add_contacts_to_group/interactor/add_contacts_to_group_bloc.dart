@@ -64,7 +64,6 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
         deviceContacts,
       ),
       group: event.group,
-      selectedContacts: event.selectedContacts,
       pageState: PageState.success,
     ));
   }

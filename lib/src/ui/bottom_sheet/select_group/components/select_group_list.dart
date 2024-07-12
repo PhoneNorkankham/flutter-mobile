@@ -27,7 +27,7 @@ class SelectGroupList extends StatelessWidget {
           itemBuilder: (context, index) {
             final Group group = state.filterGroups.elementAt(index);
             return KeepUpItem(
-              onPressed: () => AddContactsToGroupBottomSheet.show(group: group).then((value) {
+              onPressed: () => AddContactsToGroupBottomSheet.show(group).then((value) {
                 if (value is PopResult && value.status) Get.back(result: value);
               }),
               name: group.name,

@@ -6,25 +6,19 @@ class GroupDetailEvent with _$GroupDetailEvent {
 
   const factory GroupDetailEvent.clearPageCommand() = _ClearPageCommand;
 
-  const factory GroupDetailEvent.onChangedKeyword(String keyword) = _OnChangedKeyword;
+  const factory GroupDetailEvent.onAvatarChanged(File file) = _OnAvatarChanged;
+
+  const factory GroupDetailEvent.onNameChanged(String value) = _OnNameChanged;
+
+  const factory GroupDetailEvent.onDescriptionChanged(String value) = _OnDescriptionChanged;
 
   const factory GroupDetailEvent.onFrequencyIntervalChanged(
     FrequencyIntervalType frequencyIntervalType,
   ) = _OnFrequencyIntervalChanged;
 
-  const factory GroupDetailEvent.onNameChanged(String value) = _OnNameChanged;
+  const factory GroupDetailEvent.onChangedContacts() = _OnChangedContacts;
 
-  const factory GroupDetailEvent.onSavePressed() = _OnSavePressed;
-
-  const factory GroupDetailEvent.onCancelPressed() = _OnCancelPressed;
-
-  const factory GroupDetailEvent.onChangedAvatar(File file) = _OnChangedAvatar;
-
-  const factory GroupDetailEvent.onRemoveContact(ContactRequest contact) = _OnRemoveContact;
+  const factory GroupDetailEvent.onOpenedSeeAll() = _OnOpenedSeeAll;
 
   const factory GroupDetailEvent.onDeleteGroup() = _OnDeleteGroup;
-
-  const factory GroupDetailEvent.onChangedContacts(
-    List<ContactRequest> contacts,
-  ) = _OnChangedContacts;
 }
