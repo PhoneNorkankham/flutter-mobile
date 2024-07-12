@@ -1,10 +1,12 @@
+import 'package:azlistview/azlistview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
-import 'package:keepup/src/design/colors/app_colors.dart';
-import 'package:keepup/src/design/components/keep_up/keep_up_item.dart';
+import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
+import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
+import 'package:keepup/src/ui/bottom_sheet/add_contacts_to_group/components/add_contacts_to_group_contacts.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_member/interactor/add_member_bloc.dart';
 
 class AddMemberList extends StatelessWidget {
@@ -22,28 +24,60 @@ class AddMemberList extends StatelessWidget {
           return const Center(child: CustomCircularProgress());
         }
         final List<ContactRequest> contacts = state.getFilterContacts();
-        return ListView.separated(
+
+        // Create sub tag
+        final List<ContactSubTag> contactSubTags =
+            contacts.map((e) => ContactSubTag(e.name[0])).toList();
+
+        // Show sub tag
+        SuspensionUtil.setShowSuspensionStatus(contactSubTags);
+
+        return AzListView(
           padding: const EdgeInsets.symmetric(vertical: 16),
-          itemCount: contacts.length,
+          data: contactSubTags,
+          itemCount: contactSubTags.length,
           itemBuilder: (context, index) {
+            final ContactSubTag contactSubTag = contactSubTags.elementAt(index);
             final ContactRequest contact = contacts.elementAt(index);
-            return KeepUpItem(
-              onPressed: () => bloc.add(AddMemberEvent.onSelectedContact(contact)),
-              name: contact.name,
-              avatar: contact.avatar,
-              file: contact.file,
-              expiration: contact.expiration,
-              action: Container(
-                width: 21,
-                height: 21,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(21),
-                  border: Border.all(color: AppColors.grey50),
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Offstage(
+                  offstage: contactSubTag.isShowSuspension != true,
+                  child: Container(
+                    color: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
+                    margin: const EdgeInsets.symmetric(vertical: 8),
+                    padding: const EdgeInsets.only(left: 20.0, right: 40, top: 10, bottom: 10),
+                    child: Text(contactSubTag.getSuspensionTag()),
+                  ),
                 ),
-              ),
+                InkWell(
+                  onTap: () => bloc.add(AddMemberEvent.onSelectedContact(contact)),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 60),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: [
+                        AppCircleAvatar(
+                          radius: 20,
+                          url: contact.avatar,
+                          text: contact.name,
+                        ),
+                        const SizedBox(width: 16),
+                        Flexible(
+                          child: Text(
+                            contact.name,
+                            style: context.appTextTheme.bold16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             );
           },
-          separatorBuilder: (context, index) => const SizedBox(height: 4),
         );
       },
     );

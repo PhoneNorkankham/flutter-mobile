@@ -38,13 +38,8 @@ class AddMemberView extends StatelessWidget {
                 onChanged: (value) => bloc.add(AddMemberEvent.onChangedKeyword(value)),
               ),
               const AddMemberSelected(),
-              const SizedBox(height: 16),
-              const Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: AddMemberList(),
-                ),
-              ),
+              const SizedBox(height: 8),
+              const Expanded(child: AddMemberList()),
             ],
           ),
         ),

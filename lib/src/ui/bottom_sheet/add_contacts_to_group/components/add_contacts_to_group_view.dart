@@ -39,13 +39,8 @@ class AddMemberView extends StatelessWidget {
                 onChanged: (value) => bloc.add(AddContactsToGroupEvent.onChangedKeyword(value)),
               ),
               const AddContactsToGroupSelected(),
-              const SizedBox(height: 16),
-              const Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: AddContactsToGroupContacts(),
-                ),
-              ),
+              const SizedBox(height: 8),
+              const Expanded(child: AddContactsToGroupContacts()),
             ],
           ),
         ),

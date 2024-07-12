@@ -17,6 +17,7 @@ import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
 import 'package:keepup/src/use_cases/add_contacts_use_case.dart';
 import 'package:keepup/src/use_cases/update_group_use_case.dart';
+import 'package:keepup/src/utils/app_globals.dart';
 import 'package:keepup/src/utils/app_utils.dart';
 
 part 'add_contacts_to_group_bloc.freezed.dart';
@@ -46,13 +47,15 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<AddContactsToGroupState> emit) async {
-    final bool isGranted = await _permissionManager.checkPermission(PermissionType.Contacts);
-    final List<ContactRequest> deviceContacts;
-    if (isGranted) {
-      final List<CS.Contact> contacts = await CS.ContactsService.getContacts();
-      deviceContacts = await contacts.toContactRequests();
-    } else {
-      deviceContacts = [];
+    final List<ContactRequest> deviceContacts = [...AppGlobals.deviceContacts];
+    if (deviceContacts.isEmpty) {
+      final bool isGranted = await _permissionManager.checkPermission(PermissionType.Contacts);
+      if (isGranted) {
+        final List<CS.Contact> contacts = await CS.ContactsService.getContacts();
+        final List<ContactRequest> newContacts = await contacts.toContactRequests();
+        AppGlobals.setDeviceContacts(newContacts);
+        deviceContacts.addAll(newContacts);
+      }
     }
     final List<Contact> contacts = await _supabaseRepository.getDBContacts();
     emit(state.copyWith(

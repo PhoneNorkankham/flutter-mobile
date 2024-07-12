@@ -27,31 +27,39 @@ class NewChatView extends StatelessWidget {
             ),
           ),
           margin: const EdgeInsets.only(top: 15),
-          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.max,
             children: [
-              const SizedBox(height: 16),
-              const NewChatHeader(),
-              const SizedBox(height: 18),
-              AppSearchInput(
-                controller: bloc.keywordController,
-                margin: EdgeInsets.zero,
-                hintText: LocaleKey.searchContacts.tr,
-                onChanged: (value) => bloc.add(NewChatEvent.onChangedKeyword(value)),
-              ),
-              const SizedBox(height: 16),
-              const NewChatCategory(),
-              const SizedBox(height: 32),
-              Text(
-                LocaleKey.contacts.tr,
-                style: context.appTextTheme.bold16.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimary,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    const SizedBox(height: 16),
+                    const NewChatHeader(),
+                    const SizedBox(height: 18),
+                    AppSearchInput(
+                      controller: bloc.keywordController,
+                      margin: EdgeInsets.zero,
+                      hintText: LocaleKey.searchContacts.tr,
+                      onChanged: (value) => bloc.add(NewChatEvent.onChangedKeyword(value)),
+                    ),
+                    const SizedBox(height: 16),
+                    const NewChatCategory(),
+                    const SizedBox(height: 32),
+                    Text(
+                      LocaleKey.contacts.tr,
+                      style: context.appTextTheme.bold16.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
+                      textAlign: TextAlign.start,
+                    ),
+                    const SizedBox(height: 8),
+                  ],
                 ),
-                textAlign: TextAlign.start,
               ),
-              const SizedBox(height: 8),
               const Expanded(child: NewChatContacts()),
             ],
           ),
