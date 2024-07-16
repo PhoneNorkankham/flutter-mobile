@@ -8,5 +8,7 @@ class KeepUpTodayEvent with _$KeepUpTodayEvent {
 
   const factory KeepUpTodayEvent.onGotoGroupDetails(Group group) = _OnGotoGroupDetails;
 
+  const factory KeepUpTodayEvent.onKeepUpContact(Contact contact) = _OnKeepUpContact;
+
   const factory KeepUpTodayEvent.onKeepUpGroup(Group group) = _OnKeepUpGroup;
 }

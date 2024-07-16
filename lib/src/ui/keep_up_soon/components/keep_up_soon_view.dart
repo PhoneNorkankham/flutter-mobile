@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
+import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_header.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_in_a_month.dart';
@@ -27,6 +28,11 @@ class KeepUpSoonView extends StatelessWidget {
                   SizedBox(height: 24),
                   KeepUpSoonHeader(),
                   SizedBox(height: 28),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: LayoutButton(),
+                  ),
+                  SizedBox(height: 16),
                   KeepUpSoonInAWeek(),
                   SizedBox(height: 28),
                   KeepUpSoonInAMonth(),

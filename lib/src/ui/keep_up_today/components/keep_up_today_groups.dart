@@ -3,12 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
+import 'package:keepup/src/design/components/keep_up/app_grid_item.dart';
+import 'package:keepup/src/design/components/keep_up/app_list_item.dart';
 import 'package:keepup/src/design/components/keep_up/keep_up_group.dart';
 import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
+import 'package:keepup/src/enums/layout_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/groups/components/group_item.dart';
 import 'package:keepup/src/ui/keep_up_today/interactor/keep_up_today_bloc.dart';
+import 'package:keepup/src/utils/app_shared.dart';
 
 class KeepUpTodayGroups extends StatelessWidget {
   const KeepUpTodayGroups({super.key});
@@ -30,17 +33,45 @@ class KeepUpTodayGroups extends StatelessWidget {
                 final List<Group> groups = snapshot.data ?? [];
                 return KeepUpGroup(
                   title: LocaleKey.groups.tr,
-                  child: contacts.isNotEmpty
-                      ? Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: groups
-                              .map((e) => GroupItem(
-                                    group: e,
-                                    onPressed: () =>
-                                        bloc.add(KeepUpTodayEvent.onGotoGroupDetails(e)),
-                                    onKeepUpPressed: () => _onShowKeepUpGroupConfirmDialog(bloc, e),
-                                  ))
-                              .toList(),
+                  child: groups.isNotEmpty
+                      ? StreamBuilder<LayoutType>(
+                          stream: Get.find<AppShared>().watchLayoutType,
+                          builder: (context, snapshot) {
+                            if (!snapshot.hasData) {
+                              return const SizedBox();
+                            }
+                            final LayoutType layoutType = snapshot.data ?? LayoutType.list;
+                            return layoutType.isGridView
+                                ? Wrap(
+                                    children: groups
+                                        .map((group) => AppGridItem(
+                                              onPressed: () => bloc
+                                                  .add(KeepUpTodayEvent.onGotoGroupDetails(group)),
+                                              avatarUrl: group.avatar,
+                                              title: group.name,
+                                              titleColor: Theme.of(context).colorScheme.onPrimary,
+                                            ))
+                                        .toList(),
+                                  )
+                                : ListView.separated(
+                                    shrinkWrap: true,
+                                    physics: const NeverScrollableScrollPhysics(),
+                                    itemCount: groups.length,
+                                    itemBuilder: (context, index) {
+                                      final Group group = groups.elementAt(index);
+                                      return AppListItem(
+                                        onPressed: () =>
+                                            bloc.add(KeepUpTodayEvent.onGotoGroupDetails(group)),
+                                        onKeepUpPressed: () =>
+                                            _onShowKeepUpGroupConfirmDialog(bloc, group),
+                                        avatarUrl: group.avatar,
+                                        title: group.name,
+                                        titleColor: Theme.of(context).colorScheme.onPrimary,
+                                      );
+                                    },
+                                    separatorBuilder: (context, index) => const SizedBox(height: 4),
+                                  );
+                          },
                         )
                       : state.isLoading
                           ? const Padding(

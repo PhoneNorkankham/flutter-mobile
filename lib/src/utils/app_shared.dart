@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
+import 'package:keepup/src/enums/layout_type.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -15,6 +16,7 @@ class AppShared {
 
   final String _keyLanguageCode = "${_keyName}_keyLanguageCode";
   final String _keyLoggedInData = "${_keyName}_keyLoggedInData";
+  final String _keyLayoutType = "${_keyName}_keyLayoutType";
 
   static AppShared? _instance;
 
@@ -25,7 +27,8 @@ class AppShared {
     final Directory directory = await getApplicationDocumentsDirectory();
     Hive
       ..init(directory.path)
-      ..registerAdapter(LoggedInDataAdapter());
+      ..registerAdapter(LoggedInDataAdapter())
+      ..registerAdapter(LayoutTypeAdapter());
     return Hive.openBox(AppShared._keyBox);
   }
 
@@ -43,6 +46,8 @@ class AppShared {
 
   Future<void> setLoggedInData(LoggedInData data) => _box.put(_keyLoggedInData, data);
 
+  Future<void> setLayoutType(LayoutType type) => _box.put(_keyLayoutType, type);
+
   /*
   * Get from hive
   */
@@ -50,17 +55,26 @@ class AppShared {
 
   LoggedInData get loggedInData => _box.get(_keyLoggedInData, defaultValue: const LoggedInData());
 
+  LayoutType get layoutType => _box.get(_keyLayoutType, defaultValue: LayoutType.list);
+
   /*
   * Watch from hive
   */
+  Stream<LayoutType> get watchLayoutType => _box.watchWithInitial(_keyLayoutType).map((event) {
+        final value = event.value;
+        return value is LayoutType ? value : LayoutType.list;
+      });
 
   /*
   * Delete from hive
   */
   Future<void> _deleteLoggedInData() => _box.delete(_keyLoggedInData);
 
+  Future<void> _deleteLayoutType() => _box.delete(_keyLayoutType);
+
   Future<void> clearUserSession() async {
     await _deleteLoggedInData();
+    await _deleteLayoutType();
   }
 
   /*
@@ -70,7 +84,7 @@ class AppShared {
 }
 
 extension BoxExtensions on Box {
-  Stream<BoxEvent> watchWithInitial({required String key}) {
+  Stream<BoxEvent> watchWithInitial(String key) {
     Future.delayed(const Duration(milliseconds: 10), () {
       var obj = get(key);
       put(key, obj);

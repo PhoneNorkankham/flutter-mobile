@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
-import 'package:keepup/src/design/components/keep_up/contact_grid_item.dart';
+import 'package:keepup/src/design/components/keep_up/app_grid_item.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_member/interactor/add_member_bloc.dart';
 
 class AddMemberSelected extends StatelessWidget {

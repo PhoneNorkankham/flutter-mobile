@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
+import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/contacts/components/contact_list.dart';
@@ -28,9 +29,15 @@ class ContactView extends StatelessWidget {
                   hintText: LocaleKey.searchContacts.tr,
                   onChanged: (value) => bloc.add(ContactEvent.onChangedKeyword(value)),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 16),
+                const Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                    child: LayoutButton(),
+                  ),
+                ),
                 const Expanded(child: ContactList()),
-                const SizedBox(height: 15),
               ],
             ),
           );
