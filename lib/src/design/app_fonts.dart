@@ -1,3 +1,3 @@
 class AppFonts {
-  static const String fontDMSans = 'DMSans';
+  static const String fontInter = 'Inter';
 }

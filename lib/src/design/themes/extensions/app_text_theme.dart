@@ -196,7 +196,7 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
   );
 }
 
-String get getFontFamily => AppFonts.fontDMSans;
+String get getFontFamily => AppFonts.fontInter;
 
 TextStyle get _bold => TextStyle(
       fontFamily: getFontFamily,
