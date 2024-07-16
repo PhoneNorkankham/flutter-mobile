@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
-import 'package:keepup/src/ui/bottom_sheet/add_member/components/add_member_selected_item.dart';
+import 'package:keepup/src/design/components/keep_up/contact_grid_item.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_member/interactor/add_member_bloc.dart';
 
 class AddMemberSelected extends StatelessWidget {
@@ -23,7 +23,17 @@ class AddMemberSelected extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 4),
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.start,
-            children: contacts.map((e) => AddMemberSelectedItem(contact: e)).toList(),
+            children: contacts
+                .map((contact) => AppGridItem(
+                      avatarUrl: contact.avatar,
+                      avatarFile: contact.file,
+                      title: contact.name,
+                      onRemovedPressed: () {
+                        final bloc = context.read<AddMemberBloc>();
+                        bloc.add(AddMemberEvent.onRemovedContact(contact));
+                      },
+                    ))
+                .toList(),
           ),
         );
       },

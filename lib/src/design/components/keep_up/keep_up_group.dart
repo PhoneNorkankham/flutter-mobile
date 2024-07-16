@@ -6,12 +6,12 @@ import 'package:keepup/src/locale/locale_key.dart';
 class KeepUpGroup extends StatelessWidget {
   final String title;
   final VoidCallback? onAllSetPressed;
-  final List<Widget> children;
+  final Widget child;
 
   const KeepUpGroup({
     super.key,
     required this.title,
-    required this.children,
+    required this.child,
     this.onAllSetPressed,
   });
 
@@ -43,7 +43,7 @@ class KeepUpGroup extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 10),
-        ...children,
+        child,
       ],
     );
   }
