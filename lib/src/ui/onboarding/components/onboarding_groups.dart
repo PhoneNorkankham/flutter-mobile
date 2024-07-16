@@ -31,7 +31,7 @@ class OnboardingGroups extends StatelessWidget {
             const SizedBox(height: 12),
             for (Group group in state.groups) ...[
               KeepUpItem(
-                onPressed: () => AddContactsToGroupBottomSheet.show(group: group).then((value) {
+                onPressed: () => AddContactsToGroupBottomSheet.show(group).then((value) {
                   if (value is PopResult && value.status) {
                     showSuccessToast(LocaleKey.addContactsToGroupSuccessfully.tr);
                   }
