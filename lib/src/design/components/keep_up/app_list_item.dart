@@ -36,9 +36,8 @@ class AppListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
-      radius: 10,
       borderRadius: BorderRadius.circular(10),
-      child: Container(
+      child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: Row(
           children: [
@@ -78,14 +77,15 @@ class AppListItem extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 16),
-            SizedBox(
-              width: 100,
-              child: AppButton(
-                onPressed: onKeepUpPressed,
-                buttonType: AppButtonType.keepUp,
-                title: LocaleKey.keepUp.tr,
+            if (onKeepUpPressed != null)
+              SizedBox(
+                width: 100,
+                child: AppButton(
+                  onPressed: onKeepUpPressed,
+                  buttonType: AppButtonType.keepUp,
+                  title: LocaleKey.keepUp.tr,
+                ),
               ),
-            ),
           ],
         ),
       ),
