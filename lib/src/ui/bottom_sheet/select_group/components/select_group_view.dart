@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/design/components/inputs/app_search_input.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/base_page.dart';
@@ -36,12 +37,16 @@ class SelectGroupView extends StatelessWidget {
                 hintText: LocaleKey.searchGroups.tr,
                 onChanged: (value) => bloc.add(SelectGroupEvent.onChangedKeyword(value)),
               ),
-              const Expanded(
+              const SizedBox(height: 24),
+              const Align(
+                alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: SelectGroupList(),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: LayoutButton(),
                 ),
               ),
+              const SizedBox(height: 8),
+              const Expanded(child: SelectGroupList()),
             ],
           ),
         ),

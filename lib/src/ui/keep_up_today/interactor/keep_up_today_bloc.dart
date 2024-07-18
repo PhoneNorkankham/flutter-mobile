@@ -20,6 +20,7 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnGotoGroupDetails>(_onGotoGroupDetails);
+    on<_OnKeepUpContact>(_onKeepUpContact);
     on<_OnKeepUpGroup>(_onKeepUpGroup);
   }
 
@@ -69,6 +70,25 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
         AppPages.groupDetail,
         argument: event.group,
       ),
+    ));
+  }
+
+  FutureOr<void> _onKeepUpContact(_OnKeepUpContact event, Emitter<KeepUpTodayState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final resource = await _supabaseRepository.keepUpContact(event.contact);
+    PageCommand pageCommand;
+    if (resource.isSuccess) {
+      pageCommand = PageCommandMessage.showSuccess(
+        LocaleKey.keepUpContactSuccessfully.tr,
+      );
+    } else {
+      pageCommand = PageCommandMessage.showError(
+        resource.message ?? LocaleKey.keepUpContactFailed.tr,
+      );
+    }
+    emit(state.copyWith(
+      isLoading: false,
+      pageCommand: pageCommand,
     ));
   }
 

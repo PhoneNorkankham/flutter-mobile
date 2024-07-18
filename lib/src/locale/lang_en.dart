@@ -81,6 +81,7 @@ Map<String, String> enUs = {
   LocaleKey.noContactsNeedKeepUpInAWeek: 'No contacts need KeepUp in a week!',
   LocaleKey.noGroupsNeedKeepUpInAMonth: 'No groups need KeepUp in a month!',
   LocaleKey.noContactsNeedKeepUpInAMonth: 'No contacts need KeepUp in a month!',
+  LocaleKey.keepUpContactConfirm: 'Do you want KeepUp this contact?',
   LocaleKey.keepUpContactSuccessfully: 'KeepUp contact successfully!',
   LocaleKey.keepUpContactFailed: 'KeepUp contact failed!',
   LocaleKey.keepUpGroupConfirm: 'Do you want KeepUp this group?',

@@ -5,21 +5,30 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/keep_up/app_grid_item.dart';
 import 'package:keepup/src/design/components/keep_up/app_list_item.dart';
+import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
 import 'package:keepup/src/enums/layout_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
-import 'package:keepup/src/ui/groups/interactor/group_bloc.dart';
+import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_bloc.dart';
 import 'package:keepup/src/utils/app_shared.dart';
 
-class GroupList extends StatelessWidget {
-  const GroupList({super.key});
+class KeepUpSoonGroups extends StatelessWidget {
+  final List<Contact> contacts;
+
+  const KeepUpSoonGroups({super.key, required this.contacts});
 
   @override
   Widget build(BuildContext context) {
-    final GroupBloc bloc = context.read();
-    return BlocBuilder<GroupBloc, GroupState>(
-      buildWhen: (previous, current) => previous.getFilterGroups() != current.getFilterGroups(),
-      builder: (context, state) {
-        final List<Group> groups = state.getFilterGroups();
+    final KeepUpSoonBloc bloc = context.read();
+    return FutureBuilder<List<Group>>(
+      future: bloc.getGroupsByContacts(contacts),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const Padding(
+            padding: EdgeInsets.all(24.0),
+            child: Center(child: CustomCircularProgress()),
+          );
+        }
+        final List<Group> groups = snapshot.data ?? [];
         return StreamBuilder<LayoutType>(
           stream: Get.find<AppShared>().watchLayoutType,
           builder: (context, snapshot) {
@@ -28,26 +37,24 @@ class GroupList extends StatelessWidget {
             }
             final LayoutType layoutType = snapshot.data ?? LayoutType.list;
             return layoutType.isGridView
-                ? SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 20).copyWith(bottom: 40),
-                    child: Wrap(
-                      children: groups
-                          .map((group) => AppGridItem(
-                                onPressed: () => bloc.add(GroupEvent.onGotoGroupDetails(group)),
-                                avatarUrl: group.avatar,
-                                title: group.name,
-                                titleColor: Theme.of(context).colorScheme.onPrimary,
-                              ))
-                          .toList(),
-                    ),
+                ? Wrap(
+                    children: groups
+                        .map((group) => AppGridItem(
+                              onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(group)),
+                              avatarUrl: group.avatar,
+                              title: group.name,
+                              titleColor: Theme.of(context).colorScheme.onPrimary,
+                            ))
+                        .toList(),
                   )
                 : ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(bottom: 40),
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: groups.length,
                     itemBuilder: (context, index) {
                       final Group group = groups.elementAt(index);
                       return AppListItem(
-                        onPressed: () => bloc.add(GroupEvent.onGotoGroupDetails(group)),
+                        onPressed: () => bloc.add(KeepUpSoonEvent.onGotoGroupDetails(group)),
                         onKeepUpPressed: () => _onShowKeepUpGroupConfirmDialog(bloc, group),
                         avatarUrl: group.avatar,
                         title: group.name,
@@ -62,7 +69,7 @@ class GroupList extends StatelessWidget {
     );
   }
 
-  void _onShowKeepUpGroupConfirmDialog(GroupBloc bloc, Group group) {
+  void _onShowKeepUpGroupConfirmDialog(KeepUpSoonBloc bloc, Group group) {
     AppDialogs(
       title: LocaleKey.keepUp.tr,
       message: LocaleKey.keepUpGroupConfirm.tr,
@@ -70,7 +77,7 @@ class GroupList extends StatelessWidget {
       cancelTitle: LocaleKey.cancel.tr,
       confirmTitle: LocaleKey.keepUp.tr,
       onConfirmed: () {
-        bloc.add(GroupEvent.onKeepUpGroup(group));
+        bloc.add(KeepUpSoonEvent.onKeepUpGroup(group));
         Get.back();
       },
     ).show();

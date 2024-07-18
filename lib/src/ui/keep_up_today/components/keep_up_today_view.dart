@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/design/components/base/app_body.dart';
+import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/keep_up_today/components/keep_up_today_contacts.dart';
 import 'package:keepup/src/ui/keep_up_today/components/keep_up_today_groups.dart';
@@ -26,6 +27,12 @@ class KeepUpTodayView extends StatelessWidget {
                 children: [
                   SizedBox(height: 24),
                   KeepUpTodayHeader(),
+                  SizedBox(height: 28),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: LayoutButton(),
+                  ),
+                  SizedBox(height: 16),
                   KeepUpTodayContacts(),
                   KeepUpTodayGroups(),
                   SizedBox(height: 30),
