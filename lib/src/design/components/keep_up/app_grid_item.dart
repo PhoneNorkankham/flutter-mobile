@@ -30,7 +30,7 @@ class AppGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 72,
-      margin: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(2.0),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -52,7 +52,7 @@ class AppGridItem extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.all(3),
                     child: AppCircleAvatar(
-                      radius: 27,
+                      radius: 20,
                       url: avatarUrl,
                       file: avatarFile,
                       text: title,

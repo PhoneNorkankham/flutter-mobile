@@ -62,12 +62,13 @@ extension CSContactExtensions on cs.Contact {
     final String familyName = this.familyName ?? '';
     final String middleName = this.middleName ?? '';
     final String givenName = this.givenName ?? '';
-    final String name;
+    String name;
     if (displayName.isNotEmpty) {
       name = displayName.trim();
     } else {
       name = '$familyName $middleName $givenName'.trim();
     }
+    name = name.replaceAll('(', '').replaceAll(')', '');
     if (name.isNotEmpty) {
       final String email =
           emails?.firstWhereOrNull((email) => email.value?.isNotEmpty ?? false)?.value ?? '';
