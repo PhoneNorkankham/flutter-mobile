@@ -21,5 +21,7 @@ class NewGroupEvent with _$NewGroupEvent {
     FrequencyIntervalType frequencyIntervalType,
   ) = _OnFrequencyIntervalChanged;
 
+  const factory NewGroupEvent.onCategoryChanged(Category category) = _OnCategoryChanged;
+
   const factory NewGroupEvent.onChangedAvatar(File file) = _OnChangedAvatar;
 }

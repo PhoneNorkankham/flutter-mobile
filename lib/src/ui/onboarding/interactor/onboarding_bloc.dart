@@ -10,7 +10,6 @@ import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/onboarding/usecases/create_anonymous_account_use_case.dart';
 import 'package:keepup/src/use_cases/check_logged_in_use_case.dart';
-import 'package:keepup/src/use_cases/create_default_groups_use_case.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
 part 'onboarding_bloc.freezed.dart';
@@ -21,12 +20,12 @@ part 'onboarding_state.dart';
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   final GetLoggedInDataUseCase _getLoggedInDataUseCase;
   final CreateAnonymousAccountUseCase _createAnonymousAccountUseCase;
-  final CreateDefaultGroupsUseCase _createDefaultGroupsUseCase;
+  // final CreateDefaultGroupsUseCase _createDefaultGroupsUseCase;
 
   OnboardingBloc(
     this._getLoggedInDataUseCase,
     this._createAnonymousAccountUseCase,
-    this._createDefaultGroupsUseCase,
+    // this._createDefaultGroupsUseCase,
   ) : super(const OnboardingState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((event, emit) => emit(state.copyWith(pageCommand: null)));
@@ -50,20 +49,20 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
       emit(state.copyWith(loggedInData: loggedInData));
 
       // #3. Create Default Groups
-      final ListResult<Group> result = await _createDefaultGroupsUseCase.run();
-      final List<Group> groups = result.valueOrNull ?? [];
-      if (result.isValue && groups.isNotEmpty) {
-        emit(state.copyWith(
-          isLoading: false,
-          groups: groups,
-          loggedInData: loggedInData.copyWith(isJoinedGroup: true),
-        ));
-      } else {
-        emit(state.copyWith(
-          isLoading: false,
-          pageCommand: result.asError?.error.toPageCommand(),
-        ));
-      }
+      // final ListResult<Group> result = await _createDefaultGroupsUseCase.run();
+      // final List<Group> groups = result.valueOrNull ?? [];
+      // if (result.isValue && groups.isNotEmpty) {
+      //   emit(state.copyWith(
+      //     isLoading: false,
+      //     groups: groups,
+      //     loggedInData: loggedInData.copyWith(isJoinedGroup: true),
+      //   ));
+      // } else {
+      //   emit(state.copyWith(
+      //     isLoading: false,
+      //     pageCommand: result.asError?.error.toPageCommand(),
+      //   ));
+      // }
     } else {
       emit(state.copyWith(
         isLoading: false,

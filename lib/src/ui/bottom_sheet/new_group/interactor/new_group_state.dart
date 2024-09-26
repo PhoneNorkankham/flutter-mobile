@@ -9,6 +9,8 @@ class NewGroupState with _$NewGroupState {
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
     @Default([]) List<ContactRequest> selectedContacts,
+    @Default([]) List<Category> categories,
+    @Default(Category(id: '', name: 'None')) Category selectedCategory,
     @Default(GroupRequest()) GroupRequest groupRequest,
     File? avatar,
   }) = _NewGroupState;

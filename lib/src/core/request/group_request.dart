@@ -17,8 +17,9 @@ class GroupRequest with _$GroupRequest {
     @Default('') String name,
     @Default('') String description,
     @Default('') String avatar,
-    @Default(FrequencyIntervalType.none)
-    @JsonKey(name: 'frequency_interval', unknownEnumValue: FrequencyIntervalType.none)
+    @Default('') @JsonKey(name: 'category_id') String categoryId,
+    @Default(FrequencyIntervalType.everyWeek)
+    @JsonKey(name: 'frequency_interval', unknownEnumValue: FrequencyIntervalType.everyWeek)
     FrequencyIntervalType frequencyInterval,
     @Default([]) List<String> contacts,
     @DateTimeJsonConverter() @JsonKey(name: 'date_created') DateTime? dateCreated,

@@ -43,7 +43,7 @@ class KeepUpSoonInAWeek extends StatelessWidget {
           } else if (type == KeepUpSoonType.individual) {
             return KeepUpSoonContacts(contacts: contacts);
           } else {
-            return KeepUpSoonGroups(contacts: contacts);
+            return KeepUpSoonGroups(groups: state.getGroupsByContacts(contacts));
           }
         },
       ),

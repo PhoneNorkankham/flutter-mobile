@@ -6,9 +6,9 @@ class KeepUpSoonEvent with _$KeepUpSoonEvent {
 
   const factory KeepUpSoonEvent.clearPageCommand() = _ClearPageCommand;
 
-  const factory KeepUpSoonEvent.onFetchWeekContacts() = _OnFetchWeekContacts;
+  const factory KeepUpSoonEvent.onFetchGroups() = _OnFetchGroups;
 
-  const factory KeepUpSoonEvent.onFetchMonthContacts() = _OnFetchMonthContacts;
+  const factory KeepUpSoonEvent.onFetchContacts() = _OnFetchContacts;
 
   const factory KeepUpSoonEvent.onChangedType(KeepUpSoonType type) = _OnChangedType;
 
@@ -17,4 +17,6 @@ class KeepUpSoonEvent with _$KeepUpSoonEvent {
   const factory KeepUpSoonEvent.onKeepUpGroup(Group group) = _OnKeepUpGroup;
 
   const factory KeepUpSoonEvent.onGotoGroupDetails(Group group) = _OnGotoGroupDetails;
+
+  const factory KeepUpSoonEvent.onFilter(Category category) = _OnFilter;
 }

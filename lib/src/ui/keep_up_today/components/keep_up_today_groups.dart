@@ -20,80 +20,73 @@ class KeepUpTodayGroups extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<KeepUpTodayBloc, KeepUpTodayState>(
       buildWhen: (previous, current) =>
-          previous.isLoading != current.isLoading || previous.contacts != current.contacts,
+          previous.isLoading != current.isLoading ||
+          previous.filteredGroups != current.filteredGroups,
       builder: (context, state) {
-        final List<Contact> contacts = state.contacts;
+        final List<Group> groups = state.filteredGroups;
         final KeepUpTodayBloc bloc = context.read();
-        return Column(
-          children: [
-            const SizedBox(height: 28),
-            FutureBuilder<List<Group>>(
-              future: bloc.getGroupsByContacts(contacts),
-              builder: (context, snapshot) {
-                final List<Group> groups = snapshot.data ?? [];
-                return KeepUpGroup(
-                  title: LocaleKey.groups.tr,
-                  child: groups.isNotEmpty
-                      ? StreamBuilder<LayoutType>(
-                          stream: Get.find<AppShared>().watchLayoutType,
-                          builder: (context, snapshot) {
-                            if (!snapshot.hasData) {
-                              return const SizedBox();
-                            }
-                            final LayoutType layoutType = snapshot.data ?? LayoutType.list;
-                            return layoutType.isGridView
-                                ? Wrap(
-                                    children: groups
-                                        .map((group) => AppGridItem(
-                                              onPressed: () => bloc
-                                                  .add(KeepUpTodayEvent.onGotoGroupDetails(group)),
-                                              avatarUrl: group.avatar,
-                                              title: group.name,
-                                              titleColor: Theme.of(context).colorScheme.onPrimary,
-                                            ))
-                                        .toList(),
-                                  )
-                                : ListView.separated(
-                                    shrinkWrap: true,
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    itemCount: groups.length,
-                                    itemBuilder: (context, index) {
-                                      final Group group = groups.elementAt(index);
-                                      return AppListItem(
+        return Padding(
+          padding: const EdgeInsets.only(top: 28.0),
+          child: KeepUpGroup(
+            title: LocaleKey.groups.tr,
+            child: groups.isNotEmpty
+                ? StreamBuilder<LayoutType>(
+                    stream: Get.find<AppShared>().watchLayoutType,
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return const SizedBox();
+                      }
+                      final LayoutType layoutType = snapshot.data ?? LayoutType.list;
+                      return layoutType.isGridView
+                          ? Wrap(
+                              children: groups
+                                  .map((group) => AppGridItem(
                                         onPressed: () =>
                                             bloc.add(KeepUpTodayEvent.onGotoGroupDetails(group)),
-                                        onKeepUpPressed: () =>
-                                            _onShowKeepUpGroupConfirmDialog(bloc, group),
                                         avatarUrl: group.avatar,
                                         title: group.name,
                                         titleColor: Theme.of(context).colorScheme.onPrimary,
-                                      );
-                                    },
-                                    separatorBuilder: (context, index) => const SizedBox(height: 4),
-                                  );
-                          },
-                        )
-                      : state.isLoading
-                          ? const Padding(
-                              padding: EdgeInsets.all(24.0),
-                              child: Center(child: CustomCircularProgress()),
+                                      ))
+                                  .toList(),
                             )
-                          : Padding(
-                              padding: const EdgeInsets.all(24.0),
-                              child: Center(
-                                child: Text(
-                                  LocaleKey.noGroupsNeedKeepUpToday.tr,
-                                  style: context.appTextTheme.bold16.copyWith(
-                                    color: Theme.of(context).colorScheme.onPrimary,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
+                          : ListView.separated(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: groups.length,
+                              itemBuilder: (context, index) {
+                                final Group group = groups.elementAt(index);
+                                return AppListItem(
+                                  onPressed: () =>
+                                      bloc.add(KeepUpTodayEvent.onGotoGroupDetails(group)),
+                                  onKeepUpPressed: () =>
+                                      _onShowKeepUpGroupConfirmDialog(bloc, group),
+                                  avatarUrl: group.avatar,
+                                  title: group.name,
+                                  titleColor: Theme.of(context).colorScheme.onPrimary,
+                                );
+                              },
+                              separatorBuilder: (context, index) => const SizedBox(height: 4),
+                            );
+                    },
+                  )
+                : state.isLoading
+                    ? const Padding(
+                        padding: EdgeInsets.all(24.0),
+                        child: Center(child: CustomCircularProgress()),
+                      )
+                    : Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Center(
+                          child: Text(
+                            LocaleKey.noGroupsNeedKeepUpToday.tr,
+                            style: context.appTextTheme.bold16.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
                             ),
-                );
-              },
-            ),
-          ],
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+          ),
         );
       },
     );

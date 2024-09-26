@@ -22,9 +22,10 @@ class KeepUpTodayContacts extends StatelessWidget {
     final KeepUpTodayBloc bloc = context.read();
     return BlocBuilder<KeepUpTodayBloc, KeepUpTodayState>(
       buildWhen: (previous, current) =>
-          previous.isLoading != current.isLoading || previous.contacts != current.contacts,
+          previous.isLoading != current.isLoading ||
+          previous.filteredContacts != current.filteredContacts,
       builder: (context, state) {
-        final List<Contact> contacts = state.contacts;
+        final List<Contact> contacts = state.filteredContacts;
         return KeepUpGroup(
           title: LocaleKey.contacts.tr,
           child: contacts.isNotEmpty

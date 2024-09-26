@@ -9,7 +9,6 @@ import 'package:keepup/src/enums/app_drawer_type.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
-import 'package:keepup/src/use_cases/create_default_groups_use_case.dart';
 import 'package:keepup/src/use_cases/upload_contact_avatar_manager.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
@@ -20,12 +19,12 @@ part 'main_state.dart';
 class MainBloc extends Bloc<MainEvent, MainState> {
   final SupabaseRepository _supabaseRepository;
   final UploadContactAvatarManager _uploadContactAvatarManager;
-  final CreateDefaultGroupsUseCase _createDefaultGroupsUseCase;
+  // final CreateDefaultGroupsUseCase _createDefaultGroupsUseCase;
 
   MainBloc(
     this._supabaseRepository,
     this._uploadContactAvatarManager,
-    this._createDefaultGroupsUseCase,
+    // this._createDefaultGroupsUseCase,
   ) : super(const MainState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -45,9 +44,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       int index = int.tryParse(parameter) ?? 0;
       emit(state.copyWith(type: BottomNavType.values[index]));
     }
-    await _supabaseRepository.getContacts();
-    await _supabaseRepository.getGroups();
-    await _supabaseRepository.getInteractions();
+    _supabaseRepository.getGroups();
+    _supabaseRepository.getContacts();
+    _supabaseRepository.getCategories();
+    _supabaseRepository.getInteractions();
   }
 
   FutureOr<void> _onDrawerItemPressed(_OnDrawerItemPressed event, Emitter<MainState> emit) {
@@ -70,10 +70,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     _uploadContactAvatarManager.clearAll();
     emit(state.copyWith(isLoading: true));
     final resource = await _supabaseRepository.resetData();
-    if (resource.isSuccess) {
-      // Create default groups after reset data
-      await _createDefaultGroupsUseCase.run();
-    }
+    // if (resource.isSuccess) {
+    //   // Create default groups after reset data
+    //   await _createDefaultGroupsUseCase.run();
+    // }
     emit(state.copyWith(
       isLoading: false,
       pageCommand: resource.isSuccess

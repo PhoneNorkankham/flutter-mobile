@@ -5,8 +5,10 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
+import 'package:keepup/src/core/resource.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
@@ -30,6 +32,7 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
   final CreateGroupUseCase _createGroupUseCase;
   final AddContactsUseCase _addContactsUseCase;
   final UpdateGroupUseCase _updateGroupUseCase;
+  final SupabaseRepository _supabaseRepository;
 
   final _createGroupStateMapper = CreateGroupStateMapper();
 
@@ -38,6 +41,7 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
     this._createGroupUseCase,
     this._addContactsUseCase,
     this._updateGroupUseCase,
+    this._supabaseRepository,
   ) : super(const NewGroupState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -50,10 +54,36 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
     on<_OnFrequencyIntervalChanged>((event, emit) => emit(state.copyWith.groupRequest(
           frequencyInterval: event.frequencyIntervalType,
         )));
+    on<_OnCategoryChanged>((event, emit) => emit(state.copyWith(
+          selectedCategory: event.category,
+          groupRequest: state.groupRequest.copyWith(
+            categoryId: event.category.id,
+          ),
+        )));
     on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
   }
 
-  FutureOr<void> _initial(_Initial event, Emitter<NewGroupState> emit) async {}
+  FutureOr<void> _initial(_Initial event, Emitter<NewGroupState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final Resource<List<Category>> resource = await _supabaseRepository.getCategories();
+    final List<Category> categories = resource.data ?? [];
+    final Category selectedCategory =
+        categories.firstOrNull ?? const Category(id: '', name: 'None');
+    final NewGroupState newState = state.copyWith(
+      isLoading: false,
+      categories: categories,
+      selectedCategory: selectedCategory,
+      groupRequest: state.groupRequest.copyWith(
+        categoryId: selectedCategory.id,
+      ),
+    );
+    if (resource.isSuccess) {
+      emit(newState);
+    } else {
+      final pageCommand = PageCommandMessage.showError(resource.message ?? '');
+      emit(newState.copyWith(pageCommand: pageCommand));
+    }
+  }
 
   FutureOr<void> _onSelectedContact(_OnSelectedContact event, Emitter<NewGroupState> emit) {
     emit(state.copyWith(selectedContacts: [...state.selectedContacts, event.contact]));
@@ -103,11 +133,6 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
       }
     }
     emit(_createGroupStateMapper.mapResultToState(state, result));
-
-    /// Add contacts to Group
-    // Create new contacts
-    // Update old contacts
-    // Update contactIds in group
   }
 
   @override

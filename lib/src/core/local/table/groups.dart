@@ -14,6 +14,9 @@ class Groups extends Table {
 
   TextColumn get avatar => text().withDefault(const Constant(''))();
 
+  @JsonKey('category_id')
+  TextColumn get categoryId => text().withDefault(const Constant(''))();
+
   @JsonKey('frequency_interval')
   TextColumn get frequencyInterval => textEnum<FrequencyIntervalType>()
       .named('frequency_interval')

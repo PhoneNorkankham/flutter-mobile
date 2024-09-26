@@ -14,6 +14,8 @@ class GroupDetailState with _$GroupDetailState {
     File? avatarFile,
     Group? groupDetail,
     @Default(false) bool openedSeeAll,
+    @Default([]) List<Category> categories,
+    @Default(Category(id: '', name: 'None')) Category selectedCategory,
   }) = _GroupDetailState;
 
   bool get hiddenSeeAllButton => contacts.length <= 3 || openedSeeAll;

@@ -27,8 +27,11 @@ mixin _$GroupRequest {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
+  @JsonKey(name: 'category_id')
+  String get categoryId => throw _privateConstructorUsedError;
   @JsonKey(
-      name: 'frequency_interval', unknownEnumValue: FrequencyIntervalType.none)
+      name: 'frequency_interval',
+      unknownEnumValue: FrequencyIntervalType.everyWeek)
   FrequencyIntervalType get frequencyInterval =>
       throw _privateConstructorUsedError;
   List<String> get contacts => throw _privateConstructorUsedError;
@@ -54,9 +57,10 @@ abstract class $GroupRequestCopyWith<$Res> {
       String name,
       String description,
       String avatar,
+      @JsonKey(name: 'category_id') String categoryId,
       @JsonKey(
           name: 'frequency_interval',
-          unknownEnumValue: FrequencyIntervalType.none)
+          unknownEnumValue: FrequencyIntervalType.everyWeek)
       FrequencyIntervalType frequencyInterval,
       List<String> contacts,
       @DateTimeJsonConverter()
@@ -82,6 +86,7 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
     Object? name = null,
     Object? description = null,
     Object? avatar = null,
+    Object? categoryId = null,
     Object? frequencyInterval = null,
     Object? contacts = null,
     Object? dateCreated = freezed,
@@ -106,6 +111,10 @@ class _$GroupRequestCopyWithImpl<$Res, $Val extends GroupRequest>
       avatar: null == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
               as String,
       frequencyInterval: null == frequencyInterval
           ? _value.frequencyInterval
@@ -137,9 +146,10 @@ abstract class _$$GroupRequestImplCopyWith<$Res>
       String name,
       String description,
       String avatar,
+      @JsonKey(name: 'category_id') String categoryId,
       @JsonKey(
           name: 'frequency_interval',
-          unknownEnumValue: FrequencyIntervalType.none)
+          unknownEnumValue: FrequencyIntervalType.everyWeek)
       FrequencyIntervalType frequencyInterval,
       List<String> contacts,
       @DateTimeJsonConverter()
@@ -163,6 +173,7 @@ class __$$GroupRequestImplCopyWithImpl<$Res>
     Object? name = null,
     Object? description = null,
     Object? avatar = null,
+    Object? categoryId = null,
     Object? frequencyInterval = null,
     Object? contacts = null,
     Object? dateCreated = freezed,
@@ -187,6 +198,10 @@ class __$$GroupRequestImplCopyWithImpl<$Res>
       avatar: null == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
               as String,
       frequencyInterval: null == frequencyInterval
           ? _value.frequencyInterval
@@ -214,10 +229,11 @@ class _$GroupRequestImpl extends _GroupRequest {
       this.name = '',
       this.description = '',
       this.avatar = '',
+      @JsonKey(name: 'category_id') this.categoryId = '',
       @JsonKey(
           name: 'frequency_interval',
-          unknownEnumValue: FrequencyIntervalType.none)
-      this.frequencyInterval = FrequencyIntervalType.none,
+          unknownEnumValue: FrequencyIntervalType.everyWeek)
+      this.frequencyInterval = FrequencyIntervalType.everyWeek,
       final List<String> contacts = const [],
       @DateTimeJsonConverter() @JsonKey(name: 'date_created') this.dateCreated})
       : _contacts = contacts,
@@ -242,8 +258,12 @@ class _$GroupRequestImpl extends _GroupRequest {
   @JsonKey()
   final String avatar;
   @override
+  @JsonKey(name: 'category_id')
+  final String categoryId;
+  @override
   @JsonKey(
-      name: 'frequency_interval', unknownEnumValue: FrequencyIntervalType.none)
+      name: 'frequency_interval',
+      unknownEnumValue: FrequencyIntervalType.everyWeek)
   final FrequencyIntervalType frequencyInterval;
   final List<String> _contacts;
   @override
@@ -261,7 +281,7 @@ class _$GroupRequestImpl extends _GroupRequest {
 
   @override
   String toString() {
-    return 'GroupRequest(groupId: $groupId, ownerId: $ownerId, name: $name, description: $description, avatar: $avatar, frequencyInterval: $frequencyInterval, contacts: $contacts, dateCreated: $dateCreated)';
+    return 'GroupRequest(groupId: $groupId, ownerId: $ownerId, name: $name, description: $description, avatar: $avatar, categoryId: $categoryId, frequencyInterval: $frequencyInterval, contacts: $contacts, dateCreated: $dateCreated)';
   }
 
   @override
@@ -275,6 +295,8 @@ class _$GroupRequestImpl extends _GroupRequest {
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
             (identical(other.frequencyInterval, frequencyInterval) ||
                 other.frequencyInterval == frequencyInterval) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
@@ -291,6 +313,7 @@ class _$GroupRequestImpl extends _GroupRequest {
       name,
       description,
       avatar,
+      categoryId,
       frequencyInterval,
       const DeepCollectionEquality().hash(_contacts),
       dateCreated);
@@ -316,9 +339,10 @@ abstract class _GroupRequest extends GroupRequest {
       final String name,
       final String description,
       final String avatar,
+      @JsonKey(name: 'category_id') final String categoryId,
       @JsonKey(
           name: 'frequency_interval',
-          unknownEnumValue: FrequencyIntervalType.none)
+          unknownEnumValue: FrequencyIntervalType.everyWeek)
       final FrequencyIntervalType frequencyInterval,
       final List<String> contacts,
       @DateTimeJsonConverter()
@@ -342,8 +366,12 @@ abstract class _GroupRequest extends GroupRequest {
   @override
   String get avatar;
   @override
+  @JsonKey(name: 'category_id')
+  String get categoryId;
+  @override
   @JsonKey(
-      name: 'frequency_interval', unknownEnumValue: FrequencyIntervalType.none)
+      name: 'frequency_interval',
+      unknownEnumValue: FrequencyIntervalType.everyWeek)
   FrequencyIntervalType get frequencyInterval;
   @override
   List<String> get contacts;
