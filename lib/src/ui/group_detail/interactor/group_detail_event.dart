@@ -16,6 +16,8 @@ class GroupDetailEvent with _$GroupDetailEvent {
     FrequencyIntervalType frequencyIntervalType,
   ) = _OnFrequencyIntervalChanged;
 
+  const factory GroupDetailEvent.onCategoryChanged(Category category) = _OnCategoryChanged;
+
   const factory GroupDetailEvent.onChangedContacts() = _OnChangedContacts;
 
   const factory GroupDetailEvent.onOpenedSeeAll() = _OnOpenedSeeAll;

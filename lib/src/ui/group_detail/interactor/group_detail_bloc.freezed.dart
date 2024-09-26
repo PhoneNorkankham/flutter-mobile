@@ -25,6 +25,7 @@ mixin _$GroupDetailEvent {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -39,6 +40,7 @@ mixin _$GroupDetailEvent {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -53,6 +55,7 @@ mixin _$GroupDetailEvent {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -68,6 +71,7 @@ mixin _$GroupDetailEvent {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -82,6 +86,7 @@ mixin _$GroupDetailEvent {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -96,6 +101,7 @@ mixin _$GroupDetailEvent {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -167,6 +173,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -184,6 +191,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -201,6 +209,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -222,6 +231,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -239,6 +249,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -256,6 +267,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -317,6 +329,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -334,6 +347,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -351,6 +365,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -372,6 +387,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -389,6 +405,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -406,6 +423,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -494,6 +512,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -511,6 +530,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -528,6 +548,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -549,6 +570,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -566,6 +588,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -583,6 +606,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -675,6 +699,7 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -692,6 +717,7 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -709,6 +735,7 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -730,6 +757,7 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -747,6 +775,7 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -764,6 +793,7 @@ class _$OnNameChangedImpl implements _OnNameChanged {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -858,6 +888,7 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -875,6 +906,7 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -892,6 +924,7 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -913,6 +946,7 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -930,6 +964,7 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -947,6 +982,7 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1045,6 +1081,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -1062,6 +1099,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -1079,6 +1117,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -1100,6 +1139,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -1117,6 +1157,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1134,6 +1175,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1155,6 +1197,196 @@ abstract class _OnFrequencyIntervalChanged implements GroupDetailEvent {
   @JsonKey(ignore: true)
   _$$OnFrequencyIntervalChangedImplCopyWith<_$OnFrequencyIntervalChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnCategoryChangedImplCopyWith<$Res> {
+  factory _$$OnCategoryChangedImplCopyWith(_$OnCategoryChangedImpl value,
+          $Res Function(_$OnCategoryChangedImpl) then) =
+      __$$OnCategoryChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Category category});
+}
+
+/// @nodoc
+class __$$OnCategoryChangedImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnCategoryChangedImpl>
+    implements _$$OnCategoryChangedImplCopyWith<$Res> {
+  __$$OnCategoryChangedImplCopyWithImpl(_$OnCategoryChangedImpl _value,
+      $Res Function(_$OnCategoryChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = freezed,
+  }) {
+    return _then(_$OnCategoryChangedImpl(
+      freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as Category,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnCategoryChangedImpl implements _OnCategoryChanged {
+  const _$OnCategoryChangedImpl(this.category);
+
+  @override
+  final Category category;
+
+  @override
+  String toString() {
+    return 'GroupDetailEvent.onCategoryChanged(category: $category)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnCategoryChangedImpl &&
+            const DeepCollectionEquality().equals(other.category, category));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(category));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnCategoryChangedImplCopyWith<_$OnCategoryChangedImpl> get copyWith =>
+      __$$OnCategoryChangedImplCopyWithImpl<_$OnCategoryChangedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
+    required TResult Function() onDeleteGroup,
+  }) {
+    return onCategoryChanged(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
+    TResult? Function()? onDeleteGroup,
+  }) {
+    return onCategoryChanged?.call(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(File file)? onAvatarChanged,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
+    TResult Function()? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onCategoryChanged != null) {
+      return onCategoryChanged(category);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
+    required TResult Function(_OnFrequencyIntervalChanged value)
+        onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
+    required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+  }) {
+    return onCategoryChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult? Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
+    TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+  }) {
+    return onCategoryChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
+    TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onCategoryChanged != null) {
+      return onCategoryChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnCategoryChanged implements GroupDetailEvent {
+  const factory _OnCategoryChanged(final Category category) =
+      _$OnCategoryChangedImpl;
+
+  Category get category;
+  @JsonKey(ignore: true)
+  _$$OnCategoryChangedImplCopyWith<_$OnCategoryChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1202,6 +1434,7 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -1219,6 +1452,7 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -1236,6 +1470,7 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -1257,6 +1492,7 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -1274,6 +1510,7 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1291,6 +1528,7 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1352,6 +1590,7 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -1369,6 +1608,7 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -1386,6 +1626,7 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -1407,6 +1648,7 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -1424,6 +1666,7 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1441,6 +1684,7 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1502,6 +1746,7 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
         onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
     required TResult Function() onChangedContacts,
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
@@ -1519,6 +1764,7 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
     TResult? Function()? onChangedContacts,
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
@@ -1536,6 +1782,7 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
         onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
     TResult Function()? onChangedContacts,
     TResult Function()? onOpenedSeeAll,
     TResult Function()? onDeleteGroup,
@@ -1557,6 +1804,7 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
         onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedContacts value) onChangedContacts,
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
@@ -1574,6 +1822,7 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedContacts value)? onChangedContacts,
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1591,6 +1840,7 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
         onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedContacts value)? onChangedContacts,
     TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
@@ -1618,6 +1868,8 @@ mixin _$GroupDetailState {
   File? get avatarFile => throw _privateConstructorUsedError;
   Group? get groupDetail => throw _privateConstructorUsedError;
   bool get openedSeeAll => throw _privateConstructorUsedError;
+  List<Category> get categories => throw _privateConstructorUsedError;
+  Category get selectedCategory => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GroupDetailStateCopyWith<GroupDetailState> get copyWith =>
@@ -1639,7 +1891,9 @@ abstract class $GroupDetailStateCopyWith<$Res> {
       List<Contact> contacts,
       File? avatarFile,
       Group? groupDetail,
-      bool openedSeeAll});
+      bool openedSeeAll,
+      List<Category> categories,
+      Category selectedCategory});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
   $GroupRequestCopyWith<$Res> get request;
@@ -1667,6 +1921,8 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
     Object? avatarFile = freezed,
     Object? groupDetail = freezed,
     Object? openedSeeAll = null,
+    Object? categories = null,
+    Object? selectedCategory = freezed,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
@@ -1705,6 +1961,14 @@ class _$GroupDetailStateCopyWithImpl<$Res, $Val extends GroupDetailState>
           ? _value.openedSeeAll
           : openedSeeAll // ignore: cast_nullable_to_non_nullable
               as bool,
+      categories: null == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
+      selectedCategory: freezed == selectedCategory
+          ? _value.selectedCategory
+          : selectedCategory // ignore: cast_nullable_to_non_nullable
+              as Category,
     ) as $Val);
   }
 
@@ -1746,7 +2010,9 @@ abstract class _$$GroupDetailStateImplCopyWith<$Res>
       List<Contact> contacts,
       File? avatarFile,
       Group? groupDetail,
-      bool openedSeeAll});
+      bool openedSeeAll,
+      List<Category> categories,
+      Category selectedCategory});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -1774,6 +2040,8 @@ class __$$GroupDetailStateImplCopyWithImpl<$Res>
     Object? avatarFile = freezed,
     Object? groupDetail = freezed,
     Object? openedSeeAll = null,
+    Object? categories = null,
+    Object? selectedCategory = freezed,
   }) {
     return _then(_$GroupDetailStateImpl(
       pageCommand: freezed == pageCommand
@@ -1812,6 +2080,14 @@ class __$$GroupDetailStateImplCopyWithImpl<$Res>
           ? _value.openedSeeAll
           : openedSeeAll // ignore: cast_nullable_to_non_nullable
               as bool,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
+      selectedCategory: freezed == selectedCategory
+          ? _value.selectedCategory
+          : selectedCategory // ignore: cast_nullable_to_non_nullable
+              as Category,
     ));
   }
 }
@@ -1828,8 +2104,11 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
       final List<Contact> contacts = const [],
       this.avatarFile,
       this.groupDetail,
-      this.openedSeeAll = false})
+      this.openedSeeAll = false,
+      final List<Category> categories = const [],
+      this.selectedCategory = const Category(id: '', name: 'None')})
       : _contacts = contacts,
+        _categories = categories,
         super._();
 
   @override
@@ -1862,10 +2141,22 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
   @override
   @JsonKey()
   final bool openedSeeAll;
+  final List<Category> _categories;
+  @override
+  @JsonKey()
+  List<Category> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
+  @override
+  @JsonKey()
+  final Category selectedCategory;
 
   @override
   String toString() {
-    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, groupId: $groupId, request: $request, contacts: $contacts, avatarFile: $avatarFile, groupDetail: $groupDetail, openedSeeAll: $openedSeeAll)';
+    return 'GroupDetailState(pageCommand: $pageCommand, pageState: $pageState, isLoading: $isLoading, groupId: $groupId, request: $request, contacts: $contacts, avatarFile: $avatarFile, groupDetail: $groupDetail, openedSeeAll: $openedSeeAll, categories: $categories, selectedCategory: $selectedCategory)';
   }
 
   @override
@@ -1887,7 +2178,11 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
             const DeepCollectionEquality()
                 .equals(other.groupDetail, groupDetail) &&
             (identical(other.openedSeeAll, openedSeeAll) ||
-                other.openedSeeAll == openedSeeAll));
+                other.openedSeeAll == openedSeeAll) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedCategory, selectedCategory));
   }
 
   @override
@@ -1901,7 +2196,9 @@ class _$GroupDetailStateImpl extends _GroupDetailState {
       const DeepCollectionEquality().hash(_contacts),
       avatarFile,
       const DeepCollectionEquality().hash(groupDetail),
-      openedSeeAll);
+      openedSeeAll,
+      const DeepCollectionEquality().hash(_categories),
+      const DeepCollectionEquality().hash(selectedCategory));
 
   @JsonKey(ignore: true)
   @override
@@ -1921,7 +2218,9 @@ abstract class _GroupDetailState extends GroupDetailState {
       final List<Contact> contacts,
       final File? avatarFile,
       final Group? groupDetail,
-      final bool openedSeeAll}) = _$GroupDetailStateImpl;
+      final bool openedSeeAll,
+      final List<Category> categories,
+      final Category selectedCategory}) = _$GroupDetailStateImpl;
   const _GroupDetailState._() : super._();
 
   @override
@@ -1942,6 +2241,10 @@ abstract class _GroupDetailState extends GroupDetailState {
   Group? get groupDetail;
   @override
   bool get openedSeeAll;
+  @override
+  List<Category> get categories;
+  @override
+  Category get selectedCategory;
   @override
   @JsonKey(ignore: true)
   _$$GroupDetailStateImplCopyWith<_$GroupDetailStateImpl> get copyWith =>

@@ -43,6 +43,14 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
       type: DriftSqlType.string,
       requiredDuringInsert: false,
       defaultValue: const Constant(''));
+  static const VerificationMeta _categoryIdMeta =
+      const VerificationMeta('categoryId');
+  @override
+  late final GeneratedColumn<String> categoryId = GeneratedColumn<String>(
+      'category_id', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(''));
   static const VerificationMeta _frequencyIntervalMeta =
       const VerificationMeta('frequencyInterval');
   @override
@@ -76,6 +84,7 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
         name,
         description,
         avatar,
+        categoryId,
         frequencyInterval,
         contacts,
         dateCreated
@@ -113,6 +122,12 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
       context.handle(_avatarMeta,
           avatar.isAcceptableOrUnknown(data['avatar']!, _avatarMeta));
     }
+    if (data.containsKey('category_id')) {
+      context.handle(
+          _categoryIdMeta,
+          categoryId.isAcceptableOrUnknown(
+              data['category_id']!, _categoryIdMeta));
+    }
     context.handle(_frequencyIntervalMeta, const VerificationResult.success());
     context.handle(_contactsMeta, const VerificationResult.success());
     if (data.containsKey('date_created')) {
@@ -140,6 +155,8 @@ class $GroupsTable extends Groups with TableInfo<$GroupsTable, Group> {
           .read(DriftSqlType.string, data['${effectivePrefix}description'])!,
       avatar: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}avatar'])!,
+      categoryId: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}category_id'])!,
       frequencyInterval: $GroupsTable.$converterfrequencyInterval.fromSql(
           attachedDatabase.typeMapping.read(DriftSqlType.string,
               data['${effectivePrefix}frequency_interval'])!),
@@ -170,6 +187,7 @@ class Group extends DataClass implements Insertable<Group> {
   final String name;
   final String description;
   final String avatar;
+  final String categoryId;
   final FrequencyIntervalType frequencyInterval;
   final List<dynamic> contacts;
   final DateTime? dateCreated;
@@ -179,6 +197,7 @@ class Group extends DataClass implements Insertable<Group> {
       required this.name,
       required this.description,
       required this.avatar,
+      required this.categoryId,
       required this.frequencyInterval,
       required this.contacts,
       this.dateCreated});
@@ -190,6 +209,7 @@ class Group extends DataClass implements Insertable<Group> {
     map['name'] = Variable<String>(name);
     map['description'] = Variable<String>(description);
     map['avatar'] = Variable<String>(avatar);
+    map['category_id'] = Variable<String>(categoryId);
     {
       map['frequency_interval'] = Variable<String>(
           $GroupsTable.$converterfrequencyInterval.toSql(frequencyInterval));
@@ -211,6 +231,7 @@ class Group extends DataClass implements Insertable<Group> {
       name: Value(name),
       description: Value(description),
       avatar: Value(avatar),
+      categoryId: Value(categoryId),
       frequencyInterval: Value(frequencyInterval),
       contacts: Value(contacts),
       dateCreated: dateCreated == null && nullToAbsent
@@ -228,6 +249,7 @@ class Group extends DataClass implements Insertable<Group> {
       name: serializer.fromJson<String>(json['name']),
       description: serializer.fromJson<String>(json['description']),
       avatar: serializer.fromJson<String>(json['avatar']),
+      categoryId: serializer.fromJson<String>(json['category_id']),
       frequencyInterval: $GroupsTable.$converterfrequencyInterval
           .fromJson(serializer.fromJson<String>(json['frequency_interval'])),
       contacts: serializer.fromJson<List<dynamic>>(json['contacts']),
@@ -243,6 +265,7 @@ class Group extends DataClass implements Insertable<Group> {
       'name': serializer.toJson<String>(name),
       'description': serializer.toJson<String>(description),
       'avatar': serializer.toJson<String>(avatar),
+      'category_id': serializer.toJson<String>(categoryId),
       'frequency_interval': serializer.toJson<String>(
           $GroupsTable.$converterfrequencyInterval.toJson(frequencyInterval)),
       'contacts': serializer.toJson<List<dynamic>>(contacts),
@@ -256,6 +279,7 @@ class Group extends DataClass implements Insertable<Group> {
           String? name,
           String? description,
           String? avatar,
+          String? categoryId,
           FrequencyIntervalType? frequencyInterval,
           List<dynamic>? contacts,
           Value<DateTime?> dateCreated = const Value.absent()}) =>
@@ -265,6 +289,7 @@ class Group extends DataClass implements Insertable<Group> {
         name: name ?? this.name,
         description: description ?? this.description,
         avatar: avatar ?? this.avatar,
+        categoryId: categoryId ?? this.categoryId,
         frequencyInterval: frequencyInterval ?? this.frequencyInterval,
         contacts: contacts ?? this.contacts,
         dateCreated: dateCreated.present ? dateCreated.value : this.dateCreated,
@@ -277,6 +302,7 @@ class Group extends DataClass implements Insertable<Group> {
           ..write('name: $name, ')
           ..write('description: $description, ')
           ..write('avatar: $avatar, ')
+          ..write('categoryId: $categoryId, ')
           ..write('frequencyInterval: $frequencyInterval, ')
           ..write('contacts: $contacts, ')
           ..write('dateCreated: $dateCreated')
@@ -286,7 +312,7 @@ class Group extends DataClass implements Insertable<Group> {
 
   @override
   int get hashCode => Object.hash(id, ownerId, name, description, avatar,
-      frequencyInterval, contacts, dateCreated);
+      categoryId, frequencyInterval, contacts, dateCreated);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -296,6 +322,7 @@ class Group extends DataClass implements Insertable<Group> {
           other.name == this.name &&
           other.description == this.description &&
           other.avatar == this.avatar &&
+          other.categoryId == this.categoryId &&
           other.frequencyInterval == this.frequencyInterval &&
           other.contacts == this.contacts &&
           other.dateCreated == this.dateCreated);
@@ -307,6 +334,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
   final Value<String> name;
   final Value<String> description;
   final Value<String> avatar;
+  final Value<String> categoryId;
   final Value<FrequencyIntervalType> frequencyInterval;
   final Value<List<dynamic>> contacts;
   final Value<DateTime?> dateCreated;
@@ -317,6 +345,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
     this.name = const Value.absent(),
     this.description = const Value.absent(),
     this.avatar = const Value.absent(),
+    this.categoryId = const Value.absent(),
     this.frequencyInterval = const Value.absent(),
     this.contacts = const Value.absent(),
     this.dateCreated = const Value.absent(),
@@ -328,6 +357,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
     this.name = const Value.absent(),
     this.description = const Value.absent(),
     this.avatar = const Value.absent(),
+    this.categoryId = const Value.absent(),
     this.frequencyInterval = const Value.absent(),
     this.contacts = const Value.absent(),
     this.dateCreated = const Value.absent(),
@@ -339,6 +369,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
     Expression<String>? name,
     Expression<String>? description,
     Expression<String>? avatar,
+    Expression<String>? categoryId,
     Expression<String>? frequencyInterval,
     Expression<String>? contacts,
     Expression<DateTime>? dateCreated,
@@ -350,6 +381,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       if (name != null) 'name': name,
       if (description != null) 'description': description,
       if (avatar != null) 'avatar': avatar,
+      if (categoryId != null) 'category_id': categoryId,
       if (frequencyInterval != null) 'frequency_interval': frequencyInterval,
       if (contacts != null) 'contacts': contacts,
       if (dateCreated != null) 'date_created': dateCreated,
@@ -363,6 +395,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       Value<String>? name,
       Value<String>? description,
       Value<String>? avatar,
+      Value<String>? categoryId,
       Value<FrequencyIntervalType>? frequencyInterval,
       Value<List<dynamic>>? contacts,
       Value<DateTime?>? dateCreated,
@@ -373,6 +406,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
       name: name ?? this.name,
       description: description ?? this.description,
       avatar: avatar ?? this.avatar,
+      categoryId: categoryId ?? this.categoryId,
       frequencyInterval: frequencyInterval ?? this.frequencyInterval,
       contacts: contacts ?? this.contacts,
       dateCreated: dateCreated ?? this.dateCreated,
@@ -397,6 +431,9 @@ class GroupsCompanion extends UpdateCompanion<Group> {
     }
     if (avatar.present) {
       map['avatar'] = Variable<String>(avatar.value);
+    }
+    if (categoryId.present) {
+      map['category_id'] = Variable<String>(categoryId.value);
     }
     if (frequencyInterval.present) {
       map['frequency_interval'] = Variable<String>($GroupsTable
@@ -424,6 +461,7 @@ class GroupsCompanion extends UpdateCompanion<Group> {
           ..write('name: $name, ')
           ..write('description: $description, ')
           ..write('avatar: $avatar, ')
+          ..write('categoryId: $categoryId, ')
           ..write('frequencyInterval: $frequencyInterval, ')
           ..write('contacts: $contacts, ')
           ..write('dateCreated: $dateCreated, ')
@@ -1233,22 +1271,246 @@ class InteractionsCompanion extends UpdateCompanion<Interaction> {
   }
 }
 
+class $CategoriesTable extends Categories
+    with TableInfo<$CategoriesTable, Category> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $CategoriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+      'id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+      'name', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(''));
+  static const VerificationMeta _createdAtMeta =
+      const VerificationMeta('createdAt');
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+      'created_at', aliasedName, true,
+      type: DriftSqlType.dateTime, requiredDuringInsert: false);
+  @override
+  List<GeneratedColumn> get $columns => [id, name, createdAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'categories';
+  @override
+  VerificationContext validateIntegrity(Insertable<Category> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(_createdAtMeta,
+          createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta));
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Category map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return Category(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
+      name: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}name'])!,
+      createdAt: attachedDatabase.typeMapping
+          .read(DriftSqlType.dateTime, data['${effectivePrefix}created_at']),
+    );
+  }
+
+  @override
+  $CategoriesTable createAlias(String alias) {
+    return $CategoriesTable(attachedDatabase, alias);
+  }
+}
+
+class Category extends DataClass implements Insertable<Category> {
+  final String id;
+  final String name;
+  final DateTime? createdAt;
+  const Category({required this.id, required this.name, this.createdAt});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['name'] = Variable<String>(name);
+    if (!nullToAbsent || createdAt != null) {
+      map['created_at'] = Variable<DateTime>(createdAt);
+    }
+    return map;
+  }
+
+  CategoriesCompanion toCompanion(bool nullToAbsent) {
+    return CategoriesCompanion(
+      id: Value(id),
+      name: Value(name),
+      createdAt: createdAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(createdAt),
+    );
+  }
+
+  factory Category.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return Category(
+      id: serializer.fromJson<String>(json['id']),
+      name: serializer.fromJson<String>(json['name']),
+      createdAt: serializer.fromJson<DateTime?>(json['created_at']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'name': serializer.toJson<String>(name),
+      'created_at': serializer.toJson<DateTime?>(createdAt),
+    };
+  }
+
+  Category copyWith(
+          {String? id,
+          String? name,
+          Value<DateTime?> createdAt = const Value.absent()}) =>
+      Category(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        createdAt: createdAt.present ? createdAt.value : this.createdAt,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('Category(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, name, createdAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is Category &&
+          other.id == this.id &&
+          other.name == this.name &&
+          other.createdAt == this.createdAt);
+}
+
+class CategoriesCompanion extends UpdateCompanion<Category> {
+  final Value<String> id;
+  final Value<String> name;
+  final Value<DateTime?> createdAt;
+  final Value<int> rowid;
+  const CategoriesCompanion({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  CategoriesCompanion.insert({
+    required String id,
+    this.name = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : id = Value(id);
+  static Insertable<Category> custom({
+    Expression<String>? id,
+    Expression<String>? name,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  CategoriesCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? name,
+      Value<DateTime?>? createdAt,
+      Value<int>? rowid}) {
+    return CategoriesCompanion(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('CategoriesCompanion(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   _$AppDatabaseManager get managers => _$AppDatabaseManager(this);
   late final $GroupsTable groups = $GroupsTable(this);
   late final $ContactsTable contacts = $ContactsTable(this);
   late final $InteractionsTable interactions = $InteractionsTable(this);
+  late final $CategoriesTable categories = $CategoriesTable(this);
   late final GroupDao groupDao = GroupDao(this as AppDatabase);
   late final ContactDao contactDao = ContactDao(this as AppDatabase);
   late final InteractionDao interactionDao =
       InteractionDao(this as AppDatabase);
+  late final CategoryDao categoryDao = CategoryDao(this as AppDatabase);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities =>
-      [groups, contacts, interactions];
+      [groups, contacts, interactions, categories];
 }
 
 typedef $$GroupsTableInsertCompanionBuilder = GroupsCompanion Function({
@@ -1257,6 +1519,7 @@ typedef $$GroupsTableInsertCompanionBuilder = GroupsCompanion Function({
   Value<String> name,
   Value<String> description,
   Value<String> avatar,
+  Value<String> categoryId,
   Value<FrequencyIntervalType> frequencyInterval,
   Value<List<dynamic>> contacts,
   Value<DateTime?> dateCreated,
@@ -1268,6 +1531,7 @@ typedef $$GroupsTableUpdateCompanionBuilder = GroupsCompanion Function({
   Value<String> name,
   Value<String> description,
   Value<String> avatar,
+  Value<String> categoryId,
   Value<FrequencyIntervalType> frequencyInterval,
   Value<List<dynamic>> contacts,
   Value<DateTime?> dateCreated,
@@ -1298,6 +1562,7 @@ class $$GroupsTableTableManager extends RootTableManager<
             Value<String> name = const Value.absent(),
             Value<String> description = const Value.absent(),
             Value<String> avatar = const Value.absent(),
+            Value<String> categoryId = const Value.absent(),
             Value<FrequencyIntervalType> frequencyInterval =
                 const Value.absent(),
             Value<List<dynamic>> contacts = const Value.absent(),
@@ -1310,6 +1575,7 @@ class $$GroupsTableTableManager extends RootTableManager<
             name: name,
             description: description,
             avatar: avatar,
+            categoryId: categoryId,
             frequencyInterval: frequencyInterval,
             contacts: contacts,
             dateCreated: dateCreated,
@@ -1321,6 +1587,7 @@ class $$GroupsTableTableManager extends RootTableManager<
             Value<String> name = const Value.absent(),
             Value<String> description = const Value.absent(),
             Value<String> avatar = const Value.absent(),
+            Value<String> categoryId = const Value.absent(),
             Value<FrequencyIntervalType> frequencyInterval =
                 const Value.absent(),
             Value<List<dynamic>> contacts = const Value.absent(),
@@ -1333,6 +1600,7 @@ class $$GroupsTableTableManager extends RootTableManager<
             name: name,
             description: description,
             avatar: avatar,
+            categoryId: categoryId,
             frequencyInterval: frequencyInterval,
             contacts: contacts,
             dateCreated: dateCreated,
@@ -1378,6 +1646,11 @@ class $$GroupsTableFilterComposer
 
   ColumnFilters<String> get avatar => $state.composableBuilder(
       column: $state.table.avatar,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get categoryId => $state.composableBuilder(
+      column: $state.table.categoryId,
       builder: (column, joinBuilders) =>
           ColumnFilters(column, joinBuilders: joinBuilders));
 
@@ -1427,6 +1700,11 @@ class $$GroupsTableOrderingComposer
 
   ColumnOrderings<String> get avatar => $state.composableBuilder(
       column: $state.table.avatar,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get categoryId => $state.composableBuilder(
+      column: $state.table.categoryId,
       builder: (column, joinBuilders) =>
           ColumnOrderings(column, joinBuilders: joinBuilders));
 
@@ -1813,6 +2091,115 @@ class $$InteractionsTableOrderingComposer
           ColumnOrderings(column, joinBuilders: joinBuilders));
 }
 
+typedef $$CategoriesTableInsertCompanionBuilder = CategoriesCompanion Function({
+  required String id,
+  Value<String> name,
+  Value<DateTime?> createdAt,
+  Value<int> rowid,
+});
+typedef $$CategoriesTableUpdateCompanionBuilder = CategoriesCompanion Function({
+  Value<String> id,
+  Value<String> name,
+  Value<DateTime?> createdAt,
+  Value<int> rowid,
+});
+
+class $$CategoriesTableTableManager extends RootTableManager<
+    _$AppDatabase,
+    $CategoriesTable,
+    Category,
+    $$CategoriesTableFilterComposer,
+    $$CategoriesTableOrderingComposer,
+    $$CategoriesTableProcessedTableManager,
+    $$CategoriesTableInsertCompanionBuilder,
+    $$CategoriesTableUpdateCompanionBuilder> {
+  $$CategoriesTableTableManager(_$AppDatabase db, $CategoriesTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$CategoriesTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$CategoriesTableOrderingComposer(ComposerState(db, table)),
+          getChildManagerBuilder: (p) =>
+              $$CategoriesTableProcessedTableManager(p),
+          getUpdateCompanionBuilder: ({
+            Value<String> id = const Value.absent(),
+            Value<String> name = const Value.absent(),
+            Value<DateTime?> createdAt = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              CategoriesCompanion(
+            id: id,
+            name: name,
+            createdAt: createdAt,
+            rowid: rowid,
+          ),
+          getInsertCompanionBuilder: ({
+            required String id,
+            Value<String> name = const Value.absent(),
+            Value<DateTime?> createdAt = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              CategoriesCompanion.insert(
+            id: id,
+            name: name,
+            createdAt: createdAt,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$CategoriesTableProcessedTableManager extends ProcessedTableManager<
+    _$AppDatabase,
+    $CategoriesTable,
+    Category,
+    $$CategoriesTableFilterComposer,
+    $$CategoriesTableOrderingComposer,
+    $$CategoriesTableProcessedTableManager,
+    $$CategoriesTableInsertCompanionBuilder,
+    $$CategoriesTableUpdateCompanionBuilder> {
+  $$CategoriesTableProcessedTableManager(super.$state);
+}
+
+class $$CategoriesTableFilterComposer
+    extends FilterComposer<_$AppDatabase, $CategoriesTable> {
+  $$CategoriesTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get createdAt => $state.composableBuilder(
+      column: $state.table.createdAt,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$CategoriesTableOrderingComposer
+    extends OrderingComposer<_$AppDatabase, $CategoriesTable> {
+  $$CategoriesTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get createdAt => $state.composableBuilder(
+      column: $state.table.createdAt,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
 class _$AppDatabaseManager {
   final _$AppDatabase _db;
   _$AppDatabaseManager(this._db);
@@ -1822,4 +2209,6 @@ class _$AppDatabaseManager {
       $$ContactsTableTableManager(_db, _db.contacts);
   $$InteractionsTableTableManager get interactions =>
       $$InteractionsTableTableManager(_db, _db.interactions);
+  $$CategoriesTableTableManager get categories =>
+      $$CategoriesTableTableManager(_db, _db.categories);
 }

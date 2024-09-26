@@ -613,6 +613,7 @@ abstract class _ShowDialog implements SplashPageCommand {
 mixin _$SplashState {
   PageState get pageStatus => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
   bool get showButton => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -626,7 +627,11 @@ abstract class $SplashStateCopyWith<$Res> {
           SplashState value, $Res Function(SplashState) then) =
       _$SplashStateCopyWithImpl<$Res, SplashState>;
   @useResult
-  $Res call({PageState pageStatus, PageCommand? pageCommand, bool showButton});
+  $Res call(
+      {PageState pageStatus,
+      PageCommand? pageCommand,
+      bool isLoading,
+      bool showButton});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
 }
@@ -646,6 +651,7 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
   $Res call({
     Object? pageStatus = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
     Object? showButton = null,
   }) {
     return _then(_value.copyWith(
@@ -657,6 +663,10 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       showButton: null == showButton
           ? _value.showButton
           : showButton // ignore: cast_nullable_to_non_nullable
@@ -685,7 +695,11 @@ abstract class _$$SplashStateImplCopyWith<$Res>
       __$$SplashStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageState pageStatus, PageCommand? pageCommand, bool showButton});
+  $Res call(
+      {PageState pageStatus,
+      PageCommand? pageCommand,
+      bool isLoading,
+      bool showButton});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -704,6 +718,7 @@ class __$$SplashStateImplCopyWithImpl<$Res>
   $Res call({
     Object? pageStatus = null,
     Object? pageCommand = freezed,
+    Object? isLoading = null,
     Object? showButton = null,
   }) {
     return _then(_$SplashStateImpl(
@@ -715,6 +730,10 @@ class __$$SplashStateImplCopyWithImpl<$Res>
           ? _value.pageCommand
           : pageCommand // ignore: cast_nullable_to_non_nullable
               as PageCommand?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       showButton: null == showButton
           ? _value.showButton
           : showButton // ignore: cast_nullable_to_non_nullable
@@ -729,6 +748,7 @@ class _$SplashStateImpl extends _SplashState {
   const _$SplashStateImpl(
       {this.pageStatus = PageState.initial,
       this.pageCommand,
+      this.isLoading = false,
       this.showButton = false})
       : super._();
 
@@ -737,6 +757,9 @@ class _$SplashStateImpl extends _SplashState {
   final PageState pageStatus;
   @override
   final PageCommand? pageCommand;
+  @override
+  @JsonKey()
+  final bool isLoading;
   @override
   @JsonKey()
   final bool showButton;
@@ -752,6 +775,7 @@ abstract class _SplashState extends SplashState {
   const factory _SplashState(
       {final PageState pageStatus,
       final PageCommand? pageCommand,
+      final bool isLoading,
       final bool showButton}) = _$SplashStateImpl;
   const _SplashState._() : super._();
 
@@ -759,6 +783,8 @@ abstract class _SplashState extends SplashState {
   PageState get pageStatus;
   @override
   PageCommand? get pageCommand;
+  @override
+  bool get isLoading;
   @override
   bool get showButton;
   @override

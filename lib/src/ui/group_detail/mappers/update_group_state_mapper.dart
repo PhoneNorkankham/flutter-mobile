@@ -14,7 +14,11 @@ class UpdateGroupStateMapper implements BaseStateMapper<GroupDetailState, DataRe
         pageCommand: pageError.toPageCommand(),
       );
     } else {
-      return state.copyWith(isLoading: false);
+      final Group group = result.valueOrCrash;
+      return state.copyWith(
+        isLoading: false,
+        groupDetail: group,
+      );
     }
   }
 }

@@ -9,6 +9,7 @@ import 'package:keepup/src/locale/translation_manager.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
+import 'package:keepup/src/ui/onboarding/usecases/create_anonymous_account_use_case.dart';
 import 'package:keepup/src/use_cases/check_logged_in_use_case.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
@@ -20,11 +21,13 @@ part 'splash_state.dart';
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
   final TranslationManager _translationManager;
   final GetLoggedInDataUseCase _getLoggedInDataUseCase;
+  final CreateAnonymousAccountUseCase _createAnonymousAccountUseCase;
   final SupabaseRepository _supabaseRepository;
 
   SplashBloc(
     this._translationManager,
     this._getLoggedInDataUseCase,
+    this._createAnonymousAccountUseCase,
     this._supabaseRepository,
   ) : super(const SplashState()) {
     on<_Initial>(_initial);
@@ -37,18 +40,10 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     await Future.delayed(const Duration(seconds: 1));
     final DataResult<LoggedInData> result = await _getLoggedInDataUseCase.run();
     final LoggedInData? loggedInData = result.valueOrNull;
-    if (result.isValue && loggedInData != null && loggedInData.isLoggedIn) {
-      if (loggedInData.isExpired) {
-        await _supabaseRepository.logout();
-        emit(state.copyWith(pageCommand: PageCommandNavigation.replacePage(AppPages.onboarding)));
-      } else {
-        emit(state.copyWith(
-          pageCommand: PageCommandNavigation.replacePage(
-            loggedInData.isJoinedGroup ? AppPages.main : AppPages.onboarding,
-          ),
-        ));
-      }
+    if (loggedInData != null && loggedInData.isLoggedIn && !loggedInData.isExpired) {
+      emit(state.copyWith(pageCommand: PageCommandNavigation.replacePage(AppPages.main)));
     } else {
+      await _supabaseRepository.logout();
       emit(state.copyWith(showButton: true));
     }
   }
@@ -57,12 +52,22 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     return _translationManager.updateLocale(TranslationManager.fallbackLocaleUS);
   }
 
-  FutureOr<void> _onGetStarted(_OnGetStarted event, Emitter<SplashState> emit) {
-    emit(state.copyWith(
-      pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(
-        AppPages.onboarding,
-        (route) => false,
-      ),
-    ));
+  FutureOr<void> _onGetStarted(_OnGetStarted event, Emitter<SplashState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    DataResult<LoggedInData> result = await _createAnonymousAccountUseCase.run();
+    if (result.isValue) {
+      emit(state.copyWith(
+        isLoading: false,
+        pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(
+          AppPages.main,
+          (route) => false,
+        ),
+      ));
+    } else {
+      emit(state.copyWith(
+        isLoading: false,
+        pageCommand: result.asError?.error.toPageCommand(),
+      ));
+    }
   }
 }

@@ -61,6 +61,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     on<_OnChangedContacts>(_onChangedContacts);
     on<_OnOpenedSeeAll>((event, emit) => emit(state.copyWith(openedSeeAll: true)));
     on<_OnDeleteGroup>(_onDeleteGroup);
+    on<_OnCategoryChanged>(_onCategoryChanged);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<GroupDetailState> emit) async {
@@ -82,12 +83,26 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
         ),
       ));
     } else {
+      // Get categories
+      final Resource<List<Category>> resource = await _supabaseRepository.getCategories();
+      final List<Category> categories = resource.data ?? [];
+      emit(state.copyWith(categories: categories));
+
+      // Get group by group id
       final result = await _getGroupUseCase.run(groupId);
       emit(_getGroupStateMapper.mapResultToState(state, result));
+
+      // Map contacts to state
       nameController.text = state.request.name;
       final List<String> contactIds = state.request.contacts;
       final List<Contact> contacts = await _supabaseRepository.getDBContactByIds(contactIds);
       emit(state.copyWith(contacts: contacts));
+
+      // Map selected category to state
+      final Category selectedCategory =
+          categories.where((e) => e.id == state.request.categoryId).firstOrNull ??
+              const Category(id: '', name: 'None');
+      emit(state.copyWith(selectedCategory: selectedCategory));
     }
   }
 
@@ -131,6 +146,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     final GroupRequest request = state.request.copyWith(
       frequencyInterval: event.frequencyIntervalType,
     );
+    if (state.isLoading) return;
     final isSuccess = await _updateGroup(request, emit);
     if (isSuccess) {
       emit(state.copyWith(isLoading: true));
@@ -138,14 +154,17 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
         final contactRequest = ContactRequest.fromJson(e.toJson());
         return contactRequest.copyWith(expiration: event.frequencyIntervalType.toExpirationDate());
       }).toList();
-      final Resource<List<Contact>> resource =
-          await _supabaseRepository.updateContacts(contactRequests);
-      final List<Contact> contacts = resource.data ?? [];
-      if (resource.isSuccess && contacts.isNotEmpty) {
-        emit(state.copyWith(isLoading: false, contacts: contacts));
-      } else {
-        emit(state.copyWith(isLoading: false));
+      if (contactRequests.isNotEmpty) {
+        final resource = await _supabaseRepository.updateContacts(contactRequests);
+        final List<Contact> contacts = resource.data ?? [];
+        if (resource.isSuccess && contacts.isNotEmpty) {
+          emit(state.copyWith(contacts: contacts));
+        }
       }
+      emit(state.copyWith(
+        isLoading: false,
+        pageCommand: PageCommandMessage.showSuccess(LocaleKey.remindUpdatedSuccessfully.tr),
+      ));
     }
   }
 
@@ -178,5 +197,22 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     emit(state.copyWith(isLoading: true));
     final VoidResult result = await _deleteGroupUseCase.run(group);
     emit(_deleteGroupStateMapper.mapResultToState(state, result));
+  }
+
+  FutureOr<void> _onCategoryChanged(
+    _OnCategoryChanged event,
+    Emitter<GroupDetailState> emit,
+  ) async {
+    if (state.isLoading) return;
+    final GroupRequest request = state.request.copyWith(
+      categoryId: event.category.id,
+    );
+    final isSuccess = await _updateGroup(request, emit);
+    if (isSuccess) {
+      emit(state.copyWith(
+        selectedCategory: event.category,
+        pageCommand: PageCommandMessage.showSuccess(LocaleKey.categoryUpdatedSuccessfully.tr),
+      ));
+    }
   }
 }

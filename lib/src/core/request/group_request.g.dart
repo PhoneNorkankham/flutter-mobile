@@ -13,10 +13,11 @@ _$GroupRequestImpl _$$GroupRequestImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
+      categoryId: json['category_id'] as String? ?? '',
       frequencyInterval: $enumDecodeNullable(
               _$FrequencyIntervalTypeEnumMap, json['frequency_interval'],
-              unknownValue: FrequencyIntervalType.none) ??
-          FrequencyIntervalType.none,
+              unknownValue: FrequencyIntervalType.everyWeek) ??
+          FrequencyIntervalType.everyWeek,
       contacts: (json['contacts'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -30,6 +31,7 @@ Map<String, dynamic> _$$GroupRequestImplToJson(_$GroupRequestImpl instance) {
     'name': instance.name,
     'description': instance.description,
     'avatar': instance.avatar,
+    'category_id': instance.categoryId,
     'frequency_interval':
         _$FrequencyIntervalTypeEnumMap[instance.frequencyInterval]!,
     'contacts': instance.contacts,

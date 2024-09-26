@@ -26,8 +26,6 @@ mixin _$LoggedInData {
   bool get isExpired => throw _privateConstructorUsedError;
   @HiveField(2, defaultValue: false)
   bool get isAnonymous => throw _privateConstructorUsedError;
-  @HiveField(3, defaultValue: false)
-  bool get isJoinedGroup => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,8 +42,7 @@ abstract class $LoggedInDataCopyWith<$Res> {
   $Res call(
       {@HiveField(0, defaultValue: false) bool isLoggedIn,
       @HiveField(1, defaultValue: false) bool isExpired,
-      @HiveField(2, defaultValue: false) bool isAnonymous,
-      @HiveField(3, defaultValue: false) bool isJoinedGroup});
+      @HiveField(2, defaultValue: false) bool isAnonymous});
 }
 
 /// @nodoc
@@ -64,7 +61,6 @@ class _$LoggedInDataCopyWithImpl<$Res, $Val extends LoggedInData>
     Object? isLoggedIn = null,
     Object? isExpired = null,
     Object? isAnonymous = null,
-    Object? isJoinedGroup = null,
   }) {
     return _then(_value.copyWith(
       isLoggedIn: null == isLoggedIn
@@ -78,10 +74,6 @@ class _$LoggedInDataCopyWithImpl<$Res, $Val extends LoggedInData>
       isAnonymous: null == isAnonymous
           ? _value.isAnonymous
           : isAnonymous // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isJoinedGroup: null == isJoinedGroup
-          ? _value.isJoinedGroup
-          : isJoinedGroup // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -98,8 +90,7 @@ abstract class _$$LoggedInDataImplCopyWith<$Res>
   $Res call(
       {@HiveField(0, defaultValue: false) bool isLoggedIn,
       @HiveField(1, defaultValue: false) bool isExpired,
-      @HiveField(2, defaultValue: false) bool isAnonymous,
-      @HiveField(3, defaultValue: false) bool isJoinedGroup});
+      @HiveField(2, defaultValue: false) bool isAnonymous});
 }
 
 /// @nodoc
@@ -116,7 +107,6 @@ class __$$LoggedInDataImplCopyWithImpl<$Res>
     Object? isLoggedIn = null,
     Object? isExpired = null,
     Object? isAnonymous = null,
-    Object? isJoinedGroup = null,
   }) {
     return _then(_$LoggedInDataImpl(
       isLoggedIn: null == isLoggedIn
@@ -131,10 +121,6 @@ class __$$LoggedInDataImplCopyWithImpl<$Res>
           ? _value.isAnonymous
           : isAnonymous // ignore: cast_nullable_to_non_nullable
               as bool,
-      isJoinedGroup: null == isJoinedGroup
-          ? _value.isJoinedGroup
-          : isJoinedGroup // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -145,8 +131,7 @@ class _$LoggedInDataImpl implements _LoggedInData {
   const _$LoggedInDataImpl(
       {@HiveField(0, defaultValue: false) this.isLoggedIn = false,
       @HiveField(1, defaultValue: false) this.isExpired = false,
-      @HiveField(2, defaultValue: false) this.isAnonymous = false,
-      @HiveField(3, defaultValue: false) this.isJoinedGroup = false});
+      @HiveField(2, defaultValue: false) this.isAnonymous = false});
 
   factory _$LoggedInDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoggedInDataImplFromJson(json);
@@ -163,14 +148,10 @@ class _$LoggedInDataImpl implements _LoggedInData {
   @JsonKey()
   @HiveField(2, defaultValue: false)
   final bool isAnonymous;
-  @override
-  @JsonKey()
-  @HiveField(3, defaultValue: false)
-  final bool isJoinedGroup;
 
   @override
   String toString() {
-    return 'LoggedInData(isLoggedIn: $isLoggedIn, isExpired: $isExpired, isAnonymous: $isAnonymous, isJoinedGroup: $isJoinedGroup)';
+    return 'LoggedInData(isLoggedIn: $isLoggedIn, isExpired: $isExpired, isAnonymous: $isAnonymous)';
   }
 
   @override
@@ -183,15 +164,13 @@ class _$LoggedInDataImpl implements _LoggedInData {
             (identical(other.isExpired, isExpired) ||
                 other.isExpired == isExpired) &&
             (identical(other.isAnonymous, isAnonymous) ||
-                other.isAnonymous == isAnonymous) &&
-            (identical(other.isJoinedGroup, isJoinedGroup) ||
-                other.isJoinedGroup == isJoinedGroup));
+                other.isAnonymous == isAnonymous));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isLoggedIn, isExpired, isAnonymous, isJoinedGroup);
+  int get hashCode =>
+      Object.hash(runtimeType, isLoggedIn, isExpired, isAnonymous);
 
   @JsonKey(ignore: true)
   @override
@@ -211,8 +190,7 @@ abstract class _LoggedInData implements LoggedInData {
   const factory _LoggedInData(
           {@HiveField(0, defaultValue: false) final bool isLoggedIn,
           @HiveField(1, defaultValue: false) final bool isExpired,
-          @HiveField(2, defaultValue: false) final bool isAnonymous,
-          @HiveField(3, defaultValue: false) final bool isJoinedGroup}) =
+          @HiveField(2, defaultValue: false) final bool isAnonymous}) =
       _$LoggedInDataImpl;
 
   factory _LoggedInData.fromJson(Map<String, dynamic> json) =
@@ -227,9 +205,6 @@ abstract class _LoggedInData implements LoggedInData {
   @override
   @HiveField(2, defaultValue: false)
   bool get isAnonymous;
-  @override
-  @HiveField(3, defaultValue: false)
-  bool get isJoinedGroup;
   @override
   @JsonKey(ignore: true)
   _$$LoggedInDataImplCopyWith<_$LoggedInDataImpl> get copyWith =>

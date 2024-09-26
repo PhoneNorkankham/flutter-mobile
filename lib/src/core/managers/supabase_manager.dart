@@ -9,7 +9,6 @@ import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/interaction_request.dart';
 import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
-import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path/path.dart' as p;
@@ -19,6 +18,7 @@ class SupabaseManager {
   final _tbUsers = 'Users';
   final _tbGroups = 'Groups';
   final _tbContacts = 'Contacts';
+  final _tbCategories = 'Categories';
   final _tbInteractions = 'Interactions';
 
   final _fieldId = 'id';
@@ -45,34 +45,35 @@ class SupabaseManager {
 
   Future<bool> _isLoggedIn() {
     if (uid.isNotEmpty && isExpired) {
-      return _supabaseAuth
-          .refreshSession()
-          .then((value) => uid.isNotEmpty && !isExpired)
-          .catchError((e) => _supabaseAuth.signOut().then((value) => false));
+      return _supabaseAuth.refreshSession().then((value) {
+        return uid.isNotEmpty;
+      }).catchError((e) {
+        return _supabaseAuth.signOut().then((value) => false);
+      });
     }
-    return Future.value(uid.isNotEmpty && !isExpired);
+    return Future.value(uid.isNotEmpty);
   }
 
-  Future<bool> _isJoinedGroup() {
-    if (uid.isNotEmpty) {
-      return _supabase
-          .from(_tbGroups)
-          .select()
-          .eq(_fieldOwnerId, uid)
-          .then((value) => value.isNotEmpty);
-    } else {
-      return Future.value(false);
-    }
-  }
+  // Future<bool> _isJoinedGroup() {
+  //   if (uid.isNotEmpty) {
+  //     return _supabase
+  //         .from(_tbGroups)
+  //         .select()
+  //         .eq(_fieldOwnerId, uid)
+  //         .then((value) => value.isNotEmpty);
+  //   } else {
+  //     return Future.value(false);
+  //   }
+  // }
 
   Future<LoggedInData> getLoggedInData() async {
     final isLoggedIn = await _isLoggedIn();
-    final isJoinedGroup = await _isJoinedGroup();
+    // final isJoinedGroup = await _isJoinedGroup();
     return LoggedInData(
       isLoggedIn: isLoggedIn,
       isExpired: isExpired,
       isAnonymous: isAnonymous,
-      isJoinedGroup: isJoinedGroup,
+      // isJoinedGroup: isJoinedGroup,
     );
   }
 
@@ -92,6 +93,11 @@ class SupabaseManager {
   }
 
   Future<void> insertUser(UserRequest request) => _supabase.from(_tbUsers).insert(request.toJson());
+
+  Future<List<Category>> getCategories() => _supabase
+      .from(_tbCategories)
+      .select()
+      .then((value) => value.map((e) => Category.fromJson(e)).toList());
 
   Future<List<Group>> createDefaultGroups() async {
     final List<GroupRequest> requests = AppConstants.onBoardingGroups
@@ -272,9 +278,6 @@ class SupabaseManager {
         .then((value) => _supabaseStorage.from('images').getPublicUrl(avatarPath));
   }
 
-  Future<List<Contact>> getTodayContacts() =>
-      getContacts().then((contacts) => contacts.toKeepUpToday());
-
   Future<List<Interaction>> getInteractions() => _supabase
       .from(_tbInteractions)
       .select()
@@ -310,8 +313,6 @@ class SupabaseManager {
 
   _deleteUser(String uid) => _supabase.from(_tbUsers).delete().match({_fieldId: uid});
 
-  Future<void> _signOut() => _supabaseAuth.signOut(scope: SignOutScope.global);
-
   Future<void> resetData() async {
     await _deleteAllGroups();
     await _deleteAllContacts();
@@ -321,14 +322,14 @@ class SupabaseManager {
   Future<void> deleteAccount() async {
     await resetData();
     await _deleteUser(uid);
-    await _signOut();
+    await _supabaseAuth.signOut(scope: SignOutScope.global);
   }
 
   Future<void> logout() {
     if (isAnonymous) {
       return deleteAccount();
     } else {
-      return _signOut();
+      return _supabaseAuth.signOut();
     }
   }
 }

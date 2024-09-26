@@ -5,6 +5,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
+import 'package:keepup/src/core/resource.dart';
+import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_type.dart';
@@ -20,41 +22,38 @@ class KeepUpSoonBloc extends Bloc<KeepUpSoonEvent, KeepUpSoonState> {
   KeepUpSoonBloc(this._supabaseRepository) : super(const KeepUpSoonState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnFetchWeekContacts>(_onFetchWeekContacts);
-    on<_OnFetchMonthContacts>(_onFetchMonthContacts);
+    on<_OnFetchGroups>(_onFetchGroups);
+    on<_OnFetchContacts>(_onFetchContacts);
     on<_OnChangedType>((event, emit) => emit(state.copyWith(type: event.type)));
     on<_OnKeepUpGroup>(_onKeepUpGroup);
     on<_OnKeepUpContact>(_onKeepUpContact);
     on<_OnGotoGroupDetails>(_onGotoGroupDetails);
+    on<_OnFilter>((event, emit) => emit(state.copyWith(selectedCategory: event.category)));
   }
 
-  FutureOr<void> _initial(_Initial event, Emitter<KeepUpSoonState> emit) {
-    add(const KeepUpSoonEvent.onFetchWeekContacts());
-    add(const KeepUpSoonEvent.onFetchMonthContacts());
+  FutureOr<void> _initial(_Initial event, Emitter<KeepUpSoonState> emit) async {
+    add(const KeepUpSoonEvent.onFetchGroups());
+    add(const KeepUpSoonEvent.onFetchContacts());
+
+    // Get categories
+    final Resource<List<Category>> resource = await _supabaseRepository.getCategories();
+    final List<Category> categories = resource.data ?? [];
+    emit(state.copyWith(categories: [const Category(id: '', name: 'All'), ...categories]));
   }
 
-  FutureOr<void> _onFetchWeekContacts(
-    _OnFetchWeekContacts event,
-    Emitter<KeepUpSoonState> emit,
-  ) {
+  FutureOr<void> _onFetchGroups(_OnFetchGroups event, Emitter<KeepUpSoonState> emit) {
     return emit.forEach(
-      _supabaseRepository.watchInAWeekContacts(),
-      onData: (contacts) => state.copyWith(weekContacts: contacts),
+      _supabaseRepository.watchDBGroups(),
+      onData: (groups) => state.copyWith(groups: groups),
     );
   }
 
-  FutureOr<void> _onFetchMonthContacts(
-    _OnFetchMonthContacts event,
-    Emitter<KeepUpSoonState> emit,
-  ) {
+  FutureOr<void> _onFetchContacts(_OnFetchContacts event, Emitter<KeepUpSoonState> emit) {
     return emit.forEach(
-      _supabaseRepository.watchInAMonthContacts(),
-      onData: (contacts) => state.copyWith(monthContacts: contacts),
+      _supabaseRepository.watchDBContacts(),
+      onData: (contacts) => state.copyWith(contacts: contacts),
     );
   }
-
-  Future<List<Group>> getGroupsByContacts(List<Contact> contacts) =>
-      _supabaseRepository.getGroupsByContacts(contacts);
 
   FutureOr<void> _onKeepUpGroup(_OnKeepUpGroup event, Emitter<KeepUpSoonState> emit) async {
     emit(state.copyWith(isLoading: true));

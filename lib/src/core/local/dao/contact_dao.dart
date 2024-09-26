@@ -1,7 +1,6 @@
 import 'package:drift/drift.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/local/table/contacts.dart';
-import 'package:keepup/src/extensions/contact_extensions.dart';
 
 part 'contact_dao.g.dart';
 
@@ -44,16 +43,4 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
       (delete(contacts)..where((tbl) => tbl.id.equals(contactId))).go();
 
   Future<int> deleteAll() => delete(contacts).go();
-
-  Future<List<Contact>> getTodayContacts() =>
-      getContacts().then((contacts) => contacts.toKeepUpToday());
-
-  Stream<List<Contact>> watchTodayContacts() =>
-      watchContacts().map((contacts) => contacts.toKeepUpToday());
-
-  Stream<List<Contact>> watchInAWeekContacts() =>
-      watchContacts().map((contacts) => contacts.toKeepUpInAWeek());
-
-  Stream<List<Contact>> watchInAMonthContacts() =>
-      watchContacts().map((contacts) => contacts.toKeepUpInAMonth());
 }

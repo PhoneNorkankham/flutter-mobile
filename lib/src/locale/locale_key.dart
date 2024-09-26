@@ -160,6 +160,10 @@ class LocaleKey {
   static const String deleteGroupDescription = "deleteGroupDescription";
   static const String contact = "contact";
   static const String seeAll = "seeAll";
+  static const String all = "all";
+  static const String category = "category";
+  static const String categoryUpdatedSuccessfully = "categoryUpdatedSuccessfully";
+  static const String remindUpdatedSuccessfully = "remindUpdatedSuccessfully";
 
   // New Chat
   static const String searchNameOrNumber = "searchNameOrNumber";

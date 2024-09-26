@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:keepup/src/ui/base/base_page.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_group/components/new_group_app_bar.dart';
+import 'package:keepup/src/ui/bottom_sheet/new_group/components/new_group_category.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_group/components/new_group_header.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_group/components/new_group_interval.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_group/components/new_group_selected.dart';
@@ -33,6 +34,8 @@ class NewGroupView extends StatelessWidget {
                     children: [
                       NewGroupHeader(),
                       SizedBox(height: 26),
+                      NewGroupCategory(),
+                      SizedBox(height: 28),
                       NewGroupInterval(),
                       SizedBox(height: 14),
                       NewGroupSelected(),

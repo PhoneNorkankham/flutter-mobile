@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/buttons/app_button.dart';
 import 'package:keepup/src/design/components/buttons/app_button_type.dart';
+import 'package:keepup/src/design/components/process_indicators/loading_full_screen.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/splash/interactor/splash_bloc.dart';
 import 'package:keepup/src/utils/app_assets.dart';
@@ -14,26 +15,36 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SplashBloc, SplashState>(
-      buildWhen: (previous, current) => previous.showButton != current.showButton,
+      buildWhen: (previous, current) => previous.isLoading != current.isLoading,
       builder: (context, state) {
-        final bloc = context.read<SplashBloc>();
-        return Scaffold(
-          backgroundColor: AppColors.primary,
-          body: Stack(
-            children: [
-              Center(child: Image.asset(AppAssets.img_logo_png)),
-              if (state.showButton)
-                Positioned(
-                  left: 35,
-                  right: 35,
-                  bottom: 45,
-                  child: AppButton(
-                    onPressed: () => bloc.add(const SplashEvent.onGetStarted()),
-                    buttonType: AppButtonType.getStarted,
-                    title: LocaleKey.getStarted.tr,
-                  ),
+        debugPrint("SplashView ${state.isLoading}");
+        return LoadingFullScreen(
+          loading: state.isLoading,
+          child: Scaffold(
+            backgroundColor: AppColors.primary,
+            body: Stack(
+              children: [
+                Center(child: Image.asset(AppAssets.img_logo_png)),
+                BlocBuilder<SplashBloc, SplashState>(
+                  buildWhen: (previous, current) => previous.showButton != current.showButton,
+                  builder: (context, state) {
+                    final bloc = context.read<SplashBloc>();
+                    return state.showButton
+                        ? Positioned(
+                            left: 35,
+                            right: 35,
+                            bottom: 45,
+                            child: AppButton(
+                              onPressed: () => bloc.add(const SplashEvent.onGetStarted()),
+                              buttonType: AppButtonType.getStarted,
+                              title: LocaleKey.getStarted.tr,
+                            ),
+                          )
+                        : const SizedBox();
+                  },
                 ),
-            ],
+              ],
+            ),
           ),
         );
       },
