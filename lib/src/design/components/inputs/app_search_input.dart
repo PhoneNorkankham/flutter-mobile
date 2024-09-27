@@ -19,8 +19,9 @@ class AppSearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: margin ?? const EdgeInsets.symmetric(horizontal: 20.0),
+    return Container(
+      margin: margin ?? const EdgeInsets.symmetric(horizontal: 20.0),
+      height: 36,
       child: AppInputTextField(
         controller: controller,
         prefix: Icon(

@@ -14,26 +14,32 @@ class AddContactsToGroupSelected extends StatelessWidget {
       builder: (context, state) {
         final List<ContactRequest> contacts = state.selectedContacts;
         if (contacts.isEmpty) return const SizedBox();
-        return Container(
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.onPrimary,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          margin: const EdgeInsets.symmetric(horizontal: 20).copyWith(top: 16),
-          padding: const EdgeInsets.symmetric(vertical: 4),
-          child: Wrap(
-            crossAxisAlignment: WrapCrossAlignment.start,
-            children: contacts
-                .map((contact) => AppGridItem(
-                      avatarUrl: contact.avatar,
-                      avatarFile: contact.file,
-                      title: contact.name,
-                      onRemovedPressed: () {
-                        final bloc = context.read<AddContactsToGroupBloc>();
-                        bloc.add(AddContactsToGroupEvent.onRemovedContact(contact));
-                      },
-                    ))
-                .toList(),
+        return SizedBox(
+          height: 110,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.onPrimary,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            margin: const EdgeInsets.symmetric(horizontal: 20).copyWith(top: 16),
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Row(
+                children: contacts
+                    .map((contact) => AppGridItem(
+                          avatarUrl: contact.avatar,
+                          avatarFile: contact.file,
+                          title: contact.name,
+                          onRemovedPressed: () {
+                            final bloc = context.read<AddContactsToGroupBloc>();
+                            bloc.add(AddContactsToGroupEvent.onRemovedContact(contact));
+                          },
+                        ))
+                    .toList(),
+              ),
+            ),
           ),
         );
       },
