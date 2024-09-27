@@ -66,22 +66,42 @@ class ContactDetailHeader extends StatelessWidget {
                       previous.avatar != current.avatar ||
                       previous.request.avatar != current.request.avatar ||
                       previous.request.expiration != current.request.expiration,
-                  builder: (context, state) => Container(
-                    decoration: BoxDecoration(
-                      color: state.request.expiration?.urgentColor ?? AppColors.grey350,
-                      borderRadius: BorderRadius.circular(90),
-                      border: Border.all(
-                        color: AppColors.grey350,
-                        width: 4,
+                  builder: (context, state) => Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: state.request.expiration?.urgentColor ?? AppColors.grey350,
+                          borderRadius: BorderRadius.circular(90),
+                          border: Border.all(
+                            color: AppColors.grey350,
+                            width: 4,
+                          ),
+                        ),
+                        padding: const EdgeInsets.all(6),
+                        child: AppCircleAvatar(
+                          radius: 50,
+                          url: state.request.avatar,
+                          file: state.avatar,
+                          text: state.request.name,
+                        ),
                       ),
-                    ),
-                    padding: const EdgeInsets.all(6),
-                    child: AppCircleAvatar(
-                      radius: 50,
-                      url: state.request.avatar,
-                      file: state.avatar,
-                      text: state.request.name,
-                    ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: AppColors.grey350,
+                            borderRadius: BorderRadius.circular(90),
+                            border: Border.all(
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                              width: 2,
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(3),
+                          child: const Icon(Icons.image),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

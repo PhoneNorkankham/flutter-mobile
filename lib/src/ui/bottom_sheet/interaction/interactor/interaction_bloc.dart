@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
+import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -15,6 +16,8 @@ import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
 import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
+import 'package:keepup/src/use_cases/update_contact_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_async_action.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
@@ -25,15 +28,20 @@ part 'interaction_state.dart';
 class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
   final SupabaseRepository _supabaseRepository;
   final DeleteContactUseCase _deleteContactUseCase;
+  final UploadAvatarUseCase _uploadAvatarUseCase;
+  final UpdateContactUseCase _updateContactUseCase;
 
   InteractionBloc(
     this._supabaseRepository,
     this._deleteContactUseCase,
+    this._uploadAvatarUseCase,
+    this._updateContactUseCase,
   ) : super(const InteractionState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
     on<_OnInteraction>(_onInteraction);
     on<_OnDeleteContact>(_onDeleteContact);
+    on<_OnChangedAvatar>(_onChangedAvatar);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<InteractionState> emit) {
@@ -119,6 +127,45 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
             data: LocaleKey.contactDeletedSuccessfully.tr,
           ),
         ),
+      ));
+    }
+  }
+
+  FutureOr<void> _onChangedAvatar(_OnChangedAvatar event, Emitter<InteractionState> emit) async {
+    final Contact? contact = state.contact;
+    if (contact == null || state.isLoading) return;
+    final File avatarFile = event.file;
+    emit(state.copyWith(isLoading: true, avatar: avatarFile));
+    final DataResult<String> uploadAvatarResult = await _uploadAvatarUseCase.run(avatarFile);
+    final String avatarUrl = uploadAvatarResult.valueOrNull ?? '';
+    if (uploadAvatarResult.isValue && avatarUrl.isNotEmpty) {
+      final request = ContactRequest.fromJson(contact.toJson()).copyWith(avatar: avatarUrl);
+      final updateResult = await _updateContactUseCase.run(request);
+      if (updateResult.isError) {
+        final PageError pageError = updateResult.asError!.error;
+        emit(state.copyWith(
+          isLoading: false,
+          pageCommand: pageError.toPageCommand(),
+        ));
+      } else {
+        emit(state.copyWith(
+          isLoading: false,
+          contact: updateResult.valueOrNull ?? state.contact,
+          pageCommand: PageCommandNavigation.pop(
+            result: PopResult(
+              status: true,
+              resultFromPage: AppPages.contactDetail,
+              data: LocaleKey.contactUpdatedSuccessfully.tr,
+            ),
+          ),
+        ));
+      }
+    } else {
+      final PageError pageError = uploadAvatarResult.asError!.error;
+      emit(state.copyWith(
+        isLoading: false,
+        avatar: null,
+        pageCommand: pageError.toPageCommand(),
       ));
     }
   }

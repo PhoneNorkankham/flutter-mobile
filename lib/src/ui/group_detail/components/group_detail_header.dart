@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
@@ -33,11 +34,31 @@ class GroupDetailHeader extends StatelessWidget {
             ).show(),
             child: BlocBuilder<GroupDetailBloc, GroupDetailState>(
               buildWhen: (previous, current) => previous.request.avatar != current.request.avatar,
-              builder: (context, state) => AppCircleAvatar(
-                file: state.avatarFile,
-                url: state.request.avatar,
-                text: state.request.name,
-                radius: 60,
+              builder: (context, state) => Stack(
+                children: [
+                  AppCircleAvatar(
+                    file: state.avatarFile,
+                    url: state.request.avatar,
+                    text: state.request.name,
+                    radius: 60,
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.grey350,
+                        borderRadius: BorderRadius.circular(90),
+                        border: Border.all(
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          width: 2,
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(3),
+                      child: const Icon(Icons.image),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

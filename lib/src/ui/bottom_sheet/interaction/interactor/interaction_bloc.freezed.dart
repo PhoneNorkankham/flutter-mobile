@@ -22,6 +22,7 @@ mixin _$InteractionEvent {
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
     required TResult Function(Contact contact) onDeleteContact,
+    required TResult Function(File file) onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$InteractionEvent {
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
     TResult? Function(Contact contact)? onDeleteContact,
+    TResult? Function(File file)? onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$InteractionEvent {
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
     TResult Function(Contact contact)? onDeleteContact,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$InteractionEvent {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$InteractionEvent {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$InteractionEvent {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +161,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
     required TResult Function(Contact contact) onDeleteContact,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return initial(contact);
   }
@@ -166,6 +173,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
     TResult? Function(Contact contact)? onDeleteContact,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return initial?.call(contact);
   }
@@ -177,6 +185,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
     TResult Function(Contact contact)? onDeleteContact,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -192,6 +201,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return initial(this);
   }
@@ -203,6 +213,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return initial?.call(this);
   }
@@ -214,6 +225,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -274,6 +286,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
     required TResult Function(Contact contact) onDeleteContact,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return clearPageCommand();
   }
@@ -285,6 +298,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
     TResult? Function(Contact contact)? onDeleteContact,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return clearPageCommand?.call();
   }
@@ -296,6 +310,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
     TResult Function(Contact contact)? onDeleteContact,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -311,6 +326,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return clearPageCommand(this);
   }
@@ -322,6 +338,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -333,6 +350,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -414,6 +432,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
     required TResult Function(Contact contact) onDeleteContact,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return onInteraction(type);
   }
@@ -425,6 +444,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
     TResult? Function(Contact contact)? onDeleteContact,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onInteraction?.call(type);
   }
@@ -436,6 +456,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
     TResult Function(Contact contact)? onDeleteContact,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onInteraction != null) {
@@ -451,6 +472,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onInteraction(this);
   }
@@ -462,6 +484,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onInteraction?.call(this);
   }
@@ -473,6 +496,7 @@ class _$OnInteractionImpl implements _OnInteraction {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onInteraction != null) {
@@ -562,6 +586,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     required TResult Function() clearPageCommand,
     required TResult Function(InteractionMethodType type) onInteraction,
     required TResult Function(Contact contact) onDeleteContact,
+    required TResult Function(File file) onChangedAvatar,
   }) {
     return onDeleteContact(contact);
   }
@@ -573,6 +598,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult? Function()? clearPageCommand,
     TResult? Function(InteractionMethodType type)? onInteraction,
     TResult? Function(Contact contact)? onDeleteContact,
+    TResult? Function(File file)? onChangedAvatar,
   }) {
     return onDeleteContact?.call(contact);
   }
@@ -584,6 +610,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult Function()? clearPageCommand,
     TResult Function(InteractionMethodType type)? onInteraction,
     TResult Function(Contact contact)? onDeleteContact,
+    TResult Function(File file)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onDeleteContact != null) {
@@ -599,6 +626,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnInteraction value) onInteraction,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
   }) {
     return onDeleteContact(this);
   }
@@ -610,6 +638,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnInteraction value)? onInteraction,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
   }) {
     return onDeleteContact?.call(this);
   }
@@ -621,6 +650,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnInteraction value)? onInteraction,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
     required TResult orElse(),
   }) {
     if (onDeleteContact != null) {
@@ -636,6 +666,158 @@ abstract class _OnDeleteContact implements InteractionEvent {
   Contact get contact;
   @JsonKey(ignore: true)
   _$$OnDeleteContactImplCopyWith<_$OnDeleteContactImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnChangedAvatarImplCopyWith<$Res> {
+  factory _$$OnChangedAvatarImplCopyWith(_$OnChangedAvatarImpl value,
+          $Res Function(_$OnChangedAvatarImpl) then) =
+      __$$OnChangedAvatarImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File file});
+}
+
+/// @nodoc
+class __$$OnChangedAvatarImplCopyWithImpl<$Res>
+    extends _$InteractionEventCopyWithImpl<$Res, _$OnChangedAvatarImpl>
+    implements _$$OnChangedAvatarImplCopyWith<$Res> {
+  __$$OnChangedAvatarImplCopyWithImpl(
+      _$OnChangedAvatarImpl _value, $Res Function(_$OnChangedAvatarImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? file = null,
+  }) {
+    return _then(_$OnChangedAvatarImpl(
+      null == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnChangedAvatarImpl implements _OnChangedAvatar {
+  const _$OnChangedAvatarImpl(this.file);
+
+  @override
+  final File file;
+
+  @override
+  String toString() {
+    return 'InteractionEvent.onChangedAvatar(file: $file)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnChangedAvatarImpl &&
+            (identical(other.file, file) || other.file == file));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, file);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
+      __$$OnChangedAvatarImplCopyWithImpl<_$OnChangedAvatarImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Contact contact) initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(InteractionMethodType type) onInteraction,
+    required TResult Function(Contact contact) onDeleteContact,
+    required TResult Function(File file) onChangedAvatar,
+  }) {
+    return onChangedAvatar(file);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Contact contact)? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(InteractionMethodType type)? onInteraction,
+    TResult? Function(Contact contact)? onDeleteContact,
+    TResult? Function(File file)? onChangedAvatar,
+  }) {
+    return onChangedAvatar?.call(file);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Contact contact)? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(InteractionMethodType type)? onInteraction,
+    TResult Function(Contact contact)? onDeleteContact,
+    TResult Function(File file)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatar != null) {
+      return onChangedAvatar(file);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnInteraction value) onInteraction,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+  }) {
+    return onChangedAvatar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnInteraction value)? onInteraction,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+  }) {
+    return onChangedAvatar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnInteraction value)? onInteraction,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatar != null) {
+      return onChangedAvatar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedAvatar implements InteractionEvent {
+  const factory _OnChangedAvatar(final File file) = _$OnChangedAvatarImpl;
+
+  File get file;
+  @JsonKey(ignore: true)
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

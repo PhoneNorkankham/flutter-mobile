@@ -6,6 +6,8 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/dialogs/app_dialogs.dart';
+import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
+import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
@@ -31,7 +33,8 @@ class InteractionView extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: BlocBuilder<InteractionBloc, InteractionState>(
-        buildWhen: (previous, current) => previous.contact != current.contact,
+        buildWhen: (previous, current) =>
+            previous.contact != current.contact || previous.avatar != current.avatar,
         builder: (context, state) {
           final Contact? contact = state.contact;
           if (contact == null) return const SizedBox();
@@ -44,21 +47,51 @@ class InteractionView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 32),
                   Center(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: contact.expiration?.urgentColor ?? AppColors.grey350,
-                        borderRadius: BorderRadius.circular(90),
-                        border: Border.all(
-                          color: AppColors.grey350,
-                          width: 4,
+                    child: GestureDetector(
+                      onTap: () => AppDialogs(
+                        title: LocaleKey.uploadAvatar.tr,
+                        content: PickerPhotoDialog(
+                          onSelected: (file) => bloc.add(InteractionEvent.onChangedAvatar(file)),
                         ),
-                      ),
-                      padding: const EdgeInsets.all(6),
-                      child: AppCircleAvatar(
-                        radius: 28,
-                        url: contact.avatar,
-                        text: contact.name,
-                        backgroundColor: AppColors.grey350,
+                        contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+                      ).show(),
+                      child: Stack(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: contact.expiration?.urgentColor ?? AppColors.grey350,
+                              borderRadius: BorderRadius.circular(90),
+                              border: Border.all(
+                                color: AppColors.grey350,
+                                width: 4,
+                              ),
+                            ),
+                            padding: const EdgeInsets.all(6),
+                            child: AppCircleAvatar(
+                              radius: 28,
+                              url: contact.avatar,
+                              text: contact.name,
+                              file: state.avatar,
+                              backgroundColor: AppColors.grey350,
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: AppColors.grey350,
+                                borderRadius: BorderRadius.circular(90),
+                                border: Border.all(
+                                  color: Theme.of(context).scaffoldBackgroundColor,
+                                  width: 2,
+                                ),
+                              ),
+                              padding: const EdgeInsets.all(3),
+                              child: const Icon(Icons.image, size: 14),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
