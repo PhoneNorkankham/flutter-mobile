@@ -17,7 +17,7 @@ class KeepUpSoonInAMonth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KeepUpGroup(
-      title: LocaleKey.inAMonth.tr,
+      title: LocaleKey.thisMonth.tr,
       child: BlocBuilder<KeepUpSoonBloc, KeepUpSoonState>(
         buildWhen: (previous, current) =>
             previous.type != current.type || previous.monthContacts != current.monthContacts,
@@ -34,7 +34,7 @@ class KeepUpSoonInAMonth extends StatelessWidget {
               padding: const EdgeInsets.all(24.0),
               child: Center(
                 child: Text(
-                  type.inAMonthEmptyMessage,
+                  LocaleKey.noContactsNeedKeepUpThisMonth.tr,
                   style: context.appTextTheme.bold16,
                   textAlign: TextAlign.center,
                 ),

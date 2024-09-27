@@ -7,7 +7,7 @@ class KeepUpSoonState with _$KeepUpSoonState {
   const factory KeepUpSoonState({
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
-    @Default(KeepUpSoonType.groups) KeepUpSoonType type,
+    @Default(KeepUpSoonType.individual) KeepUpSoonType type,
     @Default([]) List<Group> groups,
     @Default([]) List<Contact> contacts,
     @Default([]) List<Category> categories,
