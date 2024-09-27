@@ -9,4 +9,6 @@ class InteractionEvent with _$InteractionEvent {
   const factory InteractionEvent.onInteraction(InteractionMethodType type) = _OnInteraction;
 
   const factory InteractionEvent.onDeleteContact(Contact contact) = _OnDeleteContact;
+
+  const factory InteractionEvent.onChangedAvatar(File file) = _OnChangedAvatar;
 }
