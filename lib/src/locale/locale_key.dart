@@ -89,7 +89,6 @@ class LocaleKey {
   static const String searchContacts = "searchContacts";
 
   // KeepUp Today
-  static const String expiringToday = "expiringToday";
   static const String keepUpTodayDescription = "keepUpTodayDescription";
   static const String allSet = "allSet";
   static const String keepUp = "keepUp";
@@ -100,12 +99,12 @@ class LocaleKey {
   // KeepUp Soon
   static const String keepUpSoon = "keepUpSoon";
   static const String individual = "individual";
-  static const String inAWeek = "inAWeek";
-  static const String inAMonth = "inAMonth";
-  static const String noGroupsNeedKeepUpInAWeek = "noGroupsNeedKeepUpInAWeek";
-  static const String noContactsNeedKeepUpInAWeek = "noContactsNeedKeepUpInAWeek";
-  static const String noGroupsNeedKeepUpInAMonth = "noGroupsNeedKeepUpInAMonth";
-  static const String noContactsNeedKeepUpInAMonth = "noContactsNeedKeepUpInAMonth";
+  static const String thisWeek = "thisWeek";
+  static const String thisMonth = "thisMonth";
+  static const String noGroupsNeedKeepUpThisWeek = "noGroupsNeedKeepUpThisWeek";
+  static const String noContactsNeedKeepUpThisWeek = "noContactsNeedKeepUpThisWeek";
+  static const String noGroupsNeedKeepUpThisMonth = "noGroupsNeedKeepUpThisMonth";
+  static const String noContactsNeedKeepUpThisMonth = "noContactsNeedKeepUpThisMonth";
   static const String keepUpContactConfirm = "keepUpContactConfirm";
   static const String keepUpContactSuccessfully = "keepUpContactSuccessfully";
   static const String keepUpContactFailed = "keepUpContactFailed";
@@ -205,4 +204,8 @@ class LocaleKey {
   static const String addGroupName = "addGroupName";
   static const String groupDescription = "groupDescription";
   static const String addGroupDescription = "addGroupDescription";
+
+  // Empty message
+  static const String noContacts = "noContacts";
+  static const String noGroups = "noGroups";
 }

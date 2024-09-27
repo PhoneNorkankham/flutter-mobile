@@ -14,15 +14,15 @@ enum KeepUpSoonType {
 
   String get inAWeekEmptyMessage {
     return switch (this) {
-      groups => LocaleKey.noGroupsNeedKeepUpInAWeek.tr,
-      individual => LocaleKey.noContactsNeedKeepUpInAWeek.tr,
+      groups => LocaleKey.noGroupsNeedKeepUpThisWeek.tr,
+      individual => LocaleKey.noContactsNeedKeepUpThisWeek.tr,
     };
   }
 
   String get inAMonthEmptyMessage {
     return switch (this) {
-      groups => LocaleKey.noGroupsNeedKeepUpInAMonth.tr,
-      individual => LocaleKey.noContactsNeedKeepUpInAMonth.tr,
+      groups => LocaleKey.noGroupsNeedKeepUpThisMonth.tr,
+      individual => LocaleKey.noContactsNeedKeepUpThisMonth.tr,
     };
   }
 }

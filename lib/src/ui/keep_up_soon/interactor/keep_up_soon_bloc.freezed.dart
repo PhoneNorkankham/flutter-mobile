@@ -1752,7 +1752,7 @@ class _$KeepUpSoonStateImpl extends _KeepUpSoonState {
   const _$KeepUpSoonStateImpl(
       {this.pageCommand,
       this.isLoading = false,
-      this.type = KeepUpSoonType.groups,
+      this.type = KeepUpSoonType.individual,
       final List<Group> groups = const [],
       final List<Contact> contacts = const [],
       final List<Category> categories = const [],

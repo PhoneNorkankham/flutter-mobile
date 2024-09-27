@@ -5,7 +5,6 @@ import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/design/components/popup_menu/categories_filter_popup.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/keep_up_today/components/keep_up_today_contacts.dart';
-import 'package:keepup/src/ui/keep_up_today/components/keep_up_today_groups.dart';
 import 'package:keepup/src/ui/keep_up_today/components/keep_up_today_header.dart';
 import 'package:keepup/src/ui/keep_up_today/interactor/keep_up_today_bloc.dart';
 
@@ -50,7 +49,7 @@ class KeepUpTodayView extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   const KeepUpTodayContacts(),
-                  const KeepUpTodayGroups(),
+                  // const KeepUpTodayGroups(),
                   const SizedBox(height: 30),
                 ],
               ),

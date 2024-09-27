@@ -5,6 +5,7 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/keep_up/app_grid_item.dart';
 import 'package:keepup/src/design/components/keep_up/app_list_item.dart';
+import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/layout_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
@@ -26,6 +27,19 @@ class ContactList extends StatelessWidget {
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return const SizedBox();
+            } else if (contacts.isEmpty) {
+              return Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Center(
+                  child: Text(
+                    LocaleKey.noContacts.tr,
+                    style: context.appTextTheme.bold16.copyWith(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              );
             }
             final LayoutType layoutType = snapshot.data ?? LayoutType.list;
             return layoutType.isGridView
