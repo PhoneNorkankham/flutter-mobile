@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/dialogs/app_dialogs.dart';
 import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/contact_type.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/contact_detail/interactor/contact_detail_bloc.dart';
 
@@ -53,56 +51,30 @@ class ContactDetailHeader extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () => AppDialogs(
-                  title: LocaleKey.uploadAvatar.tr,
-                  content: PickerPhotoDialog(
-                    onSelected: (file) => bloc.add(ContactDetailEvent.onChangedAvatar(file)),
-                  ),
-                  contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-                ).show(),
-                child: BlocBuilder<ContactDetailBloc, ContactDetailState>(
-                  buildWhen: (previous, current) =>
-                      previous.avatar != current.avatar ||
-                      previous.request.avatar != current.request.avatar ||
-                      previous.request.expiration != current.request.expiration,
-                  builder: (context, state) => Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: state.request.expiration?.urgentColor ?? AppColors.grey350,
-                          borderRadius: BorderRadius.circular(90),
-                          border: Border.all(
-                            color: AppColors.grey350,
-                            width: 4,
-                          ),
+              BlocBuilder<ContactDetailBloc, ContactDetailState>(
+                buildWhen: (previous, current) =>
+                    previous.avatar != current.avatar ||
+                    previous.request.avatar != current.request.avatar ||
+                    previous.request.expiration != current.request.expiration,
+                builder: (context, state) => FutureBuilder<int>(
+                  future: bloc.getDaysOfFrequency(state.request.groupId),
+                  builder: (context, snapshot) {
+                    final int totalDays = snapshot.data ?? 0;
+                    return AppCircleAvatar(
+                      radius: 50,
+                      url: state.request.avatar,
+                      file: state.avatar,
+                      text: state.request.name,
+                      moonPercent: state.request.getMoonPercent(totalDays),
+                      onPressed: () => AppDialogs(
+                        title: LocaleKey.uploadAvatar.tr,
+                        content: PickerPhotoDialog(
+                          onSelected: (file) => bloc.add(ContactDetailEvent.onChangedAvatar(file)),
                         ),
-                        padding: const EdgeInsets.all(6),
-                        child: AppCircleAvatar(
-                          radius: 50,
-                          url: state.request.avatar,
-                          file: state.avatar,
-                          text: state.request.name,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        right: 0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.grey350,
-                            borderRadius: BorderRadius.circular(90),
-                            border: Border.all(
-                              color: Theme.of(context).scaffoldBackgroundColor,
-                              width: 2,
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(3),
-                          child: const Icon(Icons.image),
-                        ),
-                      ),
-                    ],
-                  ),
+                        contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+                      ).show(),
+                    );
+                  },
                 ),
               ),
               const SizedBox(height: 10),

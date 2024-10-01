@@ -215,4 +215,14 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
       ));
     }
   }
+
+  Future<int> getDaysOfFrequency(String groupId) async {
+    if (groupId.isNotEmpty) {
+      final Group? group = await _supabaseRepository.getDBGroup(groupId);
+      if (group != null) {
+        return group.frequencyInterval.days;
+      }
+    }
+    return 0;
+  }
 }

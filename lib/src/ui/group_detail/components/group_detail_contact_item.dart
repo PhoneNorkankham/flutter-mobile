@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
+import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
 import 'package:keepup/src/ui/group_detail/interactor/group_detail_bloc.dart';
 import 'package:keepup/src/utils/app_assets.dart';
@@ -32,23 +31,17 @@ class GroupDetailContactItem extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Row(
           children: [
-            Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                color: contact.expiration?.urgentColor ?? AppColors.grey350,
-                borderRadius: BorderRadius.circular(90),
-                border: Border.all(
-                  color: AppColors.grey350,
-                  width: 2,
-                ),
-              ),
-              padding: const EdgeInsets.all(2),
-              child: AppCircleAvatar(
-                radius: 18,
-                url: contact.avatar,
-                text: contact.name,
-              ),
+            FutureBuilder<int>(
+              future: bloc.getDaysOfFrequency(contact.groupId),
+              builder: (context, snapshot) {
+                final int totalDays = snapshot.data ?? 0;
+                return AppCircleAvatar(
+                  radius: 18,
+                  url: contact.avatar,
+                  text: contact.name,
+                  moonPercent: contact.getMoonPercent(totalDays),
+                );
+              },
             ),
             const SizedBox(width: 10),
             Expanded(

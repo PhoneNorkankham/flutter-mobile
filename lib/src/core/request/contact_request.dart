@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:keepup/src/core/converters/date_time_converter.dart';
 import 'package:keepup/src/utils/app_validation.dart';
@@ -35,4 +36,13 @@ class ContactRequest with _$ContactRequest {
 
   bool get isValidate =>
       groupId.isNotEmpty && name.isNotEmpty && nameError == null && emailError == null;
+
+  double getMoonPercent(int totalDays) {
+    final DateTime? expiration = this.expiration;
+    if (expiration == null) return 0;
+    if (totalDays == 0) return 0;
+    final DateTime now = DateUtils.dateOnly(DateTime.now());
+    final int diff = DateUtils.dateOnly(expiration).difference(now).inDays;
+    return (totalDays - diff) / totalDays;
+  }
 }

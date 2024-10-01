@@ -10,7 +10,7 @@ import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
 import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
+import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/components/interaction_action_item.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/components/interaction_info_item.dart';
@@ -47,52 +47,27 @@ class InteractionView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 32),
                   Center(
-                    child: GestureDetector(
-                      onTap: () => AppDialogs(
-                        title: LocaleKey.uploadAvatar.tr,
-                        content: PickerPhotoDialog(
-                          onSelected: (file) => bloc.add(InteractionEvent.onChangedAvatar(file)),
-                        ),
-                        contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-                      ).show(),
-                      child: Stack(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: contact.expiration?.urgentColor ?? AppColors.grey350,
-                              borderRadius: BorderRadius.circular(90),
-                              border: Border.all(
-                                color: AppColors.grey350,
-                                width: 4,
-                              ),
+                    child: FutureBuilder<int>(
+                      future: bloc.getDaysOfFrequency(contact.groupId),
+                      builder: (context, snapshot) {
+                        final int totalDays = snapshot.data ?? 0;
+                        return AppCircleAvatar(
+                          radius: 28,
+                          url: contact.avatar,
+                          text: contact.name,
+                          file: state.avatar,
+                          moonPercent: contact.getMoonPercent(totalDays),
+                          backgroundColor: AppColors.grey350,
+                          onPressed: () => AppDialogs(
+                            title: LocaleKey.uploadAvatar.tr,
+                            content: PickerPhotoDialog(
+                              onSelected: (file) =>
+                                  bloc.add(InteractionEvent.onChangedAvatar(file)),
                             ),
-                            padding: const EdgeInsets.all(6),
-                            child: AppCircleAvatar(
-                              radius: 28,
-                              url: contact.avatar,
-                              text: contact.name,
-                              file: state.avatar,
-                              backgroundColor: AppColors.grey350,
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 0,
-                            right: 0,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: AppColors.grey350,
-                                borderRadius: BorderRadius.circular(90),
-                                border: Border.all(
-                                  color: Theme.of(context).scaffoldBackgroundColor,
-                                  width: 2,
-                                ),
-                              ),
-                              padding: const EdgeInsets.all(3),
-                              child: const Icon(Icons.image, size: 14),
-                            ),
-                          ),
-                        ],
-                      ),
+                            contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+                          ).show(),
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(height: 8),

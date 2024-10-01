@@ -7,6 +7,7 @@ import 'package:keepup/src/design/components/keep_up/app_grid_item.dart';
 import 'package:keepup/src/design/components/keep_up/app_list_item.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/layout_type.dart';
+import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
 import 'package:keepup/src/ui/contacts/interactor/contact_bloc.dart';
@@ -47,12 +48,18 @@ class ContactList extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20).copyWith(bottom: 40),
                     child: Wrap(
                       children: contacts
-                          .map((contact) => AppGridItem(
-                                onPressed: () => InteractionBottomSheet.show(contact: contact),
-                                avatarUrl: contact.avatar,
-                                title: contact.name,
-                                titleColor: Theme.of(context).colorScheme.onPrimary,
-                                expiration: contact.expiration,
+                          .map((contact) => FutureBuilder<int>(
+                                future: bloc.getDaysOfFrequency(contact.groupId),
+                                builder: (context, snapshot) {
+                                  final int totalDays = snapshot.data ?? 0;
+                                  return AppGridItem(
+                                    onPressed: () => InteractionBottomSheet.show(contact: contact),
+                                    avatarUrl: contact.avatar,
+                                    title: contact.name,
+                                    titleColor: Theme.of(context).colorScheme.onPrimary,
+                                    percent: contact.getMoonPercent(totalDays),
+                                  );
+                                },
                               ))
                           .toList(),
                     ),
@@ -62,15 +69,21 @@ class ContactList extends StatelessWidget {
                     itemCount: contacts.length,
                     itemBuilder: (context, index) {
                       final Contact contact = contacts.elementAt(index);
-                      return AppListItem(
-                        onPressed: () => InteractionBottomSheet.show(contact: contact),
-                        onKeepUpPressed: () => _onShowKeepUpContactConfirmDialog(bloc, contact),
-                        avatarUrl: contact.avatar,
-                        title: contact.name,
-                        titleColor: Theme.of(context).colorScheme.onPrimary,
-                        description: contact.groupName ?? '',
-                        expiration: contact.expiration,
-                      );
+                      return FutureBuilder<int>(
+                          future: bloc.getDaysOfFrequency(contact.groupId),
+                          builder: (context, snapshot) {
+                            final int totalDays = snapshot.data ?? 0;
+                            return AppListItem(
+                              onPressed: () => InteractionBottomSheet.show(contact: contact),
+                              onKeepUpPressed: () =>
+                                  _onShowKeepUpContactConfirmDialog(bloc, contact),
+                              avatarUrl: contact.avatar,
+                              title: contact.name,
+                              titleColor: Theme.of(context).colorScheme.onPrimary,
+                              description: contact.groupName ?? '',
+                              percent: contact.getMoonPercent(totalDays),
+                            );
+                          });
                     },
                     separatorBuilder: (context, index) => const SizedBox(height: 4),
                   );
