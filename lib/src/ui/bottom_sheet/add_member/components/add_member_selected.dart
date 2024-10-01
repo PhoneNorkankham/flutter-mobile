@@ -14,30 +14,31 @@ class AddMemberSelected extends StatelessWidget {
       builder: (context, state) {
         final List<ContactRequest> contacts = state.selectedContacts;
         if (contacts.isEmpty) return const SizedBox();
-        return SizedBox(
+        return Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.onPrimary,
+            borderRadius: BorderRadius.circular(10),
+          ),
           height: 110,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.onPrimary,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            margin: const EdgeInsets.symmetric(horizontal: 20).copyWith(top: 16),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Row(
-                children: contacts
-                    .map((contact) => AppGridItem(
-                          avatarUrl: contact.avatar,
-                          avatarFile: contact.file,
-                          title: contact.name,
-                          onRemovedPressed: () {
-                            final bloc = context.read<AddMemberBloc>();
-                            bloc.add(AddMemberEvent.onRemovedContact(contact));
-                          },
-                        ))
-                    .toList(),
-              ),
+          margin: const EdgeInsets.symmetric(horizontal: 20).copyWith(top: 16),
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: contacts
+                  .map((contact) => AppGridItem(
+                        width: 72,
+                        avatarUrl: contact.avatar,
+                        avatarFile: contact.file,
+                        title: contact.name,
+                        onRemovedPressed: () {
+                          final bloc = context.read<AddMemberBloc>();
+                          bloc.add(AddMemberEvent.onRemovedContact(contact));
+                        },
+                      ))
+                  .toList(),
             ),
           ),
         );

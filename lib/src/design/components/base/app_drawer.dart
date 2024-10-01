@@ -17,7 +17,7 @@ class AppDrawer extends StatelessWidget {
         padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
         children: [
           const SizedBox(height: 40),
-          const AppCircleAvatar(url: '', radius: 35),
+          const Center(child: AppCircleAvatar(url: '', radius: 35)),
           const SizedBox(height: 10),
           Text(
             'Gao Peiris',

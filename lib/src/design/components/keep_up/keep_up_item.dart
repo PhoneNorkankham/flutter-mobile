@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
 
 class KeepUpItem extends StatelessWidget {
   final String name;
@@ -12,7 +11,6 @@ class KeepUpItem extends StatelessWidget {
   final File? file;
   final Widget? action;
   final VoidCallback? onPressed;
-  final DateTime? expiration;
 
   const KeepUpItem({
     super.key,
@@ -21,7 +19,6 @@ class KeepUpItem extends StatelessWidget {
     this.file,
     this.action,
     this.onPressed,
-    this.expiration,
   });
 
   @override
@@ -40,17 +37,11 @@ class KeepUpItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: expiration?.urgentColor ?? AppColors.grey350,
-                borderRadius: BorderRadius.circular(90),
-                border: Border.all(
-                  color: AppColors.grey350,
-                  width: 2,
-                ),
-              ),
-              padding: const EdgeInsets.all(3),
-              child: AppCircleAvatar(radius: 15, url: avatar, text: name, file: file),
+            AppCircleAvatar(
+              radius: 20,
+              url: avatar,
+              text: name,
+              file: file,
             ),
             const SizedBox(width: 16),
             Expanded(

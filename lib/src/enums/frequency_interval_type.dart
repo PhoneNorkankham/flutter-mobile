@@ -66,4 +66,17 @@ enum FrequencyIntervalType {
         return expiration;
     }
   }
+
+  int get days {
+    return switch (this) {
+      everyDay => 1,
+      everyWeek => 7,
+      everyTwoWeeks => 14,
+      everyMonth => 30,
+      everyThreeMonths => 90,
+      everySixMonths => 270,
+      everyYear => 365,
+      none => 0,
+    };
+  }
 }

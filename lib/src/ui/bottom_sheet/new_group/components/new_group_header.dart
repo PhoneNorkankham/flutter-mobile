@@ -21,23 +21,21 @@ class NewGroupHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 28),
-          GestureDetector(
-            onTap: () => AppDialogs(
-              title: LocaleKey.uploadPhoto.tr,
-              content: PickerPhotoDialog(
-                onSelected: (file) => bloc.add(NewGroupEvent.onChangedAvatar(file)),
-              ),
-              contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-            ).show(),
-            child: BlocBuilder<NewGroupBloc, NewGroupState>(
-              buildWhen: (previous, current) =>
-                  previous.avatar != current.avatar ||
-                  previous.groupRequest.avatar != current.groupRequest.avatar,
-              builder: (context, state) => AppCircleAvatar(
-                file: state.avatar,
-                url: state.groupRequest.avatar,
-                radius: 50,
-              ),
+          BlocBuilder<NewGroupBloc, NewGroupState>(
+            buildWhen: (previous, current) =>
+                previous.avatar != current.avatar ||
+                previous.groupRequest.avatar != current.groupRequest.avatar,
+            builder: (context, state) => AppCircleAvatar(
+              file: state.avatar,
+              url: state.groupRequest.avatar,
+              radius: 50,
+              onPressed: () => AppDialogs(
+                title: LocaleKey.uploadPhoto.tr,
+                content: PickerPhotoDialog(
+                  onSelected: (file) => bloc.add(NewGroupEvent.onChangedAvatar(file)),
+                ),
+                contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
+              ).show(),
             ),
           ),
           const SizedBox(height: 20),

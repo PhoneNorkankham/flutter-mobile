@@ -2,12 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/buttons/app_button.dart';
 import 'package:keepup/src/design/components/buttons/app_button_type.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 
 class AppListItem extends StatelessWidget {
@@ -16,7 +14,7 @@ class AppListItem extends StatelessWidget {
   final String title;
   final Color? titleColor;
   final String description;
-  final DateTime? expiration;
+  final double? percent;
   final VoidCallback? onPressed;
   final VoidCallback? onKeepUpPressed;
 
@@ -27,7 +25,7 @@ class AppListItem extends StatelessWidget {
     this.title = '',
     this.titleColor,
     this.description = '',
-    this.expiration,
+    this.percent,
     this.onPressed,
     this.onKeepUpPressed,
   });
@@ -41,19 +39,12 @@ class AppListItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: Row(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: expiration?.urgentColor ?? AppColors.grey350,
-                borderRadius: BorderRadius.circular(90),
-                border: Border.all(color: AppColors.grey350, width: 2),
-              ),
-              padding: const EdgeInsets.all(3),
-              child: AppCircleAvatar(
-                radius: 22,
-                url: avatarUrl,
-                file: avatarFile,
-                text: title,
-              ),
+            AppCircleAvatar(
+              radius: 22,
+              url: avatarUrl,
+              file: avatarFile,
+              text: title,
+              moonPercent: percent,
             ),
             const SizedBox(width: 8),
             Expanded(

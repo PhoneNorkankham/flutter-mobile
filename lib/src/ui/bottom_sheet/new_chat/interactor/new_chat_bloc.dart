@@ -51,6 +51,16 @@ class NewChatBloc extends Bloc<NewChatEvent, NewChatState> {
     );
   }
 
+  Future<int> getDaysOfFrequency(String groupId) async {
+    if (groupId.isNotEmpty) {
+      final Group? group = await _supabaseRepository.getDBGroup(groupId);
+      if (group != null) {
+        return group.frequencyInterval.days;
+      }
+    }
+    return 0;
+  }
+
   @override
   Future<void> close() {
     keywordController.dispose();

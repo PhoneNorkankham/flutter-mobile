@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
 
 class AppGridItem extends StatelessWidget {
   final String avatarUrl;
   final File? avatarFile;
   final String title;
   final Color? titleColor;
-  final DateTime? expiration;
+  final double? percent;
   final VoidCallback? onPressed;
   final VoidCallback? onRemovedPressed;
+  final double? width;
 
   const AppGridItem({
     super.key,
@@ -21,16 +21,20 @@ class AppGridItem extends StatelessWidget {
     this.avatarFile,
     this.title = '',
     this.titleColor,
-    this.expiration,
+    this.percent,
     this.onPressed,
     this.onRemovedPressed,
+    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final itemWidth = width ?? (screenWidth - 80) / 3;
+
     return Container(
-      width: 72,
-      margin: const EdgeInsets.all(2.0),
+      width: itemWidth,
+      margin: const EdgeInsets.all(4.0),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -41,29 +45,19 @@ class AppGridItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Center(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: expiration?.urgentColor ?? AppColors.grey350,
-                      borderRadius: BorderRadius.circular(90),
-                      border: Border.all(
-                        color: AppColors.grey350,
-                        width: 2,
-                      ),
-                    ),
-                    padding: const EdgeInsets.all(3),
-                    child: AppCircleAvatar(
-                      radius: 20,
-                      url: avatarUrl,
-                      file: avatarFile,
-                      text: title,
-                      backgroundColor: AppColors.grey350,
-                    ),
+                  child: AppCircleAvatar(
+                    radius: itemWidth * 0.8 / 2,
+                    url: avatarUrl,
+                    file: avatarFile,
+                    text: title,
+                    moonPercent: percent,
+                    backgroundColor: AppColors.grey350,
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 10),
                 Text(
                   title,
-                  style: context.appTextTheme.medium12.copyWith(
+                  style: context.appTextTheme.medium14.copyWith(
                     color: titleColor ?? Theme.of(context).colorScheme.primary,
                   ),
                   maxLines: 1,
@@ -88,7 +82,7 @@ class AppGridItem extends StatelessWidget {
                   child: Icon(
                     Icons.close,
                     color: Theme.of(context).colorScheme.primary,
-                    size: 16,
+                    size: 20,
                   ),
                 ),
               ),

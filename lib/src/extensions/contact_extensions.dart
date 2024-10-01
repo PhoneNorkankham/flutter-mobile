@@ -43,6 +43,17 @@ extension ContactsExtensions on List<Contact> {
   }
 }
 
+extension ContactExtension on Contact {
+  double getMoonPercent(int totalDays) {
+    final DateTime? expiration = this.expiration;
+    if (expiration == null) return 0;
+    if (totalDays == 0) return 0;
+    final DateTime now = DateUtils.dateOnly(DateTime.now());
+    final int diff = DateUtils.dateOnly(expiration).difference(now).inDays;
+    return (totalDays - diff) / totalDays;
+  }
+}
+
 extension CSContactsExtensions on List<cs.Contact> {
   Future<List<ContactRequest>> toContactRequests() async {
     final List<ContactRequest> contactRequests = [];

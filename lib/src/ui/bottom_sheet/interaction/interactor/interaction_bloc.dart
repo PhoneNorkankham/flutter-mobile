@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
-import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
@@ -100,12 +99,22 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
 
   Future<String> getFrequency(Contact? contact) async {
     if (contact != null) {
-      final Group? group = await _supabaseRepository.getDBGroup(contact.id);
+      final Group? group = await _supabaseRepository.getDBGroup(contact.groupId);
       if (group != null) {
         return group.frequencyInterval.title;
       }
     }
-    return FrequencyIntervalType.everyDay.title;
+    return '';
+  }
+
+  Future<int> getDaysOfFrequency(String groupId) async {
+    if (groupId.isNotEmpty) {
+      final Group? group = await _supabaseRepository.getDBGroup(groupId);
+      if (group != null) {
+        return group.frequencyInterval.days;
+      }
+    }
+    return 0;
   }
 
   FutureOr<void> _onDeleteContact(_OnDeleteContact event, Emitter<InteractionState> emit) async {

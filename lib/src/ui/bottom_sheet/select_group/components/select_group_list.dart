@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
-import 'package:keepup/src/design/components/keep_up/app_grid_item.dart';
 import 'package:keepup/src/design/components/keep_up/app_list_item.dart';
 import 'package:keepup/src/design/components/process_indicators/custom_circular_progress.dart';
-import 'package:keepup/src/enums/layout_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_contacts_to_group/add_contacts_to_group_bottom_sheet.dart';
 import 'package:keepup/src/ui/bottom_sheet/select_group/interactor/select_group_bloc.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
-import 'package:keepup/src/utils/app_shared.dart';
 
 class SelectGroupList extends StatelessWidget {
   const SelectGroupList({super.key});
@@ -26,47 +23,21 @@ class SelectGroupList extends StatelessWidget {
         }
         final List<Group> groups = state.filterGroups;
 
-        return StreamBuilder<LayoutType>(
-          stream: Get.find<AppShared>().watchLayoutType,
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return const SizedBox();
-            }
-            final LayoutType layoutType = snapshot.data ?? LayoutType.list;
-            return layoutType.isGridView
-                ? SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Wrap(
-                      children: groups
-                          .map((group) => AppGridItem(
-                                onPressed: () =>
-                                    AddContactsToGroupBottomSheet.show(group).then((value) {
-                                  if (value is PopResult && value.status) Get.back(result: value);
-                                }),
-                                avatarUrl: group.avatar,
-                                title: group.name,
-                                titleColor: Theme.of(context).colorScheme.onPrimary,
-                              ))
-                          .toList(),
-                    ),
-                  )
-                : ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    itemCount: groups.length,
-                    itemBuilder: (context, index) {
-                      final Group group = groups.elementAt(index);
-                      return AppListItem(
-                        onPressed: () => AddContactsToGroupBottomSheet.show(group).then((value) {
-                          if (value is PopResult && value.status) Get.back(result: value);
-                        }),
-                        avatarUrl: group.avatar,
-                        title: group.name,
-                        titleColor: Theme.of(context).colorScheme.onPrimary,
-                      );
-                    },
-                    separatorBuilder: (context, index) => const SizedBox(height: 4),
-                  );
+        return ListView.separated(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          itemCount: groups.length,
+          itemBuilder: (context, index) {
+            final Group group = groups.elementAt(index);
+            return AppListItem(
+              onPressed: () => AddContactsToGroupBottomSheet.show(group).then((value) {
+                if (value is PopResult && value.status) Get.back(result: value);
+              }),
+              avatarUrl: group.avatar,
+              title: group.name,
+              titleColor: Theme.of(context).colorScheme.onPrimary,
+            );
           },
+          separatorBuilder: (context, index) => const SizedBox(height: 4),
         );
       },
     );

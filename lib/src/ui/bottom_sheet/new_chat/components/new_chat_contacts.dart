@@ -8,7 +8,7 @@ import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/keep_up/app_grid_item.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/layout_type.dart';
-import 'package:keepup/src/extensions/date_time_extensions.dart';
+import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_contacts_to_group/components/add_contacts_to_group_contacts.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/interaction_bottom_sheet.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_chat/interactor/new_chat_bloc.dart';
@@ -19,6 +19,7 @@ class NewChatContacts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final NewChatBloc bloc = context.read();
     return BlocBuilder<NewChatBloc, NewChatState>(
       buildWhen: (previous, current) => previous.filterContacts != current.filterContacts,
       builder: (context, state) {
@@ -32,16 +33,22 @@ class NewChatContacts extends StatelessWidget {
             }
             final LayoutType layoutType = snapshot.data ?? LayoutType.list;
             if (layoutType == LayoutType.grid) {
-              return Padding(
+              return SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Wrap(
                   children: contacts
-                      .map((contact) => AppGridItem(
-                            onPressed: () => InteractionBottomSheet.show(contact: contact),
-                            avatarUrl: contact.avatar,
-                            title: contact.name,
-                            titleColor: Theme.of(context).colorScheme.onPrimary,
-                            expiration: contact.expiration,
+                      .map((contact) => FutureBuilder<int>(
+                            future: bloc.getDaysOfFrequency(contact.groupId),
+                            builder: (context, snapshot) {
+                              final int totalDays = snapshot.data ?? 0;
+                              return AppGridItem(
+                                onPressed: () => InteractionBottomSheet.show(contact: contact),
+                                avatarUrl: contact.avatar,
+                                title: contact.name,
+                                titleColor: Theme.of(context).colorScheme.onPrimary,
+                                percent: contact.getMoonPercent(totalDays),
+                              );
+                            },
                           ))
                       .toList(),
                 ),
@@ -82,22 +89,18 @@ class NewChatContacts extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Row(
                             children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: contact.expiration?.urgentColor ?? AppColors.grey350,
-                                  borderRadius: BorderRadius.circular(90),
-                                  border: Border.all(
-                                    color: AppColors.grey350,
-                                    width: 2,
-                                  ),
-                                ),
-                                padding: const EdgeInsets.all(2),
-                                child: AppCircleAvatar(
-                                  radius: 18,
-                                  url: contact.avatar,
-                                  text: contact.name,
-                                  backgroundColor: AppColors.grey350,
-                                ),
+                              FutureBuilder<int>(
+                                future: bloc.getDaysOfFrequency(contact.groupId),
+                                builder: (context, snapshot) {
+                                  final int totalDays = snapshot.data ?? 0;
+                                  return AppCircleAvatar(
+                                    radius: 20,
+                                    url: contact.avatar,
+                                    text: contact.name,
+                                    backgroundColor: AppColors.grey350,
+                                    moonPercent: contact.getMoonPercent(totalDays),
+                                  );
+                                },
                               ),
                               const SizedBox(width: 16),
                               Flexible(
