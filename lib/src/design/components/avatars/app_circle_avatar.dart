@@ -70,7 +70,7 @@ class AppCircleAvatar extends StatelessWidget {
         ? ''
         : expirationDay! <= 0
             ? '!'
-            : '$expirationDay';
+            : '${expirationDay}d';
     return GestureDetector(
       onTap: onPressed,
       child: Stack(
@@ -89,29 +89,61 @@ class AppCircleAvatar extends StatelessWidget {
                     ),
             child: placeholderDisabled ? const SizedBox() : placeholder,
           ),
-          if (moonPercent != null)
-            MoonWidget(
-              size: radius * 2,
-              percent: moonPercent!,
-            ),
-          if (badge.isNotEmpty)
+          // if (moonPercent != null)
+          //   MoonWidget(
+          //     size: radius * 2,
+          //     percent: moonPercent!,
+          //   ),
+          // if (badge.isNotEmpty)
+          //   Positioned(
+          //     top: radius <= 22 ? -4 : 0,
+          //     right: radius <= 22 ? -4 : 0,
+          //     child: Container(
+          //       width: 20,
+          //       height: 20,
+          //       decoration: BoxDecoration(
+          //         color: Colors.red,
+          //         borderRadius: BorderRadius.circular(90),
+          //       ),
+          //       alignment: Alignment.center,
+          //       child: Text(
+          //         badge,
+          //         style: Theme.of(context)
+          //             .textTheme
+          //             .bodySmall
+          //             ?.copyWith(color: Colors.white, fontSize: 10),
+          //       ),
+          //     ),
+          //   ),
+          if (badge.isNotEmpty) ...[
+            if (moonPercent != null)
+              Positioned(
+                top: radius <= 22 ? -4 : 0,
+                right: radius <= 22 ? -4 : 0,
+                child: MoonWidget(
+                  size: 20,
+                  percent: moonPercent!,
+                  moonColor: Colors.green,
+                  earthShineColor: Colors.red,
+                ),
+              ),
             Positioned(
               top: radius <= 22 ? -4 : 0,
               right: radius <= 22 ? -4 : 0,
               child: Container(
                 width: 20,
                 height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(90),
-                ),
                 alignment: Alignment.center,
                 child: Text(
                   badge,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(color: Colors.white, fontSize: 10),
                 ),
               ),
             ),
+          ],
           if (onPressed != null)
             Positioned(
               bottom: 0,
