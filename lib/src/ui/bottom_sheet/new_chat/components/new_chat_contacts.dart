@@ -46,7 +46,8 @@ class NewChatContacts extends StatelessWidget {
                                 avatarUrl: contact.avatar,
                                 title: contact.name,
                                 titleColor: Theme.of(context).colorScheme.onPrimary,
-                                percent: contact.getMoonPercent(totalDays),
+                                moonPercent: contact.getMoonPercent(totalDays),
+                                expirationDay: contact.expirationDays,
                               );
                             },
                           ))
@@ -99,6 +100,7 @@ class NewChatContacts extends StatelessWidget {
                                     text: contact.name,
                                     backgroundColor: AppColors.grey350,
                                     moonPercent: contact.getMoonPercent(totalDays),
+                                    expirationDay: contact.expirationDays,
                                   );
                                 },
                               ),

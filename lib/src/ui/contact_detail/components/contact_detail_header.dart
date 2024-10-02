@@ -30,14 +30,35 @@ class ContactDetailHeader extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Icon(
-                    Icons.av_timer,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
                   Expanded(
-                    child: Text(
-                      '0 Days left',
-                      style: context.appTextTheme.medium14,
+                    child: BlocBuilder<ContactDetailBloc, ContactDetailState>(
+                      buildWhen: (previous, current) =>
+                          previous.request.expirationDays != current.request.expirationDays,
+                      builder: (context, state) {
+                        final int expirationDays = state.request.expirationDays;
+
+                        return Text.rich(
+                          TextSpan(children: [
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.av_timer,
+                                color: expirationDays < 0
+                                    ? Colors.red
+                                    : Theme.of(context).colorScheme.onPrimary,
+                              ),
+                              alignment: PlaceholderAlignment.middle,
+                            ),
+                            TextSpan(
+                              text: expirationDays < 0
+                                  ? '${expirationDays.abs()} ${expirationDays.abs() == 1 ? 'Day' : 'Days'} overdue'
+                                  : '$expirationDays ${expirationDays == 1 ? 'Day' : 'Days'} left',
+                            ),
+                          ]),
+                          style: context.appTextTheme.medium14.copyWith(
+                            color: expirationDays < 0 ? Colors.red : null,
+                          ),
+                        );
+                      },
                     ),
                   ),
                   if (state.contactType == ContactType.contactDetail)

@@ -57,6 +57,7 @@ class InteractionView extends StatelessWidget {
                           text: contact.name,
                           file: state.avatar,
                           moonPercent: contact.getMoonPercent(totalDays),
+                          expirationDay: contact.expirationDays,
                           backgroundColor: AppColors.grey350,
                           onPressed: () => AppDialogs(
                             title: LocaleKey.uploadAvatar.tr,

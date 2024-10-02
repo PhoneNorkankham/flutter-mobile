@@ -10,7 +10,8 @@ class AppGridItem extends StatelessWidget {
   final File? avatarFile;
   final String title;
   final Color? titleColor;
-  final double? percent;
+  final double? moonPercent;
+  final int? expirationDay;
   final VoidCallback? onPressed;
   final VoidCallback? onRemovedPressed;
   final double? width;
@@ -21,7 +22,8 @@ class AppGridItem extends StatelessWidget {
     this.avatarFile,
     this.title = '',
     this.titleColor,
-    this.percent,
+    this.moonPercent,
+    this.expirationDay,
     this.onPressed,
     this.onRemovedPressed,
     this.width,
@@ -50,7 +52,8 @@ class AppGridItem extends StatelessWidget {
                     url: avatarUrl,
                     file: avatarFile,
                     text: title,
-                    moonPercent: percent,
+                    moonPercent: moonPercent,
+                    expirationDay: expirationDay,
                     backgroundColor: AppColors.grey350,
                   ),
                 ),

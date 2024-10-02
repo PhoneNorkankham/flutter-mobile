@@ -14,6 +14,7 @@ class AppCircleAvatar extends StatelessWidget {
   final File? file;
   final String text;
   final double? moonPercent;
+  final int? expirationDay;
 
   final Color? backgroundColor;
   final Color? foregroundColor;
@@ -27,6 +28,7 @@ class AppCircleAvatar extends StatelessWidget {
     this.file,
     this.text = '',
     this.moonPercent,
+    this.expirationDay,
     this.backgroundColor,
     this.foregroundColor,
     this.placeholderDisabled = false,
@@ -64,9 +66,15 @@ class AppCircleAvatar extends StatelessWidget {
       );
     }
 
+    final String badge = expirationDay == null
+        ? ''
+        : expirationDay! <= 0
+            ? '!'
+            : '$expirationDay';
     return GestureDetector(
       onTap: onPressed,
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           CircleAvatar(
             radius: radius,
@@ -85,6 +93,24 @@ class AppCircleAvatar extends StatelessWidget {
             MoonWidget(
               size: radius * 2,
               percent: moonPercent!,
+            ),
+          if (badge.isNotEmpty)
+            Positioned(
+              top: radius <= 22 ? -4 : 0,
+              right: radius <= 22 ? -4 : 0,
+              child: Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(90),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  badge,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),
+                ),
+              ),
             ),
           if (onPressed != null)
             Positioned(
