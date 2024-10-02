@@ -14,7 +14,8 @@ class AppListItem extends StatelessWidget {
   final String title;
   final Color? titleColor;
   final String description;
-  final double? percent;
+  final double? moonPercent;
+  final int? expirationDay;
   final VoidCallback? onPressed;
   final VoidCallback? onKeepUpPressed;
 
@@ -25,7 +26,8 @@ class AppListItem extends StatelessWidget {
     this.title = '',
     this.titleColor,
     this.description = '',
-    this.percent,
+    this.moonPercent,
+    this.expirationDay,
     this.onPressed,
     this.onKeepUpPressed,
   });
@@ -44,7 +46,8 @@ class AppListItem extends StatelessWidget {
               url: avatarUrl,
               file: avatarFile,
               text: title,
-              moonPercent: percent,
+              moonPercent: moonPercent,
+              expirationDay: expirationDay,
             ),
             const SizedBox(width: 8),
             Expanded(

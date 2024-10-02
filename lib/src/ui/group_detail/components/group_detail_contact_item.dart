@@ -40,6 +40,7 @@ class GroupDetailContactItem extends StatelessWidget {
                   url: contact.avatar,
                   text: contact.name,
                   moonPercent: contact.getMoonPercent(totalDays),
+                  expirationDay: contact.expirationDays,
                 );
               },
             ),
