@@ -70,7 +70,7 @@ class AppCircleAvatar extends StatelessWidget {
         ? ''
         : expirationDay! <= 0
             ? '!'
-            : '$expirationDay';
+            : '${expirationDay}d';
     return GestureDetector(
       onTap: onPressed,
       child: Stack(
@@ -102,13 +102,16 @@ class AppCircleAvatar extends StatelessWidget {
                 width: 20,
                 height: 20,
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: AppColors.grey350,
                   borderRadius: BorderRadius.circular(90),
                 ),
                 alignment: Alignment.center,
                 child: Text(
                   badge,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(color: Colors.black, fontSize: 10),
                 ),
               ),
             ),
