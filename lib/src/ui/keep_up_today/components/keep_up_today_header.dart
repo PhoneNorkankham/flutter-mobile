@@ -11,14 +11,14 @@ class KeepUpTodayHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          LocaleKey.upcoming.tr,
-          style: context.appTextTheme.bold36.copyWith(
-            color: Theme.of(context).colorScheme.onPrimary,
-          ),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 16),
+        // Text(
+        //   LocaleKey.upcoming.tr,
+        //   style: context.appTextTheme.bold36.copyWith(
+        //     color: Theme.of(context).colorScheme.onPrimary,
+        //   ),
+        //   textAlign: TextAlign.center,
+        // ),
+        // const SizedBox(height: 16),
         Text(
           LocaleKey.keepUpTodayDescription.tr,
           style: context.appTextTheme.bold16.copyWith(

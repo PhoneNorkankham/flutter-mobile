@@ -4,7 +4,6 @@ import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/design/components/popup_menu/categories_filter_popup.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
-import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_header.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_in_a_month.dart';
 import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_in_a_week.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_bloc.dart';
@@ -28,8 +27,8 @@ class KeepUpSoonView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 24),
-                  const KeepUpSoonHeader(),
-                  const SizedBox(height: 28),
+                  // const KeepUpSoonHeader(),
+                  // const SizedBox(height: 28),
                   Row(
                     children: [
                       BlocBuilder<KeepUpSoonBloc, KeepUpSoonState>(

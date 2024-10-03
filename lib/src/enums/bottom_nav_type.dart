@@ -31,7 +31,7 @@ enum BottomNavType {
       case BottomNavType.today:
         return LocaleKey.today.tr;
       case BottomNavType.upcoming:
-        return LocaleKey.keepUpSoon.tr;
+        return LocaleKey.upcoming.tr;
       case BottomNavType.contacts:
         return LocaleKey.availableContacts.tr;
       case BottomNavType.groups:
