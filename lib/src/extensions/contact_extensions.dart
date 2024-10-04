@@ -83,7 +83,7 @@ extension CSContactExtensions on cs.Contact {
     } else {
       name = '$familyName $middleName $givenName'.trim();
     }
-    name = name.replaceAll('(', '').replaceAll(')', '');
+    name = name.replaceAll('(', '').replaceAll(')', '').replaceAll('\'', '');
     if (name.isNotEmpty) {
       final String email =
           emails?.firstWhereOrNull((email) => email.value?.isNotEmpty ?? false)?.value ?? '';
