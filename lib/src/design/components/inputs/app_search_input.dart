@@ -3,36 +3,70 @@ import 'package:get/get.dart';
 import 'package:keepup/src/design/components/inputs/app_input_text_field.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 
-class AppSearchInput extends StatelessWidget {
+class AppSearchInput extends StatefulWidget {
+  final TextEditingController controller;
   final ValueChanged<String>? onChanged;
   final EdgeInsets? margin;
   final String? hintText;
-  final TextEditingController? controller;
 
   const AppSearchInput({
     super.key,
+    required this.controller,
     this.onChanged,
     this.margin,
     this.hintText,
-    this.controller,
   });
+
+  @override
+  State<AppSearchInput> createState() => _AppSearchInputState();
+}
+
+class _AppSearchInputState extends State<AppSearchInput> {
+  bool _showRemoveButton = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: margin ?? const EdgeInsets.symmetric(horizontal: 20.0),
+      margin: widget.margin ?? const EdgeInsets.symmetric(horizontal: 20.0),
       height: 36,
-      child: AppInputTextField(
-        controller: controller,
-        prefix: Icon(
-          Icons.search,
-          color: Theme.of(context).inputDecorationTheme.hintStyle?.color,
-          size: 20,
-        ),
-        maxLines: 1,
-        hintText: hintText ?? LocaleKey.search.tr,
-        textInputAction: TextInputAction.search,
-        onChanged: onChanged,
+      child: Stack(
+        children: [
+          AppInputTextField(
+            controller: widget.controller,
+            prefix: Icon(
+              Icons.search,
+              color: Theme.of(context).inputDecorationTheme.hintStyle?.color,
+              size: 20,
+            ),
+            maxLines: 1,
+            hintText: widget.hintText ?? LocaleKey.search.tr,
+            textInputAction: TextInputAction.search,
+            textInputType: TextInputType.name,
+            onChanged: (value) {
+              widget.onChanged?.call(value);
+              setState(() {
+                _showRemoveButton = value.isNotEmpty;
+              });
+            },
+          ),
+          if (_showRemoveButton)
+            Positioned(
+              right: 0,
+              top: 0,
+              bottom: 0,
+              child: IconButton(
+                onPressed: () {
+                  widget.controller.clear();
+                  widget.onChanged?.call('');
+                  setState(() {
+                    _showRemoveButton = false;
+                  });
+                },
+                icon: const Icon(Icons.close, size: 20),
+                color: Theme.of(context).inputDecorationTheme.hintStyle?.color,
+              ),
+            ),
+        ],
       ),
     );
   }

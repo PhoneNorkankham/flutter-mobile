@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
@@ -16,6 +17,8 @@ part 'contact_state.dart';
 
 class ContactBloc extends Bloc<ContactEvent, ContactState> {
   final SupabaseRepository _supabaseRepository;
+
+  final searchController = TextEditingController();
 
   ContactBloc(
     this._supabaseRepository,

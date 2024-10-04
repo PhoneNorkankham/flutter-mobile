@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:contacts_service/contacts_service.dart' as CS;
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
@@ -22,6 +23,8 @@ part 'add_member_state.dart';
 class AddMemberBloc extends Bloc<AddMemberEvent, AddMemberState> {
   final PermissionManager _permissionManager;
   final SupabaseRepository _supabaseRepository;
+
+  final searchController = TextEditingController();
 
   AddMemberBloc(
     this._permissionManager,
