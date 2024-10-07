@@ -12,34 +12,32 @@ import 'package:keepup/src/utils/app_utils.dart';
 extension ContactsExtensions on List<Contact> {
   List<Contact> toKeepUpToday() {
     if (isEmpty) return this;
-    final DateTime now = DateUtils.dateOnly(DateTime.now());
-    return where((element) {
-      final DateTime expiration = element.expiration ?? DateTime.now();
-      final DateTime expirationDateOnly = DateUtils.dateOnly(expiration);
-      return expirationDateOnly.isToday || expirationDateOnly.isBefore(now);
+    final List<Contact> contacts = where((contact) {
+      final DateTime date = contact.expiration ?? DateTime.now();
+      return date.isDateBeforeDayAfterTomorrow;
     }).toList();
+    contacts.sort((a, b) => a.expirationDays.compareTo(b.expirationDays));
+    return contacts;
   }
 
+  // Get contacts that are expiring this week (starting the day after tomorrow)
   List<Contact> toKeepUpInAWeek() {
-    if (isEmpty) return this;
-    final DateTime now = DateUtils.dateOnly(DateTime.now());
-    final DateTime nextWeek = now.add(const Duration(days: 7));
-    return where((element) {
-      final DateTime expiration = element.expiration ?? DateTime.now();
-      final DateTime expirationDateOnly = DateUtils.dateOnly(expiration);
-      return expirationDateOnly.isToday || expirationDateOnly.isBefore(nextWeek);
+    final List<Contact> contacts = where((contact) {
+      final DateTime date = contact.expiration ?? DateTime.now();
+      return date.isDateInCurrentWeekFromDayAfterTomorrow;
     }).toList();
+    contacts.sort((a, b) => a.expirationDays.compareTo(b.expirationDays));
+    return contacts;
   }
 
+  // Get contacts that are expiring this month (starting next week)
   List<Contact> toKeepUpInAMonth() {
-    if (isEmpty) return this;
-    final DateTime now = DateUtils.dateOnly(DateTime.now());
-    final DateTime nextMonth = now.copyWith(month: now.month + 1);
-    return where((element) {
-      final DateTime expiration = element.expiration ?? DateTime.now();
-      final DateTime expirationDateOnly = DateUtils.dateOnly(expiration);
-      return expirationDateOnly.isToday || expirationDateOnly.isBefore(nextMonth);
+    final List<Contact> contacts = where((contact) {
+      final DateTime date = contact.expiration ?? DateTime.now();
+      return date.isDateInNextWeekAndThisMonth;
     }).toList();
+    contacts.sort((a, b) => a.expirationDays.compareTo(b.expirationDays));
+    return contacts;
   }
 }
 
