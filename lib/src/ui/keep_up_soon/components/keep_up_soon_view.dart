@@ -4,8 +4,7 @@ import 'package:keepup/src/design/components/base/app_body.dart';
 import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/design/components/popup_menu/categories_filter_popup.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
-import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_in_a_month.dart';
-import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_in_a_week.dart';
+import 'package:keepup/src/ui/keep_up_soon/components/keep_up_soon_contacts.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_bloc.dart';
 
 class KeepUpSoonView extends StatelessWidget {
@@ -48,9 +47,14 @@ class KeepUpSoonView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  const KeepUpSoonInAWeek(),
-                  const SizedBox(height: 28),
-                  const KeepUpSoonInAMonth(),
+                  // const KeepUpSoonInAWeek(),
+                  // const SizedBox(height: 28),
+                  // const KeepUpSoonInAMonth(),
+                  BlocBuilder<KeepUpSoonBloc, KeepUpSoonState>(
+                    buildWhen: (previous, current) =>
+                        previous.keepupSoonContacts != current.keepupSoonContacts,
+                    builder: (_, state) => KeepUpSoonContacts(contacts: state.keepupSoonContacts),
+                  ),
                   const SizedBox(height: 50),
                 ],
               ),

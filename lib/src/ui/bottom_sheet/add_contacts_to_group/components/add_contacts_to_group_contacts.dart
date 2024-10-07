@@ -8,6 +8,7 @@ import 'package:keepup/src/design/components/process_indicators/custom_circular_
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/ui//bottom_sheet/add_contacts_to_group/interactor/add_contacts_to_group_bloc.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
+import 'package:keepup/src/utils/app_utils.dart';
 
 class ContactSubTag extends ISuspensionBean {
   final String tag;
@@ -40,10 +41,15 @@ class AddContactsToGroupContacts extends StatelessWidget {
             // Get all contacts that don't belong to any other group
             ...state.filterContacts.where((element) => element.groupId.isEmpty)
           ];
+          contacts.sort((a, b) => AppUtils.compareAToZToOther(a.name, b.name));
 
-          // Create sub tag
-          final List<ContactSubTag> contactSubTags =
-              contacts.map((e) => ContactSubTag(e.name[0])).toList();
+          // Create sub tag from contacts
+          final List<ContactSubTag> contactSubTags = contacts.map((e) {
+            String firstChar = e.name[0];
+            // Check the first character is not from A-Z
+            bool isLetter = RegExp(r'^[A-Z]$').hasMatch(firstChar);
+            return ContactSubTag(isLetter ? firstChar : '#');
+          }).toList();
 
           // Show sub tag
           SuspensionUtil.setShowSuspensionStatus(contactSubTags);

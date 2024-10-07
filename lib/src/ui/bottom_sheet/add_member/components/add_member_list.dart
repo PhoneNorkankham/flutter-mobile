@@ -9,6 +9,7 @@ import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_contacts_to_group/components/add_contacts_to_group_contacts.dart';
 import 'package:keepup/src/ui/bottom_sheet/add_member/interactor/add_member_bloc.dart';
+import 'package:keepup/src/utils/app_utils.dart';
 
 class AddMemberList extends StatelessWidget {
   const AddMemberList({super.key});
@@ -29,10 +30,15 @@ class AddMemberList extends StatelessWidget {
           }
           final List<ContactRequest> selectedContacts = state.selectedContacts;
           final List<ContactRequest> contacts = state.getFilterContacts();
+          contacts.sort((a, b) => AppUtils.compareAToZToOther(a.name, b.name));
 
-          // Create sub tag
-          final List<ContactSubTag> contactSubTags =
-              contacts.map((e) => ContactSubTag(e.name[0])).toList();
+          // Create sub tag from contacts
+          final List<ContactSubTag> contactSubTags = contacts.map((e) {
+            String firstChar = e.name[0];
+            // Check the first character is not from A-Z
+            bool isLetter = RegExp(r'^[A-Z]$').hasMatch(firstChar);
+            return ContactSubTag(isLetter ? firstChar : '#');
+          }).toList();
 
           // Show sub tag
           SuspensionUtil.setShowSuspensionStatus(contactSubTags);

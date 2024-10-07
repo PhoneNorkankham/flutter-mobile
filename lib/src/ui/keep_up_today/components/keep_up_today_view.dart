@@ -5,7 +5,6 @@ import 'package:keepup/src/design/components/buttons/layout_button.dart';
 import 'package:keepup/src/design/components/popup_menu/categories_filter_popup.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
 import 'package:keepup/src/ui/keep_up_today/components/keep_up_today_contacts.dart';
-import 'package:keepup/src/ui/keep_up_today/components/keep_up_today_header.dart';
 import 'package:keepup/src/ui/keep_up_today/interactor/keep_up_today_bloc.dart';
 
 class KeepUpTodayView extends StatelessWidget {
@@ -27,8 +26,8 @@ class KeepUpTodayView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 24),
-                  const KeepUpTodayHeader(),
-                  const SizedBox(height: 28),
+                  // const KeepUpTodayHeader(),
+                  // const SizedBox(height: 28),
                   Row(
                     children: [
                       BlocBuilder<KeepUpTodayBloc, KeepUpTodayState>(

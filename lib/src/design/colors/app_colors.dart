@@ -17,7 +17,7 @@ class AppColors {
   static const orange = Color(0xFFFF5722);
   static const tertiary = Color(0xFF86C144);
   static const inputBorder = Color(0xFF8E8E93);
-  static const keepUp = Color(0xFF96969A);
+  static const keepUp = Color(0xFFB8B8BB);
   static final darkBlue15 = primaryDark.withOpacity(.15);
   static final darkBlue20 = primaryDark.withOpacity(.20);
   static final darkBlue25 = primaryDark.withOpacity(.25);

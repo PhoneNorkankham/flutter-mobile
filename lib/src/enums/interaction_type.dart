@@ -7,9 +7,9 @@ enum InteractionMethodType {
   KeepUp;
 
   IconData get icon => switch (this) {
-        Message => Icons.message,
-        Call => Icons.call,
-        Contact => Icons.account_circle,
-        KeepUp => Icons.check_circle,
+        Message => Icons.message_outlined,
+        Call => Icons.call_outlined,
+        Contact => Icons.account_circle_outlined,
+        KeepUp => Icons.recommend_outlined,
       };
 }

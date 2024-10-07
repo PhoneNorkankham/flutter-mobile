@@ -20,6 +20,16 @@ extension ContactsExtensions on List<Contact> {
     return contacts;
   }
 
+  // Get upcoming expiring contacts (starting the day after tomorrow)
+  List<Contact> toKeepUpSoon() {
+    final List<Contact> contacts = where((contact) {
+      final DateTime date = contact.expiration ?? DateTime.now();
+      return !date.isDateBeforeDayAfterTomorrow;
+    }).toList();
+    contacts.sort((a, b) => a.expirationDays.compareTo(b.expirationDays));
+    return contacts;
+  }
+
   // Get contacts that are expiring this week (starting the day after tomorrow)
   List<Contact> toKeepUpInAWeek() {
     final List<Contact> contacts = where((contact) {

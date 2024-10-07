@@ -1,12 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/buttons/app_button.dart';
 import 'package:keepup/src/design/components/buttons/app_button_type.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/locale/locale_key.dart';
 
 class AppListItem extends StatelessWidget {
   final String avatarUrl;
@@ -65,7 +63,7 @@ class AppListItem extends StatelessWidget {
                       description,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: context.appTextTheme.medium16,
+                      style: context.appTextTheme.medium12,
                     ),
                 ],
               ),
@@ -73,11 +71,11 @@ class AppListItem extends StatelessWidget {
             const SizedBox(width: 16),
             if (onKeepUpPressed != null)
               SizedBox(
-                width: 100,
+                width: 64,
                 child: AppButton(
                   onPressed: onKeepUpPressed,
                   buttonType: AppButtonType.keepUp,
-                  title: LocaleKey.keepUp.tr,
+                  child: const Icon(Icons.recommend),
                 ),
               ),
           ],
