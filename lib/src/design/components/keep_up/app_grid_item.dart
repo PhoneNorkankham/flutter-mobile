@@ -14,7 +14,6 @@ class AppGridItem extends StatelessWidget {
   final int? expirationDay;
   final VoidCallback? onPressed;
   final VoidCallback? onRemovedPressed;
-  final double? width;
 
   const AppGridItem({
     super.key,
@@ -26,13 +25,12 @@ class AppGridItem extends StatelessWidget {
     this.expirationDay,
     this.onPressed,
     this.onRemovedPressed,
-    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final itemWidth = width ?? (screenWidth - 80) / 3;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double itemWidth = onRemovedPressed != null ? 75 : (screenWidth - 80) / 3;
 
     return Container(
       width: itemWidth,
@@ -48,7 +46,7 @@ class AppGridItem extends StatelessWidget {
               children: [
                 Center(
                   child: AppCircleAvatar(
-                    radius: itemWidth * 0.8 / 2,
+                    radius: onRemovedPressed != null ? 24 : itemWidth * 0.8 / 2,
                     url: avatarUrl,
                     file: avatarFile,
                     text: title,
@@ -85,7 +83,7 @@ class AppGridItem extends StatelessWidget {
                   child: Icon(
                     Icons.close,
                     color: Theme.of(context).colorScheme.primary,
-                    size: 20,
+                    size: 16,
                   ),
                 ),
               ),

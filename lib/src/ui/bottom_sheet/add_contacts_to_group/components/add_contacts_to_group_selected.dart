@@ -19,12 +19,10 @@ class AddContactsToGroupSelected extends StatelessWidget {
             color: Theme.of(context).colorScheme.onPrimary,
             borderRadius: BorderRadius.circular(10),
           ),
-          height: 110,
           margin: const EdgeInsets.symmetric(horizontal: 20).copyWith(top: 16),
-          padding: const EdgeInsets.symmetric(vertical: 4),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.all(8),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: contacts
