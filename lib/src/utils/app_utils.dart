@@ -92,4 +92,29 @@ class AppUtils {
       return '${AppCountryCodes.country?.dialCode ?? '+1'}$phone';
     }
   }
+
+  static int compareAToZToOther(String a, String b) {
+    // Get the first character of each element
+    String firstA = a[0].toUpperCase();
+    String firstB = b[0].toUpperCase();
+
+    // Check if first character is letter
+    bool isLetterA = RegExp(r'^[A-Z]$').hasMatch(firstA);
+    bool isLetterB = RegExp(r'^[A-Z]$').hasMatch(firstB);
+
+    // If both are letters, arrange in alphabetical order
+    if (isLetterA && isLetterB) {
+      return a.compareTo(b);
+    }
+    // If A is a letter and B is not a letter, A comes first.
+    if (isLetterA && !isLetterB) {
+      return -1;
+    }
+    // If B is a letter and A is not a letter, B comes first.
+    if (!isLetterA && isLetterB) {
+      return 1;
+    }
+    // If both are not letters, sort in normal order
+    return a.compareTo(b);
+  }
 }

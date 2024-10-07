@@ -99,19 +99,24 @@ class AppCircleAvatar extends StatelessWidget {
               top: radius <= 22 ? -4 : 0,
               right: radius <= 22 ? -4 : 0,
               child: Container(
-                width: 20,
-                height: 20,
+                constraints: const BoxConstraints(
+                  minWidth: 20,
+                  minHeight: 20,
+                ),
                 decoration: BoxDecoration(
                   color: AppColors.grey350,
-                  borderRadius: BorderRadius.circular(90),
+                  borderRadius: BorderRadius.circular(16),
                 ),
                 alignment: Alignment.center,
-                child: Text(
-                  badge,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall
-                      ?.copyWith(color: Colors.black, fontSize: 10),
+                padding: EdgeInsets.all(radius <= 22 ? 4 : 6),
+                child: FittedBox(
+                  child: Text(
+                    badge,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(color: Colors.black, fontSize: 10),
+                  ),
                 ),
               ),
             ),

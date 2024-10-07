@@ -14,6 +14,11 @@ class KeepUpSoonState with _$KeepUpSoonState {
     @Default(Category(id: '', name: 'All')) Category selectedCategory,
   }) = _KeepUpSoonState;
 
+  List<Contact> get keepupSoonContacts {
+    final List<Contact> contacts = this.contacts.toKeepUpSoon();
+    return _filterContacts(contacts);
+  }
+
   List<Contact> get weekContacts {
     final List<Contact> contacts = this.contacts.toKeepUpInAWeek();
     return _filterContacts(contacts);
