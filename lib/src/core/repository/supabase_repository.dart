@@ -209,6 +209,8 @@ class SupabaseRepository {
   Future<List<Contact>> getDBContactByIds(List<String> contactIds) =>
       _contactDao.getAllContactByIds(contactIds);
 
+  Stream<Contact?> watchDBContactById(String contactId) => _contactDao.watchContact(contactId);
+
   Future<Resource<String>> uploadAvatar(File file) {
     return NetworkBoundResource<String, String>(
       createSerializedCall: () => _supabaseManager.uploadAvatar(file),
@@ -280,6 +282,18 @@ class SupabaseRepository {
   }
 
   Future<Resource<bool>> keepUpContact(Contact contact) async {
+    // Insert new interaction
+    final interactionRequest = InteractionRequest(
+      contactId: contact.id,
+      method: InteractionMethodType.KeepUp,
+    );
+    final Resource<Interaction> resource = await insertInteraction(interactionRequest);
+    if (resource.isError) {
+      return Resource(
+        type: ResourceType.REQUEST_ERROR,
+        message: resource.message,
+      );
+    }
     final Group? group = await _groupDao.getGroup(contact.groupId);
     if (group != null) {
       // Update contact's expiration
@@ -287,20 +301,7 @@ class SupabaseRepository {
         expiration: group.frequencyInterval.toExpirationDate(),
       );
       final Resource<Contact> updateContactResource = await updateContact(contactRequest);
-      if (updateContactResource.isSuccess) {
-        // Insert new interaction
-        final interactionRequest = InteractionRequest(
-          contactId: contact.id,
-          method: InteractionMethodType.KeepUp,
-        );
-        final Resource<Interaction> resource = await insertInteraction(interactionRequest);
-        if (resource.isError) {
-          return Resource(
-            type: ResourceType.REQUEST_ERROR,
-            message: resource.message,
-          );
-        }
-      } else {
+      if (updateContactResource.isError) {
         return Resource(
           type: ResourceType.REQUEST_ERROR,
           message: updateContactResource.message,
