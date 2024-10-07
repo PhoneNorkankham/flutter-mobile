@@ -199,6 +199,8 @@ class LocaleKey {
   static const String lastKeepUp = "lastKeepUp";
   static const String birthday = "birthday";
   static const String edit = "edit";
+  static const String expiring = "expiring";
+  static const String expired = "expired";
 
   // Add Text Bottom Sheet
   static const String addGroupName = "addGroupName";

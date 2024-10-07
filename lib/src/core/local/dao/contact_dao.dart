@@ -39,6 +39,11 @@ class ContactDao extends DatabaseAccessor<AppDatabase> with _$ContactDaoMixin {
           .get()
           .then((value) => value.firstOrNull);
 
+  Stream<Contact?> watchContact(String contactId) =>
+      (select(contacts)..where((tbl) => tbl.id.equals(contactId)))
+          .watch()
+          .map((value) => value.firstOrNull);
+
   Future<int> deleteContact(String contactId) =>
       (delete(contacts)..where((tbl) => tbl.id.equals(contactId))).go();
 

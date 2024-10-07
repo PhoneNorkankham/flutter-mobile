@@ -14,6 +14,7 @@ class InteractionBottomSheet extends StatelessWidget {
   static Future<bool> show({required Contact contact}) {
     return Get.bottomSheet(
       enableDrag: true,
+      isScrollControlled: true,
       InteractionBottomSheet(contact: contact),
     ).then((value) {
       if (value is PopResult && value.status && value.data is String) {

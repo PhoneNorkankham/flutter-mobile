@@ -45,6 +45,10 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
 
   FutureOr<void> _initial(_Initial event, Emitter<InteractionState> emit) {
     emit(state.copyWith(contact: event.contact));
+    emit.forEach(
+      _supabaseRepository.watchDBContactById(event.contact.id),
+      onData: (contact) => state.copyWith(contact: contact),
+    );
   }
 
   FutureOr<void> _onInteraction(_OnInteraction event, Emitter<InteractionState> emit) async {
@@ -86,15 +90,11 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
     }
   }
 
-  Future<DateTime?> getLastKeepUpDateTime(Contact? contact) async {
-    if (contact != null) {
-      final Interaction? interaction =
-          await _supabaseRepository.getDBLastInteractionByContactId(contact.id);
-      if (interaction != null) {
-        return interaction.dateCompleted;
-      }
-    }
-    return contact?.dateCreated;
+  Future<DateTime?> getLastKeepUpDateTime(Contact contact) async {
+    final Interaction? interaction =
+        await _supabaseRepository.getDBLastInteractionByContactId(contact.id);
+    if (interaction == null) return null;
+    return interaction.dateCompleted;
   }
 
   Future<String> getFrequency(Contact? contact) async {

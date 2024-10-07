@@ -159,6 +159,8 @@ Map<String, String> enUs = {
   LocaleKey.lastKeepUp: "Last KeepUp",
   LocaleKey.birthday: "Birthday",
   LocaleKey.edit: "Edit",
+  LocaleKey.expiring: "Expiring",
+  LocaleKey.expired: "Expired",
   LocaleKey.addGroupName: "Add group name",
   LocaleKey.groupDescription: "Group description",
   LocaleKey.addGroupDescription: "Add group description",
