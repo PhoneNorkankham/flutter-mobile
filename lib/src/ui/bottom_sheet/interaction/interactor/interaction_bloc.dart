@@ -8,6 +8,7 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
+import 'package:keepup/src/enums/sheet_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
@@ -45,7 +46,7 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
 
   FutureOr<void> _initial(_Initial event, Emitter<InteractionState> emit) {
     emit(state.copyWith(contact: event.contact));
-    emit.forEach(
+    return emit.forEach(
       _supabaseRepository.watchDBContactById(event.contact.id),
       onData: (contact) => state.copyWith(contact: contact),
     );
@@ -56,7 +57,17 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
     if (contact == null) return;
     switch (event.type) {
       case InteractionMethodType.Message:
-        AppAsyncAction.instance.sendSMS(phoneNumber: contact.phoneNo);
+        bool whatsAppInstalled = await AppAsyncAction.instance.canSendWhatsAppSMS(contact.phoneNo);
+        if (whatsAppInstalled) {
+          emit(state.copyWith(
+            pageCommand: PageCommandShowBottomSheet(
+              sheetType: SheetType.sendSMS,
+              argument: contact.phoneNo,
+            ),
+          ));
+        } else {
+          AppAsyncAction.instance.sendSMS(phoneNumber: contact.phoneNo);
+        }
         break;
       case InteractionMethodType.Call:
         AppAsyncAction.instance.callPhoneNumber(contact.phoneNo);
