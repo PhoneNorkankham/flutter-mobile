@@ -66,11 +66,7 @@ class AppCircleAvatar extends StatelessWidget {
       );
     }
 
-    final String badge = expirationDay == null
-        ? ''
-        : expirationDay! <= 0
-            ? '!'
-            : '${expirationDay}d';
+    final String badge = expirationDay == null || expirationDay! > 0 ? '' : '!';
     return GestureDetector(
       onTap: onPressed,
       child: Stack(
@@ -90,9 +86,13 @@ class AppCircleAvatar extends StatelessWidget {
             child: placeholderDisabled ? const SizedBox() : placeholder,
           ),
           if (moonPercent != null)
-            MoonWidget(
-              size: radius * 2,
-              percent: moonPercent!,
+            Positioned(
+              top: radius <= 22 ? -4 : 0,
+              right: radius <= 22 ? -4 : 0,
+              child: MoonWidget(
+                size: radius <= 22 ? 20 : 24,
+                percent: moonPercent!,
+              ),
             ),
           if (badge.isNotEmpty)
             Positioned(
@@ -103,20 +103,14 @@ class AppCircleAvatar extends StatelessWidget {
                   minWidth: 20,
                   minHeight: 20,
                 ),
-                decoration: BoxDecoration(
-                  color: AppColors.grey350,
-                  borderRadius: BorderRadius.circular(16),
-                ),
                 alignment: Alignment.center,
                 padding: EdgeInsets.all(radius <= 22 ? 4 : 6),
-                child: FittedBox(
-                  child: Text(
-                    badge,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.copyWith(color: Colors.black, fontSize: 10),
-                  ),
+                child: Text(
+                  badge,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(color: Colors.white, fontSize: 12),
                 ),
               ),
             ),

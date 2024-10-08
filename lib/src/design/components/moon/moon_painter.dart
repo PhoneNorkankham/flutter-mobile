@@ -55,12 +55,12 @@ class _MoonPainter extends CustomPainter {
     double yCenter = 0;
 
     try {
-      paintLight.color = moonWidget.moonColor ?? Colors.green.withOpacity(0.2);
+      paintLight.color = moonWidget.moonColor ?? Colors.green;
       //달의 색깔로 전체 원을 그린다
       canvas.drawCircle(const Offset(0, 1), radius, paintLight);
     } catch (e) {
       radius = min(width, height) * 0.4;
-      paintLight.color = moonWidget.moonColor ?? Colors.green.withOpacity(0.2);
+      paintLight.color = moonWidget.moonColor ?? Colors.green;
 
       Rect oval = Rect.fromLTRB(
         xCenter - radius,
@@ -79,7 +79,7 @@ class _MoonPainter extends CustomPainter {
     double positionAngle = max(0, pi - phaseAngle);
 
     //이제 어두운 면을 그려야 한다.
-    paintDark.color = moonWidget.earthShineColor ?? Colors.red.withOpacity(0.2);
+    paintDark.color = moonWidget.earthShineColor ?? Colors.red;
 
     double cosTerm = cos(positionAngle);
 
