@@ -109,15 +109,15 @@ class InteractionView extends StatelessWidget {
                   ),
                   const SizedBox(height: 36),
                   InteractionInfoItem(
-                    icon: Icons.date_range,
-                    title: LocaleKey.expiring.tr,
-                    value: contact.expirationTitle,
-                  ),
-                  const SizedBox(height: 16),
-                  InteractionInfoItem(
                     icon: Icons.group,
                     title: LocaleKey.group.tr,
                     value: contact.groupName ?? '',
+                  ),
+                  const SizedBox(height: 16),
+                  InteractionInfoItem(
+                    icon: Icons.date_range,
+                    title: LocaleKey.expiring.tr,
+                    value: contact.expirationTitle,
                   ),
                   const SizedBox(height: 16),
                   FutureBuilder<DateTime?>(
