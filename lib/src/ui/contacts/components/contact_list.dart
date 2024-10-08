@@ -83,7 +83,7 @@ class ContactList extends StatelessWidget {
                               titleColor: Theme.of(context).colorScheme.onPrimary,
                               description: contact.groupName ?? '',
                               moonPercent: contact.getMoonPercent(totalDays),
-                              expirationDay: contact.expirationDays,
+                              expirationDays: contact.expirationDays,
                             );
                           });
                     },

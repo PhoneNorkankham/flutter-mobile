@@ -2,9 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
-import 'package:keepup/src/design/components/buttons/app_button.dart';
-import 'package:keepup/src/design/components/buttons/app_button_type.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
+import 'package:keepup/src/utils/app_utils.dart';
 
 class AppListItem extends StatelessWidget {
   final String avatarUrl;
@@ -13,7 +12,7 @@ class AppListItem extends StatelessWidget {
   final Color? titleColor;
   final String description;
   final double? moonPercent;
-  final int? expirationDay;
+  final int? expirationDays;
   final VoidCallback? onPressed;
   final VoidCallback? onKeepUpPressed;
 
@@ -25,7 +24,7 @@ class AppListItem extends StatelessWidget {
     this.titleColor,
     this.description = '',
     this.moonPercent,
-    this.expirationDay,
+    this.expirationDays,
     this.onPressed,
     this.onKeepUpPressed,
   });
@@ -45,7 +44,7 @@ class AppListItem extends StatelessWidget {
               file: avatarFile,
               text: title,
               moonPercent: moonPercent,
-              expirationDay: expirationDay,
+              expirationDay: expirationDays,
             ),
             const SizedBox(width: 8),
             Expanded(
@@ -69,15 +68,21 @@ class AppListItem extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 16),
-            if (onKeepUpPressed != null)
-              SizedBox(
-                width: 64,
-                child: AppButton(
-                  onPressed: onKeepUpPressed,
-                  buttonType: AppButtonType.keepUp,
-                  child: const Icon(Icons.recommend),
-                ),
-              ),
+            Text(
+              AppUtils.getExpirationTitle(expirationDays),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: context.appTextTheme.medium14,
+            ),
+            // if (onKeepUpPressed != null)
+            //   SizedBox(
+            //     width: 64,
+            //     child: AppButton(
+            //       onPressed: onKeepUpPressed,
+            //       buttonType: AppButtonType.keepUp,
+            //       child: const Icon(Icons.recommend),
+            //     ),
+            //   ),
           ],
         ),
       ),
