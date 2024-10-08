@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 enum InteractionMethodType {
+  KeepUp,
   Message,
   Call,
-  Contact,
-  KeepUp;
+  Contact;
 
   IconData get icon => switch (this) {
+        KeepUp => Icons.recommend_outlined,
         Message => Icons.message_outlined,
         Call => Icons.call_outlined,
         Contact => Icons.account_circle_outlined,
-        KeepUp => Icons.recommend_outlined,
       };
 }

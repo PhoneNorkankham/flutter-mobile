@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:keepup/src/core/managers/permission_manager.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
+import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/utils/app_country_codes.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -116,5 +117,15 @@ class AppUtils {
     }
     // If both are not letters, sort in normal order
     return a.compareTo(b);
+  }
+
+  static String getExpirationTitle(int? days) {
+    if (days == null) return '';
+    if (days < 0) return LocaleKey.expired.tr;
+    if (days == 0) return LocaleKey.today.tr;
+    if (days <= 30) return '$days day${days == 1 ? '' : 's'} left';
+
+    final int months = days % 30;
+    return '$months month${months == 1 ? '' : 's'} left';
   }
 }

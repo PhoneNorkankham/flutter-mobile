@@ -64,6 +64,8 @@ extension ContactExtension on Contact {
     final int diff = DateUtils.dateOnly(expiration).difference(now).inDays;
     return diff;
   }
+
+  String get expirationTitle => AppUtils.getExpirationTitle(expirationDays);
 }
 
 extension CSContactsExtensions on List<cs.Contact> {

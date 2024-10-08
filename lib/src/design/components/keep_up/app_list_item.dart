@@ -1,10 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/utils/app_utils.dart';
 
 class AppListItem extends StatelessWidget {
   final String avatarUrl;
@@ -70,15 +69,7 @@ class AppListItem extends StatelessWidget {
             ),
             const SizedBox(width: 16),
             Text(
-              expirationDays == null
-                  ? ''
-                  : expirationDays! > 90
-                      ? '3 months left'
-                      : expirationDays! > 0
-                          ? '$expirationDays day${expirationDays == 1 ? '' : 's'} left'
-                          : expirationDays == 0
-                              ? LocaleKey.today.tr
-                              : LocaleKey.expired.tr,
+              AppUtils.getExpirationTitle(expirationDays),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: context.appTextTheme.medium14,

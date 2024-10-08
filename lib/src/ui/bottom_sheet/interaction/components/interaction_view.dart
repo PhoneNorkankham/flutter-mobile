@@ -61,7 +61,7 @@ class InteractionView extends StatelessWidget {
                             return Padding(
                               padding: const EdgeInsets.only(top: 32.0),
                               child: AppCircleAvatar(
-                                radius: 28,
+                                radius: 40,
                                 url: contact.avatar,
                                 text: contact.name,
                                 file: state.avatar,
@@ -111,11 +111,7 @@ class InteractionView extends StatelessWidget {
                   InteractionInfoItem(
                     icon: Icons.date_range,
                     title: LocaleKey.expiring.tr,
-                    value: contact.expirationDays > 0
-                        ? '${contact.expirationDays} day${contact.expirationDays == 1 ? '' : 's'}'
-                        : contact.expirationDays == 0
-                            ? LocaleKey.today.tr
-                            : LocaleKey.expired.tr,
+                    value: contact.expirationTitle,
                   ),
                   const SizedBox(height: 16),
                   InteractionInfoItem(
