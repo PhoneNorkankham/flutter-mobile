@@ -26,6 +26,7 @@ class NewContactHeader extends StatelessWidget {
             url: state.contactRequest.avatar,
             radius: 50,
             onPressed: () => AppDialogs(
+              isDismissible: true,
               title: LocaleKey.uploadAvatar.tr,
               content: PickerPhotoDialog(
                 onSelected: (file) => bloc.add(NewContactEvent.onChangedAvatar(file)),

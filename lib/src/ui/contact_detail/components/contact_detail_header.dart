@@ -88,6 +88,7 @@ class ContactDetailHeader extends StatelessWidget {
                       text: state.request.name,
                       moonPercent: state.request.getMoonPercent(totalDays),
                       onPressed: () => AppDialogs(
+                        isDismissible: true,
                         title: LocaleKey.uploadAvatar.tr,
                         content: PickerPhotoDialog(
                           onSelected: (file) => bloc.add(ContactDetailEvent.onChangedAvatar(file)),

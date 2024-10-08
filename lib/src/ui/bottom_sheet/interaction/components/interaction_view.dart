@@ -69,6 +69,7 @@ class InteractionView extends StatelessWidget {
                                 expirationDay: contact.expirationDays,
                                 backgroundColor: AppColors.grey350,
                                 onPressed: () => AppDialogs(
+                                  isDismissible: true,
                                   title: LocaleKey.uploadAvatar.tr,
                                   content: PickerPhotoDialog(
                                     onSelected: (file) =>
