@@ -31,6 +31,7 @@ class GroupDetailHeader extends StatelessWidget {
               text: state.request.name,
               radius: 60,
               onPressed: () => AppDialogs(
+                isDismissible: true,
                 title: LocaleKey.uploadAvatar.tr,
                 content: PickerPhotoDialog(
                   onSelected: (file) => bloc.add(GroupDetailEvent.onAvatarChanged(file)),
