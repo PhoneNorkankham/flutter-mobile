@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/managers/navigator_manager.dart';
+import 'package:keepup/src/design/components/popup_menu/send_sms_popup.dart';
 import 'package:keepup/src/design/components/toasts/app_toasts.dart';
+import 'package:keepup/src/enums/sheet_type.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_command_listeners.dart';
 import 'package:keepup/src/ui/bottom_sheet/interaction/components/interaction_view.dart';
@@ -60,6 +62,12 @@ class InteractionBottomSheet extends StatelessWidget {
                 }),
                 orElse: () => pageCommandListeners(pageCommand),
               );
+            } else if (pageCommand is PageCommandShowBottomSheet &&
+                pageCommand.sheetType == SheetType.sendSMS) {
+              final phoneNumber = pageCommand.argument;
+              if (phoneNumber is String && phoneNumber.isNotEmpty) {
+                SendSmsPopup.show(phoneNumber);
+              }
             } else {
               pageCommandListeners(pageCommand);
             }

@@ -13,9 +13,11 @@ class AppAsyncAction {
     _launchCalled = false;
   }
 
-  Future<void> callPhoneNumber(String phoneNumber) => launchUrl("tel:$phoneNumber");
+  Future<void> callPhoneNumber(String phoneNumber) =>
+      launchUrl("tel:${phoneNumber.replaceAll(' ', '')}");
 
   Future<void> sendSMS({required String phoneNumber, String message = ''}) {
+    phoneNumber = phoneNumber.replaceAll(' ', '');
     final String separator = Platform.isIOS ? '&' : '?';
     final String url = "sms:$phoneNumber${message.isEmpty ? '' : '${separator}body=$message'}";
     return launchUrl(Uri.encodeFull(url));
@@ -25,6 +27,25 @@ class AppAsyncAction {
     if (url.isEmpty || _launchCalled) return Future.value();
     _launchCalled = true;
     return launchUrlString(url, mode: mode).whenComplete(() async {
+      await Future.delayed(const Duration(seconds: 1));
+      _launchCalled = false;
+    });
+  }
+
+  Future<void> sendWhatsappSMS(String phoneNumber) {
+    final whatsappUrl = "whatsapp://send?phone=${phoneNumber.replaceAll(' ', '')}";
+    return launchUrl(Uri.encodeFull(whatsappUrl));
+  }
+
+  Future<bool> canSendWhatsAppSMS(String phoneNumber) {
+    final whatsappUrl = "whatsapp://send?phone=${phoneNumber.replaceAll(' ', '')}";
+    return canLaunchUrl(Uri.encodeFull(whatsappUrl));
+  }
+
+  Future<bool> canLaunchUrl(String url) {
+    if (url.isEmpty || _launchCalled) return Future.value(false);
+    _launchCalled = true;
+    return canLaunchUrlString(url).whenComplete(() async {
       await Future.delayed(const Duration(seconds: 1));
       _launchCalled = false;
     });

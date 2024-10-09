@@ -40,8 +40,8 @@ Map<String, dynamic> _$$InteractionRequestImplToJson(
 }
 
 const _$InteractionMethodTypeEnumMap = {
+  InteractionMethodType.KeepUp: 'KeepUp',
   InteractionMethodType.Message: 'Message',
   InteractionMethodType.Call: 'Call',
   InteractionMethodType.Contact: 'Contact',
-  InteractionMethodType.KeepUp: 'KeepUp',
 };
