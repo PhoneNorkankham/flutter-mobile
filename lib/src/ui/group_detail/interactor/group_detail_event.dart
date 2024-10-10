@@ -6,7 +6,11 @@ class GroupDetailEvent with _$GroupDetailEvent {
 
   const factory GroupDetailEvent.clearPageCommand() = _ClearPageCommand;
 
-  const factory GroupDetailEvent.onAvatarChanged(File file) = _OnAvatarChanged;
+  const factory GroupDetailEvent.onChangedAvatar(File file) = _OnChangedAvatar;
+
+  const factory GroupDetailEvent.onChangedAvatarFromUrl(
+    BingSearchImageData data,
+  ) = _OnChangedAvatarFromUrl;
 
   const factory GroupDetailEvent.onNameChanged(String value) = _OnNameChanged;
 

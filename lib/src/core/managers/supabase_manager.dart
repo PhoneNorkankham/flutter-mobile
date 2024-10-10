@@ -278,6 +278,22 @@ class SupabaseManager {
         .then((value) => _supabaseStorage.from('images').getPublicUrl(avatarPath));
   }
 
+  Future<String> uploadAvatarFromBytes(Uint8List fileBytes) {
+    String fileExtension = '.jpg';
+    String avatarPath = '$uid/avatar/${DateTime.now().millisecondsSinceEpoch}$fileExtension';
+    return _supabaseStorage
+        .from('images')
+        .uploadBinary(
+          avatarPath,
+          fileBytes,
+          fileOptions: const FileOptions(
+            cacheControl: '3600',
+            upsert: true,
+          ),
+        )
+        .then((value) => _supabaseStorage.from('images').getPublicUrl(avatarPath));
+  }
+
   Future<List<Interaction>> getInteractions() => _supabase
       .from(_tbInteractions)
       .select()

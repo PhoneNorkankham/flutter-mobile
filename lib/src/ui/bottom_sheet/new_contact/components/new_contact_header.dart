@@ -1,10 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
-import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
-import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
-import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/design/components/popup_menu/edit_photo_popup.dart';
 import 'package:keepup/src/ui//bottom_sheet/new_contact/interactor/new_contact_bloc.dart';
 
 class NewContactHeader extends StatelessWidget {
@@ -25,14 +25,15 @@ class NewContactHeader extends StatelessWidget {
             file: state.avatar,
             url: state.contactRequest.avatar,
             radius: 50,
-            onPressed: () => AppDialogs(
-              isDismissible: true,
-              title: LocaleKey.uploadAvatar.tr,
-              content: PickerPhotoDialog(
-                onSelected: (file) => bloc.add(NewContactEvent.onChangedAvatar(file)),
-              ),
-              contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-            ).show(),
+            onPressed: () => EditPhotoPopup.show(
+              query: bloc.nameController.text.trim(),
+            ).then((value) {
+              if (value is File) {
+                bloc.add(NewContactEvent.onChangedAvatar(value));
+              } else if (value is BingSearchImageData) {
+                bloc.add(NewContactEvent.onChangedAvatarFromUrl(value));
+              }
+            }),
           ),
         ),
       ),

@@ -1,12 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/design/colors/app_colors.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
-import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
-import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
+import 'package:keepup/src/design/components/popup_menu/edit_photo_popup.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/extensions/contact_extensions.dart';
@@ -68,15 +70,16 @@ class InteractionView extends StatelessWidget {
                                 moonPercent: contact.getMoonPercent(totalDays),
                                 expirationDay: contact.expirationDays,
                                 backgroundColor: AppColors.grey350,
-                                onPressed: () => AppDialogs(
-                                  isDismissible: true,
-                                  title: LocaleKey.uploadAvatar.tr,
-                                  content: PickerPhotoDialog(
-                                    onSelected: (file) =>
-                                        bloc.add(InteractionEvent.onChangedAvatar(file)),
-                                  ),
-                                  contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-                                ).show(),
+                                onPressed: () => EditPhotoPopup.show(
+                                  imageUrl: contact.avatar,
+                                  query: contact.name,
+                                ).then((value) {
+                                  if (value is File) {
+                                    bloc.add(InteractionEvent.onChangedAvatar(value));
+                                  } else if (value is BingSearchImageData) {
+                                    bloc.add(InteractionEvent.onChangedAvatarFromUrl(value));
+                                  }
+                                }),
                               ),
                             );
                           },

@@ -10,12 +10,14 @@ class LocaleKey {
   static const String next = "next";
 
   // Dialog Upload Photo
-  static const String uploadPhoto = "uploadPhoto";
-  static const String uploadAvatar = "uploadAvatar";
-  static const String takeAPicture = "takeAPicture";
-  static const String selectAPhoto = "selectAPhoto";
   static const String camera = "camera";
   static const String photoLibrary = "photoLibrary";
+  static const String editProfilePicture = "editProfilePicture";
+  static const String takePhoto = "takePhoto";
+  static const String choosePhoto = "choosePhoto";
+  static const String searchWeb = "searchWeb";
+  static const String avatarUpdatedSuccessfully = "avatarUpdatedSuccessfully";
+  static const String avatarUpdateFailed = "avatarUpdateFailed";
 
   // Permission
   static const String permissionDenied = 'permissionDenied';

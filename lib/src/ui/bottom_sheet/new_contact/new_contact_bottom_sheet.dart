@@ -23,6 +23,7 @@ class NewContactBottomSheet extends StatelessWidget {
         Get.find(),
         Get.find(),
         Get.find(),
+        Get.find(),
       )..add(const NewContactEvent.initial()),
       child: BlocConsumer<NewContactBloc, NewContactState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,

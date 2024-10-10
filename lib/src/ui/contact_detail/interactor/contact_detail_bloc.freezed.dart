@@ -26,6 +26,7 @@ mixin _$ContactDetailEvent {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,6 +40,7 @@ mixin _$ContactDetailEvent {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +54,7 @@ mixin _$ContactDetailEvent {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) =>
@@ -65,6 +68,8 @@ mixin _$ContactDetailEvent {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
@@ -77,6 +82,7 @@ mixin _$ContactDetailEvent {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) =>
       throw _privateConstructorUsedError;
@@ -89,6 +95,7 @@ mixin _$ContactDetailEvent {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) =>
@@ -159,6 +166,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return initial();
@@ -175,6 +183,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return initial?.call();
@@ -191,6 +200,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -210,6 +220,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return initial(this);
@@ -225,6 +237,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return initial?.call(this);
@@ -240,6 +253,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -300,6 +314,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return clearPageCommand();
@@ -316,6 +331,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return clearPageCommand?.call();
@@ -332,6 +348,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -351,6 +368,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return clearPageCommand(this);
@@ -366,6 +385,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return clearPageCommand?.call(this);
@@ -381,6 +401,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -469,6 +490,7 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return onSelectedGroup(group);
@@ -485,6 +507,7 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return onSelectedGroup?.call(group);
@@ -501,6 +524,7 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -520,6 +544,8 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return onSelectedGroup(this);
@@ -535,6 +561,7 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return onSelectedGroup?.call(this);
@@ -550,6 +577,7 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -651,6 +679,7 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return onInputChanged(inputType, value);
@@ -667,6 +696,7 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return onInputChanged?.call(inputType, value);
@@ -683,6 +713,7 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -702,6 +733,8 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return onInputChanged(this);
@@ -717,6 +750,7 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return onInputChanged?.call(this);
@@ -732,6 +766,7 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -800,6 +835,7 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return onSavePressed();
@@ -816,6 +852,7 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return onSavePressed?.call();
@@ -832,6 +869,7 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -851,6 +889,8 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return onSavePressed(this);
@@ -866,6 +906,7 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return onSavePressed?.call(this);
@@ -881,6 +922,7 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -941,6 +983,7 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return onCancelPressed();
@@ -957,6 +1000,7 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return onCancelPressed?.call();
@@ -973,6 +1017,7 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -992,6 +1037,8 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return onCancelPressed(this);
@@ -1007,6 +1054,7 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return onCancelPressed?.call(this);
@@ -1022,6 +1070,7 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -1109,6 +1158,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return onChangedAvatar(file);
@@ -1125,6 +1175,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return onChangedAvatar?.call(file);
@@ -1141,6 +1192,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -1160,6 +1212,8 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return onChangedAvatar(this);
@@ -1175,6 +1229,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return onChangedAvatar?.call(this);
@@ -1190,6 +1245,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -1207,6 +1263,199 @@ abstract class _OnChangedAvatar implements ContactDetailEvent {
   @JsonKey(ignore: true)
   _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnChangedAvatarFromUrlImplCopyWith<$Res> {
+  factory _$$OnChangedAvatarFromUrlImplCopyWith(
+          _$OnChangedAvatarFromUrlImpl value,
+          $Res Function(_$OnChangedAvatarFromUrlImpl) then) =
+      __$$OnChangedAvatarFromUrlImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BingSearchImageData data});
+
+  $BingSearchImageDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$OnChangedAvatarFromUrlImplCopyWithImpl<$Res>
+    extends _$ContactDetailEventCopyWithImpl<$Res, _$OnChangedAvatarFromUrlImpl>
+    implements _$$OnChangedAvatarFromUrlImplCopyWith<$Res> {
+  __$$OnChangedAvatarFromUrlImplCopyWithImpl(
+      _$OnChangedAvatarFromUrlImpl _value,
+      $Res Function(_$OnChangedAvatarFromUrlImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$OnChangedAvatarFromUrlImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as BingSearchImageData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BingSearchImageDataCopyWith<$Res> get data {
+    return $BingSearchImageDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
+  const _$OnChangedAvatarFromUrlImpl(this.data);
+
+  @override
+  final BingSearchImageData data;
+
+  @override
+  String toString() {
+    return 'ContactDetailEvent.onChangedAvatarFromUrl(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnChangedAvatarFromUrlImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnChangedAvatarFromUrlImplCopyWith<_$OnChangedAvatarFromUrlImpl>
+      get copyWith => __$$OnChangedAvatarFromUrlImplCopyWithImpl<
+          _$OnChangedAvatarFromUrlImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onSelectedGroup,
+    required TResult Function(ContactDetailInputType inputType, String value)
+        onInputChanged,
+    required TResult Function() onSavePressed,
+    required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
+    required TResult Function() onDeleteContact,
+  }) {
+    return onChangedAvatarFromUrl(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onSelectedGroup,
+    TResult? Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult? Function()? onSavePressed,
+    TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult? Function()? onDeleteContact,
+  }) {
+    return onChangedAvatarFromUrl?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onSelectedGroup,
+    TResult Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult Function()? onSavePressed,
+    TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult Function()? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatarFromUrl != null) {
+      return onChangedAvatarFromUrl(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
+    required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnSavePressed value) onSavePressed,
+    required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
+  }) {
+    return onChangedAvatarFromUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnSavePressed value)? onSavePressed,
+    TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
+  }) {
+    return onChangedAvatarFromUrl?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnSavePressed value)? onSavePressed,
+    TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatarFromUrl != null) {
+      return onChangedAvatarFromUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedAvatarFromUrl implements ContactDetailEvent {
+  const factory _OnChangedAvatarFromUrl(final BingSearchImageData data) =
+      _$OnChangedAvatarFromUrlImpl;
+
+  BingSearchImageData get data;
+  @JsonKey(ignore: true)
+  _$$OnChangedAvatarFromUrlImplCopyWith<_$OnChangedAvatarFromUrlImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1255,6 +1504,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function() onDeleteContact,
   }) {
     return onDeleteContact();
@@ -1271,6 +1521,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function()? onDeleteContact,
   }) {
     return onDeleteContact?.call();
@@ -1287,6 +1538,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function()? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -1306,6 +1558,8 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnDeleteContact value) onDeleteContact,
   }) {
     return onDeleteContact(this);
@@ -1321,6 +1575,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnDeleteContact value)? onDeleteContact,
   }) {
     return onDeleteContact?.call(this);
@@ -1336,6 +1591,7 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnDeleteContact value)? onDeleteContact,
     required TResult orElse(),
   }) {
@@ -1360,6 +1616,8 @@ mixin _$ContactDetailState {
   Group? get selectedGroup => throw _privateConstructorUsedError;
   ContactRequest get request => throw _privateConstructorUsedError;
   File? get avatar => throw _privateConstructorUsedError;
+  BingSearchImageData? get bingSearchImageData =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ContactDetailStateCopyWith<ContactDetailState> get copyWith =>
@@ -1380,10 +1638,12 @@ abstract class $ContactDetailStateCopyWith<$Res> {
       List<Group> groups,
       Group? selectedGroup,
       ContactRequest request,
-      File? avatar});
+      File? avatar,
+      BingSearchImageData? bingSearchImageData});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
   $ContactRequestCopyWith<$Res> get request;
+  $BingSearchImageDataCopyWith<$Res>? get bingSearchImageData;
 }
 
 /// @nodoc
@@ -1407,6 +1667,7 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
     Object? selectedGroup = freezed,
     Object? request = null,
     Object? avatar = freezed,
+    Object? bingSearchImageData = freezed,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
@@ -1441,6 +1702,10 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as File?,
+      bingSearchImageData: freezed == bingSearchImageData
+          ? _value.bingSearchImageData
+          : bingSearchImageData // ignore: cast_nullable_to_non_nullable
+              as BingSearchImageData?,
     ) as $Val);
   }
 
@@ -1463,6 +1728,19 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
       return _then(_value.copyWith(request: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BingSearchImageDataCopyWith<$Res>? get bingSearchImageData {
+    if (_value.bingSearchImageData == null) {
+      return null;
+    }
+
+    return $BingSearchImageDataCopyWith<$Res>(_value.bingSearchImageData!,
+        (value) {
+      return _then(_value.copyWith(bingSearchImageData: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1481,12 +1759,15 @@ abstract class _$$ContactDetailStateImplCopyWith<$Res>
       List<Group> groups,
       Group? selectedGroup,
       ContactRequest request,
-      File? avatar});
+      File? avatar,
+      BingSearchImageData? bingSearchImageData});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
   @override
   $ContactRequestCopyWith<$Res> get request;
+  @override
+  $BingSearchImageDataCopyWith<$Res>? get bingSearchImageData;
 }
 
 /// @nodoc
@@ -1508,6 +1789,7 @@ class __$$ContactDetailStateImplCopyWithImpl<$Res>
     Object? selectedGroup = freezed,
     Object? request = null,
     Object? avatar = freezed,
+    Object? bingSearchImageData = freezed,
   }) {
     return _then(_$ContactDetailStateImpl(
       pageCommand: freezed == pageCommand
@@ -1542,6 +1824,10 @@ class __$$ContactDetailStateImplCopyWithImpl<$Res>
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as File?,
+      bingSearchImageData: freezed == bingSearchImageData
+          ? _value.bingSearchImageData
+          : bingSearchImageData // ignore: cast_nullable_to_non_nullable
+              as BingSearchImageData?,
     ));
   }
 }
@@ -1557,7 +1843,8 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
       final List<Group> groups = const [],
       this.selectedGroup,
       this.request = const ContactRequest(),
-      this.avatar})
+      this.avatar,
+      this.bingSearchImageData})
       : _groups = groups,
         super._();
 
@@ -1588,10 +1875,12 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
   final ContactRequest request;
   @override
   final File? avatar;
+  @override
+  final BingSearchImageData? bingSearchImageData;
 
   @override
   String toString() {
-    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, groups: $groups, selectedGroup: $selectedGroup, request: $request, avatar: $avatar)';
+    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, groups: $groups, selectedGroup: $selectedGroup, request: $request, avatar: $avatar, bingSearchImageData: $bingSearchImageData)';
   }
 
   @override
@@ -1611,7 +1900,9 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
             const DeepCollectionEquality()
                 .equals(other.selectedGroup, selectedGroup) &&
             (identical(other.request, request) || other.request == request) &&
-            (identical(other.avatar, avatar) || other.avatar == avatar));
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.bingSearchImageData, bingSearchImageData) ||
+                other.bingSearchImageData == bingSearchImageData));
   }
 
   @override
@@ -1624,7 +1915,8 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
       const DeepCollectionEquality().hash(_groups),
       const DeepCollectionEquality().hash(selectedGroup),
       request,
-      avatar);
+      avatar,
+      bingSearchImageData);
 
   @JsonKey(ignore: true)
   @override
@@ -1636,14 +1928,16 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
 
 abstract class _ContactDetailState extends ContactDetailState {
   const factory _ContactDetailState(
-      {final PageCommand? pageCommand,
-      final ContactType contactType,
-      final bool isLoading,
-      final String contactId,
-      final List<Group> groups,
-      final Group? selectedGroup,
-      final ContactRequest request,
-      final File? avatar}) = _$ContactDetailStateImpl;
+          {final PageCommand? pageCommand,
+          final ContactType contactType,
+          final bool isLoading,
+          final String contactId,
+          final List<Group> groups,
+          final Group? selectedGroup,
+          final ContactRequest request,
+          final File? avatar,
+          final BingSearchImageData? bingSearchImageData}) =
+      _$ContactDetailStateImpl;
   const _ContactDetailState._() : super._();
 
   @override
@@ -1662,6 +1956,8 @@ abstract class _ContactDetailState extends ContactDetailState {
   ContactRequest get request;
   @override
   File? get avatar;
+  @override
+  BingSearchImageData? get bingSearchImageData;
   @override
   @JsonKey(ignore: true)
   _$$ContactDetailStateImplCopyWith<_$ContactDetailStateImpl> get copyWith =>

@@ -20,6 +20,7 @@ class AppCircleAvatar extends StatelessWidget {
   final Color? foregroundColor;
   final bool placeholderDisabled;
   final VoidCallback? onPressed;
+  final Widget? placeholder;
 
   const AppCircleAvatar({
     super.key,
@@ -33,6 +34,7 @@ class AppCircleAvatar extends StatelessWidget {
     this.foregroundColor,
     this.placeholderDisabled = false,
     this.onPressed,
+    this.placeholder,
   });
 
   @override
@@ -51,7 +53,9 @@ class AppCircleAvatar extends StatelessWidget {
     }
 
     final Widget placeholder;
-    if (text.isNotEmpty) {
+    if (this.placeholder != null) {
+      placeholder = this.placeholder!;
+    } else if (text.isNotEmpty) {
       placeholder = Initicon(
         text: text,
         size: radius * 2,

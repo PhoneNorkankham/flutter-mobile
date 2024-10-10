@@ -43,6 +43,7 @@ class InteractionBottomSheet extends StatelessWidget {
         Get.find(),
         Get.find(),
         Get.find(),
+        Get.find(),
       )..add(InteractionEvent.initial(contact)),
       child: BlocListener<InteractionBloc, InteractionState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,

@@ -19,5 +19,9 @@ class ContactDetailEvent with _$ContactDetailEvent {
 
   const factory ContactDetailEvent.onChangedAvatar(File file) = _OnChangedAvatar;
 
+  const factory ContactDetailEvent.onChangedAvatarFromUrl(
+    BingSearchImageData data,
+  ) = _OnChangedAvatarFromUrl;
+
   const factory ContactDetailEvent.onDeleteContact() = _OnDeleteContact;
 }

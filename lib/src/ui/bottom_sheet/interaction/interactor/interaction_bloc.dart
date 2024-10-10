@@ -5,6 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
@@ -17,6 +18,7 @@ import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
 import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/use_cases/update_contact_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_from_url_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_async_action.dart';
 import 'package:keepup/src/utils/app_pages.dart';
@@ -29,12 +31,14 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
   final SupabaseRepository _supabaseRepository;
   final DeleteContactUseCase _deleteContactUseCase;
   final UploadAvatarUseCase _uploadAvatarUseCase;
+  final UploadAvatarFromUrlUseCase _uploadAvatarFromUrlUseCase;
   final UpdateContactUseCase _updateContactUseCase;
 
   InteractionBloc(
     this._supabaseRepository,
     this._deleteContactUseCase,
     this._uploadAvatarUseCase,
+    this._uploadAvatarFromUrlUseCase,
     this._updateContactUseCase,
   ) : super(const InteractionState()) {
     on<_Initial>(_initial);
@@ -42,6 +46,7 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
     on<_OnInteraction>(_onInteraction);
     on<_OnDeleteContact>(_onDeleteContact);
     on<_OnChangedAvatar>(_onChangedAvatar);
+    on<_OnChangedAvatarFromUrl>(_onChangedAvatarFromUrl);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<InteractionState> emit) {
@@ -157,36 +162,61 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
     final File avatarFile = event.file;
     emit(state.copyWith(isLoading: true, avatar: avatarFile));
     final DataResult<String> uploadAvatarResult = await _uploadAvatarUseCase.run(avatarFile);
-    final String avatarUrl = uploadAvatarResult.valueOrNull ?? '';
-    if (uploadAvatarResult.isValue && avatarUrl.isNotEmpty) {
+    final PageError pageError;
+    if (uploadAvatarResult.isValue) {
+      final String avatarUrl = uploadAvatarResult.valueOrNull ?? '';
       final request = ContactRequest.fromJson(contact.toJson()).copyWith(avatar: avatarUrl);
       final updateResult = await _updateContactUseCase.run(request);
-      if (updateResult.isError) {
-        final PageError pageError = updateResult.asError!.error;
-        emit(state.copyWith(
-          isLoading: false,
-          pageCommand: pageError.toPageCommand(),
-        ));
-      } else {
-        emit(state.copyWith(
+      if (updateResult.isValue) {
+        return emit(state.copyWith(
           isLoading: false,
           contact: updateResult.valueOrNull ?? state.contact,
-          pageCommand: PageCommandNavigation.pop(
-            result: PopResult(
-              status: true,
-              resultFromPage: AppPages.contactDetail,
-              data: LocaleKey.contactUpdatedSuccessfully.tr,
-            ),
-          ),
+          pageCommand: PageCommandMessage.showSuccess(LocaleKey.avatarUpdatedSuccessfully.tr),
         ));
+      } else {
+        pageError = updateResult.asError!.error;
       }
     } else {
-      final PageError pageError = uploadAvatarResult.asError!.error;
-      emit(state.copyWith(
-        isLoading: false,
-        avatar: null,
-        pageCommand: pageError.toPageCommand(),
-      ));
+      pageError = uploadAvatarResult.asError!.error;
     }
+    emit(state.copyWith(
+      isLoading: false,
+      avatar: null,
+      pageCommand: pageError.toPageCommand(),
+    ));
+  }
+
+  FutureOr<void> _onChangedAvatarFromUrl(
+    _OnChangedAvatarFromUrl event,
+    Emitter<InteractionState> emit,
+  ) async {
+    final Contact? contact = state.contact;
+    if (contact == null || state.isLoading) return;
+    final String oldAvatar = contact.avatar;
+    final String newAvatar = event.data.contentUrl;
+    emit(state.copyWith(isLoading: true, contact: contact.copyWith(avatar: newAvatar)));
+    DataResult<String> uploadAvatarResult = await _uploadAvatarFromUrlUseCase.run(newAvatar);
+    PageError pageError;
+    if (uploadAvatarResult.isValue) {
+      final String avatarUrl = uploadAvatarResult.valueOrNull ?? '';
+      final request = ContactRequest.fromJson(contact.toJson()).copyWith(avatar: avatarUrl);
+      final updateResult = await _updateContactUseCase.run(request);
+      if (updateResult.isValue) {
+        return emit(state.copyWith(
+          isLoading: false,
+          contact: updateResult.valueOrNull ?? state.contact,
+          pageCommand: PageCommandMessage.showSuccess(LocaleKey.avatarUpdatedSuccessfully.tr),
+        ));
+      } else {
+        pageError = updateResult.asError!.error;
+      }
+    } else {
+      pageError = uploadAvatarResult.asError!.error;
+    }
+    emit(state.copyWith(
+      isLoading: false,
+      contact: contact.copyWith(avatar: oldAvatar),
+      pageCommand: pageError.toPageCommand(),
+    ));
   }
 }

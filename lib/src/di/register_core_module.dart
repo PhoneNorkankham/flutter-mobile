@@ -8,5 +8,6 @@ Future<void> _registerCoreModule() async {
   Get.put<AppDatabase>(AppDatabase());
 
   // Network
-  Get.put(DioHttpClient(AppConstants.rapidapiApi));
+  Get.put(RapIdApiClient());
+  Get.put(BingClient());
 }

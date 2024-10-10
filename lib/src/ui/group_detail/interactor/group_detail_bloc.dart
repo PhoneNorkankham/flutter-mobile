@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
@@ -23,6 +24,7 @@ import 'package:keepup/src/ui/group_detail/usecases/get_group_use_case.dart';
 import 'package:keepup/src/ui/routing/pop_result.dart';
 import 'package:keepup/src/use_cases/delete_group_use_case.dart';
 import 'package:keepup/src/use_cases/update_group_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_from_url_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
@@ -35,6 +37,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
 
   final SupabaseRepository _supabaseRepository;
   final UploadAvatarUseCase _uploadAvatarUseCase;
+  final UploadAvatarFromUrlUseCase _uploadAvatarFromUrlUseCase;
   final GetGroupUseCase _getGroupUseCase;
   final GetGroupStateMapper _getGroupStateMapper;
   final UpdateGroupUseCase _updateGroupUseCase;
@@ -45,6 +48,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   GroupDetailBloc(
     this._supabaseRepository,
     this._uploadAvatarUseCase,
+    this._uploadAvatarFromUrlUseCase,
     this._getGroupUseCase,
     this._getGroupStateMapper,
     this._updateGroupUseCase,
@@ -54,7 +58,8 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
   ) : super(const GroupDetailState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
-    on<_OnAvatarChanged>(_onAvatarChanged);
+    on<_OnChangedAvatar>(_onChangedAvatar);
+    on<_OnChangedAvatarFromUrl>(_onChangedAvatarFromUrl);
     on<_OnNameChanged>(_onNameChanged);
     on<_OnDescriptionChanged>(_onDescriptionChanged);
     on<_OnFrequencyIntervalChanged>(_onFrequencyIntervalChanged);
@@ -106,16 +111,49 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     }
   }
 
-  FutureOr<void> _onAvatarChanged(_OnAvatarChanged event, Emitter<GroupDetailState> emit) async {
+  FutureOr<void> _onChangedAvatar(_OnChangedAvatar event, Emitter<GroupDetailState> emit) async {
     if (state.isLoading) return;
     final File avatarFile = event.file;
     emit(state.copyWith(isLoading: true, avatarFile: avatarFile));
     final DataResult<String> uploadAvatarResult = await _uploadAvatarUseCase.run(avatarFile);
     final String avatarUrl = uploadAvatarResult.valueOrNull ?? '';
-    if (uploadAvatarResult.isValue && avatarUrl.isNotEmpty) {
+    if (uploadAvatarResult.isValue) {
       GroupRequest request = state.request.copyWith(avatar: avatarUrl);
       final updateResult = await _updateGroupUseCase.run(request);
-      emit(_updateGroupStateMapper.mapResultToState(state, updateResult));
+      GroupDetailState newState = _updateGroupStateMapper.mapResultToState(state, updateResult);
+      if (updateResult.isValue) {
+        newState = newState.copyWith(
+          pageCommand: PageCommandMessage.showSuccess(LocaleKey.avatarUpdatedSuccessfully.tr),
+        );
+      }
+      emit(newState);
+    } else {
+      final PageError pageError = uploadAvatarResult.asError!.error;
+      return emit(state.copyWith(
+        isLoading: false,
+        avatarFile: null,
+        pageCommand: pageError.toPageCommand(),
+      ));
+    }
+  }
+
+  FutureOr<void> _onChangedAvatarFromUrl(
+    _OnChangedAvatarFromUrl event,
+    Emitter<GroupDetailState> emit,
+  ) async {
+    final String newAvatar = event.data.contentUrl;
+    DataResult<String> uploadAvatarResult = await _uploadAvatarFromUrlUseCase.run(newAvatar);
+    final String avatarUrl = uploadAvatarResult.valueOrNull ?? '';
+    if (uploadAvatarResult.isValue) {
+      GroupRequest request = state.request.copyWith(avatar: avatarUrl);
+      final updateResult = await _updateGroupUseCase.run(request);
+      GroupDetailState newState = _updateGroupStateMapper.mapResultToState(state, updateResult);
+      if (updateResult.isValue) {
+        newState = newState.copyWith(
+          pageCommand: PageCommandMessage.showSuccess(LocaleKey.avatarUpdatedSuccessfully.tr),
+        );
+      }
+      emit(newState);
     } else {
       final PageError pageError = uploadAvatarResult.asError!.error;
       return emit(state.copyWith(

@@ -5,6 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
@@ -18,6 +19,7 @@ import 'package:keepup/src/ui/bottom_sheet/new_group/mappers/create_group_state_
 import 'package:keepup/src/use_cases/add_contacts_use_case.dart';
 import 'package:keepup/src/use_cases/create_group_use_case.dart';
 import 'package:keepup/src/use_cases/update_group_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_from_url_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 
 part 'new_group_bloc.freezed.dart';
@@ -29,6 +31,7 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
   final nameController = TextEditingController();
 
   final UploadAvatarUseCase _uploadAvatarUseCase;
+  final UploadAvatarFromUrlUseCase _uploadAvatarFromUrlUseCase;
   final CreateGroupUseCase _createGroupUseCase;
   final AddContactsUseCase _addContactsUseCase;
   final UpdateGroupUseCase _updateGroupUseCase;
@@ -38,6 +41,7 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
 
   NewGroupBloc(
     this._uploadAvatarUseCase,
+    this._uploadAvatarFromUrlUseCase,
     this._createGroupUseCase,
     this._addContactsUseCase,
     this._updateGroupUseCase,
@@ -60,7 +64,14 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
             categoryId: event.category.id,
           ),
         )));
-    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
+    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(
+          avatar: event.file,
+          groupRequest: state.groupRequest.copyWith(avatar: ''),
+        )));
+    on<_OnChangedAvatarFromUrl>((event, emit) => emit(state.copyWith(
+          avatar: null,
+          groupRequest: state.groupRequest.copyWith(avatar: event.data.contentUrl),
+        )));
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<NewGroupState> emit) async {
@@ -108,6 +119,19 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
           isLoading: false,
           pageCommand: pageError.toPageCommand(),
         ));
+      }
+    } else if (state.groupRequest.avatar.isNotEmpty) {
+      String newAvatar = state.groupRequest.avatar;
+      DataResult<String> uploadAvatarResult = await _uploadAvatarFromUrlUseCase.run(newAvatar);
+      if (uploadAvatarResult.isValue) {
+        avatarUrl = uploadAvatarResult.valueOrNull ?? '';
+      } else {
+        final PageError pageError = uploadAvatarResult.asError!.error;
+        emit(state.copyWith(
+          isLoading: false,
+          pageCommand: pageError.toPageCommand(),
+        ));
+        return;
       }
     }
 

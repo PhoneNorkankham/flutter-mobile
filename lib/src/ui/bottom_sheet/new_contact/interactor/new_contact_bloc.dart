@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart' hide Rx;
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -16,6 +17,7 @@ import 'package:keepup/src/ui/base/result/result.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_contact/interactor/new_contact_input_type.dart';
 import 'package:keepup/src/ui/bottom_sheet/new_contact/mappers/create_contact_state_mapper.dart';
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_from_url_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 
 part 'new_contact_bloc.freezed.dart';
@@ -32,11 +34,13 @@ class NewContactBloc extends Bloc<NewContactEvent, NewContactState> {
 
   final SupabaseRepository _supabaseRepository;
   final UploadAvatarUseCase _uploadAvatarUseCase;
+  final UploadAvatarFromUrlUseCase _uploadAvatarFromUrlUseCase;
   final CreateContactUseCase _createContactUseCase;
 
   NewContactBloc(
     this._supabaseRepository,
     this._uploadAvatarUseCase,
+    this._uploadAvatarFromUrlUseCase,
     this._createContactUseCase,
   ) : super(const NewContactState()) {
     on<_Initial>(_initial);
@@ -44,7 +48,14 @@ class NewContactBloc extends Bloc<NewContactEvent, NewContactState> {
     on<_OnSelectedGroup>(_onSelectedGroup);
     on<_OnCreateNewContact>(_onCreateNewContact);
     on<_OnInputChanged>(_onInputChanged);
-    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
+    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(
+          avatar: event.file,
+          contactRequest: state.contactRequest.copyWith(avatar: ''),
+        )));
+    on<_OnChangedAvatarFromUrl>((event, emit) => emit(state.copyWith(
+          avatar: null,
+          contactRequest: state.contactRequest.copyWith(avatar: event.data.contentUrl),
+        )));
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<NewContactState> emit) async {
@@ -78,9 +89,22 @@ class NewContactBloc extends Bloc<NewContactEvent, NewContactState> {
     if (avatarFile != null) {
       final DataResult<String> result = await _uploadAvatarUseCase.run(avatarFile);
       if (result.isValue) {
-        avatarUrl = result.valueOrCrash;
+        avatarUrl = result.valueOrNull ?? '';
       } else {
         final PageError pageError = result.asError!.error;
+        emit(state.copyWith(
+          isLoading: false,
+          pageCommand: pageError.toPageCommand(),
+        ));
+        return;
+      }
+    } else if (state.contactRequest.avatar.isNotEmpty) {
+      String newAvatar = state.contactRequest.avatar;
+      DataResult<String> uploadAvatarResult = await _uploadAvatarFromUrlUseCase.run(newAvatar);
+      if (uploadAvatarResult.isValue) {
+        avatarUrl = uploadAvatarResult.valueOrNull ?? '';
+      } else {
+        final PageError pageError = uploadAvatarResult.asError!.error;
         emit(state.copyWith(
           isLoading: false,
           pageCommand: pageError.toPageCommand(),

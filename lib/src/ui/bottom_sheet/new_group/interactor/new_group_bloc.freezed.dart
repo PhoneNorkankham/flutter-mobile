@@ -29,6 +29,7 @@ mixin _$NewGroupEvent {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +45,7 @@ mixin _$NewGroupEvent {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +61,7 @@ mixin _$NewGroupEvent {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +78,8 @@ mixin _$NewGroupEvent {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +95,7 @@ mixin _$NewGroupEvent {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -105,6 +111,7 @@ mixin _$NewGroupEvent {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -177,6 +184,7 @@ class _$InitialImpl implements _Initial {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return initial();
   }
@@ -195,6 +203,7 @@ class _$InitialImpl implements _Initial {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return initial?.call();
   }
@@ -213,6 +222,7 @@ class _$InitialImpl implements _Initial {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -235,6 +245,8 @@ class _$InitialImpl implements _Initial {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return initial(this);
   }
@@ -253,6 +265,7 @@ class _$InitialImpl implements _Initial {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return initial?.call(this);
   }
@@ -271,6 +284,7 @@ class _$InitialImpl implements _Initial {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -333,6 +347,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return clearPageCommand();
   }
@@ -351,6 +366,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return clearPageCommand?.call();
   }
@@ -369,6 +385,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -391,6 +408,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return clearPageCommand(this);
   }
@@ -409,6 +428,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -427,6 +447,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -526,6 +547,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onSelectedContact(contact);
   }
@@ -544,6 +566,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onSelectedContact?.call(contact);
   }
@@ -562,6 +585,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onSelectedContact != null) {
@@ -584,6 +608,8 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onSelectedContact(this);
   }
@@ -602,6 +628,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onSelectedContact?.call(this);
   }
@@ -620,6 +647,7 @@ class _$OnSelectedContactImpl implements _OnSelectedContact {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onSelectedContact != null) {
@@ -725,6 +753,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onRemovedContact(contact);
   }
@@ -743,6 +772,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onRemovedContact?.call(contact);
   }
@@ -761,6 +791,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onRemovedContact != null) {
@@ -783,6 +814,8 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onRemovedContact(this);
   }
@@ -801,6 +834,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onRemovedContact?.call(this);
   }
@@ -819,6 +853,7 @@ class _$OnRemovedContactImpl implements _OnRemovedContact {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onRemovedContact != null) {
@@ -914,6 +949,7 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onChangedGroupName(name);
   }
@@ -932,6 +968,7 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onChangedGroupName?.call(name);
   }
@@ -950,6 +987,7 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onChangedGroupName != null) {
@@ -972,6 +1010,8 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onChangedGroupName(this);
   }
@@ -990,6 +1030,7 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onChangedGroupName?.call(this);
   }
@@ -1008,6 +1049,7 @@ class _$OnChangedGroupNameImpl implements _OnChangedGroupName {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onChangedGroupName != null) {
@@ -1076,6 +1118,7 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onCreateNewGroup();
   }
@@ -1094,6 +1137,7 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onCreateNewGroup?.call();
   }
@@ -1112,6 +1156,7 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onCreateNewGroup != null) {
@@ -1134,6 +1179,8 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onCreateNewGroup(this);
   }
@@ -1152,6 +1199,7 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onCreateNewGroup?.call(this);
   }
@@ -1170,6 +1218,7 @@ class _$OnCreateNewGroupImpl implements _OnCreateNewGroup {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onCreateNewGroup != null) {
@@ -1266,6 +1315,7 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onSelectedContacts(contacts);
   }
@@ -1284,6 +1334,7 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onSelectedContacts?.call(contacts);
   }
@@ -1302,6 +1353,7 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onSelectedContacts != null) {
@@ -1324,6 +1376,8 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onSelectedContacts(this);
   }
@@ -1342,6 +1396,7 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onSelectedContacts?.call(this);
   }
@@ -1360,6 +1415,7 @@ class _$OnSelectedContactsImpl implements _OnSelectedContacts {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onSelectedContacts != null) {
@@ -1458,6 +1514,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onFrequencyIntervalChanged(frequencyIntervalType);
   }
@@ -1476,6 +1533,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onFrequencyIntervalChanged?.call(frequencyIntervalType);
   }
@@ -1494,6 +1552,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
@@ -1516,6 +1575,8 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onFrequencyIntervalChanged(this);
   }
@@ -1534,6 +1595,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onFrequencyIntervalChanged?.call(this);
   }
@@ -1552,6 +1614,7 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onFrequencyIntervalChanged != null) {
@@ -1649,6 +1712,7 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onCategoryChanged(category);
   }
@@ -1667,6 +1731,7 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onCategoryChanged?.call(category);
   }
@@ -1685,6 +1750,7 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onCategoryChanged != null) {
@@ -1707,6 +1773,8 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onCategoryChanged(this);
   }
@@ -1725,6 +1793,7 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onCategoryChanged?.call(this);
   }
@@ -1743,6 +1812,7 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onCategoryChanged != null) {
@@ -1838,6 +1908,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
         onFrequencyIntervalChanged,
     required TResult Function(Category category) onCategoryChanged,
     required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
   }) {
     return onChangedAvatar(file);
   }
@@ -1856,6 +1927,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
         onFrequencyIntervalChanged,
     TResult? Function(Category category)? onCategoryChanged,
     TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
   }) {
     return onChangedAvatar?.call(file);
   }
@@ -1874,6 +1946,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
         onFrequencyIntervalChanged,
     TResult Function(Category category)? onCategoryChanged,
     TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onChangedAvatar != null) {
@@ -1896,6 +1969,8 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
         onFrequencyIntervalChanged,
     required TResult Function(_OnCategoryChanged value) onCategoryChanged,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
   }) {
     return onChangedAvatar(this);
   }
@@ -1914,6 +1989,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
         onFrequencyIntervalChanged,
     TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
   }) {
     return onChangedAvatar?.call(this);
   }
@@ -1932,6 +2008,7 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
         onFrequencyIntervalChanged,
     TResult Function(_OnCategoryChanged value)? onCategoryChanged,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     required TResult orElse(),
   }) {
     if (onChangedAvatar != null) {
@@ -1948,6 +2025,214 @@ abstract class _OnChangedAvatar implements NewGroupEvent {
   @JsonKey(ignore: true)
   _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnChangedAvatarFromUrlImplCopyWith<$Res> {
+  factory _$$OnChangedAvatarFromUrlImplCopyWith(
+          _$OnChangedAvatarFromUrlImpl value,
+          $Res Function(_$OnChangedAvatarFromUrlImpl) then) =
+      __$$OnChangedAvatarFromUrlImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BingSearchImageData data});
+
+  $BingSearchImageDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$OnChangedAvatarFromUrlImplCopyWithImpl<$Res>
+    extends _$NewGroupEventCopyWithImpl<$Res, _$OnChangedAvatarFromUrlImpl>
+    implements _$$OnChangedAvatarFromUrlImplCopyWith<$Res> {
+  __$$OnChangedAvatarFromUrlImplCopyWithImpl(
+      _$OnChangedAvatarFromUrlImpl _value,
+      $Res Function(_$OnChangedAvatarFromUrlImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$OnChangedAvatarFromUrlImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as BingSearchImageData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BingSearchImageDataCopyWith<$Res> get data {
+    return $BingSearchImageDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
+  const _$OnChangedAvatarFromUrlImpl(this.data);
+
+  @override
+  final BingSearchImageData data;
+
+  @override
+  String toString() {
+    return 'NewGroupEvent.onChangedAvatarFromUrl(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnChangedAvatarFromUrlImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnChangedAvatarFromUrlImplCopyWith<_$OnChangedAvatarFromUrlImpl>
+      get copyWith => __$$OnChangedAvatarFromUrlImplCopyWithImpl<
+          _$OnChangedAvatarFromUrlImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(ContactRequest contact) onSelectedContact,
+    required TResult Function(ContactRequest contact) onRemovedContact,
+    required TResult Function(String name) onChangedGroupName,
+    required TResult Function() onCreateNewGroup,
+    required TResult Function(List<ContactRequest> contacts) onSelectedContacts,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
+  }) {
+    return onChangedAvatarFromUrl(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(ContactRequest contact)? onSelectedContact,
+    TResult? Function(ContactRequest contact)? onRemovedContact,
+    TResult? Function(String name)? onChangedGroupName,
+    TResult? Function()? onCreateNewGroup,
+    TResult? Function(List<ContactRequest> contacts)? onSelectedContacts,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+  }) {
+    return onChangedAvatarFromUrl?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(ContactRequest contact)? onSelectedContact,
+    TResult Function(ContactRequest contact)? onRemovedContact,
+    TResult Function(String name)? onChangedGroupName,
+    TResult Function()? onCreateNewGroup,
+    TResult Function(List<ContactRequest> contacts)? onSelectedContacts,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatarFromUrl != null) {
+      return onChangedAvatarFromUrl(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnSelectedContact value) onSelectedContact,
+    required TResult Function(_OnRemovedContact value) onRemovedContact,
+    required TResult Function(_OnChangedGroupName value) onChangedGroupName,
+    required TResult Function(_OnCreateNewGroup value) onCreateNewGroup,
+    required TResult Function(_OnSelectedContacts value) onSelectedContacts,
+    required TResult Function(_OnFrequencyIntervalChanged value)
+        onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
+  }) {
+    return onChangedAvatarFromUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnSelectedContact value)? onSelectedContact,
+    TResult? Function(_OnRemovedContact value)? onRemovedContact,
+    TResult? Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult? Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult? Function(_OnSelectedContacts value)? onSelectedContacts,
+    TResult? Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+  }) {
+    return onChangedAvatarFromUrl?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnSelectedContact value)? onSelectedContact,
+    TResult Function(_OnRemovedContact value)? onRemovedContact,
+    TResult Function(_OnChangedGroupName value)? onChangedGroupName,
+    TResult Function(_OnCreateNewGroup value)? onCreateNewGroup,
+    TResult Function(_OnSelectedContacts value)? onSelectedContacts,
+    TResult Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatarFromUrl != null) {
+      return onChangedAvatarFromUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedAvatarFromUrl implements NewGroupEvent {
+  const factory _OnChangedAvatarFromUrl(final BingSearchImageData data) =
+      _$OnChangedAvatarFromUrlImpl;
+
+  BingSearchImageData get data;
+  @JsonKey(ignore: true)
+  _$$OnChangedAvatarFromUrlImplCopyWith<_$OnChangedAvatarFromUrlImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
