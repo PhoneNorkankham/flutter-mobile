@@ -13,5 +13,6 @@ class ContactDetailState with _$ContactDetailState {
     Group? selectedGroup,
     @Default(ContactRequest()) ContactRequest request,
     File? avatar,
+    BingSearchImageData? bingSearchImageData,
   }) = _ContactDetailState;
 }

@@ -12,6 +12,7 @@ const String KEY_CONTENT_TYPE = 'Content-Type';
 const String KEY_X_RAPIDAPI_UA = 'x-rapidapi-ua';
 const String KEY_X_RAPIDAPI_KEY = 'x-rapidapi-key';
 const String KEY_X_RAPIDAPI_HOST = 'x-rapidapi-host';
+const String KEY_BING_KEY = 'Ocp-Apim-Subscription-Key';
 
 class DioHttpClient extends DioForNative {
   DioHttpClient(
@@ -51,14 +52,24 @@ class DioHttpClient extends DioForNative {
     options.headers[KEY_ACCEPT] = 'application/json';
     options.headers[KEY_CONTENT_TYPE] = 'application/json';
 
-    if (options.baseUrl.contains(AppConstants.rapidapiApi)) {
+    if (options.baseUrl.contains(AppConstants.rapidapiDomain)) {
       options.headers[KEY_X_RAPIDAPI_UA] = AppConstants.rapidapiUA;
       options.headers[KEY_X_RAPIDAPI_KEY] = AppConstants.rapidapiKey;
       options.headers[KEY_X_RAPIDAPI_HOST] = AppConstants.rapidapiHost;
+    } else if (options.baseUrl.contains(AppConstants.bingDomain)) {
+      options.headers[KEY_BING_KEY] = AppConstants.bingKey;
     }
 
     options.connectTimeout = const Duration(seconds: 30);
     options.receiveTimeout = const Duration(seconds: 30);
     handler.next(options);
   }
+}
+
+class RapIdApiClient extends DioHttpClient {
+  RapIdApiClient() : super(AppConstants.rapidapiDomain);
+}
+
+class BingClient extends DioHttpClient {
+  BingClient() : super(AppConstants.bingDomain);
 }

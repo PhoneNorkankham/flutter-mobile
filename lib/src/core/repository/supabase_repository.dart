@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/local/dao/category_dao.dart';
@@ -214,6 +215,12 @@ class SupabaseRepository {
   Future<Resource<String>> uploadAvatar(File file) {
     return NetworkBoundResource<String, String>(
       createSerializedCall: () => _supabaseManager.uploadAvatar(file),
+    ).getAsFuture();
+  }
+
+  Future<Resource<String>> uploadAvatarFromBytes(Uint8List fileBytes) {
+    return NetworkBoundResource<String, String>(
+      createSerializedCall: () => _supabaseManager.uploadAvatarFromBytes(fileBytes),
     ).getAsFuture();
   }
 

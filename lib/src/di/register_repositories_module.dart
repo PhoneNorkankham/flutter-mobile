@@ -4,4 +4,5 @@ Future<void> _registerRepositoriesModule() async {
   // Repository
   Get.put(SupabaseRepository(Get.find(), Get.find(), Get.find()));
   Get.put(RapidapiRepository(Get.find()));
+  Get.put(BingRepository(Get.find()));
 }

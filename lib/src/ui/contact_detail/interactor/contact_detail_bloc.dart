@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
@@ -23,6 +24,7 @@ import 'package:keepup/src/ui/contact_detail/usecases/get_contact_use_case.dart'
 import 'package:keepup/src/use_cases/create_contact_use_case.dart';
 import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/use_cases/update_contact_use_case.dart';
+import 'package:keepup/src/use_cases/upload_avatar_from_url_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
 
 part 'contact_detail_bloc.freezed.dart';
@@ -39,6 +41,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
   final CreateContactUseCase _createContactUseCase;
   final CreateContactStateMapper _createContactStateMapper;
   final UploadAvatarUseCase _uploadAvatarUseCase;
+  final UploadAvatarFromUrlUseCase _uploadAvatarFromUrlUseCase;
   final GetContactUseCase _getContactUseCase;
   final GetContactStateMapper _getContactStateMapper;
   final UpdateContactUseCase _updateContactUseCase;
@@ -51,6 +54,7 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     this._createContactUseCase,
     this._createContactStateMapper,
     this._uploadAvatarUseCase,
+    this._uploadAvatarFromUrlUseCase,
     this._getContactUseCase,
     this._getContactStateMapper,
     this._updateContactUseCase,
@@ -69,7 +73,14 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
     on<_OnCancelPressed>((event, emit) => emit(state.copyWith(
           pageCommand: PageCommandNavigation.pop(),
         )));
-    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(avatar: event.file)));
+    on<_OnChangedAvatar>((event, emit) => emit(state.copyWith(
+          avatar: event.file,
+          bingSearchImageData: null,
+        )));
+    on<_OnChangedAvatarFromUrl>((event, emit) => emit(state.copyWith(
+          avatar: null,
+          bingSearchImageData: event.data,
+        )));
     on<_OnDeleteContact>(_onDeleteContact);
   }
 
@@ -136,7 +147,21 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
         ));
         return;
       }
+    } else if (state.bingSearchImageData != null) {
+      String newAvatar = state.bingSearchImageData!.contentUrl;
+      DataResult<String> uploadAvatarResult = await _uploadAvatarFromUrlUseCase.run(newAvatar);
+      if (uploadAvatarResult.isValue) {
+        avatarUrl = uploadAvatarResult.valueOrNull ?? '';
+      } else {
+        final PageError pageError = uploadAvatarResult.asError!.error;
+        emit(state.copyWith(
+          isLoading: false,
+          pageCommand: pageError.toPageCommand(),
+        ));
+        return;
+      }
     }
+
     final DateTime expiration = selectedGroup.frequencyInterval.toExpirationDate();
     final request = state.request.copyWith(
       avatar: avatarUrl,

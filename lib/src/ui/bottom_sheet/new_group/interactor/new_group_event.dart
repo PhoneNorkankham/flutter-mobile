@@ -24,4 +24,8 @@ class NewGroupEvent with _$NewGroupEvent {
   const factory NewGroupEvent.onCategoryChanged(Category category) = _OnCategoryChanged;
 
   const factory NewGroupEvent.onChangedAvatar(File file) = _OnChangedAvatar;
+
+  const factory NewGroupEvent.onChangedAvatarFromUrl(
+    BingSearchImageData data,
+  ) = _OnChangedAvatarFromUrl;
 }

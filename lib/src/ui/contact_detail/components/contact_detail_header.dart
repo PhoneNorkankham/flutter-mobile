@@ -1,10 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/components/dialogs/app_dialogs.dart';
-import 'package:keepup/src/design/components/dialogs/apps_dialog.dart';
-import 'package:keepup/src/design/components/dialogs/picker_photo_dialog.dart';
+import 'package:keepup/src/design/components/popup_menu/edit_photo_popup.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/enums/contact_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -75,6 +77,7 @@ class ContactDetailHeader extends StatelessWidget {
               BlocBuilder<ContactDetailBloc, ContactDetailState>(
                 buildWhen: (previous, current) =>
                     previous.avatar != current.avatar ||
+                    previous.bingSearchImageData != current.bingSearchImageData ||
                     previous.request.avatar != current.request.avatar ||
                     previous.request.expiration != current.request.expiration,
                 builder: (context, state) => FutureBuilder<int>(
@@ -83,18 +86,20 @@ class ContactDetailHeader extends StatelessWidget {
                     final int totalDays = snapshot.data ?? 0;
                     return AppCircleAvatar(
                       radius: 50,
-                      url: state.request.avatar,
+                      url: state.bingSearchImageData?.contentUrl ?? state.request.avatar,
                       file: state.avatar,
                       text: state.request.name,
                       moonPercent: state.request.getMoonPercent(totalDays),
-                      onPressed: () => AppDialogs(
-                        isDismissible: true,
-                        title: LocaleKey.uploadAvatar.tr,
-                        content: PickerPhotoDialog(
-                          onSelected: (file) => bloc.add(ContactDetailEvent.onChangedAvatar(file)),
-                        ),
-                        contentPadding: const EdgeInsets.all(34).copyWith(top: 34),
-                      ).show(),
+                      onPressed: () => EditPhotoPopup.show(
+                        imageUrl: state.request.avatar,
+                        query: state.request.name,
+                      ).then((value) {
+                        if (value is File) {
+                          bloc.add(ContactDetailEvent.onChangedAvatar(value));
+                        } else if (value is BingSearchImageData) {
+                          bloc.add(ContactDetailEvent.onChangedAvatarFromUrl(value));
+                        }
+                      }),
                     );
                   },
                 ),

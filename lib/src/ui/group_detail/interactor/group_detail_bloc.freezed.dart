@@ -20,7 +20,8 @@ mixin _$GroupDetailEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -35,7 +36,8 @@ mixin _$GroupDetailEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -50,7 +52,8 @@ mixin _$GroupDetailEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -66,7 +69,9 @@ mixin _$GroupDetailEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -81,7 +86,8 @@ mixin _$GroupDetailEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -96,7 +102,8 @@ mixin _$GroupDetailEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -168,7 +175,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -186,7 +194,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -204,7 +213,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -226,7 +236,9 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -244,7 +256,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -262,7 +275,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -324,7 +338,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -342,7 +357,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -360,7 +376,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -382,7 +399,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -400,7 +419,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -418,7 +438,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -441,20 +462,20 @@ abstract class _ClearPageCommand implements GroupDetailEvent {
 }
 
 /// @nodoc
-abstract class _$$OnAvatarChangedImplCopyWith<$Res> {
-  factory _$$OnAvatarChangedImplCopyWith(_$OnAvatarChangedImpl value,
-          $Res Function(_$OnAvatarChangedImpl) then) =
-      __$$OnAvatarChangedImplCopyWithImpl<$Res>;
+abstract class _$$OnChangedAvatarImplCopyWith<$Res> {
+  factory _$$OnChangedAvatarImplCopyWith(_$OnChangedAvatarImpl value,
+          $Res Function(_$OnChangedAvatarImpl) then) =
+      __$$OnChangedAvatarImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File file});
 }
 
 /// @nodoc
-class __$$OnAvatarChangedImplCopyWithImpl<$Res>
-    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnAvatarChangedImpl>
-    implements _$$OnAvatarChangedImplCopyWith<$Res> {
-  __$$OnAvatarChangedImplCopyWithImpl(
-      _$OnAvatarChangedImpl _value, $Res Function(_$OnAvatarChangedImpl) _then)
+class __$$OnChangedAvatarImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnChangedAvatarImpl>
+    implements _$$OnChangedAvatarImplCopyWith<$Res> {
+  __$$OnChangedAvatarImplCopyWithImpl(
+      _$OnChangedAvatarImpl _value, $Res Function(_$OnChangedAvatarImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -462,7 +483,7 @@ class __$$OnAvatarChangedImplCopyWithImpl<$Res>
   $Res call({
     Object? file = null,
   }) {
-    return _then(_$OnAvatarChangedImpl(
+    return _then(_$OnChangedAvatarImpl(
       null == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -473,22 +494,22 @@ class __$$OnAvatarChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnAvatarChangedImpl implements _OnAvatarChanged {
-  const _$OnAvatarChangedImpl(this.file);
+class _$OnChangedAvatarImpl implements _OnChangedAvatar {
+  const _$OnChangedAvatarImpl(this.file);
 
   @override
   final File file;
 
   @override
   String toString() {
-    return 'GroupDetailEvent.onAvatarChanged(file: $file)';
+    return 'GroupDetailEvent.onChangedAvatar(file: $file)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnAvatarChangedImpl &&
+            other is _$OnChangedAvatarImpl &&
             (identical(other.file, file) || other.file == file));
   }
 
@@ -498,8 +519,8 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnAvatarChangedImplCopyWith<_$OnAvatarChangedImpl> get copyWith =>
-      __$$OnAvatarChangedImplCopyWithImpl<_$OnAvatarChangedImpl>(
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
+      __$$OnChangedAvatarImplCopyWithImpl<_$OnChangedAvatarImpl>(
           this, _$identity);
 
   @override
@@ -507,7 +528,8 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -517,7 +539,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     required TResult Function() onOpenedSeeAll,
     required TResult Function() onDeleteGroup,
   }) {
-    return onAvatarChanged(file);
+    return onChangedAvatar(file);
   }
 
   @override
@@ -525,7 +547,8 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -535,7 +558,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult? Function()? onOpenedSeeAll,
     TResult? Function()? onDeleteGroup,
   }) {
-    return onAvatarChanged?.call(file);
+    return onChangedAvatar?.call(file);
   }
 
   @override
@@ -543,7 +566,8 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -554,8 +578,8 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult Function()? onDeleteGroup,
     required TResult orElse(),
   }) {
-    if (onAvatarChanged != null) {
-      return onAvatarChanged(file);
+    if (onChangedAvatar != null) {
+      return onChangedAvatar(file);
     }
     return orElse();
   }
@@ -565,7 +589,9 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -575,7 +601,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
     required TResult Function(_OnDeleteGroup value) onDeleteGroup,
   }) {
-    return onAvatarChanged(this);
+    return onChangedAvatar(this);
   }
 
   @override
@@ -583,7 +609,8 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -593,7 +620,7 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
     TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
   }) {
-    return onAvatarChanged?.call(this);
+    return onChangedAvatar?.call(this);
   }
 
   @override
@@ -601,7 +628,8 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -612,20 +640,228 @@ class _$OnAvatarChangedImpl implements _OnAvatarChanged {
     TResult Function(_OnDeleteGroup value)? onDeleteGroup,
     required TResult orElse(),
   }) {
-    if (onAvatarChanged != null) {
-      return onAvatarChanged(this);
+    if (onChangedAvatar != null) {
+      return onChangedAvatar(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnAvatarChanged implements GroupDetailEvent {
-  const factory _OnAvatarChanged(final File file) = _$OnAvatarChangedImpl;
+abstract class _OnChangedAvatar implements GroupDetailEvent {
+  const factory _OnChangedAvatar(final File file) = _$OnChangedAvatarImpl;
 
   File get file;
   @JsonKey(ignore: true)
-  _$$OnAvatarChangedImplCopyWith<_$OnAvatarChangedImpl> get copyWith =>
+  _$$OnChangedAvatarImplCopyWith<_$OnChangedAvatarImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnChangedAvatarFromUrlImplCopyWith<$Res> {
+  factory _$$OnChangedAvatarFromUrlImplCopyWith(
+          _$OnChangedAvatarFromUrlImpl value,
+          $Res Function(_$OnChangedAvatarFromUrlImpl) then) =
+      __$$OnChangedAvatarFromUrlImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BingSearchImageData data});
+
+  $BingSearchImageDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$OnChangedAvatarFromUrlImplCopyWithImpl<$Res>
+    extends _$GroupDetailEventCopyWithImpl<$Res, _$OnChangedAvatarFromUrlImpl>
+    implements _$$OnChangedAvatarFromUrlImplCopyWith<$Res> {
+  __$$OnChangedAvatarFromUrlImplCopyWithImpl(
+      _$OnChangedAvatarFromUrlImpl _value,
+      $Res Function(_$OnChangedAvatarFromUrlImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$OnChangedAvatarFromUrlImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as BingSearchImageData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BingSearchImageDataCopyWith<$Res> get data {
+    return $BingSearchImageDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
+  const _$OnChangedAvatarFromUrlImpl(this.data);
+
+  @override
+  final BingSearchImageData data;
+
+  @override
+  String toString() {
+    return 'GroupDetailEvent.onChangedAvatarFromUrl(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnChangedAvatarFromUrlImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnChangedAvatarFromUrlImplCopyWith<_$OnChangedAvatarFromUrlImpl>
+      get copyWith => __$$OnChangedAvatarFromUrlImplCopyWithImpl<
+          _$OnChangedAvatarFromUrlImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
+    required TResult Function(String value) onNameChanged,
+    required TResult Function(String value) onDescriptionChanged,
+    required TResult Function(FrequencyIntervalType frequencyIntervalType)
+        onFrequencyIntervalChanged,
+    required TResult Function(Category category) onCategoryChanged,
+    required TResult Function() onChangedContacts,
+    required TResult Function() onOpenedSeeAll,
+    required TResult Function() onDeleteGroup,
+  }) {
+    return onChangedAvatarFromUrl(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult? Function(String value)? onNameChanged,
+    TResult? Function(String value)? onDescriptionChanged,
+    TResult? Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult? Function(Category category)? onCategoryChanged,
+    TResult? Function()? onChangedContacts,
+    TResult? Function()? onOpenedSeeAll,
+    TResult? Function()? onDeleteGroup,
+  }) {
+    return onChangedAvatarFromUrl?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult Function(String value)? onNameChanged,
+    TResult Function(String value)? onDescriptionChanged,
+    TResult Function(FrequencyIntervalType frequencyIntervalType)?
+        onFrequencyIntervalChanged,
+    TResult Function(Category category)? onCategoryChanged,
+    TResult Function()? onChangedContacts,
+    TResult Function()? onOpenedSeeAll,
+    TResult Function()? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatarFromUrl != null) {
+      return onChangedAvatarFromUrl(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
+    required TResult Function(_OnNameChanged value) onNameChanged,
+    required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
+    required TResult Function(_OnFrequencyIntervalChanged value)
+        onFrequencyIntervalChanged,
+    required TResult Function(_OnCategoryChanged value) onCategoryChanged,
+    required TResult Function(_OnChangedContacts value) onChangedContacts,
+    required TResult Function(_OnOpenedSeeAll value) onOpenedSeeAll,
+    required TResult Function(_OnDeleteGroup value) onDeleteGroup,
+  }) {
+    return onChangedAvatarFromUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult? Function(_OnNameChanged value)? onNameChanged,
+    TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult? Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult? Function(_OnCategoryChanged value)? onCategoryChanged,
+    TResult? Function(_OnChangedContacts value)? onChangedContacts,
+    TResult? Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult? Function(_OnDeleteGroup value)? onDeleteGroup,
+  }) {
+    return onChangedAvatarFromUrl?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult Function(_OnNameChanged value)? onNameChanged,
+    TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
+    TResult Function(_OnFrequencyIntervalChanged value)?
+        onFrequencyIntervalChanged,
+    TResult Function(_OnCategoryChanged value)? onCategoryChanged,
+    TResult Function(_OnChangedContacts value)? onChangedContacts,
+    TResult Function(_OnOpenedSeeAll value)? onOpenedSeeAll,
+    TResult Function(_OnDeleteGroup value)? onDeleteGroup,
+    required TResult orElse(),
+  }) {
+    if (onChangedAvatarFromUrl != null) {
+      return onChangedAvatarFromUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedAvatarFromUrl implements GroupDetailEvent {
+  const factory _OnChangedAvatarFromUrl(final BingSearchImageData data) =
+      _$OnChangedAvatarFromUrlImpl;
+
+  BingSearchImageData get data;
+  @JsonKey(ignore: true)
+  _$$OnChangedAvatarFromUrlImplCopyWith<_$OnChangedAvatarFromUrlImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -694,7 +930,8 @@ class _$OnNameChangedImpl implements _OnNameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -712,7 +949,8 @@ class _$OnNameChangedImpl implements _OnNameChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -730,7 +968,8 @@ class _$OnNameChangedImpl implements _OnNameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -752,7 +991,9 @@ class _$OnNameChangedImpl implements _OnNameChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -770,7 +1011,8 @@ class _$OnNameChangedImpl implements _OnNameChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -788,7 +1030,8 @@ class _$OnNameChangedImpl implements _OnNameChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -883,7 +1126,8 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -901,7 +1145,8 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -919,7 +1164,8 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -941,7 +1187,9 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -959,7 +1207,8 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -977,7 +1226,8 @@ class _$OnDescriptionChangedImpl implements _OnDescriptionChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -1076,7 +1326,8 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -1094,7 +1345,8 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1112,7 +1364,8 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1134,7 +1387,9 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -1152,7 +1407,8 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -1170,7 +1426,8 @@ class _$OnFrequencyIntervalChangedImpl implements _OnFrequencyIntervalChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -1267,7 +1524,8 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -1285,7 +1543,8 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1303,7 +1562,8 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1325,7 +1585,9 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -1343,7 +1605,8 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -1361,7 +1624,8 @@ class _$OnCategoryChangedImpl implements _OnCategoryChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -1429,7 +1693,8 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -1447,7 +1712,8 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1465,7 +1731,8 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1487,7 +1754,9 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -1505,7 +1774,8 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -1523,7 +1793,8 @@ class _$OnChangedContactsImpl implements _OnChangedContacts {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -1585,7 +1856,8 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -1603,7 +1875,8 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1621,7 +1894,8 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1643,7 +1917,9 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -1661,7 +1937,8 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -1679,7 +1956,8 @@ class _$OnOpenedSeeAllImpl implements _OnOpenedSeeAll {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?
@@ -1741,7 +2019,8 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
-    required TResult Function(File file) onAvatarChanged,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
     required TResult Function(String value) onNameChanged,
     required TResult Function(String value) onDescriptionChanged,
     required TResult Function(FrequencyIntervalType frequencyIntervalType)
@@ -1759,7 +2038,8 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
-    TResult? Function(File file)? onAvatarChanged,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult? Function(String value)? onNameChanged,
     TResult? Function(String value)? onDescriptionChanged,
     TResult? Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1777,7 +2057,8 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
-    TResult Function(File file)? onAvatarChanged,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
     TResult Function(String value)? onNameChanged,
     TResult Function(String value)? onDescriptionChanged,
     TResult Function(FrequencyIntervalType frequencyIntervalType)?
@@ -1799,7 +2080,9 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnAvatarChanged value) onAvatarChanged,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
     required TResult Function(_OnNameChanged value) onNameChanged,
     required TResult Function(_OnDescriptionChanged value) onDescriptionChanged,
     required TResult Function(_OnFrequencyIntervalChanged value)
@@ -1817,7 +2100,8 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult? Function(_OnNameChanged value)? onNameChanged,
     TResult? Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult? Function(_OnFrequencyIntervalChanged value)?
@@ -1835,7 +2119,8 @@ class _$OnDeleteGroupImpl implements _OnDeleteGroup {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnAvatarChanged value)? onAvatarChanged,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
     TResult Function(_OnNameChanged value)? onNameChanged,
     TResult Function(_OnDescriptionChanged value)? onDescriptionChanged,
     TResult Function(_OnFrequencyIntervalChanged value)?

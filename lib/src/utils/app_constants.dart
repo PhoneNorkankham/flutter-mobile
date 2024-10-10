@@ -7,10 +7,13 @@ class AppConstants {
 
   // Base url
   static const bool enabledWhatsappProfilePicApi = true;
-  static const String rapidapiApi = "https://whatsapp-profile-pic.p.rapidapi.com";
+  static const String rapidapiDomain = "https://whatsapp-profile-pic.p.rapidapi.com";
   static const String rapidapiUA = 'RapidAPI-Playground';
   static const String rapidapiKey = '0b9eaffcc1mshdef82ef0d24b1a3p19c943jsn4872fcc0927c';
   static const String rapidapiHost = 'whatsapp-profile-pic.p.rapidapi.com';
+
+  static const String bingDomain = "https://api.bing.microsoft.com";
+  static const String bingKey = '379b05dc698e480ca436d5e39f10fe53';
 
   // Link demo image when make UI
   // 150x150: width x height => we can change it.

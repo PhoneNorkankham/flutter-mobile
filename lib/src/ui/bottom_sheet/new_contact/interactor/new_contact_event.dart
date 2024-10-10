@@ -16,4 +16,8 @@ class NewContactEvent with _$NewContactEvent {
   ) = _OnInputChanged;
 
   const factory NewContactEvent.onChangedAvatar(File file) = _OnChangedAvatar;
+
+  const factory NewContactEvent.onChangedAvatarFromUrl(
+    BingSearchImageData data,
+  ) = _OnChangedAvatarFromUrl;
 }

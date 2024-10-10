@@ -6,6 +6,7 @@ import 'package:keepup/src/locale/locale_key.dart';
 class AppSearchInput extends StatefulWidget {
   final TextEditingController controller;
   final ValueChanged<String>? onChanged;
+  final ValueChanged<String>? onSubmitted;
   final EdgeInsets? margin;
   final String? hintText;
 
@@ -13,6 +14,7 @@ class AppSearchInput extends StatefulWidget {
     super.key,
     required this.controller,
     this.onChanged,
+    this.onSubmitted,
     this.margin,
     this.hintText,
   });
@@ -23,6 +25,16 @@ class AppSearchInput extends StatefulWidget {
 
 class _AppSearchInputState extends State<AppSearchInput> {
   bool _showRemoveButton = false;
+
+  @override
+  void initState() {
+    widget.controller.addListener(() {
+      setState(() {
+        _showRemoveButton = widget.controller.text.isNotEmpty;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +54,8 @@ class _AppSearchInputState extends State<AppSearchInput> {
             hintText: widget.hintText ?? LocaleKey.search.tr,
             textInputAction: TextInputAction.search,
             textInputType: TextInputType.name,
-            onChanged: (value) {
-              widget.onChanged?.call(value);
-              setState(() {
-                _showRemoveButton = value.isNotEmpty;
-              });
-            },
+            onChanged: widget.onChanged,
+            onFieldSubmitted: widget.onSubmitted,
           ),
           if (_showRemoveButton)
             Positioned(

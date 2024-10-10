@@ -20,6 +20,7 @@ class GroupDetailPage extends StatelessWidget {
       Get.find(),
       Get.find(),
       Get.find(),
+      Get.find(),
     );
     return BlocProvider(
       create: (_) => bloc..add(const GroupDetailEvent.initial()),

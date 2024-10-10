@@ -11,4 +11,8 @@ class InteractionEvent with _$InteractionEvent {
   const factory InteractionEvent.onDeleteContact(Contact contact) = _OnDeleteContact;
 
   const factory InteractionEvent.onChangedAvatar(File file) = _OnChangedAvatar;
+
+  const factory InteractionEvent.onChangedAvatarFromUrl(
+    BingSearchImageData data,
+  ) = _OnChangedAvatarFromUrl;
 }
