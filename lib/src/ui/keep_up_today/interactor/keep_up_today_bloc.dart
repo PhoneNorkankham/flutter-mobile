@@ -7,6 +7,7 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/resource.dart';
 import 'package:keepup/src/extensions/contact_extensions.dart';
+import 'package:keepup/src/extensions/group_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/utils/app_pages.dart';
@@ -73,7 +74,7 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
       _supabaseRepository.getGroupsByContacts(contacts);
 
   Future<bool> isGroupCompleted(Group group) async {
-    final List<String> contactIds = group.contacts.map((e) => e.toString()).toList();
+    final List<String> contactIds = group.contactIds;
     final List<Contact> contacts =
         state.contacts.where((contact) => contactIds.contains(contact.id)).toList();
     for (Contact contact in contacts) {

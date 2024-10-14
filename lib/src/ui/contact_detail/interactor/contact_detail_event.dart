@@ -13,6 +13,15 @@ class ContactDetailEvent with _$ContactDetailEvent {
     String value,
   ) = _OnInputChanged;
 
+  const factory ContactDetailEvent.onChangedPhone(
+    int index,
+    ContactPhone contactPhone,
+  ) = _OnChangedPhone;
+
+  const factory ContactDetailEvent.onRemovedPhone(ContactPhone contactPhone) = _OnRemovedPhone;
+
+  const factory ContactDetailEvent.onAddedPhone() = _OnAddedPhone;
+
   const factory ContactDetailEvent.onSavePressed() = _OnSavePressed;
 
   const factory ContactDetailEvent.onCancelPressed() = _OnCancelPressed;

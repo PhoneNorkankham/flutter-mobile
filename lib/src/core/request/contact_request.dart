@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:keepup/src/core/converters/date_time_converter.dart';
+import 'package:keepup/src/core/model/contact_phone.dart';
 import 'package:keepup/src/utils/app_validation.dart';
 
 part 'contact_request.freezed.dart';
@@ -21,6 +22,7 @@ class ContactRequest with _$ContactRequest {
     @Default('') String name,
     @Default('') String email,
     @Default('') @JsonKey(name: 'phone_no') String phoneNo,
+    @Default([]) List<ContactPhone> phones,
     @DateTimeJsonConverter() @JsonKey(name: 'date_of_birth') DateTime? dateOfBirth,
     @DateTimeJsonConverter() DateTime? expiration,
     @DateTimeJsonConverter() @JsonKey(name: 'date_created') DateTime? dateCreated,

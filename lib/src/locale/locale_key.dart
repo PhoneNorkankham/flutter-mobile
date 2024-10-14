@@ -165,6 +165,7 @@ class LocaleKey {
   static const String category = "category";
   static const String categoryUpdatedSuccessfully = "categoryUpdatedSuccessfully";
   static const String remindUpdatedSuccessfully = "remindUpdatedSuccessfully";
+  static const String addPhone = "addPhone";
 
   // New Chat
   static const String searchNameOrNumber = "searchNameOrNumber";
@@ -212,4 +213,10 @@ class LocaleKey {
   // Empty message
   static const String noContacts = "noContacts";
   static const String noGroups = "noGroups";
+
+  // Bottom Sheet
+  static const String selectPhoneNumber = "selectPhoneNumber";
+  static const String selectApplication = "selectApplication";
+  static const String carrier = "carrier";
+  static const String whatsapp = "whatsapp";
 }

@@ -45,4 +45,12 @@ class AppConstants {
     'Friends',
     'Business Associates',
   ];
+
+  static final List<String> phoneLabels = [
+    'mobile',
+    'home',
+    'work',
+    'school',
+    'other',
+  ];
 }
