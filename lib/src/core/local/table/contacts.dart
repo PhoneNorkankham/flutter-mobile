@@ -1,4 +1,5 @@
 import 'package:drift/drift.dart';
+import 'package:keepup/src/core/converters/list_converter.dart';
 
 class Contacts extends Table {
   TextColumn get id => text()();
@@ -20,6 +21,9 @@ class Contacts extends Table {
 
   @JsonKey('phone_no')
   TextColumn get phoneNo => text().named('phone_no').withDefault(const Constant(''))();
+
+  TextColumn get phones =>
+      text().map(const ListConverter<dynamic>()).withDefault(const Constant('[]'))();
 
   @JsonKey('date_of_birth')
   DateTimeColumn get dateOfBirth => dateTime().named('date_of_birth').nullable()();

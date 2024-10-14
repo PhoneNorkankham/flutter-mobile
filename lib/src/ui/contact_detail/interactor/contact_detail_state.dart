@@ -14,5 +14,6 @@ class ContactDetailState with _$ContactDetailState {
     @Default(ContactRequest()) ContactRequest request,
     File? avatar,
     BingSearchImageData? bingSearchImageData,
+    @Default(0) int lastKey,
   }) = _ContactDetailState;
 }

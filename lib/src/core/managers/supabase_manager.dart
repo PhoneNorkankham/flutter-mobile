@@ -9,6 +9,7 @@ import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/interaction_request.dart';
 import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
+import 'package:keepup/src/extensions/group_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path/path.dart' as p;
@@ -222,7 +223,7 @@ class SupabaseManager {
 
     // Get all leave groups
     final List<Group> leaveGroups = joinedGroups.map((group) {
-      final List<String> contactIds = [...group.contacts]
+      final List<String> contactIds = [...group.contactIds]
         // Remove contactId in group
         ..removeWhere((element) => element == contactId);
       return group.copyWith(contacts: contactIds);
@@ -240,7 +241,7 @@ class SupabaseManager {
   }) async {
     final Group? group = await getGroup(groupId);
     if (group != null) {
-      final Group newGroup = group.copyWith(contacts: [...group.contacts, contactId]);
+      final Group newGroup = group.copyWith(contacts: [...group.contactIds, contactId]);
       return updateGroup(GroupRequest.fromJson(newGroup.toJson()));
     }
     return throw LocaleKey.theGroupDoesNotExist.tr;

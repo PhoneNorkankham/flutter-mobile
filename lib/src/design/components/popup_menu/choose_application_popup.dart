@@ -4,22 +4,30 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/utils/app_assets.dart';
-import 'package:keepup/src/utils/app_async_action.dart';
 
-class SendSmsPopup extends StatelessWidget {
-  static Future<void> show(String phoneNumber) =>
-      Get.bottomSheet(SendSmsPopup(phoneNumber: phoneNumber));
+enum ApplicationType {
+  none,
+  normal,
+  whatsapp,
+}
 
-  final String phoneNumber;
+class ChooseApplicationPopup extends StatelessWidget {
+  static Future<ApplicationType> show({bool isMessage = true}) {
+    return Get.bottomSheet(ChooseApplicationPopup(isMessage: isMessage)).then(
+      (value) => value is ApplicationType ? value : ApplicationType.none,
+    );
+  }
 
-  const SendSmsPopup({super.key, required this.phoneNumber});
+  final bool isMessage;
+
+  const ChooseApplicationPopup({super.key, required this.isMessage});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoActionSheet(
         title: Text(
-          'Select Application',
+          LocaleKey.selectApplication.tr,
           style: TextStyle(
             color: Theme.of(context).colorScheme.onPrimary,
             fontSize: 14,
@@ -27,31 +35,29 @@ class SendSmsPopup extends StatelessWidget {
         ),
         actions: <CupertinoActionSheetAction>[
           CupertinoActionSheetAction(
-            onPressed: () {
-              Navigator.pop(context);
-              AppAsyncAction.instance.sendSMS(phoneNumber: phoneNumber);
-            },
-            child: const Row(
+            onPressed: () => Get.back(result: ApplicationType.normal),
+            child: Row(
               children: [
-                SizedBox(width: 8),
-                Icon(Icons.sms, size: 24, color: Colors.teal),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
+                Icon(
+                  isMessage ? Icons.message : Icons.call,
+                  size: 24,
+                  color: Colors.teal,
+                ),
+                const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'SMS',
-                    style: TextStyle(color: Colors.blueAccent),
+                    LocaleKey.carrier.tr,
+                    style: const TextStyle(color: Colors.blueAccent),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(width: 36),
+                const SizedBox(width: 36),
               ],
             ),
           ),
           CupertinoActionSheetAction(
-            onPressed: () {
-              Navigator.pop(context);
-              AppAsyncAction.instance.sendWhatsappSMS(phoneNumber);
-            },
+            onPressed: () => Get.back(result: ApplicationType.whatsapp),
             child: Row(
               children: [
                 const SizedBox(width: 8),
@@ -65,10 +71,10 @@ class SendSmsPopup extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                const Expanded(
+                Expanded(
                   child: Text(
-                    'WhatsApp',
-                    style: TextStyle(color: Colors.blueAccent),
+                    LocaleKey.whatsapp.tr,
+                    style: const TextStyle(color: Colors.blueAccent),
                     textAlign: TextAlign.center,
                   ),
                 ),

@@ -15,6 +15,10 @@ _$ContactRequestImpl _$$ContactRequestImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       phoneNo: json['phone_no'] as String? ?? '',
+      phones: (json['phones'] as List<dynamic>?)
+              ?.map((e) => ContactPhone.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       dateOfBirth:
           const DateTimeJsonConverter().fromJson(json['date_of_birth']),
       expiration: const DateTimeJsonConverter().fromJson(json['expiration']),
@@ -30,6 +34,7 @@ Map<String, dynamic> _$$ContactRequestImplToJson(
     'name': instance.name,
     'email': instance.email,
     'phone_no': instance.phoneNo,
+    'phones': instance.phones.map((e) => e.toJson()).toList(),
   };
 
   void writeNotNull(String key, dynamic value) {

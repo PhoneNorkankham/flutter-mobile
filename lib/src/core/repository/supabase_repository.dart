@@ -14,6 +14,7 @@ import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/interaction_request.dart';
 import 'package:keepup/src/core/resource.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
+import 'package:keepup/src/extensions/group_extensions.dart';
 import 'package:keepup/src/utils/app_shared.dart';
 
 class SupabaseRepository {
@@ -319,7 +320,7 @@ class SupabaseRepository {
   }
 
   Future<Resource<bool>> keepUpGroup(Group group) async {
-    final List<String> contactIds = group.contacts.map((e) => e.toString()).toList();
+    final List<String> contactIds = group.contactIds;
     final List<Contact> contacts = await getDBContactByIds(contactIds);
     return keepUpAllContacts(contacts);
   }

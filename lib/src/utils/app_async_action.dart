@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:keepup/src/extensions/string_extensions.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class AppAsyncAction {
@@ -16,7 +17,7 @@ class AppAsyncAction {
   Future<void> callPhoneNumber(String phoneNumber) =>
       launchUrl("tel:${phoneNumber.replaceAll(' ', '')}");
 
-  Future<void> sendSMS({required String phoneNumber, String message = ''}) {
+  Future<void> sendSMS(String phoneNumber, {String message = ''}) {
     phoneNumber = phoneNumber.replaceAll(' ', '');
     final String separator = Platform.isIOS ? '&' : '?';
     final String url = "sms:$phoneNumber${message.isEmpty ? '' : '${separator}body=$message'}";
@@ -32,14 +33,15 @@ class AppAsyncAction {
     });
   }
 
-  Future<void> sendWhatsappSMS(String phoneNumber) {
-    final whatsappUrl = "whatsapp://send?phone=${phoneNumber.replaceAll(' ', '')}";
-    return launchUrl(Uri.encodeFull(whatsappUrl));
+  Future<bool> isSupportedWhatsApp() {
+    const whatsappUrl = 'whatsapp://send?text=Hello'; // URL WhatsApp to send message
+    return canLaunchUrl(Uri.encodeFull(whatsappUrl));
   }
 
-  Future<bool> canSendWhatsAppSMS(String phoneNumber) {
-    final whatsappUrl = "whatsapp://send?phone=${phoneNumber.replaceAll(' ', '')}";
-    return canLaunchUrl(Uri.encodeFull(whatsappUrl));
+  Future<void> openWhatsapp(String phoneNumber) {
+    phoneNumber = '${phoneNumber.startsWith('+') ? '+' : ''}${phoneNumber.onlyNumber}';
+    final whatsappUrl = "whatsapp://send?phone=$phoneNumber";
+    return launchUrl(Uri.encodeFull(whatsappUrl));
   }
 
   Future<bool> canLaunchUrl(String url) {

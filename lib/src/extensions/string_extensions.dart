@@ -39,7 +39,7 @@ extension StringExtensions on String {
   }
 
   String get toPhoneNumberFormat {
-    // Convert 0123456789 to 012-3456-7890
+    // Convert 0123456789 to 012-3456-789
     if (length > 3) {
       String value = this;
       value = value.replaceAll(RegExp(r'\D'), '');
@@ -59,6 +59,12 @@ extension StringExtensions on String {
     }
     return this;
   }
+
+  // Convert (012) 345-6789 to 0123456789
+  String get onlyNumber => replaceAll(RegExp(r'\D'), '');
+
+  // Convert abc to Abc
+  String get firstCharUpperCase => isEmpty ? '' : substring(0, 1).toUpperCase() + substring(1);
 
   String get fileName => split(Platform.pathSeparator).lastOrNull ?? '';
 }

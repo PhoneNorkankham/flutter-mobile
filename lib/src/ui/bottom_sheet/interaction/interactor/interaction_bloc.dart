@@ -8,8 +8,10 @@ import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/bing_search_image_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
+import 'package:keepup/src/design/components/popup_menu/choose_application_popup.dart';
+import 'package:keepup/src/design/components/popup_menu/choose_phone_popup.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
-import 'package:keepup/src/enums/sheet_type.dart';
+import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
@@ -59,23 +61,42 @@ class InteractionBloc extends Bloc<InteractionEvent, InteractionState> {
 
   FutureOr<void> _onInteraction(_OnInteraction event, Emitter<InteractionState> emit) async {
     final Contact? contact = state.contact;
-    if (contact == null) return;
+    if (contact == null || state.isLoading) return;
     switch (event.type) {
       case InteractionMethodType.Message:
-        bool whatsAppInstalled = await AppAsyncAction.instance.canSendWhatsAppSMS(contact.phoneNo);
-        if (whatsAppInstalled) {
-          emit(state.copyWith(
-            pageCommand: PageCommandShowBottomSheet(
-              sheetType: SheetType.sendSMS,
-              argument: contact.phoneNo,
-            ),
-          ));
-        } else {
-          AppAsyncAction.instance.sendSMS(phoneNumber: contact.phoneNo);
-        }
-        break;
       case InteractionMethodType.Call:
-        AppAsyncAction.instance.callPhoneNumber(contact.phoneNo);
+        emit(state.copyWith(isLoading: true));
+        bool isMessage = event.type == InteractionMethodType.Message;
+        bool isSupportedWhatsApp = await AppAsyncAction.instance.isSupportedWhatsApp();
+        emit(state.copyWith(isLoading: false));
+
+        ApplicationType shareType = ApplicationType.normal;
+        if (isSupportedWhatsApp) {
+          shareType = await ChooseApplicationPopup.show(isMessage: isMessage);
+        }
+        if (shareType == ApplicationType.none) return;
+
+        String phoneNo = contact.phoneNo;
+        if (contact.phones.length > 1) {
+          phoneNo = await ChoosePhonePopup.show(contact.contactPhones);
+        }
+        if (phoneNo.isEmpty) return;
+
+        emit(state.copyWith(isLoading: true));
+        switch (shareType) {
+          case ApplicationType.none:
+          case ApplicationType.normal:
+            if (isMessage) {
+              AppAsyncAction.instance.sendSMS(phoneNo);
+            } else {
+              AppAsyncAction.instance.callPhoneNumber(phoneNo);
+            }
+            break;
+          case ApplicationType.whatsapp:
+            AppAsyncAction.instance.openWhatsapp(phoneNo);
+            break;
+        }
+        emit(state.copyWith(isLoading: false));
         break;
       case InteractionMethodType.Contact:
         emit(state.copyWith(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:keepup/src/design/components/buttons/add_phone_button.dart';
 import 'package:keepup/src/design/components/inputs/app_input_text_field.dart';
+import 'package:keepup/src/design/components/inputs/phone_number_text_field.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
@@ -61,16 +62,30 @@ class ContactDetailForm extends StatelessWidget {
               LocaleKey.phoneNo.tr,
               style: context.appTextTheme.bold14,
             ),
-            const SizedBox(height: 10),
-            AppInputTextField(
-              controller: bloc.phoneNoController,
-              hintText: LocaleKey.phoneNo.tr,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              textInputType: TextInputType.number,
-              onChanged: (value) => bloc.add(ContactDetailEvent.onInputChanged(
-                ContactDetailInputType.phoneNo,
-                value,
-              )),
+            BlocBuilder<ContactDetailBloc, ContactDetailState>(
+              buildWhen: (previous, current) => previous.request.phones != current.request.phones,
+              builder: (context, state) => Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ...state.request.phones.map((contactPhone) => Padding(
+                        padding: const EdgeInsets.only(top: 10.0),
+                        child: PhoneNumberTextField(
+                          key: Key(contactPhone.key.toString()),
+                          contactPhone: contactPhone,
+                          onRemoved: (value) => bloc.add(ContactDetailEvent.onRemovedPhone(value)),
+                          onChanged: (value) => bloc.add(ContactDetailEvent.onChangedPhone(
+                            state.request.phones.indexOf(contactPhone),
+                            value,
+                          )),
+                        ),
+                      )),
+                  if (state.request.phones.length < 3)
+                    AddPhoneButton(
+                      onPressed: () => bloc.add(const ContactDetailEvent.onAddedPhone()),
+                    ),
+                ],
+              ),
             ),
             const SizedBox(height: 10),
             Text(
