@@ -25,7 +25,7 @@ class InteractionActionItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Icon(type.icon, color: Theme.of(context).colorScheme.onPrimary),
+            Icon(type.icon, color: Colors.green),
             const SizedBox(height: 8),
             Text(
               type.name,

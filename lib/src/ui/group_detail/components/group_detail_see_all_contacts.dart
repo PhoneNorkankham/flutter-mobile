@@ -22,7 +22,7 @@ class GroupDetailSeeAllContacts extends StatelessWidget {
             Divider(
               height: 1,
               thickness: 1,
-              indent: 64,
+              indent: 60,
               color: Theme.of(context).dividerColor,
             ),
             InkWell(
@@ -41,7 +41,7 @@ class GroupDetailSeeAllContacts extends StatelessWidget {
                     Expanded(
                       child: Text(
                         LocaleKey.seeAll.tr,
-                        style: context.appTextTheme.medium16,
+                        style: context.appTextTheme.medium14,
                       ),
                     ),
                     const SizedBox(width: 2),

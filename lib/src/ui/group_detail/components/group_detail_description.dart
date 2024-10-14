@@ -43,7 +43,7 @@ class GroupDetailDescription extends StatelessWidget {
             if (description.isEmpty) {
               return Text(
                 LocaleKey.addGroupDescription.tr,
-                style: context.appTextTheme.medium16.copyWith(
+                style: context.appTextTheme.medium14.copyWith(
                   color: const Color(0xFF1BA05C),
                 ),
               );
@@ -53,7 +53,7 @@ class GroupDetailDescription extends StatelessWidget {
                   Expanded(
                     child: Text(
                       description,
-                      style: context.appTextTheme.medium16,
+                      style: context.appTextTheme.medium14,
                     ),
                   ),
                   SvgPicture.asset(AppAssets.ic_next_svg),

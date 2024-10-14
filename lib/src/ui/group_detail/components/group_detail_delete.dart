@@ -24,7 +24,7 @@ class GroupDetailDelete extends StatelessWidget {
         ),
         child: Text(
           LocaleKey.deleteGroup.tr,
-          style: context.appTextTheme.medium16.copyWith(
+          style: context.appTextTheme.medium14.copyWith(
             color: Colors.red,
           ),
         ),

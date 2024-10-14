@@ -36,8 +36,8 @@ class GroupDetailAddContact extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: 40,
-              height: 40,
+              width: 36,
+              height: 36,
               decoration: BoxDecoration(
                 color: AppColors.grey350,
                 borderRadius: BorderRadius.circular(90),
@@ -48,7 +48,7 @@ class GroupDetailAddContact extends StatelessWidget {
               ),
               child: Icon(
                 Icons.add,
-                size: 36,
+                size: 30,
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
@@ -56,7 +56,7 @@ class GroupDetailAddContact extends StatelessWidget {
             Expanded(
               child: Text(
                 LocaleKey.addContacts.tr,
-                style: context.appTextTheme.medium16,
+                style: context.appTextTheme.medium14,
               ),
             ),
           ],

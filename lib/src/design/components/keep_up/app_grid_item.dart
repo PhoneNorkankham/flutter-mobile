@@ -58,7 +58,7 @@ class AppGridItem extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   title,
-                  style: context.appTextTheme.medium14.copyWith(
+                  style: context.appTextTheme.medium12.copyWith(
                     color: titleColor ?? Theme.of(context).colorScheme.primary,
                   ),
                   maxLines: 1,
