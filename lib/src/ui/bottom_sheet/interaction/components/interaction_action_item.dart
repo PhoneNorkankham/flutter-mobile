@@ -44,7 +44,7 @@ class InteractionActionItem extends StatelessWidget {
               opacity: isEnabled ? 1 : 0.5,
               child: Column(
                 children: [
-                  Icon(type.icon, color: Theme.of(context).colorScheme.onPrimary),
+                  Icon(type.icon, color: Colors.green),
                   const SizedBox(height: 8),
                   Text(
                     type.name,

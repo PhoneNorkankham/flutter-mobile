@@ -34,7 +34,7 @@ class GroupDetailSettings extends StatelessWidget {
                 Expanded(
                   child: Text(
                     LocaleKey.category.tr,
-                    style: context.appTextTheme.medium16,
+                    style: context.appTextTheme.medium14,
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -45,7 +45,7 @@ class GroupDetailSettings extends StatelessWidget {
                   builder: (context, state) => CategoryPopup(
                     selectedCategory: state.selectedCategory,
                     categories: state.categories,
-                    textStyle: context.appTextTheme.medium16.copyWith(
+                    textStyle: context.appTextTheme.medium14.copyWith(
                       color: const Color(0xFF8E8E8F),
                     ),
                     onChanged: (value) {
@@ -70,7 +70,7 @@ class GroupDetailSettings extends StatelessWidget {
                 Expanded(
                   child: Text(
                     LocaleKey.remind.tr,
-                    style: context.appTextTheme.medium16,
+                    style: context.appTextTheme.medium14,
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -79,7 +79,7 @@ class GroupDetailSettings extends StatelessWidget {
                       previous.request.frequencyInterval != current.request.frequencyInterval,
                   builder: (context, state) => FrequencyIntervalPopup(
                     type: state.request.frequencyInterval,
-                    textStyle: context.appTextTheme.medium16.copyWith(
+                    textStyle: context.appTextTheme.medium14.copyWith(
                       color: const Color(0xFF8E8E8F),
                     ),
                     onChanged: (value) {
@@ -106,7 +106,7 @@ class GroupDetailSettings extends StatelessWidget {
                   Expanded(
                     child: Text(
                       LocaleKey.notifications.tr,
-                      style: context.appTextTheme.medium16,
+                      style: context.appTextTheme.medium14,
                     ),
                   ),
                   const SizedBox(width: 2),

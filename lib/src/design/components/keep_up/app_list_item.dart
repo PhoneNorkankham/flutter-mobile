@@ -55,7 +55,7 @@ class AppListItem extends StatelessWidget {
                     title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: context.appTextTheme.bold16,
+                    style: context.appTextTheme.bold14,
                   ),
                   if (description.isNotEmpty)
                     Text(

@@ -54,7 +54,7 @@ class GroupDetailHeader extends StatelessWidget {
                 Flexible(
                   child: Text(
                     state.request.name,
-                    style: context.appTextTheme.bold30.copyWith(fontSize: 26),
+                    style: context.appTextTheme.bold30.copyWith(fontSize: 24),
                     textAlign: TextAlign.center,
                     maxLines: 1,
                   ),

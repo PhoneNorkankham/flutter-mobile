@@ -29,7 +29,7 @@ class InteractionInfoItem extends StatelessWidget {
             ),
             child: Icon(
               icon,
-              color: Theme.of(context).colorScheme.onPrimary,
+              color: Colors.green,
               size: 16,
             ),
           ),
@@ -37,16 +37,21 @@ class InteractionInfoItem extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: context.appTextTheme.medium18.copyWith(
+              style: context.appTextTheme.medium14.copyWith(
                 color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
           ),
           const SizedBox(width: 8),
-          Text(
-            value,
-            style: context.appTextTheme.medium18.copyWith(
-              color: Theme.of(context).colorScheme.onPrimary.withOpacity(0.7),
+          Expanded(
+            child: Text(
+              value,
+              style: context.appTextTheme.medium14.copyWith(
+                color: Theme.of(context).colorScheme.onPrimary.withOpacity(0.7),
+              ),
+              textAlign: TextAlign.end,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

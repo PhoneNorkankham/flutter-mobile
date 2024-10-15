@@ -48,7 +48,7 @@ class GroupDetailContactItem extends StatelessWidget {
             Expanded(
               child: Text(
                 contact.name,
-                style: context.appTextTheme.medium16,
+                style: context.appTextTheme.medium14,
               ),
             ),
             const SizedBox(width: 2),

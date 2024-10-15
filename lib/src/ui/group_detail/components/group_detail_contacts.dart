@@ -29,7 +29,7 @@ class GroupDetailContacts extends StatelessWidget {
             children: [
               Text(
                 '$length ${length == 1 ? LocaleKey.contact.tr : LocaleKey.contacts.tr}',
-                style: context.appTextTheme.medium18,
+                style: context.appTextTheme.medium16,
               ),
               const SizedBox(height: 6),
               DecoratedBox(
@@ -43,7 +43,7 @@ class GroupDetailContacts extends StatelessWidget {
                     Divider(
                       height: 1,
                       thickness: 1,
-                      indent: 64,
+                      indent: 60,
                       color: Theme.of(context).dividerColor,
                     ),
                     BlocBuilder<GroupDetailBloc, GroupDetailState>(
@@ -60,7 +60,7 @@ class GroupDetailContacts extends StatelessWidget {
                         separatorBuilder: (context, index) => Divider(
                           height: 1,
                           thickness: 1,
-                          indent: 64,
+                          indent: 60,
                           color: Theme.of(context).dividerColor,
                         ),
                       ),
