@@ -53,6 +53,11 @@ class AppTheme {
         ),
       ),
       popupMenuTheme: AppPopupMenuTheme.appPopupMenuThemeData(colorScheme, appTextTheme),
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: AppColors.tertiary,
+        selectionColor: AppColors.tertiary,
+        selectionHandleColor: AppColors.tertiary,
+      ),
     );
   }
 
@@ -92,6 +97,11 @@ class AppTheme {
         ),
       ),
       popupMenuTheme: AppPopupMenuTheme.appPopupMenuThemeData(colorScheme, appTextTheme),
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: AppColors.tertiary,
+        selectionColor: AppColors.tertiary,
+        selectionHandleColor: AppColors.tertiary,
+      ),
     );
   }
 }

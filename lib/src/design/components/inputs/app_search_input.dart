@@ -38,6 +38,7 @@ class _AppSearchInputState extends State<AppSearchInput> {
 
   @override
   Widget build(BuildContext context) {
+    const border = OutlineInputBorder(borderRadius: BorderRadius.zero);
     return Container(
       margin: widget.margin ?? const EdgeInsets.symmetric(horizontal: 20.0),
       height: 36,
@@ -45,17 +46,30 @@ class _AppSearchInputState extends State<AppSearchInput> {
         children: [
           AppInputTextField(
             controller: widget.controller,
-            prefix: Icon(
-              Icons.search,
-              color: Theme.of(context).inputDecorationTheme.hintStyle?.color,
-              size: 20,
-            ),
             maxLines: 1,
-            hintText: widget.hintText ?? LocaleKey.search.tr,
             textInputAction: TextInputAction.search,
             textInputType: TextInputType.name,
             onChanged: widget.onChanged,
             onFieldSubmitted: widget.onSubmitted,
+            decoration: InputDecoration(
+              hintText: widget.hintText ?? LocaleKey.search.tr,
+              errorStyle: Theme.of(context).inputDecorationTheme.errorStyle,
+              errorMaxLines: 2,
+              counterText: '',
+              filled: true,
+              isDense: true,
+              contentPadding: EdgeInsets.zero,
+              prefixIcon: Icon(
+                Icons.search,
+                color: Theme.of(context).inputDecorationTheme.hintStyle?.color,
+                size: 20,
+              ),
+              border: border,
+              focusedBorder: border,
+              enabledBorder: border,
+              disabledBorder: border,
+              focusedErrorBorder: border,
+            ),
           ),
           if (_showRemoveButton)
             Positioned(

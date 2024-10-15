@@ -32,7 +32,7 @@ class ContactDetailGroup extends StatelessWidget {
               child: Container(
                 constraints: const BoxConstraints(minHeight: 40),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(6),
                   border: Border.all(color: AppColors.inputBorder),
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
