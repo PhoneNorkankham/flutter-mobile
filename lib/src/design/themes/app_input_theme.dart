@@ -4,16 +4,16 @@ import 'package:keepup/src/design/themes/extensions/app_text_theme.dart';
 
 class AppInputTheme {
   static InputDecorationTheme inputDecorationThemeData(AppTextTheme appTextTheme) {
-    const OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
-      borderSide: BorderSide(color: AppColors.inputBorder),
+    OutlineInputBorder border = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(6),
+      borderSide: const BorderSide(color: AppColors.inputBorder),
     );
     return InputDecorationTheme(
       disabledBorder: border,
       enabledBorder: border,
       border: border,
       focusedBorder: border.copyWith(
-        borderSide: const BorderSide(color: AppColors.tertiary),
+        borderSide: const BorderSide(color: AppColors.grey600),
       ),
       errorBorder: border.copyWith(
         borderSide: const BorderSide(color: AppColors.error),
