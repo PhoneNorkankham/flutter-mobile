@@ -1,6 +1,7 @@
 import 'package:drift/drift.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/local/table/groups.dart';
+import 'package:keepup/src/extensions/group_extensions.dart';
 
 part 'group_dao.g.dart';
 
@@ -41,7 +42,7 @@ class GroupDao extends DatabaseAccessor<AppDatabase> with _$GroupDaoMixin {
 
     // Get all leave groups
     final List<Group> leaveGroups = joinedGroups.map((group) {
-      final List<String> contactIds = [...group.contacts]
+      final List<String> contactIds = [...group.contactIds]
         // Remove contactId in group
         ..removeWhere((element) => element == contactId);
       return group.copyWith(contacts: contactIds);

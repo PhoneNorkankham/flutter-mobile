@@ -1,4 +1,5 @@
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/contact_phone.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
 import 'package:keepup/src/ui/base/interactor/base_state_mapper.dart';
@@ -17,13 +18,23 @@ class GetContactStateMapper implements BaseStateMapper<ContactDetailState, DataR
       );
     } else {
       final Contact contact = result.valueOrCrash;
-      final ContactRequest request = ContactRequest.fromJson(contact.toJson());
+      ContactRequest request = ContactRequest.fromJson(contact.toJson());
+      List<ContactPhone> phones = [];
+      if (request.phones.isNotEmpty) {
+        for (int i = 0; i < request.phones.length; i++) {
+          phones.add(request.phones.elementAt(i).copyWith(key: state.lastKey + 1));
+        }
+      } else {
+        phones.add(ContactPhone(key: state.lastKey, label: 'mobile', value: request.phoneNo));
+      }
+      request = request.copyWith(phones: phones);
       return state.copyWith(
         isLoading: false,
         request: request,
         selectedGroup: state.groups.where((element) => element.id == request.groupId).firstOrNull,
         contactId: contact.id,
         contactType: ContactType.contactDetail,
+        lastKey: phones.lastOrNull?.key ?? state.lastKey,
       );
     }
   }

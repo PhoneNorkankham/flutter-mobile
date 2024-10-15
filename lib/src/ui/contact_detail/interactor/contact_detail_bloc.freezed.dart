@@ -23,6 +23,10 @@ mixin _$ContactDetailEvent {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -37,6 +41,9 @@ mixin _$ContactDetailEvent {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -51,6 +58,9 @@ mixin _$ContactDetailEvent {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -65,6 +75,9 @@ mixin _$ContactDetailEvent {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -79,6 +92,9 @@ mixin _$ContactDetailEvent {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -92,6 +108,9 @@ mixin _$ContactDetailEvent {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -163,6 +182,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -180,6 +203,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -197,6 +223,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -217,6 +246,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -234,6 +266,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -250,6 +285,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -311,6 +349,10 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -328,6 +370,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -345,6 +390,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -365,6 +413,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -382,6 +433,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -398,6 +452,9 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -487,6 +544,10 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -504,6 +565,9 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -521,6 +585,9 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -541,6 +608,9 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -558,6 +628,9 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -574,6 +647,9 @@ class _$OnSelectedGroupImpl implements _OnSelectedGroup {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -676,6 +752,10 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -693,6 +773,9 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -710,6 +793,9 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -730,6 +816,9 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -747,6 +836,9 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -763,6 +855,9 @@ class _$OnInputChangedImpl implements _OnInputChanged {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -787,6 +882,604 @@ abstract class _OnInputChanged implements ContactDetailEvent {
   @JsonKey(ignore: true)
   _$$OnInputChangedImplCopyWith<_$OnInputChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnChangedPhoneImplCopyWith<$Res> {
+  factory _$$OnChangedPhoneImplCopyWith(_$OnChangedPhoneImpl value,
+          $Res Function(_$OnChangedPhoneImpl) then) =
+      __$$OnChangedPhoneImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index, ContactPhone contactPhone});
+
+  $ContactPhoneCopyWith<$Res> get contactPhone;
+}
+
+/// @nodoc
+class __$$OnChangedPhoneImplCopyWithImpl<$Res>
+    extends _$ContactDetailEventCopyWithImpl<$Res, _$OnChangedPhoneImpl>
+    implements _$$OnChangedPhoneImplCopyWith<$Res> {
+  __$$OnChangedPhoneImplCopyWithImpl(
+      _$OnChangedPhoneImpl _value, $Res Function(_$OnChangedPhoneImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+    Object? contactPhone = null,
+  }) {
+    return _then(_$OnChangedPhoneImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      null == contactPhone
+          ? _value.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as ContactPhone,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactPhoneCopyWith<$Res> get contactPhone {
+    return $ContactPhoneCopyWith<$Res>(_value.contactPhone, (value) {
+      return _then(_value.copyWith(contactPhone: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnChangedPhoneImpl implements _OnChangedPhone {
+  const _$OnChangedPhoneImpl(this.index, this.contactPhone);
+
+  @override
+  final int index;
+  @override
+  final ContactPhone contactPhone;
+
+  @override
+  String toString() {
+    return 'ContactDetailEvent.onChangedPhone(index: $index, contactPhone: $contactPhone)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnChangedPhoneImpl &&
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index, contactPhone);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnChangedPhoneImplCopyWith<_$OnChangedPhoneImpl> get copyWith =>
+      __$$OnChangedPhoneImplCopyWithImpl<_$OnChangedPhoneImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onSelectedGroup,
+    required TResult Function(ContactDetailInputType inputType, String value)
+        onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
+    required TResult Function() onSavePressed,
+    required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
+    required TResult Function() onDeleteContact,
+  }) {
+    return onChangedPhone(index, contactPhone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onSelectedGroup,
+    TResult? Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
+    TResult? Function()? onSavePressed,
+    TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult? Function()? onDeleteContact,
+  }) {
+    return onChangedPhone?.call(index, contactPhone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onSelectedGroup,
+    TResult Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
+    TResult Function()? onSavePressed,
+    TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult Function()? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onChangedPhone != null) {
+      return onChangedPhone(index, contactPhone);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
+    required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
+    required TResult Function(_OnSavePressed value) onSavePressed,
+    required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
+  }) {
+    return onChangedPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
+    TResult? Function(_OnSavePressed value)? onSavePressed,
+    TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
+  }) {
+    return onChangedPhone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
+    TResult Function(_OnSavePressed value)? onSavePressed,
+    TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onChangedPhone != null) {
+      return onChangedPhone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChangedPhone implements ContactDetailEvent {
+  const factory _OnChangedPhone(
+      final int index, final ContactPhone contactPhone) = _$OnChangedPhoneImpl;
+
+  int get index;
+  ContactPhone get contactPhone;
+  @JsonKey(ignore: true)
+  _$$OnChangedPhoneImplCopyWith<_$OnChangedPhoneImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnRemovedPhoneImplCopyWith<$Res> {
+  factory _$$OnRemovedPhoneImplCopyWith(_$OnRemovedPhoneImpl value,
+          $Res Function(_$OnRemovedPhoneImpl) then) =
+      __$$OnRemovedPhoneImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ContactPhone contactPhone});
+
+  $ContactPhoneCopyWith<$Res> get contactPhone;
+}
+
+/// @nodoc
+class __$$OnRemovedPhoneImplCopyWithImpl<$Res>
+    extends _$ContactDetailEventCopyWithImpl<$Res, _$OnRemovedPhoneImpl>
+    implements _$$OnRemovedPhoneImplCopyWith<$Res> {
+  __$$OnRemovedPhoneImplCopyWithImpl(
+      _$OnRemovedPhoneImpl _value, $Res Function(_$OnRemovedPhoneImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contactPhone = null,
+  }) {
+    return _then(_$OnRemovedPhoneImpl(
+      null == contactPhone
+          ? _value.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as ContactPhone,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactPhoneCopyWith<$Res> get contactPhone {
+    return $ContactPhoneCopyWith<$Res>(_value.contactPhone, (value) {
+      return _then(_value.copyWith(contactPhone: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnRemovedPhoneImpl implements _OnRemovedPhone {
+  const _$OnRemovedPhoneImpl(this.contactPhone);
+
+  @override
+  final ContactPhone contactPhone;
+
+  @override
+  String toString() {
+    return 'ContactDetailEvent.onRemovedPhone(contactPhone: $contactPhone)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnRemovedPhoneImpl &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, contactPhone);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnRemovedPhoneImplCopyWith<_$OnRemovedPhoneImpl> get copyWith =>
+      __$$OnRemovedPhoneImplCopyWithImpl<_$OnRemovedPhoneImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onSelectedGroup,
+    required TResult Function(ContactDetailInputType inputType, String value)
+        onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
+    required TResult Function() onSavePressed,
+    required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
+    required TResult Function() onDeleteContact,
+  }) {
+    return onRemovedPhone(contactPhone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onSelectedGroup,
+    TResult? Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
+    TResult? Function()? onSavePressed,
+    TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult? Function()? onDeleteContact,
+  }) {
+    return onRemovedPhone?.call(contactPhone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onSelectedGroup,
+    TResult Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
+    TResult Function()? onSavePressed,
+    TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult Function()? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onRemovedPhone != null) {
+      return onRemovedPhone(contactPhone);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
+    required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
+    required TResult Function(_OnSavePressed value) onSavePressed,
+    required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
+  }) {
+    return onRemovedPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
+    TResult? Function(_OnSavePressed value)? onSavePressed,
+    TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
+  }) {
+    return onRemovedPhone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
+    TResult Function(_OnSavePressed value)? onSavePressed,
+    TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onRemovedPhone != null) {
+      return onRemovedPhone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnRemovedPhone implements ContactDetailEvent {
+  const factory _OnRemovedPhone(final ContactPhone contactPhone) =
+      _$OnRemovedPhoneImpl;
+
+  ContactPhone get contactPhone;
+  @JsonKey(ignore: true)
+  _$$OnRemovedPhoneImplCopyWith<_$OnRemovedPhoneImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnAddedPhoneImplCopyWith<$Res> {
+  factory _$$OnAddedPhoneImplCopyWith(
+          _$OnAddedPhoneImpl value, $Res Function(_$OnAddedPhoneImpl) then) =
+      __$$OnAddedPhoneImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnAddedPhoneImplCopyWithImpl<$Res>
+    extends _$ContactDetailEventCopyWithImpl<$Res, _$OnAddedPhoneImpl>
+    implements _$$OnAddedPhoneImplCopyWith<$Res> {
+  __$$OnAddedPhoneImplCopyWithImpl(
+      _$OnAddedPhoneImpl _value, $Res Function(_$OnAddedPhoneImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnAddedPhoneImpl implements _OnAddedPhone {
+  const _$OnAddedPhoneImpl();
+
+  @override
+  String toString() {
+    return 'ContactDetailEvent.onAddedPhone()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnAddedPhoneImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(Group group) onSelectedGroup,
+    required TResult Function(ContactDetailInputType inputType, String value)
+        onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
+    required TResult Function() onSavePressed,
+    required TResult Function() onCancelPressed,
+    required TResult Function(File file) onChangedAvatar,
+    required TResult Function(BingSearchImageData data) onChangedAvatarFromUrl,
+    required TResult Function() onDeleteContact,
+  }) {
+    return onAddedPhone();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(Group group)? onSelectedGroup,
+    TResult? Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
+    TResult? Function()? onSavePressed,
+    TResult? Function()? onCancelPressed,
+    TResult? Function(File file)? onChangedAvatar,
+    TResult? Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult? Function()? onDeleteContact,
+  }) {
+    return onAddedPhone?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(Group group)? onSelectedGroup,
+    TResult Function(ContactDetailInputType inputType, String value)?
+        onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
+    TResult Function()? onSavePressed,
+    TResult Function()? onCancelPressed,
+    TResult Function(File file)? onChangedAvatar,
+    TResult Function(BingSearchImageData data)? onChangedAvatarFromUrl,
+    TResult Function()? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onAddedPhone != null) {
+      return onAddedPhone();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnSelectedGroup value) onSelectedGroup,
+    required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
+    required TResult Function(_OnSavePressed value) onSavePressed,
+    required TResult Function(_OnCancelPressed value) onCancelPressed,
+    required TResult Function(_OnChangedAvatar value) onChangedAvatar,
+    required TResult Function(_OnChangedAvatarFromUrl value)
+        onChangedAvatarFromUrl,
+    required TResult Function(_OnDeleteContact value) onDeleteContact,
+  }) {
+    return onAddedPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
+    TResult? Function(_OnSavePressed value)? onSavePressed,
+    TResult? Function(_OnCancelPressed value)? onCancelPressed,
+    TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult? Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult? Function(_OnDeleteContact value)? onDeleteContact,
+  }) {
+    return onAddedPhone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnSelectedGroup value)? onSelectedGroup,
+    TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
+    TResult Function(_OnSavePressed value)? onSavePressed,
+    TResult Function(_OnCancelPressed value)? onCancelPressed,
+    TResult Function(_OnChangedAvatar value)? onChangedAvatar,
+    TResult Function(_OnChangedAvatarFromUrl value)? onChangedAvatarFromUrl,
+    TResult Function(_OnDeleteContact value)? onDeleteContact,
+    required TResult orElse(),
+  }) {
+    if (onAddedPhone != null) {
+      return onAddedPhone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnAddedPhone implements ContactDetailEvent {
+  const factory _OnAddedPhone() = _$OnAddedPhoneImpl;
 }
 
 /// @nodoc
@@ -832,6 +1525,10 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -849,6 +1546,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -866,6 +1566,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -886,6 +1589,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -903,6 +1609,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -919,6 +1628,9 @@ class _$OnSavePressedImpl implements _OnSavePressed {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -980,6 +1692,10 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -997,6 +1713,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -1014,6 +1733,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -1034,6 +1756,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -1051,6 +1776,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1067,6 +1795,9 @@ class _$OnCancelPressedImpl implements _OnCancelPressed {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1155,6 +1886,10 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -1172,6 +1907,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -1189,6 +1927,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -1209,6 +1950,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -1226,6 +1970,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1242,6 +1989,9 @@ class _$OnChangedAvatarImpl implements _OnChangedAvatar {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1347,6 +2097,10 @@ class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -1364,6 +2118,9 @@ class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -1381,6 +2138,9 @@ class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -1401,6 +2161,9 @@ class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -1418,6 +2181,9 @@ class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1434,6 +2200,9 @@ class _$OnChangedAvatarFromUrlImpl implements _OnChangedAvatarFromUrl {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1501,6 +2270,10 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     required TResult Function(Group group) onSelectedGroup,
     required TResult Function(ContactDetailInputType inputType, String value)
         onInputChanged,
+    required TResult Function(int index, ContactPhone contactPhone)
+        onChangedPhone,
+    required TResult Function(ContactPhone contactPhone) onRemovedPhone,
+    required TResult Function() onAddedPhone,
     required TResult Function() onSavePressed,
     required TResult Function() onCancelPressed,
     required TResult Function(File file) onChangedAvatar,
@@ -1518,6 +2291,9 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult? Function(Group group)? onSelectedGroup,
     TResult? Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult? Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult? Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult? Function()? onAddedPhone,
     TResult? Function()? onSavePressed,
     TResult? Function()? onCancelPressed,
     TResult? Function(File file)? onChangedAvatar,
@@ -1535,6 +2311,9 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult Function(Group group)? onSelectedGroup,
     TResult Function(ContactDetailInputType inputType, String value)?
         onInputChanged,
+    TResult Function(int index, ContactPhone contactPhone)? onChangedPhone,
+    TResult Function(ContactPhone contactPhone)? onRemovedPhone,
+    TResult Function()? onAddedPhone,
     TResult Function()? onSavePressed,
     TResult Function()? onCancelPressed,
     TResult Function(File file)? onChangedAvatar,
@@ -1555,6 +2334,9 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedGroup value) onSelectedGroup,
     required TResult Function(_OnInputChanged value) onInputChanged,
+    required TResult Function(_OnChangedPhone value) onChangedPhone,
+    required TResult Function(_OnRemovedPhone value) onRemovedPhone,
+    required TResult Function(_OnAddedPhone value) onAddedPhone,
     required TResult Function(_OnSavePressed value) onSavePressed,
     required TResult Function(_OnCancelPressed value) onCancelPressed,
     required TResult Function(_OnChangedAvatar value) onChangedAvatar,
@@ -1572,6 +2354,9 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult? Function(_OnInputChanged value)? onInputChanged,
+    TResult? Function(_OnChangedPhone value)? onChangedPhone,
+    TResult? Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult? Function(_OnAddedPhone value)? onAddedPhone,
     TResult? Function(_OnSavePressed value)? onSavePressed,
     TResult? Function(_OnCancelPressed value)? onCancelPressed,
     TResult? Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1588,6 +2373,9 @@ class _$OnDeleteContactImpl implements _OnDeleteContact {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedGroup value)? onSelectedGroup,
     TResult Function(_OnInputChanged value)? onInputChanged,
+    TResult Function(_OnChangedPhone value)? onChangedPhone,
+    TResult Function(_OnRemovedPhone value)? onRemovedPhone,
+    TResult Function(_OnAddedPhone value)? onAddedPhone,
     TResult Function(_OnSavePressed value)? onSavePressed,
     TResult Function(_OnCancelPressed value)? onCancelPressed,
     TResult Function(_OnChangedAvatar value)? onChangedAvatar,
@@ -1618,6 +2406,7 @@ mixin _$ContactDetailState {
   File? get avatar => throw _privateConstructorUsedError;
   BingSearchImageData? get bingSearchImageData =>
       throw _privateConstructorUsedError;
+  int get lastKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ContactDetailStateCopyWith<ContactDetailState> get copyWith =>
@@ -1639,7 +2428,8 @@ abstract class $ContactDetailStateCopyWith<$Res> {
       Group? selectedGroup,
       ContactRequest request,
       File? avatar,
-      BingSearchImageData? bingSearchImageData});
+      BingSearchImageData? bingSearchImageData,
+      int lastKey});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
   $ContactRequestCopyWith<$Res> get request;
@@ -1668,6 +2458,7 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
     Object? request = null,
     Object? avatar = freezed,
     Object? bingSearchImageData = freezed,
+    Object? lastKey = null,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
@@ -1706,6 +2497,10 @@ class _$ContactDetailStateCopyWithImpl<$Res, $Val extends ContactDetailState>
           ? _value.bingSearchImageData
           : bingSearchImageData // ignore: cast_nullable_to_non_nullable
               as BingSearchImageData?,
+      lastKey: null == lastKey
+          ? _value.lastKey
+          : lastKey // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 
@@ -1760,7 +2555,8 @@ abstract class _$$ContactDetailStateImplCopyWith<$Res>
       Group? selectedGroup,
       ContactRequest request,
       File? avatar,
-      BingSearchImageData? bingSearchImageData});
+      BingSearchImageData? bingSearchImageData,
+      int lastKey});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -1790,6 +2586,7 @@ class __$$ContactDetailStateImplCopyWithImpl<$Res>
     Object? request = null,
     Object? avatar = freezed,
     Object? bingSearchImageData = freezed,
+    Object? lastKey = null,
   }) {
     return _then(_$ContactDetailStateImpl(
       pageCommand: freezed == pageCommand
@@ -1828,6 +2625,10 @@ class __$$ContactDetailStateImplCopyWithImpl<$Res>
           ? _value.bingSearchImageData
           : bingSearchImageData // ignore: cast_nullable_to_non_nullable
               as BingSearchImageData?,
+      lastKey: null == lastKey
+          ? _value.lastKey
+          : lastKey // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1844,7 +2645,8 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
       this.selectedGroup,
       this.request = const ContactRequest(),
       this.avatar,
-      this.bingSearchImageData})
+      this.bingSearchImageData,
+      this.lastKey = 0})
       : _groups = groups,
         super._();
 
@@ -1877,10 +2679,13 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
   final File? avatar;
   @override
   final BingSearchImageData? bingSearchImageData;
+  @override
+  @JsonKey()
+  final int lastKey;
 
   @override
   String toString() {
-    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, groups: $groups, selectedGroup: $selectedGroup, request: $request, avatar: $avatar, bingSearchImageData: $bingSearchImageData)';
+    return 'ContactDetailState(pageCommand: $pageCommand, contactType: $contactType, isLoading: $isLoading, contactId: $contactId, groups: $groups, selectedGroup: $selectedGroup, request: $request, avatar: $avatar, bingSearchImageData: $bingSearchImageData, lastKey: $lastKey)';
   }
 
   @override
@@ -1902,7 +2707,8 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
             (identical(other.request, request) || other.request == request) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.bingSearchImageData, bingSearchImageData) ||
-                other.bingSearchImageData == bingSearchImageData));
+                other.bingSearchImageData == bingSearchImageData) &&
+            (identical(other.lastKey, lastKey) || other.lastKey == lastKey));
   }
 
   @override
@@ -1916,7 +2722,8 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
       const DeepCollectionEquality().hash(selectedGroup),
       request,
       avatar,
-      bingSearchImageData);
+      bingSearchImageData,
+      lastKey);
 
   @JsonKey(ignore: true)
   @override
@@ -1928,16 +2735,16 @@ class _$ContactDetailStateImpl extends _ContactDetailState {
 
 abstract class _ContactDetailState extends ContactDetailState {
   const factory _ContactDetailState(
-          {final PageCommand? pageCommand,
-          final ContactType contactType,
-          final bool isLoading,
-          final String contactId,
-          final List<Group> groups,
-          final Group? selectedGroup,
-          final ContactRequest request,
-          final File? avatar,
-          final BingSearchImageData? bingSearchImageData}) =
-      _$ContactDetailStateImpl;
+      {final PageCommand? pageCommand,
+      final ContactType contactType,
+      final bool isLoading,
+      final String contactId,
+      final List<Group> groups,
+      final Group? selectedGroup,
+      final ContactRequest request,
+      final File? avatar,
+      final BingSearchImageData? bingSearchImageData,
+      final int lastKey}) = _$ContactDetailStateImpl;
   const _ContactDetailState._() : super._();
 
   @override
@@ -1958,6 +2765,8 @@ abstract class _ContactDetailState extends ContactDetailState {
   File? get avatar;
   @override
   BingSearchImageData? get bingSearchImageData;
+  @override
+  int get lastKey;
   @override
   @JsonKey(ignore: true)
   _$$ContactDetailStateImplCopyWith<_$ContactDetailStateImpl> get copyWith =>

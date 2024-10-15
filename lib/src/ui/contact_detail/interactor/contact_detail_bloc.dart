@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/bing_search_image_data.dart';
+import 'package:keepup/src/core/model/contact_phone.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/enums/contact_type.dart';
@@ -26,6 +27,7 @@ import 'package:keepup/src/use_cases/delete_contact_use_case.dart';
 import 'package:keepup/src/use_cases/update_contact_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_from_url_use_case.dart';
 import 'package:keepup/src/use_cases/upload_avatar_use_case.dart';
+import 'package:keepup/src/utils/app_constants.dart';
 
 part 'contact_detail_bloc.freezed.dart';
 part 'contact_detail_event.dart';
@@ -69,6 +71,9 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
           request: state.request.copyWith(groupId: event.group.id),
         )));
     on<_OnInputChanged>(_onInputChanged);
+    on<_OnChangedPhone>(_onChangedPhone);
+    on<_OnRemovedPhone>(_onRemovedPhone);
+    on<_OnAddedPhone>(_onAddedPhone);
     on<_OnSavePressed>(_onSavePressed);
     on<_OnCancelPressed>((event, emit) => emit(state.copyWith(
           pageCommand: PageCommandNavigation.pop(),
@@ -162,10 +167,15 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
       }
     }
 
+    // Remove empty phone number
+    List<ContactPhone> phones = [...state.request.phones];
+    phones.removeWhere((e) => e.value.trim().isEmpty);
+
     final DateTime expiration = selectedGroup.frequencyInterval.toExpirationDate();
     final request = state.request.copyWith(
       avatar: avatarUrl,
       expiration: expiration,
+      phones: phones,
     );
     if (state.contactType == ContactType.newContact) {
       final result = await _createContactUseCase.run(request);
@@ -190,5 +200,33 @@ class ContactDetailBloc extends Bloc<ContactDetailEvent, ContactDetailState> {
       }
     }
     return 0;
+  }
+
+  FutureOr<void> _onChangedPhone(_OnChangedPhone event, Emitter<ContactDetailState> emit) {
+    List<ContactPhone> phones = [...state.request.phones];
+    phones[event.index] = event.contactPhone;
+    String phone = phones.where((e) => e.value.trim().isNotEmpty).firstOrNull?.value ?? '';
+    emit(state.copyWith.request(phones: phones, phoneNo: phone));
+  }
+
+  FutureOr<void> _onRemovedPhone(_OnRemovedPhone event, Emitter<ContactDetailState> emit) {
+    List<ContactPhone> phones = [...state.request.phones];
+    phones.remove(event.contactPhone);
+    String phone = phones.where((e) => e.value.trim().isNotEmpty).firstOrNull?.value ?? '';
+    emit(state.copyWith.request(phones: phones, phoneNo: phone));
+  }
+
+  FutureOr<void> _onAddedPhone(_OnAddedPhone event, Emitter<ContactDetailState> emit) {
+    List<ContactPhone> phones = [...state.request.phones];
+    List<String> labels = phones.map((e) => e.label).toSet().toList();
+    List<String> availableLabels = [...AppConstants.phoneLabels];
+    availableLabels.removeWhere((label) => labels.contains(label));
+    String label = availableLabels.firstOrNull ?? AppConstants.phoneLabels.first;
+    int newKey = state.lastKey + 1;
+    phones.add(ContactPhone(key: newKey, label: label));
+    emit(state.copyWith(
+      lastKey: newKey,
+      request: state.request.copyWith(phones: phones),
+    ));
   }
 }

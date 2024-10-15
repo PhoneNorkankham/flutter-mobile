@@ -3,8 +3,9 @@ import 'dart:typed_data';
 
 import 'package:contacts_service/contacts_service.dart' as cs;
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:keepup/src/core/converters/model_converter.dart';
 import 'package:keepup/src/core/local/app_database.dart';
+import 'package:keepup/src/core/model/contact_phone.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/extensions/date_time_extensions.dart';
 import 'package:keepup/src/utils/app_utils.dart';
@@ -66,6 +67,11 @@ extension ContactExtension on Contact {
   }
 
   String get expirationTitle => AppUtils.getExpirationTitle(expirationDays);
+
+  List<ContactPhone> get contactPhones =>
+      phones.map(const ModelConverter<ContactPhone>().fromJson).toList();
+
+  // String get phone => contactPhones.firstOrNull?.value ?? '';
 }
 
 extension CSContactsExtensions on List<cs.Contact> {
@@ -95,14 +101,26 @@ extension CSContactExtensions on cs.Contact {
     }
     name = name.replaceAll('(', '').replaceAll(')', '').replaceAll('\'', '');
     if (name.isNotEmpty) {
-      final String email =
-          emails?.firstWhereOrNull((email) => email.value?.isNotEmpty ?? false)?.value ?? '';
-      final String phoneNo =
-          phones?.firstWhereOrNull((phone) => phone.value?.isNotEmpty ?? false)?.value ?? '';
-      ContactRequest contactRequest = ContactRequest(
+      final List<ContactPhone> phones = this
+              .phones
+              ?.map((e) => ContactPhone(
+                    label: e.label ?? '',
+                    value: e.value ?? '',
+                  ))
+              .where((phone) => phone.value.isNotEmpty)
+              .toList() ??
+          [];
+      final String phoneNo = phones.firstOrNull?.value ?? '';
+
+      final List<cs.Item> emails =
+          this.emails?.where((email) => email.value?.isNotEmpty ?? false).toList() ?? [];
+      final String email = emails.firstOrNull?.value ?? '';
+
+      final contactRequest = ContactRequest(
         name: name,
         email: email,
         phoneNo: phoneNo,
+        phones: phones,
       );
 
       final Uint8List? unit8List = avatar;

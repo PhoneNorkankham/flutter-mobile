@@ -1,5 +1,5 @@
 import 'package:drift/drift.dart';
-import 'package:keepup/src/core/converters/list_string_converter.dart';
+import 'package:keepup/src/core/converters/list_converter.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
 
 class Groups extends Table {
@@ -23,7 +23,7 @@ class Groups extends Table {
       .withDefault(Constant(FrequencyIntervalType.none.name))();
 
   TextColumn get contacts =>
-      text().map(const ListStringConverter()).withDefault(const Constant('[]'))();
+      text().map(const ListConverter<dynamic>()).withDefault(const Constant('[]'))();
 
   @JsonKey('date_created')
   DateTimeColumn get dateCreated => dateTime().named('date_created').nullable()();

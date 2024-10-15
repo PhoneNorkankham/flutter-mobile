@@ -31,6 +31,7 @@ mixin _$ContactRequest {
   String get email => throw _privateConstructorUsedError;
   @JsonKey(name: 'phone_no')
   String get phoneNo => throw _privateConstructorUsedError;
+  List<ContactPhone> get phones => throw _privateConstructorUsedError;
   @DateTimeJsonConverter()
   @JsonKey(name: 'date_of_birth')
   DateTime? get dateOfBirth => throw _privateConstructorUsedError;
@@ -64,6 +65,7 @@ abstract class $ContactRequestCopyWith<$Res> {
       String name,
       String email,
       @JsonKey(name: 'phone_no') String phoneNo,
+      List<ContactPhone> phones,
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_of_birth')
       DateTime? dateOfBirth,
@@ -95,6 +97,7 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
     Object? name = null,
     Object? email = null,
     Object? phoneNo = null,
+    Object? phones = null,
     Object? dateOfBirth = freezed,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
@@ -130,6 +133,10 @@ class _$ContactRequestCopyWithImpl<$Res, $Val extends ContactRequest>
           ? _value.phoneNo
           : phoneNo // ignore: cast_nullable_to_non_nullable
               as String,
+      phones: null == phones
+          ? _value.phones
+          : phones // ignore: cast_nullable_to_non_nullable
+              as List<ContactPhone>,
       dateOfBirth: freezed == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
@@ -170,6 +177,7 @@ abstract class _$$ContactRequestImplCopyWith<$Res>
       String name,
       String email,
       @JsonKey(name: 'phone_no') String phoneNo,
+      List<ContactPhone> phones,
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_of_birth')
       DateTime? dateOfBirth,
@@ -199,6 +207,7 @@ class __$$ContactRequestImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? phoneNo = null,
+    Object? phones = null,
     Object? dateOfBirth = freezed,
     Object? expiration = freezed,
     Object? dateCreated = freezed,
@@ -234,6 +243,10 @@ class __$$ContactRequestImplCopyWithImpl<$Res>
           ? _value.phoneNo
           : phoneNo // ignore: cast_nullable_to_non_nullable
               as String,
+      phones: null == phones
+          ? _value._phones
+          : phones // ignore: cast_nullable_to_non_nullable
+              as List<ContactPhone>,
       dateOfBirth: freezed == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
@@ -270,13 +283,15 @@ class _$ContactRequestImpl extends _ContactRequest {
       this.name = '',
       this.email = '',
       @JsonKey(name: 'phone_no') this.phoneNo = '',
+      final List<ContactPhone> phones = const [],
       @DateTimeJsonConverter() @JsonKey(name: 'date_of_birth') this.dateOfBirth,
       @DateTimeJsonConverter() this.expiration,
       @DateTimeJsonConverter() @JsonKey(name: 'date_created') this.dateCreated,
       @JsonKey(includeFromJson: false, includeToJson: false)
       this.isExpanded = false,
       @JsonKey(includeFromJson: false, includeToJson: false) this.file})
-      : super._();
+      : _phones = phones,
+        super._();
 
   factory _$ContactRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$ContactRequestImplFromJson(json);
@@ -302,6 +317,15 @@ class _$ContactRequestImpl extends _ContactRequest {
   @override
   @JsonKey(name: 'phone_no')
   final String phoneNo;
+  final List<ContactPhone> _phones;
+  @override
+  @JsonKey()
+  List<ContactPhone> get phones {
+    if (_phones is EqualUnmodifiableListView) return _phones;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_phones);
+  }
+
   @override
   @DateTimeJsonConverter()
   @JsonKey(name: 'date_of_birth')
@@ -322,7 +346,7 @@ class _$ContactRequestImpl extends _ContactRequest {
 
   @override
   String toString() {
-    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, groupId: $groupId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, dateOfBirth: $dateOfBirth, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded, file: $file)';
+    return 'ContactRequest(contactId: $contactId, ownerId: $ownerId, groupId: $groupId, avatar: $avatar, name: $name, email: $email, phoneNo: $phoneNo, phones: $phones, dateOfBirth: $dateOfBirth, expiration: $expiration, dateCreated: $dateCreated, isExpanded: $isExpanded, file: $file)';
   }
 
   @override
@@ -338,6 +362,7 @@ class _$ContactRequestImpl extends _ContactRequest {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phoneNo, phoneNo) || other.phoneNo == phoneNo) &&
+            const DeepCollectionEquality().equals(other._phones, _phones) &&
             (identical(other.dateOfBirth, dateOfBirth) ||
                 other.dateOfBirth == dateOfBirth) &&
             (identical(other.expiration, expiration) ||
@@ -360,6 +385,7 @@ class _$ContactRequestImpl extends _ContactRequest {
       name,
       email,
       phoneNo,
+      const DeepCollectionEquality().hash(_phones),
       dateOfBirth,
       expiration,
       dateCreated,
@@ -390,6 +416,7 @@ abstract class _ContactRequest extends ContactRequest {
       final String name,
       final String email,
       @JsonKey(name: 'phone_no') final String phoneNo,
+      final List<ContactPhone> phones,
       @DateTimeJsonConverter()
       @JsonKey(name: 'date_of_birth')
       final DateTime? dateOfBirth,
@@ -424,6 +451,8 @@ abstract class _ContactRequest extends ContactRequest {
   @override
   @JsonKey(name: 'phone_no')
   String get phoneNo;
+  @override
+  List<ContactPhone> get phones;
   @override
   @DateTimeJsonConverter()
   @JsonKey(name: 'date_of_birth')

@@ -10,6 +10,7 @@ import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/extensions/contact_extensions.dart';
+import 'package:keepup/src/extensions/group_extensions.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
 import 'package:keepup/src/ui/base/interactor/page_states.dart';
@@ -96,7 +97,7 @@ class AddContactsToGroupBloc extends Bloc<AddContactsToGroupEvent, AddContactsTo
     if (selectedContacts.isNotEmpty) {
       final result = await _addContactsUseCase.run(selectedContacts);
       final List<String> newContactIds = result.valueOrNull?.map((e) => e.id).toList() ?? [];
-      final List<String> contactIds = [...group.contacts, ...newContactIds];
+      final List<String> contactIds = [...group.contactIds, ...newContactIds];
       contactIds.sort((a, b) => a.compareTo(b));
       request = request.copyWith(contacts: contactIds);
     }

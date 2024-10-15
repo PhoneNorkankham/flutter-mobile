@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
-import 'package:keepup/src/core/converters/list_string_converter.dart';
+import 'package:keepup/src/core/converters/list_converter.dart';
 import 'package:keepup/src/core/local/dao/category_dao.dart';
 import 'package:keepup/src/core/local/dao/contact_dao.dart';
 import 'package:keepup/src/core/local/dao/group_dao.dart';
@@ -44,7 +44,7 @@ LazyDatabase _openConnection() {
     // put the database file, called db.sqlite here, into the documents folder
     // for your app.
     final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_202409260000.sqlite'));
+    final file = File(join(dbFolder.path, '${AppConstants.appDatabaseName}_202410110000.sqlite'));
 
     // Also work around limitations on old Android versions
     if (Platform.isAndroid) {

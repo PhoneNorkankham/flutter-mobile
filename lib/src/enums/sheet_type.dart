@@ -1,4 +1,3 @@
 enum SheetType {
-  sendSMS,
   deleteAccount;
 }

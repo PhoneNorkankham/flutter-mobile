@@ -135,6 +135,7 @@ Map<String, String> enUs = {
   LocaleKey.category: 'Category',
   LocaleKey.categoryUpdatedSuccessfully: 'Category updated successfully',
   LocaleKey.remindUpdatedSuccessfully: 'Remind updated successfully',
+  LocaleKey.addPhone: 'Add phone',
   LocaleKey.searchNameOrNumber: 'Search name or number',
   LocaleKey.groupName: 'Group Name',
   LocaleKey.selectGroup: 'Select Group',
@@ -168,4 +169,8 @@ Map<String, String> enUs = {
   LocaleKey.addGroupDescription: "Add group description",
   LocaleKey.noContacts: 'No contacts',
   LocaleKey.noGroups: 'No groups',
+  LocaleKey.selectPhoneNumber: 'Select phone number',
+  LocaleKey.selectApplication: 'Select Application',
+  LocaleKey.carrier: 'Carrier',
+  LocaleKey.whatsapp: 'WhatsApp',
 };
