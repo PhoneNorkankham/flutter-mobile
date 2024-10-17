@@ -40,7 +40,9 @@ class MainPage extends StatelessWidget {
                     if (dialogType == DialogType.logout) {
                       AppDialogs(
                         title: LocaleKey.logout.tr,
-                        message: LocaleKey.logoutAnonymousConfirm.tr,
+                        message: state.loggedInData.isAnonymous
+                            ? LocaleKey.logoutAnonymousConfirm.tr
+                            : LocaleKey.logoutConfirm.tr,
                         centerMessage: true,
                         confirmTitle: LocaleKey.logout.tr,
                         cancelTitle: LocaleKey.cancel.tr,

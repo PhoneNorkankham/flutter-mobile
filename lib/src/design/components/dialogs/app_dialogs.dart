@@ -9,9 +9,7 @@ Future<dynamic> showSessionExpirationDialog() {
     title: LocaleKey.error.tr,
     message: LocaleKey.loginSessionExpires.tr,
     confirmTitle: LocaleKey.login.tr,
-    onConfirmed: () async {
-      await Get.offNamedUntil(AppPages.splash, (route) => false);
-    },
+    onConfirmed: () => Get.offNamedUntil(AppPages.onboarding, (route) => false),
   ).show();
 }
 

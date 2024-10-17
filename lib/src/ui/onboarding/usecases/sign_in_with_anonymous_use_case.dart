@@ -3,14 +3,14 @@ import 'package:keepup/src/core/repository/supabase_repository.dart';
 import 'package:keepup/src/ui/base/interactor/base_use_case.dart';
 import 'package:keepup/src/ui/base/result/result.dart';
 
-class CreateAnonymousAccountUseCase extends NoInputUseCase<DataResult<LoggedInData>> {
+class SignInWithAnonymousUseCase extends NoInputUseCase<DataResult<LoggedInData>> {
   final SupabaseRepository _supabaseRepository;
 
-  CreateAnonymousAccountUseCase(this._supabaseRepository);
+  SignInWithAnonymousUseCase(this._supabaseRepository);
 
   @override
   Future<DataResult<LoggedInData>> run() {
-    return _supabaseRepository.createGuests().then((value) {
+    return _supabaseRepository.signInWithAnonymous().then((value) {
       if (value.isSuccess) {
         return DataResult<LoggedInData>.value(value.data!);
       } else {

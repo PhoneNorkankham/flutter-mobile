@@ -15,4 +15,9 @@ class MainEvent with _$MainEvent {
   const factory MainEvent.onConfirmedResetData() = _OnConfirmedResetData;
 
   const factory MainEvent.onConfirmedDeleteAccount() = _OnConfirmedDeleteAccount;
+
+  const factory MainEvent.onHandlerAuthCallback(
+    String code,
+    String errorDescription,
+  ) = _OnHandlerAuthCallback;
 }

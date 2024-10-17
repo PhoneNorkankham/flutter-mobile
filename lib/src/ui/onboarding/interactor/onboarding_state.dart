@@ -7,7 +7,6 @@ class OnboardingState with _$OnboardingState {
     @Default(PageState.initial) PageState pageStatus,
     PageCommand? pageCommand,
     @Default(false) bool isLoading,
-    @Default([]) List<Group> groups,
     @Default(LoggedInData()) LoggedInData loggedInData,
   }) = _OnboardingState;
 }

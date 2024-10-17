@@ -9,7 +9,7 @@ part of 'user_request.dart';
 _$UserRequestImpl _$$UserRequestImplFromJson(Map<String, dynamic> json) =>
     _$UserRequestImpl(
       id: json['id'] as String,
-      name: json['name'] as String? ?? '',
+      name: json['name'] as String?,
       dateCreated: json['date_created'] == null
           ? null
           : DateTime.parse(json['date_created'] as String),
@@ -21,7 +21,6 @@ _$UserRequestImpl _$$UserRequestImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$UserRequestImplToJson(_$UserRequestImpl instance) {
   final val = <String, dynamic>{
     'id': instance.id,
-    'name': instance.name,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -30,6 +29,7 @@ Map<String, dynamic> _$$UserRequestImplToJson(_$UserRequestImpl instance) {
     }
   }
 
+  writeNotNull('name', instance.name);
   writeNotNull('date_created', instance.dateCreated?.toIso8601String());
   writeNotNull('date_logged_in', instance.dateLoggedIn?.toIso8601String());
   return val;

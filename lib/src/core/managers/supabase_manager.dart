@@ -1,9 +1,12 @@
 import 'dart:io';
 
 import 'package:drift/drift.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Value;
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:keepup/src/core/local/app_database.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
+import 'package:keepup/src/core/model/user_data.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/interaction_request.dart';
@@ -11,6 +14,7 @@ import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/enums/frequency_interval_type.dart';
 import 'package:keepup/src/extensions/group_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
+import 'package:keepup/src/utils/app_api_config.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path/path.dart' as p;
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -40,60 +44,115 @@ class SupabaseManager {
 
   String get uid => _supabaseAuth.currentUser?.id ?? '';
 
-  bool get isExpired => _supabaseAuth.currentSession?.isExpired ?? true;
-
-  bool get isAnonymous => _supabaseAuth.currentUser?.isAnonymous ?? true;
-
-  Future<bool> _isLoggedIn() {
-    if (uid.isNotEmpty && isExpired) {
-      return _supabaseAuth.refreshSession().then((value) {
-        return uid.isNotEmpty;
-      }).catchError((e) {
-        return _supabaseAuth.signOut().then((value) => false);
-      });
-    }
-    return Future.value(uid.isNotEmpty);
+  Future<LoggedInData> confirmLinkedIdentity(String code) async {
+    final AuthSessionUrlResponse response = await _supabaseAuth.exchangeCodeForSession(code);
+    final Session session = response.session;
+    final User user = session.user;
+    final UserRequest request = UserRequest.fromGoTrueUser(user);
+    await upsertUser(request);
+    return getLoggedInData();
   }
-
-  // Future<bool> _isJoinedGroup() {
-  //   if (uid.isNotEmpty) {
-  //     return _supabase
-  //         .from(_tbGroups)
-  //         .select()
-  //         .eq(_fieldOwnerId, uid)
-  //         .then((value) => value.isNotEmpty);
-  //   } else {
-  //     return Future.value(false);
-  //   }
-  // }
 
   Future<LoggedInData> getLoggedInData() async {
-    final isLoggedIn = await _isLoggedIn();
-    // final isJoinedGroup = await _isJoinedGroup();
-    return LoggedInData(
-      isLoggedIn: isLoggedIn,
-      isExpired: isExpired,
-      isAnonymous: isAnonymous,
-      // isJoinedGroup: isJoinedGroup,
-    );
+    final currentUser = _supabaseAuth.currentUser;
+    if (currentUser != null) {
+      final currentSession = _supabaseAuth.currentSession;
+      if (currentSession != null) {
+        UserData? userData = await getUser();
+        return LoggedInData(
+          isLoggedIn: true,
+          isExpired: currentSession.isExpired,
+          isAnonymous: currentUser.isAnonymous,
+          userData: userData,
+        );
+      }
+    }
+    return const LoggedInData();
   }
 
-  Future<LoggedInData> createGuests() {
+  Future<LoggedInData> signInWithAnonymous() {
     return _supabaseAuth.signInAnonymously().then((response) async {
       final User? user = response.user;
       if (user != null) {
-        final request = UserRequest(
-          id: user.id,
-          dateCreated: DateTime.tryParse(user.createdAt),
-          dateLoggedIn: DateTime.tryParse(user.lastSignInAt ?? ''),
-        );
-        await insertUser(request);
+        final UserRequest request = UserRequest.fromGoTrueUser(user);
+        await upsertUser(request);
       }
       return getLoggedInData();
     });
   }
 
-  Future<void> insertUser(UserRequest request) => _supabase.from(_tbUsers).insert(request.toJson());
+  Future<LoggedInData> signInWithGoogle() async {
+    // Check if user is already signed in
+    final currentUser = _supabaseAuth.currentUser;
+    if (currentUser != null) {
+      bool isAnonymous = currentUser.isAnonymous;
+      if (isAnonymous) {
+        final bool linked = await _supabaseAuth.linkIdentity(OAuthProvider.google);
+        if (!linked) {
+          throw 'Failed to link Google account.';
+        }
+      }
+      return getLoggedInData();
+    }
+
+    final GoogleSignIn googleSignIn = GoogleSignIn(
+      clientId: AppApiConfig.googleClientId,
+      serverClientId: AppConstants.webClientId,
+      scopes: <String>['email', 'profile'],
+    );
+
+    // Logout with Google
+    final signedIn = await googleSignIn.isSignedIn();
+    if (signedIn) {
+      await googleSignIn.signOut();
+    }
+
+    // Login with Google
+    final googleUser = await googleSignIn.signIn();
+    if (googleUser == null) {
+      // User has cancelled login
+      throw '';
+    }
+
+    final googleAuth = await googleUser.authentication;
+    final accessToken = googleAuth.accessToken;
+    final idToken = googleAuth.idToken;
+    if (accessToken == null) {
+      throw 'No Access Token found.';
+    }
+    debugPrint('Access Token: $accessToken');
+    if (idToken == null) {
+      throw 'No ID Token found.';
+    }
+    debugPrint('ID Token: $idToken');
+
+    // Login with Supabase
+    final response = await _supabase.auth.signInWithIdToken(
+      provider: OAuthProvider.google,
+      idToken: idToken,
+      accessToken: accessToken,
+    );
+    final User? user = response.user;
+    if (user != null) {
+      final UserRequest request = UserRequest.fromGoTrueUser(user, provider: OAuthProvider.google);
+      await upsertUser(request);
+    }
+    return getLoggedInData();
+  }
+
+  Future<void> upsertUser(UserRequest request) async {
+    UserData? user = await getUser();
+    if (user != null && user.name.isNotEmpty) {
+      request = request.copyWith(name: user.name);
+    }
+    return _supabase.from(_tbUsers).upsert(request.toJson());
+  }
+
+  Future<UserData?> getUser() => _supabase
+      .from(_tbUsers)
+      .select()
+      .eq(_fieldId, uid)
+      .then((value) => value.map((e) => UserData.fromJson(e)).firstOrNull);
 
   Future<List<Category>> getCategories() => _supabase
       .from(_tbCategories)
@@ -343,10 +402,10 @@ class SupabaseManager {
   }
 
   Future<void> logout() {
-    if (isAnonymous) {
+    final currentUser = _supabaseAuth.currentUser;
+    if (currentUser != null && currentUser.isAnonymous) {
       return deleteAccount();
-    } else {
-      return _supabaseAuth.signOut();
     }
+    return _supabaseAuth.signOut();
   }
 }

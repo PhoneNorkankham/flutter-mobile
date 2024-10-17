@@ -576,216 +576,10 @@ abstract class _OnSignInWithSocial implements OnboardingEvent {
 }
 
 /// @nodoc
-mixin _$SplashPageCommand {
-  String get message => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String message) showDialog,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? showDialog,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? showDialog,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowDialog value) showDialog,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowDialog value)? showDialog,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowDialog value)? showDialog,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SplashPageCommandCopyWith<SplashPageCommand> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SplashPageCommandCopyWith<$Res> {
-  factory $SplashPageCommandCopyWith(
-          SplashPageCommand value, $Res Function(SplashPageCommand) then) =
-      _$SplashPageCommandCopyWithImpl<$Res, SplashPageCommand>;
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class _$SplashPageCommandCopyWithImpl<$Res, $Val extends SplashPageCommand>
-    implements $SplashPageCommandCopyWith<$Res> {
-  _$SplashPageCommandCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_value.copyWith(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ShowDialogImplCopyWith<$Res>
-    implements $SplashPageCommandCopyWith<$Res> {
-  factory _$$ShowDialogImplCopyWith(
-          _$ShowDialogImpl value, $Res Function(_$ShowDialogImpl) then) =
-      __$$ShowDialogImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$ShowDialogImplCopyWithImpl<$Res>
-    extends _$SplashPageCommandCopyWithImpl<$Res, _$ShowDialogImpl>
-    implements _$$ShowDialogImplCopyWith<$Res> {
-  __$$ShowDialogImplCopyWithImpl(
-      _$ShowDialogImpl _value, $Res Function(_$ShowDialogImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ShowDialogImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ShowDialogImpl implements _ShowDialog {
-  _$ShowDialogImpl(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString() {
-    return 'SplashPageCommand.showDialog(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ShowDialogImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShowDialogImplCopyWith<_$ShowDialogImpl> get copyWith =>
-      __$$ShowDialogImplCopyWithImpl<_$ShowDialogImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String message) showDialog,
-  }) {
-    return showDialog(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? showDialog,
-  }) {
-    return showDialog?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? showDialog,
-    required TResult orElse(),
-  }) {
-    if (showDialog != null) {
-      return showDialog(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowDialog value) showDialog,
-  }) {
-    return showDialog(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowDialog value)? showDialog,
-  }) {
-    return showDialog?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowDialog value)? showDialog,
-    required TResult orElse(),
-  }) {
-    if (showDialog != null) {
-      return showDialog(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ShowDialog implements SplashPageCommand {
-  factory _ShowDialog(final String message) = _$ShowDialogImpl;
-
-  @override
-  String get message;
-  @override
-  @JsonKey(ignore: true)
-  _$$ShowDialogImplCopyWith<_$ShowDialogImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$OnboardingState {
   PageState get pageStatus => throw _privateConstructorUsedError;
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  List<Group> get groups => throw _privateConstructorUsedError;
   LoggedInData get loggedInData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -803,7 +597,6 @@ abstract class $OnboardingStateCopyWith<$Res> {
       {PageState pageStatus,
       PageCommand? pageCommand,
       bool isLoading,
-      List<Group> groups,
       LoggedInData loggedInData});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
@@ -826,7 +619,6 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
     Object? pageStatus = null,
     Object? pageCommand = freezed,
     Object? isLoading = null,
-    Object? groups = null,
     Object? loggedInData = null,
   }) {
     return _then(_value.copyWith(
@@ -842,10 +634,6 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      groups: null == groups
-          ? _value.groups
-          : groups // ignore: cast_nullable_to_non_nullable
-              as List<Group>,
       loggedInData: null == loggedInData
           ? _value.loggedInData
           : loggedInData // ignore: cast_nullable_to_non_nullable
@@ -886,7 +674,6 @@ abstract class _$$OnboardingStateImplCopyWith<$Res>
       {PageState pageStatus,
       PageCommand? pageCommand,
       bool isLoading,
-      List<Group> groups,
       LoggedInData loggedInData});
 
   @override
@@ -909,7 +696,6 @@ class __$$OnboardingStateImplCopyWithImpl<$Res>
     Object? pageStatus = null,
     Object? pageCommand = freezed,
     Object? isLoading = null,
-    Object? groups = null,
     Object? loggedInData = null,
   }) {
     return _then(_$OnboardingStateImpl(
@@ -925,10 +711,6 @@ class __$$OnboardingStateImplCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      groups: null == groups
-          ? _value._groups
-          : groups // ignore: cast_nullable_to_non_nullable
-              as List<Group>,
       loggedInData: null == loggedInData
           ? _value.loggedInData
           : loggedInData // ignore: cast_nullable_to_non_nullable
@@ -944,10 +726,8 @@ class _$OnboardingStateImpl extends _OnboardingState {
       {this.pageStatus = PageState.initial,
       this.pageCommand,
       this.isLoading = false,
-      final List<Group> groups = const [],
       this.loggedInData = const LoggedInData()})
-      : _groups = groups,
-        super._();
+      : super._();
 
   @override
   @JsonKey()
@@ -957,22 +737,13 @@ class _$OnboardingStateImpl extends _OnboardingState {
   @override
   @JsonKey()
   final bool isLoading;
-  final List<Group> _groups;
-  @override
-  @JsonKey()
-  List<Group> get groups {
-    if (_groups is EqualUnmodifiableListView) return _groups;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_groups);
-  }
-
   @override
   @JsonKey()
   final LoggedInData loggedInData;
 
   @override
   String toString() {
-    return 'OnboardingState(pageStatus: $pageStatus, pageCommand: $pageCommand, isLoading: $isLoading, groups: $groups, loggedInData: $loggedInData)';
+    return 'OnboardingState(pageStatus: $pageStatus, pageCommand: $pageCommand, isLoading: $isLoading, loggedInData: $loggedInData)';
   }
 
   @override
@@ -986,14 +757,13 @@ class _$OnboardingStateImpl extends _OnboardingState {
                 other.pageCommand == pageCommand) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            const DeepCollectionEquality().equals(other._groups, _groups) &&
             (identical(other.loggedInData, loggedInData) ||
                 other.loggedInData == loggedInData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageStatus, pageCommand,
-      isLoading, const DeepCollectionEquality().hash(_groups), loggedInData);
+  int get hashCode => Object.hash(
+      runtimeType, pageStatus, pageCommand, isLoading, loggedInData);
 
   @JsonKey(ignore: true)
   @override
@@ -1008,7 +778,6 @@ abstract class _OnboardingState extends OnboardingState {
       {final PageState pageStatus,
       final PageCommand? pageCommand,
       final bool isLoading,
-      final List<Group> groups,
       final LoggedInData loggedInData}) = _$OnboardingStateImpl;
   const _OnboardingState._() : super._();
 
@@ -1018,8 +787,6 @@ abstract class _OnboardingState extends OnboardingState {
   PageCommand? get pageCommand;
   @override
   bool get isLoading;
-  @override
-  List<Group> get groups;
   @override
   LoggedInData get loggedInData;
   @override
