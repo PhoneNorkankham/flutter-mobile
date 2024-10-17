@@ -42,6 +42,7 @@ class LocaleKey {
   static const String success = "success";
   static const String error = "error";
   static const String somethingWentWrong = "somethingWentWrong";
+  static const String identityHasBeenLinkedSuccessfully = "identityHasBeenLinkedSuccessfully";
 
   // AppBar
   static const String back = "back";

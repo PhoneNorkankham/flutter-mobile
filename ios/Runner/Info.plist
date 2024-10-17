@@ -77,5 +77,20 @@
         <string>mailto</string>
         <string>whatsapp</string>
     </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.44968695723-og08c0d5aqj5pe720l49ov4eflbih2ko</string>
+          <string>com.googleusercontent.apps.44968695723-isgshv2fmp13k214883cmmupsvokb514</string>
+		  <string>keepup</string>
+        </array>
+      </dict>
+    </array>
+    <key>GoogleSignInReversedClientId</key>
+    <string>com.googleusercontent.apps.44968695723-og08c0d5aqj5pe720l49ov4eflbih2ko</string>
+    <key>FlutterDeepLinkingEnabled</key>
+    <false/>
 </dict>
 </plist>

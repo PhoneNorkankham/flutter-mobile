@@ -8,5 +8,6 @@ class MainState with _$MainState {
     PageCommand? pageCommand,
     @Default(BottomNavType.today) BottomNavType type,
     @Default(false) bool isLoading,
+    @Default(LoggedInData()) LoggedInData loggedInData,
   }) = _MainState;
 }

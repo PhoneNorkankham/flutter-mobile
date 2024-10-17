@@ -21,7 +21,7 @@ UserRequest _$UserRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserRequest {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_logged_in')
@@ -41,7 +41,7 @@ abstract class $UserRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String name,
+      String? name,
       @JsonKey(name: 'date_created') DateTime? dateCreated,
       @JsonKey(name: 'date_logged_in') DateTime? dateLoggedIn});
 }
@@ -60,7 +60,7 @@ class _$UserRequestCopyWithImpl<$Res, $Val extends UserRequest>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? dateCreated = freezed,
     Object? dateLoggedIn = freezed,
   }) {
@@ -69,10 +69,10 @@ class _$UserRequestCopyWithImpl<$Res, $Val extends UserRequest>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       dateCreated: freezed == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
@@ -95,7 +95,7 @@ abstract class _$$UserRequestImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String name,
+      String? name,
       @JsonKey(name: 'date_created') DateTime? dateCreated,
       @JsonKey(name: 'date_logged_in') DateTime? dateLoggedIn});
 }
@@ -112,7 +112,7 @@ class __$$UserRequestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? dateCreated = freezed,
     Object? dateLoggedIn = freezed,
   }) {
@@ -121,10 +121,10 @@ class __$$UserRequestImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       dateCreated: freezed == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
@@ -143,7 +143,7 @@ class __$$UserRequestImplCopyWithImpl<$Res>
 class _$UserRequestImpl implements _UserRequest {
   const _$UserRequestImpl(
       {required this.id,
-      this.name = '',
+      this.name,
       @JsonKey(name: 'date_created') this.dateCreated,
       @JsonKey(name: 'date_logged_in') this.dateLoggedIn});
 
@@ -153,8 +153,7 @@ class _$UserRequestImpl implements _UserRequest {
   @override
   final String id;
   @override
-  @JsonKey()
-  final String name;
+  final String? name;
   @override
   @JsonKey(name: 'date_created')
   final DateTime? dateCreated;
@@ -202,7 +201,7 @@ class _$UserRequestImpl implements _UserRequest {
 abstract class _UserRequest implements UserRequest {
   const factory _UserRequest(
           {required final String id,
-          final String name,
+          final String? name,
           @JsonKey(name: 'date_created') final DateTime? dateCreated,
           @JsonKey(name: 'date_logged_in') final DateTime? dateLoggedIn}) =
       _$UserRequestImpl;
@@ -213,7 +212,7 @@ abstract class _UserRequest implements UserRequest {
   @override
   String get id;
   @override
-  String get name;
+  String? get name;
   @override
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated;

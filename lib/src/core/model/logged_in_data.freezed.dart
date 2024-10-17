@@ -26,6 +26,8 @@ mixin _$LoggedInData {
   bool get isExpired => throw _privateConstructorUsedError;
   @HiveField(2, defaultValue: false)
   bool get isAnonymous => throw _privateConstructorUsedError;
+  @HiveField(3)
+  UserData? get userData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +44,10 @@ abstract class $LoggedInDataCopyWith<$Res> {
   $Res call(
       {@HiveField(0, defaultValue: false) bool isLoggedIn,
       @HiveField(1, defaultValue: false) bool isExpired,
-      @HiveField(2, defaultValue: false) bool isAnonymous});
+      @HiveField(2, defaultValue: false) bool isAnonymous,
+      @HiveField(3) UserData? userData});
+
+  $UserDataCopyWith<$Res>? get userData;
 }
 
 /// @nodoc
@@ -61,6 +66,7 @@ class _$LoggedInDataCopyWithImpl<$Res, $Val extends LoggedInData>
     Object? isLoggedIn = null,
     Object? isExpired = null,
     Object? isAnonymous = null,
+    Object? userData = freezed,
   }) {
     return _then(_value.copyWith(
       isLoggedIn: null == isLoggedIn
@@ -75,7 +81,23 @@ class _$LoggedInDataCopyWithImpl<$Res, $Val extends LoggedInData>
           ? _value.isAnonymous
           : isAnonymous // ignore: cast_nullable_to_non_nullable
               as bool,
+      userData: freezed == userData
+          ? _value.userData
+          : userData // ignore: cast_nullable_to_non_nullable
+              as UserData?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDataCopyWith<$Res>? get userData {
+    if (_value.userData == null) {
+      return null;
+    }
+
+    return $UserDataCopyWith<$Res>(_value.userData!, (value) {
+      return _then(_value.copyWith(userData: value) as $Val);
+    });
   }
 }
 
@@ -90,7 +112,11 @@ abstract class _$$LoggedInDataImplCopyWith<$Res>
   $Res call(
       {@HiveField(0, defaultValue: false) bool isLoggedIn,
       @HiveField(1, defaultValue: false) bool isExpired,
-      @HiveField(2, defaultValue: false) bool isAnonymous});
+      @HiveField(2, defaultValue: false) bool isAnonymous,
+      @HiveField(3) UserData? userData});
+
+  @override
+  $UserDataCopyWith<$Res>? get userData;
 }
 
 /// @nodoc
@@ -107,6 +133,7 @@ class __$$LoggedInDataImplCopyWithImpl<$Res>
     Object? isLoggedIn = null,
     Object? isExpired = null,
     Object? isAnonymous = null,
+    Object? userData = freezed,
   }) {
     return _then(_$LoggedInDataImpl(
       isLoggedIn: null == isLoggedIn
@@ -121,6 +148,10 @@ class __$$LoggedInDataImplCopyWithImpl<$Res>
           ? _value.isAnonymous
           : isAnonymous // ignore: cast_nullable_to_non_nullable
               as bool,
+      userData: freezed == userData
+          ? _value.userData
+          : userData // ignore: cast_nullable_to_non_nullable
+              as UserData?,
     ));
   }
 }
@@ -131,7 +162,8 @@ class _$LoggedInDataImpl implements _LoggedInData {
   const _$LoggedInDataImpl(
       {@HiveField(0, defaultValue: false) this.isLoggedIn = false,
       @HiveField(1, defaultValue: false) this.isExpired = false,
-      @HiveField(2, defaultValue: false) this.isAnonymous = false});
+      @HiveField(2, defaultValue: false) this.isAnonymous = false,
+      @HiveField(3) this.userData});
 
   factory _$LoggedInDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoggedInDataImplFromJson(json);
@@ -148,10 +180,13 @@ class _$LoggedInDataImpl implements _LoggedInData {
   @JsonKey()
   @HiveField(2, defaultValue: false)
   final bool isAnonymous;
+  @override
+  @HiveField(3)
+  final UserData? userData;
 
   @override
   String toString() {
-    return 'LoggedInData(isLoggedIn: $isLoggedIn, isExpired: $isExpired, isAnonymous: $isAnonymous)';
+    return 'LoggedInData(isLoggedIn: $isLoggedIn, isExpired: $isExpired, isAnonymous: $isAnonymous, userData: $userData)';
   }
 
   @override
@@ -164,13 +199,15 @@ class _$LoggedInDataImpl implements _LoggedInData {
             (identical(other.isExpired, isExpired) ||
                 other.isExpired == isExpired) &&
             (identical(other.isAnonymous, isAnonymous) ||
-                other.isAnonymous == isAnonymous));
+                other.isAnonymous == isAnonymous) &&
+            (identical(other.userData, userData) ||
+                other.userData == userData));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, isLoggedIn, isExpired, isAnonymous);
+      Object.hash(runtimeType, isLoggedIn, isExpired, isAnonymous, userData);
 
   @JsonKey(ignore: true)
   @override
@@ -188,10 +225,10 @@ class _$LoggedInDataImpl implements _LoggedInData {
 
 abstract class _LoggedInData implements LoggedInData {
   const factory _LoggedInData(
-          {@HiveField(0, defaultValue: false) final bool isLoggedIn,
-          @HiveField(1, defaultValue: false) final bool isExpired,
-          @HiveField(2, defaultValue: false) final bool isAnonymous}) =
-      _$LoggedInDataImpl;
+      {@HiveField(0, defaultValue: false) final bool isLoggedIn,
+      @HiveField(1, defaultValue: false) final bool isExpired,
+      @HiveField(2, defaultValue: false) final bool isAnonymous,
+      @HiveField(3) final UserData? userData}) = _$LoggedInDataImpl;
 
   factory _LoggedInData.fromJson(Map<String, dynamic> json) =
       _$LoggedInDataImpl.fromJson;
@@ -205,6 +242,9 @@ abstract class _LoggedInData implements LoggedInData {
   @override
   @HiveField(2, defaultValue: false)
   bool get isAnonymous;
+  @override
+  @HiveField(3)
+  UserData? get userData;
   @override
   @JsonKey(ignore: true)
   _$$LoggedInDataImplCopyWith<_$LoggedInDataImpl> get copyWith =>

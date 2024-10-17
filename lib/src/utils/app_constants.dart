@@ -53,4 +53,12 @@ class AppConstants {
     'school',
     'other',
   ];
+
+  // Google Auth
+  static String webClientId =
+      '44968695723-jie4qke0neb2c4ogbjts7brv8egsepaf.apps.googleusercontent.com';
+  static String iOSClientIdDev =
+      '44968695723-isgshv2fmp13k214883cmmupsvokb514.apps.googleusercontent.com';
+  static String iOSClientId =
+      '44968695723-og08c0d5aqj5pe720l49ov4eflbih2ko.apps.googleusercontent.com';
 }

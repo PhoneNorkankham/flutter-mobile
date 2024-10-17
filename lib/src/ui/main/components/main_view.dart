@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepup/src/design/components/app_bars/app_app_bar.dart';
-import 'package:keepup/src/design/components/base/app_drawer.dart';
 import 'package:keepup/src/design/components/bottom_navigation/app_bottom_navigation_bar.dart';
 import 'package:keepup/src/design/components/bottom_navigation/app_floating_action_button.dart';
 import 'package:keepup/src/design/components/buttons/menu_button.dart';
 import 'package:keepup/src/design/components/process_indicators/loading_full_screen.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
+import 'package:keepup/src/ui/main/components/main_drawer.dart';
 import 'package:keepup/src/ui/main/interactor/main_bloc.dart';
 
 class MainView extends StatelessWidget {
@@ -24,7 +24,7 @@ class MainView extends StatelessWidget {
         return LoadingFullScreen(
           loading: state.isLoading,
           child: Scaffold(
-            endDrawer: const AppDrawer(),
+            endDrawer: const MainDrawer(),
             appBar: AppAppBar(
               title: state.type.title,
               actions: const [MenuButton()],

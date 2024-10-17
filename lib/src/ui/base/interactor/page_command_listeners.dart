@@ -33,6 +33,12 @@ void _dialogListeners(PageCommandDialog pageCommand) {
       message: msg,
       confirmTitle: LocaleKey.close.tr,
     ).show(),
+    showSuccess: (msg) => AppDialogs(
+      title: LocaleKey.success.tr,
+      centerMessage: true,
+      message: msg,
+      confirmTitle: LocaleKey.close.tr,
+    ).show(),
     orElse: () {},
   );
 }
