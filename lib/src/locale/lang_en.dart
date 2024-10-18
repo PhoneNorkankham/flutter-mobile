@@ -25,6 +25,7 @@ Map<String, String> enUs = {
   LocaleKey.success: 'Success',
   LocaleKey.error: 'Error',
   LocaleKey.somethingWentWrong: 'An unexpected error occurred. please try again.',
+  LocaleKey.identityHasBeenLinkedSuccessfully: 'Identity has been linked successfully',
   LocaleKey.alertConnect: 'You are connected to the network (Wi-Fi).',
   LocaleKey.alertDisconnect: 'Network connection is not possible',
   LocaleKey.alertNullData: 'Null Data',

@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
+import 'package:keepup/src/utils/app_constants.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 enum Flavor { dev, prod }
@@ -36,5 +39,16 @@ class AppApiConfig {
         break;
     }
     debugPrint('AppApiConfig init');
+  }
+
+  static String? get googleClientId {
+    if (Platform.isIOS) {
+      if (flavor == Flavor.dev) {
+        return AppConstants.iOSClientIdDev;
+      } else {
+        return AppConstants.iOSClientId;
+      }
+    }
+    return null;
   }
 }

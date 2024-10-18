@@ -36,19 +36,33 @@ class SupabaseRepository {
     this._supabaseManager,
   );
 
+  Stream get watchLoggedInData => _appShared.watchLoggedInData;
+
+  Future<Resource<LoggedInData>> confirmLinkedIdentity(String code) {
+    return NetworkBoundResource<LoggedInData, LoggedInData>(
+      createSerializedCall: () => _supabaseManager.confirmLinkedIdentity(code),
+      saveCallResult: (result) => _appShared.setLoggedInData(result),
+    ).getAsFuture();
+  }
+
   Future<Resource<LoggedInData>> getLoggedInData() {
     return NetworkBoundResource<LoggedInData, LoggedInData>(
       createSerializedCall: () => _supabaseManager.getLoggedInData(),
       saveCallResult: (result) => _appShared.setLoggedInData(result),
-      loadFromDb: () async => _appShared.loggedInData,
     ).getAsFuture();
   }
 
-  Future<Resource<LoggedInData>> createGuests() {
+  Future<Resource<LoggedInData>> signInWithAnonymous() {
     return NetworkBoundResource<LoggedInData, LoggedInData>(
-      createSerializedCall: () => _supabaseManager.createGuests(),
+      createSerializedCall: () => _supabaseManager.signInWithAnonymous(),
       saveCallResult: (result) => _appShared.setLoggedInData(result),
-      loadFromDb: () async => _appShared.loggedInData,
+    ).getAsFuture();
+  }
+
+  Future<Resource<LoggedInData>> signInWithGoogle() {
+    return NetworkBoundResource<LoggedInData, LoggedInData>(
+      createSerializedCall: () => _supabaseManager.signInWithGoogle(),
+      saveCallResult: (result) => _appShared.setLoggedInData(result),
     ).getAsFuture();
   }
 

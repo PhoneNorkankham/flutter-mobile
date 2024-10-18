@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
+import 'package:keepup/src/core/model/user_data.dart';
 import 'package:keepup/src/enums/layout_type.dart';
 import 'package:keepup/src/utils/app_constants.dart';
 import 'package:path_provider/path_provider.dart';
@@ -28,6 +29,7 @@ class AppShared {
     Hive
       ..init(directory.path)
       ..registerAdapter(LoggedInDataAdapter())
+      ..registerAdapter(UserDataAdapter())
       ..registerAdapter(LayoutTypeAdapter());
     return Hive.openBox(AppShared._keyBox);
   }
@@ -60,6 +62,12 @@ class AppShared {
   /*
   * Watch from hive
   */
+  Stream<LoggedInData> get watchLoggedInData =>
+      _box.watchWithInitial(_keyLoggedInData).map((event) {
+        final value = event.value;
+        return value is LoggedInData ? value : const LoggedInData();
+      });
+
   Stream<LayoutType> get watchLayoutType => _box.watchWithInitial(_keyLayoutType).map((event) {
         final value = event.value;
         return value is LayoutType ? value : LayoutType.list;

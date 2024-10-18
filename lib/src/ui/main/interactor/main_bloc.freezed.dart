@@ -25,6 +25,8 @@ mixin _$MainEvent {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +38,8 @@ mixin _$MainEvent {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +51,8 @@ mixin _$MainEvent {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +66,8 @@ mixin _$MainEvent {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +80,7 @@ mixin _$MainEvent {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +92,7 @@ mixin _$MainEvent {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +160,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) {
     return initial();
   }
@@ -164,6 +176,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) {
     return initial?.call();
   }
@@ -178,6 +192,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -197,6 +213,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) {
     return initial(this);
   }
@@ -212,6 +230,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return initial?.call(this);
   }
@@ -226,6 +245,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -284,6 +304,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) {
     return clearPageCommand();
   }
@@ -298,6 +320,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) {
     return clearPageCommand?.call();
   }
@@ -312,6 +336,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -331,6 +357,8 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) {
     return clearPageCommand(this);
   }
@@ -346,6 +374,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return clearPageCommand?.call(this);
   }
@@ -360,6 +389,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (clearPageCommand != null) {
@@ -445,6 +475,8 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) {
     return onSelectedTabType(type);
   }
@@ -459,6 +491,8 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) {
     return onSelectedTabType?.call(type);
   }
@@ -473,6 +507,8 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onSelectedTabType != null) {
@@ -492,6 +528,8 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) {
     return onSelectedTabType(this);
   }
@@ -507,6 +545,7 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onSelectedTabType?.call(this);
   }
@@ -521,6 +560,7 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onSelectedTabType != null) {
@@ -612,6 +652,8 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) {
     return onDrawerItemPressed(type);
   }
@@ -626,6 +668,8 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) {
     return onDrawerItemPressed?.call(type);
   }
@@ -640,6 +684,8 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onDrawerItemPressed != null) {
@@ -659,6 +705,8 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) {
     return onDrawerItemPressed(this);
   }
@@ -674,6 +722,7 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onDrawerItemPressed?.call(this);
   }
@@ -688,6 +737,7 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onDrawerItemPressed != null) {
@@ -752,6 +802,8 @@ class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) {
     return onConfirmedLogout();
   }
@@ -766,6 +818,8 @@ class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) {
     return onConfirmedLogout?.call();
   }
@@ -780,6 +834,8 @@ class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onConfirmedLogout != null) {
@@ -799,6 +855,8 @@ class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) {
     return onConfirmedLogout(this);
   }
@@ -814,6 +872,7 @@ class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onConfirmedLogout?.call(this);
   }
@@ -828,6 +887,7 @@ class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onConfirmedLogout != null) {
@@ -887,6 +947,8 @@ class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) {
     return onConfirmedResetData();
   }
@@ -901,6 +963,8 @@ class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) {
     return onConfirmedResetData?.call();
   }
@@ -915,6 +979,8 @@ class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onConfirmedResetData != null) {
@@ -934,6 +1000,8 @@ class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) {
     return onConfirmedResetData(this);
   }
@@ -949,6 +1017,7 @@ class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onConfirmedResetData?.call(this);
   }
@@ -963,6 +1032,7 @@ class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onConfirmedResetData != null) {
@@ -1024,6 +1094,8 @@ class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
     required TResult Function() onConfirmedLogout,
     required TResult Function() onConfirmedResetData,
     required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
   }) {
     return onConfirmedDeleteAccount();
   }
@@ -1038,6 +1110,8 @@ class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
     TResult? Function()? onConfirmedLogout,
     TResult? Function()? onConfirmedResetData,
     TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
   }) {
     return onConfirmedDeleteAccount?.call();
   }
@@ -1052,6 +1126,8 @@ class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
     TResult Function()? onConfirmedLogout,
     TResult Function()? onConfirmedResetData,
     TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onConfirmedDeleteAccount != null) {
@@ -1071,6 +1147,8 @@ class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
     required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
     required TResult Function(_OnConfirmedDeleteAccount value)
         onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
   }) {
     return onConfirmedDeleteAccount(this);
   }
@@ -1086,6 +1164,7 @@ class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
     TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult? Function(_OnConfirmedDeleteAccount value)?
         onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onConfirmedDeleteAccount?.call(this);
   }
@@ -1100,6 +1179,7 @@ class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
     TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
     TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
     TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
     if (onConfirmedDeleteAccount != null) {
@@ -1114,10 +1194,200 @@ abstract class _OnConfirmedDeleteAccount implements MainEvent {
 }
 
 /// @nodoc
+abstract class _$$OnHandlerAuthCallbackImplCopyWith<$Res> {
+  factory _$$OnHandlerAuthCallbackImplCopyWith(
+          _$OnHandlerAuthCallbackImpl value,
+          $Res Function(_$OnHandlerAuthCallbackImpl) then) =
+      __$$OnHandlerAuthCallbackImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String code, String errorDescription});
+}
+
+/// @nodoc
+class __$$OnHandlerAuthCallbackImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$OnHandlerAuthCallbackImpl>
+    implements _$$OnHandlerAuthCallbackImplCopyWith<$Res> {
+  __$$OnHandlerAuthCallbackImplCopyWithImpl(_$OnHandlerAuthCallbackImpl _value,
+      $Res Function(_$OnHandlerAuthCallbackImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? code = null,
+    Object? errorDescription = null,
+  }) {
+    return _then(_$OnHandlerAuthCallbackImpl(
+      null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == errorDescription
+          ? _value.errorDescription
+          : errorDescription // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnHandlerAuthCallbackImpl implements _OnHandlerAuthCallback {
+  const _$OnHandlerAuthCallbackImpl(this.code, this.errorDescription);
+
+  @override
+  final String code;
+  @override
+  final String errorDescription;
+
+  @override
+  String toString() {
+    return 'MainEvent.onHandlerAuthCallback(code: $code, errorDescription: $errorDescription)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnHandlerAuthCallbackImpl &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.errorDescription, errorDescription) ||
+                other.errorDescription == errorDescription));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, code, errorDescription);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnHandlerAuthCallbackImplCopyWith<_$OnHandlerAuthCallbackImpl>
+      get copyWith => __$$OnHandlerAuthCallbackImplCopyWithImpl<
+          _$OnHandlerAuthCallbackImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() clearPageCommand,
+    required TResult Function(BottomNavType type) onSelectedTabType,
+    required TResult Function(AppDrawerType type) onDrawerItemPressed,
+    required TResult Function() onConfirmedLogout,
+    required TResult Function() onConfirmedResetData,
+    required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(String code, String errorDescription)
+        onHandlerAuthCallback,
+  }) {
+    return onHandlerAuthCallback(code, errorDescription);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? clearPageCommand,
+    TResult? Function(BottomNavType type)? onSelectedTabType,
+    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
+    TResult? Function()? onConfirmedLogout,
+    TResult? Function()? onConfirmedResetData,
+    TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
+  }) {
+    return onHandlerAuthCallback?.call(code, errorDescription);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? clearPageCommand,
+    TResult Function(BottomNavType type)? onSelectedTabType,
+    TResult Function(AppDrawerType type)? onDrawerItemPressed,
+    TResult Function()? onConfirmedLogout,
+    TResult Function()? onConfirmedResetData,
+    TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(String code, String errorDescription)?
+        onHandlerAuthCallback,
+    required TResult orElse(),
+  }) {
+    if (onHandlerAuthCallback != null) {
+      return onHandlerAuthCallback(code, errorDescription);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ClearPageCommand value) clearPageCommand,
+    required TResult Function(_OnSelectedTabType value) onSelectedTabType,
+    required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
+    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
+    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
+    required TResult Function(_OnConfirmedDeleteAccount value)
+        onConfirmedDeleteAccount,
+    required TResult Function(_OnHandlerAuthCallback value)
+        onHandlerAuthCallback,
+  }) {
+    return onHandlerAuthCallback(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ClearPageCommand value)? clearPageCommand,
+    TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
+    TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
+    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
+    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
+    TResult? Function(_OnConfirmedDeleteAccount value)?
+        onConfirmedDeleteAccount,
+    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
+  }) {
+    return onHandlerAuthCallback?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ClearPageCommand value)? clearPageCommand,
+    TResult Function(_OnSelectedTabType value)? onSelectedTabType,
+    TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
+    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
+    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
+    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
+    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
+    required TResult orElse(),
+  }) {
+    if (onHandlerAuthCallback != null) {
+      return onHandlerAuthCallback(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnHandlerAuthCallback implements MainEvent {
+  const factory _OnHandlerAuthCallback(
+          final String code, final String errorDescription) =
+      _$OnHandlerAuthCallbackImpl;
+
+  String get code;
+  String get errorDescription;
+  @JsonKey(ignore: true)
+  _$$OnHandlerAuthCallbackImplCopyWith<_$OnHandlerAuthCallbackImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MainState {
   PageCommand? get pageCommand => throw _privateConstructorUsedError;
   BottomNavType get type => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  LoggedInData get loggedInData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainStateCopyWith<MainState> get copyWith =>
@@ -1129,9 +1399,14 @@ abstract class $MainStateCopyWith<$Res> {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
       _$MainStateCopyWithImpl<$Res, MainState>;
   @useResult
-  $Res call({PageCommand? pageCommand, BottomNavType type, bool isLoading});
+  $Res call(
+      {PageCommand? pageCommand,
+      BottomNavType type,
+      bool isLoading,
+      LoggedInData loggedInData});
 
   $PageCommandCopyWith<$Res>? get pageCommand;
+  $LoggedInDataCopyWith<$Res> get loggedInData;
 }
 
 /// @nodoc
@@ -1150,6 +1425,7 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
     Object? pageCommand = freezed,
     Object? type = null,
     Object? isLoading = null,
+    Object? loggedInData = null,
   }) {
     return _then(_value.copyWith(
       pageCommand: freezed == pageCommand
@@ -1164,6 +1440,10 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      loggedInData: null == loggedInData
+          ? _value.loggedInData
+          : loggedInData // ignore: cast_nullable_to_non_nullable
+              as LoggedInData,
     ) as $Val);
   }
 
@@ -1178,6 +1458,14 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
       return _then(_value.copyWith(pageCommand: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LoggedInDataCopyWith<$Res> get loggedInData {
+    return $LoggedInDataCopyWith<$Res>(_value.loggedInData, (value) {
+      return _then(_value.copyWith(loggedInData: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1188,10 +1476,16 @@ abstract class _$$MainStateImplCopyWith<$Res>
       __$$MainStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PageCommand? pageCommand, BottomNavType type, bool isLoading});
+  $Res call(
+      {PageCommand? pageCommand,
+      BottomNavType type,
+      bool isLoading,
+      LoggedInData loggedInData});
 
   @override
   $PageCommandCopyWith<$Res>? get pageCommand;
+  @override
+  $LoggedInDataCopyWith<$Res> get loggedInData;
 }
 
 /// @nodoc
@@ -1208,6 +1502,7 @@ class __$$MainStateImplCopyWithImpl<$Res>
     Object? pageCommand = freezed,
     Object? type = null,
     Object? isLoading = null,
+    Object? loggedInData = null,
   }) {
     return _then(_$MainStateImpl(
       pageCommand: freezed == pageCommand
@@ -1222,6 +1517,10 @@ class __$$MainStateImplCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      loggedInData: null == loggedInData
+          ? _value.loggedInData
+          : loggedInData // ignore: cast_nullable_to_non_nullable
+              as LoggedInData,
     ));
   }
 }
@@ -1232,7 +1531,8 @@ class _$MainStateImpl extends _MainState {
   const _$MainStateImpl(
       {this.pageCommand,
       this.type = BottomNavType.today,
-      this.isLoading = false})
+      this.isLoading = false,
+      this.loggedInData = const LoggedInData()})
       : super._();
 
   @override
@@ -1243,10 +1543,13 @@ class _$MainStateImpl extends _MainState {
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  @JsonKey()
+  final LoggedInData loggedInData;
 
   @override
   String toString() {
-    return 'MainState(pageCommand: $pageCommand, type: $type, isLoading: $isLoading)';
+    return 'MainState(pageCommand: $pageCommand, type: $type, isLoading: $isLoading, loggedInData: $loggedInData)';
   }
 
   @override
@@ -1258,11 +1561,14 @@ class _$MainStateImpl extends _MainState {
                 other.pageCommand == pageCommand) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading));
+                other.isLoading == isLoading) &&
+            (identical(other.loggedInData, loggedInData) ||
+                other.loggedInData == loggedInData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageCommand, type, isLoading);
+  int get hashCode =>
+      Object.hash(runtimeType, pageCommand, type, isLoading, loggedInData);
 
   @JsonKey(ignore: true)
   @override
@@ -1275,7 +1581,8 @@ abstract class _MainState extends MainState {
   const factory _MainState(
       {final PageCommand? pageCommand,
       final BottomNavType type,
-      final bool isLoading}) = _$MainStateImpl;
+      final bool isLoading,
+      final LoggedInData loggedInData}) = _$MainStateImpl;
   const _MainState._() : super._();
 
   @override
@@ -1284,6 +1591,8 @@ abstract class _MainState extends MainState {
   BottomNavType get type;
   @override
   bool get isLoading;
+  @override
+  LoggedInData get loggedInData;
   @override
   @JsonKey(ignore: true)
   _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
