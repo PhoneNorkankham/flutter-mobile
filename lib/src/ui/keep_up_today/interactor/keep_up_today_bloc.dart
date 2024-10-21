@@ -10,6 +10,7 @@ import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/extensions/group_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
+import 'package:keepup/src/utils/app_constants.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
 part 'keep_up_today_bloc.freezed.dart';
@@ -37,7 +38,10 @@ class KeepUpTodayBloc extends Bloc<KeepUpTodayEvent, KeepUpTodayState> {
     // Get categories
     final Resource<List<Category>> resource = await _supabaseRepository.getCategories();
     final List<Category> categories = resource.data ?? [];
-    emit(state.copyWith(categories: [const Category(id: '', name: 'All'), ...categories]));
+    emit(state.copyWith(categories: [
+      const Category(id: '', name: AppConstants.allCategories),
+      ...categories,
+    ]));
   }
 
   FutureOr<void> _onFetchGroups(_OnFetchGroups event, Emitter<KeepUpTodayState> emit) {

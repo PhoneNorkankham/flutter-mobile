@@ -92,6 +92,7 @@ class LocaleKey {
   static const String searchContacts = "searchContacts";
 
   // KeepUp Today
+  static const String expiringToday = "expiringToday";
   static const String keepUpTodayDescription = "keepUpTodayDescription";
   static const String allSet = "allSet";
   static const String keepUp = "keepUp";

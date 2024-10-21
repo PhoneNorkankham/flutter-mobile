@@ -69,6 +69,7 @@ Map<String, String> enUs = {
   LocaleKey.notifications: 'Notifications',
   LocaleKey.availableContacts: 'Available Contacts',
   LocaleKey.searchContacts: 'Search contacts',
+  LocaleKey.expiringToday: 'Expiring Today',
   LocaleKey.keepUpTodayDescription: 'Please keep up the contacts which is expiring today!',
   LocaleKey.allSet: 'All Set',
   LocaleKey.keepUp: 'KeepUp',
