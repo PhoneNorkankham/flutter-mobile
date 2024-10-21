@@ -10,7 +10,7 @@ class KeepUpTodayState with _$KeepUpTodayState {
     @Default([]) List<Group> groups,
     @Default([]) List<Contact> contacts,
     @Default([]) List<Category> categories,
-    @Default(Category(id: '', name: 'All')) Category selectedCategory,
+    @Default(Category(id: '', name: AppConstants.allCategories)) Category selectedCategory,
   }) = _KeepUpTodayState;
 
   List<Contact> get filteredContacts {

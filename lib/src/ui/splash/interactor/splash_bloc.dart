@@ -37,7 +37,10 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     await Future.delayed(const Duration(seconds: 1));
     final DataResult<LoggedInData> result = await _getLoggedInDataUseCase.run();
     final LoggedInData? loggedInData = result.valueOrNull;
-    if (loggedInData != null && loggedInData.isLoggedIn && !loggedInData.isExpired) {
+    if (loggedInData != null &&
+        loggedInData.isLoggedIn &&
+        !loggedInData.isExpired &&
+        !loggedInData.isAnonymous) {
       emit(state.copyWith(pageCommand: PageCommandNavigation.replacePage(AppPages.main)));
     } else {
       await _supabaseRepository.logout();

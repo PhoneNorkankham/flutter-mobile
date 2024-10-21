@@ -29,7 +29,7 @@ enum BottomNavType {
   String get title {
     switch (this) {
       case BottomNavType.today:
-        return LocaleKey.today.tr;
+        return LocaleKey.expiringToday.tr;
       case BottomNavType.upcoming:
         return LocaleKey.upcoming.tr;
       case BottomNavType.contacts:
