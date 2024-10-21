@@ -11,7 +11,7 @@ class KeepUpSoonState with _$KeepUpSoonState {
     @Default([]) List<Group> groups,
     @Default([]) List<Contact> contacts,
     @Default([]) List<Category> categories,
-    @Default(Category(id: '', name: AppConstants.allCategories)) Category selectedCategory,
+    @Default(Category(id: '', name: 'All')) Category selectedCategory,
   }) = _KeepUpSoonState;
 
   List<Contact> get keepupSoonContacts {

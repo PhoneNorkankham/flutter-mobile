@@ -10,7 +10,6 @@ import 'package:keepup/src/extensions/contact_extensions.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/keep_up_soon/interactor/keep_up_soon_type.dart';
-import 'package:keepup/src/utils/app_constants.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
 part 'keep_up_soon_bloc.freezed.dart';
@@ -39,10 +38,7 @@ class KeepUpSoonBloc extends Bloc<KeepUpSoonEvent, KeepUpSoonState> {
     // Get categories
     final Resource<List<Category>> resource = await _supabaseRepository.getCategories();
     final List<Category> categories = resource.data ?? [];
-    emit(state.copyWith(categories: [
-      const Category(id: '', name: AppConstants.allCategories),
-      ...categories,
-    ]));
+    emit(state.copyWith(categories: [const Category(id: '', name: 'All'), ...categories]));
   }
 
   FutureOr<void> _onFetchGroups(_OnFetchGroups event, Emitter<KeepUpSoonState> emit) {

@@ -1756,8 +1756,7 @@ class _$KeepUpSoonStateImpl extends _KeepUpSoonState {
       final List<Group> groups = const [],
       final List<Contact> contacts = const [],
       final List<Category> categories = const [],
-      this.selectedCategory =
-          const Category(id: '', name: AppConstants.allCategories)})
+      this.selectedCategory = const Category(id: '', name: 'All')})
       : _groups = groups,
         _contacts = contacts,
         _categories = categories,

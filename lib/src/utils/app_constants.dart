@@ -46,8 +46,6 @@ class AppConstants {
     'Business Associates',
   ];
 
-  static const String allCategories = 'All Categories';
-
   static final List<String> phoneLabels = [
     'mobile',
     'home',
