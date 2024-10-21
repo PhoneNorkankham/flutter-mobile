@@ -17,9 +17,9 @@ class MainDrawer extends StatelessWidget {
       buildWhen: (previous, current) => previous.loggedInData != current.loggedInData,
       builder: (context, state) {
         List<AppDrawerType> items = [...AppDrawerType.values];
-        if (!state.loggedInData.isAnonymous) {
-          items.removeWhere((e) => e == AppDrawerType.socialLogin);
-        }
+        // if (!state.loggedInData.isAnonymous) {
+        //   items.removeWhere((e) => e == AppDrawerType.socialLogin);
+        // }
 
         return Drawer(
           child: ListView(

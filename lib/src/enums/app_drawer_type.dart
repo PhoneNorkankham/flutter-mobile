@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 
 enum AppDrawerType {
-  socialLogin,
+  // socialLogin,
   // todayStatistics,
   // manageMessages,
   payments,
@@ -15,7 +15,7 @@ enum AppDrawerType {
 
   String get title {
     return switch (this) {
-      socialLogin => LocaleKey.socialLogin.tr,
+      // socialLogin => LocaleKey.socialLogin.tr,
       // todayStatistics => LocaleKey.todayStatistics.tr,
       // manageMessages => LocaleKey.manageMessages.tr,
       payments => LocaleKey.payments.tr,
@@ -29,7 +29,7 @@ enum AppDrawerType {
 
   IconData get icon {
     return switch (this) {
-      socialLogin => Icons.login,
+      // socialLogin => Icons.login,
       // todayStatistics => Icons.trending_up,
       // manageMessages => Icons.chat_outlined,
       payments => Icons.paid_outlined,

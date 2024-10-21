@@ -90,9 +90,9 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       case AppDrawerType.logout:
         emit(state.copyWith(pageCommand: PageCommandDialog(DialogType.logout)));
         break;
-      case AppDrawerType.socialLogin:
-        emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(AppPages.onboarding)));
-        break;
+      // case AppDrawerType.socialLogin:
+      //   emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(AppPages.onboarding)));
+      //   break;
       case _:
         break;
     }
