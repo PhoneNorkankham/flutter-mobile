@@ -22,6 +22,7 @@ UserRequest _$UserRequestFromJson(Map<String, dynamic> json) {
 mixin _$UserRequest {
   String get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  String? get avatar => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_logged_in')
@@ -42,6 +43,7 @@ abstract class $UserRequestCopyWith<$Res> {
   $Res call(
       {String id,
       String? name,
+      String? avatar,
       @JsonKey(name: 'date_created') DateTime? dateCreated,
       @JsonKey(name: 'date_logged_in') DateTime? dateLoggedIn});
 }
@@ -61,6 +63,7 @@ class _$UserRequestCopyWithImpl<$Res, $Val extends UserRequest>
   $Res call({
     Object? id = null,
     Object? name = freezed,
+    Object? avatar = freezed,
     Object? dateCreated = freezed,
     Object? dateLoggedIn = freezed,
   }) {
@@ -72,6 +75,10 @@ class _$UserRequestCopyWithImpl<$Res, $Val extends UserRequest>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String?,
       dateCreated: freezed == dateCreated
           ? _value.dateCreated
@@ -96,6 +103,7 @@ abstract class _$$UserRequestImplCopyWith<$Res>
   $Res call(
       {String id,
       String? name,
+      String? avatar,
       @JsonKey(name: 'date_created') DateTime? dateCreated,
       @JsonKey(name: 'date_logged_in') DateTime? dateLoggedIn});
 }
@@ -113,6 +121,7 @@ class __$$UserRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = freezed,
+    Object? avatar = freezed,
     Object? dateCreated = freezed,
     Object? dateLoggedIn = freezed,
   }) {
@@ -124,6 +133,10 @@ class __$$UserRequestImplCopyWithImpl<$Res>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String?,
       dateCreated: freezed == dateCreated
           ? _value.dateCreated
@@ -144,6 +157,7 @@ class _$UserRequestImpl implements _UserRequest {
   const _$UserRequestImpl(
       {required this.id,
       this.name,
+      this.avatar,
       @JsonKey(name: 'date_created') this.dateCreated,
       @JsonKey(name: 'date_logged_in') this.dateLoggedIn});
 
@@ -155,6 +169,8 @@ class _$UserRequestImpl implements _UserRequest {
   @override
   final String? name;
   @override
+  final String? avatar;
+  @override
   @JsonKey(name: 'date_created')
   final DateTime? dateCreated;
   @override
@@ -163,7 +179,7 @@ class _$UserRequestImpl implements _UserRequest {
 
   @override
   String toString() {
-    return 'UserRequest(id: $id, name: $name, dateCreated: $dateCreated, dateLoggedIn: $dateLoggedIn)';
+    return 'UserRequest(id: $id, name: $name, avatar: $avatar, dateCreated: $dateCreated, dateLoggedIn: $dateLoggedIn)';
   }
 
   @override
@@ -173,6 +189,7 @@ class _$UserRequestImpl implements _UserRequest {
             other is _$UserRequestImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.dateCreated, dateCreated) ||
                 other.dateCreated == dateCreated) &&
             (identical(other.dateLoggedIn, dateLoggedIn) ||
@@ -182,7 +199,7 @@ class _$UserRequestImpl implements _UserRequest {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, name, dateCreated, dateLoggedIn);
+      Object.hash(runtimeType, id, name, avatar, dateCreated, dateLoggedIn);
 
   @JsonKey(ignore: true)
   @override
@@ -202,6 +219,7 @@ abstract class _UserRequest implements UserRequest {
   const factory _UserRequest(
           {required final String id,
           final String? name,
+          final String? avatar,
           @JsonKey(name: 'date_created') final DateTime? dateCreated,
           @JsonKey(name: 'date_logged_in') final DateTime? dateLoggedIn}) =
       _$UserRequestImpl;
@@ -213,6 +231,8 @@ abstract class _UserRequest implements UserRequest {
   String get id;
   @override
   String? get name;
+  @override
+  String? get avatar;
   @override
   @JsonKey(name: 'date_created')
   DateTime? get dateCreated;

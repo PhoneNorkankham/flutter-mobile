@@ -12,6 +12,7 @@ import 'package:keepup/src/core/network_bound_resource.dart';
 import 'package:keepup/src/core/request/contact_request.dart';
 import 'package:keepup/src/core/request/group_request.dart';
 import 'package:keepup/src/core/request/interaction_request.dart';
+import 'package:keepup/src/core/request/user_request.dart';
 import 'package:keepup/src/core/resource.dart';
 import 'package:keepup/src/enums/interaction_type.dart';
 import 'package:keepup/src/extensions/group_extensions.dart';
@@ -36,7 +37,7 @@ class SupabaseRepository {
     this._supabaseManager,
   );
 
-  Stream get watchLoggedInData => _appShared.watchLoggedInData;
+  Stream<LoggedInData> get watchLoggedInData => _appShared.watchLoggedInData;
 
   Future<Resource<LoggedInData>> confirmLinkedIdentity(String code) {
     return NetworkBoundResource<LoggedInData, LoggedInData>(
@@ -62,6 +63,13 @@ class SupabaseRepository {
   Future<Resource<LoggedInData>> signInWithGoogle() {
     return NetworkBoundResource<LoggedInData, LoggedInData>(
       createSerializedCall: () => _supabaseManager.signInWithGoogle(),
+      saveCallResult: (result) => _appShared.setLoggedInData(result),
+    ).getAsFuture();
+  }
+
+  Future<Resource<LoggedInData>> updateUser(UserRequest request) {
+    return NetworkBoundResource<LoggedInData, LoggedInData>(
+      createSerializedCall: () => _supabaseManager.updateUser(request),
       saveCallResult: (result) => _appShared.setLoggedInData(result),
     ).getAsFuture();
   }

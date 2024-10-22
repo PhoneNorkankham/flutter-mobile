@@ -21,10 +21,7 @@ mixin _$MainEvent {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(MainDrawerType type) onDrawerItemPressed,
     required TResult Function(String code, String errorDescription)
         onHandlerAuthCallback,
   }) =>
@@ -34,10 +31,7 @@ mixin _$MainEvent {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(MainDrawerType type)? onDrawerItemPressed,
     TResult? Function(String code, String errorDescription)?
         onHandlerAuthCallback,
   }) =>
@@ -47,10 +41,7 @@ mixin _$MainEvent {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(MainDrawerType type)? onDrawerItemPressed,
     TResult Function(String code, String errorDescription)?
         onHandlerAuthCallback,
     required TResult orElse(),
@@ -62,10 +53,6 @@ mixin _$MainEvent {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedTabType value) onSelectedTabType,
     required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
     required TResult Function(_OnHandlerAuthCallback value)
         onHandlerAuthCallback,
   }) =>
@@ -76,10 +63,6 @@ mixin _$MainEvent {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
     TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -89,9 +72,6 @@ mixin _$MainEvent {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
     TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) =>
@@ -156,10 +136,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(MainDrawerType type) onDrawerItemPressed,
     required TResult Function(String code, String errorDescription)
         onHandlerAuthCallback,
   }) {
@@ -172,10 +149,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(MainDrawerType type)? onDrawerItemPressed,
     TResult? Function(String code, String errorDescription)?
         onHandlerAuthCallback,
   }) {
@@ -188,10 +162,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(MainDrawerType type)? onDrawerItemPressed,
     TResult Function(String code, String errorDescription)?
         onHandlerAuthCallback,
     required TResult orElse(),
@@ -209,10 +180,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedTabType value) onSelectedTabType,
     required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
     required TResult Function(_OnHandlerAuthCallback value)
         onHandlerAuthCallback,
   }) {
@@ -226,10 +193,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
     TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return initial?.call(this);
@@ -242,9 +205,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
     TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
@@ -300,10 +260,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(MainDrawerType type) onDrawerItemPressed,
     required TResult Function(String code, String errorDescription)
         onHandlerAuthCallback,
   }) {
@@ -316,10 +273,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(MainDrawerType type)? onDrawerItemPressed,
     TResult? Function(String code, String errorDescription)?
         onHandlerAuthCallback,
   }) {
@@ -332,10 +286,7 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(MainDrawerType type)? onDrawerItemPressed,
     TResult Function(String code, String errorDescription)?
         onHandlerAuthCallback,
     required TResult orElse(),
@@ -353,10 +304,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedTabType value) onSelectedTabType,
     required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
     required TResult Function(_OnHandlerAuthCallback value)
         onHandlerAuthCallback,
   }) {
@@ -370,10 +317,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
     TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return clearPageCommand?.call(this);
@@ -386,9 +329,6 @@ class _$ClearPageCommandImpl implements _ClearPageCommand {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
     TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
@@ -471,10 +411,7 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(MainDrawerType type) onDrawerItemPressed,
     required TResult Function(String code, String errorDescription)
         onHandlerAuthCallback,
   }) {
@@ -487,10 +424,7 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(MainDrawerType type)? onDrawerItemPressed,
     TResult? Function(String code, String errorDescription)?
         onHandlerAuthCallback,
   }) {
@@ -503,10 +437,7 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(MainDrawerType type)? onDrawerItemPressed,
     TResult Function(String code, String errorDescription)?
         onHandlerAuthCallback,
     required TResult orElse(),
@@ -524,10 +455,6 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedTabType value) onSelectedTabType,
     required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
     required TResult Function(_OnHandlerAuthCallback value)
         onHandlerAuthCallback,
   }) {
@@ -541,10 +468,6 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
     TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onSelectedTabType?.call(this);
@@ -557,9 +480,6 @@ class _$OnSelectedTabTypeImpl implements _OnSelectedTabType {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
     TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
@@ -586,7 +506,7 @@ abstract class _$$OnDrawerItemPressedImplCopyWith<$Res> {
           $Res Function(_$OnDrawerItemPressedImpl) then) =
       __$$OnDrawerItemPressedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AppDrawerType type});
+  $Res call({MainDrawerType type});
 }
 
 /// @nodoc
@@ -606,7 +526,7 @@ class __$$OnDrawerItemPressedImplCopyWithImpl<$Res>
       null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AppDrawerType,
+              as MainDrawerType,
     ));
   }
 }
@@ -617,7 +537,7 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
   const _$OnDrawerItemPressedImpl(this.type);
 
   @override
-  final AppDrawerType type;
+  final MainDrawerType type;
 
   @override
   String toString() {
@@ -648,10 +568,7 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(MainDrawerType type) onDrawerItemPressed,
     required TResult Function(String code, String errorDescription)
         onHandlerAuthCallback,
   }) {
@@ -664,10 +581,7 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(MainDrawerType type)? onDrawerItemPressed,
     TResult? Function(String code, String errorDescription)?
         onHandlerAuthCallback,
   }) {
@@ -680,10 +594,7 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(MainDrawerType type)? onDrawerItemPressed,
     TResult Function(String code, String errorDescription)?
         onHandlerAuthCallback,
     required TResult orElse(),
@@ -701,10 +612,6 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedTabType value) onSelectedTabType,
     required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
     required TResult Function(_OnHandlerAuthCallback value)
         onHandlerAuthCallback,
   }) {
@@ -718,10 +625,6 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
     TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onDrawerItemPressed?.call(this);
@@ -734,9 +637,6 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
     TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {
@@ -748,449 +648,13 @@ class _$OnDrawerItemPressedImpl implements _OnDrawerItemPressed {
 }
 
 abstract class _OnDrawerItemPressed implements MainEvent {
-  const factory _OnDrawerItemPressed(final AppDrawerType type) =
+  const factory _OnDrawerItemPressed(final MainDrawerType type) =
       _$OnDrawerItemPressedImpl;
 
-  AppDrawerType get type;
+  MainDrawerType get type;
   @JsonKey(ignore: true)
   _$$OnDrawerItemPressedImplCopyWith<_$OnDrawerItemPressedImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$OnConfirmedLogoutImplCopyWith<$Res> {
-  factory _$$OnConfirmedLogoutImplCopyWith(_$OnConfirmedLogoutImpl value,
-          $Res Function(_$OnConfirmedLogoutImpl) then) =
-      __$$OnConfirmedLogoutImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OnConfirmedLogoutImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$OnConfirmedLogoutImpl>
-    implements _$$OnConfirmedLogoutImplCopyWith<$Res> {
-  __$$OnConfirmedLogoutImplCopyWithImpl(_$OnConfirmedLogoutImpl _value,
-      $Res Function(_$OnConfirmedLogoutImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$OnConfirmedLogoutImpl implements _OnConfirmedLogout {
-  const _$OnConfirmedLogoutImpl();
-
-  @override
-  String toString() {
-    return 'MainEvent.onConfirmedLogout()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnConfirmedLogoutImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
-    required TResult Function(String code, String errorDescription)
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedLogout();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
-    TResult? Function(String code, String errorDescription)?
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedLogout?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
-    TResult Function(String code, String errorDescription)?
-        onHandlerAuthCallback,
-    required TResult orElse(),
-  }) {
-    if (onConfirmedLogout != null) {
-      return onConfirmedLogout();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnSelectedTabType value) onSelectedTabType,
-    required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
-    required TResult Function(_OnHandlerAuthCallback value)
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedLogout(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
-    TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
-    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
-  }) {
-    return onConfirmedLogout?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnSelectedTabType value)? onSelectedTabType,
-    TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
-    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
-    required TResult orElse(),
-  }) {
-    if (onConfirmedLogout != null) {
-      return onConfirmedLogout(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnConfirmedLogout implements MainEvent {
-  const factory _OnConfirmedLogout() = _$OnConfirmedLogoutImpl;
-}
-
-/// @nodoc
-abstract class _$$OnConfirmedResetDataImplCopyWith<$Res> {
-  factory _$$OnConfirmedResetDataImplCopyWith(_$OnConfirmedResetDataImpl value,
-          $Res Function(_$OnConfirmedResetDataImpl) then) =
-      __$$OnConfirmedResetDataImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OnConfirmedResetDataImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$OnConfirmedResetDataImpl>
-    implements _$$OnConfirmedResetDataImplCopyWith<$Res> {
-  __$$OnConfirmedResetDataImplCopyWithImpl(_$OnConfirmedResetDataImpl _value,
-      $Res Function(_$OnConfirmedResetDataImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$OnConfirmedResetDataImpl implements _OnConfirmedResetData {
-  const _$OnConfirmedResetDataImpl();
-
-  @override
-  String toString() {
-    return 'MainEvent.onConfirmedResetData()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnConfirmedResetDataImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
-    required TResult Function(String code, String errorDescription)
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedResetData();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
-    TResult? Function(String code, String errorDescription)?
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedResetData?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
-    TResult Function(String code, String errorDescription)?
-        onHandlerAuthCallback,
-    required TResult orElse(),
-  }) {
-    if (onConfirmedResetData != null) {
-      return onConfirmedResetData();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnSelectedTabType value) onSelectedTabType,
-    required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
-    required TResult Function(_OnHandlerAuthCallback value)
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedResetData(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
-    TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
-    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
-  }) {
-    return onConfirmedResetData?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnSelectedTabType value)? onSelectedTabType,
-    TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
-    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
-    required TResult orElse(),
-  }) {
-    if (onConfirmedResetData != null) {
-      return onConfirmedResetData(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnConfirmedResetData implements MainEvent {
-  const factory _OnConfirmedResetData() = _$OnConfirmedResetDataImpl;
-}
-
-/// @nodoc
-abstract class _$$OnConfirmedDeleteAccountImplCopyWith<$Res> {
-  factory _$$OnConfirmedDeleteAccountImplCopyWith(
-          _$OnConfirmedDeleteAccountImpl value,
-          $Res Function(_$OnConfirmedDeleteAccountImpl) then) =
-      __$$OnConfirmedDeleteAccountImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OnConfirmedDeleteAccountImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$OnConfirmedDeleteAccountImpl>
-    implements _$$OnConfirmedDeleteAccountImplCopyWith<$Res> {
-  __$$OnConfirmedDeleteAccountImplCopyWithImpl(
-      _$OnConfirmedDeleteAccountImpl _value,
-      $Res Function(_$OnConfirmedDeleteAccountImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$OnConfirmedDeleteAccountImpl implements _OnConfirmedDeleteAccount {
-  const _$OnConfirmedDeleteAccountImpl();
-
-  @override
-  String toString() {
-    return 'MainEvent.onConfirmedDeleteAccount()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnConfirmedDeleteAccountImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() clearPageCommand,
-    required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
-    required TResult Function(String code, String errorDescription)
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedDeleteAccount();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? clearPageCommand,
-    TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
-    TResult? Function(String code, String errorDescription)?
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedDeleteAccount?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? clearPageCommand,
-    TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
-    TResult Function(String code, String errorDescription)?
-        onHandlerAuthCallback,
-    required TResult orElse(),
-  }) {
-    if (onConfirmedDeleteAccount != null) {
-      return onConfirmedDeleteAccount();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ClearPageCommand value) clearPageCommand,
-    required TResult Function(_OnSelectedTabType value) onSelectedTabType,
-    required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
-    required TResult Function(_OnHandlerAuthCallback value)
-        onHandlerAuthCallback,
-  }) {
-    return onConfirmedDeleteAccount(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ClearPageCommand value)? clearPageCommand,
-    TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
-    TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
-    TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
-  }) {
-    return onConfirmedDeleteAccount?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ClearPageCommand value)? clearPageCommand,
-    TResult Function(_OnSelectedTabType value)? onSelectedTabType,
-    TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
-    TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
-    required TResult orElse(),
-  }) {
-    if (onConfirmedDeleteAccount != null) {
-      return onConfirmedDeleteAccount(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnConfirmedDeleteAccount implements MainEvent {
-  const factory _OnConfirmedDeleteAccount() = _$OnConfirmedDeleteAccountImpl;
 }
 
 /// @nodoc
@@ -1271,10 +735,7 @@ class _$OnHandlerAuthCallbackImpl implements _OnHandlerAuthCallback {
     required TResult Function() initial,
     required TResult Function() clearPageCommand,
     required TResult Function(BottomNavType type) onSelectedTabType,
-    required TResult Function(AppDrawerType type) onDrawerItemPressed,
-    required TResult Function() onConfirmedLogout,
-    required TResult Function() onConfirmedResetData,
-    required TResult Function() onConfirmedDeleteAccount,
+    required TResult Function(MainDrawerType type) onDrawerItemPressed,
     required TResult Function(String code, String errorDescription)
         onHandlerAuthCallback,
   }) {
@@ -1287,10 +748,7 @@ class _$OnHandlerAuthCallbackImpl implements _OnHandlerAuthCallback {
     TResult? Function()? initial,
     TResult? Function()? clearPageCommand,
     TResult? Function(BottomNavType type)? onSelectedTabType,
-    TResult? Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult? Function()? onConfirmedLogout,
-    TResult? Function()? onConfirmedResetData,
-    TResult? Function()? onConfirmedDeleteAccount,
+    TResult? Function(MainDrawerType type)? onDrawerItemPressed,
     TResult? Function(String code, String errorDescription)?
         onHandlerAuthCallback,
   }) {
@@ -1303,10 +761,7 @@ class _$OnHandlerAuthCallbackImpl implements _OnHandlerAuthCallback {
     TResult Function()? initial,
     TResult Function()? clearPageCommand,
     TResult Function(BottomNavType type)? onSelectedTabType,
-    TResult Function(AppDrawerType type)? onDrawerItemPressed,
-    TResult Function()? onConfirmedLogout,
-    TResult Function()? onConfirmedResetData,
-    TResult Function()? onConfirmedDeleteAccount,
+    TResult Function(MainDrawerType type)? onDrawerItemPressed,
     TResult Function(String code, String errorDescription)?
         onHandlerAuthCallback,
     required TResult orElse(),
@@ -1324,10 +779,6 @@ class _$OnHandlerAuthCallbackImpl implements _OnHandlerAuthCallback {
     required TResult Function(_ClearPageCommand value) clearPageCommand,
     required TResult Function(_OnSelectedTabType value) onSelectedTabType,
     required TResult Function(_OnDrawerItemPressed value) onDrawerItemPressed,
-    required TResult Function(_OnConfirmedLogout value) onConfirmedLogout,
-    required TResult Function(_OnConfirmedResetData value) onConfirmedResetData,
-    required TResult Function(_OnConfirmedDeleteAccount value)
-        onConfirmedDeleteAccount,
     required TResult Function(_OnHandlerAuthCallback value)
         onHandlerAuthCallback,
   }) {
@@ -1341,10 +792,6 @@ class _$OnHandlerAuthCallbackImpl implements _OnHandlerAuthCallback {
     TResult? Function(_ClearPageCommand value)? clearPageCommand,
     TResult? Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult? Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult? Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult? Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult? Function(_OnConfirmedDeleteAccount value)?
-        onConfirmedDeleteAccount,
     TResult? Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
   }) {
     return onHandlerAuthCallback?.call(this);
@@ -1357,9 +804,6 @@ class _$OnHandlerAuthCallbackImpl implements _OnHandlerAuthCallback {
     TResult Function(_ClearPageCommand value)? clearPageCommand,
     TResult Function(_OnSelectedTabType value)? onSelectedTabType,
     TResult Function(_OnDrawerItemPressed value)? onDrawerItemPressed,
-    TResult Function(_OnConfirmedLogout value)? onConfirmedLogout,
-    TResult Function(_OnConfirmedResetData value)? onConfirmedResetData,
-    TResult Function(_OnConfirmedDeleteAccount value)? onConfirmedDeleteAccount,
     TResult Function(_OnHandlerAuthCallback value)? onHandlerAuthCallback,
     required TResult orElse(),
   }) {

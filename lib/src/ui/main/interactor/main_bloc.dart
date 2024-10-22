@@ -7,14 +7,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/core/model/logged_in_data.dart';
 import 'package:keepup/src/core/repository/supabase_repository.dart';
-import 'package:keepup/src/design/components/dialogs/dialog_type.dart';
-import 'package:keepup/src/enums/app_drawer_type.dart';
 import 'package:keepup/src/enums/bottom_nav_type.dart';
 import 'package:keepup/src/locale/locale_key.dart';
 import 'package:keepup/src/ui/base/interactor/page_command.dart';
 import 'package:keepup/src/ui/base/interactor/page_error.dart';
+import 'package:keepup/src/ui/main/interactor/main_drawer_type.dart';
 import 'package:keepup/src/ui/main/usecases/confirm_linked_identity_use_case.dart';
-import 'package:keepup/src/use_cases/upload_contact_avatar_manager.dart';
 import 'package:keepup/src/utils/app_pages.dart';
 
 part 'main_bloc.freezed.dart';
@@ -24,14 +22,12 @@ part 'main_state.dart';
 class MainBloc extends Bloc<MainEvent, MainState> {
   final SupabaseRepository _supabaseRepository;
   final ConfirmLinkedIdentityUseCase _confirmLinkedIdentityUseCase;
-  final UploadContactAvatarManager _uploadContactAvatarManager;
   final AppLinks _appLinks = AppLinks(); // AppLinks is singleton
   StreamSubscription<Uri>? _uriLinkSubs;
 
   MainBloc(
     this._supabaseRepository,
     this._confirmLinkedIdentityUseCase,
-    this._uploadContactAvatarManager,
   ) : super(const MainState()) {
     on<_Initial>(_initial);
     on<_ClearPageCommand>((_, emit) => emit(state.copyWith(pageCommand: null)));
@@ -40,9 +36,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
           pageCommand: PageCommandNavigation.popUntil(AppPages.main),
         )));
     on<_OnDrawerItemPressed>(_onDrawerItemPressed);
-    on<_OnConfirmedResetData>(_onConfirmedResetData);
-    on<_OnConfirmedDeleteAccount>(_onConfirmedDeleteAccount);
-    on<_OnConfirmedLogout>(_onConfirmedLogout);
     on<_OnHandlerAuthCallback>(_onHandlerAuthCallback);
   }
 
@@ -79,81 +72,19 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     );
   }
 
-  FutureOr<void> _onDrawerItemPressed(_OnDrawerItemPressed event, Emitter<MainState> emit) {
+  FutureOr<void> _onDrawerItemPressed(_OnDrawerItemPressed event, Emitter<MainState> emit) async {
     switch (event.type) {
-      case AppDrawerType.resetData:
-        emit(state.copyWith(pageCommand: PageCommandDialog(DialogType.resetData)));
-        break;
-      case AppDrawerType.deleteAccount:
-        emit(state.copyWith(pageCommand: PageCommandDialog(DialogType.deleteAccount)));
-        break;
-      case AppDrawerType.logout:
-        emit(state.copyWith(pageCommand: PageCommandDialog(DialogType.logout)));
-        break;
       // case AppDrawerType.socialLogin:
       //   emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(AppPages.onboarding)));
       //   break;
+      case MainDrawerType.settings:
+        emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(AppPages.settings)));
+        break;
+      case MainDrawerType.profile:
+        emit(state.copyWith(pageCommand: PageCommandNavigation.toPage(AppPages.profile)));
+        break;
       case _:
         break;
-    }
-  }
-
-  FutureOr<void> _onConfirmedResetData(_OnConfirmedResetData event, Emitter<MainState> emit) async {
-    _uploadContactAvatarManager.clearAll();
-    emit(state.copyWith(isLoading: true));
-    final resource = await _supabaseRepository.resetData();
-    // if (resource.isSuccess) {
-    //   // Create default groups after reset data
-    //   await _createDefaultGroupsUseCase.run();
-    // }
-    emit(state.copyWith(
-      isLoading: false,
-      pageCommand: resource.isSuccess
-          ? PageCommandMessage.showSuccess(LocaleKey.resetDataSuccessfully.tr)
-          : PageCommandMessage.showError(resource.message ?? LocaleKey.resetDataFailed.tr),
-    ));
-  }
-
-  FutureOr<void> _onConfirmedDeleteAccount(
-    _OnConfirmedDeleteAccount event,
-    Emitter<MainState> emit,
-  ) async {
-    _uploadContactAvatarManager.clearAll();
-    emit(state.copyWith(isLoading: true));
-    final resource = await _supabaseRepository.deleteAccount();
-    if (resource.isSuccess) {
-      emit(state.copyWith(
-        isLoading: false,
-        pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(
-          AppPages.onboarding,
-          (route) => false,
-        ),
-      ));
-    } else {
-      emit(state.copyWith(
-        isLoading: false,
-        pageCommand: PageCommandMessage.showError(LocaleKey.deleteAccountFailed.tr),
-      ));
-    }
-  }
-
-  FutureOr<void> _onConfirmedLogout(_OnConfirmedLogout event, Emitter<MainState> emit) async {
-    _uploadContactAvatarManager.clearAll();
-    emit(state.copyWith(isLoading: true));
-    final resource = await _supabaseRepository.logout();
-    if (resource.isSuccess) {
-      emit(state.copyWith(
-        isLoading: false,
-        pageCommand: PageCommandNavigation.pushAndRemoveUntilPage(
-          AppPages.onboarding,
-          (route) => false,
-        ),
-      ));
-    } else {
-      emit(state.copyWith(
-        isLoading: false,
-        pageCommand: PageCommandMessage.showError(LocaleKey.logoutFailed.tr),
-      ));
     }
   }
 

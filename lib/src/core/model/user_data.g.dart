@@ -19,17 +19,20 @@ class UserDataAdapter extends TypeAdapter<UserData> {
     return UserData(
       id: fields[0] == null ? '' : fields[0] as String,
       name: fields[1] == null ? '' : fields[1] as String,
+      avatar: fields[2] == null ? '' : fields[2] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserData obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.name);
+      ..write(obj.name)
+      ..writeByte(2)
+      ..write(obj.avatar);
   }
 
   @override
@@ -51,10 +54,12 @@ _$UserDataImpl _$$UserDataImplFromJson(Map<String, dynamic> json) =>
     _$UserDataImpl(
       id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
+      avatar: json['avatar'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$UserDataImplToJson(_$UserDataImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'avatar': instance.avatar,
     };

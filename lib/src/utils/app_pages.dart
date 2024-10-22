@@ -7,6 +7,10 @@ import 'package:keepup/src/ui/main/binding/main_binding.dart';
 import 'package:keepup/src/ui/main/main_page.dart';
 import 'package:keepup/src/ui/onboarding/binding/onboarding_binding.dart';
 import 'package:keepup/src/ui/onboarding/onboarding_page.dart';
+import 'package:keepup/src/ui/profile/binding/profile_binding.dart';
+import 'package:keepup/src/ui/profile/profile_page.dart';
+import 'package:keepup/src/ui/settings/binding/settings_binding.dart';
+import 'package:keepup/src/ui/settings/settings_page.dart';
 import 'package:keepup/src/ui/splash/binding/splash_binding.dart';
 import 'package:keepup/src/ui/splash/splash_page.dart';
 
@@ -17,6 +21,8 @@ class AppPages {
   static const String main = _Paths.main;
   static const String contactDetail = _Paths.contactDetail;
   static const String groupDetail = _Paths.groupDetail;
+  static const String settings = _Paths.settings;
+  static const String profile = _Paths.profile;
 
   static final pages = [
     GetPage(
@@ -46,6 +52,18 @@ class AppPages {
       binding: GroupDetailBinding(),
       transition: Transition.noTransition,
     ),
+    GetPage(
+      name: _Paths.settings,
+      page: () => const SettingsPage(),
+      binding: SettingsBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.profile,
+      page: () => const ProfilePage(),
+      binding: ProfileBinding(),
+      transition: Transition.noTransition,
+    ),
   ];
 }
 
@@ -55,4 +73,6 @@ abstract class _Paths {
   static const String main = "/main";
   static const String contactDetail = "/contactDetail";
   static const String groupDetail = "/groupDetail";
+  static const String settings = "/settings";
+  static const String profile = "/profile";
 }

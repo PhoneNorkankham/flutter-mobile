@@ -140,9 +140,15 @@ class SupabaseManager {
     return getLoggedInData();
   }
 
-  Future<void> upsertUser(UserRequest request) async {
+  Future<LoggedInData> updateUser(UserRequest request) async {
+    await upsertUser(request, isUpdate: true);
+    return getLoggedInData();
+  }
+
+  Future<void> upsertUser(UserRequest request, {bool isUpdate = false}) async {
     UserData? user = await getUser();
-    if (user != null && user.name.isNotEmpty) {
+    if (user != null && user.name.isNotEmpty && !isUpdate) {
+      // Revert the user's old name to the request
       request = request.copyWith(name: user.name);
     }
     return _supabase.from(_tbUsers).upsert(request.toJson());
