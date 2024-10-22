@@ -25,8 +25,9 @@ class SplashPage extends StatelessWidget {
             bloc.add(const SplashEvent.clearPageCommand());
             if (pageCommand is SplashPageCommand) {
               pageCommand.when(showDialog: (message) => _showDialog(bloc, message));
+            } else {
+              pageCommandListeners(pageCommand);
             }
-            pageCommandListeners(pageCommand);
           }
         },
         child: const SplashView(),

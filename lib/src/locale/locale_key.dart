@@ -120,13 +120,14 @@ class LocaleKey {
   static const String socialLogin = "socialLogin";
   static const String todayStatistics = "todayStatistics";
   static const String manageMessages = "manageMessages";
-  static const String payments = "payments";
+  static const String settings = "settings";
+  static const String profile = "profile";
   static const String termsAndPolicy = "termsAndPolicy";
   static const String about = "about";
   static const String resetData = "resetData";
   static const String resetDataConfirm = "resetDataConfirm";
-  static const String resetDataSuccessfully = "resetDataSuccessfully";
-  static const String resetDataFailed = "resetDataFailed";
+  static const String dataResetSuccessful = "dataResetSuccessful";
+  static const String dataResetFailed = "dataResetFailed";
   static const String deleteAccount = "deleteAccount";
   static const String deleteAccountConfirm = "deleteAccountConfirm";
   static const String deleteAccountFailed = "deleteAccountFailed";
@@ -208,6 +209,7 @@ class LocaleKey {
   static const String expired = "expired";
 
   // Add Text Bottom Sheet
+  static const String addYourName = "addYourName";
   static const String addGroupName = "addGroupName";
   static const String groupDescription = "groupDescription";
   static const String addGroupDescription = "addGroupDescription";
@@ -221,4 +223,7 @@ class LocaleKey {
   static const String selectApplication = "selectApplication";
   static const String carrier = "carrier";
   static const String whatsapp = "whatsapp";
+
+  // Profile
+  static const String profileUpdatedSuccessfully = "profileUpdatedSuccessfully";
 }

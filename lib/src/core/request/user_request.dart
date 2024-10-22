@@ -10,6 +10,7 @@ class UserRequest with _$UserRequest {
   const factory UserRequest({
     required String id,
     String? name,
+    String? avatar,
     @JsonKey(name: 'date_created') DateTime? dateCreated,
     @JsonKey(name: 'date_logged_in') DateTime? dateLoggedIn,
   }) = _UserRequest;

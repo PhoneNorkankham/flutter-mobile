@@ -9,7 +9,6 @@ class MainBinding extends Bindings {
     Get.put(MainBloc(
       Get.find(),
       Get.find(),
-      Get.find(),
     ));
   }
 }

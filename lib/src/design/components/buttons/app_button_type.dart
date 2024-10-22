@@ -9,12 +9,14 @@ enum AppButtonType {
   primary,
   whitePrimary,
   outlined,
+  deleteAccount,
+  logout,
   keepUp,
 
   // Height 70
   getStarted;
 
-  bool get isOutlined => this == outlined;
+  bool get isOutlined => this == outlined || this == logout;
 
   ButtonStyle? buttonStyle(BuildContext context, double? radius) {
     final style =
@@ -37,6 +39,14 @@ enum AppButtonType {
       case outlined:
         backgroundColor = AppColors.primary;
         foregroundColor = AppColors.primaryText;
+        break;
+      case deleteAccount:
+        backgroundColor = const Color(0xFFBB3329);
+        foregroundColor = Colors.white;
+        break;
+      case logout:
+        backgroundColor = Colors.transparent;
+        foregroundColor = const Color(0xFFBB3329);
         break;
       case keepUp:
         backgroundColor = AppColors.keepUp;

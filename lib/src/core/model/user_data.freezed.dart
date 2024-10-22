@@ -24,6 +24,8 @@ mixin _$UserData {
   String get id => throw _privateConstructorUsedError;
   @HiveField(1, defaultValue: '')
   String get name => throw _privateConstructorUsedError;
+  @HiveField(2, defaultValue: '')
+  String get avatar => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +40,8 @@ abstract class $UserDataCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0, defaultValue: '') String id,
-      @HiveField(1, defaultValue: '') String name});
+      @HiveField(1, defaultValue: '') String name,
+      @HiveField(2, defaultValue: '') String avatar});
 }
 
 /// @nodoc
@@ -56,6 +59,7 @@ class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? avatar = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -65,6 +69,10 @@ class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -80,7 +88,8 @@ abstract class _$$UserDataImplCopyWith<$Res>
   @useResult
   $Res call(
       {@HiveField(0, defaultValue: '') String id,
-      @HiveField(1, defaultValue: '') String name});
+      @HiveField(1, defaultValue: '') String name,
+      @HiveField(2, defaultValue: '') String avatar});
 }
 
 /// @nodoc
@@ -96,6 +105,7 @@ class __$$UserDataImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? avatar = null,
   }) {
     return _then(_$UserDataImpl(
       id: null == id
@@ -106,6 +116,10 @@ class __$$UserDataImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -115,7 +129,8 @@ class __$$UserDataImplCopyWithImpl<$Res>
 class _$UserDataImpl implements _UserData {
   const _$UserDataImpl(
       {@HiveField(0, defaultValue: '') this.id = '',
-      @HiveField(1, defaultValue: '') this.name = ''});
+      @HiveField(1, defaultValue: '') this.name = '',
+      @HiveField(2, defaultValue: '') this.avatar = ''});
 
   factory _$UserDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserDataImplFromJson(json);
@@ -128,10 +143,14 @@ class _$UserDataImpl implements _UserData {
   @JsonKey()
   @HiveField(1, defaultValue: '')
   final String name;
+  @override
+  @JsonKey()
+  @HiveField(2, defaultValue: '')
+  final String avatar;
 
   @override
   String toString() {
-    return 'UserData(id: $id, name: $name)';
+    return 'UserData(id: $id, name: $name, avatar: $avatar)';
   }
 
   @override
@@ -140,12 +159,13 @@ class _$UserDataImpl implements _UserData {
         (other.runtimeType == runtimeType &&
             other is _$UserDataImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(runtimeType, id, name, avatar);
 
   @JsonKey(ignore: true)
   @override
@@ -164,7 +184,8 @@ class _$UserDataImpl implements _UserData {
 abstract class _UserData implements UserData {
   const factory _UserData(
       {@HiveField(0, defaultValue: '') final String id,
-      @HiveField(1, defaultValue: '') final String name}) = _$UserDataImpl;
+      @HiveField(1, defaultValue: '') final String name,
+      @HiveField(2, defaultValue: '') final String avatar}) = _$UserDataImpl;
 
   factory _UserData.fromJson(Map<String, dynamic> json) =
       _$UserDataImpl.fromJson;
@@ -175,6 +196,9 @@ abstract class _UserData implements UserData {
   @override
   @HiveField(1, defaultValue: '')
   String get name;
+  @override
+  @HiveField(2, defaultValue: '')
+  String get avatar;
   @override
   @JsonKey(ignore: true)
   _$$UserDataImplCopyWith<_$UserDataImpl> get copyWith =>

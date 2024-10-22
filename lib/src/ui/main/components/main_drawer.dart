@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:keepup/src/design/components/avatars/app_circle_avatar.dart';
 import 'package:keepup/src/design/themes/extensions/theme_extensions.dart';
-import 'package:keepup/src/enums/app_drawer_type.dart';
 import 'package:keepup/src/ui/main/interactor/main_bloc.dart';
+import 'package:keepup/src/ui/main/interactor/main_drawer_type.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
@@ -16,7 +16,7 @@ class MainDrawer extends StatelessWidget {
     return BlocBuilder<MainBloc, MainState>(
       buildWhen: (previous, current) => previous.loggedInData != current.loggedInData,
       builder: (context, state) {
-        List<AppDrawerType> items = [...AppDrawerType.values];
+        List<MainDrawerType> items = [...MainDrawerType.values];
         // if (!state.loggedInData.isAnonymous) {
         //   items.removeWhere((e) => e == AppDrawerType.socialLogin);
         // }
@@ -26,7 +26,12 @@ class MainDrawer extends StatelessWidget {
             padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
             children: [
               const SizedBox(height: 40),
-              const Center(child: AppCircleAvatar(url: '', radius: 35)),
+              Center(
+                child: AppCircleAvatar(
+                  url: state.loggedInData.userData?.avatar ?? '',
+                  radius: 35,
+                ),
+              ),
               const SizedBox(height: 10),
               Text(
                 state.loggedInData.userData?.name ?? '',

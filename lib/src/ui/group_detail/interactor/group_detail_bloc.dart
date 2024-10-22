@@ -142,6 +142,7 @@ class GroupDetailBloc extends Bloc<GroupDetailEvent, GroupDetailState> {
     Emitter<GroupDetailState> emit,
   ) async {
     final String newAvatar = event.data.contentUrl;
+    emit(state.copyWith(isLoading: true));
     DataResult<String> uploadAvatarResult = await _uploadAvatarFromUrlUseCase.run(newAvatar);
     final String avatarUrl = uploadAvatarResult.valueOrNull ?? '';
     if (uploadAvatarResult.isValue) {
