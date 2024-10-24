@@ -17,8 +17,8 @@ class NewGroupHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<NewGroupBloc>();
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -48,17 +48,18 @@ class NewGroupHeader extends StatelessWidget {
           AppInputTextField(
             maxLines: 1,
             controller: bloc.nameController,
+            focusNode: bloc.nameFocusNode,
             onChanged: (value) => bloc.add(NewGroupEvent.onChangedGroupName(value)),
             textStyle: context.appTextTheme.medium20.copyWith(
               color: Theme.of(context).colorScheme.onPrimary,
             ),
-            textAlign: TextAlign.center,
+            textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               border: InputBorder.none,
               errorBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
-              hintText: LocaleKey.tabToAddGroupName.tr,
+              hintText: LocaleKey.addGroupName.tr,
               hintStyle: context.appTextTheme.medium20.copyWith(
                 color: Theme.of(context).colorScheme.onPrimary,
               ),

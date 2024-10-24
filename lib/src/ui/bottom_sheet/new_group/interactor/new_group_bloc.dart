@@ -29,6 +29,7 @@ part 'new_group_state.dart';
 class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
   final keywordController = TextEditingController();
   final nameController = TextEditingController();
+  final nameFocusNode = FocusNode();
 
   final UploadAvatarUseCase _uploadAvatarUseCase;
   final UploadAvatarFromUrlUseCase _uploadAvatarFromUrlUseCase;
@@ -163,6 +164,7 @@ class NewGroupBloc extends Bloc<NewGroupEvent, NewGroupState> {
   Future<void> close() {
     keywordController.dispose();
     nameController.dispose();
+    nameFocusNode.dispose();
     return super.close();
   }
 }
