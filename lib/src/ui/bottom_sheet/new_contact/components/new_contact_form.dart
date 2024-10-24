@@ -34,6 +34,7 @@ class NewContactForm extends StatelessWidget {
               controller: bloc.nameController,
               hintText: LocaleKey.name.tr,
               textInputType: TextInputType.name,
+              textCapitalization: TextCapitalization.sentences,
               validator: AppValidations.validateField,
               onChanged: (value) => bloc.add(NewContactEvent.onInputChanged(
                 NewContactInputType.name,

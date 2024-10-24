@@ -19,14 +19,18 @@ class NewGroupBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => NewGroupBloc(
-        Get.find(),
-        Get.find(),
-        Get.find(),
-        Get.find(),
-        Get.find(),
-        Get.find(),
-      )..add(const NewGroupEvent.initial()),
+      create: (_) {
+        NewGroupBloc bloc = NewGroupBloc(
+          Get.find(),
+          Get.find(),
+          Get.find(),
+          Get.find(),
+          Get.find(),
+          Get.find(),
+        )..add(const NewGroupEvent.initial());
+        Get.focusScope?.requestFocus(bloc.nameFocusNode);
+        return bloc;
+      },
       child: BlocConsumer<NewGroupBloc, NewGroupState>(
         listenWhen: (previous, current) => previous.pageCommand != current.pageCommand,
         listener: (context, state) {
